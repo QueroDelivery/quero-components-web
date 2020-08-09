@@ -1,0 +1,63 @@
+{
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es6": true,
+    "node": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "prettier/@typescript-eslint",
+    "plugin:prettier/recommended"
+  ],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly",
+    "zE": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true,
+      "experimentalObjectRestSpread": true
+    },
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "plugins": ["react", "@typescript-eslint", "react-hooks", "prettier"],
+  "rules": {
+    "no-const-assign": 2,
+    "no-this-before-super": 2,
+    "no-undef": 2,
+    "no-unreachable": 2,
+    "no-unused-vars": 2,
+    "constructor-super": "error",
+    "valid-typeof": "warn",
+    "react/jsx-uses-vars": 2,
+    "react/react-in-jsx-scope": 2,
+    "react/jsx-uses-react": 1,
+    "react-hooks/rules-of-hooks": "error",
+    "react/jsx-no-duplicate-props": [
+      2,
+      {
+        "ignoreCase": true
+      }
+    ],
+    "react/jsx-no-undef": [
+      "error",
+      {
+        "allowGlobals": false
+      }
+    ],
+    "react-hooks/exhaustive-deps": "warn",
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [".tsx"]
+      }
+    ],
+    "prettier/prettier": "error"
+  }
+}
