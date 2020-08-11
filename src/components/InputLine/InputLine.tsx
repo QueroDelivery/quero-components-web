@@ -2,7 +2,7 @@ import "../../styles/default.scss";
 
 import React, { useState, InputHTMLAttributes } from "react";
 
-import { Container, LabelError } from "./style";
+import { Container, LabelError } from "./styles";
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     label: string;

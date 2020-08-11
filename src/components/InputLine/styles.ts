@@ -2,17 +2,17 @@ import styled, { css } from "styled-components";
 import { colors } from "../../styles/colors";
 
 interface InputProps {
-    requiredText: boolean;
-    isFieldActive: boolean;
-    errorMessage: string | undefined;
-    errorColor: string | undefined;
-    labelStyle: React.CSSProperties | undefined;
-    containerStyle: React.CSSProperties | undefined;
-    width: string | undefined;
+    requiredText?: boolean;
+    isFieldActive?: boolean;
+    errorMessage?: string
+    errorColor?: string
+    labelStyle?: React.CSSProperties
+    containerStyle?: React.CSSProperties
+    width?: string
 }
 
 interface LabelErrorProps {
-    errorColor: string | undefined;
+    errorColor?: string
 }
 
 export const Container = styled.div<InputProps>`

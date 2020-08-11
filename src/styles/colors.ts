@@ -1,5 +1,5 @@
 export const colors = {
-    brand10: "#7C08C9",
+    brand10: "#9B4DEE",
     brand20: "#E0457B",
     brand30: "#F7EA48",
     brandDark: "#68349F",
@@ -42,5 +42,5 @@ export const colors = {
     info20: "#1E88E5",
     info30: "#0D47A1",
 
-    brandTransparent: "rgba(155, 77, 238, 0.9)",
+    brandTransparent: "rgba(155, 77, 238, 0.2)",
 };
