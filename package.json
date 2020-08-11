@@ -22,7 +22,8 @@
   },
   "peerDependencies": {
     "react": "x",
-    "react-dom": "x"
+    "react-dom": "x",
+    "styled-components": "x"
   },
   "browserslist": {
     "production": [

@@ -37,6 +37,7 @@ function renderDefault() {
                 onChange={(event) => setValue3(event.target.value)}
                 required
                 errorMessage={error}
+                type='password'
             />
 
             <button onClick={() => {
