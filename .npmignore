@@ -2,7 +2,7 @@
 /assets
 /node_modules
 /public
-/src/components/**.stories.tsx
+/src/components/**/**.stories.tsx
 .editorconfig
 .eslintrc.json
 .gitignore
