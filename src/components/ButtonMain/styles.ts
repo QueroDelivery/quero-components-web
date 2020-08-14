@@ -95,7 +95,7 @@ export const TextEnd = styled.span<TextEndProps>`
 
 export const Notification = styled.button`
     background-color: ${colors.brand10};
-    height: 50px;
+    height: 40px;
     width: 100%;
     border-radius: 30px;
     cursor: pointer;
@@ -109,12 +109,13 @@ export const Notification = styled.button`
     }
 
     &:hover {
-        background-color: ${colors.brandTransparent2}; */
+        background-color: ${colors.hover};
     }
 
-    span{
+    span {
         color: ${colors.brand30};
-        margin-left: 20px
+        margin-left: 20px;
+        font-weight: bold;
     }
 `;
 
@@ -122,12 +123,12 @@ export const Icon = styled.div``;
 
 export const Amount = styled.div`
     background-color: ${colors.brand30};
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 50%;
     color: ${colors.brand10};
-    margin-right: 15px;
+    font-size: 10px;
 `;
