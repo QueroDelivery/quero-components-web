@@ -16,7 +16,7 @@ import Loader from "../Loader/Loader";
 import { colors } from "../../styles/colors";
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-    textFirst: string;
+    textFirst?: string;
     textEnd?: string;
     firstStrong?: boolean;
     notStrong?: boolean;
