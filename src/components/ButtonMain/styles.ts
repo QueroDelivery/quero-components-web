@@ -4,6 +4,7 @@ import { colors } from "../../styles/colors";
 interface ButtonProps {
     secundary?: boolean;
     backPurple?: boolean;
+    notification?: boolean;
 }
 
 interface TextFirstProps {
@@ -90,4 +91,43 @@ export const TextEnd = styled.span<TextEndProps>`
 
         return "bold";
     }};
+`;
+
+export const Notification = styled.button`
+    background-color: ${colors.brand10};
+    height: 50px;
+    width: 100%;
+    border-radius: 30px;
+    cursor: pointer;
+    border: 1px solid ${colors.brand30};
+    outline: none;
+
+    &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        pointer-events: none;
+    }
+
+    &:hover {
+        background-color: ${colors.brandTransparent2}; */
+    }
+
+    span{
+        color: ${colors.brand30};
+        margin-left: 20px
+    }
+`;
+
+export const Icon = styled.div``;
+
+export const Amount = styled.div`
+    background-color: ${colors.brand30};
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: ${colors.brand10};
+    margin-right: 15px;
 `;

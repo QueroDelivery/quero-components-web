@@ -10,8 +10,8 @@ function renderDefault() {
     return (
         <div style={{ margin: 50 }}>
             <ButtonMain
-                textFirst='Testeee'
-                textEnd='Teste2'
+                textFirst="Testeee"
+                textEnd="Teste2"
                 strong
                 disabled
                 loading
@@ -24,8 +24,8 @@ function renderSecundary() {
     return (
         <div style={{ margin: 50 }}>
             <ButtonMain
-                textFirst='Testeee'
-                textEnd='Teste2'
+                textFirst="Testeee"
+                textEnd="Teste2"
                 firstStrong
                 secundary
                 disabled
@@ -38,10 +38,23 @@ function renderBackPurple() {
     return (
         <div style={{ margin: 50 }}>
             <ButtonMain
-                textFirst='Testeee'
-                textEnd='Teste2'
+                textFirst="Testeee"
+                textEnd="Teste2"
                 notStrong
                 backPurple
+            />
+        </div>
+    );
+}
+
+function renderNotification() {
+    return (
+        <div style={{ margin: 50 }}>
+            <ButtonMain
+                textFirst="Testeee"
+                textEnd="Teste2"
+                notification
+                amount="2"
             />
         </div>
     );
@@ -50,3 +63,4 @@ function renderBackPurple() {
 export const Default = () => renderDefault();
 export const Secundary = () => renderSecundary();
 export const BackPurple = () => renderBackPurple();
+export const Notification = () => renderNotification();
