@@ -5,6 +5,7 @@ interface ButtonProps {
     secundary?: boolean;
     backPurple?: boolean;
     notification?: boolean;
+    height?: number;
 }
 
 interface TextFirstProps {
@@ -27,7 +28,7 @@ export const Button = styled.button<ButtonProps>`
 
         return colors.brand30;
     }};
-    height: 50px;
+    height: ${(props) => (props.height ? `${props.height}px` : "50px")};
     width: 100%;
     border-radius: 30px;
     cursor: pointer;

@@ -26,6 +26,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     notification?: boolean;
     amount?: string;
     backPurple?: boolean;
+    height?: number;
     chield?: React.FunctionComponent;
 }
 
@@ -41,6 +42,7 @@ const ButtonMain: React.FC<ButtonProps> = ({
     chield,
     notification,
     amount,
+    height,
     ...rest
 }) => {
     if (notification) {
@@ -57,7 +59,7 @@ const ButtonMain: React.FC<ButtonProps> = ({
                             justifyContent: "space-between",
                             width: "100%",
                             alignItems: "center",
-                            height: '50%',
+                            height: "50%",
                             padding: 10,
                         }}
                     >
@@ -78,7 +80,12 @@ const ButtonMain: React.FC<ButtonProps> = ({
         );
     } else {
         return (
-            <Button {...rest} secundary={secundary} backPurple={backPurple}>
+            <Button
+                {...rest}
+                secundary={secundary}
+                backPurple={backPurple}
+                height={height}
+            >
                 {loading ? (
                     <Loader size="tiny" />
                 ) : chield ? (
