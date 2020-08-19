@@ -25,6 +25,7 @@ export const Background = styled.div<BackgroundProps>`
                   overflow: auto;
                   padding: 40px 0;
                   display: flex;
+                  z-index: 999;
               `
             : css`
                   opacity: 1;
