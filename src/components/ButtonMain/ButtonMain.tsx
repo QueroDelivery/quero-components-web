@@ -27,6 +27,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     amount?: string;
     backPurple?: boolean;
     height?: number;
+    width?: number;
     chield?: React.FunctionComponent;
 }
 
@@ -43,6 +44,7 @@ const ButtonMain: React.FC<ButtonProps> = ({
     notification,
     amount,
     height,
+    width,
     ...rest
 }) => {
     if (notification) {
@@ -85,6 +87,7 @@ const ButtonMain: React.FC<ButtonProps> = ({
                 secundary={secundary}
                 backPurple={backPurple}
                 height={height}
+                width={width}
             >
                 {loading ? (
                     <Loader size="tiny" />

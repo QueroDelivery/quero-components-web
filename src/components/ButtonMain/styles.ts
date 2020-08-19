@@ -6,6 +6,7 @@ interface ButtonProps {
     backPurple?: boolean;
     notification?: boolean;
     height?: number;
+    width?: number;
 }
 
 interface TextFirstProps {
@@ -29,7 +30,7 @@ export const Button = styled.button<ButtonProps>`
         return colors.brand30;
     }};
     height: ${(props) => (props.height ? `${props.height}px` : "50px")};
-    width: 100%;
+    width: ${(props) => (props.width ? `${props.width}%` : "100%")};
     border-radius: 30px;
     cursor: pointer;
     border: ${(props) =>
