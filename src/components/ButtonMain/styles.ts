@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 import { colors } from "../../styles/colors";
+import { IconDefinition } from "@fortawesome/pro-solid-svg-icons";
 
 interface ButtonProps {
     secundary?: boolean;
@@ -7,6 +8,7 @@ interface ButtonProps {
     notification?: boolean;
     height?: number;
     width?: number;
+    icon?: IconDefinition;
 }
 
 interface TextFirstProps {
@@ -29,8 +31,9 @@ export const Button = styled.button<ButtonProps>`
 
         return colors.brand30;
     }};
-    height: ${(props) => (props.height ? `${props.height}px` : "50px")};
-    width: ${(props) => (props.width ? `${props.width}%` : "100%")};
+    height: ${(props) => (props.height ? `${props.height}px` : "40px")};
+    width: ${(props) =>
+        props.width ? `${props.width}%` : props.icon ? "" : "100%"};
     border-radius: 30px;
     cursor: pointer;
     border: ${(props) =>
@@ -39,6 +42,7 @@ export const Button = styled.button<ButtonProps>`
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: ${(props) => (props.icon ? "0 20px" : "")};
 
     &:disabled {
         opacity: 0.5;

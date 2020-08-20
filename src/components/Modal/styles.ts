@@ -68,7 +68,7 @@ export const Body = styled.div`
 
 export const Actions = styled.div`
     border-top: 1px solid ${colors.default20};
-    margin: 0 20px;
+    margin: 0 30px;
     padding: 20px 0;
     display: flex;
     flex-direction: row-reverse;

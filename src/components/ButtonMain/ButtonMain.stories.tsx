@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import ButtonMain from "./ButtonMain";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBell } from "@fortawesome/pro-solid-svg-icons";
 
 export default {
     title: "ButtonMain",
@@ -9,13 +11,7 @@ export default {
 function renderDefault() {
     return (
         <div style={{ margin: 50 }}>
-            <ButtonMain
-                textFirst="Testeee"
-                textEnd="Teste2"
-                strong
-                disabled
-                loading
-            />
+            <ButtonMain textFirst="Testeee" strong />
         </div>
     );
 }
@@ -25,10 +21,9 @@ function renderSecundary() {
         <div style={{ margin: 50 }}>
             <ButtonMain
                 textFirst="Testeee"
-                textEnd="Teste2"
                 firstStrong
+                icon={faBell}
                 secundary
-                disabled
             />
         </div>
     );

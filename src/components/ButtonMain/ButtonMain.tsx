@@ -2,7 +2,7 @@ import "../../styles/default.scss";
 
 import React, { ButtonHTMLAttributes } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBell } from "@fortawesome/pro-solid-svg-icons";
+import { faBell, IconDefinition } from "@fortawesome/pro-solid-svg-icons";
 
 import {
     Button,
@@ -28,7 +28,9 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     backPurple?: boolean;
     height?: number;
     width?: number;
-    chield?: React.FunctionComponent;
+    icon?: IconDefinition;
+    colorIcon?: string;
+    chield?: React.ReactNode;
 }
 
 const ButtonMain: React.FC<ButtonProps> = ({
@@ -45,6 +47,8 @@ const ButtonMain: React.FC<ButtonProps> = ({
     amount,
     height,
     width,
+    icon,
+    colorIcon,
     ...rest
 }) => {
     if (notification) {
@@ -88,6 +92,7 @@ const ButtonMain: React.FC<ButtonProps> = ({
                 backPurple={backPurple}
                 height={height}
                 width={width}
+                icon={icon}
             >
                 {loading ? (
                     <Loader size="tiny" />
@@ -100,7 +105,7 @@ const ButtonMain: React.FC<ButtonProps> = ({
                             strong={strong}
                             notStrong={notStrong}
                         >
-                            {textFirst}
+                            {`${textFirst} `}
                         </TextFirst>
                         <TextEnd
                             firstStrong={firstStrong}
@@ -109,6 +114,17 @@ const ButtonMain: React.FC<ButtonProps> = ({
                         >
                             {textEnd}
                         </TextEnd>
+                        {icon && (
+                            <>
+                                <FontAwesomeIcon
+                                    icon={icon}
+                                    color={
+                                        colorIcon ? colorIcon : colors.brand10
+                                    }
+                                    size={"lg"}
+                                />
+                            </>
+                        )}
                     </div>
                 )}
             </Button>
