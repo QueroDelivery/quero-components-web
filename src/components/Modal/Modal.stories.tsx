@@ -135,3 +135,131 @@ export const Default = () => {
         </div>
     );
 };
+
+export const Dialog = () => {
+    const [open, setOpen] = useState(false);
+
+    console.log(open);
+
+    return (
+        <div style={{ margin: 50 }}>
+            <ButtonMain textFirst="abrir" onClick={() => setOpen(!open)} />
+            <Modal
+                open={open}
+                onClose={() => setOpen(!open)}
+                closeOnDimerClick
+                dialog
+                body={
+                    <div>
+                        <div>
+                            <strong>fsdfsdfsd</strong>{" "}
+                        </div>
+                        <div>
+                            <strong>elements</strong>{" "}
+                        </div>
+                        <div>
+                            <strong>elements</strong>{" "}
+                        </div>
+                        <div>
+                            <strong>elements</strong>{" "}
+                        </div>
+                        <div>
+                            <strong>elements</strong>{" "}
+                        </div>
+                        <div>
+                            <strong>elements</strong>{" "}
+                        </div>
+                        <div>
+                            <strong>elements</strong>{" "}
+                        </div>
+                        <div>
+                            <strong>elements</strong>{" "}
+                        </div>
+                        <div>
+                            <strong>elements</strong>{" "}
+                        </div>
+                        <div>
+                            <strong>elements</strong>{" "}
+                        </div>
+                        <div>
+                            <strong>elements</strong>{" "}
+                        </div>
+                        <div>
+                            <strong>elements</strong>{" "}
+                        </div>
+                        <div>
+                            <strong>elements</strong>{" "}
+                        </div>
+                        <div>
+                            <strong>elements</strong>{" "}
+                        </div>
+                        <div>
+                            <strong>elements</strong>{" "}
+                        </div>
+                        <div>
+                            <strong>elements</strong>{" "}
+                        </div>
+                        <div>
+                            <strong>elements</strong>{" "}
+                        </div>
+                        <div>
+                            <strong>elements</strong>{" "}
+                        </div>
+                        <div>
+                            <strong>elements</strong>{" "}
+                        </div>
+                        <div>
+                            <strong>elements</strong>{" "}
+                        </div>
+                        v v
+                        <div>
+                            <strong>elements</strong>{" "}
+                        </div>
+                        <div>
+                            <strong>elements</strong>{" "}
+                        </div>
+                        <div>
+                            <strong>elements</strong>{" "}
+                        </div>
+                        <div>
+                            <strong>elements</strong>{" "}
+                        </div>
+                        <div>
+                            <strong>elements</strong>{" "}
+                        </div>
+                        <div>
+                            <strong>elements</strong>{" "}
+                        </div>
+                        <div>
+                            <strong>elements</strong>{" "}
+                        </div>
+                        <div>
+                            <strong>elements</strong>{" "}
+                        </div>
+                        <div>
+                            <strong>elements</strong>{" "}
+                        </div>
+                        <div>
+                            <strong>elements</strong>{" "}
+                        </div>
+                        <div>
+                            <strong>elements</strong>{" "}
+                        </div>
+                        <div>
+                            <strong>elements</strong>{" "}
+                        </div>
+                        <div>
+                            <strong>elements</strong>{" "}
+                        </div>
+                        <div>
+                            <strong>elements</strong>{" "}
+                        </div>
+                        <div>
+                            <strong>elements</strong>{" "}
+                        </div>
+                    </div>
+                }
+            />
+        </div>
+    );
+};

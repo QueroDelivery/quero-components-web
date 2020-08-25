@@ -45,6 +45,14 @@ export const Modal = styled.div<ModalProps>`
     border-radius: 30px;
 `;
 
+export const Dialog = styled.div`
+    transition: bottom 1s ease;
+    width: 90%;
+    background: ${colors.white};
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+`;
+
 export const Header = styled.div`
     display: flex;
     align-items: center;

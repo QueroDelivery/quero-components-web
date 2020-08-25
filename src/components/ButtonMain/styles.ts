@@ -9,24 +9,32 @@ interface ButtonProps {
     height?: number;
     width?: number;
     icon?: IconDefinition;
+    noBorder?: boolean;
+    colorText?: string;
 }
 
 interface TextFirstProps {
     firstStrong?: boolean;
     notStrong?: boolean;
     strong?: boolean;
+    colorText?: string;
 }
 
 interface TextEndProps {
     firstStrong?: boolean;
     notStrong?: boolean;
     strong?: boolean;
+    colorText?: string;
 }
 
 export const Button = styled.button<ButtonProps>`
     background-color: ${(props) => {
         if (props.secundary) {
             return colors.white;
+        }
+
+        if (props.noBorder) {
+            return "transparent";
         }
 
         return colors.brand30;
@@ -59,6 +67,11 @@ export const Button = styled.button<ButtonProps>`
             if (props.backPurple) {
                 return colors.brand20;
             }
+
+            if (props.noBorder) {
+                return "transparent";
+            }
+
             return colors.brand10;
         }};
 
@@ -72,6 +85,14 @@ export const Button = styled.button<ButtonProps>`
                     return colors.white;
                 }
 
+                if (props.noBorder) {
+                    if (props.colorText) {
+                        return props.colorText;
+                    } else {
+                        return colors.brand10;
+                    }
+                }
+
                 return colors.brand30;
             }};
         }
@@ -79,7 +100,7 @@ export const Button = styled.button<ButtonProps>`
 `;
 
 export const TextFirst = styled.span<TextFirstProps>`
-    color: ${colors.brand10};
+    color: ${(props) => (props.colorText ? props.colorText : colors.brand10)};
     font-weight: ${(props) => {
         if (props.firstStrong || props.strong) {
             return "bold";
@@ -89,7 +110,7 @@ export const TextFirst = styled.span<TextFirstProps>`
     }};
 `;
 export const TextEnd = styled.span<TextEndProps>`
-    color: ${colors.brand10};
+    color: ${(props) => (props.colorText ? props.colorText : colors.brand10)};
     font-weight: ${(props) => {
         if (props.firstStrong || props.notStrong) {
             return "normal";

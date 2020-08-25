@@ -30,6 +30,8 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     width?: number;
     icon?: IconDefinition;
     colorIcon?: string;
+    noBorder?: boolean;
+    colorText?: string;
     chield?: React.ReactNode;
 }
 
@@ -49,6 +51,8 @@ const ButtonMain: React.FC<ButtonProps> = ({
     width,
     icon,
     colorIcon,
+    noBorder,
+    colorText,
     ...rest
 }) => {
     if (notification) {
@@ -93,6 +97,8 @@ const ButtonMain: React.FC<ButtonProps> = ({
                 height={height}
                 width={width}
                 icon={icon}
+                noBorder={noBorder}
+                colorText={colorText}
             >
                 {loading ? (
                     <Loader size="tiny" />
@@ -104,6 +110,7 @@ const ButtonMain: React.FC<ButtonProps> = ({
                             firstStrong={firstStrong}
                             strong={strong}
                             notStrong={notStrong}
+                            colorText={colorText}
                         >
                             {`${textFirst} `}
                         </TextFirst>
@@ -111,6 +118,7 @@ const ButtonMain: React.FC<ButtonProps> = ({
                             firstStrong={firstStrong}
                             strong={strong}
                             notStrong={notStrong}
+                            colorText={colorText}
                         >
                             {textEnd}
                         </TextEnd>

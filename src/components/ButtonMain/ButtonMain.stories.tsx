@@ -2,21 +2,22 @@ import React, { useState } from "react";
 import ButtonMain from "./ButtonMain";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBell } from "@fortawesome/pro-solid-svg-icons";
+import { colors } from "../../styles/colors";
 
 export default {
     title: "ButtonMain",
     component: ButtonMain,
 };
 
-function renderDefault() {
+export const Default = () => {
     return (
         <div style={{ margin: 50 }}>
             <ButtonMain textFirst="Testeee" strong />
         </div>
     );
-}
+};
 
-function renderSecundary() {
+export const Secundary = () => {
     return (
         <div style={{ margin: 50 }}>
             <ButtonMain
@@ -27,9 +28,9 @@ function renderSecundary() {
             />
         </div>
     );
-}
+};
 
-function renderBackPurple() {
+export const BackPurple = () => {
     return (
         <div style={{ margin: 50 }}>
             <ButtonMain
@@ -40,9 +41,9 @@ function renderBackPurple() {
             />
         </div>
     );
-}
+};
 
-function renderNotification() {
+export const Notification = () => {
     return (
         <div style={{ margin: 50 }}>
             <ButtonMain
@@ -53,9 +54,16 @@ function renderNotification() {
             />
         </div>
     );
-}
+};
 
-export const Default = () => renderDefault();
-export const Secundary = () => renderSecundary();
-export const BackPurple = () => renderBackPurple();
-export const Notification = () => renderNotification();
+export const noBorder = () => {
+    return (
+        <div style={{ margin: 50 }}>
+            <ButtonMain
+                textFirst="Testeee"
+                noBorder
+                colorText={colors.brand20}
+            />
+        </div>
+    );
+};
