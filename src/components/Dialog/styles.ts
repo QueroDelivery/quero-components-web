@@ -15,7 +15,7 @@ export const Background = styled.div<BackgroundProps>`
             ? css`
                   opacity: 1;
                   visibility: visible;
-                  position: absolute;
+                  position: fixed;
                   top: 0;
                   right: 0;
                   bottom: 0;
@@ -49,7 +49,7 @@ export const Dialog = styled.div<DialogProps>`
                   padding: 20px;
               `
             : css`
-                  transition: bottom 1s ease;
+                  transition: bottom 0.25s ease;
                   bottom: -100%;
               `}
 `;

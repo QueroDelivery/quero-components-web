@@ -15,7 +15,7 @@ export const Background = styled.div<BackgroundProps>`
             ? css`
                   opacity: 1;
                   visibility: visible;
-                  position: absolute;
+                  position: fixed;
                   top: 0;
                   right: 0;
                   bottom: 0;
