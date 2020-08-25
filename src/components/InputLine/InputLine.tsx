@@ -46,7 +46,7 @@ const InputLine: React.FC<InputProps> = ({
     };
 
     return (
-        <div>
+        <div style={{ paddingBottom: errorMessage || requiredText ? 0 : 20 }}>
             <Container
                 isFieldActive={isFieldActive}
                 requiredText={requiredText}
