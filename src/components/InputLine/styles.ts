@@ -23,7 +23,7 @@ export const Container = styled.div<InputProps>`
         width: 100%;
         height: 100%;
         padding-top: 20px;
-        padding-left: 30px;
+        padding-left: 15px;
         padding-bottom: 5px;
         border: none;
         outline: none;
@@ -37,7 +37,7 @@ export const Container = styled.div<InputProps>`
         position: absolute;
         bottom: 0px;
         top: 0px;
-        left: 15px;
+        left: 0px;
         width: 100%;
         right: 100%;
         pointer-events: none;
@@ -116,7 +116,7 @@ export const Container = styled.div<InputProps>`
 
 export const LabelError = styled.span<LabelErrorProps>`
     font-size: 10px;
-    margin-left: 15px;
+    margin-left: 0;
     color: ${(props) => {
         if (props.errorColor) {
             return props.errorColor;
