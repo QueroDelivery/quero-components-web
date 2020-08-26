@@ -3,7 +3,7 @@ import ButtonMain from "./components/ButtonMain/ButtonMain";
 import Loader from "./components/Loader/Loader";
 import Modal from "./components/Modal/Modal";
 import Dialog from "./components/Dialog/Dialog";
-import { ToastProvider, useToast } from "./hooks/Toast";
+import { ToastProvider, showToast } from "./hooks/Toast";
 
 export {
     InputLine,
@@ -12,5 +12,5 @@ export {
     Modal,
     Dialog,
     ToastProvider,
-    useToast,
+    showToast,
 };

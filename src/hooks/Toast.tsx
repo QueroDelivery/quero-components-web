@@ -60,4 +60,10 @@ function useToast(): ToastContextData {
     return context;
 }
 
-export { ToastProvider, useToast };
+function showToast(message: Omit<ToastMessage, "id">) {
+    const toast = useToast();
+
+    return toast.addToast(message);
+}
+
+export { ToastProvider, useToast, showToast };
