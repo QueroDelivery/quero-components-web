@@ -61,9 +61,11 @@ function useToast(): ToastContextData {
 }
 
 function showToast(message: Omit<ToastMessage, "id">) {
-    const toast = useToast();
-
-    return toast.addToast(message);
+    return (
+        <ToastContext.Consumer>
+            {async ({ addToast }) => addToast(message)}
+        </ToastContext.Consumer>
+    );
 }
 
 export { ToastProvider, useToast, showToast };
