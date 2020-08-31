@@ -26,6 +26,18 @@
         "react-dom": "^16.13.1",
         "styled-components": "^5.1.1"
     },
+    "peerDependencies": {
+        "react": "x",
+        "react-dom": "x",
+        "styled-components": "x",
+        "@fortawesome/fontawesome-pro": ">5.0.0",
+        "@fortawesome/fontawesome-svg-core": ">1.2.0",
+        "@fortawesome/pro-duotone-svg-icons": ">5.0.0",
+        "@fortawesome/pro-light-svg-icons": ">5.0.0",
+        "@fortawesome/pro-regular-svg-icons": ">5.0.0",
+        "@fortawesome/pro-solid-svg-icons": ">5.0.0",
+        "@fortawesome/react-fontawesome": "x"
+    },
     "devDependencies": {
         "@babel/core": "7.9.0",
         "@storybook/addon-actions": "^6.0.21",
