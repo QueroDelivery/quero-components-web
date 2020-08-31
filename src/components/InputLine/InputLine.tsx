@@ -1,8 +1,9 @@
-import "../../styles/default.scss";
+/* eslint-disable react/prop-types */
+import '../../styles/default.css';
 
-import React, { useState, InputHTMLAttributes } from "react";
+import React, { useState, InputHTMLAttributes } from 'react';
 
-import { Container, LabelError } from "./styles";
+import { Container, LabelError } from './styles';
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     label: string;
@@ -23,7 +24,7 @@ const InputLine: React.FC<InputProps> = ({
     ...rest
 }) => {
     const [isFieldActive, setIsFieldActive] = useState(
-        rest.value ? true : false
+        rest.value ? true : false,
     );
     const [requiredText, setRequiredText] = useState(false);
 
@@ -61,7 +62,7 @@ const InputLine: React.FC<InputProps> = ({
                     {...rest}
                     onFocus={handleFocus}
                     onBlur={handleBlur}
-                    placeholder={isFieldActive ? rest.placeholder : ""}
+                    placeholder={isFieldActive ? rest.placeholder : ''}
                 />
                 <label style={labelStyle}>
                     <span>{label}</span>

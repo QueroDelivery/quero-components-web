@@ -1,0 +1,10 @@
+@font-face {
+    font-family: MontSerrat;
+    src: url(./../assets/fonts/Montserrat-Medium.ttf);
+}
+
+body,
+button,
+input {
+    font-family: MontSerrat !important;
+}

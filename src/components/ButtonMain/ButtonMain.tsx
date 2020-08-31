@@ -1,8 +1,8 @@
-import "../../styles/default.scss";
+import '../../styles/default.css';
 
-import React, { ButtonHTMLAttributes } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBell, IconDefinition } from "@fortawesome/pro-solid-svg-icons";
+import React, { ButtonHTMLAttributes } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBell, IconDefinition } from '@fortawesome/pro-solid-svg-icons';
 
 import {
     Button,
@@ -11,9 +11,9 @@ import {
     Icon,
     Amount,
     Notification,
-} from "./styles";
-import Loader from "../Loader/Loader";
-import { colors } from "../../styles/colors";
+} from './styles';
+import Loader from '../Loader/Loader';
+import { colors } from '../../styles/colors';
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     textFirst?: string;
@@ -65,15 +65,15 @@ const ButtonMain: React.FC<ButtonProps> = ({
                 ) : (
                     <div
                         style={{
-                            display: "flex",
-                            justifyContent: "space-between",
-                            width: "100%",
-                            alignItems: "center",
-                            height: "50%",
+                            display: 'flex',
+                            justifyContent: 'space-between',
+                            width: '100%',
+                            alignItems: 'center',
+                            height: '50%',
                             padding: 10,
                         }}
                     >
-                        <div style={{ display: "flex", alignItems: "center" }}>
+                        <div style={{ display: 'flex', alignItems: 'center' }}>
                             <Icon>
                                 <FontAwesomeIcon
                                     icon={faBell}
@@ -129,7 +129,7 @@ const ButtonMain: React.FC<ButtonProps> = ({
                                     color={
                                         colorIcon ? colorIcon : colors.brand10
                                     }
-                                    size={"lg"}
+                                    size={'lg'}
                                 />
                             </>
                         )}

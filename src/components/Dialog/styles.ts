@@ -1,5 +1,5 @@
-import styled, { css } from "styled-components";
-import { colors } from "../../styles/colors";
+import styled, { css } from 'styled-components';
+import { colors } from '../../styles/colors';
 
 interface BackgroundProps {
     open?: boolean;
@@ -10,7 +10,7 @@ interface DialogProps {
 }
 
 export const Background = styled.div<BackgroundProps>`
-    ${(props) =>
+    ${props =>
         props.open
             ? css`
                   opacity: 1;
@@ -33,7 +33,7 @@ export const Background = styled.div<BackgroundProps>`
 `;
 
 export const Dialog = styled.div<DialogProps>`
-    ${(props) =>
+    ${props =>
         props.open
             ? css`
                   transition: bottom 0.25s ease;

@@ -1,7 +1,7 @@
-import InputLine from "./components/InputLine/InputLine";
-import ButtonMain from "./components/ButtonMain/ButtonMain";
-import Loader from "./components/Loader/Loader";
-import Modal from "./components/Modal/Modal";
-import Dialog from "./components/Dialog/Dialog";
+import ButtonMain from '../src/components/ButtonMain/ButtonMain';
+import Dialog from '../src/components/Dialog/Dialog';
+import InputLine from '../src/components/InputLine/InputLine';
+import Loader from '../src/components/Loader/Loader';
+import Modal from '../src/components/Modal/Modal';
 
-export { InputLine, ButtonMain, Loader, Modal, Dialog };
+export { ButtonMain, Dialog, InputLine, Loader, Modal };

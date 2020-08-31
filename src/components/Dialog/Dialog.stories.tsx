@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import Dialog from "./Dialog";
-import ButtonMain from "../ButtonMain/ButtonMain";
+import React, { useState } from 'react';
+import Dialog from './Dialog';
+import ButtonMain from '../ButtonMain/ButtonMain';
 
 export default {
-    title: "Dialog",
+    title: 'Dialog',
     component: Dialog,
 };
 
@@ -21,31 +21,31 @@ export const Default = () => {
                 body={
                     <div>
                         <div>
-                            <strong>fsdfsdfsd</strong>{" "}
+                            <strong>fsdfsdfsd</strong>{' '}
                         </div>
                         <div>
-                            <strong>elements</strong>{" "}
+                            <strong>elements</strong>{' '}
                         </div>
                         <div>
-                            <strong>elements</strong>{" "}
+                            <strong>elements</strong>{' '}
                         </div>
                         <div>
-                            <strong>elements</strong>{" "}
+                            <strong>elements</strong>{' '}
                         </div>
                         <div>
-                            <strong>elements</strong>{" "}
+                            <strong>elements</strong>{' '}
                         </div>
                         <div>
-                            <strong>elements</strong>{" "}
+                            <strong>elements</strong>{' '}
                         </div>
                         <div>
-                            <strong>elements</strong>{" "}
+                            <strong>elements</strong>{' '}
                         </div>
                         <div>
-                            <strong>elements</strong>{" "}
+                            <strong>elements</strong>{' '}
                         </div>
                         <div>
-                            <strong>elements</strong>{" "}
+                            <strong>elements</strong>{' '}
                         </div>
                     </div>
                 }

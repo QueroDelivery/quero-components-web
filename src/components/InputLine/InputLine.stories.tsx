@@ -1,16 +1,16 @@
-import React, { useState } from "react";
-import InputLine from "./InputLine";
+import React, { useState } from 'react';
+import InputLine from './InputLine';
 
 export default {
-    title: "InputLine",
+    title: 'InputLine',
     component: InputLine,
 };
 
 export const Default = () => {
-    const [value, setValue] = useState("");
-    const [value2, setValue2] = useState("");
-    const [value3, setValue3] = useState("");
-    const [error, setError] = useState("");
+    const [value, setValue] = useState('');
+    const [value2, setValue2] = useState('');
+    const [value3, setValue3] = useState('');
+    const [error, setError] = useState('');
 
     return (
         <div style={{ margin: 50 }}>
@@ -18,14 +18,14 @@ export const Default = () => {
                 label="Nome"
                 placeholder="Insira seu nome"
                 value={value}
-                onChange={(event) => setValue(event.target.value)}
+                onChange={event => setValue(event.target.value)}
             />
 
             <InputLine
                 label="Nome"
                 placeholder="Insira seu nome"
                 value={value2}
-                onChange={(event) => setValue2(event.target.value)}
+                onChange={event => setValue2(event.target.value)}
                 required
                 errorColor="blue"
             />
@@ -34,7 +34,7 @@ export const Default = () => {
                 label="Nome"
                 placeholder="Insira seu nome"
                 value={value3}
-                onChange={(event) => setValue3(event.target.value)}
+                onChange={event => setValue3(event.target.value)}
                 required
                 errorMessage={error}
                 type="password"
@@ -42,10 +42,10 @@ export const Default = () => {
 
             <button
                 onClick={() => {
-                    if (value3 !== "alan") {
-                        setError("Nome inválido");
+                    if (value3 !== 'alan') {
+                        setError('Nome inválido');
                     } else {
-                        setError("");
+                        setError('');
                     }
                 }}
             >

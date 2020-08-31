@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import Loader from "./Loader";
+import React from 'react';
+import Loader from './Loader';
 
 export default {
-    title: "Loader",
+    title: 'Loader',
     component: Loader,
 };
 

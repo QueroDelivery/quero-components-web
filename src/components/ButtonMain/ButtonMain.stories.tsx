@@ -1,11 +1,10 @@
-import React, { useState } from "react";
-import ButtonMain from "./ButtonMain";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBell } from "@fortawesome/pro-solid-svg-icons";
-import { colors } from "../../styles/colors";
+import React from 'react';
+import ButtonMain from './ButtonMain';
+import { faBell } from '@fortawesome/pro-solid-svg-icons';
+import { colors } from '../../styles/colors';
 
 export default {
-    title: "ButtonMain",
+    title: 'ButtonMain',
     component: ButtonMain,
 };
 

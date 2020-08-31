@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import Modal from "./Modal";
-import ButtonMain from "../ButtonMain/ButtonMain";
+import React, { useState } from 'react';
+import Modal from './Modal';
+import ButtonMain from '../ButtonMain/ButtonMain';
 
 export default {
-    title: "Modal",
+    title: 'Modal',
     component: Modal,
 };
 
@@ -24,110 +24,110 @@ export const Default = () => {
                 body={
                     <div>
                         <div>
-                            <strong>fsdfsdfsd</strong>{" "}
+                            <strong>fsdfsdfsd</strong>{' '}
                         </div>
                         <div>
-                            <strong>elements</strong>{" "}
+                            <strong>elements</strong>{' '}
                         </div>
                         <div>
-                            <strong>elements</strong>{" "}
+                            <strong>elements</strong>{' '}
                         </div>
                         <div>
-                            <strong>elements</strong>{" "}
+                            <strong>elements</strong>{' '}
                         </div>
                         <div>
-                            <strong>elements</strong>{" "}
+                            <strong>elements</strong>{' '}
                         </div>
                         <div>
-                            <strong>elements</strong>{" "}
+                            <strong>elements</strong>{' '}
                         </div>
                         <div>
-                            <strong>elements</strong>{" "}
+                            <strong>elements</strong>{' '}
                         </div>
                         <div>
-                            <strong>elements</strong>{" "}
+                            <strong>elements</strong>{' '}
                         </div>
                         <div>
-                            <strong>elements</strong>{" "}
+                            <strong>elements</strong>{' '}
                         </div>
                         <div>
-                            <strong>elements</strong>{" "}
+                            <strong>elements</strong>{' '}
                         </div>
                         <div>
-                            <strong>elements</strong>{" "}
+                            <strong>elements</strong>{' '}
                         </div>
                         <div>
-                            <strong>elements</strong>{" "}
+                            <strong>elements</strong>{' '}
                         </div>
                         <div>
-                            <strong>elements</strong>{" "}
+                            <strong>elements</strong>{' '}
                         </div>
                         <div>
-                            <strong>elements</strong>{" "}
+                            <strong>elements</strong>{' '}
                         </div>
                         <div>
-                            <strong>elements</strong>{" "}
+                            <strong>elements</strong>{' '}
                         </div>
                         <div>
-                            <strong>elements</strong>{" "}
+                            <strong>elements</strong>{' '}
                         </div>
                         <div>
-                            <strong>elements</strong>{" "}
+                            <strong>elements</strong>{' '}
                         </div>
                         <div>
-                            <strong>elements</strong>{" "}
+                            <strong>elements</strong>{' '}
                         </div>
                         <div>
-                            <strong>elements</strong>{" "}
+                            <strong>elements</strong>{' '}
                         </div>
                         <div>
-                            <strong>elements</strong>{" "}
+                            <strong>elements</strong>{' '}
                         </div>
                         v v
                         <div>
-                            <strong>elements</strong>{" "}
+                            <strong>elements</strong>{' '}
                         </div>
                         <div>
-                            <strong>elements</strong>{" "}
+                            <strong>elements</strong>{' '}
                         </div>
                         <div>
-                            <strong>elements</strong>{" "}
+                            <strong>elements</strong>{' '}
                         </div>
                         <div>
-                            <strong>elements</strong>{" "}
+                            <strong>elements</strong>{' '}
                         </div>
                         <div>
-                            <strong>elements</strong>{" "}
+                            <strong>elements</strong>{' '}
                         </div>
                         <div>
-                            <strong>elements</strong>{" "}
+                            <strong>elements</strong>{' '}
                         </div>
                         <div>
-                            <strong>elements</strong>{" "}
+                            <strong>elements</strong>{' '}
                         </div>
                         <div>
-                            <strong>elements</strong>{" "}
+                            <strong>elements</strong>{' '}
                         </div>
                         <div>
-                            <strong>elements</strong>{" "}
+                            <strong>elements</strong>{' '}
                         </div>
                         <div>
-                            <strong>elements</strong>{" "}
+                            <strong>elements</strong>{' '}
                         </div>
                         <div>
-                            <strong>elements</strong>{" "}
+                            <strong>elements</strong>{' '}
                         </div>
                         <div>
-                            <strong>elements</strong>{" "}
+                            <strong>elements</strong>{' '}
                         </div>
                         <div>
-                            <strong>elements</strong>{" "}
+                            <strong>elements</strong>{' '}
                         </div>
                         <div>
-                            <strong>elements</strong>{" "}
+                            <strong>elements</strong>{' '}
                         </div>
                         <div>
-                            <strong>elements</strong>{" "}
+                            <strong>elements</strong>{' '}
                         </div>
                     </div>
                 }

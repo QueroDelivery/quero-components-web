@@ -1,11 +1,10 @@
-import "../../styles/default.scss";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable react/prop-types */
+import '../../styles/default.css';
 
-import React, { FunctionComponent } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React from 'react';
 
-import { Background, Dialog } from "./styles";
-import { faTimes } from "@fortawesome/pro-light-svg-icons";
-import { colors } from "../../styles/colors";
+import { Background, Dialog } from './styles';
 
 export interface DialogProps {
     open: boolean;
@@ -16,7 +15,12 @@ export interface DialogProps {
 const DialogComponent: React.FC<DialogProps> = ({ open, body, onClose }) => {
     return (
         <Background open={open} onClick={() => onClose()}>
-            <Dialog open={open} onClick={(event) => event.stopPropagation()}>{body}</Dialog>
+            <Dialog
+                open={open}
+                onClick={(event: any) => event.stopPropagation()}
+            >
+                {body}
+            </Dialog>
         </Background>
     );
 };

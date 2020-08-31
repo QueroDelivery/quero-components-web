@@ -1,20 +1,21 @@
-import "../../styles/default.scss";
+/* eslint-disable react/prop-types */
+import '../../styles/default.css';
 
-import React from "react";
+import React from 'react';
 
-import { Container } from "./styles";
+import { Container } from './styles';
 
 export interface LoaderProps {
     color?: string;
     size?:
-        | "mini"
-        | "tiny"
-        | "small"
-        | "medium"
-        | "large"
-        | "big"
-        | "huge"
-        | "massive";
+        | 'mini'
+        | 'tiny'
+        | 'small'
+        | 'medium'
+        | 'large'
+        | 'big'
+        | 'huge'
+        | 'massive';
     className?: string;
     style?: React.CSSProperties;
 }
