@@ -1,22 +1,22 @@
-import styled, { css } from "styled-components";
-import { colors } from "../../styles/colors";
+import styled, { css } from 'styled-components';
+import { colors } from '../../styles/colors';
 
 interface InputProps {
     requiredText?: boolean;
     isFieldActive?: boolean;
-    errorMessage?: string
-    errorColor?: string
-    labelStyle?: React.CSSProperties
-    containerStyle?: React.CSSProperties
-    width?: string
+    errorMessage?: string;
+    errorColor?: string;
+    labelStyle?: React.CSSProperties;
+    containerStyle?: React.CSSProperties;
+    width?: string;
 }
 
 interface LabelErrorProps {
-    errorColor?: string
+    errorColor?: string;
 }
 
 export const Container = styled.div<InputProps>`
-    width: ${(props) => (props.width ? props.width : "100%")};
+    width: ${props => (props.width ? props.width : '100%')};
     position: relative;
 
     input {
@@ -43,7 +43,7 @@ export const Container = styled.div<InputProps>`
         pointer-events: none;
         border-bottom-width: 1px;
         border-bottom-style: solid;
-        border-bottom-color: ${(props) => {
+        border-bottom-color: ${props => {
             if (
                 (props.requiredText || props.errorMessage) &&
                 props.errorColor
@@ -58,7 +58,7 @@ export const Container = styled.div<InputProps>`
             return colors.gray10;
         }};
 
-        ${(props) =>
+        ${props =>
             props.isFieldActive
                 ? css`
                       color: ${colors.brand10};
@@ -74,7 +74,7 @@ export const Container = styled.div<InputProps>`
         left: 15px;
         transition: all 0.3s ease;
 
-        ${(props) =>
+        ${props =>
             props.isFieldActive
                 ? css`
                       transform: translateY(-100%);
@@ -117,7 +117,7 @@ export const Container = styled.div<InputProps>`
 export const LabelError = styled.span<LabelErrorProps>`
     font-size: 10px;
     margin-left: 0;
-    color: ${(props) => {
+    color: ${props => {
         if (props.errorColor) {
             return props.errorColor;
         }

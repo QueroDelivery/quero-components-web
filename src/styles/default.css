@@ -5,6 +5,7 @@
 
 body,
 button,
-input {
+input,
+textarea {
     font-family: MontSerrat !important;
 }

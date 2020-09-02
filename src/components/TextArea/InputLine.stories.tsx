@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import InputLine from './InputLine';
+import TextArea from './TextArea';
 
 export default {
-    title: 'InputLine',
-    component: InputLine,
+    title: 'TextArea',
+    component: TextArea,
 };
 
 export const Default = () => {
@@ -14,31 +14,12 @@ export const Default = () => {
 
     return (
         <div style={{ margin: 50 }}>
-            <InputLine
-                label="Nome"
-                placeholder="Insira seu nome"
-                value='quero delivery exemplo'
-                onChange={event => setValue(event.target.value)}
-                width='50px'
-            />
-
-            <InputLine
-                label="Nome"
-                placeholder="Insira seu nome"
-                value={value2}
-                onChange={event => setValue2(event.target.value)}
-                required
-                errorColor="blue"
-            />
-
-            <InputLine
+            <TextArea
                 label="Nome"
                 placeholder="Insira seu nome"
                 value={value3}
-                onChange={event => setValue3(event.target.value)}
-                required
+                onChange={(event: any) => setValue3(event.target.value)}
                 errorMessage={error}
-                type="password"
             />
 
             <button
