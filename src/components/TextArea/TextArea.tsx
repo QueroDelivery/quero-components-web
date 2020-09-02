@@ -7,7 +7,7 @@ import { Container, LabelError } from './styles';
 
 export interface TextAreaProps
     extends TextareaHTMLAttributes<HTMLTextAreaElement> {
-    label: string;
+    label?: string;
     errorMessage?: string;
     errorColor?: string;
     containerStyle?: React.CSSProperties;
@@ -35,6 +35,7 @@ const InputLine: React.FC<TextAreaProps> = ({
                 containerStyle={containerStyle}
                 width={width}
                 style={containerStyle}
+                disabled={rest.disabled}
                 height={height}
             >
                 <textarea {...rest} placeholder={rest.placeholder} />

@@ -24,7 +24,7 @@ export const Container = styled.div<InputProps>`
 
     textarea {
         resize: none;
-        width: 96%;
+        width: 100%;
         border-radius: 20px;
         height: ${props => (props.height ? `${props.height}px` : '100px')};
         margin: 0px;

@@ -6,7 +6,7 @@ import React, { useState, InputHTMLAttributes } from 'react';
 import { Container, LabelError } from './styles';
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
-    label: string;
+    label?: string;
     errorMessage?: string;
     errorColor?: string;
     containerStyle?: React.CSSProperties;
@@ -56,6 +56,7 @@ const InputLine: React.FC<InputProps> = ({
                 labelStyle={labelStyle}
                 containerStyle={containerStyle}
                 width={width}
+                disabled={rest.disabled}
                 style={containerStyle}
             >
                 <input

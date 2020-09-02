@@ -8,6 +8,7 @@ interface InputProps {
     errorColor?: string;
     labelStyle?: React.CSSProperties;
     containerStyle?: React.CSSProperties;
+    disabled?: boolean;
     width?: string;
 }
 
@@ -18,6 +19,8 @@ interface LabelErrorProps {
 export const Container = styled.div<InputProps>`
     width: ${props => (props.width ? props.width : '100%')};
     position: relative;
+
+    opacity: ${props => (props.disabled ? '50%' : '100%')};
 
     input {
         width: 100%;
