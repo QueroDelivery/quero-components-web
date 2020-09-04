@@ -28,7 +28,9 @@ const Radio: React.FC<InputProps> = ({
 }) => {
     return (
         <Container
-            onClick={() => (!rest.disabled ? rest.onChange() : null)}
+            onClick={() =>
+                !rest.disabled ? (rest.onChange ? rest.onChange() : null) : null
+            }
             disabled={rest.disabled}
             sizeBox={sizeBox}
         >
