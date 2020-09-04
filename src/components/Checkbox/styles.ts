@@ -200,7 +200,20 @@ export const Container = styled.div<CheckboxProps>`
             position: absolute;
             left: 0;
             top: 1px;
+            width: ${props => {
+                if (props.sizeBox) {
+                    return size(props.sizeBox);
+                }
 
+                return '17px';
+            }};
+            height: ${props => {
+                if (props.sizeBox) {
+                    return size(props.sizeBox);
+                }
+
+                return '17px';
+            }};
             border: 1px solid ${colors.default20};
             background: ${colors.default20};
             border-radius: 5px;
