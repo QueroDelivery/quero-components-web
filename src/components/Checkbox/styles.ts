@@ -75,21 +75,21 @@ const sizeChecked = (size: string | number) => {
 const marginLeft = (size: string | number) => {
     switch (size) {
         case Sizes.mini:
-            return '2px';
+            return '1.5px';
         case Sizes.tiny:
-            return '2px';
+            return '1.5px';
         case Sizes.small:
-            return '2.5px';
+            return '2px';
         case Sizes.medium:
-            return '3px';
+            return '2.5px';
         case Sizes.large:
-            return '3px';
+            return '2.5px';
         case Sizes.big:
-            return '3px';
+            return '2.5px';
         case Sizes.huge:
-            return '4px';
+            return '3.5px';
         case Sizes.massive:
-            return '5px';
+            return '4.5px';
         default:
             return size;
     }
@@ -142,6 +142,9 @@ const marginRight = (size: string | number) => {
 };
 
 export const Container = styled.div<CheckboxProps>`
+    display: flex;
+    align-items: center;
+
     > input {
         display: none;
     }
@@ -169,8 +172,6 @@ export const Container = styled.div<CheckboxProps>`
         &:before {
             content: '';
             position: absolute;
-            left: 0;
-            top: 1px;
             width: ${props => {
                 if (props.sizeBox) {
                     return size(props.sizeBox);
@@ -192,8 +193,6 @@ export const Container = styled.div<CheckboxProps>`
         &:after {
             content: ' ';
             position: absolute;
-            left: 0;
-            top: 1px;
             width: ${props => {
                 if (props.sizeBox) {
                     return size(props.sizeBox);
@@ -235,14 +234,14 @@ export const Container = styled.div<CheckboxProps>`
                 return marginLeft(props.sizeBox);
             }
 
-            return '-22px';
+            return '3px';
         }};
         margin-right: ${props => {
             if (props.sizeBox) {
                 return marginRight(props.sizeBox);
             }
 
-            return '-22px';
+            return '8px';
         }};
         font-size: ${props => {
             if (props.sizeBox) {
