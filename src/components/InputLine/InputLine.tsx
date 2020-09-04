@@ -12,6 +12,7 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     containerStyle?: React.CSSProperties;
     labelStyle?: React.CSSProperties;
     width?: string;
+    textColor?: string;
 }
 
 const InputLine: React.FC<InputProps> = ({
@@ -21,6 +22,7 @@ const InputLine: React.FC<InputProps> = ({
     errorMessage,
     errorColor,
     width,
+    textColor,
     ...rest
 }) => {
     const [isFieldActive, setIsFieldActive] = useState(
@@ -58,6 +60,7 @@ const InputLine: React.FC<InputProps> = ({
                 width={width}
                 disabled={rest.disabled}
                 style={containerStyle}
+                textColor={textColor}
             >
                 <input
                     {...rest}

@@ -8,14 +8,26 @@ export interface InputProps
     extends Omit<InputHTMLAttributes<HTMLInputElement>, 'type'> {
     label?: string;
     labelStyle?: React.CSSProperties;
-    onChange: () => void;
+    sizeBox?:
+        | 'mini'
+        | 'tiny'
+        | 'small'
+        | 'medium'
+        | 'large'
+        | 'big'
+        | 'huge'
+        | 'massive';
+    onChange?: () => void;
 }
 
-const Checkbox: React.FC<InputProps> = ({ label, labelStyle, ...rest }) => {
+const Checkbox: React.FC<InputProps> = ({ label, labelStyle, sizeBox, ...rest }) => {
     return (
         <Container
-            onClick={() => (!rest.disabled ? rest.onChange() : null)}
+            onClick={() =>
+                !rest.disabled ? (rest.onChange ? rest.onChange() : null) : null
+            }
             disabled={rest.disabled}
+            sizeBox={sizeBox}
         >
             <input type="checkbox" {...rest} />
             <div>

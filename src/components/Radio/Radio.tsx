@@ -9,13 +9,28 @@ export interface InputProps
     label?: string;
     labelStyle?: React.CSSProperties;
     onChange: () => void;
+    sizeBox?:
+        | 'mini'
+        | 'tiny'
+        | 'small'
+        | 'medium'
+        | 'large'
+        | 'big'
+        | 'huge'
+        | 'massive';
 }
 
-const Radio: React.FC<InputProps> = ({ label, labelStyle, ...rest }) => {
+const Radio: React.FC<InputProps> = ({
+    label,
+    labelStyle,
+    sizeBox,
+    ...rest
+}) => {
     return (
         <Container
             onClick={() => (!rest.disabled ? rest.onChange() : null)}
             disabled={rest.disabled}
+            sizeBox={sizeBox}
         >
             <input type="radio" {...rest} />
             <div>

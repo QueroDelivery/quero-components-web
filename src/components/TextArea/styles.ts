@@ -10,6 +10,7 @@ interface InputProps {
     disabled?: boolean;
     width?: string;
     height?: number;
+    textColor?: string;
 }
 
 interface LabelErrorProps {
@@ -23,6 +24,7 @@ export const Container = styled.div<InputProps>`
     opacity: ${props => (props.disabled ? '50%' : '100%')};
 
     textarea {
+        color: ${props => props.textColor ? props.textColor : colors.gray20};
         resize: none;
         width: 100%;
         border-radius: 20px;
@@ -77,6 +79,20 @@ export const Container = styled.div<InputProps>`
                 : css`
                       color: ${colors.gray20};
                   `}
+    }
+
+    textarea::-webkit-scrollbar {
+        width: 7px;
+        border-radius: 50px;
+    }
+
+    textarea::-webkit-scrollbar-thumb {
+        background-color: ${colors.brand10};
+        border-radius: 50px;
+    }
+
+    textarea::-webkit-scrollbar-thumb:hover {
+        background-color: ${colors.brandTransparent2};
     }
 `;
 
