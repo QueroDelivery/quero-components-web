@@ -20,7 +20,12 @@ export interface InputProps
     onChange?: () => void;
 }
 
-const Checkbox: React.FC<InputProps> = ({ label, labelStyle, sizeBox, ...rest }) => {
+const Checkbox: React.FC<InputProps> = ({
+    label,
+    labelStyle,
+    sizeBox,
+    ...rest
+}) => {
     return (
         <Container
             onClick={() =>
@@ -28,14 +33,13 @@ const Checkbox: React.FC<InputProps> = ({ label, labelStyle, sizeBox, ...rest })
             }
             disabled={rest.disabled}
             sizeBox={sizeBox}
+            checked={rest.checked}
         >
             <input type="checkbox" {...rest} />
             <div>
-                {rest.checked && (
-                    <span>
-                        <FontAwesomeIcon icon={faCheck} />
-                    </span>
-                )}
+                <span>
+                    <FontAwesomeIcon icon={faCheck} />
+                </span>
                 <label style={labelStyle}>{label}</label>
             </div>
         </Container>

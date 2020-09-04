@@ -12,6 +12,7 @@ interface CheckboxProps {
         | 'big'
         | 'huge'
         | 'massive';
+    checked?: boolean;
 }
 
 const Sizes = {
@@ -71,37 +72,14 @@ const sizeChecked = (size: string | number) => {
     }
 };
 
-const topChecked = (size: string | number) => {
+const marginLeft = (size: string | number) => {
     switch (size) {
         case Sizes.mini:
             return '2px';
         case Sizes.tiny:
             return '2px';
         case Sizes.small:
-            return '2px';
-        case Sizes.medium:
-            return '2px';
-        case Sizes.large:
-            return '3px';
-        case Sizes.big:
-            return '3px';
-        case Sizes.huge:
-            return '2px';
-        case Sizes.massive:
-            return '3px';
-        default:
-            return size;
-    }
-};
-
-const leftChecked = (size: string | number) => {
-    switch (size) {
-        case Sizes.mini:
-            return '2px';
-        case Sizes.tiny:
-            return '2px';
-        case Sizes.small:
-            return '2px';
+            return '2.5px';
         case Sizes.medium:
             return '3px';
         case Sizes.large:
@@ -109,9 +87,9 @@ const leftChecked = (size: string | number) => {
         case Sizes.big:
             return '3px';
         case Sizes.huge:
-            return '3px';
-        case Sizes.massive:
             return '4px';
+        case Sizes.massive:
+            return '5px';
         default:
             return size;
     }
@@ -140,24 +118,24 @@ const labelSize = (size: string | number) => {
     }
 };
 
-const paddingLeft = (size: string | number) => {
+const marginRight = (size: string | number) => {
     switch (size) {
         case Sizes.mini:
-            return '15px';
+            return '5px';
         case Sizes.tiny:
-            return '18px';
+            return '6px';
         case Sizes.small:
-            return '20px';
+            return '7px';
         case Sizes.medium:
-            return '25px';
+            return '8px';
         case Sizes.large:
-            return '28px';
+            return '9px';
         case Sizes.big:
-            return '32px';
+            return '10px';
         case Sizes.huge:
-            return '35px';
+            return '11px';
         case Sizes.massive:
-            return '40px';
+            return '12px';
         default:
             return size;
     }
@@ -183,13 +161,6 @@ export const Container = styled.div<CheckboxProps>`
 
     > input + div {
         position: relative;
-        padding-left: ${props => {
-            if (props.sizeBox) {
-                return paddingLeft(props.sizeBox);
-            }
-
-            return '25px';
-        }};
         cursor: ${props => (props.disabled ? 'default' : 'pointer')};
         opacity: ${props => (props.disabled ? 0.5 : 1)};
         display: flex;
@@ -259,22 +230,20 @@ export const Container = styled.div<CheckboxProps>`
     }
 
     span {
-        display: absolute;
-        top: ${props => {
+        margin-left: ${props => {
             if (props.sizeBox) {
-                return topChecked(props.sizeBox);
+                return marginLeft(props.sizeBox);
             }
 
-            return '2px';
+            return '-22px';
         }};
-        left: ${props => {
+        margin-right: ${props => {
             if (props.sizeBox) {
-                return leftChecked(props.sizeBox);
+                return marginRight(props.sizeBox);
             }
 
-            return '3px';
+            return '-22px';
         }};
-        position: absolute;
         font-size: ${props => {
             if (props.sizeBox) {
                 return sizeChecked(props.sizeBox);
@@ -282,7 +251,7 @@ export const Container = styled.div<CheckboxProps>`
 
             return '13px';
         }};
-        color: ${colors.white};
+        color: ${props => (props.checked ? colors.white : colors.default20)};
         z-index: 1;
     }
 `;
