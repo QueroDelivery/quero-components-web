@@ -1,6 +1,6 @@
-import styled, { css } from "styled-components";
-import { colors } from "../../styles/colors";
-import { IconDefinition } from "@fortawesome/pro-solid-svg-icons";
+import styled, { css } from 'styled-components';
+import { colors } from '../../styles/colors';
+import { IconDefinition } from '@fortawesome/pro-solid-svg-icons';
 
 interface ButtonProps {
     secundary?: boolean;
@@ -11,6 +11,7 @@ interface ButtonProps {
     icon?: IconDefinition;
     noBorder?: boolean;
     colorText?: string;
+    tertiary?: boolean;
 }
 
 interface TextFirstProps {
@@ -18,6 +19,7 @@ interface TextFirstProps {
     notStrong?: boolean;
     strong?: boolean;
     colorText?: string;
+    tertiary?: boolean;
 }
 
 interface TextEndProps {
@@ -25,32 +27,46 @@ interface TextEndProps {
     notStrong?: boolean;
     strong?: boolean;
     colorText?: string;
+    tertiary?: boolean;
 }
 
 export const Button = styled.button<ButtonProps>`
-    background-color: ${(props) => {
-        if (props.secundary) {
+    background-color: ${props => {
+        if (props.secundary || props.tertiary) {
             return colors.white;
         }
 
         if (props.noBorder) {
-            return "transparent";
+            return 'transparent';
         }
 
         return colors.brand30;
     }};
-    height: ${(props) => (props.height ? `${props.height}px` : "40px")};
-    width: ${(props) =>
-        props.width ? `${props.width}%` : props.icon ? "" : "100%"};
+    height: ${props => (props.height ? `${props.height}px` : '40px')};
+    width: ${props =>
+        props.width
+            ? `${props.width}%`
+            : props.icon || props.tertiary
+            ? ''
+            : '100%'};
     border-radius: 30px;
     cursor: pointer;
-    border: ${(props) =>
-        props.secundary ? `1px solid ${colors.brand10}` : "none"};
+    border: ${props => {
+        if (props.secundary) {
+            return `1px solid ${colors.brand10}`;
+        }
+
+        if (props.tertiary) {
+            return `1px solid ${colors.gray10}`;
+        }
+
+        return 'none';
+    }};
     outline: none;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: ${(props) => (props.icon ? "0 20px" : "")};
+    padding: ${props => (props.icon || props.tertiary ? '0 20px' : '')};
 
     &:disabled {
         opacity: 0.5;
@@ -59,7 +75,7 @@ export const Button = styled.button<ButtonProps>`
     }
 
     &:hover {
-        background-color: ${(props) => {
+        background-color: ${props => {
             if (props.secundary) {
                 return colors.brandTransparent;
             }
@@ -69,14 +85,18 @@ export const Button = styled.button<ButtonProps>`
             }
 
             if (props.noBorder) {
-                return "transparent";
+                return 'transparent';
+            }
+
+            if (props.tertiary) {
+                return colors.hover;
             }
 
             return colors.brand10;
         }};
 
         span {
-            color: ${(props) => {
+            color: ${props => {
                 if (props.secundary) {
                     return colors.brand10;
                 }
@@ -93,6 +113,10 @@ export const Button = styled.button<ButtonProps>`
                     }
                 }
 
+                if (props.tertiary) {
+                    return colors.gray20;
+                }
+
                 return colors.brand30;
             }};
         }
@@ -100,23 +124,43 @@ export const Button = styled.button<ButtonProps>`
 `;
 
 export const TextFirst = styled.span<TextFirstProps>`
-    color: ${(props) => (props.colorText ? props.colorText : colors.brand10)};
-    font-weight: ${(props) => {
-        if (props.firstStrong || props.strong) {
-            return "bold";
+    color: ${props => {
+        if (props.colorText) {
+            return props.colorText;
         }
 
-        return "normal";
+        if (props.tertiary) {
+            return colors.gray20;
+        }
+
+        return colors.brand10;
+    }};
+    font-weight: ${props => {
+        if (props.firstStrong || props.strong) {
+            return 'bold';
+        }
+
+        return 'normal';
     }};
 `;
 export const TextEnd = styled.span<TextEndProps>`
-    color: ${(props) => (props.colorText ? props.colorText : colors.brand10)};
-    font-weight: ${(props) => {
-        if (props.firstStrong || props.notStrong) {
-            return "normal";
+    color: ${props => {
+        if (props.colorText) {
+            return props.colorText;
         }
 
-        return "bold";
+        if (props.tertiary) {
+            return colors.gray20;
+        }
+
+        return colors.brand10;
+    }};
+    font-weight: ${props => {
+        if (props.firstStrong || props.notStrong) {
+            return 'normal';
+        }
+
+        return 'bold';
     }};
 `;
 

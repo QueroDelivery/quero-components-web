@@ -29,6 +29,17 @@ export const Secundary = () => {
     );
 };
 
+export const Tertiary = () => {
+    return (
+        <div style={{ margin: 50 }}>
+            <ButtonMain
+                textFirst="Testeee"
+                tertiary
+            />
+        </div>
+    );
+};
+
 export const BackPurple = () => {
     return (
         <div style={{ margin: 50 }}>

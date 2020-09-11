@@ -32,6 +32,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     colorIcon?: string;
     noBorder?: boolean;
     colorText?: string;
+    tertiary?: boolean;
     chield?: React.ReactNode;
 }
 
@@ -53,6 +54,7 @@ const ButtonMain: React.FC<ButtonProps> = ({
     colorIcon,
     noBorder,
     colorText,
+    tertiary,
     ...rest
 }) => {
     if (notification) {
@@ -99,6 +101,7 @@ const ButtonMain: React.FC<ButtonProps> = ({
                 icon={icon}
                 noBorder={noBorder}
                 colorText={colorText}
+                tertiary={tertiary}
             >
                 {loading ? (
                     <Loader size="tiny" />
@@ -111,6 +114,7 @@ const ButtonMain: React.FC<ButtonProps> = ({
                             strong={strong}
                             notStrong={notStrong}
                             colorText={colorText}
+                            tertiary={tertiary}
                         >
                             {`${textFirst} `}
                         </TextFirst>
@@ -119,6 +123,7 @@ const ButtonMain: React.FC<ButtonProps> = ({
                             strong={strong}
                             notStrong={notStrong}
                             colorText={colorText}
+                            tertiary={tertiary}
                         >
                             {textEnd}
                         </TextEnd>
