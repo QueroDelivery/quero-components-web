@@ -12,6 +12,15 @@ interface ButtonProps {
     noBorder?: boolean;
     colorText?: string;
     tertiary?: boolean;
+    size?:
+        | 'mini'
+        | 'tiny'
+        | 'small'
+        | 'medium'
+        | 'large'
+        | 'big'
+        | 'huge'
+        | 'massive';
 }
 
 interface TextFirstProps {
@@ -20,6 +29,15 @@ interface TextFirstProps {
     strong?: boolean;
     colorText?: string;
     tertiary?: boolean;
+    size?:
+        | 'mini'
+        | 'tiny'
+        | 'small'
+        | 'medium'
+        | 'large'
+        | 'big'
+        | 'huge'
+        | 'massive';
 }
 
 interface TextEndProps {
@@ -28,7 +46,73 @@ interface TextEndProps {
     strong?: boolean;
     colorText?: string;
     tertiary?: boolean;
+    size?:
+        | 'mini'
+        | 'tiny'
+        | 'small'
+        | 'medium'
+        | 'large'
+        | 'big'
+        | 'huge'
+        | 'massive';
 }
+
+const Sizes = {
+    mini: 'mini',
+    tiny: 'tiny',
+    small: 'small',
+    medium: 'medium',
+    large: 'large',
+    big: 'big',
+    huge: 'huge',
+    massive: 'massive',
+};
+
+const size = (size: string | number) => {
+    switch (size) {
+        case Sizes.mini:
+            return '25px';
+        case Sizes.tiny:
+            return '30px';
+        case Sizes.small:
+            return '35px';
+        case Sizes.medium:
+            return '40px';
+        case Sizes.large:
+            return '45px';
+        case Sizes.big:
+            return '50px';
+        case Sizes.huge:
+            return '55px';
+        case Sizes.massive:
+            return '60px';
+        default:
+            return size;
+    }
+};
+
+const textSize = (size: string | number) => {
+    switch (size) {
+        case Sizes.mini:
+            return '10px';
+        case Sizes.tiny:
+            return '11px';
+        case Sizes.small:
+            return '12px';
+        case Sizes.medium:
+            return '14px';
+        case Sizes.large:
+            return '16px';
+        case Sizes.big:
+            return '18px';
+        case Sizes.huge:
+            return '20px';
+        case Sizes.massive:
+            return '22px';
+        default:
+            return size;
+    }
+};
 
 export const Button = styled.button<ButtonProps>`
     background-color: ${props => {
@@ -42,7 +126,7 @@ export const Button = styled.button<ButtonProps>`
 
         return colors.brand30;
     }};
-    height: ${props => (props.height ? `${props.height}px` : '40px')};
+    height: ${props => (props.size ? size(props.size) : '40px')};
     width: ${props =>
         props.width
             ? `${props.width}%`
@@ -66,7 +150,7 @@ export const Button = styled.button<ButtonProps>`
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: ${props => (props.icon || props.tertiary ? '0 20px' : '')};
+    padding: ${props => (props.icon || props.tertiary ? '0 15px' : '')};
 
     &:disabled {
         opacity: 0.5;
@@ -142,6 +226,7 @@ export const TextFirst = styled.span<TextFirstProps>`
 
         return 'normal';
     }};
+    font-size: ${props => props.size ? textSize(props.size) : '14px'}
 `;
 export const TextEnd = styled.span<TextEndProps>`
     color: ${props => {
@@ -162,6 +247,7 @@ export const TextEnd = styled.span<TextEndProps>`
 
         return 'bold';
     }};
+    font-size: ${props => props.size ? textSize(props.size) : '14px'}
 `;
 
 export const Notification = styled.button`

@@ -40,6 +40,60 @@ export const Tertiary = () => {
     );
 };
 
+export const sizes = () => {
+    return (
+        <div style={{ margin: 50 }}>
+            <ButtonMain
+                textFirst="Testeee"
+                tertiary
+                size='mini'
+            />
+            <br />
+            <ButtonMain
+                textFirst="Testeee"
+                tertiary
+                size='tiny'
+            />
+            <br />
+            <ButtonMain
+                textFirst="Testeee"
+                tertiary
+                size='small'
+            />
+            <br />
+            <ButtonMain
+                textFirst="Testeee"
+                tertiary
+                size='medium'
+            />
+            <br/>
+            <ButtonMain
+                textFirst="Testeee"
+                tertiary
+                size='large'
+            />
+            <br/>
+            <ButtonMain
+                textFirst="Testeee"
+                tertiary
+                size='big'
+            />
+            <br/>
+            <ButtonMain
+                textFirst="Testeee"
+                tertiary
+                size='huge'
+            />
+            <br/>
+            <ButtonMain
+                textFirst="Testeee"
+                tertiary
+                size='massive'
+            />
+        </div>
+    );
+};
+
 export const BackPurple = () => {
     return (
         <div style={{ margin: 50 }}>

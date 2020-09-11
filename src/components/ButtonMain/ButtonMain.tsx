@@ -33,6 +33,15 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     noBorder?: boolean;
     colorText?: string;
     tertiary?: boolean;
+    size?:
+        | 'mini'
+        | 'tiny'
+        | 'small'
+        | 'medium'
+        | 'large'
+        | 'big'
+        | 'huge'
+        | 'massive';
     chield?: React.ReactNode;
 }
 
@@ -55,6 +64,7 @@ const ButtonMain: React.FC<ButtonProps> = ({
     noBorder,
     colorText,
     tertiary,
+    size,
     ...rest
 }) => {
     if (notification) {
@@ -102,6 +112,7 @@ const ButtonMain: React.FC<ButtonProps> = ({
                 noBorder={noBorder}
                 colorText={colorText}
                 tertiary={tertiary}
+                size={size}
             >
                 {loading ? (
                     <Loader size="tiny" />
@@ -115,6 +126,7 @@ const ButtonMain: React.FC<ButtonProps> = ({
                             notStrong={notStrong}
                             colorText={colorText}
                             tertiary={tertiary}
+                            size={size}
                         >
                             {`${textFirst} `}
                         </TextFirst>
@@ -124,6 +136,7 @@ const ButtonMain: React.FC<ButtonProps> = ({
                             notStrong={notStrong}
                             colorText={colorText}
                             tertiary={tertiary}
+                            size={size}
                         >
                             {textEnd}
                         </TextEnd>
