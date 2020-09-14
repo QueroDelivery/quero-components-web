@@ -6,6 +6,7 @@ import Modal from '../src/components/Modal/Modal';
 import TextArea from '../src/components/TextArea/TextArea';
 import Checkbox from '../src/components/Checkbox/Checkbox';
 import Radio from '../src/components/Radio/Radio';
+import Dropdown from '../src/components/Dropdown/Dropdown';
 
 export {
     ButtonMain,
@@ -16,4 +17,5 @@ export {
     TextArea,
     Checkbox,
     Radio,
+    Dropdown
 };
