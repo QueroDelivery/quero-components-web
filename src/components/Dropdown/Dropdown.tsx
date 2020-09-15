@@ -57,8 +57,6 @@ const Dropdown: React.FC<DropdownProps> = ({
             return;
         }
 
-        console.log(optionsState?.length);
-
         const moves = {
             Up: 38,
             Down: 40,
@@ -71,7 +69,6 @@ const Dropdown: React.FC<DropdownProps> = ({
                 optionsState &&
                 document.getElementById(optionsState[selectedIndex - 1].text);
             if (objDiv) {
-                console.log(objDiv);
                 objDiv.scrollIntoView(false);
             }
             return setSelectedIndex(selectedIndex - 1);
@@ -87,7 +84,6 @@ const Dropdown: React.FC<DropdownProps> = ({
                 optionsState &&
                 document.getElementById(optionsState[selectedIndex + 1].text);
             if (objDiv) {
-                console.log(objDiv);
                 objDiv.scrollIntoView(false);
             }
             return setSelectedIndex(selectedIndex + 1);
@@ -109,7 +105,12 @@ const Dropdown: React.FC<DropdownProps> = ({
             onBlur={() => setActive(false)}
             width={width}
         >
-            <div className={`options-container ${active ? 'active' : ''}`}>
+            <div
+                style={{
+                    width: document.getElementById('selection')?.clientWidth,
+                }}
+                className={`options-container ${active ? 'active' : ''}`}
+            >
                 {optionsState && optionsState.length === 0 ? (
                     <div className="option no-value">
                         <input type="radio" />
@@ -142,6 +143,7 @@ const Dropdown: React.FC<DropdownProps> = ({
                     setActive(!active);
                     setOptionsState(options);
                 }}
+                id="selection"
             >
                 {search ? (
                     <>
@@ -151,7 +153,6 @@ const Dropdown: React.FC<DropdownProps> = ({
                                 setActive(true);
                                 onChange(event.target.value);
                                 if (event.target.value.trim().length > 0) {
-                                    console.log('urr');
                                     setOptionsState(
                                         optionsState &&
                                             options.filter(option =>
@@ -163,7 +164,6 @@ const Dropdown: React.FC<DropdownProps> = ({
                                 } else {
                                     setOptionsState(options);
                                 }
-                                console.log(event.target.value);
                             }}
                             value={value}
                             placeholder={placeholder}
@@ -173,7 +173,7 @@ const Dropdown: React.FC<DropdownProps> = ({
                                 <Loader size="mini" />
                             ) : (
                                 <FontAwesomeIcon
-                                    icon={active ? faAngleDown : faAngleUp}
+                                    icon={active ? faAngleUp : faAngleDown}
                                     size="lg"
                                 />
                             )}
@@ -191,7 +191,7 @@ const Dropdown: React.FC<DropdownProps> = ({
                                 <Loader />
                             ) : (
                                 <FontAwesomeIcon
-                                    icon={active ? faAngleDown : faAngleUp}
+                                    icon={active ? faAngleUp : faAngleDown}
                                     size="lg"
                                 />
                             )}

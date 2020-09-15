@@ -9,7 +9,8 @@ export default {
 export const Default = () => {
     const [text, setText] = useState('');
     return (
-        <div style={{ margin: 50 }}>
+        <>
+        <div>
             <Dropdown
                 value={text}
                 onChange={value => setText(value)}
@@ -33,6 +34,8 @@ export const Default = () => {
                 ]}
             />
         </div>
+        <div>AAAAA</div>
+        </>
     );
 };
 
