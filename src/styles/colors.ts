@@ -17,6 +17,8 @@ export const colors = {
     white: '#FFFFFF',
     black: '#000000',
 
+    card: '#eeeeee',
+
     transparent: 'rgba(0, 0, 0, 0)',
     hover: 'rgba(211, 211, 211, 0.4)',
 

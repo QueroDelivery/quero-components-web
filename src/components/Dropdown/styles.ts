@@ -18,6 +18,7 @@ export const SelectBox = styled.div<SelectProps>`
     > .options-container {
         background-color: ${colors.white};
         border: 1px solid ${colors.default20};
+        border-top: 0;
         color: ${props => (props.brand ? colors.brand10 : colors.gray20)};
         transition: all 0.3s;
         border-bottom-left-radius: 20px;
@@ -95,7 +96,7 @@ export const SelectBox = styled.div<SelectProps>`
                 ? css`
                       border-top-left-radius: 20px;
                       border-top-right-radius: 20px;
-                      border-bottom: 0px;
+                      /* border-bottom: 0px; */
                   `
                 : css`
                       border-radius: 20px;
