@@ -13,13 +13,15 @@ interface SelectProps {
 export const SelectBox = styled.div<SelectProps>`
     display: flex;
     flex-direction: column;
+    position: relative;
     width: ${props => (props.width ? `${props.width}%` : '100%')};
 
     > .options-container {
         position: absolute;
         background-color: ${colors.white};
         border: 1px solid ${colors.default20};
-        margin: 45px 0;
+        margin: 44px 0;
+        width: ${props => (props.width ? `${props.width}%` : '100%')};
         border-top: 0;
         color: ${props => (props.brand ? colors.brand10 : colors.gray20)};
         transition: all 0.3s;

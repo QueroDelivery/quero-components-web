@@ -105,12 +105,7 @@ const Dropdown: React.FC<DropdownProps> = ({
             onBlur={() => setActive(false)}
             width={width}
         >
-            <div
-                style={{
-                    width: document.getElementById('selection')?.clientWidth,
-                }}
-                className={`options-container ${active ? 'active' : ''}`}
-            >
+            <div className={`options-container ${active ? 'active' : ''}`}>
                 {optionsState && optionsState.length === 0 ? (
                     <div className="option no-value">
                         <input type="radio" />
