@@ -18,6 +18,20 @@ export const Default = () => {
                 subtitle="(1 vairro ativo para entrega)"
                 body={<div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div></div>}
             />
+            <Accordion
+                open={open}
+                onChange={() => setOpen(!open)}
+                title="Lagarto - SE"
+                subtitle="(1 vairro ativo para entrega)"
+                body={<div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div></div>}
+            />
+            <Accordion
+                open={open}
+                onChange={() => setOpen(!open)}
+                title="Lagarto - SE"
+                subtitle="(1 vairro ativo para entrega)"
+                body={<div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div></div>}
+            />
         </div>
     );
 };

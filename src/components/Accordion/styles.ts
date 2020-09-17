@@ -68,10 +68,8 @@ export const Body = styled.div<BodyProps>`
     padding: 20px;
     border: 1px solid ${colors.card};
     border-top: 0;
-    transition: all 0.3s;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
-    opacity: ${props => (props.open ? 1 : 0)};
-    max-height: ${props => (props.open ? '100%' : '0')};
+    display: ${props => (props.open ? 'block' : 'none')};
     box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.16);
 `;
