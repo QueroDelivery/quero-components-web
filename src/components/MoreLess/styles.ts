@@ -102,6 +102,7 @@ const fontMoreLess = (size: string) => {
 
 export const Container = styled.div<MoreLessProps>`
     display: flex;
+    flex-direction: row;
     align-items: center;
     opacity: ${props => (props.disabled ? '0.5' : '1')};
 

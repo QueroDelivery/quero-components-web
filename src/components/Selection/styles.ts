@@ -172,11 +172,12 @@ const fontActiveInactive = (size: string) => {
 };
 
 export const Switch = styled.label<SelectionProps>`
-    display: block;
+    display: flex;
+    flex-direction: row;
     position: relative;
-    padding-left: ${props =>
-        props.size ? `${widthSwitch(props.size)}px` : `${toggleWidth}px`};
-    margin-bottom: 12px;
+    /* padding-left: ${props =>
+        props.size ? `${widthSwitch(props.size)}px` : `${toggleWidth}px`}; */
+    /* margin-bottom: 12px; */
     cursor: ${props => (props.disabled ? 'normal' : 'pointer')};
     font-size: 22px;
     user-select: none;
@@ -187,6 +188,7 @@ export const Switch = styled.label<SelectionProps>`
         cursor: pointer;
         height: 0;
         width: 0;
+        display: none;
     }
 
     input:checked ~ .control {
@@ -209,9 +211,6 @@ export const Switch = styled.label<SelectionProps>`
     }
 
     .control {
-        position: absolute;
-        top: 0;
-        left: 0;
         height: ${props =>
             props.size ? `${heightSwitch(props.size)}px` : `${toggleHeight}px`};
         width: ${props =>
@@ -250,6 +249,7 @@ export const Switch = styled.label<SelectionProps>`
 
 export const Toggle = styled.div<SelectionProps>`
     display: flex;
+    flex-direction: row;
 
     .btn {
         display: flex;
@@ -305,6 +305,7 @@ export const Toggle = styled.div<SelectionProps>`
 
 export const ActiveInactive = styled.div<SelectionProps>`
     display: flex;
+    flex-direction: row;
 
     .btn {
         display: flex;
