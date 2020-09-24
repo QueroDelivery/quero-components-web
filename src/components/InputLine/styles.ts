@@ -38,6 +38,10 @@ export const Container = styled.div<InputProps>`
         }
     }
 
+    input:disabled {
+        background-color: transparent;
+    }
+
     label {
         position: absolute;
         bottom: 0px;

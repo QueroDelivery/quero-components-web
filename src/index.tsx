@@ -8,6 +8,8 @@ import Checkbox from '../src/components/Checkbox/Checkbox';
 import Radio from '../src/components/Radio/Radio';
 import Dropdown from '../src/components/Dropdown/Dropdown';
 import Accordion from '../src/components/Accordion/Accordion';
+import Selection from '../src/components/Selection/Selection';
+import MoreLess from '../src/components/MoreLess/MoreLess';
 
 export {
     ButtonMain,
@@ -20,4 +22,6 @@ export {
     Radio,
     Dropdown,
     Accordion,
+    Selection,
+    MoreLess,
 };
