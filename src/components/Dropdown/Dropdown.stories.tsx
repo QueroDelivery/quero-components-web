@@ -78,8 +78,6 @@ export const Default = () => {
 export const Brand = () => {
     const [text, setText] = useState('');
 
-    console.log(text);
-
     return (
         <div style={{ margin: 50 }}>
             <Dropdown

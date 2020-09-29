@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import InputLine from './InputLine';
 
 export default {
@@ -12,14 +12,17 @@ export const Default = () => {
     const [value3, setValue3] = useState('');
     const [error, setError] = useState('');
 
+    useEffect(() => {
+        setValue('12312312312312');
+    }, []);
+
     return (
         <div style={{ margin: 50 }}>
             <InputLine
                 label="Nome"
                 placeholder="Insira seu nome"
-                value='quero delivery exemplo'
+                value={value}
                 onChange={event => setValue(event.target.value)}
-                width='50px'
             />
 
             <InputLine

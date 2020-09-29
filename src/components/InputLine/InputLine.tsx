@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import '../../styles/default.css';
 
-import React, { useState, InputHTMLAttributes } from 'react';
+import React, { useState, InputHTMLAttributes, useEffect } from 'react';
 
 import { Container, LabelError } from './styles';
 
@@ -25,10 +25,16 @@ const InputLine: React.FC<InputProps> = ({
     textColor,
     ...rest
 }) => {
-    const [isFieldActive, setIsFieldActive] = useState(
-        rest.value ? true : false,
-    );
+    const [isFieldActive, setIsFieldActive] = useState(false);
     const [requiredText, setRequiredText] = useState(false);
+
+    useEffect(() => {
+        if (rest.value) {
+            if (!isFieldActive) {
+                setIsFieldActive(true);
+            }
+        }
+    }, [rest.value]);
 
     const handleFocus = () => {
         if (!isFieldActive) {

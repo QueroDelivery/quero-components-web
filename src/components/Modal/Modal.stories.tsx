@@ -10,8 +10,6 @@ export default {
 export const Default = () => {
     const [open, setOpen] = useState(false);
 
-    console.log(open);
-
     return (
         <div style={{ margin: 50 }}>
             <ButtonMain textFirst="abrir" onClick={() => setOpen(!open)} />
