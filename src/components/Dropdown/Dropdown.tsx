@@ -38,6 +38,8 @@ const Dropdown: React.FC<DropdownProps> = ({
     const [optionsState, setOptionsState] = useState<OptionsProps[]>();
     const [selectedIndex, setSelectedIndex] = useState(0);
 
+    const [item, setItem] = useState<OptionsProps>();
+
     useEffect(() => {
         setOptionsState(options);
         setSelectedIndex(options.findIndex(option => option.value === value));
@@ -48,6 +50,9 @@ const Dropdown: React.FC<DropdownProps> = ({
             setSelectedIndex(
                 optionsState.findIndex(option => option.value === value),
             );
+        }
+        if (value) {
+            setItem(options.filter(opt => opt.value === value)[0]);
         }
     }, [value]);
 
@@ -122,6 +127,7 @@ const Dropdown: React.FC<DropdownProps> = ({
                             id={option.text}
                             onClick={() => {
                                 onChange(option.value);
+                                setItem(option);
                                 setActive(false);
                             }}
                         >
@@ -160,7 +166,7 @@ const Dropdown: React.FC<DropdownProps> = ({
                                     setOptionsState(options);
                                 }
                             }}
-                            value={value}
+                            value={item?.text || ''}
                             placeholder={placeholder}
                         />
                         <div className="icon">
@@ -177,7 +183,13 @@ const Dropdown: React.FC<DropdownProps> = ({
                 ) : (
                     <>
                         <input
-                            value={value ? value : placeholder}
+                            value={
+                                value
+                                    ? item?.text
+                                    : placeholder
+                                    ? placeholder
+                                    : ''
+                            }
                             onKeyDown={event => handleKeyDown(event)}
                             readOnly
                         />
