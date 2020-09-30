@@ -50,7 +50,7 @@ export const Container = styled.div<AccordionProps>`
         display: flex;
         align-items: center;
         flex: 1;
-        justify-content: space-between;
+        justify-content: flex-end;
 
         .value {
             margin-right: 20px;
