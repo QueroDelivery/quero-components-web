@@ -46,4 +46,6 @@ export const colors = {
 
     brandTransparent: 'rgba(155, 77, 238, 0.2)',
     brandTransparent2: 'rgba(155, 77, 238, 0.9)',
+
+    error: '#e0457b25',
 };

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import { SelectBox } from './styles';
+import { SelectBox, LabelError } from './styles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown, faAngleUp } from '@fortawesome/pro-solid-svg-icons';
 import Loader from '../Loader/Loader';
@@ -21,6 +21,7 @@ interface DropdownProps {
     search?: boolean;
     loading?: boolean;
     width?: number;
+    errorMessage?: string;
 }
 
 const Dropdown: React.FC<DropdownProps> = ({
@@ -33,6 +34,7 @@ const Dropdown: React.FC<DropdownProps> = ({
     search,
     loading,
     width,
+    errorMessage,
 }) => {
     const [active, setActive] = useState(false);
     const [optionsState, setOptionsState] = useState<OptionsProps[]>();
@@ -101,112 +103,116 @@ const Dropdown: React.FC<DropdownProps> = ({
     }
 
     return (
-        <SelectBox
-            active={active}
-            brand={brand}
-            value={value}
-            textAlign={textAlign}
-            search={search}
-            onBlur={() => setActive(false)}
-            width={width}
-        >
-            <div className={`options-container ${active ? 'active' : ''}`}>
-                {optionsState && optionsState.length === 0 ? (
-                    <div className="option no-value">
-                        <input type="radio" />
-                        <label>Nenhum resultado encontrado</label>
-                    </div>
-                ) : (
-                    optionsState &&
-                    optionsState.map((option, index) => (
-                        <div
-                            key={option.id}
-                            className={`option ${
-                                index === selectedIndex && 'active-option'
-                            } `}
-                            id={option.text}
-                            onClick={() => {
-                                onChange(option.value);
-                                setItem(option);
-                                setActive(false);
-                            }}
-                        >
-                            <input type="radio" />
-                            <label>{option.text}</label>
-                        </div>
-                    ))
-                )}
-            </div>
-
-            <div
-                className="selected"
-                onClick={() => {
-                    setActive(!active);
-                    setOptionsState(options);
-                }}
-                id="selection"
+        <>
+            <SelectBox
+                active={active}
+                brand={brand}
+                value={value}
+                textAlign={textAlign}
+                search={search}
+                onBlur={() => setActive(false)}
+                width={width}
+                error={errorMessage}
             >
-                {search ? (
-                    <>
-                        <input
-                            onKeyDown={event => handleKeyDown(event)}
-                            onChange={event => {
-                                setActive(true);
-                                onChange(event.target.value);
-                                if (event.target.value.trim().length > 0) {
-                                    setOptionsState(
-                                        optionsState &&
-                                            options.filter(option =>
-                                                option.text.includes(
-                                                    event.target.value,
+                <div className={`options-container ${active ? 'active' : ''}`}>
+                    {optionsState && optionsState.length === 0 ? (
+                        <div className="option no-value">
+                            <input type="radio" />
+                            <label>Nenhum resultado encontrado</label>
+                        </div>
+                    ) : (
+                        optionsState &&
+                        optionsState.map((option, index) => (
+                            <div
+                                key={option.id}
+                                className={`option ${
+                                    index === selectedIndex && 'active-option'
+                                } `}
+                                id={option.text}
+                                onClick={() => {
+                                    onChange(option.value);
+                                    setItem(option);
+                                    setActive(false);
+                                }}
+                            >
+                                <input type="radio" />
+                                <label>{option.text}</label>
+                            </div>
+                        ))
+                    )}
+                </div>
+
+                <div
+                    className="selected"
+                    onClick={() => {
+                        setActive(!active);
+                        setOptionsState(options);
+                    }}
+                    id="selection"
+                >
+                    {search ? (
+                        <>
+                            <input
+                                onKeyDown={event => handleKeyDown(event)}
+                                onChange={event => {
+                                    setActive(true);
+                                    onChange(event.target.value);
+                                    if (event.target.value.trim().length > 0) {
+                                        setOptionsState(
+                                            optionsState &&
+                                                options.filter(option =>
+                                                    option.text.includes(
+                                                        event.target.value,
+                                                    ),
                                                 ),
-                                            ),
-                                    );
-                                } else {
-                                    setOptionsState(options);
+                                        );
+                                    } else {
+                                        setOptionsState(options);
+                                    }
+                                }}
+                                value={item?.text || ''}
+                                placeholder={placeholder}
+                            />
+                            <div className="icon">
+                                {loading ? (
+                                    <Loader size="mini" />
+                                ) : (
+                                    <FontAwesomeIcon
+                                        icon={active ? faAngleUp : faAngleDown}
+                                        size="lg"
+                                    />
+                                )}
+                            </div>
+                        </>
+                    ) : (
+                        <>
+                            <input
+                                value={
+                                    value
+                                        ? item?.text
+                                        : placeholder
+                                        ? placeholder
+                                        : ''
                                 }
-                            }}
-                            value={item?.text || ''}
-                            placeholder={placeholder}
-                        />
-                        <div className="icon">
-                            {loading ? (
-                                <Loader size="mini" />
-                            ) : (
-                                <FontAwesomeIcon
-                                    icon={active ? faAngleUp : faAngleDown}
-                                    size="lg"
-                                />
-                            )}
-                        </div>
-                    </>
-                ) : (
-                    <>
-                        <input
-                            value={
-                                value
-                                    ? item?.text
-                                    : placeholder
-                                    ? placeholder
-                                    : ''
-                            }
-                            onKeyDown={event => handleKeyDown(event)}
-                            readOnly
-                        />
-                        <div className="icon">
-                            {loading ? (
-                                <Loader />
-                            ) : (
-                                <FontAwesomeIcon
-                                    icon={active ? faAngleUp : faAngleDown}
-                                    size="lg"
-                                />
-                            )}
-                        </div>
-                    </>
-                )}
-            </div>
-        </SelectBox>
+                                onKeyDown={event => handleKeyDown(event)}
+                                readOnly
+                            />
+                            <div className="icon">
+                                {loading ? (
+                                    <Loader />
+                                ) : (
+                                    <FontAwesomeIcon
+                                        icon={active ? faAngleUp : faAngleDown}
+                                        size="lg"
+                                    />
+                                )}
+                            </div>
+                        </>
+                    )}
+                </div>
+            </SelectBox>
+            {errorMessage && <LabelError>{errorMessage}</LabelError>}
+        </>
     );
 };
 

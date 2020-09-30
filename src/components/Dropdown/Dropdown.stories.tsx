@@ -8,14 +8,20 @@ export default {
 
 export const Default = () => {
     const [text, setText] = useState('');
+    const [err, setErr] = useState('');
+
     return (
         <>
             <div>
                 <Dropdown
                     value={text}
-                    onChange={value => setText(value)}
+                    onChange={value => {
+                        if (value !== 345) setErr('obrigátorio');
+                        setText(value);
+                    }}
                     placeholder="selecione um numero"
                     search
+                    errorMessage={err}
                     options={[
                         { id: 1, text: 'aaa', value: 123 },
                         { id: 2, text: 'bbb', value: 234 },
@@ -39,9 +45,7 @@ export const Default = () => {
             <div>AAAAA</div>
             <div>AAAAA</div>
             <div>AAAAA</div>
-            <div>AAAAA</div>
-            v
-            <div>AAAAA</div>
+            <div>AAAAA</div>v<div>AAAAA</div>
             <div>AAAAA</div>
             <div>AAAAA</div>
             <div>AAAAA</div>
@@ -55,37 +59,48 @@ export const Default = () => {
             <div>AAAAA</div>
             <div>AAAAA</div>
             <div>AAAAA</div>
-            <var><div>AAAAA</div>
-            <div>AAAAA</div>
-            <div>AAAAA</div>
-            <div>AAAAA</div>
-            <div>AAAAA</div>
-            <div>AAAAA</div>
-            <div>AAAAA</div>
-            <div>AAAAA</div>
-            <div>AAAAA</div>
-            <var><div>AAAAA</div>
-            <div>AAAAA</div>
-            <div>AAAAA</div>
-            <var><div>AAAAA</div>
-            <div>AAAAA</div>
-            <div>AAAAA</div>
-            <div>AAAAA</div></var></var></var>
+            <var>
+                <div>AAAAA</div>
+                <div>AAAAA</div>
+                <div>AAAAA</div>
+                <div>AAAAA</div>
+                <div>AAAAA</div>
+                <div>AAAAA</div>
+                <div>AAAAA</div>
+                <div>AAAAA</div>
+                <div>AAAAA</div>
+                <var>
+                    <div>AAAAA</div>
+                    <div>AAAAA</div>
+                    <div>AAAAA</div>
+                    <var>
+                        <div>AAAAA</div>
+                        <div>AAAAA</div>
+                        <div>AAAAA</div>
+                        <div>AAAAA</div>
+                    </var>
+                </var>
+            </var>
         </>
     );
 };
 
 export const Brand = () => {
     const [text, setText] = useState('');
+    const [err, setErr] = useState('');
 
     return (
         <div style={{ margin: 50 }}>
             <Dropdown
                 brand
                 value={text}
-                onChange={value => setText(value)}
+                onChange={value => {
+                    if (value !== 345) setErr('obrigátorio');
+                    setText(value);
+                }}
                 placeholder="selecione um numero"
                 textAlign="center"
+                errorMessage={err}
                 options={[
                     { id: 1, text: 'aaa', value: 123 },
                     { id: 2, text: 'bbb', value: 234 },

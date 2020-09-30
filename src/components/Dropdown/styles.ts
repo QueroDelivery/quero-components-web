@@ -8,6 +8,7 @@ interface SelectProps {
     search?: boolean;
     textAlign?: 'center';
     width?: number;
+    error?: string;
 }
 
 export const SelectBox = styled.div<SelectProps>`
@@ -19,11 +20,21 @@ export const SelectBox = styled.div<SelectProps>`
     > .options-container {
         position: absolute;
         background-color: ${colors.white};
-        border: 1px solid ${colors.default20};
+        border: 1px solid
+            ${props => (props.error ? colors.brand20 : colors.default20)};
         margin: 44px 0;
         width: ${props => (props.width ? `${props.width}%` : '100%')};
         border-top: 0;
-        color: ${props => (props.brand ? colors.brand10 : colors.gray20)};
+        color: ${props => {
+            if (props.error) {
+                return colors.brand20;
+            }
+            if (props.brand) {
+                return colors.brand10;
+            }
+
+            return colors.gray20;
+        }};
         transition: all 0.3s;
         border-bottom-left-radius: 20px;
         border-bottom-right-radius: 20px;
@@ -58,6 +69,10 @@ export const SelectBox = styled.div<SelectProps>`
 
     .selected {
         color: ${props => {
+            if (props.error) {
+                return colors.brand20;
+            }
+
             if (props.brand && props.active && props.value) {
                 return colors.brandDark;
             }
@@ -79,10 +94,23 @@ export const SelectBox = styled.div<SelectProps>`
         font-weight: ${props => (props.brand ? 'bold' : 'normal')};
         padding: 0;
         cursor: pointer;
-        background-color: ${props =>
-            props.brand ? colors.brandLight : colors.white};
+        background-color: ${props => {
+            if (props.error) {
+                return colors.error;
+            }
+
+            if (props.brand) {
+                return colors.brandLight;
+            }
+
+            return colors.white;
+        }};
         position: relative;
         border: ${props => {
+            if (props.error) {
+                return `1px solid ${colors.brand20}`;
+            }
+
             if (props.brand) {
                 return `1px solid ${colors.brandLight}`;
             }
@@ -115,6 +143,10 @@ export const SelectBox = styled.div<SelectProps>`
             text-align: ${props =>
                 props.textAlign === 'center' ? 'center' : 'space-between'};
             color: ${props => {
+                if (props.error) {
+                    return colors.brand20;
+                }
+
                 if (props.brand && props.active && props.value) {
                     return colors.brandDark;
                 }
@@ -134,6 +166,10 @@ export const SelectBox = styled.div<SelectProps>`
                 return colors.default20;
             }};
             background-color: ${props => {
+                if (props.error) {
+                    return colors.error;
+                }
+
                 if (props.brand) {
                     return colors.brandLight;
                 }
@@ -158,6 +194,10 @@ export const SelectBox = styled.div<SelectProps>`
 
         input::placeholder {
             color: ${props => {
+                if (props.error) {
+                    return colors.brand20;
+                }
+
                 if (props.brand) {
                     return colors.brandLight;
                 }
@@ -200,4 +240,10 @@ export const SelectBox = styled.div<SelectProps>`
     .active-option {
         background-color: ${colors.hover};
     }
+`;
+
+export const LabelError = styled.span`
+    margin-top: 2px;
+    font-size: 10px;
+    color: ${colors.brand20};
 `;
