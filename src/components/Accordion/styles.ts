@@ -31,6 +31,7 @@ export const Container = styled.div<AccordionProps>`
     .title-subtitle {
         display: flex;
         flex-direction: column;
+        flex: 1;
 
         .title {
             font-size: ${props => (props.subtitle ? '14px' : '16px')};
@@ -46,6 +47,11 @@ export const Container = styled.div<AccordionProps>`
     }
 
     .value-icon {
+        display: flex;
+        align-items: center;
+        flex: 1;
+        justify-content: space-between;
+
         .value {
             margin-right: 20px;
             color: ${props =>
