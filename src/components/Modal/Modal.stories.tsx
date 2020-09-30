@@ -10,13 +10,18 @@ export default {
 export const Default = () => {
     const [open, setOpen] = useState(false);
 
+    console.log(open);
+
     return (
         <div style={{ margin: 50 }}>
             <ButtonMain textFirst="abrir" onClick={() => setOpen(!open)} />
             <Modal
                 open={open}
                 title="pedidos detalhes"
-                onClose={() => setOpen(!open)}
+                onClose={() => {
+                    console.log('aaa');
+                    setOpen(!open);
+                }}
                 closeOnDimerClick
                 // actions={<ButtonMain textFirst="aceitar" height={40} width={40} />}
                 body={

@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import '../../styles/default.css';
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { Background, Modal, Header, Body, Actions, Icon } from './styles';
@@ -27,6 +27,22 @@ const ModalComponent: React.FC<ModalProps> = ({
     onClose,
     closeOnDimerClick,
 }) => {
+    useEffect(() => {
+        if (open) {
+            window.addEventListener('keydown', event => escModal(event));
+        } else {
+            window.removeEventListener('keydown', event => escModal(event));
+        }
+
+        return window.removeEventListener('keydown', event => escModal(event));
+    }, [open]);
+
+    function escModal(event: KeyboardEvent) {
+        if (open && event.keyCode === 27 && closeOnDimerClick) {
+            onClose();
+        }
+    }
+
     return (
         <Background
             open={open}
