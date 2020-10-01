@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import InputLine from './InputLine';
+import { useForm } from 'react-hook-form';
 
 export default {
     title: 'InputLine',
@@ -7,54 +8,75 @@ export default {
 };
 
 export const Default = () => {
-    const [value, setValue] = useState('');
-    const [value2, setValue2] = useState('');
-    const [value3, setValue3] = useState('');
-    const [error, setError] = useState('');
+    // const [value, setValue] = useState('');
+    // const [value2, setValue2] = useState('');
+    // const [value3, setValue3] = useState('');
+    // const [error, setError] = useState('');
 
-    useEffect(() => {
-        setValue('12312312312312');
-    }, []);
+    const {
+        register,
+        handleSubmit,
+        errors,
+        clearError,
+        getValues,
+        setValue,
+    } = useForm();
+
+    // useEffect(() => {
+    //     setValue('12312312312312');
+    // }, []);
+
+    const onSubmitForm = (data: any) => {
+        console.log(data);
+    };
+
+    // console.log(setData);
+
+    function nomeErrado(nome) {
+        if (nome !== 'alan') {
+            return 'errrooo';
+        }
+
+        return null;
+    }
 
     return (
         <div style={{ margin: 50 }}>
-            <InputLine
-                label="Nome"
-                placeholder="Insira seu nome"
-                value={value}
-                onChange={event => setValue(event.target.value)}
-            />
+            <form onSubmit={handleSubmit(onSubmitForm)}>
+                <InputLine
+                    label="Conta"
+                    placeholder="Insira sua conta"
+                    name="conta"
+                    register={register}
+                    validate={nomeErrado}
+                    onChange={event => setValue('conta', event.target.value)}
+                    errors={errors.conta}
+                    values={getValues}
+                    defaultValue='12312312312312'
+                />
 
-            <InputLine
-                label="Nome"
-                placeholder="Insira seu nome"
-                value={value2}
-                onChange={event => setValue2(event.target.value)}
-                required
-                errorColor="blue"
-            />
+                <InputLine
+                    label="nome"
+                    placeholder="Insira seu nome"
+                    name="nome"
+                    register={register}
 
-            <InputLine
-                label="Nome"
-                placeholder="Insira seu nome"
-                value={value3}
-                onChange={event => setValue3(event.target.value)}
-                required
-                errorMessage={error}
-                type="password"
-            />
+                    errors={errors.nome}
+                    values={getValues}
+                />
 
-            <button
-                onClick={() => {
-                    if (value3 !== 'alan') {
-                        setError('Nome inválido');
-                    } else {
-                        setError('');
-                    }
-                }}
-            >
-                Enviar
-            </button>
+                <InputLine
+                    label="Senha"
+                    placeholder="Insira sua senha"
+                    name="senha"
+                    register={register}
+
+                    errors={errors.senha}
+                    values={getValues}
+                />
+
+                <button type="submit">Enviar</button>
+            </form>
         </div>
     );
 };

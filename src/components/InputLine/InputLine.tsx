@@ -13,6 +13,17 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     labelStyle?: React.CSSProperties;
     width?: string;
     textColor?: string;
+    required?: boolean;
+
+    name?: string;
+    errors?: any;
+    register?: any;
+    validate?: any;
+    inputRef?: any;
+    values?: any;
+
+    limit?: number;
+    minimum?: number;
 }
 
 const InputLine: React.FC<InputProps> = ({
@@ -23,18 +34,30 @@ const InputLine: React.FC<InputProps> = ({
     errorColor,
     width,
     textColor,
+    inputRef,
+    register,
+    errors,
+    validate,
+    name,
+    required,
+    values,
+    limit,
+    minimum,
     ...rest
 }) => {
     const [isFieldActive, setIsFieldActive] = useState(false);
-    const [requiredText, setRequiredText] = useState(false);
+
+    const [message, setMessage] = useState('');
+
+    const value = values ? values(name) || rest.defaultValue : rest.value;
 
     useEffect(() => {
-        if (rest.value) {
+        if (value) {
             if (!isFieldActive) {
                 setIsFieldActive(true);
             }
         }
-    }, [rest.value]);
+    }, [value]);
 
     const handleFocus = () => {
         if (!isFieldActive) {
@@ -43,23 +66,33 @@ const InputLine: React.FC<InputProps> = ({
     };
 
     const handleBlur = () => {
-        if (isFieldActive && !rest.value) {
+        if (isFieldActive && !value) {
             setIsFieldActive(false);
         }
 
-        if (rest.required && !rest.value) {
-            setRequiredText(true);
-        } else {
-            setRequiredText(false);
-        }
+        // if (rest.required && !rest.value) {
+        //     setRequiredText(true);
+        // } else {
+        //     setRequiredText(false);
+        // }
     };
 
+    console.log(errors);
+
     return (
-        <div style={{ paddingBottom: errorMessage || requiredText ? 0 : 20 }}>
+        <div
+            style={{
+                paddingBottom: message || errors || errorMessage ? 0 : 20,
+            }}
+        >
             <Container
                 isFieldActive={isFieldActive}
-                requiredText={requiredText}
-                errorMessage={errorMessage}
+                requiredText={
+                    (errors && errors.type === 'required') || errorMessage
+                        ? true
+                        : false
+                }
+                errorMessage={errors || errorMessage}
                 errorColor={errorColor}
                 labelStyle={labelStyle}
                 containerStyle={containerStyle}
@@ -72,17 +105,63 @@ const InputLine: React.FC<InputProps> = ({
                     {...rest}
                     onFocus={handleFocus}
                     onBlur={handleBlur}
+                    name={name}
                     placeholder={isFieldActive ? rest.placeholder : ''}
+                    ref={
+                        register
+                            ? register({
+                                  required: required,
+                                  validate:
+                                      validate && required
+                                          ? (value: any) => {
+                                                if (validate(value)) {
+                                                    setMessage(validate(value));
+                                                    return false;
+                                                } else {
+                                                    setMessage('');
+                                                    return true;
+                                                }
+                                            }
+                                          : limit
+                                          ? (value: any) => {
+                                                if (value.length > limit) {
+                                                    setMessage(
+                                                        `${limit} caracteres permitidos.`,
+                                                    );
+                                                    return false;
+                                                } else {
+                                                    setMessage('');
+                                                    return true;
+                                                }
+                                            }
+                                          : minimum
+                                          ? (value: any) => {
+                                                if (value.length <= minimum) {
+                                                    setMessage(
+                                                        `${label} deve ter ${minimum} ou mais caracteres.`,
+                                                    );
+                                                    return false;
+                                                } else {
+                                                    setMessage('');
+                                                    return true;
+                                                }
+                                            }
+                                          : null,
+                              })
+                            : inputRef
+                    }
                 />
                 <label style={labelStyle}>
                     <span>{label}</span>
                 </label>
             </Container>
-            {requiredText ? (
-                <LabelError errorColor={errorColor}>Obrigatório</LabelError>
-            ) : (
+            {errors ? (
+                <LabelError errorColor={errorColor}>
+                    {errors.type === 'required' ? 'Obrigatório' : `${message}`}
+                </LabelError>
+            ) : errorMessage ? (
                 <LabelError errorColor={errorColor}>{errorMessage}</LabelError>
-            )}
+            ) : null}
         </div>
     );
 };

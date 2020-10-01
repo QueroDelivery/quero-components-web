@@ -4,7 +4,7 @@ import { colors } from '../../styles/colors';
 interface InputProps {
     requiredText?: boolean;
     isFieldActive?: boolean;
-    errorMessage?: string;
+    errorMessage?: any;
     errorColor?: string;
     labelStyle?: React.CSSProperties;
     containerStyle?: React.CSSProperties;
