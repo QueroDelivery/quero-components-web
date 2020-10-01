@@ -9,3 +9,5 @@
 prettier.config.js
 README.md
 tsconfig.json
+/scripts
+/config
