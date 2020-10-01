@@ -113,6 +113,7 @@ const ButtonMain: React.FC<ButtonProps> = ({
                 colorText={colorText}
                 tertiary={tertiary}
                 size={size}
+                type={rest.type || 'button'}
             >
                 {loading ? (
                     <Loader size="tiny" />
