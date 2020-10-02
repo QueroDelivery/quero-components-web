@@ -19,6 +19,7 @@ export const Default = () => {
         clearErrors,
         getValues,
         setValue,
+        watch
     } = useForm();
 
     useEffect(() => {
@@ -28,6 +29,9 @@ export const Default = () => {
     function submit(data: any) {
         console.log(data);
     }
+
+    const test = watch('teste')
+    console.log(test)
 
     return (
         <>
@@ -129,6 +133,7 @@ export const Brand = () => {
                     if (value !== 345) setErr('obrigátorio');
                     setText(value);
                 }}
+                search
                 placeholder="selecione um numero"
                 textAlign="center"
                 errorMessage={err}

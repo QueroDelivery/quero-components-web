@@ -24,6 +24,7 @@ export interface DropdownProps {
     errorMessage?: string;
     label?: string;
     labelColor?: string;
+    dropdownRef?: any;
 }
 
 const Dropdown: React.FC<DropdownProps> = ({
@@ -39,6 +40,7 @@ const Dropdown: React.FC<DropdownProps> = ({
     errorMessage,
     label,
     labelColor,
+    dropdownRef,
 }) => {
     const [active, setActive] = useState(false);
     const [optionsState, setOptionsState] = useState<OptionsProps[]>();
@@ -108,9 +110,11 @@ const Dropdown: React.FC<DropdownProps> = ({
 
     return (
         <div style={{ marginBottom: errorMessage ? 5 : 25 }}>
-            <Label errorMessage={errorMessage} labelColor={labelColor}>
-                {label}
-            </Label>
+            {label && (
+                <Label errorMessage={errorMessage} labelColor={labelColor}>
+                    {label}
+                </Label>
+            )}
             <SelectBox
                 active={active}
                 brand={brand}
@@ -120,6 +124,7 @@ const Dropdown: React.FC<DropdownProps> = ({
                 onBlur={() => setActive(false)}
                 width={width}
                 error={errorMessage}
+                ref={dropdownRef}
             >
                 <div className={`options-container ${active ? 'active' : ''}`}>
                     {optionsState && optionsState.length === 0 ? (
@@ -179,7 +184,7 @@ const Dropdown: React.FC<DropdownProps> = ({
                                         setOptionsState(options);
                                     }
                                 }}
-                                value={item?.text || ''}
+                                value={value || ''}
                                 placeholder={placeholder}
                             />
                             <div className="icon">
