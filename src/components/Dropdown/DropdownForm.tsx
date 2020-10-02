@@ -39,6 +39,29 @@ const DropdownForm: React.FC<DropdownFormProps> = ({
         setValueDefault(value);
     }, [value]);
 
+    useEffect(() => {
+        if (register) {
+            register(
+                { name: name },
+                {
+                    required: required,
+                    validate:
+                        validate && required
+                            ? (value: any) => {
+                                  if (validate(value)) {
+                                      setMessage(validate(value));
+                                      return false;
+                                  } else {
+                                      setMessage('');
+                                      return true;
+                                  }
+                              }
+                            : null,
+                },
+            );
+        }
+    }, [register]);
+
     return (
         <Dropdown
             {...rest}
@@ -50,28 +73,6 @@ const DropdownForm: React.FC<DropdownFormProps> = ({
                     clearError(name);
                 }
             }}
-            dropdownRef={
-                register
-                    ? register(
-                          { name: name },
-                          {
-                              required: required,
-                              validate:
-                                  validate && required
-                                      ? (value: any) => {
-                                            if (validate(value)) {
-                                                setMessage(validate(value));
-                                                return false;
-                                            } else {
-                                                setMessage('');
-                                                return true;
-                                            }
-                                        }
-                                      : null,
-                          },
-                      )
-                    : null
-            }
             errorMessage={
                 errors
                     ? errors.type === 'required'
