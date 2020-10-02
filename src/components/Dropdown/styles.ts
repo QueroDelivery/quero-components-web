@@ -11,11 +11,34 @@ interface SelectProps {
     error?: string;
 }
 
+interface LabelProps {
+    labelColor?: string;
+    errorMessage?: string;
+}
+
+export const Label = styled.span<LabelProps>`
+    font-size: 14px;
+    color: ${props => {
+        if (props.errorMessage) {
+            return colors.brand20;
+        }
+
+        if (props.labelColor) {
+            return props.labelColor;
+        }
+
+        return colors.brand10;
+    }};
+    margin-left: 15px;
+`;
+
 export const SelectBox = styled.div<SelectProps>`
     display: flex;
     flex-direction: column;
     position: relative;
     width: ${props => (props.width ? `${props.width}%` : '100%')};
+    margin-top: 5px;
+    margin-bottom: -3px;
 
     > .options-container {
         position: absolute;
@@ -45,6 +68,7 @@ export const SelectBox = styled.div<SelectProps>`
         order: 1;
         -moz-appearance: none;
         -webkit-appearance: none;
+        z-index: 2;
     }
 
     .active {
@@ -242,8 +266,7 @@ export const SelectBox = styled.div<SelectProps>`
     }
 `;
 
-export const LabelError = styled.span`
-    margin-top: 2px;
+export const LabelError = styled.span<LabelProps>`
     font-size: 10px;
     color: ${colors.brand20};
 `;

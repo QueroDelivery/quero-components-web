@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import InputLine from './InputLine';
 import { useForm } from 'react-hook-form';
+import InputLineForm from './InputLineForm';
 
 export default {
     title: 'InputLine',
@@ -8,23 +9,16 @@ export default {
 };
 
 export const Default = () => {
-    // const [value, setValue] = useState('');
-    // const [value2, setValue2] = useState('');
-    // const [value3, setValue3] = useState('');
-    // const [error, setError] = useState('');
+    const [value, setValue2] = useState('');
+    // const [value2, setValue22] = useState('');
+    // const [value3, setValue23] = useState('');
+    const [error, setError] = useState('');
 
-    const {
-        register,
-        handleSubmit,
-        errors,
-        clearError,
-        getValues,
-        setValue,
-    } = useForm();
+    const { register, handleSubmit, errors, getValues, setValue } = useForm();
 
-    // useEffect(() => {
-    //     setValue('12312312312312');
-    // }, []);
+    useEffect(() => {
+        setValue2('12312312312312');
+    }, []);
 
     const onSubmitForm = (data: any) => {
         console.log(data);
@@ -32,7 +26,7 @@ export const Default = () => {
 
     // console.log(setData);
 
-    function nomeErrado(nome) {
+    function nomeErrado(nome: any) {
         if (nome !== 'alan') {
             return 'errrooo';
         }
@@ -43,36 +37,46 @@ export const Default = () => {
     return (
         <div style={{ margin: 50 }}>
             <form onSubmit={handleSubmit(onSubmitForm)}>
-                <InputLine
+                <InputLineForm
                     label="Conta"
                     placeholder="Insira sua conta"
                     name="conta"
                     register={register}
                     validate={nomeErrado}
-                    onChange={event => setValue('conta', event.target.value)}
                     errors={errors.conta}
                     values={getValues}
-                    defaultValue='12312312312312'
+                    defaultValue={value}
+                    disabled
+                    required
                 />
 
-                <InputLine
+                <InputLineForm
                     label="nome"
                     placeholder="Insira seu nome"
                     name="nome"
                     register={register}
-
                     errors={errors.nome}
                     values={getValues}
+                    width='50%'
+                    required
                 />
 
-                <InputLine
+                <InputLineForm
                     label="Senha"
                     placeholder="Insira sua senha"
                     name="senha"
                     register={register}
-
                     errors={errors.senha}
                     values={getValues}
+                    onChange={(event) => setValue('senha', `${event.target.value} + 11esda`)}
+                    type='email'
+                    required
+                />
+
+                <InputLine
+                    value={value}
+                    onChange={event => setValue2(event.target.value)}
+                    label="aaaaa"
                 />
 
                 <button type="submit">Enviar</button>

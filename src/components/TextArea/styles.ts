@@ -24,7 +24,7 @@ export const Container = styled.div<InputProps>`
     opacity: ${props => (props.disabled ? '50%' : '100%')};
 
     textarea {
-        color: ${props => props.textColor ? props.textColor : colors.gray20};
+        color: ${props => (props.textColor ? props.textColor : colors.gray20)};
         resize: none;
         width: 100%;
         border-radius: 20px;
@@ -47,6 +47,9 @@ export const Container = styled.div<InputProps>`
         &::placeholder {
             color: ${colors.default10};
         }
+
+        -moz-appearance: none;
+        -webkit-appearance: none;
     }
 
     label {

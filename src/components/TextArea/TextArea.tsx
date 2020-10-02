@@ -17,7 +17,7 @@ export interface TextAreaProps
     height?: number;
 }
 
-const InputLine: React.FC<TextAreaProps> = ({
+const TextArea: React.FC<TextAreaProps> = ({
     containerStyle,
     label,
     labelStyle,
@@ -48,4 +48,4 @@ const InputLine: React.FC<TextAreaProps> = ({
     );
 };
 
-export default InputLine;
+export default TextArea;

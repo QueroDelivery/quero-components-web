@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import { SelectBox, LabelError } from './styles';
+import { SelectBox, LabelError, Label } from './styles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown, faAngleUp } from '@fortawesome/pro-solid-svg-icons';
 import Loader from '../Loader/Loader';
@@ -11,7 +11,7 @@ interface OptionsProps {
     value: any;
 }
 
-interface DropdownProps {
+export interface DropdownProps {
     brand?: boolean;
     options: OptionsProps[];
     value: any;
@@ -22,6 +22,8 @@ interface DropdownProps {
     loading?: boolean;
     width?: number;
     errorMessage?: string;
+    label?: string;
+    labelColor?: string;
 }
 
 const Dropdown: React.FC<DropdownProps> = ({
@@ -35,6 +37,8 @@ const Dropdown: React.FC<DropdownProps> = ({
     loading,
     width,
     errorMessage,
+    label,
+    labelColor,
 }) => {
     const [active, setActive] = useState(false);
     const [optionsState, setOptionsState] = useState<OptionsProps[]>();
@@ -103,7 +107,10 @@ const Dropdown: React.FC<DropdownProps> = ({
     }
 
     return (
-        <>
+        <div style={{ marginBottom: errorMessage ? 5 : 25 }}>
+            <Label errorMessage={errorMessage} labelColor={labelColor}>
+                {label}
+            </Label>
             <SelectBox
                 active={active}
                 brand={brand}
@@ -130,9 +137,9 @@ const Dropdown: React.FC<DropdownProps> = ({
                                 } `}
                                 id={option.text}
                                 onClick={() => {
-                                    onChange(option.value);
                                     setItem(option);
                                     setActive(false);
+                                    onChange(option.value);
                                 }}
                             >
                                 <input type="radio" />
@@ -156,7 +163,9 @@ const Dropdown: React.FC<DropdownProps> = ({
                                 onKeyDown={event => handleKeyDown(event)}
                                 onChange={event => {
                                     setActive(true);
-                                    onChange(event.target.value);
+                                    if (onChange) {
+                                        onChange(event.target.value);
+                                    }
                                     if (event.target.value.trim().length > 0) {
                                         setOptionsState(
                                             optionsState &&
@@ -212,7 +221,7 @@ const Dropdown: React.FC<DropdownProps> = ({
                 </div>
             </SelectBox>
             {errorMessage && <LabelError>{errorMessage}</LabelError>}
-        </>
+        </div>
     );
 };
 
