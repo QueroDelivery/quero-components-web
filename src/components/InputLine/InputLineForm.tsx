@@ -90,7 +90,7 @@ const InputLineForm: React.FC<InputFormProps> = ({
                                                     return true;
                                                 }
                                             }
-                                          : limit
+                                          : limit && required
                                           ? (value: any) => {
                                                 if (value.length > limit) {
                                                     setMessage(
@@ -102,7 +102,7 @@ const InputLineForm: React.FC<InputFormProps> = ({
                                                     return true;
                                                 }
                                             }
-                                          : minimum
+                                          : minimum && required
                                           ? (value: any) => {
                                                 if (value.length < minimum) {
                                                     setMessage(
