@@ -234,7 +234,7 @@ export const Container = styled.div<CheckboxProps>`
                 return marginLeft(props.sizeBox);
             }
 
-            return '3px';
+            return '2.5px';
         }};
         margin-right: ${props => {
             if (props.sizeBox) {

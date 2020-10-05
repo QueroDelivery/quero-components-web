@@ -58,6 +58,7 @@ export const Header = styled.div`
     align-items: center;
     justify-content: space-between;
     border-bottom: 1px solid ${colors.default20};
+    font-size: 20px;
 
     & strong {
         padding: 20px 30px;
