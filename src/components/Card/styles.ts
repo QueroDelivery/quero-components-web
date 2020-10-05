@@ -3,6 +3,7 @@ import { colors } from '../../styles/colors';
 
 interface CardProps {
     width?: number | string;
+    isMobile?: boolean;
 }
 
 export const Shadow = styled.div<CardProps>`
@@ -22,4 +23,7 @@ export const Shadow = styled.div<CardProps>`
 
         return '100%';
     }};
+
+    margin-left: ${props => (props.isMobile ? '-15px' : '0')};
+    margin-right: ${props => (props.isMobile ? '-15px' : '0')};
 `;
