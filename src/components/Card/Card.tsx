@@ -6,23 +6,16 @@ interface CardProps {
     type: 'shadow';
     width?: number | string;
     style?: React.CSSProperties;
-    isMobile?: boolean;
 }
 
 const Types = {
     shadow: 'shadow',
 };
 
-const Card: React.FC<CardProps> = ({
-    children,
-    width,
-    type,
-    style,
-    isMobile,
-}) => {
+const Card: React.FC<CardProps> = ({ children, width, type, style }) => {
     function renderShadow() {
         return (
-            <Shadow width={width} style={style} isMobile={isMobile}>
+            <Shadow width={width} style={style}>
                 {children}
             </Shadow>
         );

@@ -9,7 +9,7 @@ export default {
 export const Default = () => {
     return (
         <div style={{ width: `80%`, padding: 20 }}>
-            <Card type="shadow" width="80" isMobile>
+            <Card type="shadow" width="80">
                 <div>ASDsdasdaAS</div>
             </Card>
         </div>
