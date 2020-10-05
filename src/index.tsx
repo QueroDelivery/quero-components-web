@@ -12,6 +12,7 @@ import DropdownForm from '../src/components/Dropdown/DropdownForm';
 import Accordion from '../src/components/Accordion/Accordion';
 import Selection from '../src/components/Selection/Selection';
 import MoreLess from '../src/components/MoreLess/MoreLess';
+import Card from '../src/components/Card/Card';
 
 export {
     ButtonMain,
@@ -28,4 +29,5 @@ export {
     Accordion,
     Selection,
     MoreLess,
+    Card,
 };
