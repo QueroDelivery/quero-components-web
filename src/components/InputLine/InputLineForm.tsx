@@ -106,7 +106,7 @@ const InputLineForm: React.FC<InputFormProps> = ({
                                           ? (value: any) => {
                                                 if (value.length < minimum) {
                                                     setMessage(
-                                                        `${rest.label} deve ter ${minimum} ou mais caracteres.`,
+                                                        `${name} deve ter ${minimum} ou mais caracteres.`,
                                                     );
                                                     return false;
                                                 } else {
