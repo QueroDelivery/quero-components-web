@@ -22,8 +22,11 @@
         "@fortawesome/pro-solid-svg-icons": "^5.14.0",
         "@fortawesome/react-fontawesome": "^0.1.11",
         "babel-eslint": "10.1.0",
+        "date-fns": "^2.16.1",
         "react": "^16.13.1",
+        "react-datepicker": "^3.2.2",
         "react-dom": "^16.13.1",
+        "react-input-mask": "^2.0.4",
         "styled-components": "^5.1.1"
     },
     "peerDependencies": {
@@ -36,7 +39,10 @@
         "@fortawesome/pro-light-svg-icons": ">5.0.0",
         "@fortawesome/pro-regular-svg-icons": ">5.0.0",
         "@fortawesome/pro-solid-svg-icons": ">5.0.0",
-        "@fortawesome/react-fontawesome": "x"
+        "@fortawesome/react-fontawesome": "x",
+        "react-datepicker": ">3.0.0",
+        "date-fns": ">2.15.0",
+        "react-input-mask": ">2.0.0"
     },
     "devDependencies": {
         "@babel/core": "7.9.0",
@@ -51,7 +57,9 @@
         "@types/jest": "^24.0.0",
         "@types/node": "^12.0.0",
         "@types/react": "^16.9.0",
+        "@types/react-datepicker": "^3.1.1",
         "@types/react-dom": "^16.9.0",
+        "@types/react-input-mask": "^2.0.5",
         "@types/styled-components": "^5.1.2",
         "@typescript-eslint/eslint-plugin": "^3.7.1",
         "@typescript-eslint/parser": "^3.7.1",

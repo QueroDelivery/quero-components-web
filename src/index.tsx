@@ -13,6 +13,7 @@ import Accordion from '../src/components/Accordion/Accordion';
 import Selection from '../src/components/Selection/Selection';
 import MoreLess from '../src/components/MoreLess/MoreLess';
 import Card from '../src/components/Card/Card';
+import Calendar from '../src/components/Calendar/Calendar';
 
 export {
     ButtonMain,
@@ -30,4 +31,5 @@ export {
     Selection,
     MoreLess,
     Card,
+    Calendar,
 };

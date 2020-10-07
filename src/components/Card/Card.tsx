@@ -1,18 +1,53 @@
-import React from 'react';
+import React, { LinkHTMLAttributes } from 'react';
+import { IconDefinition } from '@fortawesome/pro-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { Shadow } from './styles';
+import { colors } from '../../styles/colors';
+import { Shadow, Button } from './styles';
 
-interface CardProps {
-    type: 'shadow';
+interface CardProps extends Pick<LinkHTMLAttributes<HTMLLinkElement>, 'href'> {
+    type: 'shadow' | 'button';
     width?: number | string;
     style?: React.CSSProperties;
+    icon?: IconDefinition;
+    sizeIcon?:
+        | '1x'
+        | '2x'
+        | '3x'
+        | '4x'
+        | '5x'
+        | '6x'
+        | '7x'
+        | '8x'
+        | '9x'
+        | '10x'
+        | 'lg'
+        | 'sm'
+        | 'xs';
+    colorIcon?: string;
+    text?: string;
+    colorText?: string;
+    onClick?(): void;
 }
 
 const Types = {
     shadow: 'shadow',
+    button: 'button',
 };
 
-const Card: React.FC<CardProps> = ({ children, width, type, style }) => {
+const Card: React.FC<CardProps> = ({
+    children,
+    width,
+    type,
+    style,
+    icon,
+    sizeIcon,
+    colorIcon,
+    text,
+    colorText,
+    onClick,
+    ...rest
+}) => {
     function renderShadow() {
         return (
             <Shadow width={width} style={style}>
@@ -21,9 +56,34 @@ const Card: React.FC<CardProps> = ({ children, width, type, style }) => {
         );
     }
 
+    function renderButton() {
+        return (
+            <Button
+                style={style}
+                colorText={colorText}
+                onClick={onClick}
+                href={rest.href}
+            >
+                {icon && (
+                    <>
+                        <FontAwesomeIcon
+                            icon={icon}
+                            color={colorIcon ? colorIcon : colors.brand10}
+                            size={sizeIcon ? sizeIcon : 'lg'}
+                        />
+                    </>
+                )}
+
+                <span>{text}</span>
+            </Button>
+        );
+    }
+
     switch (type) {
         case Types.shadow:
             return renderShadow();
+        case Types.button:
+            return renderButton();
         default:
             return <div />;
     }
