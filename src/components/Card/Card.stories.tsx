@@ -20,7 +20,7 @@ export const Shadow = () => {
 export const Button = () => {
     return (
         <div style={{ width: `80%`, padding: 20 }}>
-            <Card type="button" icon={faBell} text="Testeeee" />
+            <Card type="button" icon={faBell} text="Testeeee" width="80" />
         </div>
     );
 };

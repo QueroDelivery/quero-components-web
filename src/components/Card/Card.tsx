@@ -63,12 +63,13 @@ const Card: React.FC<CardProps> = ({
                 colorText={colorText}
                 onClick={onClick}
                 href={rest.href}
+                width={width}
             >
                 {icon && (
                     <>
                         <FontAwesomeIcon
                             icon={icon}
-                            color={colorIcon ? colorIcon : colors.brand10}
+                            color={colorIcon ? colorIcon : colors.brandDark}
                             size={sizeIcon ? sizeIcon : 'lg'}
                         />
                     </>

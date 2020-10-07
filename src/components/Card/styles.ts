@@ -52,6 +52,6 @@ export const Button = styled.a<CardProps>`
     span {
         margin-left: 15px;
         font-size: 15px;
-        color: ${props => (props.colorText ? props.colorText : colors.brand10)};
+        color: ${props => (props.colorText ? props.colorText : colors.brandDark)};
     }
 `;
