@@ -1,6 +1,10 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleUp, faAngleDown } from '@fortawesome/pro-light-svg-icons';
+import {
+    faAngleUp,
+    faAngleDown,
+    IconDefinition,
+} from '@fortawesome/pro-light-svg-icons';
 
 import { Container, Body } from './styles';
 import { colors } from '../../styles/colors';
@@ -17,6 +21,8 @@ interface AccordionProps {
     onChange: () => void;
     secundary?: boolean;
     width?: number;
+    icon?: IconDefinition;
+    colorIcon?: string;
 }
 
 const Accordion: React.FC<AccordionProps> = ({
@@ -31,6 +37,8 @@ const Accordion: React.FC<AccordionProps> = ({
     open,
     onChange,
     width,
+    icon,
+    colorIcon,
 }) => {
     return (
         <>
@@ -43,10 +51,23 @@ const Accordion: React.FC<AccordionProps> = ({
                 open={open}
                 onClick={() => onChange()}
                 width={width}
+                icon={icon}
             >
-                <div className="title-subtitle">
-                    <span className="title">{title}</span>
-                    {subtitle && <span className="subtitle">{subtitle}</span>}
+                <div className="icon-title">
+                    {icon && (
+                        <FontAwesomeIcon
+                            icon={icon}
+                            size="lg"
+                            color={colorIcon ? colorIcon : colors.brand10}
+                        />
+                    )}
+
+                    <div className="title-subtitle">
+                        <span className="title">{title}</span>
+                        {subtitle && (
+                            <span className="subtitle">{subtitle}</span>
+                        )}
+                    </div>
                 </div>
                 <div className="value-icon">
                     <span className="value">{value}</span>
@@ -64,7 +85,11 @@ const Accordion: React.FC<AccordionProps> = ({
                     )}
                 </div>
             </Container>
-            {<Body open={open} width={width}>{body}</Body>}
+            {
+                <Body open={open} width={width}>
+                    {body}
+                </Body>
+            }
         </>
     );
 };

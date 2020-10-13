@@ -64,49 +64,49 @@ const Dropdown: React.FC<DropdownProps> = ({
         }
     }, [value]);
 
-    function handleKeyDown(event: React.KeyboardEvent) {
-        if (!active) {
-            setSelectedIndex(0);
-            return;
-        }
+    // function handleKeyDown(event: React.KeyboardEvent) {
+    //     if (!active) {
+    //         setSelectedIndex(0);
+    //         return;
+    //     }
 
-        const moves = {
-            Up: 38,
-            Down: 40,
-            Enter: 13,
-        };
+    //     const moves = {
+    //         Up: 38,
+    //         Down: 40,
+    //         Enter: 13,
+    //     };
 
-        if (event.keyCode === moves.Up && selectedIndex > 0 && optionsState) {
-            onChange(optionsState[selectedIndex - 1].value);
-            const objDiv =
-                optionsState &&
-                document.getElementById(optionsState[selectedIndex - 1].text);
-            if (objDiv) {
-                objDiv.scrollIntoView(false);
-            }
-            return setSelectedIndex(selectedIndex - 1);
-        }
+    //     if (event.keyCode === moves.Up && selectedIndex > 0 && optionsState) {
+    //         onChange(optionsState[selectedIndex - 1].value);
+    //         const objDiv =
+    //             optionsState &&
+    //             document.getElementById(optionsState[selectedIndex - 1].text);
+    //         if (objDiv) {
+    //             objDiv.scrollIntoView(false);
+    //         }
+    //         return setSelectedIndex(selectedIndex - 1);
+    //     }
 
-        if (
-            event.keyCode === moves.Down &&
-            optionsState &&
-            selectedIndex !== optionsState.length - 1
-        ) {
-            onChange(optionsState[selectedIndex + 1].value);
-            const objDiv =
-                optionsState &&
-                document.getElementById(optionsState[selectedIndex + 1].text);
-            if (objDiv) {
-                objDiv.scrollIntoView(false);
-            }
-            return setSelectedIndex(selectedIndex + 1);
-        }
+    //     if (
+    //         event.keyCode === moves.Down &&
+    //         optionsState &&
+    //         selectedIndex !== optionsState.length - 1
+    //     ) {
+    //         onChange(optionsState[selectedIndex + 1].value);
+    //         const objDiv =
+    //             optionsState &&
+    //             document.getElementById(optionsState[selectedIndex + 1].text);
+    //         if (objDiv) {
+    //             objDiv.scrollIntoView(false);
+    //         }
+    //         return setSelectedIndex(selectedIndex + 1);
+    //     }
 
-        if (event.keyCode === moves.Enter && optionsState) {
-            onChange(optionsState[selectedIndex].value);
-            setActive(false);
-        }
-    }
+    //     if (event.keyCode === moves.Enter && optionsState) {
+    //         onChange(optionsState[selectedIndex].value);
+    //         setActive(false);
+    //     }
+    // }
 
     return (
         <div style={{ marginBottom: errorMessage ? 5 : 25 }}>
@@ -165,7 +165,7 @@ const Dropdown: React.FC<DropdownProps> = ({
                     {search ? (
                         <>
                             <input
-                                onKeyDown={event => handleKeyDown(event)}
+                                // onKeyPress={event => handleKeyDown(event)}
                                 onChange={event => {
                                     setActive(true);
                                     if (onChange) {
@@ -208,7 +208,7 @@ const Dropdown: React.FC<DropdownProps> = ({
                                         ? placeholder
                                         : ''
                                 }
-                                onKeyDown={event => handleKeyDown(event)}
+                                // onKeyPress={event => handleKeyDown(event)}
                                 readOnly
                             />
                             <div className="icon">

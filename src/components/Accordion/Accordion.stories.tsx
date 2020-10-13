@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Accordion from './Accordion';
+import { faUser } from '@fortawesome/pro-solid-svg-icons';
 
 export default {
     title: 'Accordion',
@@ -15,6 +16,7 @@ export const Default = () => {
                 open={open}
                 onChange={() => setOpen(!open)}
                 title="Lagarto - SE"
+                icon={faUser}
                 subtitle="(1 vairro ativo para entrega)"
                 body={<div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div></div>}
             />

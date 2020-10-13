@@ -9,6 +9,7 @@ interface AccordionProps {
     open: boolean;
     secundary?: boolean;
     width?: number;
+    icon?: boolean;
 }
 
 interface BodyProps {
@@ -28,10 +29,16 @@ export const Container = styled.div<AccordionProps>`
     cursor: pointer;
     box-shadow: 0px 3px 2px 0px rgba(0, 0, 0, 0.16);
 
+    .icon-title {
+        display: flex;
+        align-items: center;
+    }
+
     .title-subtitle {
         display: flex;
         flex-direction: column;
         flex: 1;
+        margin-left: ${props => props.icon ? '15px' : '0'};
 
         .title {
             font-size: ${props => (props.subtitle ? '14px' : '16px')};

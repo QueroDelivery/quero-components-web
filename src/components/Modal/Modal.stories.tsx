@@ -10,7 +10,7 @@ export default {
 export const Default = () => {
     const [open, setOpen] = useState(false);
 
-    console.log(open);
+    // console.log(open);
 
     return (
         <div style={{ margin: 50 }}>
@@ -19,7 +19,7 @@ export const Default = () => {
                 open={open}
                 title="pedidos detalhes"
                 onClose={() => {
-                    console.log('aaa');
+                    // console.log('aaa');
                     setOpen(!open);
                 }}
                 closeOnDimerClick

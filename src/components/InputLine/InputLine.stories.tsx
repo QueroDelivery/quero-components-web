@@ -21,7 +21,7 @@ export const Default = () => {
     }, []);
 
     const onSubmitForm = (data: any) => {
-        console.log(data);
+        // console.log(data);
     };
 
     // console.log(setData);
