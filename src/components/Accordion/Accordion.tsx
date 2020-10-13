@@ -51,7 +51,7 @@ const Accordion: React.FC<AccordionProps> = ({
                 open={open}
                 onClick={() => onChange()}
                 width={width}
-                icon={icon}
+                icon={icon ? true : false}
             >
                 <div className="icon-title">
                     {icon && (
