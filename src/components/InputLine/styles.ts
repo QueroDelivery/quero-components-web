@@ -32,6 +32,7 @@ export const Container = styled.div<InputProps>`
         padding-bottom: 5px;
         border: none;
         outline: none;
+        background-color: transparent;
 
         &::placeholder {
             color: ${colors.default10};
