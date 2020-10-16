@@ -23,6 +23,7 @@ interface AccordionProps {
     width?: number;
     icon?: IconDefinition;
     colorIcon?: string;
+    fontSizeTitle?: number;
 }
 
 const Accordion: React.FC<AccordionProps> = ({
@@ -39,6 +40,7 @@ const Accordion: React.FC<AccordionProps> = ({
     width,
     icon,
     colorIcon,
+    fontSizeTitle,
 }) => {
     return (
         <>
@@ -52,6 +54,7 @@ const Accordion: React.FC<AccordionProps> = ({
                 onClick={() => onChange()}
                 width={width}
                 icon={icon ? true : false}
+                fontSizeTitle={fontSizeTitle}
             >
                 <div className="icon-title">
                     {icon && (

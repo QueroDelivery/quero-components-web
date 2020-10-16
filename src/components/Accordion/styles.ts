@@ -10,6 +10,7 @@ interface AccordionProps {
     secundary?: boolean;
     width?: number;
     icon?: boolean;
+    fontSizeTitle?: number;
 }
 
 interface BodyProps {
@@ -38,10 +39,15 @@ export const Container = styled.div<AccordionProps>`
         display: flex;
         flex-direction: column;
         flex: 1;
-        margin-left: ${props => props.icon ? '15px' : '0'};
+        margin-left: ${props => (props.icon ? '15px' : '0')};
 
         .title {
-            font-size: ${props => (props.subtitle ? '14px' : '16px')};
+            font-size: ${props =>
+                props.subtitle
+                    ? '14px'
+                    : props.fontSizeTitle
+                    ? props.fontSizeTitle
+                    : '16px'};
             color: ${props =>
                 props.colorTitle ? props.colorTitle : `${colors.gray20}`};
         }
