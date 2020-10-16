@@ -42,7 +42,6 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
         | 'big'
         | 'huge'
         | 'massive';
-    chield?: React.ReactNode;
 }
 
 const ButtonMain: React.FC<ButtonProps> = ({
@@ -54,7 +53,7 @@ const ButtonMain: React.FC<ButtonProps> = ({
     loading,
     secundary,
     backPurple,
-    chield,
+    children,
     notification,
     amount,
     height,
@@ -72,8 +71,8 @@ const ButtonMain: React.FC<ButtonProps> = ({
             <Notification {...rest}>
                 {loading ? (
                     <Loader size="tiny" />
-                ) : chield ? (
-                    chield
+                ) : children ? (
+                    children
                 ) : (
                     <div
                         style={{
@@ -116,8 +115,8 @@ const ButtonMain: React.FC<ButtonProps> = ({
             >
                 {loading ? (
                     <Loader size="tiny" />
-                ) : chield ? (
-                    chield
+                ) : children ? (
+                    children
                 ) : (
                     <div>
                         <TextFirst

@@ -2,6 +2,7 @@ import React, { LinkHTMLAttributes } from 'react';
 import { IconDefinition } from '@fortawesome/pro-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+import Loader from '../Loader/Loader';
 import { colors } from '../../styles/colors';
 import { Shadow, Button } from './styles';
 
@@ -28,6 +29,7 @@ interface CardProps extends Pick<LinkHTMLAttributes<HTMLLinkElement>, 'href'> {
     text?: string;
     colorText?: string;
     onClick?(): void;
+    loading?: boolean;
 }
 
 const Types = {
@@ -46,11 +48,17 @@ const Card: React.FC<CardProps> = ({
     text,
     colorText,
     onClick,
+    loading,
     ...rest
 }) => {
     function renderShadow() {
         return (
-            <Shadow width={width} style={style}>
+            <Shadow loading={loading} width={width} style={style}>
+                {loading && (
+                    <div className="loading-card">
+                        <Loader />
+                    </div>
+                )}
                 {children}
             </Shadow>
         );

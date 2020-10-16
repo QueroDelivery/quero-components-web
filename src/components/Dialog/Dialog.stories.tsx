@@ -13,41 +13,37 @@ export const Default = () => {
     return (
         <div style={{ margin: 50 }}>
             <ButtonMain textFirst="abrir" onClick={() => setOpen(!open)} />
-            <Dialog
-                open={open}
-                onClose={() => setOpen(!open)}
-                body={
+            <Dialog open={open} onClose={() => setOpen(!open)}>
+                <div>
                     <div>
-                        <div>
-                            <strong>fsdfsdfsd</strong>{' '}
-                        </div>
-                        <div>
-                            <strong>elements</strong>{' '}
-                        </div>
-                        <div>
-                            <strong>elements</strong>{' '}
-                        </div>
-                        <div>
-                            <strong>elements</strong>{' '}
-                        </div>
-                        <div>
-                            <strong>elements</strong>{' '}
-                        </div>
-                        <div>
-                            <strong>elements</strong>{' '}
-                        </div>
-                        <div>
-                            <strong>elements</strong>{' '}
-                        </div>
-                        <div>
-                            <strong>elements</strong>{' '}
-                        </div>
-                        <div>
-                            <strong>elements</strong>{' '}
-                        </div>
+                        <strong>fsdfsdfsd</strong>{' '}
                     </div>
-                }
-            />
+                    <div>
+                        <strong>elements</strong>{' '}
+                    </div>
+                    <div>
+                        <strong>elements</strong>{' '}
+                    </div>
+                    <div>
+                        <strong>elements</strong>{' '}
+                    </div>
+                    <div>
+                        <strong>elements</strong>{' '}
+                    </div>
+                    <div>
+                        <strong>elements</strong>{' '}
+                    </div>
+                    <div>
+                        <strong>elements</strong>{' '}
+                    </div>
+                    <div>
+                        <strong>elements</strong>{' '}
+                    </div>
+                    <div>
+                        <strong>elements</strong>{' '}
+                    </div>
+                </div>
+            </Dialog>
         </div>
     );
 };

@@ -8,7 +8,8 @@
         "build": "node scripts/build.js",
         "test": "node scripts/test.js",
         "storybook": "start-storybook -p 6006",
-        "build-storybook": "build-storybook"
+        "build-storybook": "build-storybook",
+        "reinstall": "rm -rf node_modules && npm i"
     },
     "dependencies": {
         "@fortawesome/fontawesome-pro": "^5.14.0",
@@ -46,10 +47,10 @@
     },
     "devDependencies": {
         "@babel/core": "7.9.0",
-        "@storybook/addon-actions": "^6.0.21",
-        "@storybook/addon-essentials": "^6.0.21",
-        "@storybook/addon-links": "^6.0.21",
-        "@storybook/react": "^6.0.21",
+        "@storybook/addon-actions": "^6.0.26",
+        "@storybook/addon-essentials": "^6.0.26",
+        "@storybook/addon-links": "^6.0.26",
+        "@storybook/react": "^6.0.26",
         "@svgr/webpack": "4.3.3",
         "@testing-library/jest-dom": "^4.2.4",
         "@testing-library/react": "^9.3.2",

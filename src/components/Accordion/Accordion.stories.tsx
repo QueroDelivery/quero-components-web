@@ -18,22 +18,115 @@ export const Default = () => {
                 title="Lagarto - SE"
                 icon={faUser}
                 subtitle="(1 vairro ativo para entrega)"
-                body={<div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div></div>}
-            />
+            >
+                <div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                </div>
+            </Accordion>
             <Accordion
                 open={open}
                 onChange={() => setOpen(!open)}
                 title="Lagarto - SE"
                 subtitle="(1 vairro ativo para entrega)"
-                body={<div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div></div>}
-            />
+            >
+                <div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                </div>
+            </Accordion>
             <Accordion
                 open={open}
                 onChange={() => setOpen(!open)}
                 title="Lagarto - SE"
                 subtitle="(1 vairro ativo para entrega)"
-                body={<div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div><div>AAAAAA</div></div>}
-            />
+            >
+                <div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                    <div>AAAAAA</div>
+                </div>
+            </Accordion>
         </div>
     );
 };
@@ -49,8 +142,9 @@ export const Secundary = () => {
                 secundary
                 title="Lagarto - SE"
                 value="RS 17,96"
-                body={<div>AAAAAA</div>}
-            />
+            >
+                <div>AAAAAA</div>
+            </Accordion>
         </div>
     );
 };

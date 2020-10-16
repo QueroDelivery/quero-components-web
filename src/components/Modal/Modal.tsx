@@ -11,7 +11,6 @@ import { colors } from '../../styles/colors';
 export interface ModalProps {
     open: boolean;
     title?: string;
-    body: React.ReactNode;
     actions?: React.ReactNode;
     witdh?: number;
     onClose: Function;
@@ -21,7 +20,7 @@ export interface ModalProps {
 const ModalComponent: React.FC<ModalProps> = ({
     open,
     title,
-    body,
+    children,
     actions,
     witdh,
     onClose,
@@ -59,7 +58,7 @@ const ModalComponent: React.FC<ModalProps> = ({
                         />
                     </Icon>
                 </Header>
-                <Body>{body}</Body>
+                <Body>{children}</Body>
                 {actions && <Actions>{actions}</Actions>}
             </Modal>
         </Background>

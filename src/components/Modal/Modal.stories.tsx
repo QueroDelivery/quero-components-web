@@ -24,117 +24,117 @@ export const Default = () => {
                 }}
                 closeOnDimerClick
                 // actions={<ButtonMain textFirst="aceitar" height={40} width={40} />}
-                body={
+            >
+                {' '}
+                <div>
                     <div>
-                        <div>
-                            <strong>fsdfsdfsd</strong>{' '}
-                        </div>
-                        <div>
-                            <strong>elements</strong>{' '}
-                        </div>
-                        <div>
-                            <strong>elements</strong>{' '}
-                        </div>
-                        <div>
-                            <strong>elements</strong>{' '}
-                        </div>
-                        <div>
-                            <strong>elements</strong>{' '}
-                        </div>
-                        <div>
-                            <strong>elements</strong>{' '}
-                        </div>
-                        <div>
-                            <strong>elements</strong>{' '}
-                        </div>
-                        <div>
-                            <strong>elements</strong>{' '}
-                        </div>
-                        <div>
-                            <strong>elements</strong>{' '}
-                        </div>
-                        <div>
-                            <strong>elements</strong>{' '}
-                        </div>
-                        <div>
-                            <strong>elements</strong>{' '}
-                        </div>
-                        <div>
-                            <strong>elements</strong>{' '}
-                        </div>
-                        <div>
-                            <strong>elements</strong>{' '}
-                        </div>
-                        <div>
-                            <strong>elements</strong>{' '}
-                        </div>
-                        <div>
-                            <strong>elements</strong>{' '}
-                        </div>
-                        <div>
-                            <strong>elements</strong>{' '}
-                        </div>
-                        <div>
-                            <strong>elements</strong>{' '}
-                        </div>
-                        <div>
-                            <strong>elements</strong>{' '}
-                        </div>
-                        <div>
-                            <strong>elements</strong>{' '}
-                        </div>
-                        <div>
-                            <strong>elements</strong>{' '}
-                        </div>
-                        v v
-                        <div>
-                            <strong>elements</strong>{' '}
-                        </div>
-                        <div>
-                            <strong>elements</strong>{' '}
-                        </div>
-                        <div>
-                            <strong>elements</strong>{' '}
-                        </div>
-                        <div>
-                            <strong>elements</strong>{' '}
-                        </div>
-                        <div>
-                            <strong>elements</strong>{' '}
-                        </div>
-                        <div>
-                            <strong>elements</strong>{' '}
-                        </div>
-                        <div>
-                            <strong>elements</strong>{' '}
-                        </div>
-                        <div>
-                            <strong>elements</strong>{' '}
-                        </div>
-                        <div>
-                            <strong>elements</strong>{' '}
-                        </div>
-                        <div>
-                            <strong>elements</strong>{' '}
-                        </div>
-                        <div>
-                            <strong>elements</strong>{' '}
-                        </div>
-                        <div>
-                            <strong>elements</strong>{' '}
-                        </div>
-                        <div>
-                            <strong>elements</strong>{' '}
-                        </div>
-                        <div>
-                            <strong>elements</strong>{' '}
-                        </div>
-                        <div>
-                            <strong>elements</strong>{' '}
-                        </div>
+                        <strong>fsdfsdfsd</strong>{' '}
                     </div>
-                }
-            />
+                    <div>
+                        <strong>elements</strong>{' '}
+                    </div>
+                    <div>
+                        <strong>elements</strong>{' '}
+                    </div>
+                    <div>
+                        <strong>elements</strong>{' '}
+                    </div>
+                    <div>
+                        <strong>elements</strong>{' '}
+                    </div>
+                    <div>
+                        <strong>elements</strong>{' '}
+                    </div>
+                    <div>
+                        <strong>elements</strong>{' '}
+                    </div>
+                    <div>
+                        <strong>elements</strong>{' '}
+                    </div>
+                    <div>
+                        <strong>elements</strong>{' '}
+                    </div>
+                    <div>
+                        <strong>elements</strong>{' '}
+                    </div>
+                    <div>
+                        <strong>elements</strong>{' '}
+                    </div>
+                    <div>
+                        <strong>elements</strong>{' '}
+                    </div>
+                    <div>
+                        <strong>elements</strong>{' '}
+                    </div>
+                    <div>
+                        <strong>elements</strong>{' '}
+                    </div>
+                    <div>
+                        <strong>elements</strong>{' '}
+                    </div>
+                    <div>
+                        <strong>elements</strong>{' '}
+                    </div>
+                    <div>
+                        <strong>elements</strong>{' '}
+                    </div>
+                    <div>
+                        <strong>elements</strong>{' '}
+                    </div>
+                    <div>
+                        <strong>elements</strong>{' '}
+                    </div>
+                    <div>
+                        <strong>elements</strong>{' '}
+                    </div>
+                    v v
+                    <div>
+                        <strong>elements</strong>{' '}
+                    </div>
+                    <div>
+                        <strong>elements</strong>{' '}
+                    </div>
+                    <div>
+                        <strong>elements</strong>{' '}
+                    </div>
+                    <div>
+                        <strong>elements</strong>{' '}
+                    </div>
+                    <div>
+                        <strong>elements</strong>{' '}
+                    </div>
+                    <div>
+                        <strong>elements</strong>{' '}
+                    </div>
+                    <div>
+                        <strong>elements</strong>{' '}
+                    </div>
+                    <div>
+                        <strong>elements</strong>{' '}
+                    </div>
+                    <div>
+                        <strong>elements</strong>{' '}
+                    </div>
+                    <div>
+                        <strong>elements</strong>{' '}
+                    </div>
+                    <div>
+                        <strong>elements</strong>{' '}
+                    </div>
+                    <div>
+                        <strong>elements</strong>{' '}
+                    </div>
+                    <div>
+                        <strong>elements</strong>{' '}
+                    </div>
+                    <div>
+                        <strong>elements</strong>{' '}
+                    </div>
+                    <div>
+                        <strong>elements</strong>{' '}
+                    </div>
+                </div>
+            </Modal>
         </div>
     );
 };

@@ -10,8 +10,19 @@ export default {
 export const Shadow = () => {
     return (
         <div style={{ width: `80%`, padding: 20 }}>
-            <Card type="shadow" width="80">
-                <div>ASDsdasdaAS</div>
+            <Card type="shadow" width="80" loading>
+                <div>
+                    <div>ASDsdasdaAS</div>
+                    <div>ASDsdasdaAS</div>
+                    <div>ASDsdasdaAS</div>
+                    <div>ASDsdasdaAS</div>
+                    <div>ASDsdasdaAS</div>
+                    <div>ASDsdasdaAS</div>
+                    <div>ASDsdasdaAS</div>
+                    <div>ASDsdasdaAS</div>
+                    <div>ASDsdasdaAS</div>
+
+                </div>
             </Card>
         </div>
     );

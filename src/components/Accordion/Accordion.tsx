@@ -16,7 +16,6 @@ interface AccordionProps {
     colorSubtitle?: string;
     value?: string;
     colorValue?: string;
-    body: React.ReactNode;
     open: boolean;
     onChange: () => void;
     secundary?: boolean;
@@ -33,7 +32,7 @@ const Accordion: React.FC<AccordionProps> = ({
     colorSubtitle,
     value,
     colorValue,
-    body,
+    children,
     secundary,
     open,
     onChange,
@@ -90,7 +89,7 @@ const Accordion: React.FC<AccordionProps> = ({
             </Container>
             {
                 <Body open={open} width={width}>
-                    {body}
+                    {children}
                 </Body>
             }
         </>

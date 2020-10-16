@@ -8,18 +8,21 @@ import { Background, Dialog } from './styles';
 
 export interface DialogProps {
     open: boolean;
-    body: React.ReactNode;
     onClose: Function;
 }
 
-const DialogComponent: React.FC<DialogProps> = ({ open, body, onClose }) => {
+const DialogComponent: React.FC<DialogProps> = ({
+    open,
+    children,
+    onClose,
+}) => {
     return (
         <Background open={open} onClick={() => onClose()}>
             <Dialog
                 open={open}
                 onClick={(event: any) => event.stopPropagation()}
             >
-                {body}
+                {children}
             </Dialog>
         </Background>
     );

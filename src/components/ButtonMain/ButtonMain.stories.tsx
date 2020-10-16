@@ -32,10 +32,7 @@ export const Secundary = () => {
 export const Tertiary = () => {
     return (
         <div style={{ margin: 50 }}>
-            <ButtonMain
-                textFirst="Testeee"
-                tertiary
-            />
+            <ButtonMain textFirst="Testeee" tertiary />
         </div>
     );
 };
@@ -43,53 +40,21 @@ export const Tertiary = () => {
 export const sizes = () => {
     return (
         <div style={{ margin: 50 }}>
-            <ButtonMain
-                textFirst="Testeee"
-                tertiary
-                size='mini'
-            />
+            <ButtonMain textFirst="Testeee" tertiary size="mini" />
             <br />
-            <ButtonMain
-                textFirst="Testeee"
-                tertiary
-                size='tiny'
-            />
+            <ButtonMain textFirst="Testeee" tertiary size="tiny" />
             <br />
-            <ButtonMain
-                textFirst="Testeee"
-                tertiary
-                size='small'
-            />
+            <ButtonMain textFirst="Testeee" tertiary size="small" />
             <br />
-            <ButtonMain
-                textFirst="Testeee"
-                tertiary
-                size='medium'
-            />
-            <br/>
-            <ButtonMain
-                textFirst="Testeee"
-                tertiary
-                size='large'
-            />
-            <br/>
-            <ButtonMain
-                textFirst="Testeee"
-                tertiary
-                size='big'
-            />
-            <br/>
-            <ButtonMain
-                textFirst="Testeee"
-                tertiary
-                size='huge'
-            />
-            <br/>
-            <ButtonMain
-                textFirst="Testeee"
-                tertiary
-                size='massive'
-            />
+            <ButtonMain textFirst="Testeee" tertiary size="medium" />
+            <br />
+            <ButtonMain textFirst="Testeee" tertiary size="large" />
+            <br />
+            <ButtonMain textFirst="Testeee" tertiary size="big" />
+            <br />
+            <ButtonMain textFirst="Testeee" tertiary size="huge" />
+            <br />
+            <ButtonMain textFirst="Testeee" tertiary size="massive" />
         </div>
     );
 };
@@ -128,6 +93,14 @@ export const noBorder = () => {
                 noBorder
                 colorText={colors.brand20}
             />
+        </div>
+    );
+};
+
+export const Children = () => {
+    return (
+        <div style={{ margin: 50 }}>
+            <ButtonMain>AAAAAAAAAA</ButtonMain>
         </div>
     );
 };

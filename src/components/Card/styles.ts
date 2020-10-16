@@ -4,6 +4,7 @@ import { colors } from '../../styles/colors';
 interface CardProps {
     width?: number | string;
     colorText?: string;
+    loading?: boolean;
 }
 
 export const Shadow = styled.div<CardProps>`
@@ -11,6 +12,7 @@ export const Shadow = styled.div<CardProps>`
     box-shadow: 0 20px 50px 0 rgba(0, 0, 0, 0.16);
     background-color: ${colors.white};
     border-radius: 30px;
+    position: relative;
 
     width: ${props => {
         if (props.width) {
@@ -23,6 +25,22 @@ export const Shadow = styled.div<CardProps>`
 
         return '100%';
     }};
+
+    .loading-card {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(255,255,255,.8);
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 30px;
+        z-index: 2;
+        position: absolute;
+    }
 `;
 
 export const Button = styled.a<CardProps>`
@@ -52,6 +70,7 @@ export const Button = styled.a<CardProps>`
     span {
         margin-left: 15px;
         font-size: 15px;
-        color: ${props => (props.colorText ? props.colorText : colors.brandDark)};
+        color: ${props =>
+            props.colorText ? props.colorText : colors.brandDark};
     }
 `;
