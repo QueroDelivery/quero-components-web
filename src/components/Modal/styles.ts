@@ -1,5 +1,5 @@
-import styled, { css } from "styled-components";
-import { colors } from "../../styles/colors";
+import styled, { css } from 'styled-components';
+import { colors } from '../../styles/colors';
 
 interface BackgroundProps {
     open?: boolean;
@@ -9,8 +9,12 @@ interface ModalProps {
     witdh?: number;
 }
 
+interface BodyProps {
+    loading?: boolean;
+}
+
 export const Background = styled.div<BackgroundProps>`
-    ${(props) =>
+    ${props =>
         props.open
             ? css`
                   opacity: 1;
@@ -39,7 +43,7 @@ export const Modal = styled.div<ModalProps>`
     right: 0;
     bottom: 0;
     left: 0;
-    width: ${(props) => (props.witdh ? `${props.witdh}%` : "80%")};
+    width: ${props => (props.witdh ? `${props.witdh}%` : '80%')};
     margin: auto;
     background: ${colors.white};
     border-radius: 30px;
@@ -70,9 +74,26 @@ export const Icon = styled.div`
     cursor: pointer;
 `;
 
-export const Body = styled.div`
+export const Body = styled.div<BodyProps>`
     padding: 20px 30px;
     height: 100%;
+    position: relative;
+
+    .loading-modal {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(255, 255, 255, 0.8);
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 30px;
+        z-index: 2;
+        position: absolute;
+    }
 `;
 
 export const Actions = styled.div`

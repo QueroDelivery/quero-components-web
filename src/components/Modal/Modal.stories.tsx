@@ -23,6 +23,7 @@ export const Default = () => {
                     setOpen(!open);
                 }}
                 closeOnDimerClick
+                loading
                 // actions={<ButtonMain textFirst="aceitar" height={40} width={40} />}
             >
                 {' '}

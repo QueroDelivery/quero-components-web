@@ -7,6 +7,7 @@ interface BackgroundProps {
 
 interface DialogProps {
     open?: boolean;
+    loading?: boolean;
 }
 
 export const Background = styled.div<BackgroundProps>`
@@ -47,6 +48,22 @@ export const Dialog = styled.div<DialogProps>`
                   position: fixed;
                   margin: auto;
                   padding: 20px;
+
+                  .loading-dialog {
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                      background-color: rgba(255, 255, 255, 0.8);
+                      width: 100%;
+                      height: 100%;
+                      top: 0;
+                      left: 0;
+                      right: 0;
+                      bottom: 0;
+                      border-radius: 30px;
+                      z-index: 2;
+                      position: absolute;
+                  }
               `
             : css`
                   transition: bottom 0.25s ease;

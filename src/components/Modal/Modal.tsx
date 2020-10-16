@@ -4,6 +4,7 @@ import '../../styles/default.css';
 import React, { useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+import Loader from '../Loader/Loader'
 import { Background, Modal, Header, Body, Actions, Icon } from './styles';
 import { faTimes } from '@fortawesome/pro-light-svg-icons';
 import { colors } from '../../styles/colors';
@@ -15,6 +16,7 @@ export interface ModalProps {
     witdh?: number;
     onClose: Function;
     closeOnDimerClick?: boolean;
+    loading?: boolean;
 }
 
 const ModalComponent: React.FC<ModalProps> = ({
@@ -25,6 +27,7 @@ const ModalComponent: React.FC<ModalProps> = ({
     witdh,
     onClose,
     closeOnDimerClick,
+    loading,
 }) => {
     useEffect(() => {
         if (open) {
@@ -58,7 +61,14 @@ const ModalComponent: React.FC<ModalProps> = ({
                         />
                     </Icon>
                 </Header>
-                <Body>{children}</Body>
+                <Body loading={loading}>
+                    {loading && (
+                        <div className="loading-modal">
+                            <Loader />
+                        </div>
+                    )}
+                    {children}
+                </Body>
                 {actions && <Actions>{actions}</Actions>}
             </Modal>
         </Background>

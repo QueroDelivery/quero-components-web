@@ -13,7 +13,7 @@ export const Default = () => {
     return (
         <div style={{ margin: 50 }}>
             <ButtonMain textFirst="abrir" onClick={() => setOpen(!open)} />
-            <Dialog open={open} onClose={() => setOpen(!open)}>
+            <Dialog open={open} onClose={() => setOpen(!open)} loading>
                 <div>
                     <div>
                         <strong>fsdfsdfsd</strong>{' '}
