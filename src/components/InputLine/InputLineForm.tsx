@@ -67,7 +67,15 @@ const InputLineForm: React.FC<InputFormProps> = ({
                     errors && errors.type === 'required' ? true : false
                 }
                 errorMessage={errors}
-                {...rest}
+                // action={rest.action?.icon ? true : false}
+                containerStyle={rest.containerStyle}
+                width={rest.width}
+                disabled={rest.disabled}
+                style={rest.containerStyle}
+                textColor={rest.textColor}
+                icon={rest.iconPosition !== 'right' ? true : false}
+                iconPosition={rest.iconPosition}
+                action={rest.action ? true : false}
             >
                 <input
                     {...rest}
