@@ -78,6 +78,7 @@ const InputLineForm: React.FC<InputFormProps> = ({
                 icon={rest.icon ? true : false}
                 iconPosition={rest.iconPosition}
                 action={rest.action ? true : false}
+                actionPosition={rest.action?.position}
             >
                 {rest.icon && (
                     <div className="icon">
