@@ -90,25 +90,28 @@ export const Default = () => {
 };
 
 export const Icon = () => {
-    const [value, setValue] = useState('');
+    const [value, setValue] = useState(
+        'asdasdaasdasdaasdasdaasdasdaasdasdaasdasdaasdasdaasdasdaasdasdaasdasdaasdasdaasdasdaasdasda',
+    );
     return (
-        <InputLine
-            placeholder="aaa"
-            label="Testeee"
-            value={value}
-            onChange={event => setValue(event.target.value)}
-            action={
-                value.length > 0
-                    ? {
-                          icon: faTimes,
-                          onClick: () => alert('aaaa'),
-                          position: 'left',
-                      }
-                    : null
-            }
-            icon={faSearch}
-            // iconPosition='right'
-            width="50%"
-        />
+        <div style={{ width: '500px' }}>
+            <InputLine
+                placeholder="aaa"
+                label="Testeee"
+                value={value}
+                onChange={event => setValue(event.target.value)}
+                action={
+                    value.length > 0
+                        ? {
+                              icon: faTimes,
+                              onClick: () => alert('aaaa'),
+                                // position: 'left',
+                          }
+                        : null
+                }
+                // icon={faSearch}
+                // iconPosition="right"
+            />
+        </div>
     );
 };

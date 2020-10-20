@@ -32,17 +32,49 @@ export const Container = styled.div<InputProps>`
         width: 100%;
         height: 100%;
         padding-top: 20px;
-        padding-left: ${props =>
-            (props.icon && props.iconPosition !== 'right') ||
-            (props.action && props.actionPosition !== 'right')
-                ? '40px'
-                : '15px'};
+        padding-left: ${props => {
+            if (props.icon && !props.action) {
+                if (props.iconPosition === 'right') {
+                    return '15px';
+                }
+                return '40px';
+            }
+
+            if (props.action && !props.icon) {
+                if (props.actionPosition === 'left') {
+                    return '40px';
+                }
+                return '15px';
+            }
+
+            if (props.action || props.icon) {
+                return '40px';
+            }
+
+            return '15px';
+        }};
         padding-bottom: 5px;
-        padding-right: ${props =>
-            (props.icon && props.iconPosition !== 'left') ||
-            (props.action && props.actionPosition !== 'left')
-                ? '40px'
-                : '0'};
+        padding-right: ${props => {
+            if (props.icon && !props.action) {
+                if (props.iconPosition === 'right') {
+                    return '40px';
+                }
+                return '0px';
+            }
+
+            if (props.action && !props.icon) {
+                if (props.actionPosition === 'left') {
+                    return '0px';
+                }
+                return '40px';
+            }
+
+            if (props.action && props.icon) {
+                return '40px';
+            }
+
+            return '0px';
+        }};
         border: none;
         outline: none;
         background-color: transparent;
@@ -97,8 +129,27 @@ export const Container = styled.div<InputProps>`
     span {
         position: absolute;
         bottom: 5px;
-        left: ${props =>
-            props.icon && props.iconPosition !== 'right' ? '40px' : '15px'};
+        left: ${props => {
+            if (props.icon && !props.action) {
+                if (props.iconPosition === 'right') {
+                    return '15px';
+                }
+                return '40px';
+            }
+
+            if (props.action && !props.icon) {
+                if (props.actionPosition === 'left') {
+                    return '40px';
+                }
+                return '15px';
+            }
+
+            if (props.action || props.icon) {
+                return '40px';
+            }
+
+            return '15px';
+        }};
         transition: all 0.3s ease;
 
         ${props =>
