@@ -29,17 +29,20 @@ export const Container = styled.div<InputProps>`
 
     input {
         color: ${props => (props.textColor ? props.textColor : colors.gray20)};
-        width: ${props =>
-            (props.icon && props.iconPosition !== 'left') ||
-            (props.action && props.actionPosition !== 'left')
-                ? '90%'
-                : '100%'};
+        width: 100%;
         height: 100%;
         padding-top: 20px;
         padding-left: ${props =>
-            props.icon && props.iconPosition !== 'right' ? '40px' : '15px'};
+            (props.icon && props.iconPosition !== 'right') ||
+            (props.action && props.actionPosition !== 'right')
+                ? '40px'
+                : '15px'};
         padding-bottom: 5px;
-        padding-right: 40px;
+        padding-right: ${props =>
+            (props.icon && props.iconPosition !== 'left') ||
+            (props.action && props.actionPosition !== 'left')
+                ? '40px'
+                : '15px'};
         border: none;
         outline: none;
         background-color: transparent;
