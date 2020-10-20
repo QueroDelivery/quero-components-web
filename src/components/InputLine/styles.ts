@@ -42,7 +42,7 @@ export const Container = styled.div<InputProps>`
             (props.icon && props.iconPosition !== 'left') ||
             (props.action && props.actionPosition !== 'left')
                 ? '40px'
-                : '15px'};
+                : '0'};
         border: none;
         outline: none;
         background-color: transparent;
