@@ -11,6 +11,9 @@ interface InputProps {
     disabled?: boolean;
     width?: string;
     textColor?: string;
+    icon?: boolean;
+    iconPosition?: 'left' | 'right';
+    action?: boolean;
 }
 
 interface LabelErrorProps {
@@ -28,7 +31,7 @@ export const Container = styled.div<InputProps>`
         width: 100%;
         height: 100%;
         padding-top: 20px;
-        padding-left: 15px;
+        padding-left: ${props => (props.icon ? '40px' : '15px')};
         padding-bottom: 5px;
         border: none;
         outline: none;
@@ -84,7 +87,7 @@ export const Container = styled.div<InputProps>`
     span {
         position: absolute;
         bottom: 5px;
-        left: 15px;
+        left: ${props => (props.icon ? '40px' : '15px')};
         transition: all 0.3s ease;
 
         ${props =>
@@ -124,6 +127,21 @@ export const Container = styled.div<InputProps>`
                           return colors.gray20;
                       }};
                   `}
+    }
+
+    .icon {
+        position: absolute;
+        bottom: 0;
+        padding: 5px 10px;
+        ${props => props.iconPosition === 'right' && 'right: 0'}
+    }
+
+    .icon-action {
+        position: absolute;
+        bottom: 0;
+        padding: 5px 10px;
+        right: 0;
+        cursor: pointer;
     }
 `;
 

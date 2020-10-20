@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import InputLine from './InputLine';
 import { useForm } from 'react-hook-form';
 import InputLineForm from './InputLineForm';
+import { faSearch, faTimes } from '@fortawesome/pro-solid-svg-icons';
 
 export default {
     title: 'InputLine',
@@ -57,7 +58,7 @@ export const Default = () => {
                     register={register}
                     errors={errors.nome}
                     values={getValues}
-                    width='50%'
+                    width="50%"
                     required
                 />
 
@@ -68,8 +69,10 @@ export const Default = () => {
                     register={register}
                     errors={errors.senha}
                     values={getValues}
-                    onChange={(event) => setValue('senha', `${event.target.value} + 11esda`)}
-                    type='email'
+                    onChange={event =>
+                        setValue('senha', `${event.target.value} + 11esda`)
+                    }
+                    type="email"
                     required
                 />
 
@@ -82,5 +85,19 @@ export const Default = () => {
                 <button type="submit">Enviar</button>
             </form>
         </div>
+    );
+};
+
+export const Icon = () => {
+    const [value, setValue] = useState('');
+    return (
+        <InputLine
+            placeholder="aaa"
+            label="Testeee"
+            value={value}
+            onChange={event => setValue(event.target.value)}
+            action={{icon: faTimes, onClick:() => alert('aaaa')}}
+            icon={faSearch}
+        />
     );
 };

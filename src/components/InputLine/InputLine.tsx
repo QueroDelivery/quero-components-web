@@ -2,8 +2,11 @@
 import '../../styles/default.css';
 
 import React, { useState, InputHTMLAttributes, useEffect } from 'react';
+import { IconDefinition } from '@fortawesome/pro-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { Container, LabelError } from './styles';
+import { colors } from '../../styles/colors';
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     label?: string;
@@ -13,6 +16,10 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     width?: string;
     textColor?: string;
     inputRef?: any;
+    icon?: IconDefinition;
+    iconPosition?: 'left' | 'right';
+    iconColor?: string;
+    action?: { icon: IconDefinition; iconColor?: string; onClick: () => void };
 }
 
 const InputLine: React.FC<InputProps> = ({
@@ -24,6 +31,10 @@ const InputLine: React.FC<InputProps> = ({
     textColor,
     inputRef,
     name,
+    icon,
+    iconPosition,
+    iconColor,
+    action,
     ...rest
 }) => {
     const [isFieldActive, setIsFieldActive] = useState(false);
@@ -63,7 +74,27 @@ const InputLine: React.FC<InputProps> = ({
                 disabled={rest.disabled}
                 style={containerStyle}
                 textColor={textColor}
+                icon={iconPosition !== 'right' ? true : false}
+                iconPosition={iconPosition}
+                action={action ? true : false}
             >
+                {icon && (
+                    <div className="icon">
+                        <FontAwesomeIcon
+                            icon={icon}
+                            color={iconColor || colors.brand10}
+                        />
+                    </div>
+                )}
+
+                {action && (
+                    <div className="icon-action" onClick={action.onClick}>
+                        <FontAwesomeIcon
+                            icon={action.icon}
+                            color={action.iconColor || colors.brand10}
+                        />
+                    </div>
+                )}
                 <input
                     {...rest}
                     onFocus={handleFocus}
