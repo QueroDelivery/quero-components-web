@@ -14,6 +14,7 @@ interface InputProps {
     icon?: boolean;
     iconPosition?: 'left' | 'right';
     action?: boolean;
+    actionPosition?: 'left' | 'right';
 }
 
 interface LabelErrorProps {
@@ -28,11 +29,17 @@ export const Container = styled.div<InputProps>`
 
     input {
         color: ${props => (props.textColor ? props.textColor : colors.gray20)};
-        width: 100%;
+        width: ${props =>
+            (props.icon && props.iconPosition !== 'left') ||
+            (props.action && props.actionPosition !== 'left')
+                ? '90%'
+                : '100%'};
         height: 100%;
         padding-top: 20px;
-        padding-left: ${props => (props.icon ? '40px' : '15px')};
+        padding-left: ${props =>
+            props.icon && props.iconPosition !== 'right' ? '40px' : '15px'};
         padding-bottom: 5px;
+        padding-right: 40px;
         border: none;
         outline: none;
         background-color: transparent;
@@ -87,7 +94,8 @@ export const Container = styled.div<InputProps>`
     span {
         position: absolute;
         bottom: 5px;
-        left: ${props => (props.icon ? '40px' : '15px')};
+        left: ${props =>
+            props.icon && props.iconPosition !== 'right' ? '40px' : '15px'};
         transition: all 0.3s ease;
 
         ${props =>
@@ -133,14 +141,17 @@ export const Container = styled.div<InputProps>`
         position: absolute;
         bottom: 0;
         padding: 5px 10px;
-        ${props => props.iconPosition === 'right' && 'right: 0'}
+        ${props => props.iconPosition === 'right' && 'right: 0;'}
     }
 
     .icon-action {
         position: absolute;
         bottom: 0;
         padding: 5px 10px;
-        right: 0;
+        ${props =>
+            props.actionPosition && props.actionPosition === 'left'
+                ? 'left: 0;'
+                : 'right: 0;'}
         cursor: pointer;
     }
 `;

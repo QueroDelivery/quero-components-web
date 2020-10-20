@@ -1,10 +1,12 @@
 /* eslint-disable react/prop-types */
 import '../../styles/default.css';
 
-import React, { useState, InputHTMLAttributes, useEffect } from 'react';
-import InputLine, { InputProps } from './InputLine';
+import React, { useState, useEffect } from 'react';
+import { InputProps } from './InputLine';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { Container, LabelError } from './styles';
+import { colors } from '../../styles/colors';
 
 export interface InputFormProps extends InputProps {
     required?: boolean;
@@ -73,10 +75,28 @@ const InputLineForm: React.FC<InputFormProps> = ({
                 disabled={rest.disabled}
                 style={rest.containerStyle}
                 textColor={rest.textColor}
-                icon={rest.iconPosition !== 'right' ? true : false}
+                icon={rest.icon ? true : false}
                 iconPosition={rest.iconPosition}
                 action={rest.action ? true : false}
             >
+                {rest.icon && (
+                    <div className="icon">
+                        <FontAwesomeIcon
+                            icon={rest.icon}
+                            color={rest.iconColor || colors.brand10}
+                        />
+                    </div>
+                )}
+
+                {rest.action && (
+                    <div className="icon-action" onClick={rest.action.onClick}>
+                        <FontAwesomeIcon
+                            icon={rest.action.icon}
+                            color={rest.action.iconColor || colors.brand10}
+                        />
+                    </div>
+                )}
+
                 <input
                     {...rest}
                     onFocus={handleFocus}

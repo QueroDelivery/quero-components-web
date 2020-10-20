@@ -74,6 +74,7 @@ export const Default = () => {
                     }
                     type="email"
                     required
+                    icon={faSearch}
                 />
 
                 <InputLine
@@ -96,8 +97,18 @@ export const Icon = () => {
             label="Testeee"
             value={value}
             onChange={event => setValue(event.target.value)}
-            action={{icon: faTimes, onClick:() => alert('aaaa')}}
+            action={
+                value.length > 0
+                    ? {
+                          icon: faTimes,
+                          onClick: () => alert('aaaa'),
+                          position: 'left',
+                      }
+                    : null
+            }
             icon={faSearch}
+            // iconPosition='right'
+            width="50%"
         />
     );
 };

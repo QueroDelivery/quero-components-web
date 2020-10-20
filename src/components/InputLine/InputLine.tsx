@@ -19,7 +19,12 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     icon?: IconDefinition;
     iconPosition?: 'left' | 'right';
     iconColor?: string;
-    action?: { icon: IconDefinition; iconColor?: string; onClick: () => void };
+    action?: {
+        icon: IconDefinition;
+        iconColor?: string;
+        onClick: () => void;
+        position?: 'left' | 'right';
+    } | null;
 }
 
 const InputLine: React.FC<InputProps> = ({
@@ -74,9 +79,10 @@ const InputLine: React.FC<InputProps> = ({
                 disabled={rest.disabled}
                 style={containerStyle}
                 textColor={textColor}
-                icon={iconPosition !== 'right' ? true : false}
+                icon={icon ? true : false}
                 iconPosition={iconPosition}
                 action={action ? true : false}
+                actionPosition={action?.position}
             >
                 {icon && (
                     <div className="icon">
