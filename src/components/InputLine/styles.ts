@@ -82,9 +82,6 @@ export const Container = styled.div<InputProps>`
         &::placeholder {
             color: ${colors.default10};
         }
-
-        -moz-appearance: none;
-        -webkit-appearance: none;
     }
 
     input:disabled {
