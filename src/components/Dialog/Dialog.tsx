@@ -5,7 +5,7 @@ import '../../styles/default.css';
 import React from 'react';
 
 import { Background, Dialog } from './styles';
-import Loader from '../Loader/Loader'
+import Loader from '../Loader/Loader';
 
 export interface DialogProps {
     open: boolean;
@@ -22,7 +22,7 @@ const DialogComponent: React.FC<DialogProps> = ({
     return (
         <Background open={open} onClick={() => onClose()}>
             <Dialog
-                loading={loading}
+                loading={loading ? loading : false}
                 open={open}
                 onClick={(event: any) => event.stopPropagation()}
             >

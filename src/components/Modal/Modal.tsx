@@ -4,7 +4,7 @@ import '../../styles/default.css';
 import React, { useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import Loader from '../Loader/Loader'
+import Loader from '../Loader/Loader';
 import { Background, Modal, Header, Body, Actions, Icon } from './styles';
 import { faTimes } from '@fortawesome/pro-light-svg-icons';
 import { colors } from '../../styles/colors';
@@ -61,7 +61,7 @@ const ModalComponent: React.FC<ModalProps> = ({
                         />
                     </Icon>
                 </Header>
-                <Body loading={loading}>
+                <Body loading={loading ? loading : false}>
                     {loading && (
                         <div className="loading-modal">
                             <Loader />

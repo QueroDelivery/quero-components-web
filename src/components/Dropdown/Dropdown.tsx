@@ -184,7 +184,7 @@ const Dropdown: React.FC<DropdownProps> = ({
                                         setOptionsState(options);
                                     }
                                 }}
-                                value={value || ''}
+                                value={value ? value : ''}
                                 placeholder={placeholder}
                             />
                             <div className="icon">
@@ -201,14 +201,13 @@ const Dropdown: React.FC<DropdownProps> = ({
                     ) : (
                         <>
                             <input
-                                value={
+                                defaultValue={
                                     value
                                         ? item?.text
                                         : placeholder
                                         ? placeholder
                                         : ''
                                 }
-                                // onKeyPress={event => handleKeyDown(event)}
                                 readOnly
                             />
                             <div className="icon">
