@@ -22,16 +22,17 @@ const DialogComponent: React.FC<DialogProps> = ({
     return (
         <Background open={open} onClick={() => onClose()}>
             <Dialog
-                loading={loading ? loading : false}
+                loading={loading ? loading : undefined}
                 open={open}
                 onClick={(event: any) => event.stopPropagation()}
             >
-                {loading && (
+                {loading ? (
                     <div className="loading-dialog">
                         <Loader />
                     </div>
+                ) : (
+                    children
                 )}
-                {children}
             </Dialog>
         </Background>
     );

@@ -54,16 +54,17 @@ const Card: React.FC<CardProps> = ({
     function renderShadow() {
         return (
             <Shadow
-                loading={loading ? loading : false}
+                loading={loading ? loading : undefined}
                 width={width}
                 style={style}
             >
-                {loading && (
+                {loading ? (
                     <div className="loading-card">
                         <Loader />
                     </div>
+                ) : (
+                    children
                 )}
-                {children}
             </Shadow>
         );
     }

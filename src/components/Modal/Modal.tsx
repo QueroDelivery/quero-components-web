@@ -61,13 +61,14 @@ const ModalComponent: React.FC<ModalProps> = ({
                         />
                     </Icon>
                 </Header>
-                <Body loading={loading ? loading : false}>
-                    {loading && (
+                <Body loading={loading ? loading : undefined}>
+                    {loading ? (
                         <div className="loading-modal">
                             <Loader />
                         </div>
+                    ) : (
+                        children
                     )}
-                    {children}
                 </Body>
                 {actions && <Actions>{actions}</Actions>}
             </Modal>
