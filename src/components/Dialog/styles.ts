@@ -7,7 +7,6 @@ interface BackgroundProps {
 
 interface DialogProps {
     open?: boolean;
-    loading?: boolean;
 }
 
 export const Background = styled.div<BackgroundProps>`

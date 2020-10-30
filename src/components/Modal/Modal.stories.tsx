@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Modal from './Modal';
 import ButtonMain from '../ButtonMain/ButtonMain';
+import Loader from '../Loader/Loader';
 
 export default {
     title: 'Modal',
@@ -23,7 +24,8 @@ export const Default = () => {
                     setOpen(!open);
                 }}
                 closeOnDimerClick
-                loading
+
+                // onBack={() => setOpen(!open)}
                 // actions={<ButtonMain textFirst="aceitar" height={40} width={40} />}
             >
                 {' '}

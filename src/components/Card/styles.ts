@@ -4,7 +4,6 @@ import { colors } from '../../styles/colors';
 interface CardProps {
     width?: number | string;
     colorText?: string;
-    loading?: boolean;
 }
 
 export const Shadow = styled.div<CardProps>`

@@ -77,7 +77,7 @@ const InputLineForm: React.FC<InputFormProps> = ({
                 textColor={rest.textColor}
                 icon={rest.icon ? true : false}
                 iconPosition={rest.iconPosition}
-                action={rest.action ? true : false}
+                action={rest.action}
                 actionPosition={rest.action?.position}
             >
                 {rest.icon && (

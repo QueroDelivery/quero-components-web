@@ -13,7 +13,7 @@ interface InputProps {
     textColor?: string;
     icon?: boolean;
     iconPosition?: 'left' | 'right';
-    action?: boolean;
+    action?: any;
     actionPosition?: 'left' | 'right';
 }
 

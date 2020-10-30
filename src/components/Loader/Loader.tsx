@@ -3,7 +3,7 @@ import '../../styles/default.css';
 
 import React from 'react';
 
-import { Container } from './styles';
+import { Container, Load } from './styles';
 
 export interface LoaderProps {
     color?: string;
@@ -18,16 +18,19 @@ export interface LoaderProps {
         | 'massive';
     className?: string;
     style?: React.CSSProperties;
+    position?: 'left' | 'center' | 'right';
 }
 
-const Loader: React.FC<LoaderProps> = ({ color, size, className, style }) => {
+const Loader: React.FC<LoaderProps> = ({ color, size, className, style, position }) => {
     return (
-        <Container
-            color={color}
-            size={size}
-            style={style}
-            className={className}
-        />
+        <Container position={position}>
+            <Load
+                color={color}
+                size={size}
+                style={style}
+                className={className}
+            />
+        </Container>
     );
 };
 

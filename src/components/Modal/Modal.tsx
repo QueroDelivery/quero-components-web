@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import Loader from '../Loader/Loader';
 import { Background, Modal, Header, Body, Actions, Icon } from './styles';
-import { faTimes } from '@fortawesome/pro-light-svg-icons';
+import { faTimes, faAngleLeft } from '@fortawesome/pro-light-svg-icons';
 import { colors } from '../../styles/colors';
 
 export interface ModalProps {
@@ -17,6 +17,7 @@ export interface ModalProps {
     onClose: Function;
     closeOnDimerClick?: boolean;
     loading?: boolean;
+    onBack?: Function;
 }
 
 const ModalComponent: React.FC<ModalProps> = ({
@@ -28,6 +29,7 @@ const ModalComponent: React.FC<ModalProps> = ({
     onClose,
     closeOnDimerClick,
     loading,
+    onBack,
 }) => {
     useEffect(() => {
         if (open) {
@@ -51,8 +53,19 @@ const ModalComponent: React.FC<ModalProps> = ({
             onClick={() => (closeOnDimerClick ? onClose() : null)}
         >
             <Modal witdh={witdh} onClick={event => event.stopPropagation()}>
-                <Header>
-                    <strong>{title}</strong>
+                <Header iconBack={onBack ? true : false}>
+                    <div className="name-icon-modal">
+                        {onBack ? (
+                            <Icon onClick={() => onBack()}>
+                                <FontAwesomeIcon
+                                    icon={faAngleLeft}
+                                    size="lg"
+                                    color={colors.brand10}
+                                />
+                            </Icon>
+                        ) : null}
+                        <strong>{title}</strong>
+                    </div>
                     <Icon onClick={() => onClose()}>
                         <FontAwesomeIcon
                             icon={faTimes}
@@ -61,14 +74,13 @@ const ModalComponent: React.FC<ModalProps> = ({
                         />
                     </Icon>
                 </Header>
-                <Body loading={loading ? loading : undefined}>
-                    {loading ? (
+                <Body>
+                    {loading && (
                         <div className="loading-modal">
                             <Loader />
                         </div>
-                    ) : (
-                        children
                     )}
+                    {children}
                 </Body>
                 {actions && <Actions>{actions}</Actions>}
             </Modal>

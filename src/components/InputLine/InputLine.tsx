@@ -81,7 +81,7 @@ const InputLine: React.FC<InputProps> = ({
                 textColor={textColor}
                 icon={icon ? true : false}
                 iconPosition={iconPosition}
-                action={action ? true : false}
+                action={action}
                 actionPosition={action?.position}
             >
                 {icon && (

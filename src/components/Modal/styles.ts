@@ -9,8 +9,8 @@ interface ModalProps {
     witdh?: number;
 }
 
-interface BodyProps {
-    loading?: boolean;
+interface HeaderProps {
+    iconBack?: boolean;
 }
 
 export const Background = styled.div<BackgroundProps>`
@@ -57,15 +57,19 @@ export const Dialog = styled.div`
     border-top-right-radius: 30px;
 `;
 
-export const Header = styled.div`
+export const Header = styled.div<HeaderProps>`
     display: flex;
     align-items: center;
     justify-content: space-between;
     border-bottom: 1px solid ${colors.default20};
     font-size: 20px;
 
+    .name-icon-modal {
+        display: flex;
+    }
+
     & strong {
-        padding: 20px 30px;
+        padding: ${props => (props.iconBack ? '20px 0' : '20px 30px')};
         color: ${colors.brand10};
     }
 `;
@@ -74,7 +78,7 @@ export const Icon = styled.div`
     cursor: pointer;
 `;
 
-export const Body = styled.div<BodyProps>`
+export const Body = styled.div<HeaderProps>`
     padding: 20px 30px;
     height: 100%;
     position: relative;
