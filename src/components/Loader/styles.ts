@@ -68,11 +68,11 @@ export const Container = styled.div<LoaderProps>`
     width: 100%;
     display: flex;
     justify-content: ${props =>
-        props.position === 'center'
-            ? 'center'
+        props.position === 'left'
+            ? 'flex-end'
             : props.position === 'right'
             ? 'flex-end'
-            : 'flex-start'};
+            : 'center'};
 `;
 
 export const Load = styled.div<LoaderProps>`
