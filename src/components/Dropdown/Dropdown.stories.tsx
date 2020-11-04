@@ -133,7 +133,7 @@ export const Brand = () => {
                     if (value !== 345) setErr('obrigátorio');
                     setText(value);
                 }}
-                search
+                // search
                 placeholder="selecione um numero"
                 textAlign="center"
                 errorMessage={err}

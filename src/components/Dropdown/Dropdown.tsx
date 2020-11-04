@@ -53,6 +53,8 @@ const Dropdown: React.FC<DropdownProps> = ({
         setSelectedIndex(options.findIndex(option => option.value === value));
     }, []);
 
+    console.log(item?.text);
+
     useEffect(() => {
         if (optionsState) {
             setSelectedIndex(
@@ -63,50 +65,6 @@ const Dropdown: React.FC<DropdownProps> = ({
             setItem(options.filter(opt => opt.value === value)[0]);
         }
     }, [value]);
-
-    // function handleKeyDown(event: React.KeyboardEvent) {
-    //     if (!active) {
-    //         setSelectedIndex(0);
-    //         return;
-    //     }
-
-    //     const moves = {
-    //         Up: 38,
-    //         Down: 40,
-    //         Enter: 13,
-    //     };
-
-    //     if (event.keyCode === moves.Up && selectedIndex > 0 && optionsState) {
-    //         onChange(optionsState[selectedIndex - 1].value);
-    //         const objDiv =
-    //             optionsState &&
-    //             document.getElementById(optionsState[selectedIndex - 1].text);
-    //         if (objDiv) {
-    //             objDiv.scrollIntoView(false);
-    //         }
-    //         return setSelectedIndex(selectedIndex - 1);
-    //     }
-
-    //     if (
-    //         event.keyCode === moves.Down &&
-    //         optionsState &&
-    //         selectedIndex !== optionsState.length - 1
-    //     ) {
-    //         onChange(optionsState[selectedIndex + 1].value);
-    //         const objDiv =
-    //             optionsState &&
-    //             document.getElementById(optionsState[selectedIndex + 1].text);
-    //         if (objDiv) {
-    //             objDiv.scrollIntoView(false);
-    //         }
-    //         return setSelectedIndex(selectedIndex + 1);
-    //     }
-
-    //     if (event.keyCode === moves.Enter && optionsState) {
-    //         onChange(optionsState[selectedIndex].value);
-    //         setActive(false);
-    //     }
-    // }
 
     return (
         <div style={{ marginBottom: errorMessage ? 5 : 25 }}>
@@ -201,7 +159,7 @@ const Dropdown: React.FC<DropdownProps> = ({
                     ) : (
                         <>
                             <input
-                                defaultValue={
+                                value={
                                     value
                                         ? item?.text
                                         : placeholder
