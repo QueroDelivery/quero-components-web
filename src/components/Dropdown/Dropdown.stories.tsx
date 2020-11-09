@@ -19,7 +19,7 @@ export const Default = () => {
         clearErrors,
         getValues,
         setValue,
-        watch
+        watch,
     } = useForm();
 
     useEffect(() => {
@@ -30,8 +30,7 @@ export const Default = () => {
         console.log(data);
     }
 
-    const test = watch('teste')
-    console.log(test)
+    const test = watch('teste');
 
     return (
         <>
@@ -127,18 +126,14 @@ export const Brand = () => {
     return (
         <div style={{ margin: 50 }}>
             <Dropdown
-                brand
                 value={text}
                 onChange={value => {
-                    if (value !== 345) setErr('obrigátorio');
                     setText(value);
                 }}
-                // search
+                search
                 placeholder="selecione um numero"
-                textAlign="center"
-                errorMessage={err}
                 options={[
-                    { id: 1, text: 'aaa', value: 123 },
+                    { id: 1, text: 'álan', value: 123 },
                     { id: 2, text: 'bbb', value: 234 },
                     { id: 3, text: '345', value: 345 },
                     { id: 4, text: '456', value: 456 },

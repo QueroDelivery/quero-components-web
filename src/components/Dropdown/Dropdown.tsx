@@ -4,6 +4,7 @@ import { SelectBox, LabelError, Label } from './styles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown, faAngleUp } from '@fortawesome/pro-solid-svg-icons';
 import Loader from '../Loader/Loader';
+import { removerAcentosESpecialChars } from '../../helpers/FnUtil';
 
 interface OptionsProps {
     text: string;
@@ -53,7 +54,7 @@ const Dropdown: React.FC<DropdownProps> = ({
         setSelectedIndex(options.findIndex(option => option.value === value));
     }, []);
 
-    console.log(item?.text);
+    console.log(item);
 
     useEffect(() => {
         if (optionsState) {
@@ -132,17 +133,23 @@ const Dropdown: React.FC<DropdownProps> = ({
                                     if (event.target.value.trim().length > 0) {
                                         setOptionsState(
                                             optionsState &&
-                                                options.filter(option =>
-                                                    option.text.includes(
-                                                        event.target.value,
-                                                    ),
+                                                options.filter(
+                                                    option =>
+                                                        option.text.includes(
+                                                            event.target.value,
+                                                        ) ||
+                                                        removerAcentosESpecialChars(
+                                                            option.text,
+                                                        ).includes(
+                                                            event.target.value,
+                                                        ),
                                                 ),
                                         );
                                     } else {
                                         setOptionsState(options);
                                     }
                                 }}
-                                value={value ? value : ''}
+                                value={value ? item?.text : ''}
                                 placeholder={placeholder}
                             />
                             <div className="icon">
