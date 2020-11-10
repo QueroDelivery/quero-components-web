@@ -3,11 +3,12 @@ import '../../styles/default.css';
 
 import React, { useState, TextareaHTMLAttributes } from 'react';
 
-import { Container, LabelError } from './styles';
+import { Container, LabelError, Label } from './styles';
 
 export interface TextAreaProps
     extends TextareaHTMLAttributes<HTMLTextAreaElement> {
     label?: string;
+    labelColor?: string;
     textColor?: string;
     errorMessage?: string;
     errorColor?: string;
@@ -21,6 +22,7 @@ export interface TextAreaProps
 const TextArea: React.FC<TextAreaProps> = ({
     containerStyle,
     label,
+    labelColor,
     labelStyle,
     errorMessage,
     errorColor,
@@ -32,6 +34,11 @@ const TextArea: React.FC<TextAreaProps> = ({
 }) => {
     return (
         <div style={{ paddingBottom: errorMessage ? 0 : 20 }}>
+            {label && (
+                <Label errorMessage={errorMessage} labelColor={labelColor}>
+                    {label}
+                </Label>
+            )}
             <Container
                 errorMessage={errorMessage}
                 errorColor={errorColor}

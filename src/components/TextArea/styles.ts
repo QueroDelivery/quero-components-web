@@ -17,6 +17,27 @@ interface LabelErrorProps {
     errorColor?: string;
 }
 
+interface LabelProps {
+    labelColor?: string;
+    errorMessage?: string;
+}
+
+export const Label = styled.span<LabelProps>`
+    font-size: 14px;
+    color: ${props => {
+        if (props.errorMessage) {
+            return colors.brand20;
+        }
+
+        if (props.labelColor) {
+            return props.labelColor;
+        }
+
+        return colors.brand10;
+    }};
+    margin-left: 15px;
+`;
+
 export const Container = styled.div<InputProps>`
     width: ${props => (props.width ? props.width : '100%')};
     position: relative;
@@ -107,6 +128,6 @@ export const LabelError = styled.span<LabelErrorProps>`
             return props.errorColor;
         }
 
-        return colors.danger20;
+        return colors.brand20;
     }};
 `;
