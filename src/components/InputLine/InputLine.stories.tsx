@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import InputLine from './InputLine';
-import { useForm } from 'react-hook-form';
+import { useForm, Controller } from 'react-hook-form';
 import InputLineForm from './InputLineForm';
 import { faSearch, faTimes } from '@fortawesome/pro-solid-svg-icons';
+import InputMoneyForm from './InputMoneyForm';
 
 export default {
     title: 'InputLine',
@@ -105,13 +106,58 @@ export const Icon = () => {
                         ? {
                               icon: faTimes,
                               onClick: () => alert('aaaa'),
-                                // position: 'left',
+                              // position: 'left',
                           }
                         : null
                 }
                 // icon={faSearch}
                 // iconPosition="right"
             />
+        </div>
+    );
+};
+
+export const InputMoney = () => {
+    const {
+        register,
+        handleSubmit,
+        setValue,
+        control,
+        errors,
+        getValues,
+        setError,
+        formState,
+    } = useForm();
+
+    const onSubmitForm = (data: any) => {
+        console.log(data);
+    };
+
+    return (
+        <div style={{ width: '500px' }}>
+            <form onSubmit={handleSubmit(onSubmitForm)}>
+                <Controller
+                    as={
+                        <InputMoneyForm
+                            name="preco"
+                            label="Preço"
+                            placeholder="Insira um preço"
+                            onChange={value => {
+                                setValue('preco', value);
+                            }}
+                            errors={errors.preco}
+                            setError={setError}
+                            values={getValues}
+                            isSubmitted={formState.isSubmitted}
+                            required
+                        />
+                    }
+                    control={control}
+                    name="preco"
+                    register={register}
+                />
+                <button type="submit">Enviar</button>
+            </form>
         </div>
     );
 };

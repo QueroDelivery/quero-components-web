@@ -54,8 +54,6 @@ const Dropdown: React.FC<DropdownProps> = ({
         setSelectedIndex(options.findIndex(option => option.value === value));
     }, []);
 
-    console.log(item);
-
     useEffect(() => {
         if (optionsState) {
             setSelectedIndex(
