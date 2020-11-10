@@ -55,7 +55,7 @@ const InputMoneyForm: React.FC<InputFormProps> = ({
     }, [value]);
 
     useEffect(() => {
-        if (isSubmitted && !value) {
+        if (isSubmitted && !value && required) {
             setError(name, { type: 'required' });
         }
     }, [isSubmitted, value]);

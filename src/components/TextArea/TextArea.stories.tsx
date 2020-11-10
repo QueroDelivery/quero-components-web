@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import TextArea from './TextArea';
+import { useForm } from 'react-hook-form';
+import TextAreaForm from './TextAreaForm';
 
 export default {
     title: 'TextArea',
@@ -33,6 +35,41 @@ export const Default = () => {
             >
                 Enviar
             </button>
+        </div>
+    );
+};
+
+export const Form = () => {
+    const {
+        register,
+        handleSubmit,
+        setValue,
+        control,
+        errors,
+        getValues,
+        setError,
+        formState,
+    } = useForm();
+
+    const onSubmitForm = (data: any) => {
+        console.log(data);
+    };
+
+    return (
+        <div style={{ margin: 50 }}>
+            <form onSubmit={handleSubmit(onSubmitForm)}>
+                <TextAreaForm
+                    name="nome"
+                    label="Nome"
+                    required
+                    placeholder="Insira seu nome"
+                    register={register}
+                    errors={errors.nome}
+                    limit={10}
+                />
+
+                <button type="submit"> Enviar</button>
+            </form>
         </div>
     );
 };

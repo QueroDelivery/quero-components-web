@@ -15,6 +15,7 @@ export interface TextAreaProps
     labelStyle?: React.CSSProperties;
     width?: string;
     height?: number;
+    textAreaRef?: any;
 }
 
 const TextArea: React.FC<TextAreaProps> = ({
@@ -26,6 +27,7 @@ const TextArea: React.FC<TextAreaProps> = ({
     width,
     height,
     textColor,
+    textAreaRef,
     ...rest
 }) => {
     return (
@@ -41,7 +43,11 @@ const TextArea: React.FC<TextAreaProps> = ({
                 textColor={textColor}
                 height={height}
             >
-                <textarea {...rest} placeholder={rest.placeholder} />
+                <textarea
+                    {...rest}
+                    placeholder={rest.placeholder}
+                    ref={textAreaRef}
+                />
             </Container>
             <LabelError errorColor={errorColor}>{errorMessage}</LabelError>
         </div>
