@@ -133,14 +133,18 @@ const Dropdown: React.FC<DropdownProps> = ({
                                             optionsState &&
                                                 options.filter(
                                                     option =>
-                                                        option.text.includes(
-                                                            event.target.value,
-                                                        ) ||
+                                                        option.text
+                                                            .toLowerCase()
+                                                            .includes(
+                                                                event.target.value.toLowerCase(),
+                                                            ) ||
                                                         removerAcentosESpecialChars(
                                                             option.text,
-                                                        ).includes(
-                                                            event.target.value,
-                                                        ),
+                                                        )
+                                                            .toLowerCase()
+                                                            .includes(
+                                                                event.target.value.toLowerCase(),
+                                                            ),
                                                 ),
                                         );
                                     } else {
