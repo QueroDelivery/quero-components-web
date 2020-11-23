@@ -18,6 +18,7 @@ interface SelectionProps {
         | 'huge'
         | 'massive';
     disabled?: boolean;
+    selectionRef?: any;
 }
 
 const TYPES = {
@@ -32,10 +33,11 @@ const Selection: React.FC<SelectionProps> = ({
     onChange,
     size,
     disabled,
+    selectionRef,
 }) => {
     function renderSwitch() {
         return (
-            <Switch size={size} disabled={disabled}>
+            <Switch size={size} ref={selectionRef} disabled={disabled}>
                 <input type="checkbox" defaultChecked={checked} />
                 <span
                     className="control"
@@ -48,7 +50,12 @@ const Selection: React.FC<SelectionProps> = ({
     }
     function renderToggle() {
         return (
-            <Toggle checked={checked} size={size} disabled={disabled}>
+            <Toggle
+                checked={checked}
+                ref={selectionRef}
+                size={size}
+                disabled={disabled}
+            >
                 <div
                     className="btn left"
                     onClick={() =>
@@ -82,7 +89,12 @@ const Selection: React.FC<SelectionProps> = ({
     }
     function renderActiveInactive() {
         return (
-            <ActiveInactive checked={checked} size={size} disabled={disabled}>
+            <ActiveInactive
+                checked={checked}
+                ref={selectionRef}
+                size={size}
+                disabled={disabled}
+            >
                 <div
                     className="btn left"
                     onClick={() =>

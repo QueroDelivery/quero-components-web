@@ -160,6 +160,7 @@ export const SelectBox = styled.div<SelectProps>`
 
         input {
             padding: 12px 35px 12px 24px;
+            height: 40px;
             font-size: 16px;
             border: none;
             outline: none;
