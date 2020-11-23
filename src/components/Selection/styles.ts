@@ -258,7 +258,7 @@ export const Toggle = styled.div<SelectionProps>`
         opacity: ${props => (props.disabled ? '0.5 !important' : '1 !important')};
         width: ${props => (props.size ? widthToggle(props.size) : '70px !important')};
         border: 1px solid ${colors.card} !important;
-        padding: 8px 0 !important;
+        padding: 4px 0 !important;
 
         span {
             font-size: ${props =>
@@ -314,7 +314,7 @@ export const ActiveInactive = styled.div<SelectionProps>`
         opacity: ${props => (props.disabled ? '0.5 !important' : '1 !important')};
         width: ${props => (props.size ? widthToggle(props.size) : '70px !important')};
         border: 1px solid ${colors.card} !important;
-        padding: 8px 0 !important;
+        padding: 4px 0 !important;
 
         span {
             font-size: ${props =>
