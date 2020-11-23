@@ -105,97 +105,97 @@ const sizeGutter = (size: string) => {
 const widthToggle = (size: string) => {
     switch (size) {
         case Sizes.mini:
-            return '40px';
+            return '40px !important';
         case Sizes.tiny:
-            return '50px';
+            return '50px !important';
         case Sizes.small:
-            return '60px';
+            return '60px !important';
         case Sizes.medium:
-            return '70px';
+            return '70px !important';
         case Sizes.large:
-            return '80px';
+            return '80px !important';
         case Sizes.big:
-            return '90px';
+            return '90px !important';
         case Sizes.huge:
-            return '100px';
+            return '100px !important';
         case Sizes.massive:
-            return '110px';
+            return '110px !important';
         default:
-            return '70px';
+            return '70px !important';
     }
 };
 
 const fontToggle = (size: string) => {
     switch (size) {
         case Sizes.mini:
-            return '8px';
+            return '8px !important';
         case Sizes.tiny:
-            return '9px';
+            return '9px !important';
         case Sizes.small:
-            return '10px';
+            return '10px !important';
         case Sizes.medium:
-            return '11px';
+            return '11px !important';
         case Sizes.large:
-            return '12px';
+            return '12px !important';
         case Sizes.big:
-            return '13px';
+            return '13px !important';
         case Sizes.huge:
-            return '14px';
+            return '14px !important';
         case Sizes.massive:
-            return '15px';
+            return '15px !important';
         default:
-            return '11px';
+            return '11px !important';
     }
 };
 
 const fontActiveInactive = (size: string) => {
     switch (size) {
         case Sizes.mini:
-            return '7px';
+            return '7px !important';
         case Sizes.tiny:
-            return '8px';
+            return '8px !important';
         case Sizes.small:
-            return '9px';
+            return '9px !important';
         case Sizes.medium:
-            return '10px';
+            return '10px !important';
         case Sizes.large:
-            return '11px';
+            return '11px !important';
         case Sizes.big:
-            return '12px';
+            return '12px !important';
         case Sizes.huge:
-            return '13px';
+            return '13px !important';
         case Sizes.massive:
-            return '14px';
+            return '14px !important';
         default:
-            return '10px';
+            return '10px !important';
     }
 };
 
 export const Switch = styled.label<SelectionProps>`
-    display: flex;
-    flex-direction: row;
-    position: relative;
+    display: flex !important;
+    flex-direction: row !important;
+    position: relative !important;
     /* padding-left: ${props =>
         props.size ? `${widthSwitch(props.size)}px` : `${toggleWidth}px`}; */
     /* margin-bottom: 12px; */
-    cursor: ${props => (props.disabled ? 'normal' : 'pointer')};
-    font-size: 22px;
-    user-select: none;
+    cursor: ${props => (props.disabled ? 'normal !important' : 'pointer !important')};
+    font-size: 22px !important;
+    user-select: none !important;
 
     input {
-        position: absolute;
-        opacity: 0;
-        cursor: pointer;
-        height: 0;
-        width: 0;
-        display: none;
+        position: absolute !important;
+        opacity: 0 !important;
+        cursor: pointer !important;
+        height: 0 !important;
+        width: 0 !important;
+        display: none !important;
     }
 
     input:checked ~ .control {
         background-color: ${props =>
             props.disabled
-                ? `${colors.brandTransparent}`
-                : `${colors.brandDark}`};
+                ? `${colors.brandTransparent} !important`
+                : `${colors.brandDark} !important`};
 
         &:after {
             left: ${props =>
@@ -205,156 +205,156 @@ export const Switch = styled.label<SelectionProps>`
                           (heightSwitch(props.size) -
                               sizeGutter(props.size) * 2) -
                           sizeGutter(props.size)
-                      }px`
-                    : `${toggleWidth - toggleControlSsize - toggleGutter}px`};
+                      }px !important`
+                    : `${toggleWidth - toggleControlSsize - toggleGutter}px !important`};
         }
     }
 
     .control {
         height: ${props =>
-            props.size ? `${heightSwitch(props.size)}px` : `${toggleHeight}px`};
+            props.size ? `${heightSwitch(props.size)}px !important` : `${toggleHeight}px !important`};
         width: ${props =>
-            props.size ? `${widthSwitch(props.size)}px` : `${toggleWidth}px`};
+            props.size ? `${widthSwitch(props.size)}px !important` : `${toggleWidth}px !important`};
         border-radius: ${props =>
             props.size
-                ? `${heightSwitch(props.size) / 2}px`
-                : `${toggleRadius}px`};
-        background-color: ${colors.card};
-        transition: background-color 0.15s ease-in;
+                ? `${heightSwitch(props.size) / 2}px !important`
+                : `${toggleRadius}px !important`};
+        background-color: ${colors.card} !important;
+        transition: background-color 0.15s ease-in !important;
 
         &:after {
-            content: '';
-            position: absolute;
-            left: 5px;
-            top: 5px;
+            content: '' !important;
+            position: absolute !important;
+            left: 5px !important;
+            top: 5px !important;
             height: ${props =>
                 props.size
                     ? `${
                           heightSwitch(props.size) - sizeGutter(props.size) * 2
-                      }px`
-                    : `${toggleControlSsize}px`};
+                      }px !important`
+                    : `${toggleControlSsize}px !important`};
             width: ${props =>
                 props.size
                     ? `${
                           heightSwitch(props.size) - sizeGutter(props.size) * 2
-                      }px`
-                    : `${toggleControlSsize}px`};
-            border-radius: 50px;
-            background-color: white;
-            transition: left 0.15s ease-in;
-            border: 1px solid ${colors.default10};
+                      }px !important`
+                    : `${toggleControlSsize}px !important`};
+            border-radius: 50px !important;
+            background-color: white !important;
+            transition: left 0.15s ease-in !important;
+            border: 1px solid ${colors.default10} !important;
         }
     }
 `;
 
 export const Toggle = styled.div<SelectionProps>`
-    display: flex;
-    flex-direction: row;
+    display: flex !important;
+    flex-direction: row !important;
 
     .btn {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        opacity: ${props => (props.disabled ? '0.5' : '1')};
-        width: ${props => (props.size ? widthToggle(props.size) : '70px')};
-        border: 1px solid ${colors.card};
-        padding: 8px 0;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        opacity: ${props => (props.disabled ? '0.5 !important' : '1 !important')};
+        width: ${props => (props.size ? widthToggle(props.size) : '70px !important')};
+        border: 1px solid ${colors.card} !important;
+        padding: 8px 0 !important;
 
         span {
             font-size: ${props =>
-                props.size ? fontToggle(props.size) : '11px'};
+                props.size ? fontToggle(props.size) : '11px !important'};
         }
     }
 
     .left {
         cursor: ${props =>
             props.disabled
-                ? 'default'
+                ? 'default !important'
                 : !props.checked
-                ? 'default'
-                : 'pointer'};
+                ? 'default !important'
+                : 'pointer !important'};
         background-color: ${props =>
-            !props.checked ? `${colors.brand10}` : `${colors.white}`};
-        border-top-left-radius: 20px;
-        border-bottom-left-radius: 20px;
-        border-right: 0;
-        transition: 400ms;
+            !props.checked ? `${colors.brand10} !important` : `${colors.white} !important`};
+        border-top-left-radius: 20px !important;
+        border-bottom-left-radius: 20px !important;
+        border-right: 0 !important;
+        transition: 400ms !important;
 
         span {
             color: ${props =>
-                !props.checked ? `${colors.white}` : `${colors.gray20}`};
+                !props.checked ? `${colors.white} !important` : `${colors.gray20} !important`};
         }
     }
 
     .right {
         cursor: ${props =>
-            props.disabled ? 'default' : props.checked ? 'default' : 'pointer'};
+            props.disabled ? 'default !important' : props.checked ? 'default !important' : 'pointer !important'};
         background-color: ${props =>
-            props.checked ? `${colors.brand10}` : `${colors.white}`};
-        border-top-right-radius: 20px;
-        border-bottom-right-radius: 20px;
-        border-left: 0;
-        transition: 400ms;
+            props.checked ? `${colors.brand10} !important` : `${colors.white} !important`};
+        border-top-right-radius: 20px !important;
+        border-bottom-right-radius: 20px !important;
+        border-left: 0 !important;
+        transition: 400ms !important;
 
         span {
             color: ${props =>
-                props.checked ? `${colors.white}` : `${colors.gray20}`};
+                props.checked ? `${colors.white} !important` : `${colors.gray20} !important`};
         }
     }
 `;
 
 export const ActiveInactive = styled.div<SelectionProps>`
-    display: flex;
-    flex-direction: row;
+    display: flex !important;
+    flex-direction: row !important;
 
     .btn {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        opacity: ${props => (props.disabled ? '0.5' : '1')};
-        width: ${props => (props.size ? widthToggle(props.size) : '70px')};
-        border: 1px solid ${colors.card};
-        padding: 8px 0;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        opacity: ${props => (props.disabled ? '0.5 !important' : '1 !important')};
+        width: ${props => (props.size ? widthToggle(props.size) : '70px !important')};
+        border: 1px solid ${colors.card} !important;
+        padding: 8px 0 !important;
 
         span {
             font-size: ${props =>
-                props.size ? fontActiveInactive(props.size) : '10px'};
+                props.size ? fontActiveInactive(props.size) : '10px !important'};
         }
     }
 
     .left {
         cursor: ${props =>
             props.disabled
-                ? 'default'
+                ? 'default !important'
                 : !props.checked
-                ? 'default'
-                : 'pointer'};
+                ? 'default !important'
+                : 'pointer !important'};
         background-color: ${props =>
-            !props.checked ? `${colors.brand20}` : `${colors.white}`};
-        border-top-left-radius: 20px;
-        border-bottom-left-radius: 20px;
-        border-right: 0;
-        transition: 400ms;
+            !props.checked ? `${colors.brand20} !important` : `${colors.white} !important`};
+        border-top-left-radius: 20px !important;
+        border-bottom-left-radius: 20px !important;
+        border-right: 0 !important;
+        transition: 400ms !important;
 
         span {
             color: ${props =>
-                !props.checked ? `${colors.white}` : `${colors.gray20}`};
+                !props.checked ? `${colors.white} !important` : `${colors.gray20} !important`};
         }
     }
 
     .right {
         cursor: ${props =>
-            props.disabled ? 'default' : props.checked ? 'default' : 'pointer'};
+            props.disabled ? 'default !important' : props.checked ? 'default !important' : 'pointer !important'};
         background-color: ${props =>
-            props.checked ? `${colors.brandGreen}` : `${colors.white}`};
-        border-top-right-radius: 20px;
-        border-bottom-right-radius: 20px;
-        border-left: 0;
-        transition: 400ms;
+            props.checked ? `${colors.brandGreen} !important` : `${colors.white} !important`};
+        border-top-right-radius: 20px !important;
+        border-bottom-right-radius: 20px !important;
+        border-left: 0 !important;
+        transition: 400ms !important;
 
         span {
             color: ${props =>
-                props.checked ? `${colors.white}` : `${colors.gray20}`};
+                props.checked ? `${colors.white} !important` : `${colors.gray20} !important`};
         }
     }
 `;
