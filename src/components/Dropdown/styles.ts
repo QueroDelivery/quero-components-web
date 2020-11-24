@@ -9,6 +9,7 @@ interface SelectProps {
     textAlign?: 'center';
     width?: number;
     error?: string;
+    height?: number;
 }
 
 interface LabelProps {
@@ -160,7 +161,7 @@ export const SelectBox = styled.div<SelectProps>`
 
         input {
             padding: 12px 35px 12px 24px;
-            height: 40px;
+            height: ${props => (props.height ? `${props.height}px` : '40px')};
             font-size: 16px;
             border: none;
             outline: none;

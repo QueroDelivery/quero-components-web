@@ -26,6 +26,7 @@ export interface DropdownProps {
     label?: string;
     labelColor?: string;
     dropdownRef?: any;
+    height?: number;
 }
 
 const Dropdown: React.FC<DropdownProps> = ({
@@ -42,6 +43,7 @@ const Dropdown: React.FC<DropdownProps> = ({
     label,
     labelColor,
     dropdownRef,
+    height,
 }) => {
     const [active, setActive] = useState(false);
     const [optionsState, setOptionsState] = useState<OptionsProps[]>();
@@ -82,6 +84,7 @@ const Dropdown: React.FC<DropdownProps> = ({
                 width={width}
                 error={errorMessage}
                 ref={dropdownRef}
+                height={height}
             >
                 <div className={`options-container ${active ? 'active' : ''}`}>
                     {optionsState && optionsState.length === 0 ? (
@@ -168,13 +171,8 @@ const Dropdown: React.FC<DropdownProps> = ({
                     ) : (
                         <>
                             <input
-                                value={
-                                    value
-                                        ? item?.text
-                                        : placeholder
-                                        ? placeholder
-                                        : ''
-                                }
+                                value={item?.text || placeholder || ''}
+                                // defaultValue={placeholder ? placeholder : ''}
                                 readOnly
                             />
                             <div className="icon">

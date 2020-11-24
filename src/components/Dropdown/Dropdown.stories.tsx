@@ -36,7 +36,7 @@ export const Default = () => {
         <>
             <div>
                 <form onSubmit={handleSubmit(submit)}>
-                    <DropdownForm
+                    {/* <DropdownForm
                         name="teste"
                         label="Teste"
                         register={register}
@@ -72,7 +72,7 @@ export const Default = () => {
                         // search
                         // errorMessage={err}
                         // options={}
-                    />
+                    /> */}
 
                     <DropdownForm
                         name="teste2"
