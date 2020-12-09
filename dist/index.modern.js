@@ -3,6 +3,30 @@ import styled, { css as css$1 } from 'styled-components';
 import DatePicker from 'react-datepicker';
 import reactDom from 'react-dom';
 
+function _objectWithoutPropertiesLoose(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  var sourceKeys = Object.keys(source);
+  var key, i;
+
+  for (i = 0; i < sourceKeys.length; i++) {
+    key = sourceKeys[i];
+    if (excluded.indexOf(key) >= 0) continue;
+    target[key] = source[key];
+  }
+
+  return target;
+}
+
+function _taggedTemplateLiteralLoose(strings, raw) {
+  if (!raw) {
+    raw = strings.slice(0);
+  }
+
+  strings.raw = raw;
+  return strings;
+}
+
 /*!
  * Font Awesome Free 5.15.1 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
@@ -2254,7 +2278,7 @@ function _objectSpread2(target) {
   return target;
 }
 
-function _objectWithoutPropertiesLoose(source, excluded) {
+function _objectWithoutPropertiesLoose$1(source, excluded) {
   if (source == null) return {};
   var target = {};
   var sourceKeys = Object.keys(source);
@@ -2272,7 +2296,7 @@ function _objectWithoutPropertiesLoose(source, excluded) {
 function _objectWithoutProperties(source, excluded) {
   if (source == null) return {};
 
-  var target = _objectWithoutPropertiesLoose(source, excluded);
+  var target = _objectWithoutPropertiesLoose$1(source, excluded);
 
   var key, i;
 
@@ -2600,7 +2624,7 @@ var faPlus = {
   icon: [448, 512, [], "f067", "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"]
 };
 
-const colors = {
+var colors = {
   brand10: '#9B4DEE',
   brand20: '#E0457B',
   brand30: '#F7EA48',
@@ -2638,14 +2662,66 @@ const colors = {
   error: '#e0457b25'
 };
 
-let _ = t => t,
-    _t,
-    _t2,
-    _t3,
-    _t4,
-    _t5,
-    _t6;
-const Sizes = {
+function _templateObject6() {
+  var data = _taggedTemplateLiteralLoose(["\n    background-color: ", ";\n    width: 20px;\n    height: 20px;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    border-radius: 50%;\n    color: ", ";\n    font-size: 10px;\n"]);
+
+  _templateObject6 = function _templateObject6() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject5() {
+  var data = _taggedTemplateLiteralLoose([""]);
+
+  _templateObject5 = function _templateObject5() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject4() {
+  var data = _taggedTemplateLiteralLoose(["\n    background-color: ", ";\n    height: 40px;\n    width: 100%;\n    border-radius: 30px;\n    cursor: pointer;\n    border: 1px solid ", ";\n    outline: none;\n\n    &:disabled {\n        opacity: 0.5;\n        cursor: not-allowed;\n        pointer-events: none;\n    }\n\n    &:hover {\n        background-color: ", ";\n    }\n\n    span {\n        color: ", ";\n        margin-left: 20px;\n        font-weight: bold;\n    }\n"]);
+
+  _templateObject4 = function _templateObject4() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject3() {
+  var data = _taggedTemplateLiteralLoose(["\n    color: ", ";\n    font-weight: ", ";\n    font-size: ", ";\n"]);
+
+  _templateObject3 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2() {
+  var data = _taggedTemplateLiteralLoose(["\n    color: ", ";\n    font-weight: ", ";\n    font-size: ", ";\n"]);
+
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject() {
+  var data = _taggedTemplateLiteralLoose(["\n    background-color: ", ";\n    height: ", ";\n    width: ", ";\n    border-radius: 30px;\n    cursor: pointer;\n    border: ", ";\n    outline: none;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    padding: ", ";\n\n    &:disabled {\n        opacity: 0.5;\n        cursor: not-allowed;\n        pointer-events: none;\n    }\n\n    &:hover {\n        background-color: ", ";\n\n        span {\n            color: ", ";\n        }\n    }\n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+var Sizes = {
   mini: 'mini',
   tiny: 'tiny',
   small: 'small',
@@ -2656,8 +2732,8 @@ const Sizes = {
   massive: 'massive'
 };
 
-const size = size => {
-  switch (size) {
+var size = function size(_size) {
+  switch (_size) {
     case Sizes.mini:
       return '25px';
 
@@ -2683,11 +2759,11 @@ const size = size => {
       return '60px';
 
     default:
-      return size;
+      return _size;
   }
 };
 
-const textSize = size => {
+var textSize = function textSize(size) {
   switch (size) {
     case Sizes.mini:
       return '10px';
@@ -2718,33 +2794,7 @@ const textSize = size => {
   }
 };
 
-const Button = styled.button(_t || (_t = _`
-    background-color: ${0};
-    height: ${0};
-    width: ${0};
-    border-radius: 30px;
-    cursor: pointer;
-    border: ${0};
-    outline: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: ${0};
-
-    &:disabled {
-        opacity: 0.5;
-        cursor: not-allowed;
-        pointer-events: none;
-    }
-
-    &:hover {
-        background-color: ${0};
-
-        span {
-            color: ${0};
-        }
-    }
-`), props => {
+var Button = styled.button(_templateObject(), function (props) {
   if (props.secundary || props.tertiary) {
     return colors.white;
   }
@@ -2754,17 +2804,23 @@ const Button = styled.button(_t || (_t = _`
   }
 
   return colors.brand30;
-}, props => props.size ? size(props.size) : '40px', props => props.width ? `${props.width}%` : props.icon || props.tertiary ? '' : '100%', props => {
+}, function (props) {
+  return props.size ? size(props.size) : '40px';
+}, function (props) {
+  return props.width ? props.width + "%" : props.icon || props.tertiary ? '' : '100%';
+}, function (props) {
   if (props.secundary) {
-    return `1px solid ${colors.brand10}`;
+    return "1px solid " + colors.brand10;
   }
 
   if (props.tertiary) {
-    return `1px solid ${colors.gray10}`;
+    return "1px solid " + colors.gray10;
   }
 
   return 'none';
-}, props => props.icon || props.tertiary ? '0 15px' : '', props => {
+}, function (props) {
+  return props.icon || props.tertiary ? '0 15px' : '';
+}, function (props) {
   if (props.secundary) {
     return colors.brandTransparent;
   }
@@ -2782,7 +2838,7 @@ const Button = styled.button(_t || (_t = _`
   }
 
   return colors.brand10;
-}, props => {
+}, function (props) {
   if (props.secundary) {
     return colors.brand10;
   }
@@ -2805,11 +2861,7 @@ const Button = styled.button(_t || (_t = _`
 
   return colors.brand30;
 });
-const TextFirst = styled.span(_t2 || (_t2 = _`
-    color: ${0};
-    font-weight: ${0};
-    font-size: ${0};
-`), props => {
+var TextFirst = styled.span(_templateObject2(), function (props) {
   if (props.colorText) {
     return props.colorText;
   }
@@ -2819,18 +2871,16 @@ const TextFirst = styled.span(_t2 || (_t2 = _`
   }
 
   return colors.brand10;
-}, props => {
+}, function (props) {
   if (props.firstStrong || props.strong) {
     return 'bold';
   }
 
   return 'normal';
-}, props => props.size ? textSize(props.size) : '14px');
-const TextEnd = styled.span(_t3 || (_t3 = _`
-    color: ${0};
-    font-weight: ${0};
-    font-size: ${0};
-`), props => {
+}, function (props) {
+  return props.size ? textSize(props.size) : '14px';
+});
+var TextEnd = styled.span(_templateObject3(), function (props) {
   if (props.colorText) {
     return props.colorText;
   }
@@ -2840,55 +2890,39 @@ const TextEnd = styled.span(_t3 || (_t3 = _`
   }
 
   return colors.brand10;
-}, props => {
+}, function (props) {
   if (props.firstStrong || props.notStrong) {
     return 'normal';
   }
 
   return 'bold';
-}, props => props.size ? textSize(props.size) : '14px');
-const Notification = styled.button(_t4 || (_t4 = _`
-    background-color: ${0};
-    height: 40px;
-    width: 100%;
-    border-radius: 30px;
-    cursor: pointer;
-    border: 1px solid ${0};
-    outline: none;
+}, function (props) {
+  return props.size ? textSize(props.size) : '14px';
+});
+var Notification = styled.button(_templateObject4(), colors.brand10, colors.brand30, colors.brandTransparent2, colors.brand30);
+var Icon = styled.div(_templateObject5());
+var Amount = styled.div(_templateObject6(), colors.brand30, colors.brand10);
 
-    &:disabled {
-        opacity: 0.5;
-        cursor: not-allowed;
-        pointer-events: none;
-    }
+function _templateObject2$1() {
+  var data = _taggedTemplateLiteralLoose(["\n    border-width: ", ";\n    border-style: solid;\n    border-color: ", ";\n    border-top-width: ", ";\n    border-top-style: solid;\n    border-top-color: ", ";\n\n    border-radius: 50%;\n    width: ", ";\n    height: ", ";\n    animation: spin 0.6s linear infinite;\n\n    @keyframes spin {\n        0% {\n            transform: rotate(0deg);\n        }\n        100% {\n            transform: rotate(360deg);\n        }\n    }\n"]);
 
-    &:hover {
-        background-color: ${0};
-    }
+  _templateObject2$1 = function _templateObject2() {
+    return data;
+  };
 
-    span {
-        color: ${0};
-        margin-left: 20px;
-        font-weight: bold;
-    }
-`), colors.brand10, colors.brand30, colors.brandTransparent2, colors.brand30);
-const Icon = styled.div(_t5 || (_t5 = _``));
-const Amount = styled.div(_t6 || (_t6 = _`
-    background-color: ${0};
-    width: 20px;
-    height: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    color: ${0};
-    font-size: 10px;
-`), colors.brand30, colors.brand10);
+  return data;
+}
 
-let _$1 = t => t,
-    _t$1,
-    _t2$1;
-const Sizes$1 = {
+function _templateObject$1() {
+  var data = _taggedTemplateLiteralLoose(["\n    width: 100%;\n    display: flex;\n    justify-content: ", ";\n"]);
+
+  _templateObject$1 = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+var Sizes$1 = {
   mini: 'mini',
   tiny: 'tiny',
   small: 'small',
@@ -2899,7 +2933,7 @@ const Sizes$1 = {
   massive: 'massive'
 };
 
-const widthLoader = size => {
+var widthLoader = function widthLoader(size) {
   switch (size) {
     case Sizes$1.mini:
       return '1em';
@@ -2930,7 +2964,7 @@ const widthLoader = size => {
   }
 };
 
-const widthBorder = size => {
+var widthBorder = function widthBorder(size) {
   switch (size) {
     case Sizes$1.mini:
       return '2px';
@@ -2961,57 +2995,34 @@ const widthBorder = size => {
   }
 };
 
-const Container = styled.div(_t$1 || (_t$1 = _$1`
-    width: 100%;
-    display: flex;
-    justify-content: ${0};
-`), props => props.position === 'left' ? 'flex-end' : props.position === 'right' ? 'flex-end' : 'center');
-const Load = styled.div(_t2$1 || (_t2$1 = _$1`
-    border-width: ${0};
-    border-style: solid;
-    border-color: ${0};
-    border-top-width: ${0};
-    border-top-style: solid;
-    border-top-color: ${0};
-
-    border-radius: 50%;
-    width: ${0};
-    height: ${0};
-    animation: spin 0.6s linear infinite;
-
-    @keyframes spin {
-        0% {
-            transform: rotate(0deg);
-        }
-        100% {
-            transform: rotate(360deg);
-        }
-    }
-`), props => {
+var Container = styled.div(_templateObject$1(), function (props) {
+  return props.position === 'left' ? 'flex-end' : props.position === 'right' ? 'flex-end' : 'center';
+});
+var Load = styled.div(_templateObject2$1(), function (props) {
   if (props.size) {
     return widthBorder(props.size);
   }
 
   return '3.5px';
-}, colors.default20, props => {
+}, colors.default20, function (props) {
   if (props.size) {
     return widthBorder(props.size);
   }
 
   return '3.5px';
-}, props => {
+}, function (props) {
   if (props.color) {
     return props.color;
   }
 
   return colors.brand10;
-}, props => {
+}, function (props) {
   if (props.size) {
     return widthLoader(props.size);
   }
 
   return '2.5em';
-}, props => {
+}, function (props) {
   if (props.size) {
     if (props.size) {
       return widthLoader(props.size);
@@ -3021,13 +3032,12 @@ const Load = styled.div(_t2$1 || (_t2$1 = _$1`
   return '2.5em';
 });
 
-const Loader = ({
-  color,
-  size,
-  className,
-  style,
-  position
-}) => {
+var Loader = function Loader(_ref) {
+  var color = _ref.color,
+      size = _ref.size,
+      className = _ref.className,
+      style = _ref.style,
+      position = _ref.position;
   return React$2.createElement(Container, {
     position: position
   }, React$2.createElement(Load, {
@@ -3038,28 +3048,28 @@ const Loader = ({
   }));
 };
 
-const ButtonMain = ({
-  textFirst,
-  textEnd,
-  firstStrong,
-  notStrong,
-  strong,
-  loading,
-  secundary,
-  backPurple,
-  children,
-  notification,
-  amount,
-  height,
-  width,
-  icon,
-  colorIcon,
-  noBorder,
-  colorText,
-  tertiary,
-  size,
-  ...rest
-}) => {
+var ButtonMain = function ButtonMain(_ref) {
+  var textFirst = _ref.textFirst,
+      textEnd = _ref.textEnd,
+      firstStrong = _ref.firstStrong,
+      notStrong = _ref.notStrong,
+      strong = _ref.strong,
+      loading = _ref.loading,
+      secundary = _ref.secundary,
+      backPurple = _ref.backPurple,
+      children = _ref.children,
+      notification = _ref.notification,
+      amount = _ref.amount,
+      height = _ref.height,
+      width = _ref.width,
+      icon = _ref.icon,
+      colorIcon = _ref.colorIcon,
+      noBorder = _ref.noBorder,
+      colorText = _ref.colorText,
+      tertiary = _ref.tertiary,
+      size = _ref.size,
+      rest = _objectWithoutPropertiesLoose(_ref, ["textFirst", "textEnd", "firstStrong", "notStrong", "strong", "loading", "secundary", "backPurple", "children", "notification", "amount", "height", "width", "icon", "colorIcon", "noBorder", "colorText", "tertiary", "size"]);
+
   if (notification) {
     return React$2.createElement(Notification, Object.assign({}, rest), loading ? React$2.createElement(Loader, {
       size: "tiny"
@@ -3080,7 +3090,7 @@ const ButtonMain = ({
       icon: faBell,
       size: "lg",
       color: colors.brand30
-    })), React$2.createElement("span", null, "notifica\u00E7\u00F5es")), React$2.createElement(Amount, null, amount)));
+    })), React$2.createElement("span", null, "notifica\xE7\xF5es")), React$2.createElement(Amount, null, amount)));
   } else {
     return React$2.createElement(Button, Object.assign({}, rest, {
       secundary: secundary,
@@ -3101,7 +3111,7 @@ const ButtonMain = ({
       colorText: colorText,
       tertiary: tertiary,
       size: size
-    }, `${textFirst} `), React$2.createElement(TextEnd, {
+    }, textFirst + " "), React$2.createElement(TextEnd, {
       firstStrong: firstStrong,
       strong: strong,
       notStrong: notStrong,
@@ -3119,157 +3129,158 @@ const ButtonMain = ({
   }
 };
 
-let _$2 = t => t,
-    _t$2,
-    _t2$2,
-    _t3$1,
-    _t4$1,
-    _t5$1,
-    _t6$1;
-const Background = styled.div(_t$2 || (_t$2 = _$2`
-    ${0}
-`), props => props.open ? css$1(_t2$2 || (_t2$2 = _$2`
-                  opacity: 1;
-                  visibility: visible;
-                  position: fixed;
-                  top: 0;
-                  right: 0;
-                  bottom: 0;
-                  left: 0;
-                  background: rgba(0, 0, 0, 0.5);
-                  transition: opacity 0.25s ease;
-                  overflow: auto;
-                  display: flex;
-                  z-index: 999;
-              `)) : css$1(_t3$1 || (_t3$1 = _$2`
-                  opacity: 1;
-                  visibility: hidden;
-              `)));
-const Dialog = styled.div(_t4$1 || (_t4$1 = _$2`
-    ${0}
-`), props => props.open ? css$1(_t5$1 || (_t5$1 = _$2`
-                  transition: bottom 0.25s ease;
-                  width: 80%;
-                  background: ${0};
-                  border-top-left-radius: 30px;
-                  border-top-right-radius: 30px;
-                  left: 0;
-                  right: 0;
-                  bottom: 0;
-                  position: fixed;
-                  margin: auto;
-                  padding: 20px;
+function _templateObject6$1() {
+  var data = _taggedTemplateLiteralLoose(["\n                  transition: bottom 0.25s ease;\n                  bottom: -100%;\n              "]);
 
-                  .loading-dialog {
-                      display: flex;
-                      justify-content: center;
-                      align-items: center;
-                      background-color: rgba(255, 255, 255, 0.8);
-                      width: 100%;
-                      height: 100%;
-                      top: 0;
-                      left: 0;
-                      right: 0;
-                      bottom: 0;
-                      border-radius: 30px;
-                      z-index: 2;
-                      position: absolute;
-                  }
-              `), colors.white) : css$1(_t6$1 || (_t6$1 = _$2`
-                  transition: bottom 0.25s ease;
-                  bottom: -100%;
-              `)));
+  _templateObject6$1 = function _templateObject6() {
+    return data;
+  };
 
-const DialogComponent = ({
-  open,
-  children,
-  onClose,
-  loading
-}) => {
+  return data;
+}
+
+function _templateObject5$1() {
+  var data = _taggedTemplateLiteralLoose(["\n                  transition: bottom 0.25s ease;\n                  width: 80%;\n                  background: ", ";\n                  border-top-left-radius: 30px;\n                  border-top-right-radius: 30px;\n                  left: 0;\n                  right: 0;\n                  bottom: 0;\n                  position: fixed;\n                  margin: auto;\n                  padding: 20px;\n\n                  .loading-dialog {\n                      display: flex;\n                      justify-content: center;\n                      align-items: center;\n                      background-color: rgba(255, 255, 255, 0.8);\n                      width: 100%;\n                      height: 100%;\n                      top: 0;\n                      left: 0;\n                      right: 0;\n                      bottom: 0;\n                      border-radius: 30px;\n                      z-index: 2;\n                      position: absolute;\n                  }\n              "]);
+
+  _templateObject5$1 = function _templateObject5() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject4$1() {
+  var data = _taggedTemplateLiteralLoose(["\n    ", "\n"]);
+
+  _templateObject4$1 = function _templateObject4() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject3$1() {
+  var data = _taggedTemplateLiteralLoose(["\n                  opacity: 1;\n                  visibility: hidden;\n              "]);
+
+  _templateObject3$1 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2$2() {
+  var data = _taggedTemplateLiteralLoose(["\n                  opacity: 1;\n                  visibility: visible;\n                  position: fixed;\n                  top: 0;\n                  right: 0;\n                  bottom: 0;\n                  left: 0;\n                  background: rgba(0, 0, 0, 0.5);\n                  transition: opacity 0.25s ease;\n                  overflow: auto;\n                  display: flex;\n                  z-index: 999;\n              "]);
+
+  _templateObject2$2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject$2() {
+  var data = _taggedTemplateLiteralLoose(["\n    ", "\n"]);
+
+  _templateObject$2 = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+var Background = styled.div(_templateObject$2(), function (props) {
+  return props.open ? css$1(_templateObject2$2()) : css$1(_templateObject3$1());
+});
+var Dialog = styled.div(_templateObject4$1(), function (props) {
+  return props.open ? css$1(_templateObject5$1(), colors.white) : css$1(_templateObject6$1());
+});
+
+var DialogComponent = function DialogComponent(_ref) {
+  var open = _ref.open,
+      children = _ref.children,
+      onClose = _ref.onClose,
+      loading = _ref.loading;
   return React$2.createElement(Background, {
     open: open,
-    onClick: () => onClose()
+    onClick: function onClick() {
+      return onClose();
+    }
   }, React$2.createElement(Dialog, {
     open: open,
-    onClick: event => event.stopPropagation()
+    onClick: function onClick(event) {
+      return event.stopPropagation();
+    }
   }, loading && React$2.createElement("div", {
     className: "loading-dialog"
   }, React$2.createElement(Loader, null)), children));
 };
 
-let _$3 = t => t,
-    _t$3,
-    _t2$3,
-    _t3$2,
-    _t4$2,
-    _t5$2,
-    _t6$2;
-const Container$1 = styled.div(_t$3 || (_t$3 = _$3`
-    width: ${0};
-    position: relative;
+function _templateObject6$2() {
+  var data = _taggedTemplateLiteralLoose(["\n    font-size: 10px;\n    margin-left: 0;\n    color: ", ";\n"]);
 
-    opacity: ${0};
+  _templateObject6$2 = function _templateObject6() {
+    return data;
+  };
 
-    input {
-        color: ${0};
-        width: 100%;
-        height: 100%;
-        padding-top: 20px;
-        padding-left: ${0};
-        padding-bottom: 5px;
-        padding-right: ${0};
-        border: none;
-        outline: none;
-        background-color: transparent;
+  return data;
+}
 
-        &::placeholder {
-            color: ${0};
-        }
-    }
+function _templateObject5$2() {
+  var data = _taggedTemplateLiteralLoose(["\n                      font-size: 14px;\n                      color: ", ";\n                  "]);
 
-    input:disabled {
-        background-color: transparent;
-    }
+  _templateObject5$2 = function _templateObject5() {
+    return data;
+  };
 
-    label {
-        position: absolute;
-        bottom: 0px;
-        top: 0px;
-        left: 0px;
-        width: 100%;
-        right: 100%;
-        pointer-events: none;
-        border-bottom-width: 1px;
-        border-bottom-style: solid;
-        border-bottom-color: ${0};
+  return data;
+}
 
-        ${0}
-    }
+function _templateObject4$2() {
+  var data = _taggedTemplateLiteralLoose(["\n                      transform: translateY(-100%);\n                      font-size: 12px;\n                      color: ", ";\n                  "]);
 
-    span {
-        position: absolute;
-        bottom: 5px;
-        left: ${0};
-        transition: all 0.3s ease;
+  _templateObject4$2 = function _templateObject4() {
+    return data;
+  };
 
-        ${0}
-    }
+  return data;
+}
 
-    .icon {
-        position: absolute;
-        bottom: 0;
-        padding: 5px 10px;
-        ${0}
-    }
+function _templateObject3$2() {
+  var data = _taggedTemplateLiteralLoose(["\n                      color: ", ";\n                  "]);
 
-    .icon-action {
-        position: absolute;
-        bottom: 0;
-        padding: 5px 10px;
-        ${0}
-        cursor: pointer;
-    }
-`), props => props.width ? props.width : '100%', props => props.disabled ? '50%' : '100%', props => props.textColor ? props.textColor : colors.gray20, props => {
+  _templateObject3$2 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2$3() {
+  var data = _taggedTemplateLiteralLoose(["\n                      color: ", ";\n                  "]);
+
+  _templateObject2$3 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject$3() {
+  var data = _taggedTemplateLiteralLoose(["\n    width: ", ";\n    position: relative;\n\n    opacity: ", ";\n\n    input {\n        color: ", ";\n        width: 100%;\n        height: 100%;\n        padding-top: 20px;\n        padding-left: ", ";\n        padding-bottom: 5px;\n        padding-right: ", ";\n        border: none;\n        outline: none;\n        background-color: transparent;\n\n        &::placeholder {\n            color: ", ";\n        }\n    }\n\n    input:disabled {\n        background-color: transparent;\n    }\n\n    label {\n        position: absolute;\n        bottom: 0px;\n        top: 0px;\n        left: 0px;\n        width: 100%;\n        right: 100%;\n        pointer-events: none;\n        border-bottom-width: 1px;\n        border-bottom-style: solid;\n        border-bottom-color: ", ";\n\n        ", "\n    }\n\n    span {\n        position: absolute;\n        bottom: 5px;\n        left: ", ";\n        transition: all 0.3s ease;\n\n        ", "\n    }\n\n    .icon {\n        position: absolute;\n        bottom: 0;\n        padding: 5px 10px;\n        ", "\n    }\n\n    .icon-action {\n        position: absolute;\n        bottom: 0;\n        padding: 5px 10px;\n        ", "\n        cursor: pointer;\n    }\n"]);
+
+  _templateObject$3 = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+var Container$1 = styled.div(_templateObject$3(), function (props) {
+  return props.width ? props.width : '100%';
+}, function (props) {
+  return props.disabled ? '50%' : '100%';
+}, function (props) {
+  return props.textColor ? props.textColor : colors.gray20;
+}, function (props) {
   if (props.icon && !props.action) {
     if (props.iconPosition === 'right') {
       return '15px';
@@ -3291,7 +3302,7 @@ const Container$1 = styled.div(_t$3 || (_t$3 = _$3`
   }
 
   return '15px';
-}, props => {
+}, function (props) {
   if (props.icon && !props.action) {
     if (props.iconPosition === 'right') {
       return '40px';
@@ -3313,7 +3324,7 @@ const Container$1 = styled.div(_t$3 || (_t$3 = _$3`
   }
 
   return '0px';
-}, colors.default10, props => {
+}, colors.default10, function (props) {
   if ((props.requiredText || props.errorMessage) && props.errorColor) {
     return props.errorColor;
   }
@@ -3323,11 +3334,9 @@ const Container$1 = styled.div(_t$3 || (_t$3 = _$3`
   }
 
   return colors.gray10;
-}, props => props.isFieldActive ? css$1(_t2$3 || (_t2$3 = _$3`
-                      color: ${0};
-                  `), colors.brand10) : css$1(_t3$2 || (_t3$2 = _$3`
-                      color: ${0};
-                  `), colors.gray20), props => {
+}, function (props) {
+  return props.isFieldActive ? css$1(_templateObject2$3(), colors.brand10) : css$1(_templateObject3$2(), colors.gray20);
+}, function (props) {
   if (props.icon && !props.action) {
     if (props.iconPosition === 'right') {
       return '15px';
@@ -3349,39 +3358,34 @@ const Container$1 = styled.div(_t$3 || (_t$3 = _$3`
   }
 
   return '15px';
-}, props => props.isFieldActive ? css$1(_t4$2 || (_t4$2 = _$3`
-                      transform: translateY(-100%);
-                      font-size: 12px;
-                      color: ${0};
-                  `), props => {
-  if ((props.requiredText || props.errorMessage) && props.errorColor) {
-    return props.errorColor;
-  }
+}, function (props) {
+  return props.isFieldActive ? css$1(_templateObject4$2(), function (props) {
+    if ((props.requiredText || props.errorMessage) && props.errorColor) {
+      return props.errorColor;
+    }
 
-  if (props.requiredText || props.errorMessage) {
-    return colors.danger20;
-  }
+    if (props.requiredText || props.errorMessage) {
+      return colors.danger20;
+    }
 
-  return colors.brand10;
-}) : css$1(_t5$2 || (_t5$2 = _$3`
-                      font-size: 14px;
-                      color: ${0};
-                  `), props => {
-  if ((props.requiredText || props.errorMessage) && props.errorColor) {
-    return props.errorColor;
-  }
+    return colors.brand10;
+  }) : css$1(_templateObject5$2(), function (props) {
+    if ((props.requiredText || props.errorMessage) && props.errorColor) {
+      return props.errorColor;
+    }
 
-  if (props.requiredText || props.errorMessage) {
-    return colors.danger20;
-  }
+    if (props.requiredText || props.errorMessage) {
+      return colors.danger20;
+    }
 
-  return colors.gray20;
-}), props => props.iconPosition === 'right' && 'right: 0;', props => props.actionPosition && props.actionPosition === 'left' ? 'left: 0;' : 'right: 0;');
-const LabelError = styled.span(_t6$2 || (_t6$2 = _$3`
-    font-size: 10px;
-    margin-left: 0;
-    color: ${0};
-`), props => {
+    return colors.gray20;
+  });
+}, function (props) {
+  return props.iconPosition === 'right' && 'right: 0;';
+}, function (props) {
+  return props.actionPosition && props.actionPosition === 'left' ? 'left: 0;' : 'right: 0;';
+});
+var LabelError = styled.span(_templateObject6$2(), function (props) {
   if (props.errorColor) {
     return props.errorColor;
   }
@@ -3389,23 +3393,26 @@ const LabelError = styled.span(_t6$2 || (_t6$2 = _$3`
   return colors.danger20;
 });
 
-const InputLine = ({
-  containerStyle,
-  label,
-  labelStyle,
-  errorMessage,
-  width,
-  textColor,
-  inputRef,
-  name,
-  icon,
-  iconPosition,
-  iconColor,
-  action,
-  ...rest
-}) => {
-  const [isFieldActive, setIsFieldActive] = useState(false);
-  useEffect(() => {
+var InputLine = function InputLine(_ref) {
+  var containerStyle = _ref.containerStyle,
+      label = _ref.label,
+      labelStyle = _ref.labelStyle,
+      errorMessage = _ref.errorMessage,
+      width = _ref.width,
+      textColor = _ref.textColor,
+      inputRef = _ref.inputRef,
+      name = _ref.name,
+      icon = _ref.icon,
+      iconPosition = _ref.iconPosition,
+      iconColor = _ref.iconColor,
+      action = _ref.action,
+      rest = _objectWithoutPropertiesLoose(_ref, ["containerStyle", "label", "labelStyle", "errorMessage", "width", "textColor", "inputRef", "name", "icon", "iconPosition", "iconColor", "action"]);
+
+  var _useState = useState(false),
+      isFieldActive = _useState[0],
+      setIsFieldActive = _useState[1];
+
+  useEffect(function () {
     if (rest.value) {
       if (!isFieldActive) {
         setIsFieldActive(true);
@@ -3413,13 +3420,13 @@ const InputLine = ({
     }
   }, [rest.value]);
 
-  const handleFocus = () => {
+  var handleFocus = function handleFocus() {
     if (!isFieldActive) {
       setIsFieldActive(true);
     }
   };
 
-  const handleBlur = () => {
+  var handleBlur = function handleBlur() {
     if (isFieldActive && !rest.value) {
       setIsFieldActive(false);
     }
@@ -3463,23 +3470,29 @@ const InputLine = ({
   }, React$2.createElement("span", null, label))), errorMessage ? React$2.createElement(LabelError, null, errorMessage) : null);
 };
 
-const InputLineForm = ({
-  register,
-  errors,
-  validate,
-  name,
-  required,
-  values,
-  limit,
-  minimum,
-  ...rest
-}) => {
+var InputLineForm = function InputLineForm(_ref) {
   var _rest$action;
 
-  const [isFieldActive, setIsFieldActive] = useState(false);
-  const [message, setMessage] = useState('');
-  const value = values ? values(name) || rest.defaultValue : rest.value;
-  useEffect(() => {
+  var register = _ref.register,
+      errors = _ref.errors,
+      validate = _ref.validate,
+      name = _ref.name,
+      required = _ref.required,
+      values = _ref.values,
+      limit = _ref.limit,
+      minimum = _ref.minimum,
+      rest = _objectWithoutPropertiesLoose(_ref, ["register", "errors", "validate", "name", "required", "values", "limit", "minimum"]);
+
+  var _useState = useState(false),
+      isFieldActive = _useState[0],
+      setIsFieldActive = _useState[1];
+
+  var _useState2 = useState(''),
+      message = _useState2[0],
+      setMessage = _useState2[1];
+
+  var value = values ? values(name) || rest.defaultValue : rest.value;
+  useEffect(function () {
     if (value) {
       if (!isFieldActive) {
         setIsFieldActive(true);
@@ -3487,13 +3500,13 @@ const InputLineForm = ({
     }
   }, [value]);
 
-  const handleFocus = () => {
+  var handleFocus = function handleFocus() {
     if (!isFieldActive) {
       setIsFieldActive(true);
     }
   };
 
-  const handleBlur = () => {
+  var handleBlur = function handleBlur() {
     if (isFieldActive && !value) {
       setIsFieldActive(false);
     }
@@ -3534,7 +3547,7 @@ const InputLineForm = ({
     placeholder: isFieldActive ? rest.placeholder : '',
     ref: register ? register({
       required: required,
-      validate: validate && required ? value => {
+      validate: validate && required ? function (value) {
         if (validate(value)) {
           setMessage(validate(value));
           return false;
@@ -3542,17 +3555,17 @@ const InputLineForm = ({
           setMessage('');
           return true;
         }
-      } : limit && required ? value => {
+      } : limit && required ? function (value) {
         if (value.length > limit) {
-          setMessage(`${limit} caracteres permitidos.`);
+          setMessage(limit + " caracteres permitidos.");
           return false;
         } else {
           setMessage('');
           return true;
         }
-      } : minimum && required ? value => {
+      } : minimum && required ? function (value) {
         if (value.length < minimum) {
-          setMessage(`${name} deve ter ${minimum} ou mais caracteres.`);
+          setMessage(name + " deve ter " + minimum + " ou mais caracteres.");
           return false;
         } else {
           setMessage('');
@@ -3562,7 +3575,7 @@ const InputLineForm = ({
     }) : null
   })), React$2.createElement("label", {
     style: rest.labelStyle
-  }, React$2.createElement("span", null, rest.label))), errors ? React$2.createElement(LabelError, null, errors.type === 'required' ? 'Obrigatório' : `${message}`) : null);
+  }, React$2.createElement("span", null, rest.label))), errors ? React$2.createElement(LabelError, null, errors.type === 'required' ? 'Obrigatório' : "" + message) : null);
 };
 
 /**
@@ -4915,57 +4928,69 @@ function (_React$Component) {
 NumberFormat.propTypes = propTypes$1$1;
 NumberFormat.defaultProps = defaultProps;
 
-const InputMoneyForm = ({
-  register,
-  errors,
-  validate,
-  name,
-  required,
-  values,
-  limit,
-  minimum,
-  setError,
-  onChange,
-  isSubmitted,
-  ...rest
-}) => {
+var InputMoneyForm = function InputMoneyForm(_ref) {
   var _rest$action;
 
-  const [isFieldActive, setIsFieldActive] = useState(false);
-  const [formattedValue, setFormattedValue] = useState();
-  const [floatValue, setFloatValue] = useState();
-  const [message, setMessage] = useState('');
-  const value = values ? values(name) || rest.defaultValue : rest.value;
-  useEffect(() => {
+  var register = _ref.register,
+      errors = _ref.errors,
+      validate = _ref.validate,
+      name = _ref.name,
+      required = _ref.required,
+      values = _ref.values,
+      limit = _ref.limit,
+      minimum = _ref.minimum,
+      setError = _ref.setError,
+      onChange = _ref.onChange,
+      isSubmitted = _ref.isSubmitted,
+      rest = _objectWithoutPropertiesLoose(_ref, ["register", "errors", "validate", "name", "required", "values", "limit", "minimum", "setError", "onChange", "isSubmitted"]);
+
+  var _useState = useState(false),
+      isFieldActive = _useState[0],
+      setIsFieldActive = _useState[1];
+
+  var _useState2 = useState(),
+      formattedValue = _useState2[0],
+      setFormattedValue = _useState2[1];
+
+  var _useState3 = useState(),
+      floatValue = _useState3[0],
+      setFloatValue = _useState3[1];
+
+  var _useState4 = useState(''),
+      message = _useState4[0],
+      setMessage = _useState4[1];
+
+  var value = values ? values(name) || rest.defaultValue : rest.value;
+  useEffect(function () {
     if (value) {
       if (!isFieldActive) {
         setIsFieldActive(true);
       }
     }
   }, [value]);
-  useEffect(() => {
+  useEffect(function () {
     if (isSubmitted && !value && required) {
       setError(name, {
         type: 'required'
       });
     }
   }, [isSubmitted, value]);
-  useEffect(() => {
+  useEffect(function () {
     setFormattedValue(value);
   }, []);
-  useEffect(() => {
+  useEffect(function () {
     if (value != floatValue || value == 0) {
       setFormattedValue(value);
     }
   }, [value]);
 
-  const handleFocus = () => {
+  var handleFocus = function handleFocus() {
     if (!isFieldActive) {
       setIsFieldActive(true);
     }
   };
 
-  const handleBlur = () => {
+  var handleBlur = function handleBlur() {
     if (isFieldActive && !value) {
       setIsFieldActive(false);
     }
@@ -4973,7 +4998,7 @@ const InputMoneyForm = ({
 
   function onChanged(values) {
     if (values.floatValue === 0) {
-      onChange(parseFloat(`${values.formattedValue}`));
+      onChange(parseFloat("" + values.formattedValue));
     } else {
       onChange(values.floatValue);
     }
@@ -5024,7 +5049,7 @@ const InputMoneyForm = ({
     name: name,
     getInputRef: register ? register({
       required: required,
-      validate: validate && required ? value => {
+      validate: validate && required ? function (value) {
         if (validate(value)) {
           setMessage(validate(value));
           return false;
@@ -5032,17 +5057,17 @@ const InputMoneyForm = ({
           setMessage('');
           return true;
         }
-      } : limit && required ? value => {
+      } : limit && required ? function (value) {
         if (value.length > limit) {
-          setMessage(`${limit} caracteres permitidos.`);
+          setMessage(limit + " caracteres permitidos.");
           return false;
         } else {
           setMessage('');
           return true;
         }
-      } : minimum && required ? value => {
+      } : minimum && required ? function (value) {
         if (value.length < minimum) {
-          setMessage(`${name} deve ter ${minimum} ou mais caracteres.`);
+          setMessage(name + " deve ter " + minimum + " ou mais caracteres.");
           return false;
         } else {
           setMessage('');
@@ -5052,105 +5077,111 @@ const InputMoneyForm = ({
     }) : null
   }), React$2.createElement("label", {
     style: rest.labelStyle
-  }, React$2.createElement("span", null, rest.label))), errors ? React$2.createElement(LabelError, null, errors.type === 'required' ? 'Obrigatório' : `${message}`) : null);
+  }, React$2.createElement("span", null, rest.label))), errors ? React$2.createElement(LabelError, null, errors.type === 'required' ? 'Obrigatório' : "" + message) : null);
 };
 
-let _$4 = t => t,
-    _t$4,
-    _t2$4,
-    _t3$3,
-    _t4$3,
-    _t5$3,
-    _t6$3,
-    _t7,
-    _t8,
-    _t9;
-const Background$1 = styled.div(_t$4 || (_t$4 = _$4`
-    ${0}
-`), props => props.open ? css$1(_t2$4 || (_t2$4 = _$4`
-                  opacity: 1;
-                  visibility: visible;
-                  position: fixed;
-                  top: 0;
-                  right: 0;
-                  bottom: 0;
-                  left: 0;
-                  background: rgba(0, 0, 0, 0.5);
-                  transition: opacity 0.25s ease;
-                  overflow: auto;
-                  padding: 40px 0;
-                  display: flex;
-                  z-index: 999;
-              `)) : css$1(_t3$3 || (_t3$3 = _$4`
-                  opacity: 1;
-                  visibility: hidden;
-              `)));
-const Modal = styled.div(_t4$3 || (_t4$3 = _$4`
-    transition: top 0.25s ease;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    width: ${0};
-    margin: auto;
-    background: ${0};
-    border-radius: 30px;
-`), props => props.witdh ? `${props.witdh}%` : '80%', colors.white);
-const Dialog$1 = styled.div(_t5$3 || (_t5$3 = _$4`
-    transition: bottom 1s ease;
-    width: 90%;
-    background: ${0};
-    border-top-left-radius: 30px;
-    border-top-right-radius: 30px;
-`), colors.white);
-const Header = styled.div(_t6$3 || (_t6$3 = _$4`
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid ${0};
-    font-size: 20px;
+function _templateObject9() {
+  var data = _taggedTemplateLiteralLoose(["\n    border-top: 1px solid ", ";\n    margin: 0 30px;\n    padding: 20px 0;\n    display: flex;\n    flex-direction: row-reverse;\n"]);
 
-    .name-icon-modal {
-        display: flex;
-    }
+  _templateObject9 = function _templateObject9() {
+    return data;
+  };
 
-    & strong {
-        padding: ${0};
-        color: ${0};
-    }
-`), colors.default20, props => props.iconBack ? '20px 0' : '20px 30px', colors.brand10);
-const Icon$1 = styled.div(_t7 || (_t7 = _$4`
-    padding: 20px 30px;
-    cursor: pointer;
-`));
-const Body = styled.div(_t8 || (_t8 = _$4`
-    padding: 20px 30px;
-    height: 100%;
-    position: relative;
+  return data;
+}
 
-    .loading-modal {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: rgba(255, 255, 255, 0.8);
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        border-radius: 30px;
-        z-index: 2;
-        position: absolute;
-    }
-`));
-const Actions = styled.div(_t9 || (_t9 = _$4`
-    border-top: 1px solid ${0};
-    margin: 0 30px;
-    padding: 20px 0;
-    display: flex;
-    flex-direction: row-reverse;
-`), colors.default20);
+function _templateObject8() {
+  var data = _taggedTemplateLiteralLoose(["\n    padding: 20px 30px;\n    height: 100%;\n    position: relative;\n\n    .loading-modal {\n        display: flex;\n        justify-content: center;\n        align-items: center;\n        background-color: rgba(255, 255, 255, 0.8);\n        width: 100%;\n        height: 100%;\n        top: 0;\n        left: 0;\n        right: 0;\n        bottom: 0;\n        border-radius: 30px;\n        z-index: 2;\n        position: absolute;\n    }\n"]);
+
+  _templateObject8 = function _templateObject8() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject7() {
+  var data = _taggedTemplateLiteralLoose(["\n    padding: 20px 30px;\n    cursor: pointer;\n"]);
+
+  _templateObject7 = function _templateObject7() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject6$3() {
+  var data = _taggedTemplateLiteralLoose(["\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    border-bottom: 1px solid ", ";\n    font-size: 20px;\n\n    .name-icon-modal {\n        display: flex;\n    }\n\n    & strong {\n        padding: ", ";\n        color: ", ";\n    }\n"]);
+
+  _templateObject6$3 = function _templateObject6() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject5$3() {
+  var data = _taggedTemplateLiteralLoose(["\n    transition: bottom 1s ease;\n    width: 90%;\n    background: ", ";\n    border-top-left-radius: 30px;\n    border-top-right-radius: 30px;\n"]);
+
+  _templateObject5$3 = function _templateObject5() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject4$3() {
+  var data = _taggedTemplateLiteralLoose(["\n    transition: top 0.25s ease;\n    top: 0;\n    right: 0;\n    bottom: 0;\n    left: 0;\n    width: ", ";\n    margin: auto;\n    background: ", ";\n    border-radius: 30px;\n"]);
+
+  _templateObject4$3 = function _templateObject4() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject3$3() {
+  var data = _taggedTemplateLiteralLoose(["\n                  opacity: 1;\n                  visibility: hidden;\n              "]);
+
+  _templateObject3$3 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2$4() {
+  var data = _taggedTemplateLiteralLoose(["\n                  opacity: 1;\n                  visibility: visible;\n                  position: fixed;\n                  top: 0;\n                  right: 0;\n                  bottom: 0;\n                  left: 0;\n                  background: rgba(0, 0, 0, 0.5);\n                  transition: opacity 0.25s ease;\n                  overflow: auto;\n                  padding: 40px 0;\n                  display: flex;\n                  z-index: 999;\n              "]);
+
+  _templateObject2$4 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject$4() {
+  var data = _taggedTemplateLiteralLoose(["\n    ", "\n"]);
+
+  _templateObject$4 = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+var Background$1 = styled.div(_templateObject$4(), function (props) {
+  return props.open ? css$1(_templateObject2$4()) : css$1(_templateObject3$3());
+});
+var Modal = styled.div(_templateObject4$3(), function (props) {
+  return props.witdh ? props.witdh + "%" : '80%';
+}, colors.white);
+var Dialog$1 = styled.div(_templateObject5$3(), colors.white);
+var Header = styled.div(_templateObject6$3(), colors.default20, function (props) {
+  return props.iconBack ? '20px 0' : '20px 30px';
+}, colors.brand10);
+var Icon$1 = styled.div(_templateObject7());
+var Body = styled.div(_templateObject8());
+var Actions = styled.div(_templateObject9(), colors.default20);
 
 /*!
  * Font Awesome Pro 5.15.1 by @fontawesome - https://fontawesome.com
@@ -5177,25 +5208,30 @@ var faTimes = {
   icon: [320, 512, [], "f00d", "M193.94 256L296.5 153.44l21.15-21.15c3.12-3.12 3.12-8.19 0-11.31l-22.63-22.63c-3.12-3.12-8.19-3.12-11.31 0L160 222.06 36.29 98.34c-3.12-3.12-8.19-3.12-11.31 0L2.34 120.97c-3.12 3.12-3.12 8.19 0 11.31L126.06 256 2.34 379.71c-3.12 3.12-3.12 8.19 0 11.31l22.63 22.63c3.12 3.12 8.19 3.12 11.31 0L160 289.94 262.56 392.5l21.15 21.15c3.12 3.12 8.19 3.12 11.31 0l22.63-22.63c3.12-3.12 3.12-8.19 0-11.31L193.94 256z"]
 };
 
-const ModalComponent = ({
-  open,
-  title,
-  children,
-  actions,
-  witdh,
-  onClose,
-  closeOnDimerClick,
-  loading,
-  onBack
-}) => {
-  useEffect(() => {
+var ModalComponent = function ModalComponent(_ref) {
+  var open = _ref.open,
+      title = _ref.title,
+      children = _ref.children,
+      actions = _ref.actions,
+      witdh = _ref.witdh,
+      onClose = _ref.onClose,
+      closeOnDimerClick = _ref.closeOnDimerClick,
+      loading = _ref.loading,
+      onBack = _ref.onBack;
+  useEffect(function () {
     if (open) {
-      window.addEventListener('keydown', event => escModal(event));
+      window.addEventListener('keydown', function (event) {
+        return escModal(event);
+      });
     } else {
-      window.removeEventListener('keydown', event => escModal(event));
+      window.removeEventListener('keydown', function (event) {
+        return escModal(event);
+      });
     }
 
-    return window.removeEventListener('keydown', event => escModal(event));
+    return window.removeEventListener('keydown', function (event) {
+      return escModal(event);
+    });
   }, [open]);
 
   function escModal(event) {
@@ -5206,22 +5242,30 @@ const ModalComponent = ({
 
   return React$2.createElement(Background$1, {
     open: open,
-    onClick: () => closeOnDimerClick ? onClose() : null
+    onClick: function onClick() {
+      return closeOnDimerClick ? onClose() : null;
+    }
   }, React$2.createElement(Modal, {
     witdh: witdh,
-    onClick: event => event.stopPropagation()
+    onClick: function onClick(event) {
+      return event.stopPropagation();
+    }
   }, React$2.createElement(Header, {
     iconBack: onBack ? true : false
   }, React$2.createElement("div", {
     className: "name-icon-modal"
   }, onBack ? React$2.createElement(Icon$1, {
-    onClick: () => onBack()
+    onClick: function onClick() {
+      return onBack();
+    }
   }, React$2.createElement(FontAwesomeIcon, {
     icon: faAngleLeft,
     size: "lg",
     color: colors.brand10
   })) : null, React$2.createElement("strong", null, title)), React$2.createElement(Icon$1, {
-    onClick: () => onClose()
+    onClick: function onClick() {
+      return onClose();
+    }
   }, React$2.createElement(FontAwesomeIcon, {
     icon: faTimes,
     size: "lg",
@@ -5231,17 +5275,56 @@ const ModalComponent = ({
   }, React$2.createElement(Loader, null)), children), actions && React$2.createElement(Actions, null, actions)));
 };
 
-let _$5 = t => t,
-    _t$5,
-    _t2$5,
-    _t3$4,
-    _t4$4,
-    _t5$4;
-const Label = styled.span(_t$5 || (_t$5 = _$5`
-    font-size: 14px;
-    color: ${0};
-    margin-left: 15px;
-`), props => {
+function _templateObject5$4() {
+  var data = _taggedTemplateLiteralLoose(["\n    font-size: 10px;\n    margin-left: 0;\n    color: ", ";\n"]);
+
+  _templateObject5$4 = function _templateObject5() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject4$4() {
+  var data = _taggedTemplateLiteralLoose(["\n                      color: ", ";\n                  "]);
+
+  _templateObject4$4 = function _templateObject4() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject3$4() {
+  var data = _taggedTemplateLiteralLoose(["\n                      color: ", ";\n                  "]);
+
+  _templateObject3$4 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2$5() {
+  var data = _taggedTemplateLiteralLoose(["\n    width: ", ";\n    position: relative;\n\n    opacity: ", ";\n\n    textarea {\n        color: ", ";\n        resize: none;\n        width: 100%;\n        border-radius: 20px;\n        height: ", ";\n        margin: 0px;\n        outline: none;\n        padding: 20px;\n        border-color: ", ";\n\n        &::placeholder {\n            color: ", ";\n        }\n\n        -moz-appearance: none;\n        -webkit-appearance: none;\n    }\n\n    label {\n        position: absolute;\n        bottom: 0px;\n        top: 0px;\n        left: 0px;\n        width: 100%;\n        right: 100%;\n        pointer-events: none;\n        border-bottom-width: 1px;\n        border-bottom-style: solid;\n        border-bottom-color: ", ";\n\n        ", "\n    }\n\n    textarea::-webkit-scrollbar {\n        width: 7px;\n        border-radius: 50px;\n    }\n\n    textarea::-webkit-scrollbar-thumb {\n        background-color: ", ";\n        border-radius: 50px;\n    }\n\n    textarea::-webkit-scrollbar-thumb:hover {\n        background-color: ", ";\n    }\n"]);
+
+  _templateObject2$5 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject$5() {
+  var data = _taggedTemplateLiteralLoose(["\n    font-size: 14px;\n    color: ", ";\n    margin-left: 15px;\n"]);
+
+  _templateObject$5 = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+var Label = styled.span(_templateObject$5(), function (props) {
   if (props.errorMessage) {
     return colors.brand20;
   }
@@ -5252,60 +5335,15 @@ const Label = styled.span(_t$5 || (_t$5 = _$5`
 
   return colors.brand10;
 });
-const Container$2 = styled.div(_t2$5 || (_t2$5 = _$5`
-    width: ${0};
-    position: relative;
-
-    opacity: ${0};
-
-    textarea {
-        color: ${0};
-        resize: none;
-        width: 100%;
-        border-radius: 20px;
-        height: ${0};
-        margin: 0px;
-        outline: none;
-        padding: 20px;
-        border-color: ${0};
-
-        &::placeholder {
-            color: ${0};
-        }
-
-        -moz-appearance: none;
-        -webkit-appearance: none;
-    }
-
-    label {
-        position: absolute;
-        bottom: 0px;
-        top: 0px;
-        left: 0px;
-        width: 100%;
-        right: 100%;
-        pointer-events: none;
-        border-bottom-width: 1px;
-        border-bottom-style: solid;
-        border-bottom-color: ${0};
-
-        ${0}
-    }
-
-    textarea::-webkit-scrollbar {
-        width: 7px;
-        border-radius: 50px;
-    }
-
-    textarea::-webkit-scrollbar-thumb {
-        background-color: ${0};
-        border-radius: 50px;
-    }
-
-    textarea::-webkit-scrollbar-thumb:hover {
-        background-color: ${0};
-    }
-`), props => props.width ? props.width : '100%', props => props.disabled ? '50%' : '100%', props => props.textColor ? props.textColor : colors.gray20, props => props.height ? `${props.height}px` : '100px', props => {
+var Container$2 = styled.div(_templateObject2$5(), function (props) {
+  return props.width ? props.width : '100%';
+}, function (props) {
+  return props.disabled ? '50%' : '100%';
+}, function (props) {
+  return props.textColor ? props.textColor : colors.gray20;
+}, function (props) {
+  return props.height ? props.height + "px" : '100px';
+}, function (props) {
   if (props.errorMessage && props.errorColor) {
     return props.errorColor;
   }
@@ -5315,7 +5353,7 @@ const Container$2 = styled.div(_t2$5 || (_t2$5 = _$5`
   }
 
   return colors.gray10;
-}, colors.default10, props => {
+}, colors.default10, function (props) {
   if (props.errorMessage && props.errorColor) {
     return props.errorColor;
   }
@@ -5325,16 +5363,10 @@ const Container$2 = styled.div(_t2$5 || (_t2$5 = _$5`
   }
 
   return colors.gray10;
-}, props => props.isFieldActive ? css$1(_t3$4 || (_t3$4 = _$5`
-                      color: ${0};
-                  `), colors.brand10) : css$1(_t4$4 || (_t4$4 = _$5`
-                      color: ${0};
-                  `), colors.gray20), colors.brand10, colors.brandTransparent2);
-const LabelError$1 = styled.span(_t5$4 || (_t5$4 = _$5`
-    font-size: 10px;
-    margin-left: 0;
-    color: ${0};
-`), props => {
+}, function (props) {
+  return props.isFieldActive ? css$1(_templateObject3$4(), colors.brand10) : css$1(_templateObject4$4(), colors.gray20);
+}, colors.brand10, colors.brandTransparent2);
+var LabelError$1 = styled.span(_templateObject5$4(), function (props) {
   if (props.errorColor) {
     return props.errorColor;
   }
@@ -5342,19 +5374,19 @@ const LabelError$1 = styled.span(_t5$4 || (_t5$4 = _$5`
   return colors.brand20;
 });
 
-const TextArea = ({
-  containerStyle,
-  label,
-  labelColor,
-  labelStyle,
-  errorMessage,
-  errorColor,
-  width,
-  height,
-  textColor,
-  textAreaRef,
-  ...rest
-}) => {
+var TextArea = function TextArea(_ref) {
+  var containerStyle = _ref.containerStyle,
+      label = _ref.label,
+      labelColor = _ref.labelColor,
+      labelStyle = _ref.labelStyle,
+      errorMessage = _ref.errorMessage,
+      errorColor = _ref.errorColor,
+      width = _ref.width,
+      height = _ref.height,
+      textColor = _ref.textColor,
+      textAreaRef = _ref.textAreaRef,
+      rest = _objectWithoutPropertiesLoose(_ref, ["containerStyle", "label", "labelColor", "labelStyle", "errorMessage", "errorColor", "width", "height", "textColor", "textAreaRef"]);
+
   return React$2.createElement("div", {
     style: {
       paddingBottom: errorMessage ? 0 : 20
@@ -5380,23 +5412,26 @@ const TextArea = ({
   }, errorMessage));
 };
 
-const TextAreaForm = ({
-  register,
-  errors,
-  validate,
-  name,
-  required,
-  limit,
-  minimum,
-  ...rest
-}) => {
-  const [message, setMessage] = useState('');
+var TextAreaForm = function TextAreaForm(_ref) {
+  var register = _ref.register,
+      errors = _ref.errors,
+      validate = _ref.validate,
+      name = _ref.name,
+      required = _ref.required,
+      limit = _ref.limit,
+      minimum = _ref.minimum,
+      rest = _objectWithoutPropertiesLoose(_ref, ["register", "errors", "validate", "name", "required", "limit", "minimum"]);
+
+  var _useState = useState(''),
+      message = _useState[0],
+      setMessage = _useState[1];
+
   return React$2.createElement(TextArea, Object.assign({}, rest, {
     name: name,
-    errorMessage: errors ? errors.type === 'required' ? 'Obrigatório' : `${message}` : '',
+    errorMessage: errors ? errors.type === 'required' ? 'Obrigatório' : "" + message : '',
     textAreaRef: register ? register({
       required: required,
-      validate: validate && required ? value => {
+      validate: validate && required ? function (value) {
         if (validate(value)) {
           setMessage(validate(value));
           return false;
@@ -5404,17 +5439,17 @@ const TextAreaForm = ({
           setMessage('');
           return true;
         }
-      } : limit && required ? value => {
+      } : limit && required ? function (value) {
         if (value.length > limit) {
-          setMessage(`${limit} caracteres permitidos.`);
+          setMessage(limit + " caracteres permitidos.");
           return false;
         } else {
           setMessage('');
           return true;
         }
-      } : minimum && required ? value => {
+      } : minimum && required ? function (value) {
         if (value.length < minimum) {
-          setMessage(`${name} deve ter ${minimum} ou mais caracteres.`);
+          setMessage(name + " deve ter " + minimum + " ou mais caracteres.");
           return false;
         } else {
           setMessage('');
@@ -5425,9 +5460,16 @@ const TextAreaForm = ({
   }));
 };
 
-let _$6 = t => t,
-    _t$6;
-const Sizes$2 = {
+function _templateObject$6() {
+  var data = _taggedTemplateLiteralLoose(["\n    display: flex;\n    align-items: center;\n\n    > input {\n        display: none;\n    }\n\n    label {\n        font-size: ", ";\n        color: ", ";\n        cursor: ", ";\n        opacity: ", ";\n    }\n\n    > input + div {\n        position: relative;\n        cursor: ", ";\n        opacity: ", ";\n        display: flex;\n        align-items: center;\n\n        &:before {\n            content: '';\n            position: absolute;\n            width: ", ";\n            height: ", ";\n            border: 1px solid ", ";\n            background: ", ";\n            border-radius: 5px;\n        }\n        &:after {\n            content: ' ';\n            position: absolute;\n            width: ", ";\n            height: ", ";\n            border: 1px solid ", ";\n            background: ", ";\n            border-radius: 5px;\n            color: ", ";\n            text-align: center;\n            font-size: 12px;\n        }\n    }\n    > input:not(:checked) + div {\n        &:after {\n            opacity: 0;\n            transform: scale(0);\n        }\n    }\n    > input:checked + div {\n        &:after {\n            opacity: 1;\n            transform: scale(1);\n        }\n    }\n\n    span {\n        margin-left: ", ";\n        margin-right: ", ";\n        font-size: ", ";\n        color: ", ";\n        z-index: 1;\n    }\n"]);
+
+  _templateObject$6 = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+var Sizes$2 = {
   mini: 'mini',
   tiny: 'tiny',
   small: 'small',
@@ -5438,8 +5480,8 @@ const Sizes$2 = {
   massive: 'massive'
 };
 
-const size$1 = size => {
-  switch (size) {
+var size$1 = function size(_size) {
+  switch (_size) {
     case Sizes$2.mini:
       return '10px';
 
@@ -5465,11 +5507,11 @@ const size$1 = size => {
       return '30px';
 
     default:
-      return size;
+      return _size;
   }
 };
 
-const sizeChecked = size => {
+var sizeChecked = function sizeChecked(size) {
   switch (size) {
     case Sizes$2.mini:
       return '8px';
@@ -5500,7 +5542,7 @@ const sizeChecked = size => {
   }
 };
 
-const marginLeft = size => {
+var marginLeft = function marginLeft(size) {
   switch (size) {
     case Sizes$2.mini:
       return '1.5px';
@@ -5531,7 +5573,7 @@ const marginLeft = size => {
   }
 };
 
-const labelSize = size => {
+var labelSize = function labelSize(size) {
   switch (size) {
     case Sizes$2.mini:
       return '10px';
@@ -5562,7 +5604,7 @@ const labelSize = size => {
   }
 };
 
-const marginRight = size => {
+var marginRight = function marginRight(size) {
   switch (size) {
     case Sizes$2.mini:
       return '5px';
@@ -5593,128 +5635,76 @@ const marginRight = size => {
   }
 };
 
-const Container$3 = styled.div(_t$6 || (_t$6 = _$6`
-    display: flex;
-    align-items: center;
-
-    > input {
-        display: none;
-    }
-
-    label {
-        font-size: ${0};
-        color: ${0};
-        cursor: ${0};
-        opacity: ${0};
-    }
-
-    > input + div {
-        position: relative;
-        cursor: ${0};
-        opacity: ${0};
-        display: flex;
-        align-items: center;
-
-        &:before {
-            content: '';
-            position: absolute;
-            width: ${0};
-            height: ${0};
-            border: 1px solid ${0};
-            background: ${0};
-            border-radius: 5px;
-        }
-        &:after {
-            content: ' ';
-            position: absolute;
-            width: ${0};
-            height: ${0};
-            border: 1px solid ${0};
-            background: ${0};
-            border-radius: 5px;
-            color: ${0};
-            text-align: center;
-            font-size: 12px;
-        }
-    }
-    > input:not(:checked) + div {
-        &:after {
-            opacity: 0;
-            transform: scale(0);
-        }
-    }
-    > input:checked + div {
-        &:after {
-            opacity: 1;
-            transform: scale(1);
-        }
-    }
-
-    span {
-        margin-left: ${0};
-        margin-right: ${0};
-        font-size: ${0};
-        color: ${0};
-        z-index: 1;
-    }
-`), props => {
+var Container$3 = styled.div(_templateObject$6(), function (props) {
   if (props.sizeBox) {
     return labelSize(props.sizeBox);
   }
 
   return '17px';
-}, colors.gray20, props => props.disabled ? 'default' : 'pointer', props => props.disabled ? 0.5 : 1, props => props.disabled ? 'default' : 'pointer', props => props.disabled ? 0.5 : 1, props => {
+}, colors.gray20, function (props) {
+  return props.disabled ? 'default' : 'pointer';
+}, function (props) {
+  return props.disabled ? 0.5 : 1;
+}, function (props) {
+  return props.disabled ? 'default' : 'pointer';
+}, function (props) {
+  return props.disabled ? 0.5 : 1;
+}, function (props) {
   if (props.sizeBox) {
     return size$1(props.sizeBox);
   }
 
   return '17px';
-}, props => {
+}, function (props) {
   if (props.sizeBox) {
     return size$1(props.sizeBox);
   }
 
   return '17px';
-}, colors.default20, colors.default20, props => {
+}, colors.default20, colors.default20, function (props) {
   if (props.sizeBox) {
     return size$1(props.sizeBox);
   }
 
   return '17px';
-}, props => {
+}, function (props) {
   if (props.sizeBox) {
     return size$1(props.sizeBox);
   }
 
   return '17px';
-}, colors.brandDark, colors.brandDark, colors.white, props => {
+}, colors.brandDark, colors.brandDark, colors.white, function (props) {
   if (props.sizeBox) {
     return marginLeft(props.sizeBox);
   }
 
   return '2.5px';
-}, props => {
+}, function (props) {
   if (props.sizeBox) {
     return marginRight(props.sizeBox);
   }
 
   return '8px';
-}, props => {
+}, function (props) {
   if (props.sizeBox) {
     return sizeChecked(props.sizeBox);
   }
 
   return '13px';
-}, props => props.checked ? colors.white : colors.default20);
+}, function (props) {
+  return props.checked ? colors.white : colors.default20;
+});
 
-const Checkbox = ({
-  label,
-  labelStyle,
-  sizeBox,
-  ...rest
-}) => {
+var Checkbox = function Checkbox(_ref) {
+  var label = _ref.label,
+      labelStyle = _ref.labelStyle,
+      sizeBox = _ref.sizeBox,
+      rest = _objectWithoutPropertiesLoose(_ref, ["label", "labelStyle", "sizeBox"]);
+
   return React$2.createElement(Container$3, {
-    onClick: () => !rest.disabled ? rest.onChange ? rest.onChange() : null : null,
+    onClick: function onClick() {
+      return !rest.disabled ? rest.onChange ? rest.onChange() : null : null;
+    },
     disabled: rest.disabled,
     sizeBox: sizeBox,
     checked: rest.checked
@@ -5727,9 +5717,16 @@ const Checkbox = ({
   }, label)));
 };
 
-let _$7 = t => t,
-    _t$7;
-const Sizes$3 = {
+function _templateObject$7() {
+  var data = _taggedTemplateLiteralLoose(["\n    > input {\n        display: none;\n    }\n\n    label {\n        font-size: ", ";\n        color: ", ";\n        cursor: ", ";\n        opacity: ", ";\n    }\n\n    > input + div {\n        position: relative;\n        padding-left: ", ";\n        cursor: ", ";\n        opacity: ", ";\n        display: flex;\n        align-items: center;\n\n        &:before {\n            content: '';\n            position: absolute;\n            left: 0;\n            top: 1px;\n            width: ", ";\n            height: ", ";\n            border: 1px solid ", ";\n            background: ", ";\n            border-radius: 50%;\n        }\n        &:after {\n            content: ' ';\n            position: absolute;\n            left: 4px;\n            top: 5px;\n            width: ", ";\n            height: ", ";\n            border: 1px solid ", ";\n            background: ", ";\n            border-radius: 50%;\n            color: ", ";\n            text-align: center;\n            font-size: 12px;\n        }\n    }\n    > input:not(:checked) + div {\n        &:after {\n            opacity: 0;\n            transform: scale(0);\n        }\n    }\n    > input:checked + div {\n        &:after {\n            opacity: 1;\n            transform: scale(1);\n        }\n    }\n"]);
+
+  _templateObject$7 = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+var Sizes$3 = {
   mini: 'mini',
   tiny: 'tiny',
   small: 'small',
@@ -5740,8 +5737,8 @@ const Sizes$3 = {
   massive: 'massive'
 };
 
-const size$2 = size => {
-  switch (size) {
+var size$2 = function size(_size) {
+  switch (_size) {
     case Sizes$3.mini:
       return '10px';
 
@@ -5767,11 +5764,11 @@ const size$2 = size => {
       return '30px';
 
     default:
-      return size;
+      return _size;
   }
 };
 
-const sizeChecked$1 = size => {
+var sizeChecked$1 = function sizeChecked(size) {
   switch (size) {
     case Sizes$3.mini:
       return '2px';
@@ -5802,7 +5799,7 @@ const sizeChecked$1 = size => {
   }
 };
 
-const labelSize$1 = size => {
+var labelSize$1 = function labelSize(size) {
   switch (size) {
     case Sizes$3.mini:
       return '10px';
@@ -5833,7 +5830,7 @@ const labelSize$1 = size => {
   }
 };
 
-const paddingLeft = size => {
+var paddingLeft = function paddingLeft(size) {
   switch (size) {
     case Sizes$3.mini:
       return '15px';
@@ -5864,95 +5861,45 @@ const paddingLeft = size => {
   }
 };
 
-const Container$4 = styled.div(_t$7 || (_t$7 = _$7`
-    > input {
-        display: none;
-    }
-
-    label {
-        font-size: ${0};
-        color: ${0};
-        cursor: ${0};
-        opacity: ${0};
-    }
-
-    > input + div {
-        position: relative;
-        padding-left: ${0};
-        cursor: ${0};
-        opacity: ${0};
-        display: flex;
-        align-items: center;
-
-        &:before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 1px;
-            width: ${0};
-            height: ${0};
-            border: 1px solid ${0};
-            background: ${0};
-            border-radius: 50%;
-        }
-        &:after {
-            content: ' ';
-            position: absolute;
-            left: 4px;
-            top: 5px;
-            width: ${0};
-            height: ${0};
-            border: 1px solid ${0};
-            background: ${0};
-            border-radius: 50%;
-            color: ${0};
-            text-align: center;
-            font-size: 12px;
-        }
-    }
-    > input:not(:checked) + div {
-        &:after {
-            opacity: 0;
-            transform: scale(0);
-        }
-    }
-    > input:checked + div {
-        &:after {
-            opacity: 1;
-            transform: scale(1);
-        }
-    }
-`), props => {
+var Container$4 = styled.div(_templateObject$7(), function (props) {
   if (props.sizeBox) {
     return labelSize$1(props.sizeBox);
   }
 
   return '17px';
-}, colors.gray20, props => props.disabled ? 'default' : 'pointer', props => props.disabled ? 0.5 : 1, props => {
+}, colors.gray20, function (props) {
+  return props.disabled ? 'default' : 'pointer';
+}, function (props) {
+  return props.disabled ? 0.5 : 1;
+}, function (props) {
   if (props.sizeBox) {
     return paddingLeft(props.sizeBox);
   }
 
   return '25px';
-}, props => props.disabled ? 'default' : 'pointer', props => props.disabled ? 0.5 : 1, props => {
+}, function (props) {
+  return props.disabled ? 'default' : 'pointer';
+}, function (props) {
+  return props.disabled ? 0.5 : 1;
+}, function (props) {
   if (props.sizeBox) {
     return size$2(props.sizeBox);
   }
 
   return '17px';
-}, props => {
+}, function (props) {
   if (props.sizeBox) {
     return size$2(props.sizeBox);
   }
 
   return '17px';
-}, colors.default30, colors.default20, props => {
+}, colors.default30, colors.default20, function (props) {
   if (props.sizeBox) {
     return sizeChecked$1(props.sizeBox);
   }
 
   return '9px';
-}, props => {
+}, function (props) {
   if (props.sizeBox) {
     return sizeChecked$1(props.sizeBox);
   }
@@ -5960,14 +5907,16 @@ const Container$4 = styled.div(_t$7 || (_t$7 = _$7`
   return '9px';
 }, colors.gray20, colors.gray20, colors.white);
 
-const Radio = ({
-  label,
-  labelStyle,
-  sizeBox,
-  ...rest
-}) => {
+var Radio = function Radio(_ref) {
+  var label = _ref.label,
+      labelStyle = _ref.labelStyle,
+      sizeBox = _ref.sizeBox,
+      rest = _objectWithoutPropertiesLoose(_ref, ["label", "labelStyle", "sizeBox"]);
+
   return React$2.createElement(Container$4, {
-    onClick: () => !rest.disabled ? rest.onChange ? rest.onChange() : null : null,
+    onClick: function onClick() {
+      return !rest.disabled ? rest.onChange ? rest.onChange() : null : null;
+    },
     disabled: rest.disabled,
     sizeBox: sizeBox
   }, React$2.createElement("input", Object.assign({
@@ -5977,19 +5926,76 @@ const Radio = ({
   }, label)));
 };
 
-let _$8 = t => t,
-    _t$8,
-    _t2$6,
-    _t3$5,
-    _t4$5,
-    _t5$5,
-    _t6$4,
-    _t7$1;
-const Label$1 = styled.span(_t$8 || (_t$8 = _$8`
-    font-size: 14px;
-    color: ${0};
-    margin-left: 15px;
-`), props => {
+function _templateObject7$1() {
+  var data = _taggedTemplateLiteralLoose(["\n    font-size: 10px;\n    color: ", ";\n"]);
+
+  _templateObject7$1 = function _templateObject7() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject6$4() {
+  var data = _taggedTemplateLiteralLoose(["\n                          border-radius: 20px;\n                      "]);
+
+  _templateObject6$4 = function _templateObject6() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject5$5() {
+  var data = _taggedTemplateLiteralLoose(["\n                          border-top-left-radius: 20px;\n                          border-top-right-radius: 20px;\n                          border-bottom: 0px;\n                      "]);
+
+  _templateObject5$5 = function _templateObject5() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject4$5() {
+  var data = _taggedTemplateLiteralLoose(["\n                      border-radius: 20px;\n                  "]);
+
+  _templateObject4$5 = function _templateObject4() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject3$5() {
+  var data = _taggedTemplateLiteralLoose(["\n                      border-top-left-radius: 20px;\n                      border-top-right-radius: 20px;\n                      /* border-bottom: 0px; */\n                  "]);
+
+  _templateObject3$5 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2$6() {
+  var data = _taggedTemplateLiteralLoose(["\n    display: flex;\n    flex-direction: column;\n    position: relative;\n    width: ", ";\n    margin-top: 5px;\n    margin-bottom: -3px;\n\n    > .options-container {\n        position: absolute;\n        background-color: ", ";\n        border: 1px solid\n            ", ";\n        margin: 44px 0;\n        width: ", ";\n        border-top: 0;\n        color: ", ";\n        transition: all 0.3s;\n        border-bottom-left-radius: 20px;\n        border-bottom-right-radius: 20px;\n        overflow-y: auto;\n        max-height: 0;\n        opacity: 0;\n\n        order: 1;\n        -moz-appearance: none;\n        -webkit-appearance: none;\n        z-index: 2;\n    }\n\n    .active {\n        max-height: 258px;\n        opacity: 1;\n    }\n\n    .options-container::-webkit-scrollbar {\n        width: 7px;\n        border-radius: 50px;\n        z-index: -1px;\n    }\n\n    .options-container::-webkit-scrollbar-thumb {\n        background-color: ", ";\n        border-radius: 50px;\n    }\n\n    .options-container::-webkit-scrollbar-thumb:hover {\n        background-color: ", ";\n    }\n\n    .selected {\n        color: ", ";\n        font-weight: ", ";\n        padding: 0;\n        cursor: pointer;\n        background-color: ", ";\n        position: relative;\n        border: ", ";\n\n        order: 0;\n\n        display: flex;\n        align-items: center;\n\n        ", "\n\n        input {\n            padding: 12px 35px 12px 24px;\n            height: ", ";\n            font-size: 16px;\n            border: none;\n            outline: none;\n            width: 100%;\n            text-align: ", ";\n            color: ", ";\n            background-color: ", ";\n            cursor: pointer;\n\n            ", "\n            -moz-appearance: none;\n            -webkit-appearance: none;\n        }\n\n        input::placeholder {\n            color: ", ";\n        }\n    }\n\n    .icon {\n        position: absolute;\n        right: 20px;\n    }\n\n    .option {\n        padding: 12px 24px;\n        cursor: pointer;\n\n        label {\n            cursor: pointer;\n        }\n\n        input {\n            display: none;\n        }\n    }\n\n    .no-value {\n        color: ", ";\n    }\n\n    .no-value:hover {\n        background-color: ", " !important;\n    }\n\n    .option:hover {\n        background-color: ", ";\n    }\n\n    .active-option {\n        background-color: ", ";\n    }\n"]);
+
+  _templateObject2$6 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject$8() {
+  var data = _taggedTemplateLiteralLoose(["\n    font-size: 14px;\n    color: ", ";\n    margin-left: 15px;\n"]);
+
+  _templateObject$8 = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+var Label$1 = styled.span(_templateObject$8(), function (props) {
   if (props.errorMessage) {
     return colors.brand20;
   }
@@ -6000,128 +6006,13 @@ const Label$1 = styled.span(_t$8 || (_t$8 = _$8`
 
   return colors.brand10;
 });
-const SelectBox = styled.div(_t2$6 || (_t2$6 = _$8`
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    width: ${0};
-    margin-top: 5px;
-    margin-bottom: -3px;
-
-    > .options-container {
-        position: absolute;
-        background-color: ${0};
-        border: 1px solid
-            ${0};
-        margin: 44px 0;
-        width: ${0};
-        border-top: 0;
-        color: ${0};
-        transition: all 0.3s;
-        border-bottom-left-radius: 20px;
-        border-bottom-right-radius: 20px;
-        overflow-y: auto;
-        max-height: 0;
-        opacity: 0;
-
-        order: 1;
-        -moz-appearance: none;
-        -webkit-appearance: none;
-        z-index: 2;
-    }
-
-    .active {
-        max-height: 258px;
-        opacity: 1;
-    }
-
-    .options-container::-webkit-scrollbar {
-        width: 7px;
-        border-radius: 50px;
-        z-index: -1px;
-    }
-
-    .options-container::-webkit-scrollbar-thumb {
-        background-color: ${0};
-        border-radius: 50px;
-    }
-
-    .options-container::-webkit-scrollbar-thumb:hover {
-        background-color: ${0};
-    }
-
-    .selected {
-        color: ${0};
-        font-weight: ${0};
-        padding: 0;
-        cursor: pointer;
-        background-color: ${0};
-        position: relative;
-        border: ${0};
-
-        order: 0;
-
-        display: flex;
-        align-items: center;
-
-        ${0}
-
-        input {
-            padding: 12px 35px 12px 24px;
-            height: ${0};
-            font-size: 16px;
-            border: none;
-            outline: none;
-            width: 100%;
-            text-align: ${0};
-            color: ${0};
-            background-color: ${0};
-            cursor: pointer;
-
-            ${0}
-            -moz-appearance: none;
-            -webkit-appearance: none;
-        }
-
-        input::placeholder {
-            color: ${0};
-        }
-    }
-
-    .icon {
-        position: absolute;
-        right: 20px;
-    }
-
-    .option {
-        padding: 12px 24px;
-        cursor: pointer;
-
-        label {
-            cursor: pointer;
-        }
-
-        input {
-            display: none;
-        }
-    }
-
-    .no-value {
-        color: ${0};
-    }
-
-    .no-value:hover {
-        background-color: ${0} !important;
-    }
-
-    .option:hover {
-        background-color: ${0};
-    }
-
-    .active-option {
-        background-color: ${0};
-    }
-`), props => props.width ? `${props.width}%` : '100%', colors.white, props => props.error ? colors.brand20 : colors.default20, props => props.width ? `${props.width}%` : '100%', props => {
+var SelectBox = styled.div(_templateObject2$6(), function (props) {
+  return props.width ? props.width + "%" : '100%';
+}, colors.white, function (props) {
+  return props.error ? colors.brand20 : colors.default20;
+}, function (props) {
+  return props.width ? props.width + "%" : '100%';
+}, function (props) {
   if (props.error) {
     return colors.brand20;
   }
@@ -6131,7 +6022,7 @@ const SelectBox = styled.div(_t2$6 || (_t2$6 = _$8`
   }
 
   return colors.gray20;
-}, colors.brand10, colors.brandTransparent2, props => {
+}, colors.brand10, colors.brandTransparent2, function (props) {
   if (props.error) {
     return colors.brand20;
   }
@@ -6153,7 +6044,9 @@ const SelectBox = styled.div(_t2$6 || (_t2$6 = _$8`
   }
 
   return colors.default20;
-}, props => props.brand ? 'bold' : 'normal', props => {
+}, function (props) {
+  return props.brand ? 'bold' : 'normal';
+}, function (props) {
   if (props.error) {
     return colors.error;
   }
@@ -6163,23 +6056,23 @@ const SelectBox = styled.div(_t2$6 || (_t2$6 = _$8`
   }
 
   return colors.white;
-}, props => {
+}, function (props) {
   if (props.error) {
-    return `1px solid ${colors.brand20}`;
+    return "1px solid " + colors.brand20;
   }
 
   if (props.brand) {
-    return `1px solid ${colors.brandLight}`;
+    return "1px solid " + colors.brandLight;
   }
 
-  return `1px solid ${colors.default20}`;
-}, props => props.active ? css$1(_t3$5 || (_t3$5 = _$8`
-                      border-top-left-radius: 20px;
-                      border-top-right-radius: 20px;
-                      /* border-bottom: 0px; */
-                  `)) : css$1(_t4$5 || (_t4$5 = _$8`
-                      border-radius: 20px;
-                  `)), props => props.height ? `${props.height}px` : '40px', props => props.textAlign === 'center' ? 'center' : 'space-between', props => {
+  return "1px solid " + colors.default20;
+}, function (props) {
+  return props.active ? css$1(_templateObject3$5()) : css$1(_templateObject4$5());
+}, function (props) {
+  return props.height ? props.height + "px" : '40px';
+}, function (props) {
+  return props.textAlign === 'center' ? 'center' : 'space-between';
+}, function (props) {
   if (props.error) {
     return colors.brand20;
   }
@@ -6201,7 +6094,7 @@ const SelectBox = styled.div(_t2$6 || (_t2$6 = _$8`
   }
 
   return colors.default20;
-}, props => {
+}, function (props) {
   if (props.error) {
     return colors.error;
   }
@@ -6211,13 +6104,9 @@ const SelectBox = styled.div(_t2$6 || (_t2$6 = _$8`
   }
 
   return colors.white;
-}, props => props.active ? css$1(_t5$5 || (_t5$5 = _$8`
-                          border-top-left-radius: 20px;
-                          border-top-right-radius: 20px;
-                          border-bottom: 0px;
-                      `)) : css$1(_t6$4 || (_t6$4 = _$8`
-                          border-radius: 20px;
-                      `)), props => {
+}, function (props) {
+  return props.active ? css$1(_templateObject5$5()) : css$1(_templateObject6$4());
+}, function (props) {
   if (props.error) {
     return colors.brand20;
   }
@@ -6228,13 +6117,10 @@ const SelectBox = styled.div(_t2$6 || (_t2$6 = _$8`
 
   return colors.default20;
 }, colors.default20, colors.white, colors.hover, colors.hover);
-const LabelError$2 = styled.span(_t7$1 || (_t7$1 = _$8`
-    font-size: 10px;
-    color: ${0};
-`), colors.brand20);
+var LabelError$2 = styled.span(_templateObject7$1(), colors.brand20);
 
-const removerAcentos = inStr => {
-  return inStr.replace(/([àáâãäå])|([ç])|([èéêë])|([ìíîï])|([ñ])|([òóôõöø])|([ß])|([ùúûü])|([ÿ])|([æ])|(['"])/gi, (a, c, e, i, n, o, s, u, y, ae, apost) => {
+var removerAcentos = function removerAcentos(inStr) {
+  return inStr.replace(/([àáâãäå])|([ç])|([èéêë])|([ìíîï])|([ñ])|([òóôõöø])|([ß])|([ùúûü])|([ÿ])|([æ])|(['"])/gi, function (a, c, e, i, n, o, s, u, y, ae, apost) {
     if (a) return 'a';
     if (c) return 'c';
     if (e) return 'e';
@@ -6249,7 +6135,7 @@ const removerAcentos = inStr => {
     return '';
   });
 };
-const removerAcentosESpecialChars = str => {
+var removerAcentosESpecialChars = function removerAcentosESpecialChars(str) {
   try {
     return removerAcentos(str).replace(/[^a-z0-9 ]/gi, '').trim();
   } catch (ex) {
@@ -6257,37 +6143,55 @@ const removerAcentosESpecialChars = str => {
   }
 };
 
-const Dropdown = ({
-  brand,
-  options,
-  value,
-  onChange,
-  placeholder,
-  textAlign,
-  search,
-  loading,
-  width,
-  errorMessage,
-  label,
-  labelColor,
-  dropdownRef,
-  height
-}) => {
-  const [active, setActive] = useState(false);
-  const [optionsState, setOptionsState] = useState();
-  const [selectedIndex, setSelectedIndex] = useState(0);
-  const [item, setItem] = useState();
-  useEffect(() => {
+var Dropdown = function Dropdown(_ref) {
+  var brand = _ref.brand,
+      options = _ref.options,
+      value = _ref.value,
+      _onChange = _ref.onChange,
+      placeholder = _ref.placeholder,
+      textAlign = _ref.textAlign,
+      search = _ref.search,
+      loading = _ref.loading,
+      width = _ref.width,
+      errorMessage = _ref.errorMessage,
+      label = _ref.label,
+      labelColor = _ref.labelColor,
+      dropdownRef = _ref.dropdownRef,
+      height = _ref.height;
+
+  var _useState = useState(false),
+      active = _useState[0],
+      setActive = _useState[1];
+
+  var _useState2 = useState(),
+      optionsState = _useState2[0],
+      setOptionsState = _useState2[1];
+
+  var _useState3 = useState(0),
+      selectedIndex = _useState3[0],
+      setSelectedIndex = _useState3[1];
+
+  var _useState4 = useState(),
+      item = _useState4[0],
+      setItem = _useState4[1];
+
+  useEffect(function () {
     setOptionsState(options);
-    setSelectedIndex(options.findIndex(option => option.value === value));
+    setSelectedIndex(options.findIndex(function (option) {
+      return option.value === value;
+    }));
   }, []);
-  useEffect(() => {
+  useEffect(function () {
     if (optionsState) {
-      setSelectedIndex(optionsState.findIndex(option => option.value === value));
+      setSelectedIndex(optionsState.findIndex(function (option) {
+        return option.value === value;
+      }));
     }
 
     if (value) {
-      setItem(options.filter(opt => opt.value === value)[0]);
+      setItem(options.filter(function (opt) {
+        return opt.value === value;
+      })[0]);
     }
   }, [value]);
   return React$2.createElement("div", {
@@ -6303,45 +6207,52 @@ const Dropdown = ({
     value: value,
     textAlign: textAlign,
     search: search,
-    onBlur: () => setActive(false),
+    onBlur: function onBlur() {
+      return setActive(false);
+    },
     width: width,
     error: errorMessage,
     ref: dropdownRef,
     height: height
   }, React$2.createElement("div", {
-    className: `options-container ${active ? 'active' : ''}`
+    className: "options-container " + (active ? 'active' : '')
   }, optionsState && optionsState.length === 0 ? React$2.createElement("div", {
     className: "option no-value"
   }, React$2.createElement("input", {
     type: "radio"
-  }), React$2.createElement("label", null, "Nenhum resultado encontrado")) : optionsState && optionsState.map((option, index) => React$2.createElement("div", {
-    key: option.id,
-    className: `option ${index === selectedIndex && 'active-option'} `,
-    id: option.text,
-    onClick: () => {
-      setItem(option);
-      setActive(false);
-      onChange(option.value);
-    }
-  }, React$2.createElement("input", {
-    type: "radio"
-  }), React$2.createElement("label", null, option.text)))), React$2.createElement("div", {
+  }), React$2.createElement("label", null, "Nenhum resultado encontrado")) : optionsState && optionsState.map(function (option, index) {
+    return React$2.createElement("div", {
+      key: option.id,
+      className: "option " + (index === selectedIndex && 'active-option') + " ",
+      id: option.text,
+      onClick: function onClick() {
+        setItem(option);
+        setActive(false);
+
+        _onChange(option.value);
+      }
+    }, React$2.createElement("input", {
+      type: "radio"
+    }), React$2.createElement("label", null, option.text));
+  })), React$2.createElement("div", {
     className: "selected",
-    onClick: () => {
+    onClick: function onClick() {
       setActive(!active);
       setOptionsState(options);
     },
     id: "selection"
   }, search ? React$2.createElement(React$2.Fragment, null, React$2.createElement("input", {
-    onChange: event => {
+    onChange: function onChange(event) {
       setActive(true);
 
-      if (onChange) {
-        onChange(event.target.value);
+      if (_onChange) {
+        _onChange(event.target.value);
       }
 
       if (event.target.value.trim().length > 0) {
-        setOptionsState(optionsState && options.filter(option => option.text.toLowerCase().includes(event.target.value.toLowerCase()) || removerAcentosESpecialChars(option.text).toLowerCase().includes(event.target.value.toLowerCase())));
+        setOptionsState(optionsState && options.filter(function (option) {
+          return option.text.toLowerCase().includes(event.target.value.toLowerCase()) || removerAcentosESpecialChars(option.text).toLowerCase().includes(event.target.value.toLowerCase());
+        }));
       } else {
         setOptionsState(options);
       }
@@ -6366,36 +6277,42 @@ const Dropdown = ({
   }))))), errorMessage && React$2.createElement(LabelError$2, null, errorMessage));
 };
 
-const DropdownForm = ({
-  value,
-  clearError,
-  errors,
-  name,
-  register,
-  required,
-  setValue,
-  validate,
-  ...rest
-}) => {
-  const [valueDefault, setValueDefault] = useState();
-  const [message, setMessage] = useState('');
-  useEffect(() => {
+var DropdownForm = function DropdownForm(_ref) {
+  var value = _ref.value,
+      clearError = _ref.clearError,
+      errors = _ref.errors,
+      name = _ref.name,
+      register = _ref.register,
+      required = _ref.required,
+      setValue = _ref.setValue,
+      validate = _ref.validate,
+      rest = _objectWithoutPropertiesLoose(_ref, ["value", "clearError", "errors", "name", "register", "required", "setValue", "validate"]);
+
+  var _useState = useState(),
+      valueDefault = _useState[0],
+      setValueDefault = _useState[1];
+
+  var _useState2 = useState(''),
+      message = _useState2[0],
+      setMessage = _useState2[1];
+
+  useEffect(function () {
     if (!valueDefault) {
       setValue(name, value);
     } else {
       setValue(name, valueDefault);
     }
   }, [valueDefault]);
-  useEffect(() => {
+  useEffect(function () {
     setValueDefault(value);
   }, [value]);
-  useEffect(() => {
+  useEffect(function () {
     if (register) {
       register({
         name: name
       }, {
         required: required,
-        validate: validate && required ? value => {
+        validate: validate && required ? function (value) {
           if (validate(value)) {
             setMessage(validate(value));
             return false;
@@ -6409,7 +6326,7 @@ const DropdownForm = ({
   }, [register]);
   return React$2.createElement(Dropdown, Object.assign({}, rest, {
     value: valueDefault,
-    onChange: value => {
+    onChange: function onChange(value) {
       setValueDefault(value);
       setValue(name, value);
 
@@ -6417,94 +6334,87 @@ const DropdownForm = ({
         clearError(name);
       }
     },
-    errorMessage: errors ? errors.type === 'required' ? 'Obrigatório' : `${message}` : ''
+    errorMessage: errors ? errors.type === 'required' ? 'Obrigatório' : "" + message : ''
   }));
 };
 
-let _$9 = t => t,
-    _t$9,
-    _t2$7,
-    _t3$6,
-    _t4$6;
-const Container$5 = styled.div(_t$9 || (_t$9 = _$9`
-    display: flex;
-    width: ${0};
-    justify-content: space-between;
-    background-color: ${0};
-    border: 1px solid ${0};
-    padding: 15px 20px;
-    align-items: center;
-    cursor: pointer;
-    box-shadow: 0px 3px 2px 0px rgba(0, 0, 0, 0.16);
+function _templateObject4$6() {
+  var data = _taggedTemplateLiteralLoose(["\n    width: ", ";\n    padding: 20px;\n    border: 1px solid ", ";\n    border-top: 0;\n    border-bottom-left-radius: 20px;\n    border-bottom-right-radius: 20px;\n    display: ", ";\n    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.16);\n"]);
 
-    .icon-title {
-        display: flex;
-        align-items: center;
-    }
+  _templateObject4$6 = function _templateObject4() {
+    return data;
+  };
 
-    .title-subtitle {
-        display: flex;
-        flex-direction: column;
-        flex: 1;
-        margin-left: ${0};
+  return data;
+}
 
-        .title {
-            font-size: ${0};
-            color: ${0};
-        }
+function _templateObject3$6() {
+  var data = _taggedTemplateLiteralLoose(["\n                  border-radius: 30px;\n              "]);
 
-        .subtitle {
-            color: ${0};
-            font-size: 12px;
-        }
-    }
+  _templateObject3$6 = function _templateObject3() {
+    return data;
+  };
 
-    .value-icon {
-        display: flex;
-        align-items: center;
-        flex: 1;
-        justify-content: flex-end;
+  return data;
+}
 
-        .value {
-            margin-right: 20px;
-            color: ${0};
-        }
-    }
+function _templateObject2$7() {
+  var data = _taggedTemplateLiteralLoose(["\n                  border-top-left-radius: 20px;\n                  border-top-right-radius: 20px;\n              "]);
 
-    ${0}
-`), props => props.width ? `${props.width}%` : '100%', props => props.secundary ? colors.card : colors.white, colors.card, props => props.icon ? '15px' : '0', props => props.subtitle ? '14px' : props.fontSizeTitle ? props.fontSizeTitle : '16px', props => props.colorTitle ? props.colorTitle : `${colors.gray20}`, props => props.colorTitle ? props.colorTitle : `${colors.gray10}`, props => props.colorValue ? props.colorValue : `${colors.gray20}`, props => props.open ? css$1(_t2$7 || (_t2$7 = _$9`
-                  border-top-left-radius: 20px;
-                  border-top-right-radius: 20px;
-              `)) : css$1(_t3$6 || (_t3$6 = _$9`
-                  border-radius: 30px;
-              `)));
-const Body$1 = styled.div(_t4$6 || (_t4$6 = _$9`
-    width: ${0};
-    padding: 20px;
-    border: 1px solid ${0};
-    border-top: 0;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    display: ${0};
-    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.16);
-`), props => props.width ? `${props.width}%` : '100%', colors.card, props => props.open ? 'block' : 'none');
+  _templateObject2$7 = function _templateObject2() {
+    return data;
+  };
 
-const Accordion = ({
-  title,
-  colorTitle,
-  subtitle,
-  colorSubtitle,
-  value,
-  colorValue,
-  children,
-  secundary,
-  open,
-  onChange,
-  width,
-  icon,
-  colorIcon,
-  fontSizeTitle
-}) => {
+  return data;
+}
+
+function _templateObject$9() {
+  var data = _taggedTemplateLiteralLoose(["\n    display: flex;\n    width: ", ";\n    justify-content: space-between;\n    background-color: ", ";\n    border: 1px solid ", ";\n    padding: 15px 20px;\n    align-items: center;\n    cursor: pointer;\n    box-shadow: 0px 3px 2px 0px rgba(0, 0, 0, 0.16);\n\n    .icon-title {\n        display: flex;\n        align-items: center;\n    }\n\n    .title-subtitle {\n        display: flex;\n        flex-direction: column;\n        flex: 1;\n        margin-left: ", ";\n\n        .title {\n            font-size: ", ";\n            color: ", ";\n        }\n\n        .subtitle {\n            color: ", ";\n            font-size: 12px;\n        }\n    }\n\n    .value-icon {\n        display: flex;\n        align-items: center;\n        flex: 1;\n        justify-content: flex-end;\n\n        .value {\n            margin-right: 20px;\n            color: ", ";\n        }\n    }\n\n    ", "\n"]);
+
+  _templateObject$9 = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+var Container$5 = styled.div(_templateObject$9(), function (props) {
+  return props.width ? props.width + "%" : '100%';
+}, function (props) {
+  return props.secundary ? colors.card : colors.white;
+}, colors.card, function (props) {
+  return props.icon ? '15px' : '0';
+}, function (props) {
+  return props.subtitle ? '14px' : props.fontSizeTitle ? props.fontSizeTitle : '16px';
+}, function (props) {
+  return props.colorTitle ? props.colorTitle : "" + colors.gray20;
+}, function (props) {
+  return props.colorTitle ? props.colorTitle : "" + colors.gray10;
+}, function (props) {
+  return props.colorValue ? props.colorValue : "" + colors.gray20;
+}, function (props) {
+  return props.open ? css$1(_templateObject2$7()) : css$1(_templateObject3$6());
+});
+var Body$1 = styled.div(_templateObject4$6(), function (props) {
+  return props.width ? props.width + "%" : '100%';
+}, colors.card, function (props) {
+  return props.open ? 'block' : 'none';
+});
+
+var Accordion = function Accordion(_ref) {
+  var title = _ref.title,
+      colorTitle = _ref.colorTitle,
+      subtitle = _ref.subtitle,
+      colorSubtitle = _ref.colorSubtitle,
+      value = _ref.value,
+      colorValue = _ref.colorValue,
+      children = _ref.children,
+      secundary = _ref.secundary,
+      open = _ref.open,
+      onChange = _ref.onChange,
+      width = _ref.width,
+      icon = _ref.icon,
+      colorIcon = _ref.colorIcon,
+      fontSizeTitle = _ref.fontSizeTitle;
   return React$2.createElement(React$2.Fragment, null, React$2.createElement(Container$5, {
     colorTitle: colorTitle,
     colorSubtitle: colorSubtitle,
@@ -6512,7 +6422,9 @@ const Accordion = ({
     secundary: secundary,
     subtitle: subtitle,
     open: open,
-    onClick: () => onChange(),
+    onClick: function onClick() {
+      return onChange();
+    },
     width: width,
     icon: icon ? true : false,
     fontSizeTitle: fontSizeTitle
@@ -6545,16 +6457,41 @@ const Accordion = ({
   }, children));
 };
 
-let _$a = t => t,
-    _t$a,
-    _t2$8,
-    _t3$7;
-const toggleWidth = 50;
-const toggleHeight = 30;
-const toggleGutter = 6;
-const toggleRadius = toggleHeight / 2;
-const toggleControlSsize = toggleHeight - toggleGutter * 2;
-const Sizes$4 = {
+function _templateObject3$7() {
+  var data = _taggedTemplateLiteralLoose(["\n    display: flex !important;\n    flex-direction: row !important;\n\n    .btn {\n        display: flex !important;\n        align-items: center !important;\n        justify-content: center !important;\n        opacity: ", ";\n        width: ", ";\n        border: 1px solid ", " !important;\n        padding: 4px 0 !important;\n\n        span {\n            font-size: ", ";\n        }\n    }\n\n    .left {\n        cursor: ", ";\n        background-color: ", ";\n        border-top-left-radius: 20px !important;\n        border-bottom-left-radius: 20px !important;\n        border-right: 0 !important;\n        transition: 400ms !important;\n\n        span {\n            color: ", ";\n        }\n    }\n\n    .right {\n        cursor: ", ";\n        background-color: ", ";\n        border-top-right-radius: 20px !important;\n        border-bottom-right-radius: 20px !important;\n        border-left: 0 !important;\n        transition: 400ms !important;\n\n        span {\n            color: ", ";\n        }\n    }\n"]);
+
+  _templateObject3$7 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2$8() {
+  var data = _taggedTemplateLiteralLoose(["\n    display: flex !important;\n    flex-direction: row !important;\n\n    .btn {\n        display: flex !important;\n        align-items: center !important;\n        justify-content: center !important;\n        opacity: ", ";\n        width: ", ";\n        border: 1px solid ", " !important;\n        padding: 4px 0 !important;\n\n        span {\n            font-size: ", ";\n        }\n    }\n\n    .left {\n        cursor: ", ";\n        background-color: ", ";\n        border-top-left-radius: 20px !important;\n        border-bottom-left-radius: 20px !important;\n        border-right: 0 !important;\n        transition: 400ms !important;\n\n        span {\n            color: ", ";\n        }\n    }\n\n    .right {\n        cursor: ", ";\n        background-color: ", ";\n        border-top-right-radius: 20px !important;\n        border-bottom-right-radius: 20px !important;\n        border-left: 0 !important;\n        transition: 400ms !important;\n\n        span {\n            color: ", ";\n        }\n    }\n"]);
+
+  _templateObject2$8 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject$a() {
+  var data = _taggedTemplateLiteralLoose(["\n    display: flex !important;\n    flex-direction: row !important;\n    position: relative !important;\n    /* padding-left: ", "; */\n    /* margin-bottom: 12px; */\n    cursor: ", ";\n    font-size: 22px !important;\n    user-select: none !important;\n\n    input {\n        position: absolute !important;\n        opacity: 0 !important;\n        cursor: pointer !important;\n        height: 0 !important;\n        width: 0 !important;\n        display: none !important;\n    }\n\n    input:checked ~ .control {\n        background-color: ", ";\n\n        &:after {\n            left: ", ";\n        }\n    }\n\n    .control {\n        height: ", ";\n        width: ", ";\n        border-radius: ", ";\n        background-color: ", " !important;\n        transition: background-color 0.15s ease-in !important;\n\n        &:after {\n            content: '' !important;\n            position: absolute !important;\n            left: 5px !important;\n            top: 5px !important;\n            height: ", ";\n            width: ", ";\n            border-radius: 50px !important;\n            background-color: white !important;\n            transition: left 0.15s ease-in !important;\n            border: 1px solid ", " !important;\n        }\n    }\n"]);
+
+  _templateObject$a = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+var toggleWidth = 50;
+var toggleHeight = 30;
+var toggleGutter = 6;
+var toggleRadius = toggleHeight / 2;
+var toggleControlSsize = toggleHeight - toggleGutter * 2;
+var Sizes$4 = {
   mini: 'mini',
   tiny: 'tiny',
   small: 'small',
@@ -6565,7 +6502,7 @@ const Sizes$4 = {
   massive: 'massive'
 };
 
-const widthSwitch = size => {
+var widthSwitch = function widthSwitch(size) {
   switch (size) {
     case Sizes$4.mini:
       return 30;
@@ -6596,7 +6533,7 @@ const widthSwitch = size => {
   }
 };
 
-const heightSwitch = size => {
+var heightSwitch = function heightSwitch(size) {
   switch (size) {
     case Sizes$4.mini:
       return 20;
@@ -6627,7 +6564,7 @@ const heightSwitch = size => {
   }
 };
 
-const sizeGutter = size => {
+var sizeGutter = function sizeGutter(size) {
   switch (size) {
     case Sizes$4.mini:
       return 6;
@@ -6658,7 +6595,7 @@ const sizeGutter = size => {
   }
 };
 
-const widthToggle = size => {
+var widthToggle = function widthToggle(size) {
   switch (size) {
     case Sizes$4.mini:
       return '40px !important';
@@ -6689,7 +6626,7 @@ const widthToggle = size => {
   }
 };
 
-const fontToggle = size => {
+var fontToggle = function fontToggle(size) {
   switch (size) {
     case Sizes$4.mini:
       return '8px !important';
@@ -6720,7 +6657,7 @@ const fontToggle = size => {
   }
 };
 
-const fontActiveInactive = size => {
+var fontActiveInactive = function fontActiveInactive(size) {
   switch (size) {
     case Sizes$4.mini:
       return '7px !important';
@@ -6751,157 +6688,78 @@ const fontActiveInactive = size => {
   }
 };
 
-const Switch = styled.label(_t$a || (_t$a = _$a`
-    display: flex !important;
-    flex-direction: row !important;
-    position: relative !important;
-    /* padding-left: ${0}; */
-    /* margin-bottom: 12px; */
-    cursor: ${0};
-    font-size: 22px !important;
-    user-select: none !important;
+var Switch = styled.label(_templateObject$a(), function (props) {
+  return props.size ? widthSwitch(props.size) + "px" : toggleWidth + "px";
+}, function (props) {
+  return props.disabled ? 'normal !important' : 'pointer !important';
+}, function (props) {
+  return props.disabled ? colors.brandTransparent + " !important" : colors.brandDark + " !important";
+}, function (props) {
+  return props.size ? widthSwitch(props.size) - (heightSwitch(props.size) - sizeGutter(props.size) * 2) - sizeGutter(props.size) + "px !important" : toggleWidth - toggleControlSsize - toggleGutter + "px !important";
+}, function (props) {
+  return props.size ? heightSwitch(props.size) + "px !important" : toggleHeight + "px !important";
+}, function (props) {
+  return props.size ? widthSwitch(props.size) + "px !important" : toggleWidth + "px !important";
+}, function (props) {
+  return props.size ? heightSwitch(props.size) / 2 + "px !important" : toggleRadius + "px !important";
+}, colors.card, function (props) {
+  return props.size ? heightSwitch(props.size) - sizeGutter(props.size) * 2 + "px !important" : toggleControlSsize + "px !important";
+}, function (props) {
+  return props.size ? heightSwitch(props.size) - sizeGutter(props.size) * 2 + "px !important" : toggleControlSsize + "px !important";
+}, colors.default10);
+var Toggle = styled.div(_templateObject2$8(), function (props) {
+  return props.disabled ? '0.5 !important' : '1 !important';
+}, function (props) {
+  return props.size ? widthToggle(props.size) : '70px !important';
+}, colors.card, function (props) {
+  return props.size ? fontToggle(props.size) : '11px !important';
+}, function (props) {
+  return props.disabled ? 'default !important' : !props.checked ? 'default !important' : 'pointer !important';
+}, function (props) {
+  return !props.checked ? colors.brand10 + " !important" : colors.white + " !important";
+}, function (props) {
+  return !props.checked ? colors.white + " !important" : colors.gray20 + " !important";
+}, function (props) {
+  return props.disabled ? 'default !important' : props.checked ? 'default !important' : 'pointer !important';
+}, function (props) {
+  return props.checked ? colors.brand10 + " !important" : colors.white + " !important";
+}, function (props) {
+  return props.checked ? colors.white + " !important" : colors.gray20 + " !important";
+});
+var ActiveInactive = styled.div(_templateObject3$7(), function (props) {
+  return props.disabled ? '0.5 !important' : '1 !important';
+}, function (props) {
+  return props.size ? widthToggle(props.size) : '70px !important';
+}, colors.card, function (props) {
+  return props.size ? fontActiveInactive(props.size) : '10px !important';
+}, function (props) {
+  return props.disabled ? 'default !important' : !props.checked ? 'default !important' : 'pointer !important';
+}, function (props) {
+  return !props.checked ? colors.brand20 + " !important" : colors.white + " !important";
+}, function (props) {
+  return !props.checked ? colors.white + " !important" : colors.gray20 + " !important";
+}, function (props) {
+  return props.disabled ? 'default !important' : props.checked ? 'default !important' : 'pointer !important';
+}, function (props) {
+  return props.checked ? colors.brandGreen + " !important" : colors.white + " !important";
+}, function (props) {
+  return props.checked ? colors.white + " !important" : colors.gray20 + " !important";
+});
 
-    input {
-        position: absolute !important;
-        opacity: 0 !important;
-        cursor: pointer !important;
-        height: 0 !important;
-        width: 0 !important;
-        display: none !important;
-    }
-
-    input:checked ~ .control {
-        background-color: ${0};
-
-        &:after {
-            left: ${0};
-        }
-    }
-
-    .control {
-        height: ${0};
-        width: ${0};
-        border-radius: ${0};
-        background-color: ${0} !important;
-        transition: background-color 0.15s ease-in !important;
-
-        &:after {
-            content: '' !important;
-            position: absolute !important;
-            left: 5px !important;
-            top: 5px !important;
-            height: ${0};
-            width: ${0};
-            border-radius: 50px !important;
-            background-color: white !important;
-            transition: left 0.15s ease-in !important;
-            border: 1px solid ${0} !important;
-        }
-    }
-`), props => props.size ? `${widthSwitch(props.size)}px` : `${toggleWidth}px`, props => props.disabled ? 'normal !important' : 'pointer !important', props => props.disabled ? `${colors.brandTransparent} !important` : `${colors.brandDark} !important`, props => props.size ? `${widthSwitch(props.size) - (heightSwitch(props.size) - sizeGutter(props.size) * 2) - sizeGutter(props.size)}px !important` : `${toggleWidth - toggleControlSsize - toggleGutter}px !important`, props => props.size ? `${heightSwitch(props.size)}px !important` : `${toggleHeight}px !important`, props => props.size ? `${widthSwitch(props.size)}px !important` : `${toggleWidth}px !important`, props => props.size ? `${heightSwitch(props.size) / 2}px !important` : `${toggleRadius}px !important`, colors.card, props => props.size ? `${heightSwitch(props.size) - sizeGutter(props.size) * 2}px !important` : `${toggleControlSsize}px !important`, props => props.size ? `${heightSwitch(props.size) - sizeGutter(props.size) * 2}px !important` : `${toggleControlSsize}px !important`, colors.default10);
-const Toggle = styled.div(_t2$8 || (_t2$8 = _$a`
-    display: flex !important;
-    flex-direction: row !important;
-
-    .btn {
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        opacity: ${0};
-        width: ${0};
-        border: 1px solid ${0} !important;
-        padding: 4px 0 !important;
-
-        span {
-            font-size: ${0};
-        }
-    }
-
-    .left {
-        cursor: ${0};
-        background-color: ${0};
-        border-top-left-radius: 20px !important;
-        border-bottom-left-radius: 20px !important;
-        border-right: 0 !important;
-        transition: 400ms !important;
-
-        span {
-            color: ${0};
-        }
-    }
-
-    .right {
-        cursor: ${0};
-        background-color: ${0};
-        border-top-right-radius: 20px !important;
-        border-bottom-right-radius: 20px !important;
-        border-left: 0 !important;
-        transition: 400ms !important;
-
-        span {
-            color: ${0};
-        }
-    }
-`), props => props.disabled ? '0.5 !important' : '1 !important', props => props.size ? widthToggle(props.size) : '70px !important', colors.card, props => props.size ? fontToggle(props.size) : '11px !important', props => props.disabled ? 'default !important' : !props.checked ? 'default !important' : 'pointer !important', props => !props.checked ? `${colors.brand10} !important` : `${colors.white} !important`, props => !props.checked ? `${colors.white} !important` : `${colors.gray20} !important`, props => props.disabled ? 'default !important' : props.checked ? 'default !important' : 'pointer !important', props => props.checked ? `${colors.brand10} !important` : `${colors.white} !important`, props => props.checked ? `${colors.white} !important` : `${colors.gray20} !important`);
-const ActiveInactive = styled.div(_t3$7 || (_t3$7 = _$a`
-    display: flex !important;
-    flex-direction: row !important;
-
-    .btn {
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        opacity: ${0};
-        width: ${0};
-        border: 1px solid ${0} !important;
-        padding: 4px 0 !important;
-
-        span {
-            font-size: ${0};
-        }
-    }
-
-    .left {
-        cursor: ${0};
-        background-color: ${0};
-        border-top-left-radius: 20px !important;
-        border-bottom-left-radius: 20px !important;
-        border-right: 0 !important;
-        transition: 400ms !important;
-
-        span {
-            color: ${0};
-        }
-    }
-
-    .right {
-        cursor: ${0};
-        background-color: ${0};
-        border-top-right-radius: 20px !important;
-        border-bottom-right-radius: 20px !important;
-        border-left: 0 !important;
-        transition: 400ms !important;
-
-        span {
-            color: ${0};
-        }
-    }
-`), props => props.disabled ? '0.5 !important' : '1 !important', props => props.size ? widthToggle(props.size) : '70px !important', colors.card, props => props.size ? fontActiveInactive(props.size) : '10px !important', props => props.disabled ? 'default !important' : !props.checked ? 'default !important' : 'pointer !important', props => !props.checked ? `${colors.brand20} !important` : `${colors.white} !important`, props => !props.checked ? `${colors.white} !important` : `${colors.gray20} !important`, props => props.disabled ? 'default !important' : props.checked ? 'default !important' : 'pointer !important', props => props.checked ? `${colors.brandGreen} !important` : `${colors.white} !important`, props => props.checked ? `${colors.white} !important` : `${colors.gray20} !important`);
-
-const TYPES = {
-  switch: 'switch',
+var TYPES = {
+  "switch": 'switch',
   toggle: 'toggle',
   activeInactive: 'activeInactive'
 };
 
-const Selection = ({
-  type,
-  checked,
-  onChange,
-  size,
-  disabled,
-  selectionRef
-}) => {
+var Selection = function Selection(_ref) {
+  var type = _ref.type,
+      checked = _ref.checked,
+      onChange = _ref.onChange,
+      size = _ref.size,
+      disabled = _ref.disabled,
+      selectionRef = _ref.selectionRef;
+
   function renderSwitch() {
     return React$2.createElement(Switch, {
       size: size,
@@ -6912,7 +6770,9 @@ const Selection = ({
       defaultChecked: checked
     }), React$2.createElement("span", {
       className: "control",
-      onClick: () => !disabled ? onChange ? onChange() : null : null
+      onClick: function onClick() {
+        return !disabled ? onChange ? onChange() : null : null;
+      }
     }));
   }
 
@@ -6924,10 +6784,14 @@ const Selection = ({
       disabled: disabled
     }, React$2.createElement("div", {
       className: "btn left",
-      onClick: () => !disabled ? checked ? onChange ? onChange() : null : null : null
-    }, React$2.createElement("span", null, "n\u00E3o")), React$2.createElement("div", {
+      onClick: function onClick() {
+        return !disabled ? checked ? onChange ? onChange() : null : null : null;
+      }
+    }, React$2.createElement("span", null, "n\xE3o")), React$2.createElement("div", {
       className: "btn right",
-      onClick: () => !disabled ? !checked ? onChange ? onChange() : null : null : null
+      onClick: function onClick() {
+        return !disabled ? !checked ? onChange ? onChange() : null : null : null;
+      }
     }, React$2.createElement("span", null, "sim")));
   }
 
@@ -6939,15 +6803,19 @@ const Selection = ({
       disabled: disabled
     }, React$2.createElement("div", {
       className: "btn left",
-      onClick: () => !disabled ? checked ? onChange ? onChange() : null : null : null
+      onClick: function onClick() {
+        return !disabled ? checked ? onChange ? onChange() : null : null : null;
+      }
     }, React$2.createElement("span", null, checked ? 'desativar' : 'inativo')), React$2.createElement("div", {
       className: "btn right",
-      onClick: () => !disabled ? !checked ? onChange ? onChange() : null : null : null
+      onClick: function onClick() {
+        return !disabled ? !checked ? onChange ? onChange() : null : null : null;
+      }
     }, React$2.createElement("span", null, checked ? 'ativo' : 'ativar')));
   }
 
   switch (type) {
-    case TYPES.switch:
+    case TYPES["switch"]:
       return renderSwitch();
 
     case TYPES.toggle:
@@ -6960,15 +6828,22 @@ const Selection = ({
   return React$2.createElement("div", null);
 };
 
-let _$b = t => t,
-    _t$b;
-const Sizes$5 = {
+function _templateObject$b() {
+  var data = _taggedTemplateLiteralLoose(["\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n    opacity: ", ";\n\n    .btn {\n        width: ", ";\n        font-size: ", ";\n        display: flex;\n        align-items: center;\n        justify-content: center;\n        height: ", ";\n        color: ", ";\n    }\n\n    .left {\n        opacity: ", ";\n\n        cursor: ", ";\n    }\n\n    .right {\n        opacity: ", ";\n\n        cursor: ", ";\n    }\n\n    input {\n        text-align: center;\n        width: ", ";\n        font-size: ", ";\n        display: flex;\n        align-items: center;\n        justify-content: center;\n        color: ", ";\n        border: none;\n        outline: none;\n    }\n\n    input[type='number']::-webkit-inner-spin-button {\n        -webkit-appearance: none;\n    }\n    input[type='number'] {\n        -moz-appearance: textfield;\n        appearance: textfield;\n    }\n\n    input:disabled {\n        background-color: transparent;\n    }\n"]);
+
+  _templateObject$b = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+var Sizes$5 = {
   small: 'small',
   medium: 'medium',
   big: 'big'
 };
 
-const widthBtnMoreLess = size => {
+var widthBtnMoreLess = function widthBtnMoreLess(size) {
   switch (size) {
     case Sizes$5.small:
       return '20px';
@@ -6984,7 +6859,7 @@ const widthBtnMoreLess = size => {
   }
 };
 
-const heightBtnMoreLess = size => {
+var heightBtnMoreLess = function heightBtnMoreLess(size) {
   switch (size) {
     case Sizes$5.small:
       return '20px';
@@ -7000,7 +6875,7 @@ const heightBtnMoreLess = size => {
   }
 };
 
-const widthValueMoreLess = (size, value) => {
+var widthValueMoreLess = function widthValueMoreLess(size, value) {
   if (size === Sizes$5.small) {
     if (value < 100) {
       return '15px';
@@ -7052,7 +6927,7 @@ const widthValueMoreLess = (size, value) => {
   return '50px';
 };
 
-const fontMoreLess = size => {
+var fontMoreLess = function fontMoreLess(size) {
   switch (size) {
     case Sizes$5.small:
       return '10px';
@@ -7068,79 +6943,54 @@ const fontMoreLess = size => {
   }
 };
 
-const Container$6 = styled.div(_t$b || (_t$b = _$b`
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    opacity: ${0};
+var Container$6 = styled.div(_templateObject$b(), function (props) {
+  return props.disabled ? '0.5' : '1';
+}, function (props) {
+  return props.size ? widthBtnMoreLess(props.size) : '30px';
+}, function (props) {
+  return props.size ? fontMoreLess(props.size) : '15px';
+}, function (props) {
+  return props.size ? heightBtnMoreLess(props.size) : '30px';
+}, colors.gray20, function (props) {
+  return props.noLess ? '0.2' : '1';
+}, function (props) {
+  return props.disabled || props.noLess ? 'default' : 'pointer';
+}, function (props) {
+  return props.noMore ? '0.2' : '1';
+}, function (props) {
+  return props.disabled || props.noMore ? 'default' : 'pointer';
+}, function (props) {
+  return props.size ? widthValueMoreLess(props.size, props.value) : '15px';
+}, function (props) {
+  return props.size ? fontMoreLess(props.size) : '15px';
+}, colors.gray20);
 
-    .btn {
-        width: ${0};
-        font-size: ${0};
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: ${0};
-        color: ${0};
-    }
+var MoreLess = function MoreLess(_ref) {
+  var size = _ref.size,
+      disabled = _ref.disabled,
+      value = _ref.value,
+      limit = _ref.limit,
+      minimum = _ref.minimum,
+      more = _ref.more,
+      less = _ref.less,
+      _onChange = _ref.onChange;
 
-    .left {
-        opacity: ${0};
+  var _useState = useState(false),
+      noLess = _useState[0],
+      setNoLess = _useState[1];
 
-        cursor: ${0};
-    }
+  var _useState2 = useState(false),
+      noMore = _useState2[0],
+      setNoMore = _useState2[1];
 
-    .right {
-        opacity: ${0};
-
-        cursor: ${0};
-    }
-
-    input {
-        text-align: center;
-        width: ${0};
-        font-size: ${0};
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: ${0};
-        border: none;
-        outline: none;
-    }
-
-    input[type='number']::-webkit-inner-spin-button {
-        -webkit-appearance: none;
-    }
-    input[type='number'] {
-        -moz-appearance: textfield;
-        appearance: textfield;
-    }
-
-    input:disabled {
-        background-color: transparent;
-    }
-`), props => props.disabled ? '0.5' : '1', props => props.size ? widthBtnMoreLess(props.size) : '30px', props => props.size ? fontMoreLess(props.size) : '15px', props => props.size ? heightBtnMoreLess(props.size) : '30px', colors.gray20, props => props.noLess ? '0.2' : '1', props => props.disabled || props.noLess ? 'default' : 'pointer', props => props.noMore ? '0.2' : '1', props => props.disabled || props.noMore ? 'default' : 'pointer', props => props.size ? widthValueMoreLess(props.size, props.value) : '15px', props => props.size ? fontMoreLess(props.size) : '15px', colors.gray20);
-
-const MoreLess = ({
-  size,
-  disabled,
-  value,
-  limit,
-  minimum,
-  more,
-  less,
-  onChange
-}) => {
-  const [noLess, setNoLess] = useState(false);
-  const [noMore, setNoMore] = useState(false);
-  useEffect(() => {
+  useEffect(function () {
     if (minimum && value <= minimum || value <= 0) {
       setNoLess(true);
     } else {
       setNoLess(false);
     }
   }, [minimum, value]);
-  useEffect(() => {
+  useEffect(function () {
     if (limit && value >= limit) {
       setNoMore(true);
     } else {
@@ -7157,110 +7007,91 @@ const MoreLess = ({
     noMore: noMore
   }, React$2.createElement("div", {
     className: "btn left",
-    onClick: () => !disabled ? less ? noLess ? null : less() : null : null
+    onClick: function onClick() {
+      return !disabled ? less ? noLess ? null : less() : null : null;
+    }
   }, React$2.createElement(FontAwesomeIcon, {
     icon: faMinus
   })), React$2.createElement("input", {
     value: value.toString(),
     type: "number",
-    onChange: event => onChange ? onChange(Number(event.target.value)) : null,
-    disabled: disabled || !onChange
+    onChange: function onChange(event) {
+      return _onChange ? _onChange(Number(event.target.value)) : null;
+    },
+    disabled: disabled || !_onChange
   }), React$2.createElement("div", {
     className: "btn right",
-    onClick: () => !disabled ? noMore ? null : more ? more() : null : null
+    onClick: function onClick() {
+      return !disabled ? noMore ? null : more ? more() : null : null;
+    }
   }, React$2.createElement(FontAwesomeIcon, {
     icon: faPlus
   })));
 };
 
-let _$c = t => t,
-    _t$c,
-    _t2$9;
-const Shadow = styled.div(_t$c || (_t$c = _$c`
-    padding: 20px;
-    box-shadow: 0 20px 50px 0 rgba(0, 0, 0, 0.16);
-    background-color: ${0};
-    border-radius: 30px;
-    position: relative;
+function _templateObject2$9() {
+  var data = _taggedTemplateLiteralLoose(["\n    background-color: ", ";\n    padding: 12px 25px;\n    border-radius: 30px;\n    border: 1px solid ", ";\n    width: ", ";\n    cursor: pointer;\n    display: flex;\n    align-items: center;\n\n    :hover {\n        background-color: ", ";\n    }\n\n    span {\n        margin-left: 15px;\n        font-size: 15px;\n        color: ", ";\n    }\n"]);
 
-    width: ${0};
+  _templateObject2$9 = function _templateObject2() {
+    return data;
+  };
 
-    .loading-card {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: rgba(255,255,255,.8);
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        border-radius: 30px;
-        z-index: 2;
-        position: absolute;
-    }
-`), colors.white, props => {
+  return data;
+}
+
+function _templateObject$c() {
+  var data = _taggedTemplateLiteralLoose(["\n    padding: 20px;\n    box-shadow: 0 20px 50px 0 rgba(0, 0, 0, 0.16);\n    background-color: ", ";\n    border-radius: 30px;\n    position: relative;\n\n    width: ", ";\n\n    .loading-card {\n        display: flex;\n        justify-content: center;\n        align-items: center;\n        background-color: rgba(255,255,255,.8);\n        width: 100%;\n        height: 100%;\n        top: 0;\n        left: 0;\n        right: 0;\n        bottom: 0;\n        border-radius: 30px;\n        z-index: 2;\n        position: absolute;\n    }\n"]);
+
+  _templateObject$c = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+var Shadow = styled.div(_templateObject$c(), colors.white, function (props) {
   if (props.width) {
     if (typeof props.width === 'string') {
-      return `${props.width.replace('%', '')}%`;
+      return props.width.replace('%', '') + "%";
     } else {
-      return `${props.width}px`;
+      return props.width + "px";
     }
   }
 
   return '100%';
 });
-const Button$1 = styled.a(_t2$9 || (_t2$9 = _$c`
-    background-color: ${0};
-    padding: 12px 25px;
-    border-radius: 30px;
-    border: 1px solid ${0};
-    width: ${0};
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-
-    :hover {
-        background-color: ${0};
-    }
-
-    span {
-        margin-left: 15px;
-        font-size: 15px;
-        color: ${0};
-    }
-`), colors.card, colors.default30, props => {
+var Button$1 = styled.a(_templateObject2$9(), colors.card, colors.default30, function (props) {
   if (props.width) {
     if (typeof props.width === 'string') {
-      return `${props.width.replace('%', '')}%`;
+      return props.width.replace('%', '') + "%";
     } else {
-      return `${props.width}px`;
+      return props.width + "px";
     }
   }
 
   return '100%';
-}, colors.default10, props => props.colorText ? props.colorText : colors.brandDark);
+}, colors.default10, function (props) {
+  return props.colorText ? props.colorText : colors.brandDark;
+});
 
-const Types = {
+var Types = {
   shadow: 'shadow',
   button: 'button'
 };
 
-const Card = ({
-  children,
-  width,
-  type,
-  style,
-  icon,
-  sizeIcon,
-  colorIcon,
-  text,
-  colorText,
-  onClick,
-  loading,
-  ...rest
-}) => {
+var Card = function Card(_ref) {
+  var children = _ref.children,
+      width = _ref.width,
+      type = _ref.type,
+      style = _ref.style,
+      icon = _ref.icon,
+      sizeIcon = _ref.sizeIcon,
+      colorIcon = _ref.colorIcon,
+      text = _ref.text,
+      colorText = _ref.colorText,
+      onClick = _ref.onClick,
+      loading = _ref.loading,
+      rest = _objectWithoutPropertiesLoose(_ref, ["children", "width", "type", "style", "icon", "sizeIcon", "colorIcon", "text", "colorText", "onClick", "loading"]);
+
   function renderShadow() {
     return React$2.createElement(Shadow, {
       width: width,
@@ -7296,37 +7127,24 @@ const Card = ({
   }
 };
 
-let _$d = t => t,
-    _t$d;
-const Container$7 = styled.div(_t$d || (_t$d = _$d`
-    display: flex;
-    flex-direction: column;
+function _templateObject$d() {
+  var data = _taggedTemplateLiteralLoose(["\n    display: flex;\n    flex-direction: column;\n\n    input {\n        outline: none;\n        padding: 7px 15px;\n        border-radius: 20px;\n        border: 1px solid\n            ", ";\n        color: ", ";\n        cursor: pointer;\n\n        background-color: ", ";\n\n        font-weight: bold;\n\n        &::placeholder {\n            color: ", ";\n        }\n    }\n\n    span {\n        font-size: 14px;\n        color: ", ";\n        margin-left: 15px;\n        margin-bottom: 3px;\n    }\n"]);
 
-    input {
-        outline: none;
-        padding: 7px 15px;
-        border-radius: 20px;
-        border: 1px solid
-            ${0};
-        color: ${0};
-        cursor: pointer;
+  _templateObject$d = function _templateObject() {
+    return data;
+  };
 
-        background-color: ${0};
-
-        font-weight: bold;
-
-        &::placeholder {
-            color: ${0};
-        }
-    }
-
-    span {
-        font-size: 14px;
-        color: ${0};
-        margin-left: 15px;
-        margin-bottom: 3px;
-    }
-`), props => props.brand ? colors.brandLight : colors.gray10, props => props.brand ? colors.brand10 : colors.gray20, props => props.brand ? colors.brandLight : colors.white, props => props.brand ? colors.brandTransparent : colors.default10, props => {
+  return data;
+}
+var Container$7 = styled.div(_templateObject$d(), function (props) {
+  return props.brand ? colors.brandLight : colors.gray10;
+}, function (props) {
+  return props.brand ? colors.brand10 : colors.gray20;
+}, function (props) {
+  return props.brand ? colors.brandLight : colors.white;
+}, function (props) {
+  return props.brand ? colors.brandTransparent : colors.default10;
+}, function (props) {
   if (props.labelColor) {
     return props.labelColor;
   }
@@ -7334,7 +7152,7 @@ const Container$7 = styled.div(_t$d || (_t$d = _$d`
   return colors.brand10;
 });
 
-function _interopDefault(e){return e&&"object"==typeof e&&"default"in e?e["default"]:e}var React=_interopDefault(React$2);function _defaults2(e,t){for(var n=Object.getOwnPropertyNames(t),a=0;a<n.length;a++){var i=n[a],r=Object.getOwnPropertyDescriptor(t,i);r&&r.configurable&&e[i]===undefined&&Object.defineProperty(e,i,r);}return e}function _extends$1(){return (_extends$1=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var a in n)Object.prototype.hasOwnProperty.call(n,a)&&(e[a]=n[a]);}return e}).apply(this,arguments)}function _inheritsLoose(e,t){e.prototype=Object.create(t.prototype),_defaults2(e.prototype.constructor=e,t);}function _objectWithoutPropertiesLoose$1(e,t){if(null==e)return {};var n,a,i={},r=Object.keys(e);for(a=0;a<r.length;a++)n=r[a],0<=t.indexOf(n)||(i[n]=e[n]);return i}function _assertThisInitialized$1(e){if(void 0===e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return e}var invariant=function(e,t,n,a,i,r,o,s){if(!e){var l;if(t===undefined)l=new Error("Minified exception occurred; use the non-minified dev environment for the full error message and additional helpful warnings.");else {var u=[n,a,i,r,o,s],c=0;(l=new Error(t.replace(/%s/g,function(){return u[c++]}))).name="Invariant Violation";}throw l.framesToPop=1,l}},invariant_1=invariant;function setInputSelection(e,t,n){if("selectionStart"in e&&"selectionEnd"in e)e.selectionStart=t,e.selectionEnd=n;else {var a=e.createTextRange();a.collapse(!0),a.moveStart("character",t),a.moveEnd("character",n-t),a.select();}}function getInputSelection(e){var t=0,n=0;if("selectionStart"in e&&"selectionEnd"in e)t=e.selectionStart,n=e.selectionEnd;else {var a=document.selection.createRange();a.parentElement()===e&&(t=-a.moveStart("character",-e.value.length),n=-a.moveEnd("character",-e.value.length));}return {start:t,end:n,length:n-t}}var defaultFormatChars={9:"[0-9]",a:"[A-Za-z]","*":"[A-Za-z0-9]"},defaultMaskChar="_";function parseMask(e,t,n){var a="",i="",r=null,o=[];if(t===undefined&&(t=defaultMaskChar),null==n&&(n=defaultFormatChars),!e||"string"!=typeof e)return {maskChar:t,formatChars:n,mask:null,prefix:null,lastEditablePosition:null,permanents:[]};var s=!1;return e.split("").forEach(function(e){s=!s&&"\\"===e||(s||!n[e]?(o.push(a.length),a.length===o.length-1&&(i+=e)):r=a.length+1,a+=e,!1);}),{maskChar:t,formatChars:n,prefix:i,mask:a,lastEditablePosition:r,permanents:o}}function isPermanentCharacter(e,t){return -1!==e.permanents.indexOf(t)}function isAllowedCharacter(e,t,n){var a=e.mask,i=e.formatChars;if(!n)return !1;if(isPermanentCharacter(e,t))return a[t]===n;var r=i[a[t]];return new RegExp(r).test(n)}function isEmpty(n,e){return e.split("").every(function(e,t){return isPermanentCharacter(n,t)||!isAllowedCharacter(n,t,e)})}function getFilledLength(e,t){var n=e.maskChar,a=e.prefix;if(!n){for(;t.length>a.length&&isPermanentCharacter(e,t.length-1);)t=t.slice(0,t.length-1);return t.length}for(var i=a.length,r=t.length;r>=a.length;r--){var o=t[r];if(!isPermanentCharacter(e,r)&&isAllowedCharacter(e,r,o)){i=r+1;break}}return i}function isFilled(e,t){return getFilledLength(e,t)===e.mask.length}function formatValue(e,t){var n=e.maskChar,a=e.mask,i=e.prefix;if(!n){for((t=insertString(e,"",t,0)).length<i.length&&(t=i);t.length<a.length&&isPermanentCharacter(e,t.length);)t+=a[t.length];return t}if(t)return insertString(e,formatValue(e,""),t,0);for(var r=0;r<a.length;r++)isPermanentCharacter(e,r)?t+=a[r]:t+=n;return t}function clearRange(n,e,a,t){var i=a+t,r=n.maskChar,o=n.mask,s=n.prefix,l=e.split("");if(r)return l.map(function(e,t){return t<a||i<=t?e:isPermanentCharacter(n,t)?o[t]:r}).join("");for(var u=i;u<l.length;u++)isPermanentCharacter(n,u)&&(l[u]="");return a=Math.max(s.length,a),l.splice(a,i-a),e=l.join(""),formatValue(n,e)}function insertString(r,o,e,s){var l=r.mask,u=r.maskChar,c=r.prefix,t=e.split(""),h=isFilled(r,o);return !u&&s>o.length&&(o+=l.slice(o.length,s)),t.every(function(e){for(;i=e,isPermanentCharacter(r,a=s)&&i!==l[a];){if(s>=o.length&&(o+=l[s]),t=e,n=s,u&&isPermanentCharacter(r,n)&&t===u)return !0;if(++s>=l.length)return !1}var t,n,a,i;return !isAllowedCharacter(r,s,e)&&e!==u||(s<o.length?o=u||h||s<c.length?o.slice(0,s)+e+o.slice(s+1):(o=o.slice(0,s)+e+o.slice(s),formatValue(r,o)):u||(o+=e),++s<l.length)}),o}function getInsertStringLength(a,e,t,i){var r=a.mask,o=a.maskChar,n=t.split(""),s=i;return n.every(function(e){for(;n=e,isPermanentCharacter(a,t=i)&&n!==r[t];)if(++i>=r.length)return !1;var t,n;return (isAllowedCharacter(a,i,e)||e===o)&&i++,i<r.length}),i-s}function getLeftEditablePosition(e,t){for(var n=t;0<=n;--n)if(!isPermanentCharacter(e,n))return n;return null}function getRightEditablePosition(e,t){for(var n=e.mask,a=t;a<n.length;++a)if(!isPermanentCharacter(e,a))return a;return null}function getStringValue(e){return e||0===e?e+"":""}function processChange(e,t,n,a,i){var r=e.mask,o=e.prefix,s=e.lastEditablePosition,l=t,u="",c=0,h=0,f=Math.min(i.start,n.start);if(n.end>i.start?h=(c=getInsertStringLength(e,a,u=l.slice(i.start,n.end),f))?i.length:0:l.length<a.length&&(h=a.length-l.length),l=a,h){if(1===h&&!i.length)f=i.start===n.start?getRightEditablePosition(e,n.start):getLeftEditablePosition(e,n.start);l=clearRange(e,l,f,h);}return l=insertString(e,l,u,f),(f+=c)>=r.length?f=r.length:f<o.length&&!c?f=o.length:f>=o.length&&f<s&&c&&(f=getRightEditablePosition(e,f)),u||(u=null),{value:l=formatValue(e,l),enteredString:u,selection:{start:f,end:f}}}function isWindowsPhoneBrowser(){var e=new RegExp("windows","i"),t=new RegExp("phone","i"),n=navigator.userAgent;return e.test(n)&&t.test(n)}function isFunction(e){return "function"==typeof e}function getRequestAnimationFrame(){return window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame}function getCancelAnimationFrame(){return window.cancelAnimationFrame||window.webkitCancelRequestAnimationFrame||window.webkitCancelAnimationFrame||window.mozCancelAnimationFrame}function defer(e){return (!!getCancelAnimationFrame()?getRequestAnimationFrame():function(){return setTimeout(e,1e3/60)})(e)}function cancelDefer(e){(getCancelAnimationFrame()||clearTimeout)(e);}var InputElement=function(c){function e(e){var f=c.call(this,e)||this;f.focused=!1,f.mounted=!1,f.previousSelection=null,f.selectionDeferId=null,f.saveSelectionLoopDeferId=null,f.saveSelectionLoop=function(){f.previousSelection=f.getSelection(),f.saveSelectionLoopDeferId=defer(f.saveSelectionLoop);},f.runSaveSelectionLoop=function(){null===f.saveSelectionLoopDeferId&&f.saveSelectionLoop();},f.stopSaveSelectionLoop=function(){null!==f.saveSelectionLoopDeferId&&(cancelDefer(f.saveSelectionLoopDeferId),f.saveSelectionLoopDeferId=null,f.previousSelection=null);},f.getInputDOMNode=function(){if(!f.mounted)return null;var e=reactDom.findDOMNode(_assertThisInitialized$1(_assertThisInitialized$1(f))),t="undefined"!=typeof window&&e instanceof window.Element;if(e&&!t)return null;if("INPUT"!==e.nodeName&&(e=e.querySelector("input")),!e)throw new Error("react-input-mask: inputComponent doesn't contain input node");return e},f.getInputValue=function(){var e=f.getInputDOMNode();return e?e.value:null},f.setInputValue=function(e){var t=f.getInputDOMNode();t&&(f.value=e,t.value=e);},f.setCursorToEnd=function(){var e=getFilledLength(f.maskOptions,f.value),t=getRightEditablePosition(f.maskOptions,e);null!==t&&f.setCursorPosition(t);},f.setSelection=function(e,t,n){void 0===n&&(n={});var a=f.getInputDOMNode(),i=f.isFocused();a&&i&&(n.deferred||setInputSelection(a,e,t),null!==f.selectionDeferId&&cancelDefer(f.selectionDeferId),f.selectionDeferId=defer(function(){f.selectionDeferId=null,setInputSelection(a,e,t);}),f.previousSelection={start:e,end:t,length:Math.abs(t-e)});},f.getSelection=function(){return getInputSelection(f.getInputDOMNode())},f.getCursorPosition=function(){return f.getSelection().start},f.setCursorPosition=function(e){f.setSelection(e,e);},f.isFocused=function(){return f.focused},f.getBeforeMaskedValueChangeConfig=function(){var e=f.maskOptions,t=e.mask,n=e.maskChar,a=e.permanents,i=e.formatChars;return {mask:t,maskChar:n,permanents:a,alwaysShowMask:!!f.props.alwaysShowMask,formatChars:i}},f.isInputAutofilled=function(e,t,n,a){var i=f.getInputDOMNode();try{if(i.matches(":-webkit-autofill"))return !0}catch(r){}return !f.focused||a.end<n.length&&t.end===e.length},f.onChange=function(e){var t=_assertThisInitialized$1(_assertThisInitialized$1(f)).beforePasteState,n=_assertThisInitialized$1(_assertThisInitialized$1(f)).previousSelection,a=f.props.beforeMaskedValueChange,i=f.getInputValue(),r=f.value,o=f.getSelection();f.isInputAutofilled(i,o,r,n)&&(r=formatValue(f.maskOptions,""),n={start:0,end:0,length:0}),t&&(n=t.selection,r=t.value,o={start:n.start+i.length,end:n.start+i.length,length:0},i=r.slice(0,n.start)+i+r.slice(n.end),f.beforePasteState=null);var s=processChange(f.maskOptions,i,o,r,n),l=s.enteredString,u=s.selection,c=s.value;if(isFunction(a)){var h=a({value:c,selection:u},{value:r,selection:n},l,f.getBeforeMaskedValueChangeConfig());c=h.value,u=h.selection;}f.setInputValue(c),isFunction(f.props.onChange)&&f.props.onChange(e),f.isWindowsPhoneBrowser?f.setSelection(u.start,u.end,{deferred:!0}):f.setSelection(u.start,u.end);},f.onFocus=function(e){var t=f.props.beforeMaskedValueChange,n=f.maskOptions,a=n.mask,i=n.prefix;if(f.focused=!0,f.mounted=!0,a){if(f.value)getFilledLength(f.maskOptions,f.value)<f.maskOptions.mask.length&&f.setCursorToEnd();else {var r=formatValue(f.maskOptions,i),o=formatValue(f.maskOptions,r),s=getFilledLength(f.maskOptions,o),l=getRightEditablePosition(f.maskOptions,s),u={start:l,end:l};if(isFunction(t)){var c=t({value:o,selection:u},{value:f.value,selection:null},null,f.getBeforeMaskedValueChangeConfig());o=c.value,u=c.selection;}var h=o!==f.getInputValue();h&&f.setInputValue(o),h&&isFunction(f.props.onChange)&&f.props.onChange(e),f.setSelection(u.start,u.end);}f.runSaveSelectionLoop();}isFunction(f.props.onFocus)&&f.props.onFocus(e);},f.onBlur=function(e){var t=f.props.beforeMaskedValueChange,n=f.maskOptions.mask;if(f.stopSaveSelectionLoop(),f.focused=!1,n&&!f.props.alwaysShowMask&&isEmpty(f.maskOptions,f.value)){var a="";if(isFunction(t))a=t({value:a,selection:null},{value:f.value,selection:f.previousSelection},null,f.getBeforeMaskedValueChangeConfig()).value;var i=a!==f.getInputValue();i&&f.setInputValue(a),i&&isFunction(f.props.onChange)&&f.props.onChange(e);}isFunction(f.props.onBlur)&&f.props.onBlur(e);},f.onMouseDown=function(e){if(!f.focused&&document.addEventListener){f.mouseDownX=e.clientX,f.mouseDownY=e.clientY,f.mouseDownTime=(new Date).getTime();var r=function r(e){if(document.removeEventListener("mouseup",r),f.focused){var t=Math.abs(e.clientX-f.mouseDownX),n=Math.abs(e.clientY-f.mouseDownY),a=Math.max(t,n),i=(new Date).getTime()-f.mouseDownTime;(a<=10&&i<=200||a<=5&&i<=300)&&f.setCursorToEnd();}};document.addEventListener("mouseup",r);}isFunction(f.props.onMouseDown)&&f.props.onMouseDown(e);},f.onPaste=function(e){isFunction(f.props.onPaste)&&f.props.onPaste(e),e.defaultPrevented||(f.beforePasteState={value:f.getInputValue(),selection:f.getSelection()},f.setInputValue(""));},f.handleRef=function(e){null==f.props.children&&isFunction(f.props.inputRef)&&f.props.inputRef(e);};var t=e.mask,n=e.maskChar,a=e.formatChars,i=e.alwaysShowMask,r=e.beforeMaskedValueChange,o=e.defaultValue,s=e.value;f.maskOptions=parseMask(t,n,a),null==o&&(o=""),null==s&&(s=o);var l=getStringValue(s);if(f.maskOptions.mask&&(i||l)&&(l=formatValue(f.maskOptions,l),isFunction(r))){var u=e.value;null==e.value&&(u=o),l=r({value:l,selection:null},{value:u=getStringValue(u),selection:null},null,f.getBeforeMaskedValueChangeConfig()).value;}return f.value=l,f}_inheritsLoose(e,c);var t=e.prototype;return t.componentDidMount=function(){this.mounted=!0,this.getInputDOMNode()&&(this.isWindowsPhoneBrowser=isWindowsPhoneBrowser(),this.maskOptions.mask&&this.getInputValue()!==this.value&&this.setInputValue(this.value));},t.componentDidUpdate=function(){var e=this.previousSelection,t=this.props,n=t.beforeMaskedValueChange,a=t.alwaysShowMask,i=t.mask,r=t.maskChar,o=t.formatChars,s=this.maskOptions,l=a||this.isFocused(),u=null!=this.props.value,c=u?getStringValue(this.props.value):this.value,h=e?e.start:null;if(this.maskOptions=parseMask(i,r,o),this.maskOptions.mask){!s.mask&&this.isFocused()&&this.runSaveSelectionLoop();var f=this.maskOptions.mask&&this.maskOptions.mask!==s.mask;if(s.mask||u||(c=this.getInputValue()),(f||this.maskOptions.mask&&(c||l))&&(c=formatValue(this.maskOptions,c)),f){var p=getFilledLength(this.maskOptions,c);(null===h||p<h)&&(h=isFilled(this.maskOptions,c)?p:getRightEditablePosition(this.maskOptions,p));}!this.maskOptions.mask||!isEmpty(this.maskOptions,c)||l||u&&this.props.value||(c="");var d={start:h,end:h};if(isFunction(n)){var m=n({value:c,selection:d},{value:this.value,selection:this.previousSelection},null,this.getBeforeMaskedValueChangeConfig());c=m.value,d=m.selection;}this.value=c;var g=this.getInputValue()!==this.value;g?(this.setInputValue(this.value),this.forceUpdate()):f&&this.forceUpdate();var v=!1;null!=d.start&&null!=d.end&&(v=!e||e.start!==d.start||e.end!==d.end),(v||g)&&this.setSelection(d.start,d.end);}else s.mask&&(this.stopSaveSelectionLoop(),this.forceUpdate());},t.componentWillUnmount=function(){this.mounted=!1,null!==this.selectionDeferId&&cancelDefer(this.selectionDeferId),this.stopSaveSelectionLoop();},t.render=function(){var t,e=this.props,n=(e.children),a=_objectWithoutPropertiesLoose$1(e,["mask","alwaysShowMask","maskChar","formatChars","inputRef","beforeMaskedValueChange","children"]);if(n){isFunction(n)||invariant_1(!1);var i=["onChange","onPaste","onMouseDown","onFocus","onBlur","value","disabled","readOnly"],r=_extends$1({},a);i.forEach(function(e){return delete r[e]}),t=n(r),i.filter(function(e){return null!=t.props[e]&&t.props[e]!==a[e]}).length&&invariant_1(!1);}else t=React.createElement("input",_extends$1({ref:this.handleRef},a));var o={onFocus:this.onFocus,onBlur:this.onBlur};return this.maskOptions.mask&&(a.disabled||a.readOnly||(o.onChange=this.onChange,o.onPaste=this.onPaste,o.onMouseDown=this.onMouseDown),null!=a.value&&(o.value=this.value)),t=React.cloneElement(t,o)},e}(React.Component);var reactInputMask_production_min=InputElement;
+function _interopDefault(e){return e&&"object"==typeof e&&"default"in e?e["default"]:e}var React=_interopDefault(React$2);function _defaults2(e,t){for(var n=Object.getOwnPropertyNames(t),a=0;a<n.length;a++){var i=n[a],r=Object.getOwnPropertyDescriptor(t,i);r&&r.configurable&&e[i]===undefined&&Object.defineProperty(e,i,r);}return e}function _extends$1(){return (_extends$1=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var a in n)Object.prototype.hasOwnProperty.call(n,a)&&(e[a]=n[a]);}return e}).apply(this,arguments)}function _inheritsLoose(e,t){e.prototype=Object.create(t.prototype),_defaults2(e.prototype.constructor=e,t);}function _objectWithoutPropertiesLoose$2(e,t){if(null==e)return {};var n,a,i={},r=Object.keys(e);for(a=0;a<r.length;a++)n=r[a],0<=t.indexOf(n)||(i[n]=e[n]);return i}function _assertThisInitialized$1(e){if(void 0===e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return e}var invariant=function(e,t,n,a,i,r,o,s){if(!e){var l;if(t===undefined)l=new Error("Minified exception occurred; use the non-minified dev environment for the full error message and additional helpful warnings.");else {var u=[n,a,i,r,o,s],c=0;(l=new Error(t.replace(/%s/g,function(){return u[c++]}))).name="Invariant Violation";}throw l.framesToPop=1,l}},invariant_1=invariant;function setInputSelection(e,t,n){if("selectionStart"in e&&"selectionEnd"in e)e.selectionStart=t,e.selectionEnd=n;else {var a=e.createTextRange();a.collapse(!0),a.moveStart("character",t),a.moveEnd("character",n-t),a.select();}}function getInputSelection(e){var t=0,n=0;if("selectionStart"in e&&"selectionEnd"in e)t=e.selectionStart,n=e.selectionEnd;else {var a=document.selection.createRange();a.parentElement()===e&&(t=-a.moveStart("character",-e.value.length),n=-a.moveEnd("character",-e.value.length));}return {start:t,end:n,length:n-t}}var defaultFormatChars={9:"[0-9]",a:"[A-Za-z]","*":"[A-Za-z0-9]"},defaultMaskChar="_";function parseMask(e,t,n){var a="",i="",r=null,o=[];if(t===undefined&&(t=defaultMaskChar),null==n&&(n=defaultFormatChars),!e||"string"!=typeof e)return {maskChar:t,formatChars:n,mask:null,prefix:null,lastEditablePosition:null,permanents:[]};var s=!1;return e.split("").forEach(function(e){s=!s&&"\\"===e||(s||!n[e]?(o.push(a.length),a.length===o.length-1&&(i+=e)):r=a.length+1,a+=e,!1);}),{maskChar:t,formatChars:n,prefix:i,mask:a,lastEditablePosition:r,permanents:o}}function isPermanentCharacter(e,t){return -1!==e.permanents.indexOf(t)}function isAllowedCharacter(e,t,n){var a=e.mask,i=e.formatChars;if(!n)return !1;if(isPermanentCharacter(e,t))return a[t]===n;var r=i[a[t]];return new RegExp(r).test(n)}function isEmpty(n,e){return e.split("").every(function(e,t){return isPermanentCharacter(n,t)||!isAllowedCharacter(n,t,e)})}function getFilledLength(e,t){var n=e.maskChar,a=e.prefix;if(!n){for(;t.length>a.length&&isPermanentCharacter(e,t.length-1);)t=t.slice(0,t.length-1);return t.length}for(var i=a.length,r=t.length;r>=a.length;r--){var o=t[r];if(!isPermanentCharacter(e,r)&&isAllowedCharacter(e,r,o)){i=r+1;break}}return i}function isFilled(e,t){return getFilledLength(e,t)===e.mask.length}function formatValue(e,t){var n=e.maskChar,a=e.mask,i=e.prefix;if(!n){for((t=insertString(e,"",t,0)).length<i.length&&(t=i);t.length<a.length&&isPermanentCharacter(e,t.length);)t+=a[t.length];return t}if(t)return insertString(e,formatValue(e,""),t,0);for(var r=0;r<a.length;r++)isPermanentCharacter(e,r)?t+=a[r]:t+=n;return t}function clearRange(n,e,a,t){var i=a+t,r=n.maskChar,o=n.mask,s=n.prefix,l=e.split("");if(r)return l.map(function(e,t){return t<a||i<=t?e:isPermanentCharacter(n,t)?o[t]:r}).join("");for(var u=i;u<l.length;u++)isPermanentCharacter(n,u)&&(l[u]="");return a=Math.max(s.length,a),l.splice(a,i-a),e=l.join(""),formatValue(n,e)}function insertString(r,o,e,s){var l=r.mask,u=r.maskChar,c=r.prefix,t=e.split(""),h=isFilled(r,o);return !u&&s>o.length&&(o+=l.slice(o.length,s)),t.every(function(e){for(;i=e,isPermanentCharacter(r,a=s)&&i!==l[a];){if(s>=o.length&&(o+=l[s]),t=e,n=s,u&&isPermanentCharacter(r,n)&&t===u)return !0;if(++s>=l.length)return !1}var t,n,a,i;return !isAllowedCharacter(r,s,e)&&e!==u||(s<o.length?o=u||h||s<c.length?o.slice(0,s)+e+o.slice(s+1):(o=o.slice(0,s)+e+o.slice(s),formatValue(r,o)):u||(o+=e),++s<l.length)}),o}function getInsertStringLength(a,e,t,i){var r=a.mask,o=a.maskChar,n=t.split(""),s=i;return n.every(function(e){for(;n=e,isPermanentCharacter(a,t=i)&&n!==r[t];)if(++i>=r.length)return !1;var t,n;return (isAllowedCharacter(a,i,e)||e===o)&&i++,i<r.length}),i-s}function getLeftEditablePosition(e,t){for(var n=t;0<=n;--n)if(!isPermanentCharacter(e,n))return n;return null}function getRightEditablePosition(e,t){for(var n=e.mask,a=t;a<n.length;++a)if(!isPermanentCharacter(e,a))return a;return null}function getStringValue(e){return e||0===e?e+"":""}function processChange(e,t,n,a,i){var r=e.mask,o=e.prefix,s=e.lastEditablePosition,l=t,u="",c=0,h=0,f=Math.min(i.start,n.start);if(n.end>i.start?h=(c=getInsertStringLength(e,a,u=l.slice(i.start,n.end),f))?i.length:0:l.length<a.length&&(h=a.length-l.length),l=a,h){if(1===h&&!i.length)f=i.start===n.start?getRightEditablePosition(e,n.start):getLeftEditablePosition(e,n.start);l=clearRange(e,l,f,h);}return l=insertString(e,l,u,f),(f+=c)>=r.length?f=r.length:f<o.length&&!c?f=o.length:f>=o.length&&f<s&&c&&(f=getRightEditablePosition(e,f)),u||(u=null),{value:l=formatValue(e,l),enteredString:u,selection:{start:f,end:f}}}function isWindowsPhoneBrowser(){var e=new RegExp("windows","i"),t=new RegExp("phone","i"),n=navigator.userAgent;return e.test(n)&&t.test(n)}function isFunction(e){return "function"==typeof e}function getRequestAnimationFrame(){return window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame}function getCancelAnimationFrame(){return window.cancelAnimationFrame||window.webkitCancelRequestAnimationFrame||window.webkitCancelAnimationFrame||window.mozCancelAnimationFrame}function defer(e){return (!!getCancelAnimationFrame()?getRequestAnimationFrame():function(){return setTimeout(e,1e3/60)})(e)}function cancelDefer(e){(getCancelAnimationFrame()||clearTimeout)(e);}var InputElement=function(c){function e(e){var f=c.call(this,e)||this;f.focused=!1,f.mounted=!1,f.previousSelection=null,f.selectionDeferId=null,f.saveSelectionLoopDeferId=null,f.saveSelectionLoop=function(){f.previousSelection=f.getSelection(),f.saveSelectionLoopDeferId=defer(f.saveSelectionLoop);},f.runSaveSelectionLoop=function(){null===f.saveSelectionLoopDeferId&&f.saveSelectionLoop();},f.stopSaveSelectionLoop=function(){null!==f.saveSelectionLoopDeferId&&(cancelDefer(f.saveSelectionLoopDeferId),f.saveSelectionLoopDeferId=null,f.previousSelection=null);},f.getInputDOMNode=function(){if(!f.mounted)return null;var e=reactDom.findDOMNode(_assertThisInitialized$1(_assertThisInitialized$1(f))),t="undefined"!=typeof window&&e instanceof window.Element;if(e&&!t)return null;if("INPUT"!==e.nodeName&&(e=e.querySelector("input")),!e)throw new Error("react-input-mask: inputComponent doesn't contain input node");return e},f.getInputValue=function(){var e=f.getInputDOMNode();return e?e.value:null},f.setInputValue=function(e){var t=f.getInputDOMNode();t&&(f.value=e,t.value=e);},f.setCursorToEnd=function(){var e=getFilledLength(f.maskOptions,f.value),t=getRightEditablePosition(f.maskOptions,e);null!==t&&f.setCursorPosition(t);},f.setSelection=function(e,t,n){void 0===n&&(n={});var a=f.getInputDOMNode(),i=f.isFocused();a&&i&&(n.deferred||setInputSelection(a,e,t),null!==f.selectionDeferId&&cancelDefer(f.selectionDeferId),f.selectionDeferId=defer(function(){f.selectionDeferId=null,setInputSelection(a,e,t);}),f.previousSelection={start:e,end:t,length:Math.abs(t-e)});},f.getSelection=function(){return getInputSelection(f.getInputDOMNode())},f.getCursorPosition=function(){return f.getSelection().start},f.setCursorPosition=function(e){f.setSelection(e,e);},f.isFocused=function(){return f.focused},f.getBeforeMaskedValueChangeConfig=function(){var e=f.maskOptions,t=e.mask,n=e.maskChar,a=e.permanents,i=e.formatChars;return {mask:t,maskChar:n,permanents:a,alwaysShowMask:!!f.props.alwaysShowMask,formatChars:i}},f.isInputAutofilled=function(e,t,n,a){var i=f.getInputDOMNode();try{if(i.matches(":-webkit-autofill"))return !0}catch(r){}return !f.focused||a.end<n.length&&t.end===e.length},f.onChange=function(e){var t=_assertThisInitialized$1(_assertThisInitialized$1(f)).beforePasteState,n=_assertThisInitialized$1(_assertThisInitialized$1(f)).previousSelection,a=f.props.beforeMaskedValueChange,i=f.getInputValue(),r=f.value,o=f.getSelection();f.isInputAutofilled(i,o,r,n)&&(r=formatValue(f.maskOptions,""),n={start:0,end:0,length:0}),t&&(n=t.selection,r=t.value,o={start:n.start+i.length,end:n.start+i.length,length:0},i=r.slice(0,n.start)+i+r.slice(n.end),f.beforePasteState=null);var s=processChange(f.maskOptions,i,o,r,n),l=s.enteredString,u=s.selection,c=s.value;if(isFunction(a)){var h=a({value:c,selection:u},{value:r,selection:n},l,f.getBeforeMaskedValueChangeConfig());c=h.value,u=h.selection;}f.setInputValue(c),isFunction(f.props.onChange)&&f.props.onChange(e),f.isWindowsPhoneBrowser?f.setSelection(u.start,u.end,{deferred:!0}):f.setSelection(u.start,u.end);},f.onFocus=function(e){var t=f.props.beforeMaskedValueChange,n=f.maskOptions,a=n.mask,i=n.prefix;if(f.focused=!0,f.mounted=!0,a){if(f.value)getFilledLength(f.maskOptions,f.value)<f.maskOptions.mask.length&&f.setCursorToEnd();else {var r=formatValue(f.maskOptions,i),o=formatValue(f.maskOptions,r),s=getFilledLength(f.maskOptions,o),l=getRightEditablePosition(f.maskOptions,s),u={start:l,end:l};if(isFunction(t)){var c=t({value:o,selection:u},{value:f.value,selection:null},null,f.getBeforeMaskedValueChangeConfig());o=c.value,u=c.selection;}var h=o!==f.getInputValue();h&&f.setInputValue(o),h&&isFunction(f.props.onChange)&&f.props.onChange(e),f.setSelection(u.start,u.end);}f.runSaveSelectionLoop();}isFunction(f.props.onFocus)&&f.props.onFocus(e);},f.onBlur=function(e){var t=f.props.beforeMaskedValueChange,n=f.maskOptions.mask;if(f.stopSaveSelectionLoop(),f.focused=!1,n&&!f.props.alwaysShowMask&&isEmpty(f.maskOptions,f.value)){var a="";if(isFunction(t))a=t({value:a,selection:null},{value:f.value,selection:f.previousSelection},null,f.getBeforeMaskedValueChangeConfig()).value;var i=a!==f.getInputValue();i&&f.setInputValue(a),i&&isFunction(f.props.onChange)&&f.props.onChange(e);}isFunction(f.props.onBlur)&&f.props.onBlur(e);},f.onMouseDown=function(e){if(!f.focused&&document.addEventListener){f.mouseDownX=e.clientX,f.mouseDownY=e.clientY,f.mouseDownTime=(new Date).getTime();var r=function r(e){if(document.removeEventListener("mouseup",r),f.focused){var t=Math.abs(e.clientX-f.mouseDownX),n=Math.abs(e.clientY-f.mouseDownY),a=Math.max(t,n),i=(new Date).getTime()-f.mouseDownTime;(a<=10&&i<=200||a<=5&&i<=300)&&f.setCursorToEnd();}};document.addEventListener("mouseup",r);}isFunction(f.props.onMouseDown)&&f.props.onMouseDown(e);},f.onPaste=function(e){isFunction(f.props.onPaste)&&f.props.onPaste(e),e.defaultPrevented||(f.beforePasteState={value:f.getInputValue(),selection:f.getSelection()},f.setInputValue(""));},f.handleRef=function(e){null==f.props.children&&isFunction(f.props.inputRef)&&f.props.inputRef(e);};var t=e.mask,n=e.maskChar,a=e.formatChars,i=e.alwaysShowMask,r=e.beforeMaskedValueChange,o=e.defaultValue,s=e.value;f.maskOptions=parseMask(t,n,a),null==o&&(o=""),null==s&&(s=o);var l=getStringValue(s);if(f.maskOptions.mask&&(i||l)&&(l=formatValue(f.maskOptions,l),isFunction(r))){var u=e.value;null==e.value&&(u=o),l=r({value:l,selection:null},{value:u=getStringValue(u),selection:null},null,f.getBeforeMaskedValueChangeConfig()).value;}return f.value=l,f}_inheritsLoose(e,c);var t=e.prototype;return t.componentDidMount=function(){this.mounted=!0,this.getInputDOMNode()&&(this.isWindowsPhoneBrowser=isWindowsPhoneBrowser(),this.maskOptions.mask&&this.getInputValue()!==this.value&&this.setInputValue(this.value));},t.componentDidUpdate=function(){var e=this.previousSelection,t=this.props,n=t.beforeMaskedValueChange,a=t.alwaysShowMask,i=t.mask,r=t.maskChar,o=t.formatChars,s=this.maskOptions,l=a||this.isFocused(),u=null!=this.props.value,c=u?getStringValue(this.props.value):this.value,h=e?e.start:null;if(this.maskOptions=parseMask(i,r,o),this.maskOptions.mask){!s.mask&&this.isFocused()&&this.runSaveSelectionLoop();var f=this.maskOptions.mask&&this.maskOptions.mask!==s.mask;if(s.mask||u||(c=this.getInputValue()),(f||this.maskOptions.mask&&(c||l))&&(c=formatValue(this.maskOptions,c)),f){var p=getFilledLength(this.maskOptions,c);(null===h||p<h)&&(h=isFilled(this.maskOptions,c)?p:getRightEditablePosition(this.maskOptions,p));}!this.maskOptions.mask||!isEmpty(this.maskOptions,c)||l||u&&this.props.value||(c="");var d={start:h,end:h};if(isFunction(n)){var m=n({value:c,selection:d},{value:this.value,selection:this.previousSelection},null,this.getBeforeMaskedValueChangeConfig());c=m.value,d=m.selection;}this.value=c;var g=this.getInputValue()!==this.value;g?(this.setInputValue(this.value),this.forceUpdate()):f&&this.forceUpdate();var v=!1;null!=d.start&&null!=d.end&&(v=!e||e.start!==d.start||e.end!==d.end),(v||g)&&this.setSelection(d.start,d.end);}else s.mask&&(this.stopSaveSelectionLoop(),this.forceUpdate());},t.componentWillUnmount=function(){this.mounted=!1,null!==this.selectionDeferId&&cancelDefer(this.selectionDeferId),this.stopSaveSelectionLoop();},t.render=function(){var t,e=this.props,n=(e.children),a=_objectWithoutPropertiesLoose$2(e,["mask","alwaysShowMask","maskChar","formatChars","inputRef","beforeMaskedValueChange","children"]);if(n){isFunction(n)||invariant_1(!1);var i=["onChange","onPaste","onMouseDown","onFocus","onBlur","value","disabled","readOnly"],r=_extends$1({},a);i.forEach(function(e){return delete r[e]}),t=n(r),i.filter(function(e){return null!=t.props[e]&&t.props[e]!==a[e]}).length&&invariant_1(!1);}else t=React.createElement("input",_extends$1({ref:this.handleRef},a));var o={onFocus:this.onFocus,onBlur:this.onBlur};return this.maskOptions.mask&&(a.disabled||a.readOnly||(o.onChange=this.onChange,o.onPaste=this.onPaste,o.onMouseDown=this.onMouseDown),null!=a.value&&(o.value=this.value)),t=React.cloneElement(t,o)},e}(React.Component);var reactInputMask_production_min=InputElement;
 
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -7479,7 +7297,7 @@ function _inheritsLoose$1(subClass, superClass) {
   _defaults2$1(subClass, superClass);
 }
 
-function _objectWithoutPropertiesLoose$2(source, excluded) {
+function _objectWithoutPropertiesLoose$3(source, excluded) {
   if (source == null) return {};
   var target = {};
   var sourceKeys = Object.keys(source);
@@ -8514,7 +8332,7 @@ function (_React$Component) {
         formatChars = _this$props2.formatChars,
         inputRef = _this$props2.inputRef,
         children = _this$props2.children,
-        restProps = _objectWithoutPropertiesLoose$2(_this$props2, ["mask", "alwaysShowMask", "maskChar", "formatChars", "inputRef", "beforeMaskedValueChange", "children"]);
+        restProps = _objectWithoutPropertiesLoose$3(_this$props2, ["mask", "alwaysShowMask", "maskChar", "formatChars", "inputRef", "beforeMaskedValueChange", "children"]);
 
     var inputElement;
     process.env.NODE_ENV !== "production" ? warning$1( // parse mask to test against actual mask prop as this.maskOptions
@@ -8576,22 +8394,23 @@ if (process.env.NODE_ENV === 'production') {
 }
 });
 
-const Calendar = ({
-  write,
-  labelColor,
-  label,
-  brand,
-  ...rest
-}) => {
-  const CustomInput = React$2.forwardRef((props, ref) => React$2.createElement(reactInputMask, {
-    ref: ref,
-    mask: "99/99/9999",
-    onClick: props.onClick,
-    value: props.value,
-    readOnly: rest.readOnly,
-    onChange: props.onChange,
-    placeholder: rest.placeholderText
-  }));
+var Calendar = function Calendar(_ref) {
+  var labelColor = _ref.labelColor,
+      label = _ref.label,
+      brand = _ref.brand,
+      rest = _objectWithoutPropertiesLoose(_ref, ["write", "labelColor", "label", "brand"]);
+
+  var CustomInput = React$2.forwardRef(function (props, ref) {
+    return React$2.createElement(reactInputMask, {
+      ref: ref,
+      mask: "99/99/9999",
+      onClick: props.onClick,
+      value: props.value,
+      readOnly: rest.readOnly,
+      onChange: props.onChange,
+      placeholder: rest.placeholderText
+    });
+  });
   return React$2.createElement(Container$7, {
     brand: brand,
     labelColor: labelColor
@@ -8604,9 +8423,11 @@ const Calendar = ({
     }),
     dateFormat: "dd/MM/yyyy",
     readOnly: false,
-    onChangeRaw: event => rest.readOnly ? event.preventDefault() : null
+    onChangeRaw: function onChangeRaw(event) {
+      return rest.readOnly ? event.preventDefault() : null;
+    }
   }))));
 };
 
-export { Accordion, ButtonMain, Calendar, Card, Checkbox, DialogComponent as Dialog, Dropdown, DropdownForm, InputLine, InputLineForm, InputMoneyForm, Loader, ModalComponent as Modal, MoreLess, Radio, Selection, TextArea, TextAreaForm as TextAreaFrom };
+export { Accordion, ButtonMain, Calendar, Card, Checkbox, DialogComponent as Dialog, Dropdown, DropdownForm, InputLine, InputLineForm, InputMoneyForm, Loader, ModalComponent as Modal, MoreLess, Radio, Selection, TextArea, TextAreaForm };
 //# sourceMappingURL=index.modern.js.map

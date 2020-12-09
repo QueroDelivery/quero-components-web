@@ -8450,5 +8450,5 @@ exports.MoreLess = MoreLess;
 exports.Radio = Radio;
 exports.Selection = Selection;
 exports.TextArea = TextArea;
-exports.TextAreaFrom = TextAreaForm;
+exports.TextAreaForm = TextAreaForm;
 //# sourceMappingURL=index.js.map
