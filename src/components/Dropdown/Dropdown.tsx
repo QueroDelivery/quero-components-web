@@ -93,25 +93,24 @@ const Dropdown: React.FC<DropdownProps> = ({
                             <label>Nenhum resultado encontrado</label>
                         </div>
                     ) : (
-                        optionsState &&
-                        optionsState.map((option, index) => (
-                            <div
-                                key={option.id}
-                                className={`option ${
-                                    index === selectedIndex && 'active-option'
-                                } `}
-                                id={option.text}
-                                onClick={() => {
-                                    setItem(option);
-                                    setActive(false);
-                                    onChange(option.value);
-                                }}
-                            >
-                                <input type="radio" />
-                                <label>{option.text}</label>
-                            </div>
-                        ))
-                    )}
+                            optionsState &&
+                            optionsState.map((option, index) => (
+                                <div
+                                    key={option.id}
+                                    className={`option ${index === selectedIndex && 'active-option'
+                                        } `}
+                                    id={option.text}
+                                    onClick={() => {
+                                        setItem(option);
+                                        setActive(false);
+                                        onChange(option.value);
+                                    }}
+                                >
+                                    <input type="radio" />
+                                    <label>{option.text}</label>
+                                </div>
+                            ))
+                        )}
                 </div>
 
                 <div
@@ -123,7 +122,7 @@ const Dropdown: React.FC<DropdownProps> = ({
                     id="selection"
                 >
                     {search ? (
-                        <>
+                        <React.Fragment>
                             <input
                                 // onKeyPress={event => handleKeyDown(event)}
                                 onChange={event => {
@@ -134,21 +133,21 @@ const Dropdown: React.FC<DropdownProps> = ({
                                     if (event.target.value.trim().length > 0) {
                                         setOptionsState(
                                             optionsState &&
-                                                options.filter(
-                                                    option =>
-                                                        option.text
-                                                            .toLowerCase()
-                                                            .includes(
-                                                                event.target.value.toLowerCase(),
-                                                            ) ||
-                                                        removerAcentosESpecialChars(
-                                                            option.text,
-                                                        )
-                                                            .toLowerCase()
-                                                            .includes(
-                                                                event.target.value.toLowerCase(),
-                                                            ),
-                                                ),
+                                            options.filter(
+                                                option =>
+                                                    option.text
+                                                        .toLowerCase()
+                                                        .includes(
+                                                            event.target.value.toLowerCase(),
+                                                        ) ||
+                                                    removerAcentosESpecialChars(
+                                                        option.text,
+                                                    )
+                                                        .toLowerCase()
+                                                        .includes(
+                                                            event.target.value.toLowerCase(),
+                                                        ),
+                                            ),
                                         );
                                     } else {
                                         setOptionsState(options);
@@ -161,32 +160,32 @@ const Dropdown: React.FC<DropdownProps> = ({
                                 {loading ? (
                                     <Loader size="mini" />
                                 ) : (
-                                    <FontAwesomeIcon
-                                        icon={active ? faAngleUp : faAngleDown}
-                                        size="lg"
-                                    />
-                                )}
+                                        <FontAwesomeIcon
+                                            icon={active ? faAngleUp : faAngleDown}
+                                            size="lg"
+                                        />
+                                    )}
                             </div>
-                        </>
+                        </React.Fragment>
                     ) : (
-                        <>
-                            <input
-                                value={item?.text || placeholder || ''}
-                                // defaultValue={placeholder ? placeholder : ''}
-                                readOnly
-                            />
-                            <div className="icon">
-                                {loading ? (
-                                    <Loader />
-                                ) : (
-                                    <FontAwesomeIcon
-                                        icon={active ? faAngleUp : faAngleDown}
-                                        size="lg"
-                                    />
-                                )}
-                            </div>
-                        </>
-                    )}
+                            <React.Fragment>
+                                <input
+                                    value={item?.text || placeholder || ''}
+                                    // defaultValue={placeholder ? placeholder : ''}
+                                    readOnly
+                                />
+                                <div className="icon">
+                                    {loading ? (
+                                        <Loader />
+                                    ) : (
+                                            <FontAwesomeIcon
+                                                icon={active ? faAngleUp : faAngleDown}
+                                                size="lg"
+                                            />
+                                        )}
+                                </div>
+                            </React.Fragment>
+                        )}
                 </div>
             </SelectBox>
             {errorMessage && <LabelError>{errorMessage}</LabelError>}

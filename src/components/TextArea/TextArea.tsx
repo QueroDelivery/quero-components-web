@@ -1,7 +1,5 @@
 /* eslint-disable react/prop-types */
-import '../../styles/default.css';
-
-import React, { useState, TextareaHTMLAttributes } from 'react';
+import React, { TextareaHTMLAttributes } from 'react';
 
 import { Container, LabelError, Label } from './styles';
 

@@ -3,7 +3,6 @@ export const removerAcentos = (inStr: string): string => {
     return inStr.replace(
         /([àáâãäå])|([ç])|([èéêë])|([ìíîï])|([ñ])|([òóôõöø])|([ß])|([ùúûü])|([ÿ])|([æ])|(['"])/gi,
         (
-            str: string,
             a: string,
             c: string,
             e: string,
@@ -37,7 +36,6 @@ export const removerAcentosComApostofro = (inStr: string): string => {
     return inStr.replace(
         /([àáâãäå])|([ç])|([èéêë])|([ìíîï])|([ñ])|([òóôõöø])|([ß])|([ùúûü])|([ÿ])|([æ])|(['"])/gi,
         (
-            str: string,
             a: string,
             c: string,
             e: string,

@@ -1,11 +1,7 @@
 /* eslint-disable react/prop-types */
-import '../../styles/default.css';
+import React, { useState } from 'react';
 
-import React, { useState, TextareaHTMLAttributes } from 'react';
-
-import { Container, LabelError } from './styles';
 import TextArea, { TextAreaProps } from './TextArea';
-import DropdownForm from '../Dropdown/DropdownForm';
 
 export interface TextAreaFormProps extends TextAreaProps {
     required?: boolean;

@@ -12,19 +12,19 @@ interface CardProps extends Pick<LinkHTMLAttributes<HTMLLinkElement>, 'href'> {
     style?: React.CSSProperties;
     icon?: IconDefinition;
     sizeIcon?:
-        | '1x'
-        | '2x'
-        | '3x'
-        | '4x'
-        | '5x'
-        | '6x'
-        | '7x'
-        | '8x'
-        | '9x'
-        | '10x'
-        | 'lg'
-        | 'sm'
-        | 'xs';
+    | '1x'
+    | '2x'
+    | '3x'
+    | '4x'
+    | '5x'
+    | '6x'
+    | '7x'
+    | '8x'
+    | '9x'
+    | '10x'
+    | 'lg'
+    | 'sm'
+    | 'xs';
     colorIcon?: string;
     text?: string;
     colorText?: string;
@@ -74,17 +74,17 @@ const Card: React.FC<CardProps> = ({
                 width={width}
             >
                 {icon && (
-                    <>
+                    <React.Fragment>
                         <FontAwesomeIcon
                             icon={icon}
                             color={colorIcon ? colorIcon : colors.brandDark}
                             size={sizeIcon ? sizeIcon : 'lg'}
                         />
-                    </>
+                    </React.Fragment>
                 )}
 
                 <span>{text}</span>
-            </Button>
+            </Button >
         );
     }
 

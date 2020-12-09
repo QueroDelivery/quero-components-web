@@ -1,6 +1,4 @@
 /* eslint-disable react/prop-types */
-import '../../styles/default.css';
-
 import React, { useState, InputHTMLAttributes, useEffect } from 'react';
 import { IconDefinition } from '@fortawesome/pro-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

@@ -1,8 +1,6 @@
 import React from 'react';
 
 import { Switch, Toggle, ActiveInactive } from './styles';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMinus, faPlus } from '@fortawesome/pro-solid-svg-icons';
 
 interface SelectionProps {
     type: 'switch' | 'toggle' | 'activeInactive';

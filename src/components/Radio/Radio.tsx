@@ -1,8 +1,6 @@
-import React, { InputHTMLAttributes, useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React, { InputHTMLAttributes } from 'react';
 
 import { Container } from './styles';
-import { faAddressBook, faCheck } from '@fortawesome/pro-solid-svg-icons';
 
 export interface InputProps
     extends Omit<InputHTMLAttributes<HTMLInputElement>, 'type'> {

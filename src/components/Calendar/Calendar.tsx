@@ -1,8 +1,4 @@
 import React from 'react';
-import { registerLocale } from 'react-datepicker';
-import br from 'date-fns/locale/pt-BR';
-registerLocale('pt-BR', br);
-
 import DatePicker, { ReactDatePickerProps } from 'react-datepicker';
 import './Calendar.css';
 import { Container } from './styles';
@@ -22,6 +18,7 @@ const Calendar: React.FC<CalendarProps> = ({
     brand,
     ...rest
 }) => {
+
     const CustomInput = React.forwardRef((props: any, ref: any) => (
         <MaskedInput
             ref={ref}

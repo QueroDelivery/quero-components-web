@@ -1,5 +1,3 @@
-import '../../styles/default.css';
-
 import React, { ButtonHTMLAttributes } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBell, IconDefinition } from '@fortawesome/pro-solid-svg-icons';
@@ -24,7 +22,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     loading?: boolean;
     secundary?: boolean;
     notification?: boolean;
-    amount?: string;
+    amount?: number;
     backPurple?: boolean;
     height?: number;
     width?: number;
@@ -34,14 +32,14 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     colorText?: string;
     tertiary?: boolean;
     size?:
-        | 'mini'
-        | 'tiny'
-        | 'small'
-        | 'medium'
-        | 'large'
-        | 'big'
-        | 'huge'
-        | 'massive';
+    | 'mini'
+    | 'tiny'
+    | 'small'
+    | 'medium'
+    | 'large'
+    | 'big'
+    | 'huge'
+    | 'massive';
 }
 
 const ButtonMain: React.FC<ButtonProps> = ({
@@ -74,29 +72,28 @@ const ButtonMain: React.FC<ButtonProps> = ({
                 ) : children ? (
                     children
                 ) : (
-                    <div
-                        style={{
-                            display: 'flex',
-                            justifyContent: 'space-between',
-                            width: '100%',
-                            alignItems: 'center',
-                            height: '50%',
-                            padding: 10,
-                        }}
-                    >
-                        <div style={{ display: 'flex', alignItems: 'center' }}>
-                            <Icon>
-                                <FontAwesomeIcon
-                                    icon={faBell}
-                                    size="lg"
-                                    color={colors.brand30}
-                                />
-                            </Icon>
-                            <span>notificações</span>
-                        </div>
-                        <Amount>{amount}</Amount>
-                    </div>
-                )}
+                            <div
+                                style={{
+                                    display: 'flex',
+                                    justifyContent: 'space-between',
+                                    alignItems: 'center',
+                                    height: '50%',
+                                    padding: 10,
+                                }}
+                            >
+                                <div style={{ display: 'flex', alignItems: 'center' }}>
+                                    <Icon>
+                                        <FontAwesomeIcon
+                                            icon={faBell}
+                                            size="lg"
+                                            color={colors.brand30}
+                                        />
+                                    </Icon>
+                                    <span>notificações</span>
+                                </div>
+                                <Amount>{amount}</Amount>
+                            </div>
+                        )}
             </Notification>
         );
     } else {
@@ -118,40 +115,41 @@ const ButtonMain: React.FC<ButtonProps> = ({
                 ) : children ? (
                     children
                 ) : (
-                    <div>
-                        <TextFirst
-                            firstStrong={firstStrong}
-                            strong={strong}
-                            notStrong={notStrong}
-                            colorText={colorText}
-                            tertiary={tertiary}
-                            size={size}
-                        >
-                            {`${textFirst} `}
-                        </TextFirst>
-                        <TextEnd
-                            firstStrong={firstStrong}
-                            strong={strong}
-                            notStrong={notStrong}
-                            colorText={colorText}
-                            tertiary={tertiary}
-                            size={size}
-                        >
-                            {textEnd}
-                        </TextEnd>
-                        {icon && (
-                            <>
-                                <FontAwesomeIcon
-                                    icon={icon}
-                                    color={
-                                        colorIcon ? colorIcon : colors.brand10
-                                    }
-                                    size={'lg'}
-                                />
-                            </>
+                            <div>
+                                <TextFirst
+                                    firstStrong={firstStrong}
+                                    strong={strong}
+                                    notStrong={notStrong}
+                                    colorText={colorText}
+                                    tertiary={tertiary}
+                                    size={size}
+                                >
+                                    {`${textFirst} `}
+                                </TextFirst>
+                                <TextEnd
+                                    firstStrong={firstStrong}
+                                    strong={strong}
+                                    notStrong={notStrong}
+                                    colorText={colorText}
+                                    tertiary={tertiary}
+                                    size={size}
+                                >
+                                    {textEnd}
+                                </TextEnd>
+                                {icon && (
+                                    <React.Fragment>
+                                        <FontAwesomeIcon
+                                            icon={icon}
+                                            color={
+                                                colorIcon ? colorIcon : colors.brand10
+                                            }
+                                            size={'lg'}
+                                            style={{marginLeft: 10}}
+                                        />
+                                    </React.Fragment>
+                                )}
+                            </div>
                         )}
-                    </div>
-                )}
             </Button>
         );
     }

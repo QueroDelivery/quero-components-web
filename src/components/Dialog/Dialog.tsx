@@ -1,7 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable react/prop-types */
-import '../../styles/default.css';
-
 import React from 'react';
 
 import { Background, Dialog } from './styles';

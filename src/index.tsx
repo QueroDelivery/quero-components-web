@@ -1,21 +1,23 @@
-import ButtonMain from '../src/components/ButtonMain/ButtonMain';
-import Dialog from '../src/components/Dialog/Dialog';
-import InputLine from '../src/components/InputLine/InputLine';
-import InputLineForm from '../src/components/InputLine/InputLineForm';
-import InputMoneyForm from '../src/components/InputLine/InputMoneyForm';
-import Loader from '../src/components/Loader/Loader';
-import Modal from '../src/components/Modal/Modal';
-import TextArea from '../src/components/TextArea/TextArea';
-import TextAreaFrom from '../src/components/TextArea/TextAreaForm';
-import Checkbox from '../src/components/Checkbox/Checkbox';
-import Radio from '../src/components/Radio/Radio';
-import Dropdown from '../src/components/Dropdown/Dropdown';
-import DropdownForm from '../src/components/Dropdown/DropdownForm';
-import Accordion from '../src/components/Accordion/Accordion';
-import Selection from '../src/components/Selection/Selection';
-import MoreLess from '../src/components/MoreLess/MoreLess';
-import Card from '../src/components/Card/Card';
-import Calendar from '../src/components/Calendar/Calendar';
+import './default.css'
+
+import ButtonMain from './components/ButtonMain/ButtonMain';
+import Dialog from './components/Dialog/Dialog';
+import InputLine from './components/InputLine/InputLine';
+import InputLineForm from './components/InputLine/InputLineForm';
+import InputMoneyForm from './components/InputLine/InputMoneyForm';
+import Loader from './components/Loader/Loader';
+import Modal from './components/Modal/Modal';
+import TextArea from './components/TextArea/TextArea';
+import TextAreaFrom from './components/TextArea/TextAreaForm';
+import Checkbox from './components/Checkbox/Checkbox';
+import Radio from './components/Radio/Radio';
+import Dropdown from './components/Dropdown/Dropdown';
+import DropdownForm from './components/Dropdown/DropdownForm';
+import Accordion from './components/Accordion/Accordion';
+import Selection from './components/Selection/Selection';
+import MoreLess from './components/MoreLess/MoreLess';
+import Card from './components/Card/Card';
+import Calendar from './components/Calendar/Calendar';
 
 export {
     ButtonMain,

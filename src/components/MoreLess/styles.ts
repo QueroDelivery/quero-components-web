@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { colors } from '../../styles/colors';
 
 interface MoreLessProps {
@@ -85,6 +85,8 @@ const widthValueMoreLess = (size: string, value: number) => {
 
         return '70px';
     }
+
+    return '50px'
 };
 
 const fontMoreLess = (size: string) => {
@@ -113,7 +115,7 @@ export const Container = styled.div<MoreLessProps>`
         align-items: center;
         justify-content: center;
         height: ${props =>
-            props.size ? heightBtnMoreLess(props.size) : '30px'};
+        props.size ? heightBtnMoreLess(props.size) : '30px'};
         color: ${colors.gray20};
     }
 
@@ -121,20 +123,20 @@ export const Container = styled.div<MoreLessProps>`
         opacity: ${props => (props.noLess ? '0.2' : '1')};
 
         cursor: ${props =>
-            props.disabled || props.noLess ? 'default' : 'pointer'};
+        props.disabled || props.noLess ? 'default' : 'pointer'};
     }
 
     .right {
         opacity: ${props => (props.noMore ? '0.2' : '1')};
 
         cursor: ${props =>
-            props.disabled || props.noMore ? 'default' : 'pointer'};
+        props.disabled || props.noMore ? 'default' : 'pointer'};
     }
 
     input {
         text-align: center;
         width: ${props =>
-            props.size ? widthValueMoreLess(props.size, props.value) : '15px'};
+        props.size ? widthValueMoreLess(props.size, props.value) : '15px'};
         font-size: ${props => (props.size ? fontMoreLess(props.size) : '15px')};
         display: flex;
         align-items: center;

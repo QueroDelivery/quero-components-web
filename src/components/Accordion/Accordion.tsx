@@ -42,7 +42,7 @@ const Accordion: React.FC<AccordionProps> = ({
     fontSizeTitle,
 }) => {
     return (
-        <>
+        <React.Fragment>
             <Container
                 colorTitle={colorTitle}
                 colorSubtitle={colorSubtitle}
@@ -79,12 +79,12 @@ const Accordion: React.FC<AccordionProps> = ({
                             size="lg"
                         />
                     ) : (
-                        <FontAwesomeIcon
-                            icon={open ? faAngleUp : faAngleDown}
-                            size="2x"
-                            color={colors.brand10}
-                        />
-                    )}
+                            <FontAwesomeIcon
+                                icon={open ? faAngleUp : faAngleDown}
+                                size="2x"
+                                color={colors.brand10}
+                            />
+                        )}
                 </div>
             </Container>
             {
@@ -92,7 +92,7 @@ const Accordion: React.FC<AccordionProps> = ({
                     {children}
                 </Body>
             }
-        </>
+        </React.Fragment>
     );
 };
 

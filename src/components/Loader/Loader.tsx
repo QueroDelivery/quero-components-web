@@ -1,6 +1,4 @@
 /* eslint-disable react/prop-types */
-import '../../styles/default.css';
-
 import React from 'react';
 
 import { Container, Load } from './styles';

@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { colors } from '../../styles/colors';
 
 interface CardProps {
@@ -46,7 +46,7 @@ export const Button = styled.a<CardProps>`
     background-color: ${colors.card};
     padding: 12px 25px;
     border-radius: 30px;
-    border: 1px solid ${props => colors.default30};
+    border: 1px solid ${colors.default30};
     width: ${props => {
         if (props.width) {
             if (typeof props.width === 'string') {

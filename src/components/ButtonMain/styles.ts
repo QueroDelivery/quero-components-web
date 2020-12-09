@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { colors } from '../../styles/colors';
 import { IconDefinition } from '@fortawesome/pro-solid-svg-icons';
 
@@ -226,7 +226,7 @@ export const TextFirst = styled.span<TextFirstProps>`
 
         return 'normal';
     }};
-    font-size: ${props => props.size ? textSize(props.size) : '14px'}
+    font-size: ${props => props.size ? textSize(props.size) : '14px'};
 `;
 export const TextEnd = styled.span<TextEndProps>`
     color: ${props => {
@@ -247,7 +247,7 @@ export const TextEnd = styled.span<TextEndProps>`
 
         return 'bold';
     }};
-    font-size: ${props => props.size ? textSize(props.size) : '14px'}
+    font-size: ${props => props.size ? textSize(props.size) : '14px'};
 `;
 
 export const Notification = styled.button`
@@ -266,7 +266,7 @@ export const Notification = styled.button`
     }
 
     &:hover {
-        background-color: ${colors.hover};
+        background-color: ${colors.brandTransparent2};
     }
 
     span {
