@@ -8,7 +8,7 @@ import InputMoneyForm from './components/InputLine/InputMoneyForm';
 import Loader from './components/Loader/Loader';
 import Modal from './components/Modal/Modal';
 import TextArea from './components/TextArea/TextArea';
-import TextAreaFrom from './components/TextArea/TextAreaForm';
+import TextAreaForm from './components/TextArea/TextAreaForm';
 import Checkbox from './components/Checkbox/Checkbox';
 import Radio from './components/Radio/Radio';
 import Dropdown from './components/Dropdown/Dropdown';
@@ -28,7 +28,7 @@ export {
     Loader,
     Modal,
     TextArea,
-    TextAreaFrom,
+    TextAreaForm,
     Checkbox,
     Radio,
     Dropdown,

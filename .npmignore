@@ -1,13 +1,3 @@
-.storybook
-/assets
-/node_modules
-/public
-/src/components/**/**.stories.tsx
+/example
+/src
 .editorconfig
-.eslintrc.json
-.gitignore
-prettier.config.js
-README.md
-tsconfig.json
-/scripts
-/config
