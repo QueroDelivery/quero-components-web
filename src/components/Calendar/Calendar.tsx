@@ -1,8 +1,7 @@
-import React from 'react';
-import DatePicker, { ReactDatePickerProps } from 'react-datepicker';
-import './Calendar.css';
-import { Container } from './styles';
-import MaskedInput from 'react-input-mask';
+import React from "react";
+import DatePicker, { ReactDatePickerProps } from "react-datepicker";
+import { Container } from "./styles";
+import MaskedInput from "react-input-mask";
 
 interface CalendarProps extends ReactDatePickerProps {
     write?: boolean;
@@ -18,7 +17,6 @@ const Calendar: React.FC<CalendarProps> = ({
     brand,
     ...rest
 }) => {
-
     const CustomInput = React.forwardRef((props: any, ref: any) => (
         <MaskedInput
             ref={ref}
@@ -47,7 +45,7 @@ const Calendar: React.FC<CalendarProps> = ({
                     }
                     dateFormat="dd/MM/yyyy"
                     readOnly={false}
-                    onChangeRaw={event =>
+                    onChangeRaw={(event) =>
                         rest.readOnly ? event.preventDefault() : null
                     }
                 />
