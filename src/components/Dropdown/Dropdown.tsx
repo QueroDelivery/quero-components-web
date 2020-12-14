@@ -3,8 +3,8 @@ import { Dropdown as Select, DropdownProps } from "semantic-ui-react";
 
 import { Container } from "./styles";
 interface OptionsProps {
-    text: string;
     key: string | number;
+    text: string;
     value: any;
 }
 export interface Props extends DropdownProps {
@@ -38,6 +38,7 @@ const Dropdown: React.FC<Props> = ({
                 selection
                 noResultsMessage="Nenhum resultado encontrado"
                 error={errorMessage ? true : false}
+                options={options}
             />
             {errorMessage && <small>{errorMessage}</small>}
         </Container>
