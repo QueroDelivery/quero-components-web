@@ -12,6 +12,7 @@ export const Container = styled.div<DropdownProps>`
     width: 100% !important;
     display: flex !important;
     flex-direction: column !important;
+    padding-bottom: ${(props) => (props.error ? "" : "20px")};
 
     label {
         margin-left: 15px;
