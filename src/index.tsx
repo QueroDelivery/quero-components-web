@@ -1,4 +1,5 @@
 import "./default.scss";
+import "semantic-ui-css/semantic.min.css";
 
 import ButtonMain from "./components/ButtonMain/ButtonMain";
 import Dialog from "./components/Dialog/Dialog";
@@ -12,7 +13,6 @@ import TextAreaForm from "./components/TextArea/TextAreaForm";
 import Checkbox from "./components/Checkbox/Checkbox";
 import Radio from "./components/Radio/Radio";
 import Dropdown from "./components/Dropdown/Dropdown";
-import DropdownForm from "./components/Dropdown/DropdownForm";
 import Accordion from "./components/Accordion/Accordion";
 import Selection from "./components/Selection/Selection";
 import MoreLess from "./components/MoreLess/MoreLess";
@@ -32,7 +32,6 @@ export {
     Checkbox,
     Radio,
     Dropdown,
-    DropdownForm,
     Accordion,
     Selection,
     MoreLess,

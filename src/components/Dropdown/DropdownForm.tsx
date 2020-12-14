@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
-import Dropdown, { DropdownProps } from './Dropdown';
+import Dropdown, { Props } from "./Dropdown";
 
-interface DropdownFormProps extends Omit<DropdownProps, 'onChange' | 'value'> {
+interface DropdownFormProps extends Omit<Props, "onChange" | "value"> {
     required?: boolean;
     name: string;
     errors: any;
@@ -24,8 +24,8 @@ const DropdownForm: React.FC<DropdownFormProps> = ({
     validate,
     ...rest
 }) => {
-    const [valueDefault, setValueDefault] = useState();
-    const [message, setMessage] = useState('');
+    const [valueDefault, setValueDefault] = useState<any>();
+    const [message, setMessage] = useState("");
 
     useEffect(() => {
         if (!valueDefault) {
@@ -52,12 +52,12 @@ const DropdownForm: React.FC<DropdownFormProps> = ({
                                       setMessage(validate(value));
                                       return false;
                                   } else {
-                                      setMessage('');
+                                      setMessage("");
                                       return true;
                                   }
                               }
                             : null,
-                },
+                }
             );
         }
     }, [register]);
@@ -66,8 +66,8 @@ const DropdownForm: React.FC<DropdownFormProps> = ({
         <Dropdown
             {...rest}
             value={valueDefault}
-            onChange={value => {
-                setValueDefault(value);
+            onChange={(_ev, data) => {
+                setValueDefault(data.value);
                 setValue(name, value);
                 if (errors && clearError) {
                     clearError(name);
@@ -75,10 +75,10 @@ const DropdownForm: React.FC<DropdownFormProps> = ({
             }}
             errorMessage={
                 errors
-                    ? errors.type === 'required'
-                        ? 'Obrigatório'
+                    ? errors.type === "required"
+                        ? "Obrigatório"
                         : `${message}`
-                    : ''
+                    : ""
             }
         />
     );
