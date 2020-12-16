@@ -66,6 +66,7 @@ export const Header = styled.div<HeaderProps>`
 
     .name-icon-modal {
         display: flex;
+        align-items: center;
     }
 
     & strong {

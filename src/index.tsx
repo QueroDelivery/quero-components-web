@@ -5,7 +5,6 @@ import ButtonMain from "./components/ButtonMain/ButtonMain";
 import Dialog from "./components/Dialog/Dialog";
 import InputLine from "./components/InputLine/InputLine";
 import InputLineForm from "./components/InputLine/InputLineForm";
-import InputMoneyForm from "./components/InputLine/InputMoneyForm";
 import Loader from "./components/Loader/Loader";
 import Modal from "./components/Modal/Modal";
 import TextArea from "./components/TextArea/TextArea";
@@ -25,7 +24,6 @@ export {
     Dialog,
     InputLine,
     InputLineForm,
-    InputMoneyForm,
     Loader,
     Modal,
     TextArea,

@@ -123,6 +123,7 @@ export const Container = styled.div<InputProps>`
 export const LabelError = styled.span<LabelErrorProps>`
     font-size: 10px;
     margin-left: 0;
+    margin-top: -2px;
     color: ${props => {
         if (props.errorColor) {
             return props.errorColor;

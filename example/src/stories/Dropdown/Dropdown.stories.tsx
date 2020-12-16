@@ -28,6 +28,9 @@ export const Default = Template.bind({});
 Default.args = {
     options: options,
     placeholder: "Selecione",
+    onChange: (_ev, data) => {
+        console.log(data.value);
+    },
 };
 
 export const Brand = Template.bind({});

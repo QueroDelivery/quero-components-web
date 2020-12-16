@@ -75,21 +75,21 @@ const sizeChecked = (size: string | number) => {
 const marginLeft = (size: string | number) => {
     switch (size) {
         case Sizes.mini:
-            return '1.5px';
+            return '1px';
         case Sizes.tiny:
-            return '1.5px';
+            return '1.2px';
         case Sizes.small:
-            return '2px';
+            return '1.4px';
         case Sizes.medium:
-            return '2.5px';
+            return '2px';
         case Sizes.large:
-            return '2.5px';
+            return '2px';
         case Sizes.big:
-            return '2.5px';
+            return '2px';
         case Sizes.huge:
-            return '3.5px';
+            return '3px';
         case Sizes.massive:
-            return '4.5px';
+            return '4px';
         default:
             return size;
     }

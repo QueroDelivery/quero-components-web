@@ -1,5 +1,5 @@
-import styled, { css } from 'styled-components';
-import { colors } from '../../styles/colors';
+import styled, { css } from "styled-components";
+import { colors } from "../../styles/colors";
 
 interface AccordionProps {
     subtitle?: string;
@@ -20,9 +20,9 @@ interface BodyProps {
 
 export const Container = styled.div<AccordionProps>`
     display: flex;
-    width: ${props => (props.width ? `${props.width}%` : '100%')};
+    width: ${(props) => (props.width ? `${props.width}%` : "100%")};
     justify-content: space-between;
-    background-color: ${props =>
+    background-color: ${(props) =>
         props.secundary ? colors.card : colors.white};
     border: 1px solid ${colors.card};
     padding: 15px 20px;
@@ -39,22 +39,22 @@ export const Container = styled.div<AccordionProps>`
         display: flex;
         flex-direction: column;
         flex: 1;
-        margin-left: ${props => (props.icon ? '15px' : '0')};
+        margin-left: ${(props) => (props.icon ? "15px" : "0")};
 
         .title {
-            font-size: ${props =>
-                props.subtitle
-                    ? '14px'
-                    : props.fontSizeTitle
-                    ? props.fontSizeTitle
-                    : '16px'};
-            color: ${props =>
+            font-size: ${(props) =>
+                props.fontSizeTitle
+                    ? `${props.fontSizeTitle}px`
+                    : props.subtitle
+                    ? "14px"
+                    : "16px"};
+            color: ${(props) =>
                 props.colorTitle ? props.colorTitle : `${colors.gray20}`};
         }
 
         .subtitle {
-            color: ${props =>
-                props.colorTitle ? props.colorTitle : `${colors.gray10}`};
+            color: ${(props) =>
+                props.colorSubtitle ? props.colorSubtitle : `${colors.gray10}`};
             font-size: 12px;
         }
     }
@@ -67,12 +67,12 @@ export const Container = styled.div<AccordionProps>`
 
         .value {
             margin-right: 20px;
-            color: ${props =>
+            color: ${(props) =>
                 props.colorValue ? props.colorValue : `${colors.gray20}`};
         }
     }
 
-    ${props =>
+    ${(props) =>
         props.open
             ? css`
                   border-top-left-radius: 20px;
@@ -83,12 +83,12 @@ export const Container = styled.div<AccordionProps>`
               `}
 `;
 export const Body = styled.div<BodyProps>`
-    width: ${props => (props.width ? `${props.width}%` : '100%')};
+    width: ${(props) => (props.width ? `${props.width}%` : "100%")};
     padding: 20px;
     border: 1px solid ${colors.card};
     border-top: 0;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
-    display: ${props => (props.open ? 'block' : 'none')};
+    display: ${(props) => (props.open ? "block" : "none")};
     box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.16);
 `;

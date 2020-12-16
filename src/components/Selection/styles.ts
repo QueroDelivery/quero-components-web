@@ -17,7 +17,7 @@ interface SelectionProps {
 
 const toggleWidth = 50;
 const toggleHeight = 30;
-const toggleGutter = 6;
+const toggleGutter = 5;
 
 const toggleRadius = toggleHeight / 2;
 const toggleControlSsize = toggleHeight - toggleGutter * 2;
@@ -82,23 +82,23 @@ const heightSwitch = (size: string) => {
 const sizeGutter = (size: string) => {
     switch (size) {
         case Sizes.mini:
-            return 6;
+            return 5;
         case Sizes.tiny:
-            return 6;
+            return 5;
         case Sizes.small:
-            return 6;
+            return 5;
         case Sizes.medium:
-            return 6;
+            return 5;
         case Sizes.large:
-            return 6;
+            return 5;
         case Sizes.big:
-            return 6;
+            return 5;
         case Sizes.huge:
-            return 6;
+            return 5;
         case Sizes.massive:
-            return 6;
+            return 5;
         default:
-            return 6;
+            return 5;
     }
 };
 
@@ -111,17 +111,17 @@ const widthToggle = (size: string) => {
         case Sizes.small:
             return '60px !important';
         case Sizes.medium:
-            return '70px !important';
+            return '65px !important';
         case Sizes.large:
-            return '80px !important';
-        case Sizes.big:
-            return '90px !important';
-        case Sizes.huge:
-            return '100px !important';
-        case Sizes.massive:
-            return '110px !important';
-        default:
             return '70px !important';
+        case Sizes.big:
+            return '80px !important';
+        case Sizes.huge:
+            return '90px !important';
+        case Sizes.massive:
+            return '100px !important';
+        default:
+            return '65px !important';
     }
 };
 
@@ -256,7 +256,7 @@ export const Toggle = styled.div<SelectionProps>`
         align-items: center !important;
         justify-content: center !important;
         opacity: ${props => (props.disabled ? '0.5 !important' : '1 !important')};
-        width: ${props => (props.size ? widthToggle(props.size) : '70px !important')};
+        width: ${props => (props.size ? widthToggle(props.size) : '65px !important')};
         border: 1px solid ${colors.card} !important;
         padding: 4px 0 !important;
 

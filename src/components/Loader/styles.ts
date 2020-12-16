@@ -69,7 +69,7 @@ export const Container = styled.div<LoaderProps>`
     display: flex;
     justify-content: ${props =>
         props.position === 'left'
-            ? 'flex-end'
+            ? 'flex-start'
             : props.position === 'right'
             ? 'flex-end'
             : 'center'};
