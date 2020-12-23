@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable react/prop-types */
-import React from 'react';
+import React from "react";
 
-import { Background, Dialog } from './styles';
-import Loader from '../Loader/Loader';
+import { Background, Dialog } from "./styles";
+import Loader from "../Loader/Loader";
 
 export interface DialogProps {
     open: boolean;
@@ -18,7 +18,13 @@ const DialogComponent: React.FC<DialogProps> = ({
     loading,
 }) => {
     return (
-        <Background open={open} onClick={() => onClose()}>
+        <Background
+            open={open}
+            onClick={(event) => {
+                event.stopPropagation();
+                onClose();
+            }}
+        >
             <Dialog
                 open={open}
                 onClick={(event: any) => event.stopPropagation()}

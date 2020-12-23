@@ -1,11 +1,11 @@
 /* eslint-disable react/prop-types */
-import React, { useEffect } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React, { useEffect } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import Loader from '../Loader/Loader';
-import { Background, Modal, Header, Body, Actions, Icon } from './styles';
-import { faTimes, faAngleLeft } from '@fortawesome/pro-light-svg-icons';
-import { colors } from '../../styles/colors';
+import Loader from "../Loader/Loader";
+import { Background, Modal, Header, Body, Actions, Icon } from "./styles";
+import { faTimes, faAngleLeft } from "@fortawesome/pro-light-svg-icons";
+import { colors } from "../../styles/colors";
 
 export interface ModalProps {
     open: boolean;
@@ -31,16 +31,19 @@ const ModalComponent: React.FC<ModalProps> = ({
 }) => {
     useEffect(() => {
         if (open) {
-            window.addEventListener('keydown', event => escModal(event));
+            window.addEventListener("keydown", (event) => escModal(event));
         } else {
-            window.removeEventListener('keydown', event => escModal(event));
+            window.removeEventListener("keydown", (event) => escModal(event));
         }
 
-        return window.removeEventListener('keydown', event => escModal(event));
+        return window.removeEventListener("keydown", (event) =>
+            escModal(event)
+        );
     }, [open]);
 
     function escModal(event: KeyboardEvent) {
         if (open && event.keyCode === 27 && closeOnDimerClick) {
+            event.stopPropagation();
             onClose();
         }
     }
@@ -48,9 +51,14 @@ const ModalComponent: React.FC<ModalProps> = ({
     return (
         <Background
             open={open}
-            onClick={() => (closeOnDimerClick ? onClose() : null)}
+            onClick={(event) => {
+                if (closeOnDimerClick) {
+                    event.stopPropagation();
+                    onClose();
+                }
+            }}
         >
-            <Modal witdh={witdh} onClick={event => event.stopPropagation()}>
+            <Modal witdh={witdh} onClick={(event) => event.stopPropagation()}>
                 <Header iconBack={onBack ? true : false}>
                     <div className="name-icon-modal">
                         {onBack ? (
@@ -64,7 +72,12 @@ const ModalComponent: React.FC<ModalProps> = ({
                         ) : null}
                         <strong>{title}</strong>
                     </div>
-                    <Icon onClick={() => onClose()}>
+                    <Icon
+                        onClick={(event) => {
+                            event.stopPropagation();
+                            onClose();
+                        }}
+                    >
                         <FontAwesomeIcon
                             icon={faTimes}
                             size="lg"
