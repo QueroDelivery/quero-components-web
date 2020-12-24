@@ -12,18 +12,51 @@ export default {
 } as Meta;
 
 const Template: Story<DialogProps> = (args) => (
-    <Dialog {...args}>Escreva aqui</Dialog>
+    <Dialog {...args}>
+        Escreva aqui
+        <br />
+        Escreva aqui
+        <br />
+        Escreva aqui
+        <br />
+        Escreva aqui
+        <br />
+        Escreva aqui
+        <br />
+        Escreva aqui
+        <br />
+        Escreva aqui
+        <br />
+        Escreva aqui
+        <br />
+        Escreva aqui
+        <br />
+        Escreva aqui
+        <br />
+        Escreva aqui
+        <br />
+        Escreva aqui
+        <br />
+        Escreva aqui
+        <br />
+        Escreva aqui
+        <br />
+        Escreva aqui
+        <br />
+        Escreva aqui
+        <br />
+    </Dialog>
 );
 
 export const Default = Template.bind({});
 Default.args = {
     open: true,
-    onClose: action('fechar'),
+    onClose: action("fechar"),
 };
 
 export const Loading = Template.bind({});
 Loading.args = {
     open: true,
     loading: true,
-    onClose: action('fechar'),
+    onClose: action("fechar"),
 };

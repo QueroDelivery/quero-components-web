@@ -37,16 +37,15 @@ export const Dialog = styled.div<DialogProps>`
         props.open
             ? css`
                   transition: bottom 0.25s ease;
-                  width: 80%;
+                  width: 95%;
                   background: ${colors.white};
                   border-top-left-radius: 30px;
                   border-top-right-radius: 30px;
-                  left: 0;
-                  right: 0;
-                  bottom: 0;
-                  position: fixed;
-                  margin: auto;
+                  margin-top: auto;
+                  margin-left: auto;
+                  margin-right: auto;
                   padding: 20px;
+                  position: relative;
 
                   .loading-dialog {
                       display: flex;
