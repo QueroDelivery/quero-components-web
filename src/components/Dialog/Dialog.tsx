@@ -9,6 +9,7 @@ export interface DialogProps {
     open: boolean;
     onClose: Function;
     loading?: boolean;
+    maxHeight?: number;
 }
 
 const DialogComponent: React.FC<DialogProps> = ({
@@ -16,6 +17,7 @@ const DialogComponent: React.FC<DialogProps> = ({
     children,
     onClose,
     loading,
+    maxHeight,
 }) => {
     return (
         <Background
@@ -28,13 +30,14 @@ const DialogComponent: React.FC<DialogProps> = ({
             <Dialog
                 open={open}
                 onClick={(event: any) => event.stopPropagation()}
+                maxHeight={maxHeight}
             >
                 {loading && (
                     <div className="loading-dialog">
                         <Loader />
                     </div>
                 )}
-                {children}
+                <div className="box-dialog">{children}</div>
             </Dialog>
         </Background>
     );

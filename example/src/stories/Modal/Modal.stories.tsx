@@ -9,6 +9,14 @@ import { action } from "@storybook/addon-actions";
 export default {
     title: "Example/Modal",
     component: Modal,
+    argTypes: {
+        size: {
+            control: {
+                type: "inline-radio",
+                options: ["mini", "tiny", "small", "large", "fullscreen"],
+            },
+        },
+    },
 } as Meta;
 
 const Template: Story<ModalProps> = (args) => (
@@ -39,7 +47,7 @@ export const OnBack = Template.bind({});
 OnBack.args = {
     open: true,
     title: "teste",
-    onBack: action('voltar'),
+    onBack: action("voltar"),
     onClose: action("fechar"),
 };
 
@@ -47,14 +55,22 @@ export const Loading = Template.bind({});
 Loading.args = {
     open: true,
     loading: true,
-    title: 'teste',
+    title: "teste",
+    onClose: action("fechar"),
+};
+
+export const Size = Template.bind({});
+Size.args = {
+    open: true,
+    size: "small",
+    title: "teste",
     onClose: action("fechar"),
 };
 
 export const Width = Template.bind({});
 Width.args = {
     open: true,
-    witdh: 50,
-    title: 'teste',
+    width: '50',
+    title: "teste",
     onClose: action("fechar"),
 };

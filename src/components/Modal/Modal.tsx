@@ -11,11 +11,13 @@ export interface ModalProps {
     open: boolean;
     title?: string;
     actions?: React.ReactNode;
-    witdh?: number;
+    width?: number | string;
     onClose: Function;
     closeOnDimerClick?: boolean;
     loading?: boolean;
     onBack?: Function;
+    size?: "mini" | "tiny" | "small" | "large" | "fullscreen";
+    noBorder?: boolean;
 }
 
 const ModalComponent: React.FC<ModalProps> = ({
@@ -23,11 +25,13 @@ const ModalComponent: React.FC<ModalProps> = ({
     title,
     children,
     actions,
-    witdh,
+    width,
     onClose,
     closeOnDimerClick,
     loading,
     onBack,
+    size,
+    noBorder,
 }) => {
     useEffect(() => {
         if (open) {
@@ -58,8 +62,12 @@ const ModalComponent: React.FC<ModalProps> = ({
                 }
             }}
         >
-            <Modal witdh={witdh} onClick={(event) => event.stopPropagation()}>
-                <Header iconBack={onBack ? true : false}>
+            <Modal
+                size={size}
+                width={width}
+                onClick={(event) => event.stopPropagation()}
+            >
+                <Header iconBack={onBack ? true : false} noBorder={noBorder}>
                     <div className="name-icon-modal">
                         {onBack ? (
                             <Icon onClick={() => onBack()}>

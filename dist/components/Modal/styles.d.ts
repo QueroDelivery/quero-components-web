@@ -2,10 +2,12 @@ interface BackgroundProps {
     open?: boolean;
 }
 interface ModalProps {
-    witdh?: number;
+    width?: number | string;
+    size?: "mini" | "tiny" | "small" | "large" | "fullscreen";
 }
 interface HeaderProps {
     iconBack?: boolean;
+    noBorder?: boolean;
 }
 export declare const Background: import("styled-components").StyledComponent<"div", any, BackgroundProps, never>;
 export declare const Modal: import("styled-components").StyledComponent<"div", any, ModalProps, never>;

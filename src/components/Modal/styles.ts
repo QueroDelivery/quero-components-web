@@ -1,20 +1,47 @@
-import styled, { css } from 'styled-components';
-import { colors } from '../../styles/colors';
+import styled, { css } from "styled-components";
+import { colors } from "../../styles/colors";
 
 interface BackgroundProps {
     open?: boolean;
 }
 
 interface ModalProps {
-    witdh?: number;
+    width?: number | string;
+    size?: "mini" | "tiny" | "small" | "large" | "fullscreen";
 }
 
 interface HeaderProps {
     iconBack?: boolean;
+    noBorder?: boolean;
 }
 
+const Sizes = {
+    mini: "mini",
+    tiny: "tiny",
+    small: "small",
+    large: "large",
+    fullscreen: "fullscreen",
+};
+
+const sizeWidth = (size: string) => {
+    switch (size) {
+        case Sizes.mini:
+            return "35%";
+        case Sizes.tiny:
+            return "45%";
+        case Sizes.small:
+            return "55%";
+        case Sizes.large:
+            return "65%";
+        case Sizes.fullscreen:
+            return "95%";
+        default:
+            return size;
+    }
+};
+
 export const Background = styled.div<BackgroundProps>`
-    ${props =>
+    ${(props) =>
         props.open
             ? css`
                   opacity: 1;
@@ -43,7 +70,21 @@ export const Modal = styled.div<ModalProps>`
     right: 0;
     bottom: 0;
     left: 0;
-    width: ${props => (props.witdh ? `${props.witdh}%` : '80%')};
+    width: ${(props) => {
+        if (props.width) {
+            if (typeof props.width === "string") {
+                return `${props.width.replace("%", "")}%`;
+            } else {
+                return `${props.width}px`;
+            }
+        }
+
+        if (props.size) {
+            return sizeWidth(props.size);
+        }
+
+        return "80%";
+    }};
     margin: auto;
     background: ${colors.white};
     border-radius: 30px;
@@ -61,7 +102,8 @@ export const Header = styled.div<HeaderProps>`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid ${colors.default20};
+    border-bottom: ${(props) =>
+        props.noBorder ? "none" : `1px solid ${colors.default20}`};
     font-size: 20px;
 
     .name-icon-modal {
@@ -70,7 +112,7 @@ export const Header = styled.div<HeaderProps>`
     }
 
     & strong {
-        padding: ${props => (props.iconBack ? '20px 0' : '20px 30px')};
+        padding: ${(props) => (props.iconBack ? "20px 0" : "20px 30px")};
         color: ${colors.brand10};
     }
 `;
