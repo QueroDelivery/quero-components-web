@@ -57,7 +57,6 @@ const TextArea: React.FC<TextAreaProps> = ({
                 />
             </Container>
             <Footer>
-                {console.log(rest.value)}
                 <LabelError errorColor={errorColor}>{errorMessage}</LabelError>
                 {lengthInfo && rest.maxLength && (
                     <LabelLengthInfo lengthInfo={lengthInfo}>{`${
