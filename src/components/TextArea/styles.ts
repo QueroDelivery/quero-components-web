@@ -1,5 +1,5 @@
-import styled, { css } from 'styled-components';
-import { colors } from '../../styles/colors';
+import styled, { css } from "styled-components";
+import { colors } from "../../styles/colors";
 
 interface InputProps {
     isFieldActive?: boolean;
@@ -22,9 +22,13 @@ interface LabelProps {
     errorMessage?: string;
 }
 
+interface LabelLengthInfoProps {
+    lengthInfo?: boolean;
+}
+
 export const Label = styled.span<LabelProps>`
     font-size: 14px;
-    color: ${props => {
+    color: ${(props) => {
         if (props.errorMessage) {
             return colors.brand20;
         }
@@ -39,21 +43,22 @@ export const Label = styled.span<LabelProps>`
 `;
 
 export const Container = styled.div<InputProps>`
-    width: ${props => (props.width ? props.width : '100%')};
+    width: ${(props) => (props.width ? props.width : "100%")};
     position: relative;
 
-    opacity: ${props => (props.disabled ? '50%' : '100%')};
+    opacity: ${(props) => (props.disabled ? "50%" : "100%")};
 
     textarea {
-        color: ${props => (props.textColor ? props.textColor : colors.gray20)};
+        color: ${(props) =>
+            props.textColor ? props.textColor : colors.gray20};
         resize: none;
         width: 100%;
         border-radius: 20px;
-        height: ${props => (props.height ? `${props.height}px` : '100px')};
+        height: ${(props) => (props.height ? `${props.height}px` : "100px")};
         margin: 0px;
         outline: none;
         padding: 20px;
-        border-color: ${props => {
+        border-color: ${(props) => {
             if (props.errorMessage && props.errorColor) {
                 return props.errorColor;
             }
@@ -83,7 +88,7 @@ export const Container = styled.div<InputProps>`
         pointer-events: none;
         border-bottom-width: 1px;
         border-bottom-style: solid;
-        border-bottom-color: ${props => {
+        border-bottom-color: ${(props) => {
             if (props.errorMessage && props.errorColor) {
                 return props.errorColor;
             }
@@ -95,7 +100,7 @@ export const Container = styled.div<InputProps>`
             return colors.gray10;
         }};
 
-        ${props =>
+        ${(props) =>
             props.isFieldActive
                 ? css`
                       color: ${colors.brand10};
@@ -124,11 +129,28 @@ export const LabelError = styled.span<LabelErrorProps>`
     font-size: 10px;
     margin-left: 0;
     margin-top: -2px;
-    color: ${props => {
+    color: ${(props) => {
         if (props.errorColor) {
             return props.errorColor;
         }
 
         return colors.brand20;
+    }};
+`;
+
+export const Footer = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-size: 10px;
+`;
+
+export const LabelLengthInfo = styled.div<LabelLengthInfoProps>`
+    font-size: ${(props) => (props.lengthInfo ? "10px" : "14px")};
+    color: ${(props) => {
+        if (props.lengthInfo) {
+            return colors.gray10;
+        }
+        return colors.brand10;
     }};
 `;

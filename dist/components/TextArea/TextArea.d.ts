@@ -1,4 +1,4 @@
-import React, { TextareaHTMLAttributes } from 'react';
+import React, { TextareaHTMLAttributes } from "react";
 export interface TextAreaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
     label?: string;
     labelColor?: string;
@@ -10,6 +10,7 @@ export interface TextAreaProps extends TextareaHTMLAttributes<HTMLTextAreaElemen
     width?: string;
     height?: number;
     textAreaRef?: any;
+    lengthInfo?: boolean;
 }
 declare const TextArea: React.FC<TextAreaProps>;
 export default TextArea;

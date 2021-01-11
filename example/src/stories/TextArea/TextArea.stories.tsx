@@ -66,3 +66,10 @@ ErrorMessage.args = {
     errorMessage: "errado",
     onChange: action("mudar valor"),
 };
+
+export const InfoLenght = Template.bind({});
+InfoLenght.args = {
+    maxLength: 400,
+    lengthInfo: true,
+    value: 'oi',
+}
