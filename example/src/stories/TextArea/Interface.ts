@@ -12,4 +12,5 @@ export interface TextAreaProps
     width?: string;
     height?: number;
     textAreaRef?: any;
+    lengthInfo?: boolean;
 }
