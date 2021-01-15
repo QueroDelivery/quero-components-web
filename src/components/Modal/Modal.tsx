@@ -49,7 +49,6 @@ const ModalComponent: React.FC<ModalProps> = ({
 
     function escModal(event: KeyboardEvent) {
         if (open && event.key == "Escape" && closeOnDimerClick) {
-            console.log("oi");
             event.stopPropagation();
             onClose();
         }
