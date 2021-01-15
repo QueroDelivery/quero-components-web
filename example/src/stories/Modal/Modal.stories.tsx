@@ -74,3 +74,11 @@ Width.args = {
     title: "teste",
     onClose: action("fechar"),
 };
+
+export const CloseIcon = Template.bind({});
+CloseIcon.args = {
+    open:true,
+    title: 'teste',
+    onClose: action("fechar"),
+    closeIcon: false,
+}

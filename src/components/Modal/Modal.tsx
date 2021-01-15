@@ -18,6 +18,7 @@ export interface ModalProps {
     onBack?: Function;
     size?: "mini" | "tiny" | "small" | "large" | "fullscreen";
     noBorder?: boolean;
+    closeIcon?: boolean;
 }
 
 const ModalComponent: React.FC<ModalProps> = ({
@@ -32,6 +33,7 @@ const ModalComponent: React.FC<ModalProps> = ({
     onBack,
     size,
     noBorder,
+    closeIcon = true,
 }) => {
     useEffect(() => {
         if (open) {
@@ -46,7 +48,8 @@ const ModalComponent: React.FC<ModalProps> = ({
     }, [open]);
 
     function escModal(event: KeyboardEvent) {
-        if (open && event.keyCode === 27 && closeOnDimerClick) {
+        if (open && event.key == "Escape" && closeOnDimerClick) {
+            console.log("oi");
             event.stopPropagation();
             onClose();
         }
@@ -80,18 +83,20 @@ const ModalComponent: React.FC<ModalProps> = ({
                         ) : null}
                         <strong>{title}</strong>
                     </div>
-                    <Icon
-                        onClick={(event) => {
-                            event.stopPropagation();
-                            onClose();
-                        }}
-                    >
-                        <FontAwesomeIcon
-                            icon={faTimes}
-                            size="lg"
-                            color={colors.brand10}
-                        />
-                    </Icon>
+                    {closeIcon && (
+                        <Icon
+                            onClick={(event) => {
+                                event.stopPropagation();
+                                onClose();
+                            }}
+                        >
+                            <FontAwesomeIcon
+                                icon={faTimes}
+                                size="lg"
+                                color={colors.brand10}
+                            />
+                        </Icon>
+                    )}
                 </Header>
                 <Body>
                     {loading && (

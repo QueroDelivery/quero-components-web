@@ -8,4 +8,5 @@ export interface ModalProps {
     loading?: boolean;
     onBack?: Function;
     size?: "mini" | "tiny" | "small" | "large" | "fullscreen";
+    closeIcon?: boolean;
 }
