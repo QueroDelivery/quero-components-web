@@ -2,7 +2,7 @@ import React from "react";
 import { IconDefinition } from "@fortawesome/pro-solid-svg-icons";
 
 export interface CardProps {
-    type: "shadow" | "button";
+    type: "shadow" | "button" | "min-shadow";
     width?: number | string;
     style?: React.CSSProperties;
     icon?: IconDefinition;

@@ -1,30 +1,30 @@
-import React, { LinkHTMLAttributes } from 'react';
-import { IconDefinition } from '@fortawesome/pro-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React, { LinkHTMLAttributes } from "react";
+import { IconDefinition } from "@fortawesome/pro-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import Loader from '../Loader/Loader';
-import { colors } from '../../styles/colors';
-import { Shadow, Button } from './styles';
+import Loader from "../Loader/Loader";
+import { colors } from "../../styles/colors";
+import { Shadow, Button } from "./styles";
 
-interface CardProps extends Pick<LinkHTMLAttributes<HTMLLinkElement>, 'href'> {
-    type: 'shadow' | 'button';
+interface CardProps extends Pick<LinkHTMLAttributes<HTMLLinkElement>, "href"> {
+    type: "shadow" | "button" | "min-shadow";
     width?: number | string;
     style?: React.CSSProperties;
     icon?: IconDefinition;
     sizeIcon?:
-    | '1x'
-    | '2x'
-    | '3x'
-    | '4x'
-    | '5x'
-    | '6x'
-    | '7x'
-    | '8x'
-    | '9x'
-    | '10x'
-    | 'lg'
-    | 'sm'
-    | 'xs';
+        | "1x"
+        | "2x"
+        | "3x"
+        | "4x"
+        | "5x"
+        | "6x"
+        | "7x"
+        | "8x"
+        | "9x"
+        | "10x"
+        | "lg"
+        | "sm"
+        | "xs";
     colorIcon?: string;
     text?: string;
     colorText?: string;
@@ -33,8 +33,9 @@ interface CardProps extends Pick<LinkHTMLAttributes<HTMLLinkElement>, 'href'> {
 }
 
 const Types = {
-    shadow: 'shadow',
-    button: 'button',
+    shadow: "shadow",
+    button: "button",
+    minShadow: "min-shadow",
 };
 
 const Card: React.FC<CardProps> = ({
@@ -51,9 +52,9 @@ const Card: React.FC<CardProps> = ({
     loading,
     ...rest
 }) => {
-    function renderShadow() {
+    function renderShadow(type: string) {
         return (
-            <Shadow width={width} style={style}>
+            <Shadow width={width} style={style} type={type}>
                 {loading && (
                     <div className="loading-card">
                         <Loader />
@@ -78,21 +79,23 @@ const Card: React.FC<CardProps> = ({
                         <FontAwesomeIcon
                             icon={icon}
                             color={colorIcon ? colorIcon : colors.brandDark}
-                            size={sizeIcon ? sizeIcon : 'lg'}
+                            size={sizeIcon ? sizeIcon : "lg"}
                         />
                     </React.Fragment>
                 )}
 
                 <span>{text}</span>
-            </Button >
+            </Button>
         );
     }
 
     switch (type) {
         case Types.shadow:
-            return renderShadow();
+            return renderShadow(Types.shadow);
         case Types.button:
             return renderButton();
+        case Types.minShadow:
+            return renderShadow(Types.minShadow);
         default:
             return <div />;
     }

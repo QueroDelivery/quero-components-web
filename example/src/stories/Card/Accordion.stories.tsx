@@ -59,6 +59,11 @@ Button.args = {
     onClick: () => action("click"),
 };
 
+export const MinShadow = Template.bind({});
+MinShadow.args = {
+    type: "min-shadow",
+};
+
 export const Icon = Template.bind({});
 Icon.args = {
     type: "button",
