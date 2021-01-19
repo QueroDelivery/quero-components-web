@@ -1,35 +1,41 @@
-import styled from 'styled-components';
-import { colors } from '../../styles/colors';
+import styled from "styled-components";
+import { colors } from "../../styles/colors";
 
 interface CardProps {
     width?: number | string;
     colorText?: string;
+    type?: string;
 }
 
 export const Shadow = styled.div<CardProps>`
     padding: 20px;
-    box-shadow: 0 20px 50px 0 rgba(0, 0, 0, 0.16);
+    box-shadow: ${(props) => {
+        if (props.type == "min-shadow") {
+            return "0px 2px 4px #00000029";
+        }
+        return "0 20px 50px 0 rgba(0, 0, 0, 0.16)";
+    }};
     background-color: ${colors.white};
     border-radius: 30px;
     position: relative;
 
-    width: ${props => {
+    width: ${(props) => {
         if (props.width) {
-            if (typeof props.width === 'string') {
-                return `${props.width.replace('%', '')}%`;
+            if (typeof props.width === "string") {
+                return `${props.width.replace("%", "")}%`;
             } else {
                 return `${props.width}px`;
             }
         }
 
-        return '100%';
+        return "100%";
     }};
 
     .loading-card {
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: rgba(255,255,255,.8);
+        background-color: rgba(255, 255, 255, 0.8);
         width: 100%;
         height: 100%;
         top: 0;
@@ -47,16 +53,16 @@ export const Button = styled.a<CardProps>`
     padding: 12px 25px;
     border-radius: 30px;
     border: 1px solid ${colors.default30};
-    width: ${props => {
+    width: ${(props) => {
         if (props.width) {
-            if (typeof props.width === 'string') {
-                return `${props.width.replace('%', '')}%`;
+            if (typeof props.width === "string") {
+                return `${props.width.replace("%", "")}%`;
             } else {
                 return `${props.width}px`;
             }
         }
 
-        return '100%';
+        return "100%";
     }};
     cursor: pointer;
     display: flex;
@@ -69,7 +75,7 @@ export const Button = styled.a<CardProps>`
     span {
         margin-left: 15px;
         font-size: 15px;
-        color: ${props =>
+        color: ${(props) =>
             props.colorText ? props.colorText : colors.brandDark};
     }
 `;

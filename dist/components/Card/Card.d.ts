@@ -1,11 +1,11 @@
-import React, { LinkHTMLAttributes } from 'react';
-import { IconDefinition } from '@fortawesome/pro-solid-svg-icons';
-interface CardProps extends Pick<LinkHTMLAttributes<HTMLLinkElement>, 'href'> {
-    type: 'shadow' | 'button';
+import React, { LinkHTMLAttributes } from "react";
+import { IconDefinition } from "@fortawesome/pro-solid-svg-icons";
+interface CardProps extends Pick<LinkHTMLAttributes<HTMLLinkElement>, "href"> {
+    type: "shadow" | "button" | "min-shadow";
     width?: number | string;
     style?: React.CSSProperties;
     icon?: IconDefinition;
-    sizeIcon?: '1x' | '2x' | '3x' | '4x' | '5x' | '6x' | '7x' | '8x' | '9x' | '10x' | 'lg' | 'sm' | 'xs';
+    sizeIcon?: "1x" | "2x" | "3x" | "4x" | "5x" | "6x" | "7x" | "8x" | "9x" | "10x" | "lg" | "sm" | "xs";
     colorIcon?: string;
     text?: string;
     colorText?: string;
