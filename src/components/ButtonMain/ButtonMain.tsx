@@ -30,6 +30,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     colorIcon?: string;
     noBorder?: boolean;
     colorText?: string;
+    colorBackground?: string;
     tertiary?: boolean;
     size?:
     | 'mini'
@@ -40,6 +41,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     | 'big'
     | 'huge'
     | 'massive';
+    rectangular?: boolean;
 }
 
 const ButtonMain: React.FC<ButtonProps> = ({
@@ -60,8 +62,10 @@ const ButtonMain: React.FC<ButtonProps> = ({
     colorIcon,
     noBorder,
     colorText,
+    colorBackground,
     tertiary,
     size,
+    rectangular,
     ...rest
 }) => {
     if (notification) {
@@ -107,8 +111,10 @@ const ButtonMain: React.FC<ButtonProps> = ({
                 icon={icon}
                 noBorder={noBorder}
                 colorText={colorText}
+                colorBackground={colorBackground}
                 tertiary={tertiary}
                 size={size}
+                rectangular={rectangular}
             >
                 {loading ? (
                     <Loader size="tiny" />

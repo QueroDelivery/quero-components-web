@@ -11,6 +11,7 @@ interface ButtonProps {
     icon?: IconDefinition;
     noBorder?: boolean;
     colorText?: string;
+    colorBackground?: string;
     tertiary?: boolean;
     size?:
         | 'mini'
@@ -21,6 +22,7 @@ interface ButtonProps {
         | 'big'
         | 'huge'
         | 'massive';
+    rectangular?: boolean;
 }
 
 interface TextFirstProps {
@@ -116,6 +118,7 @@ const textSize = (size: string | number) => {
 
 export const Button = styled.button<ButtonProps>`
     background-color: ${props => {
+        if (props.colorBackground) return props.colorBackground;
         if (props.secundary || props.tertiary) {
             return colors.white;
         }
@@ -133,7 +136,11 @@ export const Button = styled.button<ButtonProps>`
             : props.icon || props.tertiary
             ? ''
             : '100%'};
-    border-radius: 30px;
+    border-radius: ${(props) => {
+        if (props.rectangular) return "10px";
+
+        return "30px";
+    }};
     cursor: pointer;
     border: ${props => {
         if (props.secundary) {

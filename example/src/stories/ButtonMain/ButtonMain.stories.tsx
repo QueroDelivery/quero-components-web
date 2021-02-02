@@ -23,6 +23,9 @@ export default {
         colorText: {
             control: 'color'
         },
+        colorBackground: {
+            control: 'color'
+        },
         colorIcon: {
             control: 'color'
         }
@@ -120,6 +123,14 @@ ColorText.args = {
     colorText: 'black'
 };
 
+export const ColorBackground = Template.bind({});
+ColorBackground.args = {
+    textFirst: 'Clique',
+    textEnd: 'aqui',
+    colorText: 'white',
+    colorBackground: 'black',
+};
+
 export const Icon = Template.bind({});
 Icon.args = {
     textFirst: 'Clique',
@@ -140,4 +151,13 @@ Notification.args = {
     textEnd: 'aqui',
     notification: true,
     amount: 2
+};
+
+export const Rectangular = Template.bind({});
+Rectangular.args = {
+    textFirst: 'Clique',
+    textEnd: 'aqui',
+    secundary: true,
+    tertiary: false,
+    rectangular: true,
 };
