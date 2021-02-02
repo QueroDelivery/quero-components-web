@@ -30,6 +30,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     colorIcon?: string;
     noBorder?: boolean;
     colorText?: string;
+    colorBackground?: string;
     tertiary?: boolean;
     size?:
     | 'mini'
@@ -61,6 +62,7 @@ const ButtonMain: React.FC<ButtonProps> = ({
     colorIcon,
     noBorder,
     colorText,
+    colorBackground,
     tertiary,
     size,
     rectangular,
@@ -109,6 +111,7 @@ const ButtonMain: React.FC<ButtonProps> = ({
                 icon={icon}
                 noBorder={noBorder}
                 colorText={colorText}
+                colorBackground={colorBackground}
                 tertiary={tertiary}
                 size={size}
                 rectangular={rectangular}

@@ -11,6 +11,7 @@ interface ButtonProps {
     icon?: IconDefinition;
     noBorder?: boolean;
     colorText?: string;
+    colorBackground?: string;
     tertiary?: boolean;
     size?:
         | 'mini'
@@ -117,6 +118,7 @@ const textSize = (size: string | number) => {
 
 export const Button = styled.button<ButtonProps>`
     background-color: ${props => {
+        if (props.colorBackground) return props.colorBackground;
         if (props.secundary || props.tertiary) {
             return colors.white;
         }

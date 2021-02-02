@@ -17,6 +17,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     colorIcon?: string;
     noBorder?: boolean;
     colorText?: string;
+    colorBackground?: string;
     tertiary?: boolean;
     size?: 'mini' | 'tiny' | 'small' | 'medium' | 'large' | 'big' | 'huge' | 'massive';
     rectangular?: boolean;

@@ -23,6 +23,9 @@ export default {
         colorText: {
             control: 'color'
         },
+        colorBackground: {
+            control: 'color'
+        },
         colorIcon: {
             control: 'color'
         }
@@ -118,6 +121,14 @@ ColorText.args = {
     textFirst: 'Clique',
     textEnd: 'aqui',
     colorText: 'black'
+};
+
+export const ColorBackground = Template.bind({});
+ColorBackground.args = {
+    textFirst: 'Clique',
+    textEnd: 'aqui',
+    colorText: 'white',
+    colorBackground: 'black',
 };
 
 export const Icon = Template.bind({});
