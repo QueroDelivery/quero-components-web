@@ -40,6 +40,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     | 'big'
     | 'huge'
     | 'massive';
+    rectangular?: boolean;
 }
 
 const ButtonMain: React.FC<ButtonProps> = ({
@@ -62,6 +63,7 @@ const ButtonMain: React.FC<ButtonProps> = ({
     colorText,
     tertiary,
     size,
+    rectangular,
     ...rest
 }) => {
     if (notification) {
@@ -109,6 +111,7 @@ const ButtonMain: React.FC<ButtonProps> = ({
                 colorText={colorText}
                 tertiary={tertiary}
                 size={size}
+                rectangular={rectangular}
             >
                 {loading ? (
                     <Loader size="tiny" />

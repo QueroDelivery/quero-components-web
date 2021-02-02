@@ -21,6 +21,7 @@ interface ButtonProps {
         | 'big'
         | 'huge'
         | 'massive';
+    rectangular?: boolean;
 }
 
 interface TextFirstProps {
@@ -133,7 +134,11 @@ export const Button = styled.button<ButtonProps>`
             : props.icon || props.tertiary
             ? ''
             : '100%'};
-    border-radius: 30px;
+    border-radius: ${(props) => {
+        if (props.rectangular) return "10px";
+
+        return "30px";
+    }};
     cursor: pointer;
     border: ${props => {
         if (props.secundary) {

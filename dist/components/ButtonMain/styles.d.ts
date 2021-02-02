@@ -10,6 +10,7 @@ interface ButtonProps {
     colorText?: string;
     tertiary?: boolean;
     size?: 'mini' | 'tiny' | 'small' | 'medium' | 'large' | 'big' | 'huge' | 'massive';
+    rectangular?: boolean;
 }
 interface TextFirstProps {
     firstStrong?: boolean;

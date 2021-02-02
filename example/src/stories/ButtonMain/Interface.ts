@@ -28,4 +28,5 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     | 'big'
     | 'huge'
     | 'massive';
+    rectangular?: boolean;
 }

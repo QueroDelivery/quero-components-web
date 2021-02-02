@@ -141,3 +141,12 @@ Notification.args = {
     notification: true,
     amount: 2
 };
+
+export const Rectangular = Template.bind({});
+Rectangular.args = {
+    textFirst: 'Clique',
+    textEnd: 'aqui',
+    secundary: true,
+    tertiary: false,
+    rectangular: true,
+};
