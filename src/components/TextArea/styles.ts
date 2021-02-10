@@ -22,10 +22,6 @@ interface LabelProps {
     errorMessage?: string;
 }
 
-interface LabelLengthInfoProps {
-    lengthInfo?: boolean;
-}
-
 export const Label = styled.span<LabelProps>`
     font-size: 14px;
     color: ${(props) => {
@@ -145,12 +141,7 @@ export const Footer = styled.div`
     font-size: 10px;
 `;
 
-export const LabelLengthInfo = styled.div<LabelLengthInfoProps>`
-    font-size: ${(props) => (props.lengthInfo ? "10px" : "14px")};
-    color: ${(props) => {
-        if (props.lengthInfo) {
-            return colors.gray10;
-        }
-        return colors.brand10;
-    }};
+export const LabelLengthInfo = styled.div`
+    font-size: 10px;
+    color: ${colors.gray10};
 `;

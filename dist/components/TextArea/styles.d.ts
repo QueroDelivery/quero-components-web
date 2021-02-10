@@ -17,12 +17,9 @@ interface LabelProps {
     labelColor?: string;
     errorMessage?: string;
 }
-interface LabelLengthInfoProps {
-    lengthInfo?: boolean;
-}
 export declare const Label: import("styled-components").StyledComponent<"span", any, LabelProps, never>;
 export declare const Container: import("styled-components").StyledComponent<"div", any, InputProps, never>;
 export declare const LabelError: import("styled-components").StyledComponent<"span", any, LabelErrorProps, never>;
 export declare const Footer: import("styled-components").StyledComponent<"div", any, {}, never>;
-export declare const LabelLengthInfo: import("styled-components").StyledComponent<"div", any, LabelLengthInfoProps, never>;
+export declare const LabelLengthInfo: import("styled-components").StyledComponent<"div", any, {}, never>;
 export {};

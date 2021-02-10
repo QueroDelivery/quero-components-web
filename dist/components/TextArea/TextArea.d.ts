@@ -10,7 +10,7 @@ export interface TextAreaProps extends TextareaHTMLAttributes<HTMLTextAreaElemen
     width?: string;
     height?: number;
     textAreaRef?: any;
-    lengthInfo?: boolean;
+    lengthInfo?: boolean | number;
 }
 declare const TextArea: React.FC<TextAreaProps>;
 export default TextArea;

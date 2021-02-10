@@ -1,7 +1,13 @@
 /* eslint-disable react/prop-types */
 import React, { TextareaHTMLAttributes } from "react";
 
-import { Container, LabelError, Label, Footer, LabelLengthInfo } from "./styles";
+import {
+    Container,
+    LabelError,
+    Label,
+    Footer,
+    LabelLengthInfo,
+} from "./styles";
 
 export interface TextAreaProps
     extends TextareaHTMLAttributes<HTMLTextAreaElement> {
@@ -15,7 +21,7 @@ export interface TextAreaProps
     width?: string;
     height?: number;
     textAreaRef?: any;
-    lengthInfo?: boolean;
+    lengthInfo?: boolean | number;
 }
 
 const TextArea: React.FC<TextAreaProps> = ({
@@ -32,6 +38,17 @@ const TextArea: React.FC<TextAreaProps> = ({
     lengthInfo,
     ...rest
 }) => {
+    function textLenghtInfo() {
+        if (typeof lengthInfo == "number") {
+            return lengthInfo;
+        }
+        if (typeof rest.value == "string") {
+            return rest.value.length;
+        }
+
+        return "0";
+    }
+
     return (
         <div style={{ paddingBottom: errorMessage ? 0 : 20 }}>
             {label && (
@@ -59,9 +76,9 @@ const TextArea: React.FC<TextAreaProps> = ({
             <Footer>
                 <LabelError errorColor={errorColor}>{errorMessage}</LabelError>
                 {lengthInfo && rest.maxLength && (
-                    <LabelLengthInfo lengthInfo={lengthInfo}>{`${
-                        typeof rest.value == "string" ? rest.value.length : 0
-                    }/${rest.maxLength} caracteres`}</LabelLengthInfo>
+                    <LabelLengthInfo>{`${textLenghtInfo()}/${
+                        rest.maxLength
+                    } caracteres`}</LabelLengthInfo>
                 )}
             </Footer>
         </div>
