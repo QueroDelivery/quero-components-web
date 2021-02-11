@@ -30,4 +30,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     | 'huge'
     | 'massive';
     rectangular?: boolean;
+    hoverBackgroundColor?: string;
+    hoverTextColor?: string;
+    typeContent: 'icon';
 }

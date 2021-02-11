@@ -1,4 +1,4 @@
-import { IconDefinition } from '@fortawesome/pro-solid-svg-icons';
+import { IconDefinition } from "@fortawesome/pro-solid-svg-icons";
 interface ButtonProps {
     secundary?: boolean;
     backPurple?: boolean;
@@ -9,8 +9,10 @@ interface ButtonProps {
     noBorder?: boolean;
     colorText?: string;
     colorBackground?: string;
+    hoverBackgroundColor?: string;
+    hoverTextColor?: string;
     tertiary?: boolean;
-    size?: 'mini' | 'tiny' | 'small' | 'medium' | 'large' | 'big' | 'huge' | 'massive';
+    size?: "mini" | "tiny" | "small" | "medium" | "large" | "big" | "huge" | "massive";
     rectangular?: boolean;
 }
 interface TextFirstProps {
@@ -19,7 +21,7 @@ interface TextFirstProps {
     strong?: boolean;
     colorText?: string;
     tertiary?: boolean;
-    size?: 'mini' | 'tiny' | 'small' | 'medium' | 'large' | 'big' | 'huge' | 'massive';
+    size?: "mini" | "tiny" | "small" | "medium" | "large" | "big" | "huge" | "massive";
 }
 interface TextEndProps {
     firstStrong?: boolean;
@@ -27,7 +29,7 @@ interface TextEndProps {
     strong?: boolean;
     colorText?: string;
     tertiary?: boolean;
-    size?: 'mini' | 'tiny' | 'small' | 'medium' | 'large' | 'big' | 'huge' | 'massive';
+    size?: "mini" | "tiny" | "small" | "medium" | "large" | "big" | "huge" | "massive";
 }
 export declare const Button: import("styled-components").StyledComponent<"button", any, ButtonProps, never>;
 export declare const TextFirst: import("styled-components").StyledComponent<"span", any, TextFirstProps, never>;
