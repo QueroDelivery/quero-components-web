@@ -12,6 +12,7 @@ export interface Props extends DropdownProps {
     errorMessage?: string;
     label?: string;
     colorLabel?: string;
+    line?: boolean;
 }
 declare const Dropdown: React.FC<Props>;
 export default Dropdown;

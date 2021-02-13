@@ -10,9 +10,10 @@ interface InputProps {
     width?: string;
     textColor?: string;
     icon?: boolean;
-    iconPosition?: 'left' | 'right';
+    iconPosition?: "left" | "right";
     action?: any;
-    actionPosition?: 'left' | 'right';
+    actionPosition?: "left" | "right";
+    date?: boolean;
 }
 interface LabelErrorProps {
     errorColor?: string;

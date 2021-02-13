@@ -4,6 +4,7 @@ import { colors } from "../../styles/colors";
 interface DropdownProps {
     brand?: boolean;
     textAlign?: "center";
+    line?: boolean;
     colorLabel?: string;
     error?: string;
 }
@@ -82,11 +83,14 @@ export const Container = styled.div<DropdownProps>`
         -webkit-box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);
         box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);
         border: 1px solid rgba(34, 36, 38, 0.15);
-        border-radius: 0.28571429rem;
+        border-radius: ${(props) => (props.line ? "0" : "0.28571429rem")};
         -webkit-transition: opacity 0.1s ease;
         transition: opacity 0.1s ease;
         z-index: 11;
         will-change: transform, opacity;
+        /* border-top: ${(props) => (props.line ? "none" : "")};
+        border-left: ${(props) => (props.line ? "none" : "")};
+        border-right: ${(props) => (props.line ? "none" : "")}; */
     }
     .ui.dropdown .menu > * {
         white-space: nowrap;
@@ -384,14 +388,21 @@ export const Container = styled.div<DropdownProps>`
         box-shadow: none;
         border: 1px solid
             ${(props) =>
-                props.brand ? colors.brandLight : "rgba(34, 36, 38, 0.15)"};
-        border-radius: 0.28571429rem;
+                props.brand
+                    ? colors.brandLight
+                    : props.line
+                    ? colors.gray10
+                    : "rgba(34, 36, 38, 0.15)"};
+        border-radius: ${(props) => (props.line ? 0 : "0.28571429rem")};
         -webkit-transition: width 0.1s ease, -webkit-box-shadow 0.1s ease;
         transition: width 0.1s ease, -webkit-box-shadow 0.1s ease;
         transition: box-shadow 0.1s ease, width 0.1s ease;
         transition: box-shadow 0.1s ease, width 0.1s ease,
             -webkit-box-shadow 0.1s ease;
-        border-radius: 20px;
+        border-radius: ${(props) => (props.line ? "none" : "20px")};
+        border-top: ${(props) => (props.line ? "none" : "")};
+        border-left: ${(props) => (props.line ? "none" : "")};
+        border-right: ${(props) => (props.line ? "none" : "")};
     }
     .ui.selection.dropdown.visible,
     .ui.selection.dropdown.active {
@@ -979,7 +990,7 @@ export const Container = styled.div<DropdownProps>`
         color: #9f3a38;
     }
     .ui.selection.dropdown.error {
-        background: ${colors.error};
+        background: ${(props) => (props.line ? colors.white : colors.error)};
         border-color: ${colors.brand20};
     }
     .ui.selection.dropdown.error:hover {

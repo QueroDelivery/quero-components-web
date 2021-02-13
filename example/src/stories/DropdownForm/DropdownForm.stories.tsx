@@ -11,7 +11,6 @@ export default {
     component: DropdownForm,
 } as Meta;
 
-
 const Template: Story<DropdownFormProps> = (args) => {
     return <DropdownForm {...args} />;
 };
@@ -30,11 +29,12 @@ const options = [
 export const Default = Template.bind({});
 Default.args = {
     name: "",
-    errors: '',
+    errors: "",
     register: null,
     setValue: () => {},
     validate: () => {},
     required: false,
     clearError: () => {},
     options: options,
+    line: true,
 };

@@ -1,6 +1,7 @@
 interface DropdownProps {
     brand?: boolean;
     textAlign?: "center";
+    line?: boolean;
     colorLabel?: string;
     error?: string;
 }

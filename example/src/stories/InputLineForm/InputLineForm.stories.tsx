@@ -17,7 +17,7 @@ const Template: Story<InputFormProps> = (args) => {
 
 export const Default = Template.bind({});
 Default.args = {
-    label: 'teste',
+    label: "teste",
     name: "",
     errors: "",
     register: null,
@@ -27,4 +27,5 @@ Default.args = {
 
     limit: 100,
     minimum: 1,
+    type: "date",
 };

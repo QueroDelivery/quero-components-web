@@ -22,11 +22,11 @@ export default {
             },
         },
         textColor: {
-            control: 'color'
+            control: "color",
         },
         iconColor: {
-            control: 'color'
-        }
+            control: "color",
+        },
     },
 } as Meta;
 
@@ -37,6 +37,7 @@ Default.args = {
     label: "teste",
     placeholder: "escreva",
     onChange: action("mudar valor"),
+    type: "date",
 };
 
 export const Icon = Template.bind({});
@@ -72,8 +73,8 @@ export const Colors = Template.bind({});
 Colors.args = {
     label: "teste",
     placeholder: "escreva",
-    textColor: 'blue',
-    iconColor: 'green',
+    textColor: "blue",
+    iconColor: "green",
     icon: faUser,
     onChange: action("mudar valor"),
 };
@@ -82,7 +83,7 @@ export const Width = Template.bind({});
 Width.args = {
     label: "teste",
     placeholder: "escreva",
-    width: '50%',
+    width: "50%",
     onChange: action("mudar valor"),
 };
 
@@ -90,7 +91,6 @@ export const ErrorMessage = Template.bind({});
 ErrorMessage.args = {
     label: "teste",
     placeholder: "escreva",
-    errorMessage: 'errado',
+    errorMessage: "errado",
     onChange: action("mudar valor"),
 };
-
