@@ -1,6 +1,6 @@
-import styled from 'styled-components';
-import { colors } from '../../styles/colors';
-import { IconDefinition } from '@fortawesome/pro-solid-svg-icons';
+import styled from "styled-components";
+import { colors } from "../../styles/colors";
+import { IconDefinition } from "@fortawesome/pro-solid-svg-icons";
 
 interface ButtonProps {
     secundary?: boolean;
@@ -12,16 +12,18 @@ interface ButtonProps {
     noBorder?: boolean;
     colorText?: string;
     colorBackground?: string;
+    hoverBackgroundColor?: string;
+    hoverTextColor?: string;
     tertiary?: boolean;
     size?:
-        | 'mini'
-        | 'tiny'
-        | 'small'
-        | 'medium'
-        | 'large'
-        | 'big'
-        | 'huge'
-        | 'massive';
+        | "mini"
+        | "tiny"
+        | "small"
+        | "medium"
+        | "large"
+        | "big"
+        | "huge"
+        | "massive";
     rectangular?: boolean;
 }
 
@@ -32,14 +34,14 @@ interface TextFirstProps {
     colorText?: string;
     tertiary?: boolean;
     size?:
-        | 'mini'
-        | 'tiny'
-        | 'small'
-        | 'medium'
-        | 'large'
-        | 'big'
-        | 'huge'
-        | 'massive';
+        | "mini"
+        | "tiny"
+        | "small"
+        | "medium"
+        | "large"
+        | "big"
+        | "huge"
+        | "massive";
 }
 
 interface TextEndProps {
@@ -49,45 +51,45 @@ interface TextEndProps {
     colorText?: string;
     tertiary?: boolean;
     size?:
-        | 'mini'
-        | 'tiny'
-        | 'small'
-        | 'medium'
-        | 'large'
-        | 'big'
-        | 'huge'
-        | 'massive';
+        | "mini"
+        | "tiny"
+        | "small"
+        | "medium"
+        | "large"
+        | "big"
+        | "huge"
+        | "massive";
 }
 
 const Sizes = {
-    mini: 'mini',
-    tiny: 'tiny',
-    small: 'small',
-    medium: 'medium',
-    large: 'large',
-    big: 'big',
-    huge: 'huge',
-    massive: 'massive',
+    mini: "mini",
+    tiny: "tiny",
+    small: "small",
+    medium: "medium",
+    large: "large",
+    big: "big",
+    huge: "huge",
+    massive: "massive",
 };
 
 const size = (size: string | number) => {
     switch (size) {
         case Sizes.mini:
-            return '25px';
+            return "25px";
         case Sizes.tiny:
-            return '30px';
+            return "30px";
         case Sizes.small:
-            return '35px';
+            return "35px";
         case Sizes.medium:
-            return '40px';
+            return "40px";
         case Sizes.large:
-            return '45px';
+            return "45px";
         case Sizes.big:
-            return '50px';
+            return "50px";
         case Sizes.huge:
-            return '55px';
+            return "55px";
         case Sizes.massive:
-            return '60px';
+            return "60px";
         default:
             return size;
     }
@@ -96,53 +98,53 @@ const size = (size: string | number) => {
 const textSize = (size: string | number) => {
     switch (size) {
         case Sizes.mini:
-            return '10px';
+            return "10px";
         case Sizes.tiny:
-            return '11px';
+            return "11px";
         case Sizes.small:
-            return '12px';
+            return "12px";
         case Sizes.medium:
-            return '14px';
+            return "14px";
         case Sizes.large:
-            return '16px';
+            return "16px";
         case Sizes.big:
-            return '18px';
+            return "18px";
         case Sizes.huge:
-            return '20px';
+            return "20px";
         case Sizes.massive:
-            return '22px';
+            return "22px";
         default:
             return size;
     }
 };
 
 export const Button = styled.button<ButtonProps>`
-    background-color: ${props => {
+    background-color: ${(props) => {
         if (props.colorBackground) return props.colorBackground;
         if (props.secundary || props.tertiary) {
             return colors.white;
         }
 
         if (props.noBorder) {
-            return 'transparent';
+            return "transparent";
         }
 
         return colors.brand30;
     }};
-    height: ${props => (props.size ? size(props.size) : '40px')};
-    width: ${props =>
+    height: ${(props) => (props.size ? size(props.size) : "40px")};
+    width: ${(props) =>
         props.width
             ? `${props.width}%`
             : props.icon || props.tertiary
-            ? ''
-            : '100%'};
+            ? ""
+            : "100%"};
     border-radius: ${(props) => {
         if (props.rectangular) return "10px";
 
         return "30px";
     }};
     cursor: pointer;
-    border: ${props => {
+    border: ${(props) => {
         if (props.secundary) {
             return `1px solid ${colors.brand10}`;
         }
@@ -151,13 +153,13 @@ export const Button = styled.button<ButtonProps>`
             return `1px solid ${colors.gray10}`;
         }
 
-        return 'none';
+        return "none";
     }};
     outline: none;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: ${props => (props.icon || props.tertiary ? '0 15px' : '')};
+    padding: ${(props) => (props.icon || props.tertiary ? "0 15px" : "")};
 
     &:disabled {
         opacity: 0.5;
@@ -166,7 +168,10 @@ export const Button = styled.button<ButtonProps>`
     }
 
     &:hover {
-        background-color: ${props => {
+        background-color: ${(props) => {
+            if (props.hoverBackgroundColor) {
+                return props.hoverBackgroundColor;
+            }
             if (props.secundary) {
                 return colors.brandTransparent;
             }
@@ -176,7 +181,7 @@ export const Button = styled.button<ButtonProps>`
             }
 
             if (props.noBorder) {
-                return 'transparent';
+                return "transparent";
             }
 
             if (props.tertiary) {
@@ -187,7 +192,11 @@ export const Button = styled.button<ButtonProps>`
         }};
 
         span {
-            color: ${props => {
+            color: ${(props) => {
+                if (props.hoverTextColor) {
+                    return props.hoverTextColor;
+                }
+
                 if (props.secundary) {
                     return colors.brand10;
                 }
@@ -215,7 +224,7 @@ export const Button = styled.button<ButtonProps>`
 `;
 
 export const TextFirst = styled.span<TextFirstProps>`
-    color: ${props => {
+    color: ${(props) => {
         if (props.colorText) {
             return props.colorText;
         }
@@ -226,17 +235,17 @@ export const TextFirst = styled.span<TextFirstProps>`
 
         return colors.brand10;
     }};
-    font-weight: ${props => {
+    font-weight: ${(props) => {
         if (props.firstStrong || props.strong) {
-            return 'bold';
+            return "bold";
         }
 
-        return 'normal';
+        return "normal";
     }};
-    font-size: ${props => props.size ? textSize(props.size) : '14px'};
+    font-size: ${(props) => (props.size ? textSize(props.size) : "14px")};
 `;
 export const TextEnd = styled.span<TextEndProps>`
-    color: ${props => {
+    color: ${(props) => {
         if (props.colorText) {
             return props.colorText;
         }
@@ -247,14 +256,14 @@ export const TextEnd = styled.span<TextEndProps>`
 
         return colors.brand10;
     }};
-    font-weight: ${props => {
+    font-weight: ${(props) => {
         if (props.firstStrong || props.notStrong) {
-            return 'normal';
+            return "normal";
         }
 
-        return 'bold';
+        return "bold";
     }};
-    font-size: ${props => props.size ? textSize(props.size) : '14px'};
+    font-size: ${(props) => (props.size ? textSize(props.size) : "14px")};
 `;
 
 export const Notification = styled.button`

@@ -5,7 +5,7 @@ import { action } from '@storybook/addon-actions'
 import { ButtonMain } from 'quero-components-web';
 import { ButtonProps } from './Interface'
 import 'quero-components-web/dist/index.css'
-import { faPhone } from '@fortawesome/pro-solid-svg-icons';
+import { faPhone, faTimes } from '@fortawesome/pro-solid-svg-icons';
 
 export default {
     title: 'Example/ButtonMain',
@@ -28,7 +28,19 @@ export default {
         },
         colorIcon: {
             control: 'color'
-        }
+        },
+        hoverBackgroundColor: {
+            control: 'color'
+        },
+        hoverTextColor: {
+            control: 'color'
+        },
+        typeContent: {
+            control: {
+                type: 'inline-radio',
+                options: ['icon', 'notification', 'button']
+            }
+        },
     }
 } as Meta;
 
@@ -131,6 +143,15 @@ ColorBackground.args = {
     colorBackground: 'black',
 };
 
+export const HoverColor = Template.bind({});
+HoverColor.args = {
+    textFirst: 'Clique',
+    textEnd: 'aqui',
+    secundary: true,
+    hoverBackgroundColor: 'black',
+    hoverTextColor: 'white',
+};
+
 export const Icon = Template.bind({});
 Icon.args = {
     textFirst: 'Clique',
@@ -161,3 +182,13 @@ Rectangular.args = {
     tertiary: false,
     rectangular: true,
 };
+
+export const TypeContent = Template.bind({});
+TypeContent.args = {
+    typeContent: 'icon',
+    colorBackground: 'red',
+    colorIcon: 'black',
+    icon: faTimes,
+    rectangular: true,
+    width: 10,
+}
