@@ -1,10 +1,10 @@
 /* eslint-disable react/prop-types */
-import React, { useState, InputHTMLAttributes, useEffect } from 'react';
-import { IconDefinition } from '@fortawesome/pro-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React, { useState, InputHTMLAttributes, useEffect } from "react";
+import { IconDefinition } from "@fortawesome/pro-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import { Container, LabelError } from './styles';
-import { colors } from '../../styles/colors';
+import { Container, LabelError } from "./styles";
+import { colors } from "../../styles/colors";
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     label?: string;
@@ -15,13 +15,13 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     textColor?: string;
     inputRef?: any;
     icon?: IconDefinition;
-    iconPosition?: 'left' | 'right';
+    iconPosition?: "left" | "right";
     iconColor?: string;
     action?: {
         icon: IconDefinition;
         iconColor?: string;
         onClick: () => void;
-        position?: 'left' | 'right';
+        position?: "left" | "right";
     } | null;
 }
 
@@ -81,6 +81,7 @@ const InputLine: React.FC<InputProps> = ({
                 iconPosition={iconPosition}
                 action={action}
                 actionPosition={action?.position}
+                date={rest.type === "date"}
             >
                 {icon && (
                     <div className="icon">
@@ -104,7 +105,7 @@ const InputLine: React.FC<InputProps> = ({
                     onFocus={handleFocus}
                     onBlur={handleBlur}
                     name={name}
-                    placeholder={isFieldActive ? rest.placeholder : ''}
+                    placeholder={isFieldActive ? rest.placeholder : ""}
                     ref={inputRef}
                 />
                 <label style={labelStyle}>

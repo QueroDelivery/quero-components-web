@@ -103,3 +103,12 @@ Erro.args = {
     brand: true,
     errorMessage: "errado",
 };
+
+export const Line = Template.bind({});
+Line.args = {
+    options: options,
+    placeholder: "Selecione",
+    line: true,
+    label: 'Testev',
+    errorMessage: 'Eita'
+};

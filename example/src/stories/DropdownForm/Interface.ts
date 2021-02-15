@@ -9,4 +9,5 @@ export interface DropdownFormProps extends Omit<Props, "onChange" | "value"> {
     setValue: any;
     clearError: any;
     value?: any;
+    line?: boolean;
 }

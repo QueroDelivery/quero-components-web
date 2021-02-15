@@ -73,6 +73,7 @@ const DropdownForm: React.FC<DropdownFormProps> = ({
                     clearError(name);
                 }
             }}
+            line={rest.line}
             errorMessage={
                 errors
                     ? errors.type === "required"

@@ -14,6 +14,7 @@ export interface Props extends DropdownProps {
     errorMessage?: string;
     label?: string;
     colorLabel?: string;
+    line?: boolean;
 }
 
 const Dropdown: React.FC<Props> = ({
@@ -23,6 +24,7 @@ const Dropdown: React.FC<Props> = ({
     errorMessage,
     label,
     colorLabel,
+    line,
     ...rest
 }) => {
     return (
@@ -31,6 +33,7 @@ const Dropdown: React.FC<Props> = ({
             textAlign={textAlign}
             error={errorMessage}
             colorLabel={colorLabel}
+            line={line}
         >
             {label && <label>{label}</label>}
             <Select

@@ -1,10 +1,10 @@
 /* eslint-disable react/prop-types */
-import React, { useState, useEffect } from 'react';
-import { InputProps } from './InputLine';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React, { useState, useEffect } from "react";
+import { InputProps } from "./InputLine";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import { Container, LabelError } from './styles';
-import { colors } from '../../styles/colors';
+import { Container, LabelError } from "./styles";
+import { colors } from "../../styles/colors";
 
 export interface InputFormProps extends InputProps {
     required?: boolean;
@@ -31,7 +31,7 @@ const InputLineForm: React.FC<InputFormProps> = ({
 }) => {
     const [isFieldActive, setIsFieldActive] = useState(false);
 
-    const [message, setMessage] = useState('');
+    const [message, setMessage] = useState("");
 
     const value = values ? values(name) || rest.defaultValue : rest.value;
 
@@ -64,7 +64,7 @@ const InputLineForm: React.FC<InputFormProps> = ({
             <Container
                 isFieldActive={isFieldActive}
                 requiredText={
-                    errors && errors.type === 'required' ? true : false
+                    errors && errors.type === "required" ? true : false
                 }
                 errorMessage={errors}
                 // action={rest.action?.icon ? true : false}
@@ -77,6 +77,7 @@ const InputLineForm: React.FC<InputFormProps> = ({
                 iconPosition={rest.iconPosition}
                 action={rest.action}
                 actionPosition={rest.action?.position}
+                date={rest.type === "date"}
             >
                 {rest.icon && (
                     <div className="icon">
@@ -101,7 +102,7 @@ const InputLineForm: React.FC<InputFormProps> = ({
                     onFocus={handleFocus}
                     onBlur={handleBlur}
                     name={name}
-                    placeholder={isFieldActive ? rest.placeholder : ''}
+                    placeholder={isFieldActive ? rest.placeholder : ""}
                     ref={
                         register
                             ? register({
@@ -113,7 +114,7 @@ const InputLineForm: React.FC<InputFormProps> = ({
                                                     setMessage(validate(value));
                                                     return false;
                                                 } else {
-                                                    setMessage('');
+                                                    setMessage("");
                                                     return true;
                                                 }
                                             }
@@ -121,11 +122,11 @@ const InputLineForm: React.FC<InputFormProps> = ({
                                           ? (value: any) => {
                                                 if (value.length > limit) {
                                                     setMessage(
-                                                        `${limit} caracteres permitidos.`,
+                                                        `${limit} caracteres permitidos.`
                                                     );
                                                     return false;
                                                 } else {
-                                                    setMessage('');
+                                                    setMessage("");
                                                     return true;
                                                 }
                                             }
@@ -133,11 +134,11 @@ const InputLineForm: React.FC<InputFormProps> = ({
                                           ? (value: any) => {
                                                 if (value.length < minimum) {
                                                     setMessage(
-                                                        `${name} deve ter ${minimum} ou mais caracteres.`,
+                                                        `${name} deve ter ${minimum} ou mais caracteres.`
                                                     );
                                                     return false;
                                                 } else {
-                                                    setMessage('');
+                                                    setMessage("");
                                                     return true;
                                                 }
                                             }
@@ -152,7 +153,7 @@ const InputLineForm: React.FC<InputFormProps> = ({
             </Container>
             {errors ? (
                 <LabelError>
-                    {errors.type === 'required' ? 'Obrigatório' : `${message}`}
+                    {errors.type === "required" ? "Obrigatório" : `${message}`}
                 </LabelError>
             ) : null}
         </div>
