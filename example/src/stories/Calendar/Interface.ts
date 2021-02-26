@@ -5,4 +5,5 @@ export interface CalendarProps extends ReactDatePickerProps {
     label?: string;
     labelColor?: string;
     brand?: boolean;
+    otherFormatDate?: string;
 }

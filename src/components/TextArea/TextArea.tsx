@@ -75,10 +75,17 @@ const TextArea: React.FC<TextAreaProps> = ({
             </Container>
             <Footer>
                 <LabelError errorColor={errorColor}>{errorMessage}</LabelError>
-                {lengthInfo && rest.maxLength && (
-                    <LabelLengthInfo>{`${textLenghtInfo()}/${
-                        rest.maxLength
-                    } caracteres`}</LabelLengthInfo>
+                {(lengthInfo || typeof lengthInfo == "number") &&
+                rest.maxLength ? (
+                    <LabelLengthInfo>{`${
+                        typeof lengthInfo == "number"
+                            ? lengthInfo
+                            : typeof rest.value == "string"
+                            ? rest.value.length
+                            : 0
+                    }/${rest.maxLength} caracteres`}</LabelLengthInfo>
+                ) : (
+                    ""
                 )}
             </Footer>
         </div>
