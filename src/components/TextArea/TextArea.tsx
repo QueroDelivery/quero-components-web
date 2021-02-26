@@ -38,6 +38,17 @@ const TextArea: React.FC<TextAreaProps> = ({
     lengthInfo,
     ...rest
 }) => {
+    function textLenghtInfo() {
+        if (typeof lengthInfo == "number") {
+            return lengthInfo;
+        }
+        if (typeof rest.value == "string") {
+            return rest.value.length;
+        }
+
+        return "0";
+    }
+
     return (
         <div style={{ paddingBottom: errorMessage ? 0 : 20 }}>
             {label && (

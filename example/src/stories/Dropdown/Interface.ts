@@ -28,4 +28,5 @@ export interface Props extends DropdownProps {
     textAlign: "center";
     errorMessage: string;
     label: string;
+    line: boolean;
 }
