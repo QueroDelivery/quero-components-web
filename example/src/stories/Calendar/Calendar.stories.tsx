@@ -34,3 +34,11 @@ Default.args = {
     endDate: addDays(new Date(), 5),
     selected: new Date(),
 };
+
+export const OtherFormat = Template.bind({});
+OtherFormat.args = {
+    startDate: new Date(),
+    endDate: addDays(new Date(), 5),
+    selected: new Date(),
+    otherFormatDate: "dd/MM/yyyy hh:mm",
+};

@@ -8,6 +8,7 @@ interface CalendarProps extends ReactDatePickerProps {
     label?: string;
     labelColor?: string;
     brand?: boolean;
+    otherFormatDate?: string;
 }
 
 const Calendar: React.FC<CalendarProps> = ({
@@ -15,6 +16,7 @@ const Calendar: React.FC<CalendarProps> = ({
     labelColor,
     label,
     brand,
+    otherFormatDate,
     ...rest
 }) => {
     const CustomInput = React.forwardRef((props: any, ref: any) => (
@@ -37,13 +39,17 @@ const Calendar: React.FC<CalendarProps> = ({
                     {...rest}
                     locale="pt-BR"
                     customInput={
-                        <CustomInput
-                            onClick={rest.onCalendarOpen}
-                            value={rest.value}
-                            onChange={rest.onChange}
-                        />
+                        otherFormatDate ? undefined : (
+                            <CustomInput
+                                onClick={rest.onCalendarOpen}
+                                value={rest.value}
+                                onChange={rest.onChange}
+                            />
+                        )
                     }
-                    dateFormat="dd/MM/yyyy"
+                    dateFormat={
+                        otherFormatDate ? otherFormatDate : "dd/MM/yyyy"
+                    }
                     readOnly={false}
                     onChangeRaw={(event) =>
                         rest.readOnly ? event.preventDefault() : null
