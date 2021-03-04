@@ -10,6 +10,7 @@ export declare const colors: {
     default30: string;
     gray10: string;
     gray20: string;
+    gray30: string;
     sutil: string;
     white: string;
     black: string;

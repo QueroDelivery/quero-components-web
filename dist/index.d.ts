@@ -17,4 +17,5 @@ import Selection from "./components/Selection/Selection";
 import MoreLess from "./components/MoreLess/MoreLess";
 import Card from "./components/Card/Card";
 import Calendar from "./components/Calendar/Calendar";
-export { ButtonMain, Dialog, InputLine, InputLineForm, Loader, Modal, TextArea, TextAreaForm, Checkbox, Radio, Dropdown, DropdownForm, Accordion, Selection, MoreLess, Card, Calendar, };
+import Table from './components/Table/Table';
+export { ButtonMain, Dialog, InputLine, InputLineForm, Loader, Modal, TextArea, TextAreaForm, Checkbox, Radio, Dropdown, DropdownForm, Accordion, Selection, MoreLess, Card, Calendar, Table };

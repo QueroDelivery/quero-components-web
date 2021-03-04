@@ -18,6 +18,7 @@ import Selection from "./components/Selection/Selection";
 import MoreLess from "./components/MoreLess/MoreLess";
 import Card from "./components/Card/Card";
 import Calendar from "./components/Calendar/Calendar";
+import Table from './components/Table/Table';
 
 export {
     ButtonMain,
@@ -37,4 +38,5 @@ export {
     MoreLess,
     Card,
     Calendar,
+    Table
 };
