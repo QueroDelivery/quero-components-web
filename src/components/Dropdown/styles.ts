@@ -925,12 +925,12 @@ export const Container = styled.div<DropdownProps>`
     .ui.dropdown:not(.button) > .default.text,
     .ui.default.dropdown:not(.button) > .text {
         color: ${(props) =>
-            props.brand ? colors.brandTransparent : colors.default20};
+            props.brand ? colors.brand10 : colors.default20};
     }
     .ui.dropdown:not(.button) > input:focus ~ .default.text,
     .ui.default.dropdown:not(.button) > input:focus ~ .text {
         color: ${(props) =>
-            props.brand ? colors.brandTransparent : colors.default20};
+            props.brand ? colors.brand10 : colors.default20};
     }
 
     /*--------------------
