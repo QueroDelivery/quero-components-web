@@ -7,6 +7,7 @@ export interface ITableComponent extends TableProps {
     messageStyle?: React.CSSProperties;
     hasMore?: () => void;
     pagination?: React.ReactElement;
+    loading?: boolean;
 }
 declare const TableComponent: React.FC<ITableComponent>;
 export default TableComponent;
