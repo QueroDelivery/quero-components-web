@@ -108,6 +108,7 @@ export const Container = styled.div<ContainerProps>`
     .ui.table tfoot {
         -webkit-box-shadow: none;
         box-shadow: none;
+        margin-top: 20px;
     }
     .ui.table tfoot th {
         cursor: auto;
