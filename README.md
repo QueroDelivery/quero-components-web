@@ -7,7 +7,7 @@
 ## Install
 
 ```bash
-npm install --save-dev git+ssh://git@github.com:QueroDelivery/quero-components-web.git
+npm install --save FONTAWESOME_NPM_AUTH_TOKEN=${FONTAWESOME_NPM_AUTH_TOKEN} https://github.com/QueroDelivery/quero-components-web
 ```
 
 ## Usage
