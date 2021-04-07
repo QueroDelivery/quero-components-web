@@ -4,13 +4,13 @@ interface AccordionProps {
     colorSubtitle?: string;
     colorValue?: string;
     open: boolean;
-    secundary?: boolean;
-    width?: number;
+    secondary?: boolean;
+    width?: number | string;
     icon?: boolean;
     fontSizeTitle?: number;
 }
 interface BodyProps {
-    width?: number;
+    width?: number | string;
     open: boolean;
 }
 export declare const Container: import("styled-components").StyledComponent<"div", any, AccordionProps, never>;

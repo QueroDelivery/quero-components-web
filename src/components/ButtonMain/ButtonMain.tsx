@@ -20,7 +20,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     notStrong?: boolean;
     strong?: boolean;
     loading?: boolean;
-    secundary?: boolean;
+    secondary?: boolean;
     notification?: boolean;
     amount?: number;
     backPurple?: boolean;
@@ -54,7 +54,7 @@ const ButtonMain: React.FC<ButtonProps> = ({
     notStrong,
     strong,
     loading,
-    secundary,
+    secondary,
     backPurple,
     children,
     notification,
@@ -110,7 +110,7 @@ const ButtonMain: React.FC<ButtonProps> = ({
         return (
             <Button
                 {...rest}
-                secundary={secundary}
+                secondary={secondary}
                 backPurple={backPurple}
                 height={height}
                 width={width}

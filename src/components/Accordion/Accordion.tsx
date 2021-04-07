@@ -1,10 +1,10 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon,  } from '@fortawesome/react-fontawesome';
 import {
     faAngleUp,
     faAngleDown,
     IconDefinition,
-} from '@fortawesome/pro-light-svg-icons';
+} from '@fortawesome/free-solid-svg-icons';
 
 import { Container, Body } from './styles';
 import { colors } from '../../styles/colors';
@@ -18,9 +18,10 @@ interface AccordionProps {
     colorValue?: string;
     open: boolean;
     onChange: () => void;
-    secundary?: boolean;
-    width?: number;
+    secondary?: boolean;
+    width?: number | string;
     icon?: IconDefinition;
+    customIcon?: React.ReactNode;
     colorIcon?: string;
     fontSizeTitle?: number;
 }
@@ -33,36 +34,40 @@ const Accordion: React.FC<AccordionProps> = ({
     value,
     colorValue,
     children,
-    secundary,
+    secondary,
     open,
     onChange,
     width,
     icon,
+    customIcon,
     colorIcon,
     fontSizeTitle,
 }) => {
+
     return (
         <React.Fragment>
             <Container
                 colorTitle={colorTitle}
                 colorSubtitle={colorSubtitle}
                 colorValue={colorValue}
-                secundary={secundary}
+                secondary={secondary}
                 subtitle={subtitle}
                 open={open}
                 onClick={() => onChange()}
                 width={width}
-                icon={icon ? true : false}
+                icon={icon || customIcon ? true : false}
                 fontSizeTitle={fontSizeTitle}
             >
                 <div className="icon-title">
-                    {icon && (
+                    {customIcon ?
+                        customIcon
+                    : icon ? (
                         <FontAwesomeIcon
                             icon={icon}
                             size="lg"
                             color={colorIcon ? colorIcon : colors.brand10}
                         />
-                    )}
+                    ) : null}
 
                     <div className="title-subtitle">
                         <span className="title">{title}</span>
@@ -73,15 +78,15 @@ const Accordion: React.FC<AccordionProps> = ({
                 </div>
                 <div className="value-icon">
                     <span className="value">{value}</span>
-                    {secundary ? (
+                    {secondary ? (
                         <FontAwesomeIcon
                             icon={open ? faAngleUp : faAngleDown}
-                            size="lg"
+                            style={{fontSize: 20}}
                         />
                     ) : (
                             <FontAwesomeIcon
                                 icon={open ? faAngleUp : faAngleDown}
-                                size="2x"
+                                style={{fontSize: 20}}
                                 color={colors.brand10}
                             />
                         )}

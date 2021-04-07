@@ -1,6 +1,6 @@
 import { IconDefinition } from "@fortawesome/pro-solid-svg-icons";
 interface ButtonProps {
-    secundary?: boolean;
+    secondary?: boolean;
     backPurple?: boolean;
     notification?: boolean;
     height?: number;

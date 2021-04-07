@@ -1,5 +1,5 @@
 import React from 'react';
-import { IconDefinition } from '@fortawesome/pro-light-svg-icons';
+import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
 interface AccordionProps {
     title: string;
     colorTitle?: string;
@@ -9,9 +9,10 @@ interface AccordionProps {
     colorValue?: string;
     open: boolean;
     onChange: () => void;
-    secundary?: boolean;
-    width?: number;
+    secondary?: boolean;
+    width?: number | string;
     icon?: IconDefinition;
+    customIcon?: React.ReactNode;
     colorIcon?: string;
     fontSizeTitle?: number;
 }

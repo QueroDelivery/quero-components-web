@@ -3,7 +3,7 @@ import { colors } from "../../styles/colors";
 import { IconDefinition } from "@fortawesome/pro-solid-svg-icons";
 
 interface ButtonProps {
-    secundary?: boolean;
+    secondary?: boolean;
     backPurple?: boolean;
     notification?: boolean;
     height?: number;
@@ -121,7 +121,7 @@ const textSize = (size: string | number) => {
 export const Button = styled.button<ButtonProps>`
     background-color: ${(props) => {
         if (props.colorBackground) return props.colorBackground;
-        if (props.secundary || props.tertiary) {
+        if (props.secondary || props.tertiary) {
             return colors.white;
         }
 
@@ -145,7 +145,7 @@ export const Button = styled.button<ButtonProps>`
     }};
     cursor: pointer;
     border: ${(props) => {
-        if (props.secundary) {
+        if (props.secondary) {
             return `1px solid ${colors.brand10}`;
         }
 
@@ -172,7 +172,7 @@ export const Button = styled.button<ButtonProps>`
             if (props.hoverBackgroundColor) {
                 return props.hoverBackgroundColor;
             }
-            if (props.secundary) {
+            if (props.secondary) {
                 return colors.brandTransparent;
             }
 
@@ -197,7 +197,7 @@ export const Button = styled.button<ButtonProps>`
                     return props.hoverTextColor;
                 }
 
-                if (props.secundary) {
+                if (props.secondary) {
                     return colors.brand10;
                 }
 

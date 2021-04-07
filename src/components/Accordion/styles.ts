@@ -7,23 +7,33 @@ interface AccordionProps {
     colorSubtitle?: string;
     colorValue?: string;
     open: boolean;
-    secundary?: boolean;
-    width?: number;
+    secondary?: boolean;
+    width?: number | string;
     icon?: boolean;
     fontSizeTitle?: number;
 }
 
 interface BodyProps {
-    width?: number;
+    width?: number | string;
     open: boolean;
 }
 
 export const Container = styled.div<AccordionProps>`
     display: flex;
-    width: ${(props) => (props.width ? `${props.width}%` : "100%")};
+    width: ${(props) => {
+        if (props.width) {
+            if (typeof props.width === "string") {
+                return props.width;
+            } else {
+                return `${props.width}px`;
+            }
+        }
+
+        return '100%'
+    }};
     justify-content: space-between;
     background-color: ${(props) =>
-        props.secundary ? colors.card : colors.white};
+        props.secondary ? colors.card : colors.white};
     border: 1px solid ${colors.card};
     padding: 15px 20px;
     align-items: center;

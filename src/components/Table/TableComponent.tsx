@@ -30,7 +30,7 @@ const TableComponent: React.FC<ITableComponent> = ({children, title, titleStyle,
           </Table>
         </Container>
 
-        {hasMore ? <ButtonMain secundary textFirst='ver a' textEnd='lista completa' onClick={() => hasMore()}/> : null}
+        {hasMore ? <ButtonMain secondary textFirst='ver a' textEnd='lista completa' onClick={() => hasMore()}/> : null}
 
         {pagination ? <div>
             <br />

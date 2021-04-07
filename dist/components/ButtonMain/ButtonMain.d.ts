@@ -7,7 +7,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     notStrong?: boolean;
     strong?: boolean;
     loading?: boolean;
-    secundary?: boolean;
+    secondary?: boolean;
     notification?: boolean;
     amount?: number;
     backPurple?: boolean;
