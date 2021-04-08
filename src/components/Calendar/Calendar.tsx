@@ -4,7 +4,6 @@ import { Container } from "./styles";
 import MaskedInput from "react-input-mask";
 
 interface CalendarProps extends ReactDatePickerProps {
-    write?: boolean;
     label?: string;
     labelColor?: string;
     brand?: boolean;
@@ -12,7 +11,6 @@ interface CalendarProps extends ReactDatePickerProps {
 }
 
 const Calendar: React.FC<CalendarProps> = ({
-    write,
     labelColor,
     label,
     brand,
