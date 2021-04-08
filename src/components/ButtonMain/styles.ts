@@ -1,13 +1,13 @@
 import styled from "styled-components";
 import { colors } from "../../styles/colors";
 import { IconDefinition } from "@fortawesome/pro-solid-svg-icons";
+import { ButtonSizes } from "./ButtonMain";
 
 interface ButtonProps {
     secondary?: boolean;
     backPurple?: boolean;
     notification?: boolean;
-    height?: number;
-    width?: number;
+    width?: number | string;
     icon?: IconDefinition;
     noBorder?: boolean;
     colorText?: string;
@@ -15,15 +15,7 @@ interface ButtonProps {
     hoverBackgroundColor?: string;
     hoverTextColor?: string;
     tertiary?: boolean;
-    size?:
-        | "mini"
-        | "tiny"
-        | "small"
-        | "medium"
-        | "large"
-        | "big"
-        | "huge"
-        | "massive";
+    size?: ButtonSizes;
     rectangular?: boolean;
 }
 
@@ -33,15 +25,7 @@ interface TextFirstProps {
     strong?: boolean;
     colorText?: string;
     tertiary?: boolean;
-    size?:
-        | "mini"
-        | "tiny"
-        | "small"
-        | "medium"
-        | "large"
-        | "big"
-        | "huge"
-        | "massive";
+    size?: ButtonSizes;
 }
 
 interface TextEndProps {
@@ -50,15 +34,7 @@ interface TextEndProps {
     strong?: boolean;
     colorText?: string;
     tertiary?: boolean;
-    size?:
-        | "mini"
-        | "tiny"
-        | "small"
-        | "medium"
-        | "large"
-        | "big"
-        | "huge"
-        | "massive";
+    size?: ButtonSizes;
 }
 
 const Sizes = {
@@ -132,12 +108,17 @@ export const Button = styled.button<ButtonProps>`
         return colors.brand30;
     }};
     height: ${(props) => (props.size ? size(props.size) : "40px")};
-    width: ${(props) =>
-        props.width
-            ? `${props.width}%`
-            : props.icon || props.tertiary
-            ? ""
-            : "100%"};
+    width: ${(props) =>{
+        if (props.width) {
+            if (typeof props.width === "string") {
+                return props.width;
+            } else {
+                return `${props.width}px`;
+            }
+        }
+
+        return '100%'
+    }};
     border-radius: ${(props) => {
         if (props.rectangular) return "10px";
 
@@ -159,7 +140,7 @@ export const Button = styled.button<ButtonProps>`
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: ${(props) => (props.icon || props.tertiary ? "0 15px" : "")};
+    padding: ${(props) => (props.icon ? "0 15px" : "")};
 
     &:disabled {
         opacity: 0.5;

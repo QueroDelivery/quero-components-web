@@ -1,5 +1,8 @@
 import React, { ButtonHTMLAttributes } from "react";
-import { IconDefinition } from "@fortawesome/pro-solid-svg-icons";
+import { IconDefinition } from "@fortawesome/free-solid-svg-icons";
+declare type ButtonTypes = 'icon';
+declare type IconPositions = 'left' | 'right';
+export declare type ButtonSizes = "mini" | "tiny" | "small" | "medium" | "large" | "big" | "huge" | "massive";
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     textFirst?: string;
     textEnd?: string;
@@ -11,17 +14,18 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     notification?: boolean;
     amount?: number;
     backPurple?: boolean;
-    height?: number;
-    width?: number;
+    width?: number | string;
     icon?: IconDefinition;
+    customIcon?: React.ReactNode;
     colorIcon?: string;
+    iconPosition?: IconPositions;
     noBorder?: boolean;
     colorText?: string;
     colorBackground?: string;
     tertiary?: boolean;
-    size?: "mini" | "tiny" | "small" | "medium" | "large" | "big" | "huge" | "massive";
+    size?: ButtonSizes;
     rectangular?: boolean;
-    typeContent?: "icon";
+    typeContent?: ButtonTypes;
     hoverBackgroundColor?: string;
     hoverTextColor?: string;
 }

@@ -68,9 +68,9 @@ export default {
       },
     },
     width: {
-      control: "object",
+      control: "string",
       description:
-        "Tamanho do accordion, em Number sendo definido como px; Ou em string",
+        "Largura do accordion, em Number sendo definido como px; Ou em string",
       table: {
         type: {
           summary: "number | string ",
@@ -91,7 +91,7 @@ export default {
         "Definir ícone no accordion. Podendo usar ícones de qualquer biblioteca",
       table: {
         type: {
-          summary: "React.ReactNode",
+          summary: "ReactNode",
         },
       },
     },

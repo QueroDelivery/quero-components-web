@@ -1,6 +1,6 @@
 import React, { ButtonHTMLAttributes } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBell, IconDefinition } from "@fortawesome/pro-solid-svg-icons";
+import { faBell, IconDefinition } from "@fortawesome/free-solid-svg-icons";
 
 import {
     Button,
@@ -13,6 +13,16 @@ import {
 import Loader from "../Loader/Loader";
 import { colors } from "../../styles/colors";
 
+type ButtonTypes = 'icon'
+type IconPositions = 'left' | 'right'
+export type ButtonSizes = "mini"
+| "tiny"
+| "small"
+| "medium"
+| "large"
+| "big"
+| "huge"
+| "massive"
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     textFirst?: string;
     textEnd?: string;
@@ -24,25 +34,18 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     notification?: boolean;
     amount?: number;
     backPurple?: boolean;
-    height?: number;
-    width?: number;
-    icon?: IconDefinition;
+    width?: number | string;
+    icon?: IconDefinition
+    customIcon?: React.ReactNode;
     colorIcon?: string;
+    iconPosition?: IconPositions;
     noBorder?: boolean;
     colorText?: string;
     colorBackground?: string;
     tertiary?: boolean;
-    size?:
-        | "mini"
-        | "tiny"
-        | "small"
-        | "medium"
-        | "large"
-        | "big"
-        | "huge"
-        | "massive";
+    size?: ButtonSizes;
     rectangular?: boolean;
-    typeContent?: "icon";
+    typeContent?: ButtonTypes;
     hoverBackgroundColor?: string;
     hoverTextColor?: string;
 }
@@ -59,9 +62,10 @@ const ButtonMain: React.FC<ButtonProps> = ({
     children,
     notification,
     amount,
-    height,
     width,
     icon,
+    customIcon,
+    iconPosition = 'right',
     colorIcon,
     noBorder,
     colorText,
@@ -74,7 +78,8 @@ const ButtonMain: React.FC<ButtonProps> = ({
     hoverTextColor,
     ...rest
 }) => {
-    if (notification) {
+
+    function renderButtonNotification(){
         return (
             <Notification {...rest}>
                 {loading ? (
@@ -105,14 +110,43 @@ const ButtonMain: React.FC<ButtonProps> = ({
                     </div>
                 )}
             </Notification>
-        );
-    } else {
+        )
+    }
+
+    function renderButtonTypes(type: ButtonTypes){
+        switch(type){
+            case 'icon':
+                return(
+                    <div>
+                        {(icon || customIcon) && (
+                            <React.Fragment>
+                                {customIcon ?
+                                    customIcon
+                                    :
+                                    <FontAwesomeIcon
+                                        icon={icon as IconDefinition}
+                                        color={
+                                            colorIcon ? colorIcon : colors.brand10
+                                        }
+                                        size={"lg"}
+                                        style={{ marginLeft: typeContent == 'icon' ? 0 : 10 }}
+                                    />
+                                }
+                            </React.Fragment>
+                        )}
+                    </div>
+                )
+                default:
+                    return null
+        }
+    }
+
+    function renderButton(){
         return (
             <Button
                 {...rest}
                 secondary={secondary}
                 backPurple={backPurple}
-                height={height}
                 width={width}
                 icon={icon}
                 noBorder={noBorder}
@@ -128,23 +162,26 @@ const ButtonMain: React.FC<ButtonProps> = ({
                     <Loader size="tiny" />
                 ) : children ? (
                     children
-                ) : typeContent == "icon" ? (
-                    <div>
-                        {icon && (
-                            <React.Fragment>
-                                <FontAwesomeIcon
-                                    icon={icon}
-                                    color={
-                                        colorIcon ? colorIcon : colors.brand10
-                                    }
-                                    size={"lg"}
-                                    style={{ marginLeft: typeContent == 'icon' ? 0 : 10 }}
-                                />
-                            </React.Fragment>
-                        )}
-                    </div>
+                ) : typeContent ? (
+                    renderButtonTypes(typeContent)
                 ) : (
                     <div>
+                        {icon && iconPosition === 'left' && (
+                            <React.Fragment>
+                                {customIcon ?
+                                    customIcon
+                                    :
+                                    <FontAwesomeIcon
+                                        icon={icon}
+                                        color={
+                                            colorIcon ? colorIcon : colors.brand10
+                                        }
+                                        size={"lg"}
+                                        style={{ marginRight: 10 }}
+                                    />
+                                }
+                            </React.Fragment>
+                        )}
                         <TextFirst
                             firstStrong={firstStrong}
                             strong={strong}
@@ -165,22 +202,32 @@ const ButtonMain: React.FC<ButtonProps> = ({
                         >
                             {textEnd}
                         </TextEnd>
-                        {icon && (
+                        {icon && iconPosition === 'right' && (
                             <React.Fragment>
-                                <FontAwesomeIcon
-                                    icon={icon}
-                                    color={
-                                        colorIcon ? colorIcon : colors.brand10
-                                    }
-                                    size={"lg"}
-                                    style={{ marginLeft: 10 }}
-                                />
+                                {customIcon ?
+                                    customIcon
+                                    :
+                                    <FontAwesomeIcon
+                                        icon={icon}
+                                        color={
+                                            colorIcon ? colorIcon : colors.brand10
+                                        }
+                                        size={"lg"}
+                                        style={{ marginLeft: 10 }}
+                                    />
+                                }
                             </React.Fragment>
                         )}
                     </div>
                 )}
             </Button>
-        );
+        )
+    }
+
+    if (notification) {
+        return renderButtonNotification();
+    } else {
+        return renderButton();
     }
 };
 

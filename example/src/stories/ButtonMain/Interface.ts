@@ -12,9 +12,10 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   notification?: boolean;
   amount?: number;
   backPurple?: boolean;
-  height?: number;
-  width?: number;
+  width?: number | string;
   icon?: IconDefinition;
+  customIcon?: React.ReactNode;
+  iconPosition?: "left" | "right";
   colorIcon?: string;
   noBorder?: boolean;
   colorText?: string;

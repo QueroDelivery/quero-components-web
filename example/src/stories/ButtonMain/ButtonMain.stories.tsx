@@ -6,13 +6,131 @@ import { ButtonMain } from "quero-components-web";
 import { ButtonProps } from "./Interface";
 import "quero-components-web/dist/index.css";
 import { faPhone, faTimes } from "@fortawesome/pro-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default {
-  title: "Example/ButtonMain",
+  title: "Components/ButtonMain",
   component: ButtonMain,
   argTypes: {
-    onClick: {
-      action: "clicked",
+    textFirst: {
+      control: "text",
+      description: "Primeira palavra do botão",
+      table: {
+        type: {
+          summary: "string",
+        },
+      },
+    },
+    textEnd: {
+      control: "text",
+      description: "Ultima palavra do botão",
+      table: {
+        type: {
+          summary: "string",
+        },
+      },
+    },
+    firstStrong: {
+      control: "boolean",
+      description: "Deixar a primeira palavra como negrito",
+      table: {
+        type: {
+          summary: "boolean",
+        },
+      },
+    },
+    notStrong: {
+      control: "boolean",
+      description: "Deixar nenhuma palavra em negrito",
+      table: {
+        type: {
+          summary: "boolean",
+        },
+      },
+    },
+    strong: {
+      control: "boolean",
+      description: "Deixar todas as palavras em negrito",
+      table: {
+        type: {
+          summary: "boolean",
+        },
+      },
+    },
+    loading: {
+      control: "boolean",
+      description: "Informar que o botão está em carregamento",
+      table: {
+        type: {
+          summary: "boolean",
+        },
+      },
+    },
+    secondary: {
+      control: "boolean",
+      description: "Altera o botão para o estilo secundário",
+      table: {
+        type: {
+          summary: "boolean",
+        },
+      },
+    },
+    tertiary: {
+      control: "boolean",
+      description: "Altera o botão para o estilo terciário",
+      table: {
+        type: {
+          summary: "boolean",
+        },
+      },
+    },
+    rectangular: {
+      control: "boolean",
+      description: "Altera o botão para o estilo com bordas retangulares",
+      table: {
+        type: {
+          summary: "boolean",
+        },
+      },
+    },
+    notification: {
+      control: "boolean",
+      description:
+        "Altera o botão para o estilo de notificações. Precisando passar a propriedade amount com a quantidade",
+      table: {
+        type: {
+          summary: "boolean",
+        },
+      },
+    },
+    amount: {
+      control: "number",
+      description:
+        "Quantidade de mensagens quando o botão ta com estilo de notificações",
+      table: {
+        type: {
+          summary: "number",
+        },
+      },
+    },
+    noBorder: {
+      control: "boolean",
+      description: "Altera o botão para o estilo sem bordas",
+      table: {
+        type: {
+          summary: "boolean",
+        },
+      },
+    },
+    backPurple: {
+      control: "boolean",
+      description:
+        "Alterar a cor da hover quando o fundo do botão for da cor roxa",
+      table: {
+        type: {
+          summary: "boolean",
+        },
+      },
     },
     size: {
       control: {
@@ -28,26 +146,109 @@ export default {
           "massive",
         ],
       },
+      description: "Alterar o tamanho do botão",
+      table: {
+        type: {
+          summary:
+            "mini | tiny | small | medium | large | big | huge | massive",
+        },
+      },
     },
-    colorText: {
-      control: "color",
+    icon: {
+      description:
+        "Inserir ícone no botão. Ícone importado da biblioteca Fortawesome",
+      table: {
+        type: {
+          summary: "IconDefinition",
+        },
+      },
     },
-    colorBackground: {
-      control: "color",
+    customIcon: {
+      description:
+        "Inserir ícone no botão. Podendo usar ícones de qualquer biblioteca",
+      table: {
+        type: {
+          summary: "ReactNode",
+        },
+      },
     },
-    colorIcon: {
-      control: "color",
+    iconPosition: {
+      control: {
+        type: "inline-radio",
+        options: ["left", "right"],
+      },
+      description: "Definir a posição do ícone",
+      table: {
+        type: {
+          summary: "left | right",
+        },
+      },
     },
-    hoverBackgroundColor: {
-      control: "color",
-    },
-    hoverTextColor: {
-      control: "color",
+    width: {
+      control: "text",
+      description:
+        "Largura do botão, em Number sendo definido como px; Ou em string",
+      table: {
+        type: {
+          summary: "number | string ",
+        },
+      },
     },
     typeContent: {
       control: {
         type: "inline-radio",
-        options: ["icon", "notification", "button"],
+        options: ["icon"],
+      },
+      description: "Tipo do conteúdo do botão",
+      table: {
+        type: {
+          summary: "icon",
+        },
+      },
+    },
+    colorText: {
+      control: "color",
+      description: "Cor do texto",
+      table: {
+        type: {
+          summary: "string",
+        },
+      },
+    },
+    colorBackground: {
+      control: "color",
+      description: "Cor do background",
+      table: {
+        type: {
+          summary: "string",
+        },
+      },
+    },
+    colorIcon: {
+      control: "color",
+      description: "Cor do ícone",
+      table: {
+        type: {
+          summary: "string",
+        },
+      },
+    },
+    hoverBackgroundColor: {
+      control: "color",
+      description: "Cor do background hover",
+      table: {
+        type: {
+          summary: "string",
+        },
+      },
+    },
+    hoverTextColor: {
+      control: "color",
+      description: "Cor do texto hover",
+      table: {
+        type: {
+          summary: "string",
+        },
       },
     },
   },
@@ -168,11 +369,26 @@ Icon.args = {
   icon: faPhone,
 };
 
+export const IconPosition = Template.bind({});
+IconPosition.args = {
+  textFirst: "Clique",
+  textEnd: "aqui",
+  icon: faPhone,
+  iconPosition: "left",
+};
+
+export const CustomIcon = Template.bind({});
+CustomIcon.args = {
+  textFirst: "Clique",
+  textEnd: "aqui",
+  customIcon: <FontAwesomeIcon icon={faPhone} />,
+};
+
 export const Width = Template.bind({});
 Width.args = {
   textFirst: "Clique",
   textEnd: "aqui",
-  width: 50,
+  width: "50%",
 };
 
 export const Notification = Template.bind({});
@@ -199,5 +415,5 @@ TypeContent.args = {
   colorIcon: "black",
   icon: faTimes,
   rectangular: true,
-  width: 10,
+  width: "10%",
 };
