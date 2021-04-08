@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import Loader from "../Loader/Loader";
 import { Background, Modal, Header, Body, Actions, Icon } from "./styles";
-import { faTimes, faAngleLeft } from "@fortawesome/pro-light-svg-icons";
+import { faTimes, faAngleLeft } from "@fortawesome/free-solid-svg-icons";
 import { colors } from "../../styles/colors";
 
 export interface ModalProps {
@@ -91,7 +91,7 @@ const ModalComponent: React.FC<ModalProps> = ({
                         >
                             <FontAwesomeIcon
                                 icon={faTimes}
-                                size="lg"
+                                style={{fontSize: 20}}
                                 color={colors.brand10}
                             />
                         </Icon>

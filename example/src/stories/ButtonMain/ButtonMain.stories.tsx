@@ -5,7 +5,7 @@ import { action } from "@storybook/addon-actions";
 import { ButtonMain } from "quero-components-web";
 import { ButtonProps } from "./Interface";
 import "quero-components-web/dist/index.css";
-import { faPhone, faTimes } from "@fortawesome/pro-solid-svg-icons";
+import { faPhone, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default {

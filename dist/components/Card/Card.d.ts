@@ -1,5 +1,5 @@
 import React, { LinkHTMLAttributes } from "react";
-import { IconDefinition } from "@fortawesome/pro-solid-svg-icons";
+import { IconDefinition } from "@fortawesome/free-solid-svg-icons";
 interface CardProps extends Pick<LinkHTMLAttributes<HTMLLinkElement>, "href"> {
     type: "shadow" | "button" | "min-shadow";
     width?: number | string;

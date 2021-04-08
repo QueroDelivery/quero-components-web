@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import { Container } from "./styles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMinus, faPlus } from "@fortawesome/pro-solid-svg-icons";
+import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
 
 interface MoreLessProps {
     size?: "small" | "medium" | "big";

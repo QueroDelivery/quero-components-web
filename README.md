@@ -1,13 +1,13 @@
 # quero-components-web
 
-> Made with create-react-library
+> Biblioteca de components wev do Quero Delivery
 
 [![NPM](https://img.shields.io/npm/v/quero-components-web.svg)](https://www.npmjs.com/package/quero-components-web) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## Install
 
 ```bash
-npm install --save FONTAWESOME_NPM_AUTH_TOKEN=${FONTAWESOME_NPM_AUTH_TOKEN} https://github.com/QueroDelivery/quero-components-web
+npm install --save https://github.com/QueroDelivery/quero-components-web
 ```
 
 ## Usage
@@ -30,11 +30,11 @@ class Example extends Component {
 
 ## Dev
 ```bash
-npm start # runs rollup with watch flag
+npm run start # runs rollup with watch flag
 ```
 ```bash
 cd example
-npm storybook # runs create-react-app dev server
+npm run storybook # runs create-react-app dev server
 ```
 
 ## License

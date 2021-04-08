@@ -1,5 +1,5 @@
 import React from "react";
-import { IconDefinition } from "@fortawesome/pro-solid-svg-icons";
+import { IconDefinition } from "@fortawesome/free-solid-svg-icons";
 
 export interface CardProps {
     type: "shadow" | "button" | "min-shadow";

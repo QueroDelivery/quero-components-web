@@ -1,7 +1,7 @@
 {
     "name": "quero-components-web",
     "version": "1.0.0",
-    "description": "Made with create-react-library",
+    "description": "Biblioteca de componentes web do Quero Delivery",
     "author": "QueroDelivery",
     "license": "MIT",
     "main": "dist/index.js",
@@ -16,45 +16,32 @@
     "scripts": {
         "build": "microbundle-crl --format modern,cjs",
         "start": "microbundle-crl watch --format modern,cjs",
-        "test": "run-s test:unit test:lint test:build",
-        "test:build": "run-s build",
-        "test:lint": "eslint .",
-        "test:unit": "cross-env CI=1 react-scripts test --env=jsdom",
-        "test:watch": "react-scripts test --env=jsdom",
+        "reinstall": "rm -rf node_modules && npm i",
         "deploy": "rm -rf dist && npm run build && git add . && git commit -m 'deploy' && git push origin master"
     },
     "peerDependencies": {
         "react": ">16.0.0",
-        "styled-components": ">5.1.0",
         "react-dom": ">16.0.0",
-        "react-datepicker": ">3.2.0"
+        "react-datepicker": ">3.2.0",
+        "date-fns": ">2.0.0"
     },
     "devDependencies": {
-        "@fortawesome/fontawesome-pro": "^5.15.1",
-        "@fortawesome/fontawesome-svg-core": "^1.2.32",
-        "@fortawesome/free-brands-svg-icons": "^5.15.1",
-        "@fortawesome/free-regular-svg-icons": "^5.15.1",
-        "@fortawesome/free-solid-svg-icons": "^5.15.1",
-        "@fortawesome/pro-duotone-svg-icons": "^5.15.1",
-        "@fortawesome/pro-light-svg-icons": "^5.15.1",
-        "@fortawesome/pro-regular-svg-icons": "^5.15.1",
-        "@fortawesome/pro-solid-svg-icons": "^5.15.1",
-        "@fortawesome/react-fontawesome": "^0.1.13",
-        "@testing-library/jest-dom": "^4.2.4",
-        "@testing-library/react": "^9.5.0",
-        "@testing-library/user-event": "^7.2.1",
-        "@types/jest": "^25.1.4",
+        "@fortawesome/fontawesome-svg-core": "^1.2.35",
+        "@fortawesome/free-brands-svg-icons": "^5.15.3",
+        "@fortawesome/free-regular-svg-icons": "^5.15.3",
+        "@fortawesome/free-solid-svg-icons": "^5.15.3",
+        "@fortawesome/react-fontawesome": "^0.1.14",
         "@types/node": "^12.12.38",
         "@types/react": "^16.9.27",
         "@types/react-datepicker": "^3.1.2",
         "@types/react-dom": "^16.9.7",
         "@types/react-input-mask": "^3.0.0",
-        "@types/styled-components": "^5.1.4",
+        "@types/styled-components": "^5.1.9",
         "@typescript-eslint/eslint-plugin": "^2.26.0",
         "@typescript-eslint/parser": "^2.26.0",
         "babel-eslint": "^10.0.3",
         "cross-env": "^7.0.2",
-        "date-fns": "^2.16.1",
+        "date-fns": "^2.20.0",
         "eslint": "^6.8.0",
         "eslint-config-prettier": "^6.7.0",
         "eslint-config-standard": "^14.1.0",
@@ -77,14 +64,14 @@
         "react-is": "^17.0.1",
         "react-number-format": "^4.4.1",
         "react-scripts": "^3.4.1",
-        "styled-components": "^5.1.0",
-        "typescript": "^3.7.5"
+        "typescript": "^4.2.4"
     },
     "files": [
         "dist"
     ],
     "dependencies": {
         "semantic-ui-css": "^2.4.1",
-        "semantic-ui-react": "^2.0.1"
+        "semantic-ui-react": "^2.0.3",
+        "styled-components": "^5.2.3"
     }
 }

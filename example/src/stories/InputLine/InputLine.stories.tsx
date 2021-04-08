@@ -5,8 +5,8 @@ import { action } from "@storybook/addon-actions";
 import { InputLine } from "quero-components-web";
 import { InputProps } from "./Interface";
 import "quero-components-web/dist/index.css";
-import { faUser } from "@fortawesome/pro-solid-svg-icons";
-import { faTimes } from "@fortawesome/pro-light-svg-icons";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
+import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
 export default {
     title: "Example/InputLine",

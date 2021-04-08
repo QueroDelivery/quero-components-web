@@ -5,7 +5,7 @@ import { action } from "@storybook/addon-actions";
 import { Card } from "quero-components-web";
 import { CardProps } from "./Interface";
 import "quero-components-web/dist/index.css";
-import { faPhone } from "@fortawesome/pro-solid-svg-icons";
+import { faPhone } from "@fortawesome/free-solid-svg-icons";
 
 export default {
     title: "Example/Card",
