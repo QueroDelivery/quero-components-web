@@ -23,7 +23,7 @@ export default {
     },
     open: {
       control: "boolean",
-      description: "Informa que so accordion está aberto ou fechado",
+      description: "Informa se accordion está aberto ou fechado",
       table: {
         type: {
           summary: "required | string",
