@@ -7,7 +7,7 @@ import { TextAreaFormProps } from "./Interface";
 import "quero-components-web/dist/index.css";
 
 export default {
-    title: "Example/TextAreaForm",
+    title: "Components/TextAreaForm",
     component: TextAreaForm,
     argTypes: {
       label: {

@@ -7,7 +7,7 @@ import { TextAreaProps } from "./Interface";
 import "quero-components-web/dist/index.css";
 
 export default {
-    title: "Example/TextArea", 
+    title: "Components/TextArea", 
     subtitle: "TextArea customizado",
     component: TextArea,
     argTypes: {
@@ -48,7 +48,7 @@ export default {
         },
       },
       height: {
-        control: "number", 
+        control: "text", 
         description: "Altura do TextArea",
         table: {
           type: {
@@ -93,7 +93,7 @@ export default {
         },
       },
       containerStyle: {
-        control: "string",
+        control: "object",
         description: "Estilização do container do TextArea",
         table: {
           type: {
@@ -102,7 +102,7 @@ export default {
         },
       },
       labelStyle: { 
-        control: "string",
+        control: "object",
         description: "Estilização do titulo",
         table: {
           type: {
