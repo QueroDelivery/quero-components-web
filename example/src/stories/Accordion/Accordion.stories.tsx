@@ -70,8 +70,12 @@ export default {
     width: {
       control: "string",
       description:
-        "Largura do accordion, em Number sendo definido como px; Ou em string",
+        "Largura do accordion",
       table: {
+        defaultValue: {
+          summary: "Opções",
+          detail: "String | Number (definido como px)",
+        },
         type: {
           summary: "number | string ",
         },
@@ -79,8 +83,11 @@ export default {
     },
     icon: {
       description:
-        "Definir ícone no accordion. Ícone importado da biblioteca Fortawesome",
+        "Definir ícone no accordion",
       table: {
+        defaultValue: {
+          summary: "Ícone importado da biblioteca Fortawesome",
+        },
         type: {
           summary: "IconDefinition",
         },
@@ -88,8 +95,11 @@ export default {
     },
     customIcon: {
       description:
-        "Definir ícone no accordion. Podendo usar ícones de qualquer biblioteca",
+        "Estilização do ícone no accordion",
       table: {
+        defaultValue: {
+          summary: "Podendo usar ícones de qualquer biblioteca",
+        },
         type: {
           summary: "ReactNode",
         },
@@ -97,8 +107,11 @@ export default {
     },
     fontSizeTitle: {
       control: "number",
-      description: "Tamanho do titulo, em Number sendo definido como px;",
+      description: "Tamanho do titulo",
       table: {
+        defaultValue: {
+          summary: "Em Number sendo definido como px",
+        },
         type: {
           summary: "number",
         },

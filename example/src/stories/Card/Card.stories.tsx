@@ -37,8 +37,9 @@ export default {
         },
       },
       icon: {
-        control: "object",
+        control: "object", 
         description: "Icone do Card",
+        defaultValue: faPhone,
         table: {
           type: {
             summary: "IconDefinition",
@@ -73,6 +74,9 @@ export default {
         control: "text", 
         description: "largura do Card",
         table: {
+          defaultValue: {
+            summary: 'O padrão é de 100%',
+          },
           type: {
             summary: "number | string", 
           },

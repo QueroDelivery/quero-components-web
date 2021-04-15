@@ -51,8 +51,12 @@ export default {
         control: "text", 
         description: "Altura do TextArea",
         table: {
+          defaultValue: {
+            summary: "Opções",
+            detail: "String | Number (definido como px)",
+          },
           type: {
-            summary: "number | string", //avisar que quando usar o number o px ja vem integrado
+            summary: "number | string",
           },
         },
       },

@@ -96,8 +96,11 @@ export default {
     notification: {
       control: "boolean",
       description:
-        "Altera o botão para o estilo de notificações. Precisando passar a propriedade amount com a quantidade",
+        "Altera o botão para o estilo de notificações",
       table: {
+        defaultValue: {
+          summary: "Precisa passar a propriedade amount com a quantidade",
+        },
         type: {
           summary: "boolean",
         },
@@ -156,8 +159,11 @@ export default {
     },
     icon: {
       description:
-        "Inserir ícone no botão. Ícone importado da biblioteca Fortawesome",
+        "Inserir ícone no botão",
       table: {
+        defaultValue: {
+          summary: "Ícone importado da biblioteca Fortawesome",
+        },
         type: {
           summary: "IconDefinition",
         },
@@ -165,8 +171,11 @@ export default {
     },
     customIcon: {
       description:
-        "Inserir ícone no botão. Podendo usar ícones de qualquer biblioteca",
+        "Inserir ícone no botão",
       table: {
+        defaultValue: {
+          summary: "Podendo usar ícones de qualquer biblioteca",
+        },
         type: {
           summary: "ReactNode",
         },
@@ -187,8 +196,12 @@ export default {
     width: {
       control: "text",
       description:
-        "Largura do botão, em Number sendo definido como px; Ou em string",
+        "Largura do botão",
       table: {
+        defaultValue: {
+          summary: "Opções",
+          detail: "String | Number (definido como px)",
+        },
         type: {
           summary: "number | string ",
         },
