@@ -7,27 +7,55 @@ import { InputProps } from "./Interface";
 import "quero-components-web/dist/index.css";
 
 export default {
-    title: "Example/Checkbox",
+    title: "Components/Checkbox",
     component: Checkbox,
     argTypes: {
-        onChange: {
-            action: "clicked",
+      label: {
+        control: "text",
+        description: "Titulo do Checkbox",
+        table: {
+          type: {
+            summary: "string",
+          },
         },
-        sizeBox: {
-            control: {
-                type: "inline-radio",
-                options: [
-                    "mini",
-                    "tiny",
-                    "small",
-                    "medium",
-                    "large",
-                    "big",
-                    "huge",
-                    "massive",
-                ],
-            },
+      },
+    sizeBox: {
+      control: {
+          type: "inline-radio",
+          options: [
+              "mini",
+              "tiny",
+              "small",
+              "medium",
+              "large",
+              "big",
+              "huge",
+              "massive",
+          ],
+      },
+      description: "Tamanho do CheckBox",
+      type: {
+        summary: "string",
+      },
+    },
+    onChange: {
+      action: "clicked",
+      description: "Função para capturar evento de clique",
+        table: {
+        type: {
+          summary: "function",
         },
+      },
+    },
+    labelStyle: { 
+      control: "object",
+      description: "Estilização do Checkbox",
+      table: {
+        type: {
+          summary: "React.CSSProperties",
+        },
+      },
+    },
     },
 } as Meta;
 

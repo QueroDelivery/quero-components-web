@@ -11,7 +11,7 @@ import br from "date-fns/locale/pt-BR";
 registerLocale("pt-BR", br);
 
 export default {
-  title: "Example/Calendar",
+  title: "Components/Calendar",
   component: Calendar,
   argTypes: {
     startDate: {

@@ -1,12 +1,12 @@
 import { TextAreaProps } from "../TextArea/Interface";
 
 export interface TextAreaFormProps extends TextAreaProps {
-    required?: boolean;
     name: string;
+    lengthInfo?: boolean;
+    required?: boolean;
+    validate?: any;
     errors: any;
     register: any;
-    validate?: any;
-    lengthInfo?: boolean;
-    limit?: number;
     minimum?: number;
+    limit?: number;
 }

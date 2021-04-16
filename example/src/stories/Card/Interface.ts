@@ -3,8 +3,7 @@ import { IconDefinition } from "@fortawesome/free-solid-svg-icons";
 
 export interface CardProps {
     type: "shadow" | "button" | "min-shadow";
-    width?: number | string;
-    style?: React.CSSProperties;
+    text?: string;
     icon?: IconDefinition;
     sizeIcon?:
         | "1x"
@@ -20,9 +19,10 @@ export interface CardProps {
         | "lg"
         | "sm"
         | "xs";
-    colorIcon?: string;
-    text?: string;
-    colorText?: string;
+    width?: number | string;
     onClick?(): void;
     loading?: boolean;
+    colorText?: string;
+    colorIcon?: string;
+    style?: React.CSSProperties;
 }

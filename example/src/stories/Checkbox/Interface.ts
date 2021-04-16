@@ -3,7 +3,6 @@ import { InputHTMLAttributes } from "react";
 export interface InputProps
     extends Omit<InputHTMLAttributes<HTMLInputElement>, 'type'> {
     label?: string;
-    labelStyle?: React.CSSProperties;
     sizeBox?:
         | 'mini'
         | 'tiny'
@@ -14,4 +13,5 @@ export interface InputProps
         | 'huge'
         | 'massive';
     onChange?: () => void;
+    labelStyle?: React.CSSProperties;
 }
