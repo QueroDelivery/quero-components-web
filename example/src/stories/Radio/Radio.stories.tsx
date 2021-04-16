@@ -7,27 +7,65 @@ import { InputProps } from "./Interface";
 import "quero-components-web/dist/index.css";
 
 export default {
-    title: "Example/Radio",
+    title: "Components/Radio",
     component: Radio,
-    argTypes: {
-        onChange: {
-            action: "clicked",
+      argTypes: {
+        label: {
+        control: "text",
+        defaultValue: "Titulo do Radio",
+        description: "Titulo do Radio",
+        table: {
+          type: {
+            summary: "string",
+          },
         },
-        sizeBox: {
-            control: {
-                type: "inline-radio",
-                options: [
-                    "mini",
-                    "tiny",
-                    "small",
-                    "medium",
-                    "large",
-                    "big",
-                    "huge",
-                    "massive",
-                ],
-            },
+      },
+      sizeBox: {
+        control: {
+            type: "inline-radio",
+            options: [
+                "mini",
+                "tiny",
+                "small",
+                "medium",
+                "large",
+                "big",
+                "huge",
+                "massive",
+            ],
         },
+        description: "Tamanho do Radio",
+        type: {
+        summary: "mini | tiny | small | medium | large | big | huge | massive",
+      },
+      },
+      onChange: {
+          action: "clicked",
+          description: "Função para capturar evento de clique",
+          table: {
+          type: {
+            summary: "function",
+          },
+        },
+      },
+      checked: { 
+        control: "boolean",
+        description: "Seleção do Radio",
+        table: {
+          type: {
+            summary: "bollean",
+          },
+        },
+      },
+      labelStyle: { 
+        control: "object",
+        description: "Estilização do Checkbox",
+        table: {
+          type: {
+            summary: "React.CSSProperties",
+          },
+        },
+      },
     },
 } as Meta;
 
