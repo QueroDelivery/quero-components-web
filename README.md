@@ -29,14 +29,8 @@
   </a>
 </p>
 
-<p align="center">
-  <a href="#-instalação">Instalação</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-como-usar">Como Usar</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-documentação">Documentação</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-como-contribuir-para-o-projeto">Contribuir</a>&nbsp;&nbsp;&nbsp;
-</p>
 
-## Instalação
+## 👨‍💻 Instalação
 
 ```bash
 # Utilizando npm
@@ -47,7 +41,7 @@ yarn add https://github.com/QueroDelivery/quero-components-web
 ```
 
 
-## Como usar
+## 🏃 Como usar
 
 ```tsx
 import React, { Component } from "react";
@@ -63,7 +57,7 @@ function Example() {
 }
 ```
 
-## Documentação
+## 📝 Documentação
 
 Para verificar a documentação
 
@@ -78,7 +72,7 @@ npm run storybook ou yarn storybook
 ## A documentação será aberta na porta:6006 - acesse http://localhost:6006
 ```
 
-## Como contribuir para o projeto
+## 🤔 Como contribuir para o projeto
 
 - Faça um **fork** do projeto;
 - Salve as alterações e crie uma mensagem de commit contando o que você fez.
