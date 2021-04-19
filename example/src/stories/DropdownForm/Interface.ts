@@ -5,9 +5,9 @@ export interface DropdownFormProps extends Omit<Props, "onChange" | "value"> {
     name: string;
     errors: any;
     register: any;
-    validate?: any;
+    validate?: () => void;
     setValue: any;
     clearError: any;
     value?: any;
     line?: boolean;
-}
+} 
