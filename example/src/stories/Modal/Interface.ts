@@ -1,12 +1,12 @@
 export interface ModalProps {
-    open: boolean;
-    title?: string;
-    actions?: React.ReactNode;
-    width?: number | string;
-    onClose: Function;
-    closeOnDimerClick?: boolean;
-    loading?: boolean;
-    onBack?: Function;
-    size?: "mini" | "tiny" | "small" | "large" | "fullscreen";
+    title?: string; 
+    actions?: React.ReactNode; 
+    loading?: boolean; 
+    open: boolean; 
     closeIcon?: boolean;
+    closeOnDimerClick?: boolean; 
+    onClose: Function;
+    onBack?: Function;
+    size?: "mini" | "tiny" | "small" | "large" | "fullscreen"; 
+    width?: number | string; 
 }
