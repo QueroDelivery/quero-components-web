@@ -10,8 +10,7 @@ export default {
     title: "Components/TextAreaForm",
     parameters: {
       component: TextAreaForm,
-      componentSubtitle: "É necessário ultilizar o React Hook Form. (https://react-hook-form.com/)", 
-      src: "https://react-hook-form.com/"
+      componentSubtitle: "É necessário utilizar o React Hook Form. (https://react-hook-form.com/)", 
     },
     argTypes: {
       label: {
