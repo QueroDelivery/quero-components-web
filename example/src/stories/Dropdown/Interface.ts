@@ -7,11 +7,11 @@ interface OptionsProps {
 }
 
 export interface Props extends DropdownProps {
+    label: string;   
     options: OptionsProps[];
+    errorMessage: string; 
     brand: boolean;
     textAlign: "center";
-    errorMessage: string;
-    label: string;
-    line: boolean;
+    line: boolean; 
     colorLabel?: string;
 }
