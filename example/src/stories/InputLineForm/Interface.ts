@@ -5,9 +5,8 @@ export interface InputFormProps extends InputProps {
     name: string;
     errors: any;
     register: any;
-    validate?: any;
+    validate?: () => void;
     values: any;
-
     limit?: number;
     minimum?: number;
 }

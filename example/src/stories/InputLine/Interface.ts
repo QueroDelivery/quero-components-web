@@ -1,5 +1,5 @@
 import { IconDefinition } from "@fortawesome/free-solid-svg-icons";
-import { InputHTMLAttributes } from "react";
+import { InputHTMLAttributes, RefObject } from "react";
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     label?: string;
@@ -8,7 +8,7 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     labelStyle?: React.CSSProperties;
     width?: string;
     textColor?: string;
-    inputRef?: any;
+    inputRef?: RefObject<HTMLInputElement>;
     icon?: IconDefinition;
     iconPosition?: "left" | "right";
     iconColor?: string;

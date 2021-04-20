@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import React, { useState, InputHTMLAttributes, useEffect } from "react";
+import React, { useState, InputHTMLAttributes, useEffect, RefObject } from "react";
 import { IconDefinition } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -13,7 +13,7 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     labelStyle?: React.CSSProperties;
     width?: string;
     textColor?: string;
-    inputRef?: any;
+    inputRef?: RefObject<HTMLInputElement>;
     icon?: IconDefinition;
     iconPosition?: "left" | "right";
     iconColor?: string;

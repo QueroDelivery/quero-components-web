@@ -6,9 +6,18 @@ import { LoaderProps } from "./Interface";
 import "quero-components-web/dist/index.css";
 
 export default {
-    title: "Example/Loader",
+    title: "Components/Loader",
     component: Loader,
     argTypes: {
+        className: { 
+          control: "text",
+          description: "Nome da classe para do Loader",
+          table: {
+            type: {
+              summary: "string",
+            },
+          },
+        }, 
         size: {
             control: {
                 type: "inline-radio",
@@ -23,22 +32,47 @@ export default {
                     "massive",
                 ],
             },
+            description: "Tamanhos do Loader",
+            table: {
+            type: {
+              summary: "mini | tiny | small | medium | large | big | huge | massive",
+            },
+          },
         },
         position: {
             control: {
                 type: "inline-radio",
                 options: [
-                    'left',
-                    'center',
-                    'right'
+                    "left",
+                    "center",
+                    "right"
                 ],
             },
+            description: "Posições do Loader",
+            table: {
+            type: {
+              summary: "left | center | right",
+            },
+          },
         },
         color: {
-            control: {
-                type: "color",
+          control: "color",
+          description: "Cor do Loader",
+          table: {
+            type: {
+              summary: "string",
             },
+          },
         },
+        style: { 
+          control: "object",
+          description: "Estilização do Loader",
+          table: {
+            type: {
+              summary: "React.CSSProperties",
+            },
+          },
+        }, 
     },
 } as Meta;
 

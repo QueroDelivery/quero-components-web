@@ -7,8 +7,147 @@ import { Props } from "./Interface";
 import "quero-components-web/dist/index.css";
 
 export default {
-    title: "Example/Dropdown",
-    component: Dropdown,
+    title: "Components/Dropdown",
+    parameters: {
+      component: Dropdown,
+      componentSubtitle: "É necessário utilizar a lib Semantic UI React. (https://semantic-ui.com/)", 
+    },
+    argTypes: {
+      label: {
+        control: "text",
+        description: "Título do Dropdown",
+        defaultValue: "Título do Dropdown",
+        table: {
+          type: {
+            summary: "string",
+          },
+        },
+      },
+      placeholder: {
+        control: "text",
+        description: "Texto do Dropdown",
+        table: {
+          type: {
+            summary: "string",
+          },
+        },
+      },
+      options: {
+        control: "array", 
+        description: "Opções do Dropdown",
+        table: {
+          defaultValue: {
+            summary: "Opções",
+            detail: "Key | Chave | Value ",
+          },
+          type: {
+            summary: "OptionsProp[]",
+          },
+        },
+      },
+      errorMessage: {
+        control: "text",
+        description: "Mensagem de erro",
+        table: {
+          type: {
+            summary: "string",
+          },
+        },
+      },
+      search: {
+        control: "boolean", 
+        description: "Permite que pesquise dentro do Dropdown",
+        table: {
+          type: {
+            summary: "boolean",
+          },
+        },
+      },
+      clearable: {
+        control: "boolean", 
+        description: "Remove a seleção dentro do Dropdown",
+        table: {
+          type: {
+            summary: "boolean",
+          },
+        },
+      },
+      disabled: {
+        control: "boolean", 
+        description: "Deixa o Dropdown suspenso/desabilitado",
+        table: {
+          type: {
+            summary: "boolean",
+          },
+        },
+      },
+      loading: {
+        control: "boolean",
+        description: "Recurso visual de carregamento",
+        table: {
+          type: {
+            summary: "boolean",
+          },
+        },
+      },
+      multiple: {
+        control: "boolean",
+        description: "Permite varias seleções dentro do Dropdown",
+        table: {
+          type: {
+            summary: "boolean",
+          },
+        },
+      },
+      brand: {
+        control: "boolean",
+        description: "O tema da marca no Dropdown",
+        table: {
+          defaultValue: {
+            summary: "Tem como padrão a cor tema da QueroDelivery"
+          },
+          type: {
+            summary: "boolean",
+          },
+        },
+      },
+      onChange: {
+        action: "changed",
+        description: "Função para manipular o Dropdown",
+        table: {
+        type: {
+          summary: "function",
+        },
+      },
+      },
+      textAlign: {
+        control: "string",
+        description: "Alinhamento do texto",
+        table: {
+          type: {
+            summary: "center",
+          },
+        },
+      },
+      line: {
+        control: "boolean",
+        description: "Estilo do Dropdown em linha",
+        table: {
+          type: {
+            summary: "boolean",
+          },
+        },
+      },
+      colorLabel: {
+        control: "color",
+        description: "Cor do título do Dropdown",
+        table: {
+          type: {
+            summary: "string",
+          },
+        },
+      },
+      }
 } as Meta;
 
 const Template: Story<Props> = (args) => <Dropdown {...args} />;
@@ -33,11 +172,20 @@ Default.args = {
     },
 };
 
-export const Brand = Template.bind({});
-Brand.args = {
+export const Label = Template.bind({});
+Label.args = {
     options: options,
     placeholder: "Selecione",
     brand: true,
+    label: "Teste",
+};
+
+export const Erro = Template.bind({});
+Erro.args = {
+    options: options,
+    placeholder: "Selecione",
+    brand: true,
+    errorMessage: "errado",
 };
 
 export const Search = Template.bind({});
@@ -72,14 +220,6 @@ Loading.args = {
     loading: true,
 };
 
-export const TextAlign = Template.bind({});
-TextAlign.args = {
-    options: options,
-    placeholder: "Selecione",
-    brand: true,
-    textAlign: "center",
-};
-
 export const Multiple = Template.bind({});
 Multiple.args = {
     options: options,
@@ -88,20 +228,19 @@ Multiple.args = {
     multiple: true,
 };
 
-export const Label = Template.bind({});
-Label.args = {
+export const Brand = Template.bind({});
+Brand.args = {
     options: options,
     placeholder: "Selecione",
     brand: true,
-    label: "Teste",
 };
 
-export const Erro = Template.bind({});
-Erro.args = {
+export const TextAlign = Template.bind({});
+TextAlign.args = {
     options: options,
     placeholder: "Selecione",
     brand: true,
-    errorMessage: "errado",
+    textAlign: "center",
 };
 
 export const Line = Template.bind({});
@@ -109,6 +248,6 @@ Line.args = {
     options: options,
     placeholder: "Selecione",
     line: true,
-    label: 'Testev',
+    label: 'Teste',
     errorMessage: 'Eita'
 };

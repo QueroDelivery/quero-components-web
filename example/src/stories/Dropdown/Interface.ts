@@ -6,27 +6,12 @@ interface OptionsProps {
     value: any;
 }
 
-// export interface DropdownProps {
-//     brand?: boolean;
-//     options: OptionsProps[];
-//     value: any;
-//     onChange: (value: any) => void;
-//     placeholder?: string;
-//     textAlign?: "center";
-//     search?: boolean;
-//     loading?: boolean;
-//     width?: number;
-//     errorMessage?: string;
-//     label?: string;
-//     labelColor?: string;
-//     dropdownRef?: any;
-//     height?: number;
-// }
 export interface Props extends DropdownProps {
+    label: string;   
     options: OptionsProps[];
+    errorMessage: string; 
     brand: boolean;
     textAlign: "center";
-    errorMessage: string;
-    label: string;
-    line: boolean;
+    line: boolean; 
+    colorLabel?: string;
 }

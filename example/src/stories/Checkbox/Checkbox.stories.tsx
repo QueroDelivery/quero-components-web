@@ -10,15 +10,16 @@ export default {
     title: "Components/Checkbox",
     component: Checkbox,
     argTypes: {
-      label: {
-        control: "text",
-        description: "Titulo do Checkbox",
-        table: {
-          type: {
-            summary: "string",
-          },
+    label: {
+      control: "text",
+      defaultValue: "Titulo do Checkbox",
+      description: "Titulo do Checkbox",
+      table: {
+        type: {
+          summary: "string",
         },
       },
+    },
     sizeBox: {
       control: {
           type: "inline-radio",
@@ -35,7 +36,7 @@ export default {
       },
       description: "Tamanho do CheckBox",
       type: {
-        summary: "string",
+        summary: "mini | tiny | small | medium | large | big | huge | massive",
       },
     },
     onChange: {
@@ -44,6 +45,15 @@ export default {
         table: {
         type: {
           summary: "function",
+        },
+      },
+    },
+    checked: { 
+      control: "boolean",
+      description: "Seleção do Checkbox",
+      table: {
+        type: {
+          summary: "bollean",
         },
       },
     },

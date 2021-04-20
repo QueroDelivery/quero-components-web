@@ -77,7 +77,7 @@ export default {
           detail: "String | Number (definido como px)",
         },
         type: {
-          summary: "number | string ",
+          summary: "number | string",
         },
       },
     },

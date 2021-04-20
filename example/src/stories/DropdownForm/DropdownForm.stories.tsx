@@ -7,8 +7,118 @@ import { DropdownFormProps } from "./Interface";
 import "quero-components-web/dist/index.css";
 
 export default {
-    title: "Example/DropdownForm",
-    component: DropdownForm,
+    title: "Components/DropdownForm",
+    parameters: {
+      component: DropdownForm,
+      componentSubtitle: "É necessário utilizar as lib Semantic UI React (https://semantic-ui.com/) e React Hook Form (https://react-hook-form.com/)",
+    },
+    argTypes: {
+      label: {
+        control: "text",
+        description: "Título do DropdownForm",
+        defaultValue: "Título",
+        table: {
+          type: {
+            summary: "string",
+          },
+        },
+      },
+      name: {
+        control: "text", 
+        description: "Descrição do DropdownForm",
+        defaultValue: "Descrição do DropdownForm",
+        table: {
+          type: {
+            summary: "required | string",
+          },
+        },
+      },
+      options: {
+        control: "array", 
+        description: "Opções do Dropdown",
+        table: {
+          defaultValue: {
+            summary: "Opções",
+            detail: "Key | Chave | Value ",
+          },
+          type: {
+            summary: "OptionsProp[]",
+          },
+        },
+      },
+      required: {
+        control: "boolean",
+        description: "Informa se DropdownForm é obrigatório",
+        table: {
+          type: {
+            summary: "boolean",
+          },
+        },
+      },
+      errors: {
+        control: "text", 
+        description: "Mensagem de erro de acordo com a função validate",
+        table: {
+          type: {
+            summary: "required | string", 
+          },
+        },
+      },
+      validate: {
+        control: "string",
+        description: "Função que valida o DropdownForm",
+        table: {
+          type: {
+            summary: "function",
+          },
+        },
+      },
+      register: {
+        control: "string",
+        description: "Faz o registro do DropdownForm",
+        table: {
+          type: {
+            summary: "required | function",
+          },
+        },
+      },
+      setValue: {
+        control: "string",
+        description: "Função para alterar o valor do DropdownForm",
+        table: {
+          type: {
+            summary: "required | function",
+          },
+        },
+      },
+      clearError: {
+        control: "string",
+        description: "Função para limpar o erro do DropdownForm",
+        table: {
+          type: {
+            summary: "required | function",
+          },
+        },
+      },
+      value: {
+        control: "string",
+        description: "Para criar um componente controlado",
+        table: {
+          type: {
+            summary: "function",
+          },
+        },
+      },
+      line: {
+        control: "boolean",
+        description: "Estilo do DropdownForm em linha",
+        table: {
+          type: {
+            summary: "boolean",
+          },
+        },
+      },
+    } 
 } as Meta;
 
 const Template: Story<DropdownFormProps> = (args) => {
@@ -16,7 +126,7 @@ const Template: Story<DropdownFormProps> = (args) => {
 };
 
 const options = [
-    { key: "1", text: "1", value: "1" },
+    { key: "1", text: "1", value: "1b" },
     { key: "2", text: "2", value: "2" },
     { key: "3", text: "3", value: "3" },
     { key: "4", text: "4", value: "4" },
@@ -28,8 +138,8 @@ const options = [
 
 export const Default = Template.bind({});
 Default.args = {
-    name: "",
-    errors: "",
+    name: "Descrição do DropdownForm",
+    errors: "Error",
     register: null,
     setValue: () => {},
     validate: () => {},

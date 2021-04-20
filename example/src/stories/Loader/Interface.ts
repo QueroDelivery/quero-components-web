@@ -1,6 +1,6 @@
 export interface LoaderProps {
-    color?: string;
-    size?:
+  className?: string;  
+  size?:
         | "mini"
         | "tiny"
         | "small"
@@ -9,7 +9,7 @@ export interface LoaderProps {
         | "big"
         | "huge"
         | "massive";
-    className?: string;
-    style?: React.CSSProperties;
     position?: "left" | "center" | "right";
+    color?: string;
+    style?: React.CSSProperties;
 }
