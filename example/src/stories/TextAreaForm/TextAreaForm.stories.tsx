@@ -94,7 +94,6 @@ export default {
           },
         },
       },
-      
     }
 } as Meta;
 
