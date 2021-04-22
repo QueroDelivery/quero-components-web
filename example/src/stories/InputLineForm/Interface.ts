@@ -1,12 +1,12 @@
 import { InputProps } from "../InputLine/Interface";
 
 export interface InputFormProps extends InputProps {
-    required?: boolean;
     name: string;
+    required?: boolean;
+    validate?: () => void;
     errors: any;
     register: any;
-    validate?: () => void;
     values: any;
-    limit?: number;
     minimum?: number;
+    limit?: number;
 }

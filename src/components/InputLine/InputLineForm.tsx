@@ -13,7 +13,6 @@ export interface InputFormProps extends InputProps {
     register: any;
     validate?: any;
     values: any;
-
     limit?: number;
     minimum?: number;
 }
