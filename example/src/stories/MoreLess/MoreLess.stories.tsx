@@ -7,7 +7,7 @@ import "quero-components-web/dist/index.css";
 import { action } from "@storybook/addon-actions";
 
 export default {
-    title: "Example/MoreLess",
+    title: "Components/MoreLess",
     component: MoreLess,
     argTypes: {
         size: {
@@ -15,6 +15,79 @@ export default {
                 type: "inline-radio",
                 options: ["small", "medium", "big"],
             },
+            description: "Tamanho do MoreLess",
+            defaultValue: {
+              summary: 'O tamanho padrão é o medium',
+            },
+            type: {
+              summary: "small | medium | big",
+            },
+        },
+        disabled: {
+          control: "boolean", 
+          description: "O MoreLess esta suspenso/desabilitado?",
+          table: {
+            type: {
+              summary: "boolean",
+            },
+          },
+        },
+        minimum: {
+          control: "number",
+          description: "Menor valor do MoreLess", 
+          table: {
+            type: {
+              summary: "number",
+            },
+          },
+        },
+        limit: {
+          control: "number",
+          description: "Maior valor do MoreLess",
+          table: {
+            type: {
+              summary: "number",
+            },
+          },
+        },
+        value: {
+          control: "number",
+          description: "O valor do MoreLess",
+          table: {
+            type: {
+              summary: "requered | number",
+            },
+          },
+        },
+        more: {
+          control: "string",
+          description: "Função para aumentar o valor do MoreLess",
+          table: {
+            type: {
+              summary: "requered |function",
+            },
+          },
+        },
+        less: {
+          control: "string",
+          description: "Função para diminuir o valor do MoreLess",
+          table: {
+            type: {
+              summary: "requered | function",
+            },
+          },
+        },
+        onChange: {
+          control: "string",
+          description: "Função responsavel por manipular o MoreLess",
+          table: {
+            defaultValue: {
+              summary: "Recebe o valor do MoreLess"
+            },
+            type: {
+              summary: "function",
+            },
+          },
         },
     },
 } as Meta;
@@ -26,31 +99,7 @@ Default.args = {
     value: 0,
     more: action("adicioar"),
     less: action("remover"),
-};
-
-export const OnChange = Template.bind({});
-OnChange.args = {
-    value: 4,
-    more: action("adicioar"),
-    less: action("remover"),
-    onChange: action("mudar valor"),
-};
-
-export const Limit = Template.bind({});
-Limit.args = {
-    value: 10,
-    more: action("adicioar"),
-    less: action("remover"),
-    limit: 10,
-};
-
-export const Minimum = Template.bind({});
-Minimum.args = {
-    value: 2,
-    more: action("adicioar"),
-    less: action("remover"),
-    minimum: 2,
-};
+ };
 
 export const Size = Template.bind({});
 Size.args = {
@@ -66,4 +115,28 @@ Disabled.args = {
     more: action("adicioar"),
     less: action("remover"),
     disabled: true,
+};
+
+export const Minimum = Template.bind({});
+Minimum.args = {
+    value: 2,
+    more: action("adicioar"),
+    less: action("remover"),
+    minimum: 2,
+};
+
+export const Limit = Template.bind({});
+Limit.args = {
+    value: 10,
+    more: action("adicioar"),
+    less: action("remover"),
+    limit: 10,
+};
+
+export const OnChange = Template.bind({});
+OnChange.args = {
+    value: 4,
+    more: action("adicioar"),
+    less: action("remover"),
+    onChange: action("mudar valor"),
 };
