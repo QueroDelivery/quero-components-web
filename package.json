@@ -18,7 +18,7 @@
         "start": "microbundle-crl watch --format modern,cjs",
         "reinstall": "rm -rf node_modules && npm i",
         "deploy": "rm -rf dist && npm run build && git add . && git commit -m 'deploy' && git push origin master",
-        "publish": "git checkout docs && rm -rf dist && git merge master && npm run build && cd example && npm run build-storybook && ./node_modules/.bin/gh-pages -d storybook-static/ -d storybook-static/ && git add . && git commit -m 'publish' && git push origin master"
+        "publish": "git checkout docs && rm -rf dist && git merge master && npm run build && cd example && npm run build-storybook && ./node_modules/.bin/gh-pages -d storybook-static/ -d storybook-static/ && git add . && git commit -m 'publish' && git push origin docs"
     },
     "peerDependencies": {
         "react": ">16.0.0",
