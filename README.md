@@ -59,8 +59,9 @@ function Example() {
 
 ## 📝 Documentação
 
-Para verificar a documentação
+Para verificar a documentação click [aqui](https://querodelivery.github.io/quero-components-web/)
 
+- Verificar em desenvolvimento
 ```bash
 npm run start ou yarn start
 ```
