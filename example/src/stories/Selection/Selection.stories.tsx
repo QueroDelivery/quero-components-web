@@ -7,11 +7,25 @@ import { SelectionProps } from "./Interface";
 import "quero-components-web/dist/index.css";
 
 export default {
-    title: "Example/Selection",
+    title: "Components/Selection",
     component: Selection,
     argTypes: {
-        onChange: {
-            action: "clicked",
+        type: {
+            control: {
+                type: "inline-radio",
+                options: [
+                    "switch",
+                    "toggle", 
+                    "activeInactive"
+                ],
+            }, 
+            description: "Tipo do Select",
+            defaultValue: {
+                summary: 'O tipo padrão é o switch',
+            },
+            type: {
+                summary: "required | switch | toggle | activeInactive",
+            },
         },
         size: {
             control: {
@@ -27,6 +41,49 @@ export default {
                     "massive",
                 ],
             },
+            description: "Tamanho do Select",
+            defaultValue: {
+                summary: 'O tamanho padrão é o medium',
+            },
+            type: {
+                summary: "mini | tiny | small | medium | large | big | huge | massive",
+            },
+        },
+        checked: {
+          control: "boolean", 
+          description: "Foi selecionado?",
+          table: {
+              type: {
+                  summary: "boolean",
+              },
+          },
+        },
+        disabled: {
+            control: "boolean", 
+            description: "O Selection esta suspenso/desabilitado?",
+            table: {
+                type: {
+                  summary: "boolean",
+                },
+            },
+        },
+        selectionRef: {
+            control: "string", 
+            description: "Referencia de uma seleção",
+            table: {
+                type: {
+                    summary: "string",
+                },
+            },
+        },
+        onChange: {
+            action: "clicked",
+            description: "Função para manipular o Selection",
+            table: {
+            type: {
+              summary: "function",
+            },
+          },
         },
     },
 } as Meta;
@@ -61,7 +118,6 @@ Size.args = {
     size: 'big',
     onChange: action("checked/notChecked"),
 };
-
 
 export const Disabled = Template.bind({});
 Disabled.args = {
