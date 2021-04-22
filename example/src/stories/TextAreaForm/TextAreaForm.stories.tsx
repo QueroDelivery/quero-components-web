@@ -33,7 +33,7 @@ export default {
       },
       lengthInfo: {
         control: "boolean",
-        description: "Quantidade de caracteres dentro do TextArea",
+        description: "Deseja ter a informação de quantidade de quantos caracteres estão dentro do TextAreaForm?",
         table: {
           type: {
             summary: "boolean | number",
@@ -42,7 +42,7 @@ export default {
       },
       required: {
         control: "boolean",
-        description: "Informando TextArea for obrigatório",
+        description: "O TextArea é obrigatório?",
         table: {
           type: {
             summary: "boolean",
@@ -63,7 +63,7 @@ export default {
         description: "Mensagem de erro de acordo com a função validate",
         table: {
           type: {
-            summary: "required | string or object",
+            summary: "required | string | object",
           },
         },
       },
@@ -103,7 +103,7 @@ const Template: Story<TextAreaFormProps> = (args) => {
 
 export const Default = Template.bind({});
 Default.args = {
-    label: "teste",
+    label: "Título do TextArea",
     name: "",
     lengthInfo: true,
     required: false,

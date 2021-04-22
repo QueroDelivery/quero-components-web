@@ -17,8 +17,8 @@ export default {
     argTypes: {
         label: {
           control: "text",
-          description: "Titulo do InputLine",
-          defaultValue: "Titulo do InputLine",
+          description: "Título do InputLine",
+          defaultValue: "Título do InputLine",
           table: {
             type: {
               summary: "string",
@@ -142,13 +142,13 @@ const Template: Story<InputProps> = (args) => <InputLine {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-    label: "Titulo do InputLine",
+    label: "Título do InputLine",
     onChange: action("mudar valor"),
 };
 
 export const ErrorMessage = Template.bind({});
 ErrorMessage.args = {
-    label: "Titulo do InputLine",
+    label: "Título do InputLine",
     placeholder: "escreva",
     errorMessage: "errado",
     onChange: action("mudar valor"),
@@ -157,7 +157,7 @@ ErrorMessage.args = {
 
 export const Width = Template.bind({});
 Width.args = {
-    label: "Titulo do InputLine",
+    label: "Título do InputLine",
     placeholder: "escreva",
     width: "50%",
     onChange: action("mudar valor"),
@@ -166,7 +166,7 @@ Width.args = {
 
 export const Action = Template.bind({});
 Action.args = {
-    label: "Titulo do InputLine",
+    label: "Título do InputLine",
     placeholder: "escreva",
     action: {
         icon: faTimes,
@@ -178,7 +178,7 @@ Action.args = {
 
 export const Icon = Template.bind({});
 Icon.args = {
-    label: "Titulo do InputLine",
+    label: "Título do InputLine",
     placeholder: "escreva",
     icon: faUser,
     onChange: action("mudar valor"),
@@ -187,7 +187,7 @@ Icon.args = {
 
 export const IconPosition = Template.bind({});
 IconPosition.args = {
-    label: "Titulo do InputLine",
+    label: "Título do InputLine",
     placeholder: "escreva",
     icon: faUser,
     iconPosition: "left",
@@ -197,7 +197,7 @@ IconPosition.args = {
 
 export const Colors = Template.bind({});
 Colors.args = {
-    label: "Titulo do InputLine",
+    label: "Título do InputLine",
     placeholder: "escreva",
     textColor: "blue",
     iconColor: "green",

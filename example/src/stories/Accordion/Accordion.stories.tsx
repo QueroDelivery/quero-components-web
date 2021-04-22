@@ -14,53 +14,16 @@ export default {
   argTypes: {
     title: {
       control: "text",
-      description: "Texto do titulo",
+      description: "Título do Accordion",
       table: {
         type: {
           summary: "required | string",
-        },
-      },
-    },
-    open: {
-      control: "boolean",
-      description: "Informa se accordion está aberto ou fechado",
-      table: {
-        type: {
-          summary: "required | string",
-        },
-      },
-    },
-    onChange: {
-      action: "clicked",
-      description: "Função para abrir ou fechar accordion",
-      table: {
-        type: {
-          summary: "required | function",
-        },
-      },
-    },
-    secondary: {
-      control: "boolean",
-      description: "Definir estilo secundário do accordion",
-      defaultValue: false,
-      table: {
-        type: {
-          summary: "boolean",
         },
       },
     },
     subtitle: {
       control: "text",
-      description: "Texto do subtitulo",
-      table: {
-        type: {
-          summary: "string",
-        },
-      },
-    },
-    value: {
-      control: "text",
-      description: "Texto que representa um valor",
+      description: "Texto do subtítulo do Accordion",
       table: {
         type: {
           summary: "string",
@@ -93,33 +56,36 @@ export default {
         },
       },
     },
-    customIcon: {
-      description:
-        "Estilização do ícone no accordion",
+    value: {
+      control: "text",
+      description: "Texto que representa um valor do Accordion",
       table: {
-        defaultValue: {
-          summary: "Podendo usar ícones de qualquer biblioteca",
-        },
         type: {
-          summary: "ReactNode",
+          summary: "string",
         },
       },
     },
-    fontSizeTitle: {
-      control: "number",
-      description: "Tamanho do titulo",
+    open: {
+      control: "boolean",
+      description: "O Accordion esta aberto?",
       table: {
-        defaultValue: {
-          summary: "Em Number sendo definido como px",
-        },
         type: {
-          summary: "number",
+          summary: "required | boolean",
+        },
+      },
+    },
+    onChange: {
+      action: "clicked",
+      description: "Função para abrir ou fechar Accordion",
+      table: {
+        type: {
+          summary: "required | function",
         },
       },
     },
     colorTitle: {
       control: "color",
-      description: "Cor do titulo",
+      description: "Cor do título",
       table: {
         type: {
           summary: "string",
@@ -128,16 +94,7 @@ export default {
     },
     colorSubtitle: {
       control: "color",
-      description: "Cor do subtitulo",
-      table: {
-        type: {
-          summary: "string",
-        },
-      },
-    },
-    colorValue: {
-      control: "color",
-      description: "Cor do valor",
+      description: "Cor do subtítulo",
       table: {
         type: {
           summary: "string",
@@ -153,6 +110,49 @@ export default {
         },
       },
     },
+    colorValue: {
+      control: "color",
+      description: "Cor do valor",
+      table: {
+        type: {
+          summary: "string",
+        },
+      },
+    },
+    secondary: {
+      control: "boolean",
+      description: "Deseja o estilo secundário do Accordion?",
+      defaultValue: false,
+      table: {
+        type: {
+          summary: "boolean",
+        },
+      },
+    },
+    customIcon: {
+      description:
+        "Estilização do ícone no accordion",
+      table: {
+        defaultValue: {
+          summary: "Podendo usar ícones de qualquer biblioteca",
+        },
+        type: {
+          summary: "ReactNode",
+        },
+      },
+    },
+    fontSizeTitle: {
+      control: "number",
+      description: "Tamanho do título",
+      table: {
+        defaultValue: {
+          summary: "Em Number sendo definido como px",
+        },
+        type: {
+          summary: "number",
+        },
+      },
+    },
   },
 } as Meta;
 
@@ -162,59 +162,51 @@ const Template: Story<AccordionProps> = (args) => (
 
 export const Default = Template.bind({});
 Default.args = {
-  title: "Titulo",
+  title: "Título",
   open: false,
-  onChange: action("abrir/fechar"),
-};
-
-export const Secondary = Template.bind({});
-Secondary.args = {
-  title: "Titulo",
-  open: false,
-  secondary: true,
   onChange: action("abrir/fechar"),
 };
 
 export const Subtitle = Template.bind({});
 Subtitle.args = {
-  title: "Titulo",
-  subtitle: "Subtitulo",
+  title: "Título",
+  subtitle: "Subtítulo",
   open: false,
   secondary: false,
   onChange: action("abrir/fechar"),
 };
 
-export const Value = Template.bind({});
-Value.args = {
-  title: "Titulo",
-  value: "R$10,00",
+export const Width = Template.bind({});
+Width.args = {
+  title: "Título",
   open: false,
   secondary: false,
+  width: "50%",
   onChange: action("abrir/fechar"),
 };
 
 export const Icon = Template.bind({});
 Icon.args = {
-  title: "Titulo",
+  title: "Título",
   open: false,
   secondary: false,
   icon: faPhone,
   onChange: action("abrir/fechar"),
 };
 
-export const CustomIcon = Template.bind({});
-CustomIcon.args = {
-  title: "Titulo",
+export const Value = Template.bind({});
+Value.args = {
+  title: "Título",
+  value: "R$10,00",
   open: false,
   secondary: false,
-  customIcon: <FontAwesomeIcon icon={faPhone} />,
   onChange: action("abrir/fechar"),
 };
 
 export const Colors = Template.bind({});
 Colors.args = {
-  title: "Titulo",
-  subtitle: "Subtitulo",
+  title: "Título",
+  subtitle: "Subtítulo",
   value: "R$10,00",
   open: false,
   secondary: false,
@@ -226,18 +218,26 @@ Colors.args = {
   onChange: action("abrir/fechar"),
 };
 
-export const Width = Template.bind({});
-Width.args = {
-  title: "Titulo",
+export const Secondary = Template.bind({});
+Secondary.args = {
+  title: "Título",
+  open: false,
+  secondary: true,
+  onChange: action("abrir/fechar"),
+};
+
+export const CustomIcon = Template.bind({});
+CustomIcon.args = {
+  title: "Título",
   open: false,
   secondary: false,
-  width: "50%",
+  customIcon: <FontAwesomeIcon icon={faPhone} />,
   onChange: action("abrir/fechar"),
 };
 
 export const fontSizeTitle = Template.bind({});
 fontSizeTitle.args = {
-  title: "Titulo",
+  title: "Título",
   open: false,
   secondary: false,
   fontSizeTitle: 10,

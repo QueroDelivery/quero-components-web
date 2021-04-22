@@ -48,7 +48,7 @@ export default {
       },
       required: {
         control: "boolean",
-        description: "Informa se DropdownForm é obrigatório",
+        description: "O DropdownForm é obrigatório?",
         table: {
           type: {
             summary: "boolean",
@@ -111,7 +111,7 @@ export default {
       },
       line: {
         control: "boolean",
-        description: "Estilo do DropdownForm em linha",
+        description: "Deseja o estilo do DropdownForm em linha?",
         table: {
           type: {
             summary: "boolean",

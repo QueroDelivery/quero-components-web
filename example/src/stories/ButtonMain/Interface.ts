@@ -4,23 +4,6 @@ import { ButtonHTMLAttributes } from "react";
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   textFirst?: string;
   textEnd?: string;
-  firstStrong?: boolean;
-  notStrong?: boolean;
-  strong?: boolean;
-  loading?: boolean;
-  secondary?: boolean;
-  notification?: boolean;
-  amount?: number;
-  backPurple?: boolean;
-  width?: number | string;
-  icon?: IconDefinition;
-  customIcon?: React.ReactNode;
-  iconPosition?: "left" | "right";
-  colorIcon?: string;
-  noBorder?: boolean;
-  colorText?: string;
-  colorBackground?: string;
-  tertiary?: boolean;
   size?:
     | "mini"
     | "tiny"
@@ -30,8 +13,25 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     | "big"
     | "huge"
     | "massive";
+  width?: number | string;
+  firstStrong?: boolean;
+  notStrong?: boolean;
+  strong?: boolean;
+  loading?: boolean;
+  secondary?: boolean;  
+  noBorder?: boolean;
+  backPurple?: boolean;
+  tertiary?: boolean;
   rectangular?: boolean;
+  notification?: boolean;
+  amount?: number;
+  typeContent: "icon";
+  icon?: IconDefinition;
+  customIcon?: React.ReactNode;
+  iconPosition?: "left" | "right";
+  colorIcon?: string;
+  colorText?: string;
+  colorBackground?: string;
   hoverBackgroundColor?: string;
   hoverTextColor?: string;
-  typeContent: "icon";
 }

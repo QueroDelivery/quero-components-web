@@ -55,7 +55,7 @@ export default {
         description: "Mensagem de erro de acordo com a função validate",
         table: {
           type: {
-            summary: "required | string | object", //ver se tem algum 0r 
+            summary: "required | string | object",
           },
         },
       },
@@ -104,7 +104,7 @@ const Template: Story<InputFormProps> = (args) => {
 
 export const Default = Template.bind({});
 Default.args = {
-    label: "Titulo do InputLineForm",
+    label: "Título do InputLineForm",
     name: "Descrição do InputLineForm",
     errors: "",
     register: null,

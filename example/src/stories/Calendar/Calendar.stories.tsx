@@ -14,6 +14,43 @@ export default {
   title: "Components/Calendar",
   component: Calendar,
   argTypes: {
+    label: {
+      control: "text",
+      defaultValue: "Label do calendário",
+      description: "Label do calendário",
+      table: {
+        type: {
+          summary: "string",
+        },
+      },
+    },
+    labelColor: {
+      control: "text",
+      description: "Cor da label",
+      table: {
+        type: {
+          summary: "string",
+        },
+      },
+    },
+    brand: {
+      control: "boolean",
+      description: "Deseja alterar para o estilo da cor da marca?",
+      table: {
+        type: {
+          summary: "boolean",
+        },
+      },
+    },
+    otherFormatDate: {
+      control: "text",
+      description: "Outro formato de exibição de data",
+      table: {
+        type: {
+          summary: "string",
+        },
+      },
+    },
     startDate: {
       control: "date",
       description: "Data inicial",
@@ -41,42 +78,6 @@ export default {
         },
       },
     },
-    otherFormatDate: {
-      control: "text",
-      description: "Outro formato de exibição de data",
-      table: {
-        type: {
-          summary: "string",
-        },
-      },
-    },
-    brand: {
-      control: "boolean",
-      description: "Alterar para estilo da cor da marca",
-      table: {
-        type: {
-          summary: "boolean",
-        },
-      },
-    },
-    label: {
-      control: "text",
-      description: "Label do calendário",
-      table: {
-        type: {
-          summary: "string",
-        },
-      },
-    },
-    labelColor: {
-      control: "text",
-      description: "Cor da label",
-      table: {
-        type: {
-          summary: "string",
-        },
-      },
-    },
   },
 } as Meta;
 
@@ -98,14 +99,14 @@ Label.args = {
   startDate: new Date(),
   endDate: addDays(new Date(), 5),
   selected: new Date(),
-  label: "Label",
+  label: "Label do calendário",
 };
 export const LabelColor = Template.bind({});
 LabelColor.args = {
   startDate: new Date(),
   endDate: addDays(new Date(), 5),
   selected: new Date(),
-  label: "Label",
+  label: "Label do calendário",
   labelColor: "blue",
 };
 

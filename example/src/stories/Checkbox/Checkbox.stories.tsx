@@ -12,8 +12,8 @@ export default {
     argTypes: {
     label: {
       control: "text",
-      defaultValue: "Titulo do Checkbox",
-      description: "Titulo do Checkbox",
+      defaultValue: "Título do Checkbox",
+      description: "Título do Checkbox",
       table: {
         type: {
           summary: "string",
@@ -50,7 +50,7 @@ export default {
     },
     checked: { 
       control: "boolean",
-      description: "Seleção do Checkbox",
+      description: "O Checkbox esta selecionado?",
       table: {
         type: {
           summary: "bollean",
@@ -80,7 +80,7 @@ Default.args = {
 export const Label = Template.bind({});
 Label.args = {
     checked: false,
-    label: "teste",
+    label: "Título do Checkbox",
     labelStyle: { marginRight: 20 },
     onChange: action("checked/notChecked"),
 };
@@ -88,7 +88,7 @@ Label.args = {
 export const SizeBox = Template.bind({});
 SizeBox.args = {
     checked: true,
-    label: "teste",
+    label: "Título do Checkbox",
     sizeBox: "big",
     onChange: action("checked/notChecked"),
 };

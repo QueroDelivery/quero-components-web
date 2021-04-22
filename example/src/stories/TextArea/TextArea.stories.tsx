@@ -25,7 +25,7 @@ export default {
       },
       lengthInfo: {
         control: "boolean",
-        description: "Quantidade de caracteres dentro do TextArea",
+        description: "Deseja ter a informação de quantidade de quantos caracteres estão dentro do TextArea?",
         table: {
           type: {
             summary: "boolean | number",
@@ -110,7 +110,7 @@ export default {
       },
       labelStyle: { 
         control: "object",
-        description: "Estilização do titulo",
+        description: "Estilização do Título",
         table: {
           type: {
             summary: "React.CSSProperties",
@@ -138,7 +138,7 @@ Default.args = {
 
 export const Label = Template.bind({});
 Label.args = {
-    label: "Titulo do TextArea",
+    label: "Título do TextArea",
     onChange: action("mudar valor"),
 };
 
@@ -171,7 +171,7 @@ Height.args = {
 
 export const Colors = Template.bind({});
 Colors.args = {
-    label: "Titulo do TextArea",
+    label: "Título do TextArea",
     labelColor: "blue",
     textColor: "green",
     onChange: action("mudar valor"),

@@ -33,111 +33,6 @@ export default {
         },
       },
     },
-    firstStrong: {
-      control: "boolean",
-      description: "Deixar a primeira palavra como negrito",
-      table: {
-        type: {
-          summary: "boolean",
-        },
-      },
-    },
-    notStrong: {
-      control: "boolean",
-      description: "Deixar nenhuma palavra em negrito",
-      table: {
-        type: {
-          summary: "boolean",
-        },
-      },
-    },
-    strong: {
-      control: "boolean",
-      description: "Deixar todas as palavras em negrito",
-      table: {
-        type: {
-          summary: "boolean",
-        },
-      },
-    },
-    loading: {
-      control: "boolean",
-      description: "Informar que o botão está em carregamento",
-      table: {
-        type: {
-          summary: "boolean",
-        },
-      },
-    },
-    secondary: {
-      control: "boolean",
-      description: "Altera o botão para o estilo secundário",
-      table: {
-        type: {
-          summary: "boolean",
-        },
-      },
-    },
-    tertiary: {
-      control: "boolean",
-      description: "Altera o botão para o estilo terciário",
-      table: {
-        type: {
-          summary: "boolean",
-        },
-      },
-    },
-    rectangular: {
-      control: "boolean",
-      description: "Altera o botão para o estilo com bordas retangulares",
-      table: {
-        type: {
-          summary: "boolean",
-        },
-      },
-    },
-    notification: {
-      control: "boolean",
-      description:
-        "Altera o botão para o estilo de notificações",
-      table: {
-        defaultValue: {
-          summary: "Precisa passar a propriedade amount com a quantidade",
-        },
-        type: {
-          summary: "boolean",
-        },
-      },
-    },
-    amount: {
-      control: "number",
-      description:
-        "Quantidade de mensagens quando o botão ta com estilo de notificações",
-      table: {
-        type: {
-          summary: "number",
-        },
-      },
-    },
-    noBorder: {
-      control: "boolean",
-      description: "Altera o botão para o estilo sem bordas",
-      table: {
-        type: {
-          summary: "boolean",
-        },
-      },
-    },
-    backPurple: {
-      control: "boolean",
-      description:
-        "Alterar a cor da hover quando o fundo do botão for da cor roxa",
-      table: {
-        type: {
-          summary: "boolean",
-        },
-      },
-    },
     size: {
       control: {
         type: "inline-radio",
@@ -157,6 +52,137 @@ export default {
         type: {
           summary:
             "mini | tiny | small | medium | large | big | huge | massive",
+        },
+      },
+    },
+    width: {
+      control: "text",
+      description:
+        "Largura do botão",
+      table: {
+        defaultValue: {
+          summary: "Opções",
+          detail: "String | Number (definido como px)",
+        },
+        type: {
+          summary: "number | string ",
+        },
+      },
+    },
+    firstStrong: {
+      control: "boolean",
+      description: "Deseja deixar a primeira palavra em negrito?",
+      table: {
+        type: {
+          summary: "boolean",
+        },
+      },
+    },
+    notStrong: {
+      control: "boolean",
+      description: "Deseja deixar nenhuma palavra em negrito?",
+      table: {
+        type: {
+          summary: "boolean",
+        },
+      },
+    },
+    strong: {
+      control: "boolean",
+      description: "Deseja deixar todas as palavras em negrito?",
+      table: {
+        type: {
+          summary: "boolean",
+        },
+      },
+    },
+    loading: {
+      control: "boolean",
+      description: "O botão está em carregamento?",
+      table: {
+        type: {
+          summary: "boolean",
+        },
+      },
+    },
+    secondary: {
+      control: "boolean",
+      description: "Deseja altera o botão para o estilo secundário?",
+      table: {
+        type: {
+          summary: "boolean",
+        },
+      },
+    },
+    noBorder: {
+      control: "boolean",
+      description: "Deseja altera o botão para o estilo sem bordas?",
+      table: {
+        type: {
+          summary: "boolean",
+        },
+      },
+    },
+    backPurple: {
+      control: "boolean",
+      description:
+        "Deseja alterar a cor da hover quando o fundo do botão for da cor roxa?",
+      table: {
+        type: {
+          summary: "boolean",
+        },
+      },
+    },
+    tertiary: {
+      control: "boolean",
+      description: "Deseja altera o botão para o estilo terciário?",
+      table: {
+        type: {
+          summary: "boolean",
+        },
+      },
+    },
+    rectangular: {
+      control: "boolean",
+      description: "Deseja altera o botão para o estilo com bordas retangulares?",
+      table: {
+        type: {
+          summary: "boolean",
+        },
+      },
+    },
+    notification: {
+      control: "boolean",
+      description:
+        "Deseja altera o botão para o estilo de notificações?",
+      table: {
+        defaultValue: {
+          summary: "Precisa passar a propriedade amount com a quantidade",
+        },
+        type: {
+          summary: "boolean",
+        },
+      },
+    },
+    amount: {
+      control: "number",
+      description:
+        "Quantidade de mensagens quando o botão esta com estilo de notificações",
+      table: {
+        type: {
+          summary: "number",
+        },
+      },
+    },
+    typeContent: {
+      control: {
+        type: "inline-radio",
+        options: ["icon"],
+      },
+      description: "Tipo do conteúdo do botão",
+      table: {
+        type: {
+          summary: "icon",
         },
       },
     },
@@ -196,29 +222,12 @@ export default {
         },
       },
     },
-    width: {
-      control: "text",
-      description:
-        "Largura do botão",
-      table: {
-        defaultValue: {
-          summary: "Opções",
-          detail: "String | Number (definido como px)",
-        },
-        type: {
-          summary: "number | string ",
-        },
-      },
-    },
-    typeContent: {
-      control: {
-        type: "inline-radio",
-        options: ["icon"],
-      },
-      description: "Tipo do conteúdo do botão",
+    colorIcon: {
+      control: "color",
+      description: "Cor do ícone",
       table: {
         type: {
-          summary: "icon",
+          summary: "string",
         },
       },
     },
@@ -234,15 +243,6 @@ export default {
     colorBackground: {
       control: "color",
       description: "Cor do background",
-      table: {
-        type: {
-          summary: "string",
-        },
-      },
-    },
-    colorIcon: {
-      control: "color",
-      description: "Cor do ícone",
       table: {
         type: {
           summary: "string",
@@ -279,20 +279,18 @@ Default.args = {
   onClick: action("click"),
 };
 
-export const Secondary = Template.bind({});
-Secondary.args = {
+export const Size = Template.bind({});
+Size.args = {
   textFirst: "Clique",
   textEnd: "aqui",
-  onClick: action("click"),
-  secondary: true,
+  size: "mini",
 };
 
-export const Tertiary = Template.bind({});
-Tertiary.args = {
+export const Width = Template.bind({});
+Width.args = {
   textFirst: "Clique",
   textEnd: "aqui",
-  onClick: action("click"),
-  tertiary: true,
+  width: "50%",
 };
 
 export const FirstStrong = Template.bind({});
@@ -303,20 +301,20 @@ FirstStrong.args = {
   firstStrong: true,
 };
 
-export const Strong = Template.bind({});
-Strong.args = {
-  textFirst: "Clique",
-  textEnd: "aqui",
-  onClick: action("click"),
-  strong: true,
-};
-
 export const NotStrong = Template.bind({});
 NotStrong.args = {
   textFirst: "Clique",
   textEnd: "aqui",
   onClick: action("click"),
   notStrong: true,
+};
+
+export const Strong = Template.bind({});
+Strong.args = {
+  textFirst: "Clique",
+  textEnd: "aqui",
+  onClick: action("click"),
+  strong: true,
 };
 
 export const Loading = Template.bind({});
@@ -326,18 +324,12 @@ Loading.args = {
   loading: true,
 };
 
-export const Disabled = Template.bind({});
-Disabled.args = {
+export const Secondary = Template.bind({});
+Secondary.args = {
   textFirst: "Clique",
   textEnd: "aqui",
-  disabled: true,
-};
-
-export const BackPurple = Template.bind({});
-BackPurple.args = {
-  textFirst: "Clique",
-  textEnd: "aqui",
-  backPurple: true,
+  onClick: action("click"),
+  secondary: true,
 };
 
 export const NoBorder = Template.bind({});
@@ -347,64 +339,19 @@ NoBorder.args = {
   noBorder: true,
 };
 
-export const Size = Template.bind({});
-Size.args = {
+export const BackPurple = Template.bind({});
+BackPurple.args = {
   textFirst: "Clique",
   textEnd: "aqui",
-  size: "mini",
+  backPurple: true,
 };
 
-export const ColorText = Template.bind({});
-ColorText.args = {
+export const Tertiary = Template.bind({});
+Tertiary.args = {
   textFirst: "Clique",
   textEnd: "aqui",
-  colorText: "black",
-};
-
-export const ColorBackground = Template.bind({});
-ColorBackground.args = {
-  textFirst: "Clique",
-  textEnd: "aqui",
-  colorText: "white",
-  colorBackground: "black",
-};
-
-export const HoverColor = Template.bind({});
-HoverColor.args = {
-  textFirst: "Clique",
-  textEnd: "aqui",
-  secondary: true,
-  hoverBackgroundColor: "black",
-  hoverTextColor: "white",
-};
-
-export const Icon = Template.bind({});
-Icon.args = {
-  textFirst: "Clique",
-  textEnd: "aqui",
-  icon: faPhone,
-};
-
-export const IconPosition = Template.bind({});
-IconPosition.args = {
-  textFirst: "Clique",
-  textEnd: "aqui",
-  icon: faPhone,
-  iconPosition: "left",
-};
-
-export const CustomIcon = Template.bind({});
-CustomIcon.args = {
-  textFirst: "Clique",
-  textEnd: "aqui",
-  customIcon: <FontAwesomeIcon icon={faPhone} />,
-};
-
-export const Width = Template.bind({});
-Width.args = {
-  textFirst: "Clique",
-  textEnd: "aqui",
-  width: "50%",
+  onClick: action("click"),
+  tertiary: true,
 };
 
 export const Notification = Template.bind({});
@@ -432,4 +379,58 @@ TypeContent.args = {
   icon: faTimes,
   rectangular: true,
   width: "10%",
+};
+
+export const Icon = Template.bind({});
+Icon.args = {
+  textFirst: "Clique",
+  textEnd: "aqui",
+  icon: faPhone,
+};
+
+export const CustomIcon = Template.bind({});
+CustomIcon.args = {
+  textFirst: "Clique",
+  textEnd: "aqui",
+  customIcon: <FontAwesomeIcon icon={faPhone} />,
+};
+
+export const IconPosition = Template.bind({});
+IconPosition.args = {
+  textFirst: "Clique",
+  textEnd: "aqui",
+  icon: faPhone,
+  iconPosition: "left",
+};
+
+export const ColorIcon = Template.bind({});
+ColorIcon.args = {
+  textFirst: "Clique",
+  textEnd: "aqui",
+  colorIcon: "black",
+  icon: faPhone,
+};
+
+export const ColorText = Template.bind({});
+ColorText.args = {
+  textFirst: "Clique",
+  textEnd: "aqui",
+  colorText: "black",
+};
+
+export const ColorBackground = Template.bind({});
+ColorBackground.args = {
+  textFirst: "Clique",
+  textEnd: "aqui",
+  colorText: "white",
+  colorBackground: "black",
+};
+
+export const HoverColor = Template.bind({});
+HoverColor.args = {
+  textFirst: "Clique",
+  textEnd: "aqui",
+  secondary: true,
+  hoverBackgroundColor: "black",
+  hoverTextColor: "white",
 };
