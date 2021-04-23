@@ -12,8 +12,8 @@ export default {
       argTypes: {
         label: {
         control: "text",
-        defaultValue: "Titulo do Radio",
-        description: "Titulo do Radio",
+        defaultValue: "Título do Radio",
+        description: "Título do Radio",
         table: {
           type: {
             summary: "string",
@@ -50,7 +50,7 @@ export default {
       },
       checked: { 
         control: "boolean",
-        description: "Seleção do Radio",
+        description: "O Radio esta selecionado?",
         table: {
           type: {
             summary: "bollean",
@@ -80,7 +80,7 @@ Default.args = {
 export const Label = Template.bind({});
 Label.args = {
     checked: false,
-    label: "teste",
+    label: "Título do Radio",
     labelStyle: { marginRight: 20 },
     onChange: action("checked/notChecked"),
 };
@@ -88,7 +88,7 @@ Label.args = {
 export const SizeBox = Template.bind({});
 SizeBox.args = {
     checked: true,
-    label: "teste",
+    label: "Título do Radio",
     sizeBox: "big",
     onChange: action("checked/notChecked"),
 };

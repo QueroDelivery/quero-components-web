@@ -1,12 +1,11 @@
-import { TableHTMLAttributes} from "react";
+import { TableProps } from "semantic-ui-react";
 
-export interface ITableComponent
-    extends TableHTMLAttributes<HTMLTableElement> {
-      title?: string
-      titleStyle?: React.CSSProperties
-      message?: string
-      messageStyle?: React.CSSProperties
-      hasMore?: () => void;
-      pagination?: React.ReactElement,
-      loading?: boolean
+export interface ITableComponent extends TableProps{
+  title?: string;
+  message?: string;
+  loading?: boolean;
+  hasMore?: () => void;
+  pagination?: React.ReactElement;
+  titleStyle?: React.CSSProperties;
+  messageStyle?: React.CSSProperties;
 }

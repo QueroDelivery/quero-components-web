@@ -93,7 +93,7 @@ export default {
       },
       loading: {
         control: "boolean",
-        description: "Recurso visual de carregamento",
+        description: "Esta carregando?",
         table: {
           type: {
             summary: "boolean",

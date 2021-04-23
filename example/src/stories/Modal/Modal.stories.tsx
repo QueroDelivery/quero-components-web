@@ -13,7 +13,7 @@ export default {
     argTypes: {
         title: {
           control: "text", 
-          description: "Titulo do Modal",
+          description: "Título do Modal",
           table: {
             type: {
               summary: "string",
@@ -31,7 +31,7 @@ export default {
         },
         loading: {
           control: "boolean",
-          description: "Recurso visual de carregamento",
+          description: "Esta carregando?",
           table: {
             type: {
               summary: "boolean",
@@ -49,7 +49,7 @@ export default {
         },
         closeIcon: {
           control: "boolean",
-          description: "Icone de fechar o Modal",
+          description: "Deseja o icone de fechar o Modal?",
           table: {
             type: {
               summary: "boolean",
@@ -58,7 +58,7 @@ export default {
         },
         closeOnDimerClick: {
           control: "boolean",
-          description: "Fecha o Modal quando clica fora da sua area",
+          description: "Deseja fechar o Modal quando clicar fora da sua area?",
           table: {
             type: {
               summary: "boolean",
@@ -143,7 +143,7 @@ const Template: Story<ModalProps> = (args) => {
 export const Default = Template.bind({});
 Default.args = {
     open: true,
-    title: "teste",
+    title: "Título do Modal",
     closeOnDimerClick: false,
     onClose: action("fechar"),
 };
@@ -151,7 +151,7 @@ Default.args = {
 export const Actions = Template.bind({});
 Actions.args = {
     open: true,
-    title: "teste",
+    title: "Título do Modal",
     actions: (
         <div>
             <ButtonMain textFirst="click aqui" />{" "}
@@ -164,14 +164,14 @@ export const Loading = Template.bind({});
 Loading.args = {
     open: true,
     loading: true,
-    title: "teste",
+    title: "Título do Modal",
     onClose: action("fechar"),
 };
 
 export const CloseIcon = Template.bind({});
 CloseIcon.args = {
     open:true,
-    title: 'teste',
+    title: "Título do Modal",
     onClose: action("fechar"),
     closeIcon: false,
 }
@@ -179,7 +179,7 @@ CloseIcon.args = {
 export const OnBack = Template.bind({});
 OnBack.args = {
     open: true,
-    title: "teste",
+    title: "Título do Modal",
     onBack: action("voltar"),
     onClose: action("fechar"),
 };
@@ -188,14 +188,14 @@ export const Size = Template.bind({});
 Size.args = {
     open: true,
     size: "small",
-    title: "teste",
+    title: "Título do Modal",
     onClose: action("fechar"),
 };
 
 export const Width = Template.bind({});
 Width.args = {
     open: true,
-    width: '50',
-    title: "teste",
+    width: "50",
+    title: "Título do Modal",
     onClose: action("fechar"),
 };

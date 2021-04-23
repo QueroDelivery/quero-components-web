@@ -1,7 +1,5 @@
 export interface SelectionProps {
     type: "switch" | "toggle" | "activeInactive";
-    checked?: boolean;
-    onChange?: () => void;
     size?:
         | "mini"
         | "tiny"
@@ -11,6 +9,8 @@ export interface SelectionProps {
         | "big"
         | "huge"
         | "massive";
+    checked?: boolean;
     disabled?: boolean;
     selectionRef?: any;
+    onChange?: () => void;
 }

@@ -9,23 +9,131 @@ import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
 export default {
-    title: "Example/InputLine",
-    component: InputLine,
+    title: "Components/InputLine",
+    parameters: {
+      component: InputLine,
+      componentSubtitle: "Input padronizado do HTML, recebendo todas as suas propriedades", 
+    },
     argTypes: {
+        label: {
+          control: "text",
+          description: "Título do InputLine",
+          defaultValue: "Título do InputLine",
+          table: {
+            type: {
+              summary: "string",
+            },
+          },
+        },
+        errorMessage: {
+          control: "text",
+          description: "Mensagem de erro",
+          table: {
+            type: {
+              summary: "string",
+            },
+          },
+        },
+        width: {
+          control: "text",
+          description: "Largura do InputLine",
+          defaultValue: "100%",
+          table: {
+            defaultValue: {
+              summary: "O padrão é 100%",
+            },
+            type: {
+              summary: "string", 
+            },
+          },
+        },
+        inputRef: {
+          control: "string",
+          description: "Referencia do InputLine",
+          table: {
+            type: {
+              summary: "RefObject",
+            },
+          },
+        },
+        action: {
+          control: "object",
+          description: "Ação do InputLine",
+          table: {
+            defaultValue: {
+              summary: "Ação",
+              detail: "Podendo adicionar um icone a esquerda ou a direita recebendo o evento de click.",
+            },
+            type: {
+              summary: "Object",
+            },
+          },
+        },
         onChange: {
             action: "changed",
+            description: "Função para manipular o InputLine",
+            table: {
+            type: {
+                summary: "function",
+            },
+          },
+        },
+        icon: {
+          control: "object", 
+          description: "Icone do InputLine",
+          table: {
+            type: {
+                summary: "IconDefinition",
+            },
+          },
         },
         iconPosition: {
             control: {
                 type: "inline-radio",
                 options: ["left", "right"],
             },
+            description: "Posição do icone no InputLine",
+            table: {
+            type: {
+                summary: "left | right",
+            },
+          },
         },
         textColor: {
             control: "color",
+            description: "Cor do InputLine",
+            table: {
+              type: {
+                  summary: "string",
+              },
+            },
         },
         iconColor: {
             control: "color",
+            description: "Cor do icone do InputLine",
+            table: {
+              type: {
+                  summary: "string",
+              },
+            },
+        },
+        containerStyle: {
+          control: "object",
+          description: "Estilização do container do InputLine",
+          table: {
+            type: {
+              summary: "React.CSSProperties",
+            },
+          },
+        },
+        labelStyle: { 
+          control: "object",
+          description: "Estilização do label",
+          table: {
+            type: {
+              summary: "React.CSSProperties",
+            },
+          },
         },
     },
 } as Meta;
@@ -34,32 +142,31 @@ const Template: Story<InputProps> = (args) => <InputLine {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-    label: "teste",
-    placeholder: "escreva",
-    onChange: action("mudar valor"),
-    type: "date",
-};
-
-export const Icon = Template.bind({});
-Icon.args = {
-    label: "teste",
-    placeholder: "escreva",
-    icon: faUser,
+    label: "Título do InputLine",
     onChange: action("mudar valor"),
 };
 
-export const IconPosition = Template.bind({});
-IconPosition.args = {
-    label: "teste",
+export const ErrorMessage = Template.bind({});
+ErrorMessage.args = {
+    label: "Título do InputLine",
     placeholder: "escreva",
-    icon: faUser,
-    iconPosition: "left",
+    errorMessage: "errado",
     onChange: action("mudar valor"),
+    action: undefined
+};
+
+export const Width = Template.bind({});
+Width.args = {
+    label: "Título do InputLine",
+    placeholder: "escreva",
+    width: "50%",
+    onChange: action("mudar valor"),
+    action: undefined
 };
 
 export const Action = Template.bind({});
 Action.args = {
-    label: "teste",
+    label: "Título do InputLine",
     placeholder: "escreva",
     action: {
         icon: faTimes,
@@ -69,28 +176,32 @@ Action.args = {
     onChange: action("mudar valor"),
 };
 
+export const Icon = Template.bind({});
+Icon.args = {
+    label: "Título do InputLine",
+    placeholder: "escreva",
+    icon: faUser,
+    onChange: action("mudar valor"),
+    action: undefined
+};
+
+export const IconPosition = Template.bind({});
+IconPosition.args = {
+    label: "Título do InputLine",
+    placeholder: "escreva",
+    icon: faUser,
+    iconPosition: "left",
+    onChange: action("mudar valor"),
+    action: undefined
+};
+
 export const Colors = Template.bind({});
 Colors.args = {
-    label: "teste",
+    label: "Título do InputLine",
     placeholder: "escreva",
     textColor: "blue",
     iconColor: "green",
     icon: faUser,
     onChange: action("mudar valor"),
-};
-
-export const Width = Template.bind({});
-Width.args = {
-    label: "teste",
-    placeholder: "escreva",
-    width: "50%",
-    onChange: action("mudar valor"),
-};
-
-export const ErrorMessage = Template.bind({});
-ErrorMessage.args = {
-    label: "teste",
-    placeholder: "escreva",
-    errorMessage: "errado",
-    onChange: action("mudar valor"),
+    action: undefined
 };

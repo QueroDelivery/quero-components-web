@@ -4,18 +4,18 @@ import { InputHTMLAttributes, RefObject } from "react";
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     label?: string;
     errorMessage?: string;
-    containerStyle?: React.CSSProperties;
-    labelStyle?: React.CSSProperties;
-    width?: string;
-    textColor?: string;
+    width?: string; 
     inputRef?: RefObject<HTMLInputElement>;
-    icon?: IconDefinition;
-    iconPosition?: "left" | "right";
-    iconColor?: string;
-    action?: {
+    action?: { 
         icon: IconDefinition;
         iconColor?: string;
-        onClick: () => void;
+        onClick: () => void;  
         position?: "left" | "right";
-    } | null;
+    } | null; 
+    icon?: IconDefinition;
+    iconPosition?: "left" | "right";
+    textColor?: string;
+    iconColor?: string;
+    containerStyle?: React.CSSProperties;
+    labelStyle?: React.CSSProperties;
 }
