@@ -56,7 +56,7 @@ export default {
       },
       search: {
         control: "boolean", 
-        description: "Permite que pesquise dentro do Dropdown",
+        description: "Deseja permitir que pesquise dentro do Dropdown",
         table: {
           type: {
             summary: "boolean",
@@ -65,7 +65,7 @@ export default {
       },
       clearable: {
         control: "boolean", 
-        description: "Remove a seleção dentro do Dropdown",
+        description: "Deseja remover a seleção dentro do Dropdown?",
         table: {
           type: {
             summary: "boolean",
@@ -74,7 +74,7 @@ export default {
       },
       disabled: {
         control: "boolean", 
-        description: "Deixa o Dropdown suspenso/desabilitado",
+        description: "O Dropdown esta suspenso/desabilitado?",
         table: {
           type: {
             summary: "boolean",
@@ -83,7 +83,7 @@ export default {
       },
       loading: {
         control: "boolean",
-        description: "Recurso visual de carregamento",
+        description: "Esta carregando?",
         table: {
           type: {
             summary: "boolean",
@@ -92,7 +92,7 @@ export default {
       },
       multiple: {
         control: "boolean",
-        description: "Permite varias seleções dentro do Dropdown",
+        description: "Deseja permitir varias seleções dentro do Dropdown?",
         table: {
           type: {
             summary: "boolean",
@@ -101,7 +101,7 @@ export default {
       },
       brand: {
         control: "boolean",
-        description: "O tema da marca no Dropdown",
+        description: "Deseja o tema da marca no Dropdown?",
         table: {
           defaultValue: {
             summary: "Tem como padrão a cor tema da QueroDelivery"
@@ -131,7 +131,7 @@ export default {
       },
       line: {
         control: "boolean",
-        description: "Estilo do Dropdown em linha",
+        description: "Deseja o estilo do Dropdown em linha?",
         table: {
           type: {
             summary: "boolean",
@@ -177,7 +177,7 @@ Label.args = {
     options: options,
     placeholder: "Selecione",
     brand: true,
-    label: "Teste",
+    label: "Título do Dropdown",
 };
 
 export const Erro = Template.bind({});
@@ -185,7 +185,7 @@ Erro.args = {
     options: options,
     placeholder: "Selecione",
     brand: true,
-    errorMessage: "errado",
+    errorMessage: "Erro",
 };
 
 export const Search = Template.bind({});
@@ -248,6 +248,6 @@ Line.args = {
     options: options,
     placeholder: "Selecione",
     line: true,
-    label: 'Teste',
-    errorMessage: 'Eita'
+    label: 'Título do Dropdown',
+    errorMessage: 'Erro'
 };

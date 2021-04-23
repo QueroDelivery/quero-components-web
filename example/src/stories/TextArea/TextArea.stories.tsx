@@ -8,7 +8,10 @@ import "quero-components-web/dist/index.css";
 
 export default {
     title: "Components/TextArea", 
-    subtitle: "TextArea customizado",
+    parameters: {
+      component: TextArea,
+      componentSubtitle: "TextArea padronizado do HTML, recebendo todas as suas propriedades", 
+    },
     component: TextArea,
     argTypes: {
       label: {
@@ -22,7 +25,7 @@ export default {
       },
       lengthInfo: {
         control: "boolean",
-        description: "Quantidade de caracteres dentro do TextArea",
+        description: "Deseja ter a informação de quantidade de quantos caracteres estão dentro do TextArea?",
         table: {
           type: {
             summary: "boolean | number",
@@ -107,7 +110,7 @@ export default {
       },
       labelStyle: { 
         control: "object",
-        description: "Estilização do titulo",
+        description: "Estilização do Título",
         table: {
           type: {
             summary: "React.CSSProperties",
@@ -135,7 +138,7 @@ Default.args = {
 
 export const Label = Template.bind({});
 Label.args = {
-    label: "teste",
+    label: "Título do TextArea",
     onChange: action("mudar valor"),
 };
 
@@ -143,12 +146,12 @@ export const LengthInfo = Template.bind({});
 LengthInfo.args = {
     maxLength: 400,
     lengthInfo: true,
-    value: 'oi',
+    value: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
 };
 
 export const ErrorMessage = Template.bind({});
 ErrorMessage.args = {
-    errorMessage: "errado",
+    errorMessage: "Erro",
     onChange: action("mudar valor"),
 };
 
@@ -156,18 +159,21 @@ export const Width = Template.bind({});
 Width.args = {
     width: "50%",
     onChange: action("mudar valor"),
+    value: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
 };
 
 export const Height = Template.bind({});
 Height.args = {
     height: 200,
     onChange: action("mudar valor"),
+    value: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of de Finibus Bonorum et Malorum (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance."
 };
 
 export const Colors = Template.bind({});
 Colors.args = {
-    label: "teste",
+    label: "Título do TextArea",
     labelColor: "blue",
     textColor: "green",
     onChange: action("mudar valor"),
+    value: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
 };
