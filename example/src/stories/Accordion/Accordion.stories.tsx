@@ -167,6 +167,18 @@ Default.args = {
   onChange: action("abrir/fechar"),
 };
 
+Default.parameters = {
+  docs: {
+    source:{
+      code:`<Accordion 
+      title="Título"
+      open={false}
+      onChange={() => {}}
+    />`
+    }
+  }
+}
+
 export const Subtitle = Template.bind({});
 Subtitle.args = {
   title: "Título",
@@ -175,6 +187,20 @@ Subtitle.args = {
   secondary: false,
   onChange: action("abrir/fechar"),
 };
+
+Subtitle.parameters = {
+  docs: {
+    source:{
+      code:`<Accordion 
+      title="Título"
+      subtitle="Subtítulo"
+      open={false}
+      secondary={false}
+      onChange={() => {}}
+    />`
+    }
+  }
+}
 
 export const Width = Template.bind({});
 Width.args = {
@@ -185,6 +211,20 @@ Width.args = {
   onChange: action("abrir/fechar"),
 };
 
+Width.parameters = {
+  docs: {
+    source:{
+      code:`<Accordion 
+      title="Título"
+      open={false}
+      secondary={false}
+      width="50%"
+      onChange={() => {}}
+    />`
+    }
+  }
+}
+
 export const Icon = Template.bind({});
 Icon.args = {
   title: "Título",
@@ -194,6 +234,20 @@ Icon.args = {
   onChange: action("abrir/fechar"),
 };
 
+Icon.parameters = {
+  docs: {
+    source:{
+      code:`<Accordion 
+      title="Titulo"
+      open={false}
+      secondary={false}
+      icon={faPhone}
+      onChange={() => {}}
+    />`
+    }
+  }
+}
+
 export const Value = Template.bind({});
 Value.args = {
   title: "Título",
@@ -202,6 +256,20 @@ Value.args = {
   secondary: false,
   onChange: action("abrir/fechar"),
 };
+
+Value.parameters = {
+  docs: {
+    source:{
+      code:`<Accordion 
+      title="Título"
+      value="R$10,00"
+      open={false}
+      secondary={false}
+      onChange={() => {}}
+    />`
+    }
+  }
+}
 
 export const Colors = Template.bind({});
 Colors.args = {
@@ -218,6 +286,26 @@ Colors.args = {
   onChange: action("abrir/fechar"),
 };
 
+Colors.parameters = {
+  docs: {
+    source:{
+      code:`<Accordion 
+      title="Título"
+      subtitle="Subtítulo"
+      value="R$10,00"
+      open={false}
+      secondary={false}
+      icon={faPhone}
+      colorIcon="blue"
+      colorSubtitle="green"
+      colorTitle="red"
+      colorValue="orange"
+      onChange={() => {}}
+    />`
+    }
+  }
+}
+
 export const Secondary = Template.bind({});
 Secondary.args = {
   title: "Título",
@@ -225,6 +313,19 @@ Secondary.args = {
   secondary: true,
   onChange: action("abrir/fechar"),
 };
+
+Secondary.parameters = {
+  docs: {
+    source:{
+      code:`<Accordion 
+      title="Título"
+      open={false}
+      secondary={true}
+      onChange={() => {}}
+    />`
+    }
+  }
+}
 
 export const CustomIcon = Template.bind({});
 CustomIcon.args = {
@@ -235,6 +336,20 @@ CustomIcon.args = {
   onChange: action("abrir/fechar"),
 };
 
+CustomIcon.parameters = {
+  docs: {
+    source:{
+      code:`<Accordion 
+      title="Título"
+      open={false}
+      secondary={false}
+      customIcon={<FontAwesomeIcon icon={faPhone}/>}
+      onChange={() => {}}
+    />`
+    }
+  }
+}
+
 export const fontSizeTitle = Template.bind({});
 fontSizeTitle.args = {
   title: "Título",
@@ -243,3 +358,17 @@ fontSizeTitle.args = {
   fontSizeTitle: 10,
   onChange: action("abrir/fechar"),
 };
+
+fontSizeTitle.parameters = {
+  docs: {
+    source:{
+      code:`<Accordion 
+      title="Título"
+      open={false}
+      secondary={false}
+      fontSizeTitle={10}
+      onChange={() => {}}
+    />`
+    }
+  }
+}
