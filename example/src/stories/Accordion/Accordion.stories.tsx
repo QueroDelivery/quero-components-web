@@ -200,7 +200,7 @@ Subtitle.parameters = {
     />`
     }
   }
-}
+};
 
 export const Width = Template.bind({});
 Width.args = {
@@ -223,7 +223,7 @@ Width.parameters = {
     />`
     }
   }
-}
+};
 
 export const Icon = Template.bind({});
 Icon.args = {
@@ -246,7 +246,7 @@ Icon.parameters = {
     />`
     }
   }
-}
+};
 
 export const Value = Template.bind({});
 Value.args = {
@@ -269,7 +269,7 @@ Value.parameters = {
     />`
     }
   }
-}
+};
 
 export const Colors = Template.bind({});
 Colors.args = {
@@ -304,7 +304,7 @@ Colors.parameters = {
     />`
     }
   }
-}
+};
 
 export const Secondary = Template.bind({});
 Secondary.args = {
@@ -325,7 +325,7 @@ Secondary.parameters = {
     />`
     }
   }
-}
+};
 
 export const CustomIcon = Template.bind({});
 CustomIcon.args = {
@@ -348,7 +348,7 @@ CustomIcon.parameters = {
     />`
     }
   }
-}
+};
 
 export const fontSizeTitle = Template.bind({});
 fontSizeTitle.args = {
@@ -371,4 +371,4 @@ fontSizeTitle.parameters = {
     />`
     }
   }
-}
+};
