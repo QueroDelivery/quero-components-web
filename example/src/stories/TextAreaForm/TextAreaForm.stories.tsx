@@ -8,10 +8,14 @@ import "quero-components-web/dist/index.css";
 
 export default {
     title: "Components/TextAreaForm",
+    component: TextAreaForm,
     parameters: {
-      component: TextAreaForm,
-      componentSubtitle: "É necessário utilizar o React Hook Form. (https://react-hook-form.com/)", 
-    },
+      docs: {
+        description: {
+              component: `É necessário utilizar a lib [React Hook Form](https://react-hook-form.com/).`
+            }
+        },
+      },
     argTypes: {
       label: {
         control: "text",
@@ -113,3 +117,21 @@ Default.args = {
     minimum: 1,
     limit: 100,
 };
+
+Default.parameters = {
+  docs: {
+    source:{
+      code:`<TextAreaForm 
+        label="Título do TextArea"
+        name="example"
+        lengthInfo={true}
+        required={register}
+        validate={() => {}}
+        errors={errors.example}
+        register={register}
+        minimum={1}
+        limit={100}
+     />`
+    }
+  }
+}
