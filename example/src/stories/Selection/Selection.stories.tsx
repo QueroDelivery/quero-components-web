@@ -86,6 +86,13 @@ export default {
           },
         },
     },
+    parameters: {
+      docs: {
+        source: {
+          type: 'code'
+        }
+      }
+    }
 } as Meta;
 
 const Template: Story<SelectionProps> = (args) => <Selection {...args} />;
@@ -97,32 +104,94 @@ Switch.args = {
     onChange: action("checked/notChecked"),
 };
 
+Switch.parameters = {
+  docs: {
+    source:{
+      code:`<Selection 
+      checked={true}
+      type="switch"
+      onChange={() => {}}
+    />`
+    }
+  }
+};
+
 export const Toggle = Template.bind({});
 Toggle.args = {
     checked: false,
-    type: 'toggle',
+    type: "toggle",
     onChange: action("checked/notChecked"),
+};
+
+Toggle.parameters = {
+  docs: {
+    source:{
+      code:`<Selection 
+      checked={false}
+      type="toggle"
+      onChange={() => {}}
+    />`
+    }
+  }
 };
 
 export const ActiveInactive = Template.bind({});
 ActiveInactive.args = {
     checked: false,
-    type: 'activeInactive',
+    type: "activeInactive",
     onChange: action("checked/notChecked"),
+};
+
+ActiveInactive.parameters = {
+  docs: {
+    source:{
+      code:`<Selection 
+      checked={false}
+      type="activeInactive"
+      onChange={() => {}}
+    />`
+    }
+  }
 };
 
 export const Size = Template.bind({});
 Size.args = {
     checked: false,
-    type: 'switch',
-    size: 'big',
+    type: "switch",
+    size: "big",
     onChange: action("checked/notChecked"),
+};
+
+Size.parameters = {
+  docs: {
+    source:{
+      code:`<Selection 
+      checked={false}
+      type="switch"
+      size="big"
+      onChange={() => {}}
+    />`
+    }
+  }
 };
 
 export const Disabled = Template.bind({});
 Disabled.args = {
     checked: false,
-    type: 'activeInactive',
+    type: "activeInactive",
     disabled: true,
     onChange: action("checked/notChecked"),
+};
+
+Disabled.parameters = {
+  docs: {
+    source:{
+      code:`<Selection 
+      checked={false}
+      type="activeInactive"
+      disabled={true}
+      onChange={() => {}}
+    />`
+    }
+  }
 };
