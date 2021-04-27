@@ -81,6 +81,17 @@ Default.args = {
     onClose: action("fechar"),
 };
 
+Default.parameters = {
+  docs: {
+    source:{
+      code:`<Dialog 
+      open={false}
+      onClose={() => {}}
+    />`
+    }
+  }
+};
+
 export const Loading = Template.bind({});
 Loading.args = { 
     open: false,
@@ -88,9 +99,33 @@ Loading.args = {
     onClose: action("fechar"),
 };
 
+Loading.parameters = {
+  docs: {
+    source:{
+      code:`<Dialog 
+      open={false}
+      loading={true}
+      onClose={() => {}}
+    />`
+    }
+  }
+};
+
 export const MaxHeight = Template.bind({});
 MaxHeight.args = {
   open: false,
   maxHeight: 100,
   onClose: action("fechar"),
+};
+
+MaxHeight.parameters = {
+  docs: {
+    source:{
+      code:`<Dialog 
+      open={false}
+      maxHeight={100}
+      onClose={() => {}}
+    />`
+    }
+  }
 };
