@@ -101,6 +101,18 @@ Default.args = {
     less: action("remover"),
  };
 
+ Default.parameters = {
+  docs: {
+    source:{
+      code:`<MoreLess 
+      value={0}
+      more={() => {}}
+      less={() => {}}
+    />`
+    }
+  }
+}
+
 export const Size = Template.bind({});
 Size.args = {
     value: 2,
@@ -108,6 +120,19 @@ Size.args = {
     less: action("remover"),
     size: "medium",
 };
+
+Size.parameters = {
+  docs: {
+    source:{
+      code:`<MoreLess 
+      value={2}
+      more={() => {}}
+      less={() => {}}
+      size="medium"
+    />`
+    }
+  }
+}
 
 export const Disabled = Template.bind({});
 Disabled.args = {
@@ -117,6 +142,19 @@ Disabled.args = {
     disabled: true,
 };
 
+Disabled.parameters = {
+  docs: {
+    source:{
+      code:`<MoreLess 
+      value={2}
+      more={() => {}}
+      less={() => {}}
+      disabled={true}
+    />`
+    }
+  }
+}
+
 export const Minimum = Template.bind({});
 Minimum.args = {
     value: 2,
@@ -124,6 +162,20 @@ Minimum.args = {
     less: action("remover"),
     minimum: 2,
 };
+
+Minimum.parameters = {
+  docs: {
+    source:{
+      code:`<MoreLess 
+      value={2}
+      more={() => {}}
+      less={() => {}}
+      minimum={2}
+    />`
+    }
+  }
+}
+
 
 export const Limit = Template.bind({});
 Limit.args = {
@@ -133,6 +185,19 @@ Limit.args = {
     limit: 10,
 };
 
+Limit.parameters = {
+  docs: {
+    source:{
+      code:`<MoreLess 
+      value={10}
+      more={() => {}}
+      less={() => {}}
+      limit={10}
+    />`
+    }
+  }
+}
+
 export const OnChange = Template.bind({});
 OnChange.args = {
     value: 4,
@@ -140,3 +205,16 @@ OnChange.args = {
     less: action("remover"),
     onChange: action("mudar valor"),
 };
+
+OnChange.parameters = {
+  docs: {
+    source:{
+      code:`<MoreLess 
+      value={4}
+      more={() => {}}
+      less={() => {}}
+      onChange={() => {}}
+    />`
+    }
+  }
+}

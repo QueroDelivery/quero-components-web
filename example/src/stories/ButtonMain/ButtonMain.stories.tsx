@@ -279,6 +279,18 @@ Default.args = {
   onClick: action("click"),
 };
 
+Default.parameters = {
+  docs: {
+    source:{
+      code:`<ButtonMain 
+      textFirst="Clique"
+      textEnd="aqui"
+      onClick={() => {}}
+    />`
+    }
+  }
+};
+
 export const Size = Template.bind({});
 Size.args = {
   textFirst: "Clique",
@@ -286,11 +298,35 @@ Size.args = {
   size: "mini",
 };
 
+Size.parameters = {
+  docs: {
+    source:{
+      code:`<ButtonMain 
+      textFirst="Clique"
+      textEnd="aqui"
+      size="mini"
+    />`
+    }
+  }
+};
+
 export const Width = Template.bind({});
 Width.args = {
   textFirst: "Clique",
   textEnd: "aqui",
   width: "50%",
+};
+
+Width.parameters = {
+  docs: {
+    source:{
+      code:`<ButtonMain 
+      textFirst="Clique"
+      textEnd="aqui"
+      width="50%"
+    />`
+    }
+  }
 };
 
 export const FirstStrong = Template.bind({});
@@ -301,12 +337,38 @@ FirstStrong.args = {
   firstStrong: true,
 };
 
+FirstStrong.parameters = {
+  docs: {
+    source:{
+      code:`<ButtonMain 
+      textFirst="Clique"
+      textEnd="aqui"
+      onClick={() => {}}
+      firstStrong={true}
+    />`
+    }
+  }
+};
+
 export const NotStrong = Template.bind({});
 NotStrong.args = {
   textFirst: "Clique",
   textEnd: "aqui",
   onClick: action("click"),
   notStrong: true,
+};
+
+NotStrong.parameters = {
+  docs: {
+    source:{
+      code:`<ButtonMain 
+      textFirst="Clique"
+      textEnd="aqui"
+      onClick={() => {}}
+      notStrong={true}
+    />`
+    }
+  }
 };
 
 export const Strong = Template.bind({});
@@ -317,11 +379,37 @@ Strong.args = {
   strong: true,
 };
 
+
+Strong.parameters = {
+  docs: {
+    source:{
+      code:`<ButtonMain 
+      textFirst="Clique"
+      textEnd="aqui"
+      onClick={() => {}}
+      Strong={true}
+    />`
+    }
+  }
+};
+
 export const Loading = Template.bind({});
 Loading.args = {
   textFirst: "Clique",
   textEnd: "aqui",
   loading: true,
+};
+
+Loading.parameters = {
+  docs: {
+    source:{
+      code:`<ButtonMain 
+      textFirst="Clique"
+      textEnd="aqui"
+      loading={true}
+    />`
+    }
+  }
 };
 
 export const Secondary = Template.bind({});
@@ -332,6 +420,19 @@ Secondary.args = {
   secondary: true,
 };
 
+Secondary.parameters = {
+  docs: {
+    source:{
+      code:`<ButtonMain 
+      textFirst="Clique"
+      textEnd="aqui"
+      onClick={() => {}}
+      secondary={true}
+    />`
+    }
+  }
+};
+
 export const NoBorder = Template.bind({});
 NoBorder.args = {
   textFirst: "Clique",
@@ -339,11 +440,35 @@ NoBorder.args = {
   noBorder: true,
 };
 
+NoBorder.parameters = {
+  docs: {
+    source:{
+      code:`<ButtonMain 
+      textFirst="Clique"
+      textEnd="aqui"
+      noBorder={true}
+    />`
+    }
+  }
+};
+
 export const BackPurple = Template.bind({});
 BackPurple.args = {
   textFirst: "Clique",
   textEnd: "aqui",
   backPurple: true,
+};
+
+BackPurple.parameters = {
+  docs: {
+    source:{
+      code:`<ButtonMain 
+      textFirst="Clique"
+      textEnd="aqui"
+      backPurple={true}
+    />`
+    }
+  }
 };
 
 export const Tertiary = Template.bind({});
@@ -354,12 +479,38 @@ Tertiary.args = {
   tertiary: true,
 };
 
+Tertiary.parameters = {
+  docs: {
+    source:{
+      code:`<ButtonMain 
+      textFirst="Clique"
+      textEnd="aqui"
+      onClick={() => {}}
+      tertiary={true}
+    />`
+    }
+  }
+};
+
 export const Notification = Template.bind({});
 Notification.args = {
   textFirst: "Clique",
   textEnd: "aqui",
   notification: true,
   amount: 2,
+};
+
+Notification.parameters = {
+  docs: {
+    source:{
+      code:`<ButtonMain 
+      textFirst="Clique"
+      textEnd="aqui"
+      notification={true}
+      amount={2}
+    />`
+    }
+  }
 };
 
 export const Rectangular = Template.bind({});
@@ -369,6 +520,20 @@ Rectangular.args = {
   secondary: true,
   tertiary: false,
   rectangular: true,
+};
+
+Rectangular.parameters = {
+  docs: {
+    source:{
+      code:`<ButtonMain 
+      textFirst="Clique"
+      textEnd="aqui"
+      secondary={true}
+      tertiary={false}
+      rectangular={true}
+    />`
+    }
+  }
 };
 
 export const TypeContent = Template.bind({});
@@ -381,6 +546,21 @@ TypeContent.args = {
   width: "10%",
 };
 
+TypeContent.parameters = {
+  docs: {
+    source:{
+      code:`<ButtonMain 
+      typeContent="icon"
+      colorBackground="red"
+      colorIcon="black"
+      icon={faTimes}
+      rectangular={true}
+      width="10%"
+    />`
+    }
+  }
+};
+
 export const Icon = Template.bind({});
 Icon.args = {
   textFirst: "Clique",
@@ -388,11 +568,35 @@ Icon.args = {
   icon: faPhone,
 };
 
+Icon.parameters = {
+  docs: {
+    source:{
+      code:`<ButtonMain 
+      textFirst="Clique"
+      textEnd="aqui"
+      icon={faPhone}
+    />`
+    }
+  }
+}
+
 export const CustomIcon = Template.bind({});
 CustomIcon.args = {
   textFirst: "Clique",
   textEnd: "aqui",
   customIcon: <FontAwesomeIcon icon={faPhone} />,
+};
+
+CustomIcon.parameters = {
+  docs: {
+    source:{
+      code:`<ButtonMain 
+      textFirst="Clique"
+      textEnd="aqui"
+      customIcon={<FontAwesomeIcon icon={faPhone}/>}
+    />`
+    }
+  }
 };
 
 export const IconPosition = Template.bind({});
@@ -403,6 +607,19 @@ IconPosition.args = {
   iconPosition: "left",
 };
 
+IconPosition.parameters = {
+  docs: {
+    source:{
+      code:`<ButtonMain 
+      textFirst="Clique"
+      textEnd="aqui"
+      icon={faPhone}
+      iconPosition="left"
+    />`
+    }
+  }
+};
+
 export const ColorIcon = Template.bind({});
 ColorIcon.args = {
   textFirst: "Clique",
@@ -411,11 +628,36 @@ ColorIcon.args = {
   icon: faPhone,
 };
 
+ColorIcon.parameters = {
+  docs: {
+    source:{
+      code:`<ButtonMain 
+      textFirst="Clique"
+      textEnd="aqui"
+      colorIcon="black"
+      icon={faPhone}
+    />`
+    }
+  }
+};
+
 export const ColorText = Template.bind({});
 ColorText.args = {
   textFirst: "Clique",
   textEnd: "aqui",
   colorText: "black",
+};
+
+ColorText.parameters = {
+  docs: {
+    source:{
+      code:`<ButtonMain 
+      textFirst="Clique"
+      textEnd="aqui"
+      colorText="black"
+    />`
+    }
+  }
 };
 
 export const ColorBackground = Template.bind({});
@@ -426,6 +668,19 @@ ColorBackground.args = {
   colorBackground: "black",
 };
 
+ColorBackground.parameters = {
+  docs: {
+    source:{
+      code:`<ButtonMain 
+      textFirst="Clique"
+      textEnd="aqui"
+      colorText="white"
+      colorBackground="black"
+    />`
+    }
+  }
+}
+
 export const HoverColor = Template.bind({});
 HoverColor.args = {
   textFirst: "Clique",
@@ -433,4 +688,18 @@ HoverColor.args = {
   secondary: true,
   hoverBackgroundColor: "black",
   hoverTextColor: "white",
+};
+
+HoverColor.parameters = {
+  docs: {
+    source:{
+      code:`<ButtonMain 
+      textFirst="Clique"
+      textEnd="aqui"
+      secondary={true}
+      hoverBackgroundColor="black"
+      hoverTextColor="white"
+    />`
+    }
+  }
 };

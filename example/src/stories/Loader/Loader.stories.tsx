@@ -81,9 +81,28 @@ const Template: Story<LoaderProps> = (args) => <Loader {...args} />;
 export const Default = Template.bind({});
 Default.args = {};
 
+Default.parameters = {
+  docs: {
+    source:{
+      code:`<Loader 
+    />`
+    }
+  }
+};
+
 export const Position = Template.bind({});
 Position.args = {
     position: "left",
+};
+
+Position.parameters = {
+  docs: {
+    source:{
+      code:`<Loader 
+      position="left"
+    />`
+    }
+  }
 };
 
 export const Size = Template.bind({});
@@ -91,7 +110,27 @@ Size.args = {
     size: "small",
 };
 
+Size.parameters = {
+  docs: {
+    source:{
+      code:`<Loader 
+      size="small"
+    />`
+    }
+  }
+};
+
 export const Color = Template.bind({});
 Color.args = {
     color: "blue",
+};
+
+Color.parameters = {
+  docs: {
+    source:{
+      code:`<Loader 
+      color="blue"
+    />`
+    }
+  }
 };

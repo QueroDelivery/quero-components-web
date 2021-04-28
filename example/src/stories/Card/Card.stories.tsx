@@ -139,11 +139,33 @@ Shadow.args = {
     type: "shadow",
 };
 
+Shadow.parameters = {
+  docs: {
+    source:{
+      code:`<Card 
+      type="shadow"
+    />`
+    }
+  }
+};
+
 export const Button = Template.bind({});
 Button.args = {
     type: "button",
-    text: "olá",
+    text: "Olá",
     onClick: () => action("click"),
+};
+
+Button.parameters = {
+  docs: {
+    source:{
+      code:`<Card 
+      type="button"
+      text="Olá"
+      onClick={() => {}}
+    />`
+    }
+  }
 };
 
 export const MinShadow = Template.bind({});
@@ -151,43 +173,120 @@ MinShadow.args = {
     type: "min-shadow",
 };
 
+MinShadow.parameters = {
+  docs: {
+    source:{
+      code:`<Card 
+      type="min-shadow"
+    />`
+    }
+  }
+};
+
 export const Icon = Template.bind({});
 Icon.args = {
     type: "button",
-    text: "olá",
+    text: "Olá",
     icon: faPhone,
     onClick: () => action("click"),
+};
+
+Icon.parameters = {
+  docs: {
+    source:{
+      code:`<Card 
+      type="button"
+      text="Olá"
+      icon={faPhone}
+      onClick={() => {}}
+    />`
+    }
+  }
 };
 
 export const SizeIcon = Template.bind({});
 SizeIcon.args = {
     type: "button",
-    text: "olá",
+    text: "Olá",
     icon: faPhone,
     sizeIcon: "lg",
     onClick: () => action("click"),
 };
 
+SizeIcon.parameters = {
+  docs: {
+    source:{
+      code:`<Card 
+      type="button"
+      text="Olá"
+      icon={faPhone}
+      sizeIcon="lg"
+      onClick={() => {}}
+    />`
+    }
+  }
+};
+
 export const Width = Template.bind({});
 Width.args = {
     type: "shadow",
-    text: "olá",
+    text: "Olá",
     width: "50",
+};
+
+Width.parameters = {
+  docs: {
+    source:{
+      code:`<Card 
+      type="shadow"
+      text="Olá"
+      width="50"
+      onClick={() => {}}
+    />`
+    }
+  }
 };
 
 export const Loading = Template.bind({});
 Loading.args = {
     type: "shadow",
-    text: "olá",
+    text: "Olá",
     loading: true,
+};
+
+Loading.parameters = {
+  docs: {
+    source:{
+      code:`<Card 
+      type="shadow"
+      text="Olá"
+      loading={true}
+    />`
+    }
+  }
 };
 
 export const Colors = Template.bind({});
 Colors.args = {
     type: "button",
-    text: "olá",
+    text: "Olá",
     icon: faPhone,
     colorIcon: "blue",
     colorText: "green",
     onClick: () => action("click"),
+};
+
+Colors.parameters = {
+  docs: {
+    source:{
+      code:`<Card 
+      type="button"
+      text="Olá"
+      icon={faPhone}
+      colorIcon="blue"
+      colorText="green"
+      onClick={() => {}}
+    />`
+    }
+  }
 };

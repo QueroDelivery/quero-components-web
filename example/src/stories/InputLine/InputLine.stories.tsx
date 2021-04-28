@@ -146,6 +146,17 @@ Default.args = {
     onChange: action("mudar valor"),
 };
 
+Default.parameters = {
+  docs: {
+    source:{
+      code:`<InputLine 
+      label="Título do InputLine"
+      onChange={() => {}}
+    />`
+    }
+  }
+};
+
 export const ErrorMessage = Template.bind({});
 ErrorMessage.args = {
     label: "Título do InputLine",
@@ -155,6 +166,19 @@ ErrorMessage.args = {
     action: undefined
 };
 
+ErrorMessage.parameters = {
+  docs: {
+    source:{
+      code:`<InputLine 
+      label="Título do InputLine"
+      placeholder="escreva"
+      errorMessage="errado"
+      onChange={() => {}}
+    />`
+    }
+  }
+};
+
 export const Width = Template.bind({});
 Width.args = {
     label: "Título do InputLine",
@@ -162,6 +186,19 @@ Width.args = {
     width: "50%",
     onChange: action("mudar valor"),
     action: undefined
+};
+
+Width.parameters = {
+  docs: {
+    source:{
+      code:`<InputLine 
+      label="Título do InputLine"
+      placeholder="escreva"
+      width="50%"
+      onChange={() => {}}
+    />`
+    }
+  }
 };
 
 export const Action = Template.bind({});
@@ -176,6 +213,23 @@ Action.args = {
     onChange: action("mudar valor"),
 };
 
+Action.parameters = {
+  docs: {
+    source:{
+      code:`<InputLine 
+      label="Título do InputLine"
+      placeholder="escreva"
+      action={
+        icon={faTimes}
+        onClick={() => {}}
+        position="right"
+      }
+      onChange={() => {}}
+    />`
+    }
+  }
+};
+
 export const Icon = Template.bind({});
 Icon.args = {
     label: "Título do InputLine",
@@ -184,6 +238,19 @@ Icon.args = {
     onChange: action("mudar valor"),
     action: undefined
 };
+
+Icon.parameters = {
+  docs: {
+    source:{
+      code:`<InputLine 
+      label="Título do InputLine"
+      placeholder="escreva"
+      icone={faUser}
+      onChange={() => {}}
+    />`
+    }
+  }
+}
 
 export const IconPosition = Template.bind({});
 IconPosition.args = {
@@ -195,6 +262,20 @@ IconPosition.args = {
     action: undefined
 };
 
+IconPosition.parameters = {
+  docs: {
+    source:{
+      code:`<InputLine 
+      label="Título do InputLine"
+      placeholder="escreva"
+      icon={faUser}
+      iconPosition="left"
+      onChange={() => {}}
+    />`
+    }
+  }
+};
+
 export const Colors = Template.bind({});
 Colors.args = {
     label: "Título do InputLine",
@@ -204,4 +285,19 @@ Colors.args = {
     icon: faUser,
     onChange: action("mudar valor"),
     action: undefined
+};
+
+Colors.parameters = {
+  docs: {
+    source:{
+      code:`<InputLine 
+      label="Título do InputLine"
+      placeholder="escreva"
+      textColor="blue"
+      iconColor="green"
+      icon={faUser}
+      onChange={() => {}}
+    />`
+    }
+  }
 };
