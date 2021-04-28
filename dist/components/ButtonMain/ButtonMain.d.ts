@@ -28,6 +28,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     typeContent?: ButtonTypes;
     hoverBackgroundColor?: string;
     hoverTextColor?: string;
+    iconStyle?: React.CSSProperties;
 }
 declare const ButtonMain: React.FC<ButtonProps>;
 export default ButtonMain;

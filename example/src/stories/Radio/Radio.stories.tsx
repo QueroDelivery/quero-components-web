@@ -77,6 +77,17 @@ Default.args = {
     onChange: action("checked/notChecked"),
 };
 
+Default.parameters = {
+  docs: {
+    source:{
+      code:`<Radio 
+      checked={false}
+      onChange={() => {}}
+    />`
+    }
+  }
+};
+
 export const Label = Template.bind({});
 Label.args = {
     checked: false,
@@ -85,10 +96,36 @@ Label.args = {
     onChange: action("checked/notChecked"),
 };
 
+Label.parameters = {
+  docs: {
+    source:{
+      code:`<Radio 
+      checked={false}
+      label="Título do Radio"
+      labelStyle={{ marginRight: 20 }}
+      onChange={() => {}}
+    />`
+    }
+  }
+};
+
 export const SizeBox = Template.bind({});
 SizeBox.args = {
     checked: true,
     label: "Título do Radio",
     sizeBox: "big",
     onChange: action("checked/notChecked"),
+};
+
+SizeBox.parameters = {
+  docs: {
+    source:{
+      code:`<Radio 
+      checked={true}
+      label="Título do Radio"
+      sizeBox="big"
+      onChange={() => {}}
+    />`
+    }
+  }
 };

@@ -94,6 +94,18 @@ Default.args = {
   selected: new Date(),
 };
 
+Default.parameters = {
+  docs: {
+    source:{
+      code:`<Calendar 
+      startDate={new Date()}
+      endDate={addDays(new Date(), 5)}
+      selected={new Date()}
+      />`
+    }
+  }
+};
+
 export const Label = Template.bind({});
 Label.args = {
   startDate: new Date(),
@@ -101,6 +113,20 @@ Label.args = {
   selected: new Date(),
   label: "Label do calendário",
 };
+
+Label.parameters = {
+  docs: {
+    source:{
+      code:`<Calendar 
+      startDate={new Date()}
+      endDate={addDays(new Date(), 5)}
+      selected={new Date()}
+      label="Label do calendário"
+      />`
+    }
+  }
+};
+
 export const LabelColor = Template.bind({});
 LabelColor.args = {
   startDate: new Date(),
@@ -108,6 +134,20 @@ LabelColor.args = {
   selected: new Date(),
   label: "Label do calendário",
   labelColor: "blue",
+};
+
+LabelColor.parameters = {
+  docs: {
+    source:{
+      code:`<Calendar 
+      startDate={new Date()}
+      endDate={addDays(new Date(), 5)}
+      selected={new Date()}
+      label="Label do calendário"
+      labelColor="blue"
+      />`
+    }
+  }
 };
 
 export const Brand = Template.bind({});
@@ -118,10 +158,36 @@ Brand.args = {
   brand: true,
 };
 
+Brand.parameters = {
+  docs: {
+    source:{
+      code:`<Calendar 
+      startDate={new Date()}
+      endDate={addDays(new Date(), 5)}
+      selected={new Date()}
+      brand={true}
+      />`
+    }
+  }
+};
+
 export const OtherFormat = Template.bind({});
 OtherFormat.args = {
   startDate: new Date(),
   endDate: addDays(new Date(), 5),
   selected: new Date(),
   otherFormatDate: "dd/MM/yyyy hh:mm",
+};
+
+OtherFormat.parameters = {
+  docs: {
+    source:{
+      code:`<Calendar 
+      startDate={new Date()}
+      endDate={addDays(new Date(), 5)}
+      selected={new Date()}
+      otherFormatDate="dd/MM/yyyy hh:mm"
+      />`
+    }
+  }
 };

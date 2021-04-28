@@ -8,10 +8,14 @@ import "quero-components-web/dist/index.css";
 
 export default {
     title: "Components/InputLineForm",
+    component: InputLineForm,
     parameters: {
-      component: InputLineForm,
-      componentSubtitle: "É necessário utilizar o React Hook Form. (https://react-hook-form.com/)", 
-    },
+      docs: {
+        description: {
+              component: `É necessário utilizar o [React Hook Form](https://react-hook-form.com/).`
+            }
+        },
+      },
     argTypes: {
       label: {
         control: "text",
@@ -111,6 +115,24 @@ Default.args = {
     validate: () => {},
     required: false,
     values: () => {},
-    limit: 100,
     minimum: 1,
+    limit: 100,
+};
+
+Default.parameters = {
+  docs: {
+    source:{
+      code:`<InputLineForm 
+      label="Título do InputLineForm"
+      name="example"
+      errors={errors.example}
+      register={register}
+      validate={() => {}}
+      required={false}
+      values={getValues}
+      minimum={1}
+      limit={100}
+    />`
+    }
+  }
 };

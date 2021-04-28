@@ -1,5 +1,5 @@
 import React from "react";
-// also exported from '@storybook/react' if you can deal with breaking changes in 6.1
+// also exported from "@storybook/react" if you can deal with breaking changes in 6.1
 import { Story, Meta } from "@storybook/react/types-6-0";
 import { Dropdown } from "quero-components-web";
 import { Props } from "./Interface";
@@ -172,12 +172,55 @@ Default.args = {
     },
 };
 
+Default.parameters = {
+  docs: {
+    source:{
+      code:`<Dropdown 
+      options={[{
+        key: "1",
+        text: "1",
+        value: "1"
+      },
+      {
+        key: "2",
+        text: "2",
+        value: "2"
+      }]}
+      placeholder="Selecione"
+      onChange={() => {}}
+    />`
+    }
+  }
+};
+
 export const Label = Template.bind({});
 Label.args = {
     options: options,
     placeholder: "Selecione",
     brand: true,
     label: "Título do Dropdown",
+};
+
+Label.parameters = {
+  docs: {
+    source:{
+      code:`<Dropdown 
+      options={[{
+        key: "1",
+        text: "1",
+        value: "1"
+      },
+      {
+        key: "2",
+        text: "2",
+        value: "2"
+      }]}
+      placeholder="Selecione"
+      brand={true}
+      label="Título do Dropdown"
+    />`
+    }
+  }
 };
 
 export const Erro = Template.bind({});
@@ -188,12 +231,56 @@ Erro.args = {
     errorMessage: "Erro",
 };
 
+Erro.parameters = {
+  docs: {
+    source:{
+      code:`<Dropdown 
+      options={[{
+        key: "1",
+        text: "1",
+        value: "1"
+      },
+      {
+        key: "2",
+        text: "2",
+        value: "2"
+      }]}
+      placeholder="Selecione"
+      brand={true}
+      errorMessage="Erro"
+    />`
+    }
+  }
+};
+
 export const Search = Template.bind({});
 Search.args = {
     options: options,
     placeholder: "Selecione",
     brand: true,
     search: true,
+};
+
+Search.parameters = {
+  docs: {
+    source:{
+      code:`<Dropdown 
+      options={[{
+        key: "1",
+        text: "1",
+        value: "1"
+      },
+      {
+        key: "2",
+        text: "2",
+        value: "2"
+      }]}
+      placeholder="Selecione"
+      brand={true}
+      search={true}
+    />`
+    }
+  }
 };
 
 export const Clearable = Template.bind({});
@@ -204,12 +291,56 @@ Clearable.args = {
     clearable: true,
 };
 
+Clearable.parameters = {
+  docs: {
+    source:{
+      code:`<Dropdown 
+      options={[{
+        key: "1",
+        text: "1",
+        value: "1"
+      },
+      {
+        key: "2",
+        text: "2",
+        value: "2"
+      }]}
+      placeholder="Selecione"
+      brand={true}
+      clearable={true}
+    />`
+    }
+  }
+};
+
 export const Disabled = Template.bind({});
 Disabled.args = {
     options: options,
     placeholder: "Selecione",
     brand: true,
     disabled: true,
+};
+
+Disabled.parameters = {
+  docs: {
+    source:{
+      code:`<Dropdown 
+      options={[{
+        key: "1",
+        text: "1",
+        value: "1"
+      },
+      {
+        key: "2",
+        text: "2",
+        value: "2"
+      }]}
+      placeholder="Selecione"
+      brand={true}
+      disabled={true}
+    />`
+    }
+  }
 };
 
 export const Loading = Template.bind({});
@@ -220,6 +351,28 @@ Loading.args = {
     loading: true,
 };
 
+Loading.parameters = {
+  docs: {
+    source:{
+      code:`<Dropdown 
+      options={[{
+        key: "1",
+        text: "1",
+        value: "1"
+      },
+      {
+        key: "2",
+        text: "2",
+        value: "2"
+      }]}
+      placeholder="Selecione"
+      brand={true}
+      loading={true}
+    />`
+    }
+  }
+};
+
 export const Multiple = Template.bind({});
 Multiple.args = {
     options: options,
@@ -228,11 +381,54 @@ Multiple.args = {
     multiple: true,
 };
 
+Multiple.parameters = {
+  docs: {
+    source:{
+      code:`<Dropdown 
+      options={[{
+        key: "1",
+        text: "1",
+        value: "1"
+      },
+      {
+        key: "2",
+        text: "2",
+        value: "2"
+      }]}
+      placeholder="Selecione"
+      brand={true}
+      multiple={true}
+    />`
+    }
+  }
+};
+
 export const Brand = Template.bind({});
 Brand.args = {
     options: options,
     placeholder: "Selecione",
     brand: true,
+};
+
+Brand.parameters = {
+  docs: {
+    source:{
+      code:`<Dropdown 
+      options={[{
+        key: "1",
+        text: "1",
+        value: "1"
+      },
+      {
+        key: "2",
+        text: "2",
+        value: "2"
+      }]}
+      placeholder="Selecione"
+      brand={true}
+    />`
+    }
+  }
 };
 
 export const TextAlign = Template.bind({});
@@ -243,11 +439,56 @@ TextAlign.args = {
     textAlign: "center",
 };
 
+TextAlign.parameters = {
+  docs: {
+    source:{
+      code:`<Dropdown 
+      options={[{
+        key: "1",
+        text: "1",
+        value: "1"
+      },
+      {
+        key: "2",
+        text: "2",
+        value: "2"
+      }]}
+      placeholder="Selecione"
+      brand={true}
+      textAlign="center"
+    />`
+    }
+  }
+};
+
 export const Line = Template.bind({});
 Line.args = {
     options: options,
     placeholder: "Selecione",
     line: true,
-    label: 'Título do Dropdown',
-    errorMessage: 'Erro'
+    label: "Título do Dropdown",
+    errorMessage: "Erro"
+};
+
+Line.parameters = {
+  docs: {
+    source:{
+      code:`<Dropdown 
+      options={[{
+        key: "1",
+        text: "1",
+        value: "1"
+      },
+      {
+        key: "2",
+        text: "2",
+        value: "2"
+      }]}
+      placeholder="Selecione"
+      line={true}
+      label="Título do Dropdown"
+      errorMessage="Erro"
+    />`
+    }
+  }
 };

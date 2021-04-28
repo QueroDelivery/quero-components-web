@@ -8,9 +8,13 @@ import "quero-components-web/dist/index.css";
 
 export default {
     title: "Components/DropdownForm",
+    component: DropdownForm,
     parameters: {
-      component: DropdownForm,
-      componentSubtitle: "É necessário utilizar as lib Semantic UI React (https://semantic-ui.com/) e React Hook Form (https://react-hook-form.com/)",
+        docs: {
+          description: {
+                component: `É necessário utilizar as lib [Semantic UI React](https://semantic-ui.com) e [React Hook Form](https://react-hook-form.com/).`
+              }
+    }
     },
     argTypes: {
       label: {
@@ -146,5 +150,30 @@ Default.args = {
     required: false,
     clearError: () => {},
     options: options,
-    line: true,
+};
+
+Default.parameters = {
+  docs: {
+    source:{
+      code:`<DropdownForm 
+      name="example"
+      errors={errors.example}
+      register={register}
+      setValue={setValue}
+      validate={() => {}}
+      required={false}
+      clearError={clearErrors}
+      options={[{
+        key: "1",
+        text: "1",
+        value: "1"
+      },
+      {
+        key: "2",
+        text: "2",
+        value: "2"
+      }]}
+    />`
+    }
+  }
 };
