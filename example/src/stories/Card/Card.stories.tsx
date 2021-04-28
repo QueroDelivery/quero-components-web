@@ -31,8 +31,12 @@ export default {
         control: "text", 
         description: "Texto do Card",
         table: {
+          defaultValue: {
+            summary: "Observação",
+            detail: "Só fica disponível quando o tipo for Button",
+          },
           type: {
-            summary: "string",
+            summary: "string", 
           },
         },
       },

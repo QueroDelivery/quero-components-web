@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 // also exported from '@storybook/react' if you can deal with breaking changes in 6.1
 import { Story, Meta } from "@storybook/react/types-6-0";
 import { action } from "@storybook/addon-actions";
@@ -156,9 +156,12 @@ export default {
   },
 } as Meta;
 
-const Template: Story<AccordionProps> = (args) => (
-  <Accordion {...args}>Escreve aqui</Accordion>
-);
+const Template: Story<AccordionProps> = (args) => {
+  const [isOpen, setIsOpen] = useState (false)
+  return <Accordion {...args} onChange={() => setIsOpen(!isOpen)} open={isOpen}>
+    Escreve aqui
+  </Accordion>
+};
 
 export const Default = Template.bind({});
 Default.args = {
@@ -177,7 +180,7 @@ Default.parameters = {
     />`
     }
   }
-}
+};
 
 export const Subtitle = Template.bind({});
 Subtitle.args = {
