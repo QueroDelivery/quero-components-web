@@ -15,7 +15,7 @@ export default {
               component: `É necessário utilizar a lib [React Hook Form](https://react-hook-form.com/).`
             }
         },
-      },
+    },
     argTypes: {
       label: {
         control: "text",
