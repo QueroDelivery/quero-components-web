@@ -13,6 +13,13 @@ registerLocale("pt-BR", br);
 export default {
   title: "Components/Calendar",
   component: Calendar,
+  parameters: {
+    docs: {
+      description: {
+            component: `Calendario recebendo as propriedades da lib [React Datepicker](https://reactdatepicker.com/).`
+          }
+      },
+  },
   argTypes: {
     label: {
       control: "text",

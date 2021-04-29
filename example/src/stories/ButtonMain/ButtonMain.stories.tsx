@@ -10,10 +10,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default {
   title: "Components/ButtonMain",
-  parameters: {
-    component: ButtonMain,
-    componentSubtitle: "Button padronizado do HTML, recebendo todas as suas propriedades", 
-  },
+  component: ButtonMain,
+    parameters: {
+      docs: {
+        description: {
+              component: "Button padronizado do HTML, recebendo todas as suas propriedades",
+            }
+        },
+      },
   argTypes: {
     textFirst: {
       control: "text",

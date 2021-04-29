@@ -8,6 +8,13 @@ import { ITableComponent } from "./Interface";
 export default {
   title: "Components/Table",
   component: Table,
+  parameters: {
+    docs: {
+      description: {
+            component: `É necessário utilizar a lib [Semantic UI React](https://semantic-ui.com/).`
+          }
+      },
+  },
   argTypes: {
     title: {
       control: "text", 

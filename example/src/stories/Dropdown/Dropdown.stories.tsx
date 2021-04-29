@@ -8,9 +8,13 @@ import "quero-components-web/dist/index.css";
 
 export default {
     title: "Components/Dropdown",
+    component: Dropdown,
     parameters: {
-      component: Dropdown,
-      componentSubtitle: "É necessário utilizar a lib Semantic UI React. (https://semantic-ui.com/)", 
+      docs: {
+        description: {
+              component: `É necessário utilizar a lib [Semantic UI React](https://semantic-ui.com/).`
+            }
+        },
     },
     argTypes: {
       label: {
