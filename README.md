@@ -1,42 +1,83 @@
-# quero-components-web
+<p align="center">
+   <img src=".github/querolabs.png" alt="querolabs" width="180"/>
+   <h2 align="center">
+    Quero Components Web
+    </h2>
+</p>
 
-> Biblioteca de components wev do Quero Delivery
+<p align="center">
+  Biblioteca de components web do Quero Delivery
+</p>
 
-[![NPM](https://img.shields.io/npm/v/quero-components-web.svg)](https://www.npmjs.com/package/quero-components-web) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+<p align="center">
+ <img alt="Repository size" src="https://img.shields.io/github/repo-size/querodelivery/quero-components-web?color=4e5acf">
 
-## Install
+  <a aria-label="Last Commit" href="https://github.com/querodelivery/quero-components-web/commits/master">
+    <img alt="Last commit on GitHub" src="https://img.shields.io/github/last-commit/querodelivery/quero-components-web?color=4e5acf">
+  <img alt="License" src="https://img.shields.io/badge/license-MIT-4e5acf">
+  </a>
+</p>
+<p align="center">
+  <a target="_blank" href="https://www.typescriptlang.org">
+    <img src="https://img.shields.io/static/v1?color=blue&label=Typescript&message=TS&?style=plastic&logo=Typescript">
+  </a>
+  <a target="_blank" href="https://reactjs.org/">
+    <img alt="ReactJS" src="https://img.shields.io/static/v1?color=blue&label=React&message=JS&?style=plastic&logo=React">
+  </a>
+  <a target="_blank" href="https://storybook.js.org/docs/react/get-started/introduction">
+    <img src="https://img.shields.io/static/v1?color=red&label=Storybook&message=SB&?style=plastic&logo=Storybook">
+  </a>
+</p>
+
+
+## 👨‍💻 Instalação
 
 ```bash
-npm install --save https://github.com/QueroDelivery/quero-components-web
+# Utilizando npm
+npm install https://github.com/QueroDelivery/quero-components-web
+
+# Utilizando yarn
+yarn add https://github.com/QueroDelivery/quero-components-web
 ```
 
-## Usage
+
+## 🏃 Como usar
 
 ```tsx
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
-import { MyComponent } from 'quero-components-web'
-import 'quero-components-web/dist/index.css'
-import { registerLocale } from 'react-datepicker'
-import br from 'date-fns/locale/pt-BR'
-registerLocale('pt-BR', br)
+import { MyComponent } from "quero-components-web";
+import "quero-components-web/dist/index.css";
+import { registerLocale } from "react-datepicker";
+import br from "date-fns/locale/pt-BR";
+registerLocale("pt-BR", br);
 
-class Example extends Component {
-  render() {
-    return <MyComponent />
-  }
+function Example() {
+    return <MyComponent />;
 }
 ```
 
-## Dev
+## 📝 Documentação
+
+Para verificar a documentação click [aqui](https://querodelivery.github.io/quero-components-web/)
+
+- Verificar em desenvolvimento
 ```bash
-npm run start # runs rollup with watch flag
+npm run start ou yarn start
 ```
+
 ```bash
 cd example
-npm run storybook # runs create-react-app dev server
+npm run storybook ou yarn storybook
+
+## A documentação será aberta na porta:6006 - acesse http://localhost:6006
 ```
 
-## License
+## 🤔 Como contribuir para o projeto
 
-MIT © [QueroDelivery](https://github.com/QueroDelivery)
+- Faça um **fork** do projeto;
+- Salve as alterações e crie uma mensagem de commit contando o que você fez.
+- Envie as suas alterações.
+- Realize um pull request para que seja analisado.
+
+> Caso tenha alguma dúvida confira este [guia de como contribuir no GitHub](https://github.com/firstcontributions/first-contributions).
