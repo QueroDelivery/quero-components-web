@@ -12,8 +12,8 @@ export default create({
     // appBorderRadius: 4,
 
     // Typography
-    // fontBase: '"Open Sans", sans-serif',
-    // fontCode: 'monospace',
+    fontBase: 'MontSerrat, Open Sans, sans-serif',
+    fontCode: 'monospace',
 
     // Text colors
     // textColor: 'black',
@@ -29,6 +29,6 @@ export default create({
     // inputBorder: colors.gray10,
     // inputTextColor: 'black',
     // inputBorderRadius: 4,
-    brandUrl: 'http://localhost:6006/',
+    brandUrl: 'https://querodelivery.github.io/quero-components-web/',
     brandImage: LogoQd,
 });
