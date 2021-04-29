@@ -1,0 +1,110 @@
+<Meta title="Introduction" />
+
+<style>{`
+  @media (max-width: 1080px) {
+  html {
+      font-size: 93.75%;
+    }
+  }
+
+  @media (max-width: 720) {
+    html {
+      font-size: 87.5%;
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-size: 1.5rem;
+    letter-spacing: 0.05rem;
+  }
+
+  .main > p, 
+  .main li {
+    font-size: 1.2rem;
+    line-height: 2rem;
+  }
+
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header img {
+    height: 20rem;
+    width: 20rem;
+  }
+
+  .header h1 {
+    color: #9B4DEE;
+  }
+
+  .main,
+  .title,
+  .footer {
+    margin: 3rem 0 0;
+  }
+
+  .main img {
+    margin-top: 2rem;
+    width: 28rem;
+  }
+
+`}</style>
+
+
+<div className="header">
+    <img src="./querolabs.png" alt="querolabs"/>
+    <h1>Quero Components Web</h1>
+    <h3>Biblioteca de components web do Quero Delivery</h3>
+</div>
+
+<div className="main">
+    <h2>O que é?</h2>
+    <p>A Quero Components Web é uma biblioteca de componentes reutilizáveis, auxiliando o usuário na construção de interfaces de forma mais rápida e produtiva. </p>
+</div>
+
+<div className="title">
+    <h2>Como usar?</h2>
+</div>
+
+ 
+```tsx
+import React, { Component } from "react";
+
+import { MyComponent } from "quero-components-web";
+import "quero-components-web/dist/index.css";
+import { registerLocale } from "react-datepicker";
+import br from "date-fns/locale/pt-BR";
+registerLocale("pt-BR", br);
+
+function Example() {
+    return <MyComponent />;
+}
+```
+
+<div className="main">
+  <h2>Quais bibliotecas são usadas?</h2>
+
+  <ul>
+    <li><a href="https://react-hook-form.com/" target="_blank"> React Hook Form </a></li>
+    <li><a href="https://semantic-ui.com/" target="_blank"> Semantic UI </a></li>
+    <li><a href="https://reactdatepicker.com/" target="_blank"> React Datepicker </a></li>
+  </ul>
+  
+</div>
+
+<div className="main">
+  <h2>Como contribuir para o projeto?</h2>
+  
+  <ul>
+    <li>Entre em nosso repositorio no <a href="https://github.com/QueroDelivery/quero-components-web" target="_blank"> GitHub</a>;</li>
+    <li>Faça um fork do projeto;</li>
+    <li>Salve as alterações e crie uma mensagem de commit contando o que você fez;</li>
+    <li>Envie as suas alterações;</li>
+    <li>Realize um pull request para que seja analisado;</li>
+  </ul>
+
+  <img src="./sharing.svg" alt="querolabs"/>
+
+</div>

@@ -10,9 +10,13 @@ import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
 export default {
     title: "Components/InputLine",
+    component: InputLine,
     parameters: {
-      component: InputLine,
-      componentSubtitle: "Input padronizado do HTML, recebendo todas as suas propriedades", 
+      docs: {
+        description: {
+              component: "Input padronizado do HTML, recebendo todas as suas propriedades",
+            }
+        },
     },
     argTypes: {
         label: {

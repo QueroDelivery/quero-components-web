@@ -8,11 +8,14 @@ import "quero-components-web/dist/index.css";
 
 export default {
     title: "Components/TextArea", 
-    parameters: {
-      component: TextArea,
-      componentSubtitle: "TextArea padronizado do HTML, recebendo todas as suas propriedades", 
-    },
     component: TextArea,
+    parameters: {
+      docs: {
+        description: {
+              component:"TextArea padronizado do HTML, recebendo todas as suas propriedades", 
+            }
+        },
+    },
     argTypes: {
       label: {
         control: "text",
