@@ -14,7 +14,7 @@ export default {
           description: {
                 component: `É necessário utilizar as lib [Semantic UI React](https://semantic-ui.com) e [React Hook Form](https://react-hook-form.com/).`
               }
-    }
+        }
     },
     argTypes: {
       label: {
@@ -28,18 +28,20 @@ export default {
         },
       },
       name: {
-        control: "text", 
+        control: "string", 
         description: "Descrição do DropdownForm",
-        defaultValue: "Descrição do DropdownForm",
         table: {
+          defaultValue: {
+            summary: "Fica registrado no HTML",
+          },
           type: {
-            summary: "required | string",
+            summary: "number | string", 
           },
         },
       },
       options: {
         control: "array", 
-        description: "Opções do Dropdown",
+        description: "Opções do DropdownForm",
         table: {
           defaultValue: {
             summary: "Opções",

@@ -27,11 +27,14 @@ export default {
         },
       },
       name: {
-        control: "text", 
+        control: "string", 
         description: "Descrição do TextArea",
         table: {
+          defaultValue: {
+            summary: "Fica registrado no HTML",
+          },
           type: {
-            summary: "required | string",
+            summary: "number | string", 
           },
         },
       },
