@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 // also exported from '@storybook/react' if you can deal with breaking changes in 6.1
 import { Story, Meta } from "@storybook/react/types-6-0";
 import { MoreLess } from "quero-components-web";
@@ -92,7 +92,12 @@ export default {
     },
 } as Meta;
 
-const Template: Story<MoreLessProps> = (args) => <MoreLess {...args} />;
+const Template: Story<MoreLessProps> = (args) => {
+  const [value, setValue] = useState (args.value)
+  return <MoreLess {...args} value={value} more={() => setValue(value+1)} 
+  less={() => setValue(value-1)}
+  />
+};
 
 export const Default = Template.bind({});
 Default.args = {

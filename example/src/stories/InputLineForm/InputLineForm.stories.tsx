@@ -28,11 +28,14 @@ export default {
         },
       },
       name: {
-        control: "text", 
+        control: "string", 
         description: "Descrição do InputLineForm",
         table: {
+          defaultValue: {
+            summary: "Fica registrado no HTML",
+          },
           type: {
-            summary: "required | string",
+            summary: "number | string", 
           },
         },
       },
@@ -46,7 +49,7 @@ export default {
         },
       },
       validate: {
-        control: "text",
+        control: "string",
         description: "Função que valida o InputLineForm",
         table: {
           type: {
