@@ -22,7 +22,7 @@ export const Shadow = styled.div<CardProps>`
     width: ${(props) => {
         if (props.width) {
             if (typeof props.width === "string") {
-                return `${props.width.replace("%", "")}%`;
+                return props.width;
             } else {
                 return `${props.width}px`;
             }
@@ -56,7 +56,7 @@ export const Button = styled.a<CardProps>`
     width: ${(props) => {
         if (props.width) {
             if (typeof props.width === "string") {
-                return `${props.width.replace("%", "")}%`;
+                return props.width;
             } else {
                 return `${props.width}px`;
             }

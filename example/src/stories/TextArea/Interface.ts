@@ -5,8 +5,8 @@ export interface TextAreaProps
     label?: string; 
     lengthInfo?: boolean | number; 
     errorMessage?: string; 
-    width?: string; 
-    height?: number;
+    width?: number | string;
+    height?: number | string;
     textAreaRef?: RefObject<HTMLTextAreaElement>;
     labelColor?: string; 
     textColor?: string;

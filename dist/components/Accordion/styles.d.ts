@@ -7,7 +7,7 @@ interface AccordionProps {
     secondary?: boolean;
     width?: number | string;
     icon?: boolean;
-    fontSizeTitle?: number;
+    fontSizeTitle?: number | string;
 }
 interface BodyProps {
     width?: number | string;

@@ -5,7 +5,7 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     errorMessage?: string;
     containerStyle?: React.CSSProperties;
     labelStyle?: React.CSSProperties;
-    width?: string;
+    width?: string | number;
     textColor?: string;
     inputRef?: RefObject<HTMLInputElement>;
     icon?: IconDefinition;

@@ -4,7 +4,7 @@ import { InputHTMLAttributes, RefObject } from "react";
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     label?: string;
     errorMessage?: string;
-    width?: string; 
+    width?: string | number; 
     inputRef?: RefObject<HTMLInputElement>;
     action?: { 
         icon: IconDefinition;

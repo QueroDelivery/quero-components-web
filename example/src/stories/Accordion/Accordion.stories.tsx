@@ -31,7 +31,7 @@ export default {
       },
     },
     width: {
-      control: "string",
+      control: "text",
       description:
         "Largura do accordion",
       table: {
@@ -146,10 +146,11 @@ export default {
       description: "Tamanho do título",
       table: {
         defaultValue: {
-          summary: "Em Number sendo definido como px",
+          summary: "Opções",
+          detail: "String | Number (definido como px)",
         },
         type: {
-          summary: "number",
+          summary: "number | string",
         },
       },
     },

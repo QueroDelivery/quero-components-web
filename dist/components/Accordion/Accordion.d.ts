@@ -14,7 +14,7 @@ interface AccordionProps {
     icon?: IconDefinition;
     customIcon?: React.ReactNode;
     colorIcon?: string;
-    fontSizeTitle?: number;
+    fontSizeTitle?: number | string;
 }
 declare const Accordion: React.FC<AccordionProps>;
 export default Accordion;
