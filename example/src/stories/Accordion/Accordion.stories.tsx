@@ -31,7 +31,7 @@ export default {
       },
     },
     width: {
-      control: "string",
+      control: "text",
       description:
         "Largura do accordion",
       table: {
