@@ -107,7 +107,9 @@ export const Button = styled.button<ButtonProps>`
 
         return colors.brand30;
     }};
-    height: ${(props) => (props.size ? size(props.size) : "40px")};
+    box-sizing: border-box;
+    height: ${(props) => (props.size ? size(props.size) : "2.5rem")};
+    padding: 1.5rem;
     width: ${(props) =>{
         if (props.width) {
             if (typeof props.width === "string") {
@@ -117,12 +119,12 @@ export const Button = styled.button<ButtonProps>`
             }
         }
 
-        return '100%'
+        return 'none'
     }};
     border-radius: ${(props) => {
         if (props.rectangular) return "10px";
 
-        return "30px";
+        return "1.87rem";
     }};
     cursor: pointer;
     border: ${(props) => {
@@ -140,7 +142,7 @@ export const Button = styled.button<ButtonProps>`
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: ${(props) => (props.icon ? "0 15px" : "")};
+    padding: ${(props) => (props.icon ? "0 .93rem" : "")};
 
     &:disabled {
         opacity: 0.5;
@@ -223,7 +225,7 @@ export const TextFirst = styled.span<TextFirstProps>`
 
         return "normal";
     }};
-    font-size: ${(props) => (props.size ? textSize(props.size) : "14px")};
+    font-size: ${(props) => (props.size ? textSize(props.size) : "0.875rem")};
 `;
 export const TextEnd = styled.span<TextEndProps>`
     color: ${(props) => {
@@ -244,14 +246,12 @@ export const TextEnd = styled.span<TextEndProps>`
 
         return "bold";
     }};
-    font-size: ${(props) => (props.size ? textSize(props.size) : "14px")};
+    font-size: ${(props) => (props.size ? textSize(props.size) : "0.875rem")};
 `;
 
 export const Notification = styled.button`
     background-color: ${colors.brand10};
-    height: 40px;
-    width: 100%;
-    border-radius: 30px;
+    border-radius: 1.87rem;
     cursor: pointer;
     border: 1px solid ${colors.brand30};
     outline: none;
@@ -268,7 +268,7 @@ export const Notification = styled.button`
 
     span {
         color: ${colors.brand30};
-        margin-left: 20px;
+        margin-left: 1.25rem;
         font-weight: bold;
     }
 `;
@@ -277,12 +277,13 @@ export const Icon = styled.div``;
 
 export const Amount = styled.div`
     background-color: ${colors.brand30};
-    width: 20px;
-    height: 20px;
+    margin-left: .5rem;
+    width: 1.25rem;
+    height: 1.25rem;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 50%;
     color: ${colors.brand10};
-    font-size: 10px;
+    font-size: .62rem;
 `;

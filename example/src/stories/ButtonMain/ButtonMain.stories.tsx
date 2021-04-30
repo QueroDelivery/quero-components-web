@@ -327,7 +327,7 @@ export const Width = Template.bind({});
 Width.args = {
   textFirst: "Clique",
   textEnd: "aqui",
-  width: "50%",
+  width: "100%",
 };
 
 Width.parameters = {
@@ -336,7 +336,7 @@ Width.parameters = {
       code:`<ButtonMain 
       textFirst="Clique"
       textEnd="aqui"
-      width="50%"
+      width="100%"
     />`
     }
   }
