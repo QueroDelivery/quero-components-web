@@ -1,5 +1,4 @@
 <p align="center">
-   <img src=".github/querolabs.png" alt="querolabs" width="180"/>
    <h2 align="center">
     Quero Components Web
     </h2>
@@ -34,10 +33,10 @@
 
 ```bash
 # Utilizando npm
-npm install https://github.com/QueroDelivery/quero-components-web
+npm install @quero-delivery/quero-components-web
 
 # Utilizando yarn
-yarn add https://github.com/QueroDelivery/quero-components-web
+yarn add @quero-delivery/quero-components-web
 ```
 
 

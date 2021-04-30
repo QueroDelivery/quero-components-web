@@ -11,13 +11,13 @@ export default {
   parameters: {
     docs: {
       description: {
-            component: `É necessário utilizar a lib [Semantic UI React](https://semantic-ui.com/).`
+            component: `É necessário utilizar a lib [Semantic UI React](https://react.semantic-ui.com).`
           }
       },
   },
   argTypes: {
     title: {
-      control: "text", 
+      control: "text",
       description: "Título da Table",
       defaultValue: "Título da Table",
       table: {
@@ -27,7 +27,7 @@ export default {
       },
     },
     message: {
-      control: "text", 
+      control: "text",
       description: "Mensagem da Table",
       defaultValue: "Mensagem da Table",
       table: {
@@ -63,7 +63,7 @@ export default {
         },
       },
     },
-    titleStyle: { 
+    titleStyle: {
       control: "object",
       description: "Estilização do Título",
       table: {
@@ -72,7 +72,7 @@ export default {
         },
       },
     },
-    messageStyle: { 
+    messageStyle: {
       control: "object",
       description: "Estilização da mensagem",
       table: {
@@ -97,7 +97,7 @@ export const Primary: Story<ITableComponent> = (args) => {
         page={page}
         totalCount={5}
         limit={1}
-        
+
         onPageChange={(activePage) => {
           setPage(activePage)
         }}
@@ -147,7 +147,7 @@ Primary.parameters = {
           <Table.HeaderCell>Description</Table.HeaderCell>
         </Table.Row>
       </Table.Header>
-  
+
       <Table.Body>
         <Table.Row>
           <Table.Cell>set rating</Table.Cell>
