@@ -12,7 +12,7 @@ export default {
     parameters: {
       docs: {
         description: {
-              component: `É necessário utilizar a lib [Semantic UI React](https://semantic-ui.com/).`
+              component: `É necessário utilizar a lib [Semantic UI React](https://react.semantic-ui.com).`
             }
         },
     },
@@ -37,7 +37,7 @@ export default {
         },
       },
       options: {
-        control: "array", 
+        control: "array",
         description: "Opções do Dropdown",
         table: {
           defaultValue: {
@@ -59,7 +59,7 @@ export default {
         },
       },
       search: {
-        control: "boolean", 
+        control: "boolean",
         description: "Deseja permitir que pesquise dentro do Dropdown",
         table: {
           type: {
@@ -68,7 +68,7 @@ export default {
         },
       },
       clearable: {
-        control: "boolean", 
+        control: "boolean",
         description: "Deseja remover a seleção dentro do Dropdown?",
         table: {
           type: {
@@ -77,7 +77,7 @@ export default {
         },
       },
       disabled: {
-        control: "boolean", 
+        control: "boolean",
         description: "O Dropdown esta suspenso/desabilitado?",
         table: {
           type: {
@@ -179,7 +179,7 @@ Default.args = {
 Default.parameters = {
   docs: {
     source:{
-      code:`<Dropdown 
+      code:`<Dropdown
       options={[{
         key: "1",
         text: "1",
@@ -208,7 +208,7 @@ Label.args = {
 Label.parameters = {
   docs: {
     source:{
-      code:`<Dropdown 
+      code:`<Dropdown
       options={[{
         key: "1",
         text: "1",
@@ -238,7 +238,7 @@ Erro.args = {
 Erro.parameters = {
   docs: {
     source:{
-      code:`<Dropdown 
+      code:`<Dropdown
       options={[{
         key: "1",
         text: "1",
@@ -268,7 +268,7 @@ Search.args = {
 Search.parameters = {
   docs: {
     source:{
-      code:`<Dropdown 
+      code:`<Dropdown
       options={[{
         key: "1",
         text: "1",
@@ -298,7 +298,7 @@ Clearable.args = {
 Clearable.parameters = {
   docs: {
     source:{
-      code:`<Dropdown 
+      code:`<Dropdown
       options={[{
         key: "1",
         text: "1",
@@ -328,7 +328,7 @@ Disabled.args = {
 Disabled.parameters = {
   docs: {
     source:{
-      code:`<Dropdown 
+      code:`<Dropdown
       options={[{
         key: "1",
         text: "1",
@@ -358,7 +358,7 @@ Loading.args = {
 Loading.parameters = {
   docs: {
     source:{
-      code:`<Dropdown 
+      code:`<Dropdown
       options={[{
         key: "1",
         text: "1",
@@ -388,7 +388,7 @@ Multiple.args = {
 Multiple.parameters = {
   docs: {
     source:{
-      code:`<Dropdown 
+      code:`<Dropdown
       options={[{
         key: "1",
         text: "1",
@@ -417,7 +417,7 @@ Brand.args = {
 Brand.parameters = {
   docs: {
     source:{
-      code:`<Dropdown 
+      code:`<Dropdown
       options={[{
         key: "1",
         text: "1",
@@ -446,7 +446,7 @@ TextAlign.args = {
 TextAlign.parameters = {
   docs: {
     source:{
-      code:`<Dropdown 
+      code:`<Dropdown
       options={[{
         key: "1",
         text: "1",
@@ -477,7 +477,7 @@ Line.args = {
 Line.parameters = {
   docs: {
     source:{
-      code:`<Dropdown 
+      code:`<Dropdown
       options={[{
         key: "1",
         text: "1",

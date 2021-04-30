@@ -12,7 +12,7 @@ export default {
     parameters: {
         docs: {
           description: {
-                component: `É necessário utilizar as lib [Semantic UI React](https://semantic-ui.com) e [React Hook Form](https://react-hook-form.com/).`
+                component: `É necessário utilizar as lib [Semantic UI React](https://react.semantic-ui.com) e [React Hook Form](https://react-hook-form.com/).`
               }
         }
     },
@@ -28,19 +28,19 @@ export default {
         },
       },
       name: {
-        control: "string", 
+        control: "string",
         description: "Descrição do DropdownForm",
         table: {
           defaultValue: {
             summary: "Fica registrado no HTML",
           },
           type: {
-            summary: "number | string", 
+            summary: "number | string",
           },
         },
       },
       options: {
-        control: "array", 
+        control: "array",
         description: "Opções do DropdownForm",
         table: {
           defaultValue: {
@@ -62,11 +62,11 @@ export default {
         },
       },
       errors: {
-        control: "text", 
+        control: "text",
         description: "Mensagem de erro de acordo com a função validate",
         table: {
           type: {
-            summary: "required | string", 
+            summary: "required | string",
           },
         },
       },
@@ -124,7 +124,7 @@ export default {
           },
         },
       },
-    } 
+    }
 } as Meta;
 
 const Template: Story<DropdownFormProps> = (args) => {
@@ -157,7 +157,7 @@ Default.args = {
 Default.parameters = {
   docs: {
     source:{
-      code:`<DropdownForm 
+      code:`<DropdownForm
       name="example"
       errors={errors.example}
       register={register}
