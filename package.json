@@ -78,5 +78,8 @@
     "np": {
         "branch": "prod",
         "contents": "./dist"
+    },
+    "publishConfig": {
+        "access": "public"
     }
 }
