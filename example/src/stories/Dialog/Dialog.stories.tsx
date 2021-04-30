@@ -39,14 +39,16 @@ export default {
         },
       },
       maxHeight: {
-        control: "number",
+        control: "text",
         description: "Altura máxima do Dialog",
+        defaultValue: "100%",
         table: {
           defaultValue: {
-            summary: "Tem como padrão o px",
+            summary: "Opções",
+            detail: "String | Number (definido como px)",
           },
           type: {
-            summary: "number",
+            summary: "number | string",
           },
         },
       },    
