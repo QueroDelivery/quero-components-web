@@ -23,7 +23,7 @@ interface AccordionProps {
     icon?: IconDefinition;
     customIcon?: React.ReactNode;
     colorIcon?: string;
-    fontSizeTitle?: number;
+    fontSizeTitle?: number | string;
 }
 
 const Accordion: React.FC<AccordionProps> = ({

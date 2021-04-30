@@ -10,7 +10,7 @@ interface AccordionProps {
     secondary?: boolean;
     width?: number | string;
     icon?: boolean;
-    fontSizeTitle?: number;
+    fontSizeTitle?: number | string;
 }
 
 interface BodyProps {
@@ -28,7 +28,6 @@ export const Container = styled.div<AccordionProps>`
                 return `${props.width}px`;
             }
         }
-
         return '100%'
     }};
     justify-content: space-between;
@@ -52,13 +51,18 @@ export const Container = styled.div<AccordionProps>`
         margin-left: ${(props) => (props.icon ? "15px" : "0")};
 
         .title {
-            font-size: ${(props) =>
-                props.fontSizeTitle
-                    ? `${props.fontSizeTitle}px`
-                    : props.subtitle
-                    ? "14px"
-                    : "16px"};
-            color: ${(props) =>
+          font-size: ${(props) => {
+                if (props.fontSizeTitle) {
+                    if (typeof props.fontSizeTitle === "string") {
+                        return props.fontSizeTitle;
+                    } else {
+                        return `${props.fontSizeTitle}px`;
+                    }
+                }
+                return props.subtitle ? "14px" : "16px";
+            }};
+
+          color: ${(props) =>
                 props.colorTitle ? props.colorTitle : `${colors.gray20}`};
         }
 
