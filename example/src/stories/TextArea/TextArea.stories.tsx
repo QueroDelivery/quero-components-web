@@ -48,8 +48,12 @@ export default {
         control: "text",
         description: "Largura do TextArea",
         table: {
+          defaultValue: {
+            summary: "Opções",
+            detail: "String | Number (definido como px)",
+          },
           type: {
-            summary: "string", 
+            summary: "number | string",
           },
         },
       },

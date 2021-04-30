@@ -7,7 +7,7 @@ interface BackgroundProps {
 
 interface DialogProps {
     open?: boolean;
-    maxHeight?: number;
+    maxHeight?: number | string;
 }
 
 export const Background = styled.div<BackgroundProps>`
@@ -49,11 +49,19 @@ export const Dialog = styled.div<DialogProps>`
                   position: relative;
 
                   .box-dialog {
-                      max-height: ${props.maxHeight
-                          ? `${props.maxHeight}px`
-                          : "100%"};
                       overflow: auto;
                       margin-bottom: -20px;
+                      maxHeight: ${() => {
+                      if (props.maxHeight) {
+                          if (typeof props.maxHeight === "string") {
+                              return props.maxHeight;
+                          } else {
+                              return `${props.maxHeight}px`;
+                          }
+                      }
+
+                      return "100%";
+                  }};
                   }
 
                   .loading-dialog {

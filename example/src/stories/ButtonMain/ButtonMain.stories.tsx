@@ -271,6 +271,15 @@ export default {
         },
       },
     },
+    onClick: {
+      action: "clicked",
+      description: "Função para capturar evento de clique",
+      table: {
+      type: {
+        summary: "function",
+      },
+    },
+    },
   },
 } as Meta;
 

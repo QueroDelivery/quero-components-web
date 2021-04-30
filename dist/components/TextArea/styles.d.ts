@@ -6,8 +6,8 @@ interface InputProps {
     labelStyle?: React.CSSProperties;
     containerStyle?: React.CSSProperties;
     disabled?: boolean;
-    width?: string;
-    height?: number;
+    width?: number | string;
+    height?: number | string;
     textColor?: string;
 }
 interface LabelErrorProps {

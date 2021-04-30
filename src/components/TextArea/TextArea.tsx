@@ -18,8 +18,8 @@ export interface TextAreaProps
     errorColor?: string;
     containerStyle?: React.CSSProperties;
     labelStyle?: React.CSSProperties;
-    width?: string;
-    height?: number;
+    width?: number | string;
+    height?: number | string;
     textAreaRef?: any;
     lengthInfo?: boolean | number;
 }

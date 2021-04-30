@@ -14,5 +14,5 @@ export interface AccordionProps {
   colorValue?: string;
   secondary?: boolean;
   customIcon?: React.ReactNode;
-  fontSizeTitle?: number;
+  fontSizeTitle?: number | string;
 }

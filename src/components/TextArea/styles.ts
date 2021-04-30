@@ -8,8 +8,8 @@ interface InputProps {
     labelStyle?: React.CSSProperties;
     containerStyle?: React.CSSProperties;
     disabled?: boolean;
-    width?: string;
-    height?: number;
+    width?: number | string;
+    height?: number | string;
     textColor?: string;
 }
 
@@ -48,9 +48,31 @@ export const Container = styled.div<InputProps>`
         color: ${(props) =>
             props.textColor ? props.textColor : colors.gray20};
         resize: none;
-        width: 100%;
+        width: ${(props) => {
+        if (props.width) {
+            if (typeof props.width === "string") {
+                return props.width;
+            } else {
+                return `${props.width}px`;
+            }
+        }
+
+            return '100%'
+        }};
+
         border-radius: 20px;
-        height: ${(props) => (props.height ? `${props.height}px` : "100px")};
+        height: ${(props) => {
+        if (props.height) {
+            if (typeof props.height === "string") {
+                return props.height;
+            } else {
+                return `${props.height}px`;
+            }
+        }
+
+          return '100%'
+        }};
+        
         margin: 0px;
         outline: none;
         padding: 20px;
