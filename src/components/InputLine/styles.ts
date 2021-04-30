@@ -9,7 +9,7 @@ interface InputProps {
     labelStyle?: React.CSSProperties;
     containerStyle?: React.CSSProperties;
     disabled?: boolean;
-    width?: string;
+    width?: string | number;
     textColor?: string;
     icon?: boolean;
     iconPosition?: "left" | "right";
@@ -22,11 +22,19 @@ interface LabelErrorProps {
     errorColor?: string;
 }
 
-export const Container = styled.div<InputProps>`
-    width: ${(props) => (props.width ? props.width : "100%")};
+export const Container = styled.div<InputProps>`    
     position: relative;
-
     opacity: ${(props) => (props.disabled ? "50%" : "100%")};
+    width: ${(props) => {
+        if (props.width) {
+            if (typeof props.width === "string") {
+                return props.width;
+            } else {
+                return `${props.width}px`;
+            }
+        }
+        return "100%";
+    }};
 
     input {
         color: ${(props) =>

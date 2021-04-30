@@ -7,7 +7,7 @@ interface InputProps {
     labelStyle?: React.CSSProperties;
     containerStyle?: React.CSSProperties;
     disabled?: boolean;
-    width?: string;
+    width?: string | number;
     textColor?: string;
     icon?: boolean;
     iconPosition?: "left" | "right";

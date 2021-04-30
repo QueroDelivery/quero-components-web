@@ -44,10 +44,11 @@ export default {
           defaultValue: "100%",
           table: {
             defaultValue: {
-              summary: "O padrão é 100%",
+              summary: "Opções",
+              detail: "String | Number (definido como px)",
             },
             type: {
-              summary: "string", 
+              summary: "string | number", 
             },
           },
         },
