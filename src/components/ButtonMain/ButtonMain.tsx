@@ -48,6 +48,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     typeContent?: ButtonTypes;
     hoverBackgroundColor?: string;
     hoverTextColor?: string;
+    iconStyle?: React.CSSProperties
 }
 
 const ButtonMain: React.FC<ButtonProps> = ({
@@ -76,6 +77,7 @@ const ButtonMain: React.FC<ButtonProps> = ({
     typeContent,
     hoverBackgroundColor,
     hoverTextColor,
+    iconStyle,
     ...rest
 }) => {
 
@@ -129,7 +131,7 @@ const ButtonMain: React.FC<ButtonProps> = ({
                                             colorIcon ? colorIcon : colors.brand10
                                         }
                                         size={"lg"}
-                                        style={{ marginLeft: typeContent == 'icon' ? 0 : 10 }}
+                                        style={{ marginLeft: typeContent == 'icon' ? 0 : 10, ...iconStyle }}
                                     />
                                 }
                             </React.Fragment>
@@ -166,18 +168,18 @@ const ButtonMain: React.FC<ButtonProps> = ({
                     renderButtonTypes(typeContent)
                 ) : (
                     <div>
-                        {icon && iconPosition === 'left' && (
+                        {(icon || customIcon) && iconPosition === 'left' && (
                             <React.Fragment>
                                 {customIcon ?
                                     customIcon
                                     :
                                     <FontAwesomeIcon
-                                        icon={icon}
+                                        icon={icon!}
                                         color={
                                             colorIcon ? colorIcon : colors.brand10
                                         }
                                         size={"lg"}
-                                        style={{ marginRight: 10 }}
+                                        style={{ marginRight: 10, ...iconStyle }}
                                     />
                                 }
                             </React.Fragment>
@@ -202,18 +204,18 @@ const ButtonMain: React.FC<ButtonProps> = ({
                         >
                             {textEnd}
                         </TextEnd>
-                        {icon && iconPosition === 'right' && (
+                        {(icon || customIcon) && iconPosition === 'right' && (
                             <React.Fragment>
                                 {customIcon ?
                                     customIcon
                                     :
                                     <FontAwesomeIcon
-                                        icon={icon}
+                                        icon={icon!}
                                         color={
                                             colorIcon ? colorIcon : colors.brand10
                                         }
                                         size={"lg"}
-                                        style={{ marginLeft: 10 }}
+                                        style={{ marginLeft: 10, ...iconStyle }}
                                     />
                                 }
                             </React.Fragment>
