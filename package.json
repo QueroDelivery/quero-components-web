@@ -1,6 +1,6 @@
 {
     "name": "@quero-delivery/quero-components-web",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "Biblioteca de componentes web do Quero Delivery",
     "author": "QueroDelivery",
     "license": "MIT",
@@ -18,7 +18,7 @@
         "start": "microbundle-crl watch --format modern,cjs",
         "reinstall": "rm -rf node_modules && npm i",
         "deploy": "git checkout prod && rm -rf dist && git merge master && npm run build && git add . && git commit -m 'deploy' && git push origin prod && git checkout master && np && git push origin master",
-        "publish-docs": "git checkout docs && rm -rf dist && git merge master && npm run build && cd example && npm run build-storybook && ../node_modules/.bin/gh-pages -d storybook-static && cd .. && git add . && git commit -m 'publish' && git push origin docs && git checkout master"
+        "publish-docs": "git checkout docs && rm -rf dist && git merge master && npm run build && cd example && rm -rf storybook-static && npm run build-storybook && ../node_modules/.bin/gh-pages -d storybook-static && cd .. && git add . && git commit -m 'publish' && git push origin docs && git checkout master"
     },
     "peerDependencies": {
         "date-fns": ">2.0.0",
