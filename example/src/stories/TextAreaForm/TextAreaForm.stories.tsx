@@ -1,10 +1,10 @@
 import React from "react";
 // also exported from '@storybook/react' if you can deal with breaking changes in 6.1
 import { Story, Meta } from "@storybook/react/types-6-0";
-import { TextAreaForm } from "quero-components-web";
+import { TextAreaForm } from "@quero-delivery/quero-components-web";
 import { TextAreaFormProps } from "./Interface";
 
-import "quero-components-web/dist/index.css";
+import "@quero-delivery/quero-components-web/dist/index.css";
 
 export default {
     title: "Components/TextAreaForm",
@@ -27,14 +27,14 @@ export default {
         },
       },
       name: {
-        control: "string", 
+        control: "string",
         description: "Descrição do TextArea",
         table: {
           defaultValue: {
             summary: "Fica registrado no HTML",
           },
           type: {
-            summary: "number | string", 
+            summary: "number | string",
           },
         },
       },
@@ -124,7 +124,7 @@ Default.args = {
 Default.parameters = {
   docs: {
     source:{
-      code:`<TextAreaForm 
+      code:`<TextAreaForm
         label="Título do TextArea"
         name="example"
         lengthInfo={true}

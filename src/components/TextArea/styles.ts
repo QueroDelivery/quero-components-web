@@ -23,6 +23,7 @@ interface LabelProps {
 }
 
 export const Label = styled.span<LabelProps>`
+    font-family: MontSerrat !important;
     font-size: 14px;
     color: ${(props) => {
         if (props.errorMessage) {
@@ -39,12 +40,14 @@ export const Label = styled.span<LabelProps>`
 `;
 
 export const Container = styled.div<InputProps>`
+    font-family: MontSerrat !important;
     width: ${(props) => (props.width ? props.width : "100%")};
     position: relative;
 
     opacity: ${(props) => (props.disabled ? "50%" : "100%")};
 
     textarea {
+        font-family: MontSerrat !important;
         color: ${(props) =>
             props.textColor ? props.textColor : colors.gray20};
         resize: none;
@@ -72,7 +75,7 @@ export const Container = styled.div<InputProps>`
 
           return '100%'
         }};
-        
+
         margin: 0px;
         outline: none;
         padding: 20px;
@@ -144,6 +147,7 @@ export const Container = styled.div<InputProps>`
 `;
 
 export const LabelError = styled.span<LabelErrorProps>`
+    font-family: MontSerrat !important;
     font-size: 10px;
     margin-left: 0;
     margin-top: -2px;
@@ -157,6 +161,7 @@ export const LabelError = styled.span<LabelErrorProps>`
 `;
 
 export const Footer = styled.div`
+    font-family: MontSerrat !important;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;

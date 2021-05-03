@@ -172,6 +172,7 @@ const fontActiveInactive = (size: string) => {
 };
 
 export const Switch = styled.label<SelectionProps>`
+    font-family: MontSerrat !important;
     display: flex !important;
     flex-direction: row !important;
     position: relative !important;
@@ -248,6 +249,7 @@ export const Switch = styled.label<SelectionProps>`
 `;
 
 export const Toggle = styled.div<SelectionProps>`
+    font-family: MontSerrat !important;
     display: flex !important;
     flex-direction: row !important;
 
@@ -304,6 +306,7 @@ export const Toggle = styled.div<SelectionProps>`
 `;
 
 export const ActiveInactive = styled.div<SelectionProps>`
+    font-family: MontSerrat !important;
     display: flex !important;
     flex-direction: row !important;
 

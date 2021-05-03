@@ -2,9 +2,9 @@ import React, { useState } from "react";
 // also exported from '@storybook/react' if you can deal with breaking changes in 6.1
 import { Story, Meta } from "@storybook/react/types-6-0";
 import { action } from "@storybook/addon-actions";
-import { Radio } from "quero-components-web";
+import { Radio } from "@quero-delivery/quero-components-web";
 import { InputProps } from "./Interface";
-import "quero-components-web/dist/index.css";
+import "@quero-delivery/quero-components-web/dist/index.css";
 
 export default {
     title: "Components/Radio",
@@ -48,7 +48,7 @@ export default {
           },
         },
       },
-      checked: { 
+      checked: {
         control: "boolean",
         description: "O Radio esta selecionado?",
         table: {
@@ -57,7 +57,7 @@ export default {
           },
         },
       },
-      labelStyle: { 
+      labelStyle: {
         control: "object",
         description: "Estilização do Checkbox",
         table: {
@@ -83,7 +83,7 @@ Default.args = {
 Default.parameters = {
   docs: {
     source:{
-      code:`<Radio 
+      code:`<Radio
       checked={false}
       onChange={() => {}}
     />`
@@ -102,7 +102,7 @@ Label.args = {
 Label.parameters = {
   docs: {
     source:{
-      code:`<Radio 
+      code:`<Radio
       checked={false}
       label="Título do Radio"
       labelStyle={{ marginRight: 20 }}
@@ -123,7 +123,7 @@ SizeBox.args = {
 SizeBox.parameters = {
   docs: {
     source:{
-      code:`<Radio 
+      code:`<Radio
       checked={true}
       label="Título do Radio"
       sizeBox="big"

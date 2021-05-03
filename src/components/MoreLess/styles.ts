@@ -103,6 +103,7 @@ const fontMoreLess = (size: string) => {
 };
 
 export const Container = styled.div<MoreLessProps>`
+    font-family: MontSerrat !important;
     display: flex;
     flex-direction: row;
     align-items: center;

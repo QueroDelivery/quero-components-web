@@ -2,9 +2,9 @@ import React from "react";
 // also exported from '@storybook/react' if you can deal with breaking changes in 6.1
 import { Story, Meta } from "@storybook/react/types-6-0";
 import { action } from "@storybook/addon-actions";
-import { ButtonMain } from "quero-components-web";
+import { ButtonMain } from "@quero-delivery/quero-components-web";
 import { ButtonProps } from "./Interface";
-import "quero-components-web/dist/index.css";
+import "@quero-delivery/quero-components-web/dist/index.css";
 import { faPhone, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -295,7 +295,7 @@ Default.args = {
 Default.parameters = {
   docs: {
     source:{
-      code:`<ButtonMain 
+      code:`<ButtonMain
       textFirst="Clique"
       textEnd="aqui"
       onClick={() => {}}
@@ -314,7 +314,7 @@ Size.args = {
 Size.parameters = {
   docs: {
     source:{
-      code:`<ButtonMain 
+      code:`<ButtonMain
       textFirst="Clique"
       textEnd="aqui"
       size="mini"
@@ -333,7 +333,7 @@ Width.args = {
 Width.parameters = {
   docs: {
     source:{
-      code:`<ButtonMain 
+      code:`<ButtonMain
       textFirst="Clique"
       textEnd="aqui"
       width="50%"
@@ -353,7 +353,7 @@ FirstStrong.args = {
 FirstStrong.parameters = {
   docs: {
     source:{
-      code:`<ButtonMain 
+      code:`<ButtonMain
       textFirst="Clique"
       textEnd="aqui"
       onClick={() => {}}
@@ -374,7 +374,7 @@ NotStrong.args = {
 NotStrong.parameters = {
   docs: {
     source:{
-      code:`<ButtonMain 
+      code:`<ButtonMain
       textFirst="Clique"
       textEnd="aqui"
       onClick={() => {}}
@@ -396,7 +396,7 @@ Strong.args = {
 Strong.parameters = {
   docs: {
     source:{
-      code:`<ButtonMain 
+      code:`<ButtonMain
       textFirst="Clique"
       textEnd="aqui"
       onClick={() => {}}
@@ -416,7 +416,7 @@ Loading.args = {
 Loading.parameters = {
   docs: {
     source:{
-      code:`<ButtonMain 
+      code:`<ButtonMain
       textFirst="Clique"
       textEnd="aqui"
       loading={true}
@@ -436,7 +436,7 @@ Secondary.args = {
 Secondary.parameters = {
   docs: {
     source:{
-      code:`<ButtonMain 
+      code:`<ButtonMain
       textFirst="Clique"
       textEnd="aqui"
       onClick={() => {}}
@@ -456,7 +456,7 @@ NoBorder.args = {
 NoBorder.parameters = {
   docs: {
     source:{
-      code:`<ButtonMain 
+      code:`<ButtonMain
       textFirst="Clique"
       textEnd="aqui"
       noBorder={true}
@@ -475,7 +475,7 @@ BackPurple.args = {
 BackPurple.parameters = {
   docs: {
     source:{
-      code:`<ButtonMain 
+      code:`<ButtonMain
       textFirst="Clique"
       textEnd="aqui"
       backPurple={true}
@@ -495,7 +495,7 @@ Tertiary.args = {
 Tertiary.parameters = {
   docs: {
     source:{
-      code:`<ButtonMain 
+      code:`<ButtonMain
       textFirst="Clique"
       textEnd="aqui"
       onClick={() => {}}
@@ -516,7 +516,7 @@ Notification.args = {
 Notification.parameters = {
   docs: {
     source:{
-      code:`<ButtonMain 
+      code:`<ButtonMain
       textFirst="Clique"
       textEnd="aqui"
       notification={true}
@@ -538,7 +538,7 @@ Rectangular.args = {
 Rectangular.parameters = {
   docs: {
     source:{
-      code:`<ButtonMain 
+      code:`<ButtonMain
       textFirst="Clique"
       textEnd="aqui"
       secondary={true}
@@ -562,7 +562,7 @@ TypeContent.args = {
 TypeContent.parameters = {
   docs: {
     source:{
-      code:`<ButtonMain 
+      code:`<ButtonMain
       typeContent="icon"
       colorBackground="red"
       colorIcon="black"
@@ -584,7 +584,7 @@ Icon.args = {
 Icon.parameters = {
   docs: {
     source:{
-      code:`<ButtonMain 
+      code:`<ButtonMain
       textFirst="Clique"
       textEnd="aqui"
       icon={faPhone}
@@ -603,7 +603,7 @@ CustomIcon.args = {
 CustomIcon.parameters = {
   docs: {
     source:{
-      code:`<ButtonMain 
+      code:`<ButtonMain
       textFirst="Clique"
       textEnd="aqui"
       customIcon={<FontAwesomeIcon icon={faPhone}/>}
@@ -623,7 +623,7 @@ IconPosition.args = {
 IconPosition.parameters = {
   docs: {
     source:{
-      code:`<ButtonMain 
+      code:`<ButtonMain
       textFirst="Clique"
       textEnd="aqui"
       icon={faPhone}
@@ -644,7 +644,7 @@ ColorIcon.args = {
 ColorIcon.parameters = {
   docs: {
     source:{
-      code:`<ButtonMain 
+      code:`<ButtonMain
       textFirst="Clique"
       textEnd="aqui"
       colorIcon="black"
@@ -664,7 +664,7 @@ ColorText.args = {
 ColorText.parameters = {
   docs: {
     source:{
-      code:`<ButtonMain 
+      code:`<ButtonMain
       textFirst="Clique"
       textEnd="aqui"
       colorText="black"
@@ -684,7 +684,7 @@ ColorBackground.args = {
 ColorBackground.parameters = {
   docs: {
     source:{
-      code:`<ButtonMain 
+      code:`<ButtonMain
       textFirst="Clique"
       textEnd="aqui"
       colorText="white"
@@ -706,7 +706,7 @@ HoverColor.args = {
 HoverColor.parameters = {
   docs: {
     source:{
-      code:`<ButtonMain 
+      code:`<ButtonMain
       textFirst="Clique"
       textEnd="aqui"
       secondary={true}

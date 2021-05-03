@@ -2,9 +2,9 @@ import React from "react";
 // also exported from '@storybook/react' if you can deal with breaking changes in 6.1
 import { Story, Meta } from "@storybook/react/types-6-0";
 import { action } from "@storybook/addon-actions";
-import { InputLine } from "quero-components-web";
+import { InputLine } from "@quero-delivery/quero-components-web";
 import { InputProps } from "./Interface";
-import "quero-components-web/dist/index.css";
+import "@quero-delivery/quero-components-web/dist/index.css";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
@@ -48,7 +48,7 @@ export default {
               detail: "String | Number (definido como px)",
             },
             type: {
-              summary: "string | number", 
+              summary: "string | number",
             },
           },
         },
@@ -84,7 +84,7 @@ export default {
           },
         },
         icon: {
-          control: "object", 
+          control: "object",
           description: "Icone do InputLine",
           table: {
             type: {
@@ -131,7 +131,7 @@ export default {
             },
           },
         },
-        labelStyle: { 
+        labelStyle: {
           control: "object",
           description: "Estilização do label",
           table: {
@@ -154,7 +154,7 @@ Default.args = {
 Default.parameters = {
   docs: {
     source:{
-      code:`<InputLine 
+      code:`<InputLine
       label="Título do InputLine"
       onChange={() => {}}
     />`
@@ -174,7 +174,7 @@ ErrorMessage.args = {
 ErrorMessage.parameters = {
   docs: {
     source:{
-      code:`<InputLine 
+      code:`<InputLine
       label="Título do InputLine"
       placeholder="escreva"
       errorMessage="errado"
@@ -196,7 +196,7 @@ Width.args = {
 Width.parameters = {
   docs: {
     source:{
-      code:`<InputLine 
+      code:`<InputLine
       label="Título do InputLine"
       placeholder="escreva"
       width="50%"
@@ -221,7 +221,7 @@ Action.args = {
 Action.parameters = {
   docs: {
     source:{
-      code:`<InputLine 
+      code:`<InputLine
       label="Título do InputLine"
       placeholder="escreva"
       action={
@@ -247,7 +247,7 @@ Icon.args = {
 Icon.parameters = {
   docs: {
     source:{
-      code:`<InputLine 
+      code:`<InputLine
       label="Título do InputLine"
       placeholder="escreva"
       icone={faUser}
@@ -270,7 +270,7 @@ IconPosition.args = {
 IconPosition.parameters = {
   docs: {
     source:{
-      code:`<InputLine 
+      code:`<InputLine
       label="Título do InputLine"
       placeholder="escreva"
       icon={faUser}
@@ -295,7 +295,7 @@ Colors.args = {
 Colors.parameters = {
   docs: {
     source:{
-      code:`<InputLine 
+      code:`<InputLine
       label="Título do InputLine"
       placeholder="escreva"
       textColor="blue"

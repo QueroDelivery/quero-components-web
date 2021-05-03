@@ -1,9 +1,9 @@
 import React from "react";
 // also exported from '@storybook/react' if you can deal with breaking changes in 6.1
 import { Story, Meta } from "@storybook/react/types-6-0";
-import { ButtonMain, Modal } from "quero-components-web";
+import { ButtonMain, Modal } from "@quero-delivery/quero-components-web";
 import { ModalProps } from "./Interface";
-import "quero-components-web/dist/index.css";
+import "@quero-delivery/quero-components-web/dist/index.css";
 import { action } from "@storybook/addon-actions";
 import { useState } from "@storybook/client-api";
 
@@ -12,7 +12,7 @@ export default {
     component: Modal,
     argTypes: {
         title: {
-          control: "text", 
+          control: "text",
           description: "Título do Modal",
           table: {
             type: {
@@ -113,12 +113,12 @@ export default {
 } as Meta;
 
 const Template: Story<ModalProps> = (args) => {
-  const [isOpen, setIsOpen] = useState(false) 
+  const [isOpen, setIsOpen] = useState(false)
   return (
     <>
-      <ButtonMain textFirst='Abrir' onClick={() => setIsOpen(!isOpen)} />  
+      <ButtonMain textFirst='Abrir' onClick={() => setIsOpen(!isOpen)} />
       {isOpen &&
-      <Modal {...args} open={isOpen} onClose={() => setIsOpen(!isOpen)}  closeOnDimerClick> 
+      <Modal {...args} open={isOpen} onClose={() => setIsOpen(!isOpen)}  closeOnDimerClick>
           Lorem Ipsum
           "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
           "There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain..."
@@ -129,7 +129,7 @@ const Template: Story<ModalProps> = (args) => {
           Suspendisse vel justo suscipit, accumsan ex a, feugiat velit. Phasellus lobortis metus at lorem mattis placerat. Maecenas convallis et elit vel convallis. Phasellus vel sapien imperdiet, posuere elit sed, ullamcorper nunc. Curabitur nec dolor ac felis viverra dapibus nec a velit. Suspendisse efficitur in lorem a sollicitudin. Sed malesuada velit ut condimentum sagittis. Nullam laoreet porttitor elit. In hac habitasse platea dictumst. Quisque dictum mattis magna a semper. Phasellus orci lectus, interdum sit amet lacinia sit amet, placerat quis nisi.
           Generated 5 paragraphs, 408 words, 2753 bytes of Lorem Ipsum
       </Modal> }
-    </> 
+    </>
   )
 };
 
@@ -144,7 +144,7 @@ Default.args = {
 Default.parameters = {
   docs: {
     source:{
-      code:`<Modal 
+      code:`<Modal
       title="Título do Modal"
       closeOnDimerClick={false}
       onClose={() => {}}
@@ -168,7 +168,7 @@ Actions.args = {
 Actions.parameters = {
   docs: {
     source:{
-      code:`<Modal 
+      code:`<Modal
       open={true}
       title="Título do Modal"
       actions={ <ButtonMain textFirst="click aqui"/> }
@@ -189,7 +189,7 @@ Loading.args = {
 Loading.parameters = {
   docs: {
     source:{
-      code:`<Modal 
+      code:`<Modal
       open={true}
       loading={true}
       title="Título do Modal"
@@ -210,7 +210,7 @@ CloseIcon.args = {
 CloseIcon.parameters = {
   docs: {
     source:{
-      code:`<Modal 
+      code:`<Modal
       open={true}
       title="Título do Modal"
       onClose={() => {}}
@@ -231,7 +231,7 @@ OnBack.args = {
 OnBack.parameters = {
   docs: {
     source:{
-      code:`<Modal 
+      code:`<Modal
       open={true}
       title="Título do Modal"
       onBack={() => {}}
@@ -252,7 +252,7 @@ Size.args = {
 Size.parameters = {
   docs: {
     source:{
-      code:`<Modal 
+      code:`<Modal
       open={true}
       size="small"
       title="Título do Modal"
@@ -273,7 +273,7 @@ Width.args = {
 Width.parameters = {
   docs: {
     source:{
-      code:`<Modal 
+      code:`<Modal
       open={true}
       width="50"
       title="Título do Modal"

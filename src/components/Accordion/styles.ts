@@ -19,6 +19,7 @@ interface BodyProps {
 }
 
 export const Container = styled.div<AccordionProps>`
+    font-family: MontSerrat !important;
     display: flex;
     width: ${(props) => {
         if (props.width) {
@@ -52,23 +53,23 @@ export const Container = styled.div<AccordionProps>`
 
         .title {
           font-size: ${(props) => {
-                if (props.fontSizeTitle) {
-                    if (typeof props.fontSizeTitle === "string") {
-                        return props.fontSizeTitle;
-                    } else {
-                        return `${props.fontSizeTitle}px`;
-                    }
-                }
-                return props.subtitle ? "14px" : "16px";
-            }};
+        if (props.fontSizeTitle) {
+            if (typeof props.fontSizeTitle === "string") {
+                return props.fontSizeTitle;
+            } else {
+                return `${props.fontSizeTitle}px`;
+            }
+        }
+        return props.subtitle ? "14px" : "16px";
+    }};
 
           color: ${(props) =>
-                props.colorTitle ? props.colorTitle : `${colors.gray20}`};
+        props.colorTitle ? props.colorTitle : `${colors.gray20}`};
         }
 
         .subtitle {
             color: ${(props) =>
-                props.colorSubtitle ? props.colorSubtitle : `${colors.gray10}`};
+        props.colorSubtitle ? props.colorSubtitle : `${colors.gray10}`};
             font-size: 12px;
         }
     }
@@ -82,7 +83,7 @@ export const Container = styled.div<AccordionProps>`
         .value {
             margin-right: 20px;
             color: ${(props) =>
-                props.colorValue ? props.colorValue : `${colors.gray20}`};
+        props.colorValue ? props.colorValue : `${colors.gray20}`};
         }
     }
 
@@ -97,6 +98,7 @@ export const Container = styled.div<AccordionProps>`
               `}
 `;
 export const Body = styled.div<BodyProps>`
+    font-family: MontSerrat !important;
     width: ${(props) => (props.width ? `${props.width}%` : "100%")};
     padding: 20px;
     border: 1px solid ${colors.card};

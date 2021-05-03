@@ -34,6 +34,7 @@ export const Background = styled.div<BackgroundProps>`
 `;
 
 export const Dialog = styled.div<DialogProps>`
+    font-family: MontSerrat !important;
     ${(props) =>
         props.open
             ? css`

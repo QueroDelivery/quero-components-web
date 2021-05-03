@@ -2,9 +2,9 @@ import React, { useState } from "react";
 // also exported from '@storybook/react' if you can deal with breaking changes in 6.1
 import { Story, Meta } from "@storybook/react/types-6-0";
 import { action } from "@storybook/addon-actions";
-import { Checkbox } from "quero-components-web";
+import { Checkbox } from "@quero-delivery/quero-components-web";
 import { InputProps } from "./Interface";
-import "quero-components-web/dist/index.css";
+import "@quero-delivery/quero-components-web/dist/index.css";
 
 export default {
     title: "Components/Checkbox",
@@ -48,7 +48,7 @@ export default {
         },
       },
     },
-    checked: { 
+    checked: {
       control: "boolean",
       description: "O Checkbox esta selecionado?",
       table: {
@@ -57,7 +57,7 @@ export default {
         },
       },
     },
-    labelStyle: { 
+    labelStyle: {
       control: "object",
       description: "Estilização do Checkbox",
       table: {

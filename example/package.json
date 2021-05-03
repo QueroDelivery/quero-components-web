@@ -16,7 +16,7 @@
     "@types/react": "file:../node_modules/@types/react",
     "@types/react-dom": "file:../node_modules/@types/react-dom",
     "express": "^4.17.1",
-    "quero-components-web": "file:..",
+    "@quero-delivery/quero-components-web": "file:..",
     "react": "file:../node_modules/react",
     "react-dom": "file:../node_modules/react-dom",
     "react-hook-form": "^6.13.1",

@@ -188,6 +188,8 @@ const topBoxAfter = (size: string | number) => {
 };
 
 export const Container = styled.div<CheckboxProps>`
+    font-family: MontSerrat !important;
+
     > input {
         display: none;
     }

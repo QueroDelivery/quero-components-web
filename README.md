@@ -46,7 +46,7 @@ yarn add @quero-delivery/quero-components-web
 import React, { Component } from "react";
 
 import { MyComponent } from "quero-components-web";
-import "quero-components-web/dist/index.css";
+import "@quero-delivery/quero-components-web/dist/index.css";
 import { registerLocale } from "react-datepicker";
 import br from "date-fns/locale/pt-BR";
 registerLocale("pt-BR", br);

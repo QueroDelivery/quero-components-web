@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 // also exported from '@storybook/react' if you can deal with breaking changes in 6.1
 import { Story, Meta } from "@storybook/react/types-6-0";
-import { ButtonMain, Dialog } from "quero-components-web";
+import { ButtonMain, Dialog } from "@quero-delivery/quero-components-web";
 import { DialogProps } from "./Interface";
-import "quero-components-web/dist/index.css";
+import "@quero-delivery/quero-components-web/dist/index.css";
 import { action } from "@storybook/addon-actions";
 
 export default {
@@ -51,7 +51,7 @@ export default {
             summary: "number | string",
           },
         },
-      },    
+      },
     }
 } as Meta;
 
@@ -60,9 +60,9 @@ const Template: Story<DialogProps> = (args) => {
     const [isOpen, setIsOpen] = useState(false)
     return (
       <>
-        <ButtonMain textFirst='Abrir' onClick={() => setIsOpen(!isOpen)} />  
-        {isOpen && 
-          <Dialog {...args} open={isOpen} onClose={() => setIsOpen(!isOpen)}> 
+        <ButtonMain textFirst='Abrir' onClick={() => setIsOpen(!isOpen)} />
+        {isOpen &&
+          <Dialog {...args} open={isOpen} onClose={() => setIsOpen(!isOpen)}>
           Lorem Ipsum
           "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
           "There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain..."
@@ -73,12 +73,12 @@ const Template: Story<DialogProps> = (args) => {
           Suspendisse vel justo suscipit, accumsan ex a, feugiat velit. Phasellus lobortis metus at lorem mattis placerat. Maecenas convallis et elit vel convallis. Phasellus vel sapien imperdiet, posuere elit sed, ullamcorper nunc. Curabitur nec dolor ac felis viverra dapibus nec a velit. Suspendisse efficitur in lorem a sollicitudin. Sed malesuada velit ut condimentum sagittis. Nullam laoreet porttitor elit. In hac habitasse platea dictumst. Quisque dictum mattis magna a semper. Phasellus orci lectus, interdum sit amet lacinia sit amet, placerat quis nisi.
           Generated 5 paragraphs, 408 words, 2753 bytes of Lorem Ipsum
         </Dialog>}
-      </> 
+      </>
     )
 };
 
 export const Default = Template.bind({});
-Default.args = { 
+Default.args = {
     open: false,
     onClose: action("fechar"),
 };
@@ -86,7 +86,7 @@ Default.args = {
 Default.parameters = {
   docs: {
     source:{
-      code:`<Dialog 
+      code:`<Dialog
       open={false}
       onClose={() => {}}
     />`
@@ -95,7 +95,7 @@ Default.parameters = {
 };
 
 export const Loading = Template.bind({});
-Loading.args = { 
+Loading.args = {
     open: false,
     loading: true,
     onClose: action("fechar"),
@@ -104,7 +104,7 @@ Loading.args = {
 Loading.parameters = {
   docs: {
     source:{
-      code:`<Dialog 
+      code:`<Dialog
       open={false}
       loading={true}
       onClose={() => {}}
@@ -123,7 +123,7 @@ MaxHeight.args = {
 MaxHeight.parameters = {
   docs: {
     source:{
-      code:`<Dialog 
+      code:`<Dialog
       open={false}
       maxHeight={100}
       onClose={() => {}}

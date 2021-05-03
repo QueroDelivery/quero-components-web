@@ -1,10 +1,10 @@
 import React from "react";
 // also exported from "@storybook/react" if you can deal with breaking changes in 6.1
 import { Story, Meta } from "@storybook/react/types-6-0";
-import { Dropdown } from "quero-components-web";
+import { Dropdown } from "@quero-delivery/quero-components-web";
 import { Props } from "./Interface";
 
-import "quero-components-web/dist/index.css";
+import "@quero-delivery/quero-components-web/dist/index.css";
 
 export default {
     title: "Components/Dropdown",

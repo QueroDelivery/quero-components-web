@@ -142,6 +142,7 @@ const marginRight = (size: string | number) => {
 };
 
 export const Container = styled.div<CheckboxProps>`
+    font-family: MontSerrat !important;
     display: flex;
     align-items: center;
 

@@ -65,6 +65,7 @@ export const Background = styled.div<BackgroundProps>`
 `;
 
 export const Modal = styled.div<ModalProps>`
+    font-family: MontSerrat !important;
     transition: top 0.25s ease;
     top: 0;
     right: 0;

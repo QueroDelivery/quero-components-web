@@ -22,7 +22,8 @@ interface LabelErrorProps {
     errorColor?: string;
 }
 
-export const Container = styled.div<InputProps>`    
+export const Container = styled.div<InputProps>`
+    font-family: MontSerrat !important;
     position: relative;
     opacity: ${(props) => (props.disabled ? "50%" : "100%")};
     width: ${(props) => {
@@ -37,6 +38,7 @@ export const Container = styled.div<InputProps>`
     }};
 
     input {
+        font-family: MontSerrat !important;
         color: ${(props) =>
             props.textColor ? props.textColor : colors.gray20};
         width: 100%;
@@ -119,6 +121,7 @@ export const Container = styled.div<InputProps>`
     }
 
     label {
+        font-family: MontSerrat !important;
         position: absolute;
         bottom: 0px;
         top: 0px;
@@ -154,6 +157,7 @@ export const Container = styled.div<InputProps>`
     }
 
     span {
+        font-family: MontSerrat !important;
         position: absolute;
         bottom: 5px;
         left: ${(props) => {
@@ -183,7 +187,7 @@ export const Container = styled.div<InputProps>`
             props.isFieldActive
                 ? css`
                       transform: translateY(-100%);
-                      font-size: 12px;
+                      font-size: 14px;
                       color: ${(props: InputProps) => {
                           if (
                               (props.requiredText || props.errorMessage) &&
@@ -200,7 +204,7 @@ export const Container = styled.div<InputProps>`
                       }};
                   `
                 : css`
-                      font-size: 14px;
+                      font-size: 16px;
                       color: ${(props: InputProps) => {
                           if (
                               (props.requiredText || props.errorMessage) &&
@@ -238,6 +242,7 @@ export const Container = styled.div<InputProps>`
 `;
 
 export const LabelError = styled.span<LabelErrorProps>`
+    font-family: MontSerrat !important;
     font-size: 10px;
     margin-left: 0;
     color: ${(props) => {
