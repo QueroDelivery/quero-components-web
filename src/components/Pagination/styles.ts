@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+    font-family: MontSerrat !important;
+
     /*--------------
    Pagination
 ---------------*/
@@ -22,6 +24,7 @@ export const Container = styled.div`
         display: none;
     }
     .ui.pagination.menu .item {
+        font-family: MontSerrat !important;
         min-width: 3em;
         text-align: center;
     }

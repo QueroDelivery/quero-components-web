@@ -2,9 +2,9 @@ import React, { useState } from "react";
 // also exported from '@storybook/react' if you can deal with breaking changes in 6.1
 import { Story, Meta } from "@storybook/react/types-6-0";
 import { action } from "@storybook/addon-actions";
-import { Accordion } from "quero-components-web";
+import { Accordion } from "@quero-delivery/quero-components-web";
 import { AccordionProps } from "./Interface";
-import "quero-components-web/dist/index.css";
+import "@quero-delivery/quero-components-web/dist/index.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
 
@@ -174,7 +174,7 @@ Default.args = {
 Default.parameters = {
   docs: {
     source:{
-      code:`<Accordion 
+      code:`<Accordion
       title="Título"
       open={false}
       onChange={() => {}}
@@ -195,7 +195,7 @@ Subtitle.args = {
 Subtitle.parameters = {
   docs: {
     source:{
-      code:`<Accordion 
+      code:`<Accordion
       title="Título"
       subtitle="Subtítulo"
       open={false}
@@ -218,7 +218,7 @@ Width.args = {
 Width.parameters = {
   docs: {
     source:{
-      code:`<Accordion 
+      code:`<Accordion
       title="Título"
       open={false}
       secondary={false}
@@ -241,7 +241,7 @@ Icon.args = {
 Icon.parameters = {
   docs: {
     source:{
-      code:`<Accordion 
+      code:`<Accordion
       title="Titulo"
       open={false}
       secondary={false}
@@ -264,7 +264,7 @@ Value.args = {
 Value.parameters = {
   docs: {
     source:{
-      code:`<Accordion 
+      code:`<Accordion
       title="Título"
       value="R$10,00"
       open={false}
@@ -293,7 +293,7 @@ Colors.args = {
 Colors.parameters = {
   docs: {
     source:{
-      code:`<Accordion 
+      code:`<Accordion
       title="Título"
       subtitle="Subtítulo"
       value="R$10,00"
@@ -321,7 +321,7 @@ Secondary.args = {
 Secondary.parameters = {
   docs: {
     source:{
-      code:`<Accordion 
+      code:`<Accordion
       title="Título"
       open={false}
       secondary={true}
@@ -343,7 +343,7 @@ CustomIcon.args = {
 CustomIcon.parameters = {
   docs: {
     source:{
-      code:`<Accordion 
+      code:`<Accordion
       title="Título"
       open={false}
       secondary={false}
@@ -366,7 +366,7 @@ fontSizeTitle.args = {
 fontSizeTitle.parameters = {
   docs: {
     source:{
-      code:`<Accordion 
+      code:`<Accordion
       title="Título"
       open={false}
       secondary={false}

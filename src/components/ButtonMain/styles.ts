@@ -95,6 +95,7 @@ const textSize = (size: string | number) => {
 };
 
 export const Button = styled.button<ButtonProps>`
+    font-family: MontSerrat !important;
     background-color: ${(props) => {
         if (props.colorBackground) return props.colorBackground;
         if (props.secondary || props.tertiary) {
@@ -248,6 +249,7 @@ export const TextEnd = styled.span<TextEndProps>`
 `;
 
 export const Notification = styled.button`
+    font-family: MontSerrat !important;
     background-color: ${colors.brand10};
     height: 40px;
     width: 100%;
@@ -276,6 +278,7 @@ export const Notification = styled.button`
 export const Icon = styled.div``;
 
 export const Amount = styled.div`
+    font-family: MontSerrat !important;
     background-color: ${colors.brand30};
     width: 20px;
     height: 20px;

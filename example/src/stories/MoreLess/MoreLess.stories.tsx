@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 // also exported from '@storybook/react' if you can deal with breaking changes in 6.1
 import { Story, Meta } from "@storybook/react/types-6-0";
-import { MoreLess } from "quero-components-web";
+import { MoreLess } from "@quero-delivery/quero-components-web";
 import { MoreLessProps } from "./Interface";
-import "quero-components-web/dist/index.css";
+import "@quero-delivery/quero-components-web/dist/index.css";
 import { action } from "@storybook/addon-actions";
 
 export default {
@@ -24,7 +24,7 @@ export default {
             },
         },
         disabled: {
-          control: "boolean", 
+          control: "boolean",
           description: "O MoreLess esta suspenso/desabilitado?",
           table: {
             type: {
@@ -34,7 +34,7 @@ export default {
         },
         minimum: {
           control: "number",
-          description: "Menor valor do MoreLess", 
+          description: "Menor valor do MoreLess",
           table: {
             type: {
               summary: "number",
@@ -94,7 +94,7 @@ export default {
 
 const Template: Story<MoreLessProps> = (args) => {
   const [value, setValue] = useState (args.value)
-  return <MoreLess {...args} value={value} more={() => setValue(value+1)} 
+  return <MoreLess {...args} value={value} more={() => setValue(value+1)}
   less={() => setValue(value-1)}
   />
 };
@@ -109,7 +109,7 @@ Default.args = {
  Default.parameters = {
   docs: {
     source:{
-      code:`<MoreLess 
+      code:`<MoreLess
       value={0}
       more={() => {}}
       less={() => {}}
@@ -129,7 +129,7 @@ Size.args = {
 Size.parameters = {
   docs: {
     source:{
-      code:`<MoreLess 
+      code:`<MoreLess
       value={2}
       more={() => {}}
       less={() => {}}
@@ -150,7 +150,7 @@ Disabled.args = {
 Disabled.parameters = {
   docs: {
     source:{
-      code:`<MoreLess 
+      code:`<MoreLess
       value={2}
       more={() => {}}
       less={() => {}}
@@ -171,7 +171,7 @@ Minimum.args = {
 Minimum.parameters = {
   docs: {
     source:{
-      code:`<MoreLess 
+      code:`<MoreLess
       value={2}
       more={() => {}}
       less={() => {}}
@@ -193,7 +193,7 @@ Limit.args = {
 Limit.parameters = {
   docs: {
     source:{
-      code:`<MoreLess 
+      code:`<MoreLess
       value={10}
       more={() => {}}
       less={() => {}}
@@ -214,7 +214,7 @@ OnChange.args = {
 OnChange.parameters = {
   docs: {
     source:{
-      code:`<MoreLess 
+      code:`<MoreLess
       value={4}
       more={() => {}}
       less={() => {}}

@@ -10,12 +10,14 @@ interface DropdownProps {
 }
 
 export const Container = styled.div<DropdownProps>`
+    font-family: MontSerrat !important;
     width: 100% !important;
     display: flex !important;
     flex-direction: column !important;
     padding-bottom: ${(props) => (props.error ? "" : "20px")};
 
     label {
+        font-size: 14px;
         margin-left: 15px;
         color: ${(props) =>
             props.error

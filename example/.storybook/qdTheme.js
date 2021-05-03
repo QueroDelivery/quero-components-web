@@ -12,7 +12,7 @@ export default create({
     // appBorderRadius: 4,
 
     // Typography
-    fontBase: 'MontSerrat, Open Sans, sans-serif',
+    fontBase: 'MontSerrat, Arial, Helvetica, sans-serif',
     fontCode: 'monospace',
 
     // Text colors

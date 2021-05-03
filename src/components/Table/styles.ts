@@ -7,11 +7,13 @@ interface ContainerProps {
 }
 
 export const Header = styled.div`
+    font-family: MontSerrat !important;
     display: flex;
     margin-bottom: 10px;
 `
 
 export const Title = styled.span`
+    font-family: MontSerrat !important;
     flex: 1;
     text-align: left;
     color: ${colors.gray20};

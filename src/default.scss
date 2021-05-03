@@ -1,6 +1,23 @@
-body,
+@font-face {
+  font-family: MontSerrat;
+  src: url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+  font-display: swap;
+}
+
 button,
 input,
+optgroup,
+select,
 textarea {
-    font-family: MontSerrat !important;
+  font-family: sans-serif;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-size: 16px;
+  font-family: sans-serif;
+  font-smoothing: antialiased;
 }

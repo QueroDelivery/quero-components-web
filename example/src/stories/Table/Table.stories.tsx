@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 // also exported from '@storybook/react' if you can deal with breaking changes in 6.1
 import { Meta, Story } from "@storybook/react/types-6-0";
-import { Table, Pagination } from "quero-components-web";
-import "quero-components-web/dist/index.css";
+import { Table, Pagination } from "@quero-delivery/quero-components-web";
+import "@quero-delivery/quero-components-web/dist/index.css";
 import { ITableComponent } from "./Interface";
 
 export default {

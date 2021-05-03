@@ -1,15 +1,15 @@
 import React from "react";
 // also exported from '@storybook/react' if you can deal with breaking changes in 6.1
 import { Story, Meta } from "@storybook/react/types-6-0";
-import { Loader } from "quero-components-web";
+import { Loader } from "@quero-delivery/quero-components-web";
 import { LoaderProps } from "./Interface";
-import "quero-components-web/dist/index.css";
+import "@quero-delivery/quero-components-web/dist/index.css";
 
 export default {
     title: "Components/Loader",
     component: Loader,
     argTypes: {
-        className: { 
+        className: {
           control: "text",
           description: "Nome da classe para do Loader",
           table: {
@@ -17,7 +17,7 @@ export default {
               summary: "string",
             },
           },
-        }, 
+        },
         size: {
             control: {
                 type: "inline-radio",
@@ -64,7 +64,7 @@ export default {
             },
           },
         },
-        style: { 
+        style: {
           control: "object",
           description: "Estilização do Loader",
           table: {
@@ -72,7 +72,7 @@ export default {
               summary: "React.CSSProperties",
             },
           },
-        }, 
+        },
     },
 } as Meta;
 
@@ -84,7 +84,7 @@ Default.args = {};
 Default.parameters = {
   docs: {
     source:{
-      code:`<Loader 
+      code:`<Loader
     />`
     }
   }
@@ -98,7 +98,7 @@ Position.args = {
 Position.parameters = {
   docs: {
     source:{
-      code:`<Loader 
+      code:`<Loader
       position="left"
     />`
     }
@@ -113,7 +113,7 @@ Size.args = {
 Size.parameters = {
   docs: {
     source:{
-      code:`<Loader 
+      code:`<Loader
       size="small"
     />`
     }
@@ -128,7 +128,7 @@ Color.args = {
 Color.parameters = {
   docs: {
     source:{
-      code:`<Loader 
+      code:`<Loader
       color="blue"
     />`
     }

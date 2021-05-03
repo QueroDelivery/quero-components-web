@@ -8,6 +8,7 @@ interface CardProps {
 }
 
 export const Shadow = styled.div<CardProps>`
+    font-family: MontSerrat !important;
     padding: 20px;
     box-shadow: ${(props) => {
         if (props.type == "min-shadow") {
@@ -49,6 +50,7 @@ export const Shadow = styled.div<CardProps>`
 `;
 
 export const Button = styled.a<CardProps>`
+    font-family: MontSerrat !important;
     background-color: ${colors.card};
     padding: 12px 25px;
     border-radius: 30px;
@@ -76,6 +78,6 @@ export const Button = styled.a<CardProps>`
         margin-left: 15px;
         font-size: 15px;
         color: ${(props) =>
-            props.colorText ? props.colorText : colors.brandDark};
+        props.colorText ? props.colorText : colors.brandDark};
     }
 `;

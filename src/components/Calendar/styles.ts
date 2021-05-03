@@ -6,6 +6,7 @@ interface CalendarProps {
 }
 
 export const Container = styled.div<CalendarProps>`
+    font-family: MontSerrat !important;
     display: flex;
     flex-direction: column;
 

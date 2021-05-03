@@ -1,5 +1,5 @@
-import "./default.scss";
 import "semantic-ui-css/semantic.min.css";
+import "./default.scss";
 
 import ButtonMain from "./components/ButtonMain/ButtonMain";
 import Dialog from "./components/Dialog/Dialog";

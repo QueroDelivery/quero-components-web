@@ -2,9 +2,9 @@ import React from "react";
 // also exported from '@storybook/react' if you can deal with breaking changes in 6.1
 import { Story, Meta } from "@storybook/react/types-6-0";
 import { action } from "@storybook/addon-actions";
-import { Selection } from "quero-components-web";
+import { Selection } from "@quero-delivery/quero-components-web";
 import { SelectionProps } from "./Interface";
-import "quero-components-web/dist/index.css";
+import "@quero-delivery/quero-components-web/dist/index.css";
 
 export default {
     title: "Components/Selection",
@@ -15,10 +15,10 @@ export default {
                 type: "inline-radio",
                 options: [
                     "switch",
-                    "toggle", 
+                    "toggle",
                     "activeInactive"
                 ],
-            }, 
+            },
             description: "Tipo do Select",
             defaultValue: {
                 summary: 'O tipo padrão é o switch',
@@ -50,7 +50,7 @@ export default {
             },
         },
         checked: {
-          control: "boolean", 
+          control: "boolean",
           description: "Foi selecionado?",
           table: {
               type: {
@@ -59,7 +59,7 @@ export default {
           },
         },
         disabled: {
-            control: "boolean", 
+            control: "boolean",
             description: "O Selection esta suspenso/desabilitado?",
             table: {
                 type: {
@@ -68,7 +68,7 @@ export default {
             },
         },
         selectionRef: {
-            control: "string", 
+            control: "string",
             description: "Referencia de uma seleção",
             table: {
                 type: {
@@ -107,7 +107,7 @@ Switch.args = {
 Switch.parameters = {
   docs: {
     source:{
-      code:`<Selection 
+      code:`<Selection
       checked={true}
       type="switch"
       onChange={() => {}}
@@ -126,7 +126,7 @@ Toggle.args = {
 Toggle.parameters = {
   docs: {
     source:{
-      code:`<Selection 
+      code:`<Selection
       checked={false}
       type="toggle"
       onChange={() => {}}
@@ -145,7 +145,7 @@ ActiveInactive.args = {
 ActiveInactive.parameters = {
   docs: {
     source:{
-      code:`<Selection 
+      code:`<Selection
       checked={false}
       type="activeInactive"
       onChange={() => {}}
@@ -165,7 +165,7 @@ Size.args = {
 Size.parameters = {
   docs: {
     source:{
-      code:`<Selection 
+      code:`<Selection
       checked={false}
       type="switch"
       size="big"
@@ -186,7 +186,7 @@ Disabled.args = {
 Disabled.parameters = {
   docs: {
     source:{
-      code:`<Selection 
+      code:`<Selection
       checked={false}
       type="activeInactive"
       disabled={true}

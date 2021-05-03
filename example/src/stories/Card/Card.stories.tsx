@@ -2,9 +2,9 @@ import React from "react";
 // also exported from '@storybook/react' if you can deal with breaking changes in 6.1
 import { Story, Meta } from "@storybook/react/types-6-0";
 import { action } from "@storybook/addon-actions";
-import { Card } from "quero-components-web";
+import { Card } from "@quero-delivery/quero-components-web";
 import { CardProps } from "./Interface";
-import "quero-components-web/dist/index.css";
+import "@quero-delivery/quero-components-web/dist/index.css";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
 
 export default {
@@ -28,7 +28,7 @@ export default {
         },
       },
       text: {
-        control: "text", 
+        control: "text",
         description: "Texto do Card",
         table: {
           defaultValue: {
@@ -36,12 +36,12 @@ export default {
             detail: "Só fica disponível quando o tipo for Button",
           },
           type: {
-            summary: "string", 
+            summary: "string",
           },
         },
       },
       icon: {
-        control: "object", 
+        control: "object",
         description: "Icone do Card",
         defaultValue: faPhone,
         table: {
@@ -49,7 +49,7 @@ export default {
             summary: "IconDefinition",
           },
         },
-      },     
+      },
       sizeIcon: {
           control: {
               type: "inline-radio",
@@ -71,18 +71,18 @@ export default {
           },
           description: "Tamanho do icone no Card",
           type: {
-            summary: "string", 
+            summary: "string",
           },
       },
       width: {
-        control: "text", 
+        control: "text",
         description: "largura do Card",
         table: {
           defaultValue: {
             summary: 'O padrão é de 100%',
           },
           type: {
-            summary: "number | string", 
+            summary: "number | string",
           },
         },
       },
@@ -103,7 +103,7 @@ export default {
             summary: "boolean",
           },
         },
-      },  
+      },
       colorText: {
           control: "color",
           description: "Cor do texto do Card",
@@ -122,7 +122,7 @@ export default {
             },
           },
       },
-      style: { 
+      style: {
         control: "object",
         description: "Estilização do Card",
         table: {
@@ -130,7 +130,7 @@ export default {
             summary: "React.CSSProperties",
           },
         },
-      }, 
+      },
     },
 } as Meta;
 
@@ -146,7 +146,7 @@ Shadow.args = {
 Shadow.parameters = {
   docs: {
     source:{
-      code:`<Card 
+      code:`<Card
       type="shadow"
     />`
     }
@@ -163,7 +163,7 @@ Button.args = {
 Button.parameters = {
   docs: {
     source:{
-      code:`<Card 
+      code:`<Card
       type="button"
       text="Olá"
       onClick={() => {}}
@@ -180,7 +180,7 @@ MinShadow.args = {
 MinShadow.parameters = {
   docs: {
     source:{
-      code:`<Card 
+      code:`<Card
       type="min-shadow"
     />`
     }
@@ -198,7 +198,7 @@ Icon.args = {
 Icon.parameters = {
   docs: {
     source:{
-      code:`<Card 
+      code:`<Card
       type="button"
       text="Olá"
       icon={faPhone}
@@ -220,7 +220,7 @@ SizeIcon.args = {
 SizeIcon.parameters = {
   docs: {
     source:{
-      code:`<Card 
+      code:`<Card
       type="button"
       text="Olá"
       icon={faPhone}
@@ -241,7 +241,7 @@ Width.args = {
 Width.parameters = {
   docs: {
     source:{
-      code:`<Card 
+      code:`<Card
       type="shadow"
       text="Olá"
       width="50"
@@ -261,7 +261,7 @@ Loading.args = {
 Loading.parameters = {
   docs: {
     source:{
-      code:`<Card 
+      code:`<Card
       type="shadow"
       text="Olá"
       loading={true}
@@ -283,7 +283,7 @@ Colors.args = {
 Colors.parameters = {
   docs: {
     source:{
-      code:`<Card 
+      code:`<Card
       type="button"
       text="Olá"
       icon={faPhone}
