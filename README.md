@@ -56,7 +56,7 @@ function Example() {
 }
 ```
 
-## 🏃 Usando gráficos
+## :bar_chart: Usando gráficos
 
 Os gráficos são utilizados a partir da biblioteca [Victory](https://formidable.com/open-source/victory/docs)
 
