@@ -56,6 +56,54 @@ function Example() {
 }
 ```
 
+## 🏃 Usando gráficos
+
+Os gráficos são utilizados a partir da biblioteca [Victory](https://formidable.com/open-source/victory/docs)
+
+- Instalação
+
+```bash
+# Utilizando npm
+npm install victory
+
+# Utilizando yarn
+yarn add victory
+```
+- Exemplo de uso
+
+```tsx
+import React from "react";
+import { VictoryChart, VictoryArea, VictoryAxis, VictoryPolarAxis } from 'victory'
+
+function ExampleChart() {
+    return (
+        <div>
+            <VictoryChart>
+                <VictoryArea data={sampleData}/>
+                <VictoryAxis/>
+            </VictoryChart>
+            <VictoryChart polar>
+                <VictoryArea data={sampleData}/>
+                <VictoryPolarAxis/>
+            </VictoryChart>
+        </div>
+    ) ;
+}
+```
+- Cores utilizadas no padrão da biblioteca
+
+```css
+brand: #9b4dee;
+brandPink: #e0457b;
+brandYellow: #f7ea48;
+brandDark: #6700a2;
+brandLight: #d8b8f9;
+```
+
+
+> Confira a documentação da biblioteca para mais detalhes de uso [Documentação victory](https://formidable.com/open-source/victory/docs).
+
+
 ## 📝 Documentação
 
 Para verificar a documentação click [aqui](https://querodelivery.github.io/quero-components-web/)
