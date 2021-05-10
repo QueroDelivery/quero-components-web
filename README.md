@@ -1,3 +1,8 @@
+<h1 align="center">
+  <img alt="querolabs" title="#querolabs" src="example/public/querolabs.png" height="150" />
+</h1>
+
+
 <p align="center">
    <h2 align="center">
     Quero Components Web
@@ -28,8 +33,11 @@
   </a>
 </p>
 
+## 💜 O que é?
+ A Quero Components Web é uma biblioteca de componentes reutilizáveis, auxiliando o usuário na construção de interfaces de forma mais rápida e produtiva.
+ <br> </br>
 
-## 👨‍💻 Instalação
+## 👨‍💻 Como instalar?
 
 ```bash
 # Utilizando npm
@@ -40,7 +48,7 @@ yarn add @quero-delivery/quero-components-web
 ```
 
 
-## 🏃 Como usar
+## 🏃 Como usar?
 
 ```tsx
 import React, { Component } from "react";
@@ -56,7 +64,7 @@ function Example() {
 }
 ```
 
-## :bar_chart: Usando gráficos
+## 📊 Como usar gráficos?
 
 Os gráficos são utilizados a partir da biblioteca [Victory](https://formidable.com/open-source/victory/docs)
 
@@ -69,7 +77,7 @@ npm install victory
 # Utilizando yarn
 yarn add victory
 ```
-- Exemplo de uso
+<b>Exemplo de uso
 
 ```tsx
 import React from 'react';
@@ -147,7 +155,14 @@ function Example(){
     );
 }
 ```
-- Cores utilizadas no padrão da biblioteca
+
+## 📚 Quais bibliotecas são usadas?
+- [React Hook Form](https://reactdatepicker.com/)
+- [Semantic UI React](https://react.semantic-ui.com")
+- [React Datepicker](https://reactdatepicker.com/)
+
+
+## 🎨 Quais cores foram utilizadas no padrão da biblioteca?
 
 ```css
 brand: #9b4dee;
@@ -177,11 +192,14 @@ npm run storybook ou yarn storybook
 ## A documentação será aberta na porta:6006 - acesse http://localhost:6006
 ```
 
-## 🤔 Como contribuir para o projeto
+## 🤝  Como contribuir para o projeto?
 
+- Entre em nosso repositorio no [GitHub](https://github.com/QueroDelivery/quero-components-web); 
 - Faça um **fork** do projeto;
 - Salve as alterações e crie uma mensagem de commit contando o que você fez.
 - Envie as suas alterações.
 - Realize um pull request para que seja analisado.
 
 > Caso tenha alguma dúvida confira este [guia de como contribuir no GitHub](https://github.com/firstcontributions/first-contributions).
+
+<img src="example/public/sharing.svg" alt="Contribuição" height="150"/>
