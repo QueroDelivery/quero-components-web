@@ -56,6 +56,111 @@ function Example() {
 }
 ```
 
+## :bar_chart: Usando gráficos
+
+Os gráficos são utilizados a partir da biblioteca [Victory](https://formidable.com/open-source/victory/docs)
+
+- Instalação
+
+```bash
+# Utilizando npm
+npm install victory
+
+# Utilizando yarn
+yarn add victory
+```
+- Exemplo de uso
+
+```tsx
+import React from 'react';
+import { VictoryBar, VictoryChart, VictoryAxis, VictoryTheme, VictoryStack } from 'victory';
+
+const data2012 = [
+  {quarter: 1, earnings: 13000},
+  {quarter: 2, earnings: 16500},
+  {quarter: 3, earnings: 14250},
+  {quarter: 4, earnings: 19000}
+];
+
+const data2013 = [
+  {quarter: 1, earnings: 15000},
+  {quarter: 2, earnings: 12500},
+  {quarter: 3, earnings: 19500},
+  {quarter: 4, earnings: 13000}
+];
+
+const data2014 = [
+  {quarter: 1, earnings: 11500},
+  {quarter: 2, earnings: 13250},
+  {quarter: 3, earnings: 20000},
+  {quarter: 4, earnings: 15500}
+];
+
+const data2015 = [
+  {quarter: 1, earnings: 18000},
+  {quarter: 2, earnings: 13250},
+  {quarter: 3, earnings: 15000},
+  {quarter: 4, earnings: 12000}
+];
+
+function Example(){
+    return (
+      <div>
+        <h1>Victory Tutorial</h1>
+        <VictoryChart
+          domainPadding={10}
+          theme={VictoryTheme.material}
+        >
+          <VictoryAxis
+            tickValues={["Quarter 1", "Quarter 2", "Quarter 3", "Quarter 4"]}
+          />
+          <VictoryAxis
+            dependentAxis
+            tickFormat={(x) => (`$${x / 1000}k`)}
+          />
+          <VictoryStack
+            colorScale={"warm"}
+          >
+            <VictoryBar
+              data={data2012}
+              x={"quarter"}
+              y={"earnings"}
+            />
+            <VictoryBar
+              data={data2013}
+              x={"quarter"}
+              y={"earnings"}
+            />
+            <VictoryBar
+              data={data2014}
+              x={"quarter"}
+              y={"earnings"}
+            />
+            <VictoryBar
+              data={data2015}
+              x={"quarter"}
+              y={"earnings"}
+            />
+          </VictoryStack>
+        </VictoryChart>
+      </div>
+    );
+}
+```
+- Cores utilizadas no padrão da biblioteca
+
+```css
+brand: #9b4dee;
+brandPink: #e0457b;
+brandYellow: #f7ea48;
+brandDark: #6700a2;
+brandLight: #d8b8f9;
+```
+
+
+> Confira a documentação da biblioteca para mais detalhes de uso [Documentação victory](https://formidable.com/open-source/victory/docs).
+
+
 ## 📝 Documentação
 
 Para verificar a documentação click [aqui](https://querodelivery.github.io/quero-components-web/)
