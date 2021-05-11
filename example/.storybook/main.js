@@ -15,7 +15,7 @@ module.exports = {
         config.plugins.push(
             new HtmlWebpackPlugin({
                 filename: 'index.html',
-                template: path.resolve(__dirname, '../', 'public', 'index.html')
+                template: path.resolve(__dirname, '../', 'src', 'template.html')
             }),
         );
         return config;
