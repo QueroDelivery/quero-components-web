@@ -2,9 +2,7 @@ import React from 'react';
 import { Table, TableProps } from 'semantic-ui-react'
 
 import { Container, Header, Title, Message } from './styles'
-import Card from '../Card/Card';
 import ButtonMain from '../ButtonMain/ButtonMain';
-import { colors } from '../../styles/colors';
 
 export interface ITableComponent extends TableProps{
     title?: string
@@ -18,7 +16,7 @@ export interface ITableComponent extends TableProps{
 
 const TableComponent: React.FC<ITableComponent> = ({children, title, titleStyle, message, messageStyle, hasMore, pagination, loading, ...rest}) => {
   return (
-      <Card type='shadow' style={{backgroundColor: rest.inverted ? colors.gray30 : colors.white}} loading={loading}>
+      <div>
         {title || message ? <Header>
             <Title style={titleStyle} >{title}</Title>
             <Message style={messageStyle}>{message}</Message>
@@ -36,7 +34,7 @@ const TableComponent: React.FC<ITableComponent> = ({children, title, titleStyle,
             <br />
             {pagination}
         </div> : null}
-      </Card>
+      </div>
   );
 }
 
