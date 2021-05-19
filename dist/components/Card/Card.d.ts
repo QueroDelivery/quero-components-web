@@ -11,6 +11,7 @@ interface CardProps extends Pick<LinkHTMLAttributes<HTMLLinkElement>, "href"> {
     colorText?: string;
     onClick?(): void;
     loading?: boolean;
+    className?: string;
 }
 declare const Card: React.FC<CardProps>;
 export default Card;
