@@ -1,4 +1,5 @@
 const path = require('path');
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = async ({ config }) => {
     // styles
@@ -20,6 +21,13 @@ module.exports = async ({ config }) => {
         ],
         include: path.resolve(__dirname, '../')
     });
+
+    // config.plugins = [
+    //     ...config.plugins,
+    //     new HtmlWebpackPlugin({
+    //         template: path.resolve(__dirname, '../', 'public', 'index.html')
+    //     })
+    // ];
 
     // don't forget to return.
     return config;

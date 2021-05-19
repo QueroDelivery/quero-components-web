@@ -30,6 +30,7 @@ interface CardProps extends Pick<LinkHTMLAttributes<HTMLLinkElement>, "href"> {
     colorText?: string;
     onClick?(): void;
     loading?: boolean;
+    className?: string;
 }
 
 const Types = {
@@ -50,11 +51,17 @@ const Card: React.FC<CardProps> = ({
     colorText,
     onClick,
     loading,
+    className,
     ...rest
 }) => {
     function renderShadow(type: string) {
         return (
-            <Shadow width={width} style={style} type={type}>
+            <Shadow
+                className={className}
+                width={width}
+                style={style}
+                type={type}
+            >
                 {loading && (
                     <div className="loading-card">
                         <Loader />
@@ -73,6 +80,7 @@ const Card: React.FC<CardProps> = ({
                 onClick={onClick}
                 href={rest.href}
                 width={width}
+                className={className}
             >
                 {icon && (
                     <React.Fragment>
