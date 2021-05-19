@@ -1,21 +1,21 @@
 import { IconDefinition } from "@fortawesome/free-solid-svg-icons";
 import { InputHTMLAttributes, RefObject } from "react";
 
-export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+export interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'style'> {
     label?: string;
     errorMessage?: string;
-    width?: string | number; 
+    width?: string | number;
     inputRef?: RefObject<HTMLInputElement>;
-    action?: { 
+    action?: {
         icon: IconDefinition;
         iconColor?: string;
-        onClick: () => void;  
+        onClick: () => void;
         position?: "left" | "right";
-    } | null; 
+    } | null;
     icon?: IconDefinition;
     iconPosition?: "left" | "right";
     textColor?: string;
     iconColor?: string;
-    containerStyle?: React.CSSProperties;
-    labelStyle?: React.CSSProperties;
+    containerStyle?: React.CSSProperties | any;
+    labelStyle?: React.CSSProperties | any;
 }

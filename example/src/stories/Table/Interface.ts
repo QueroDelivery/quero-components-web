@@ -6,6 +6,6 @@ export interface ITableComponent extends TableProps{
   loading?: boolean;
   hasMore?: () => void;
   pagination?: React.ReactElement;
-  titleStyle?: React.CSSProperties;
-  messageStyle?: React.CSSProperties;
+  titleStyle?: React.CSSProperties | any;
+  messageStyle?: React.CSSProperties | any;
 }
