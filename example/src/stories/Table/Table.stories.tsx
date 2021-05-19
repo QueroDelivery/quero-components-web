@@ -36,15 +36,6 @@ export default {
         },
       },
     },
-    loading: {
-      control: "boolean",
-      description: "Esta carregando?",
-      table: {
-        type: {
-          summary: "boolean",
-        },
-      },
-    },
     hasMore: {
       control: "boolean",
       description: "Função para saber se tem mais página",
@@ -91,6 +82,7 @@ export const Primary: Story<ITableComponent> = (args) => {
   return (
     <Card type="shadow">
       <Table
+        {...args}
         hasMore={hasMore}
         pagination={
           <Pagination

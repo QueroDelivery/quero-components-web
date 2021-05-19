@@ -24,5 +24,5 @@ export interface CardProps {
     loading?: boolean;
     colorText?: string;
     colorIcon?: string;
-    style?: React.CSSProperties;
+    style?: React.CSSProperties | any;
 }
