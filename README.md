@@ -54,7 +54,7 @@ yarn add @quero-delivery/quero-components-web
 import { InputLine } from "@quero-delivery/quero-components-web";
 import "@quero-delivery/quero-components-web/dist/index.css";
 
-export function HomeFourcopy() {
+export function Example() {
   return (
     <InputLine
       label="Quero delivery"
@@ -64,6 +64,31 @@ export function HomeFourcopy() {
 }
 ```
 <img alt="Exemplo de uso da biblioteca Quero delivery" src="example/public/exampleInput.png" height="80" />
+
+
+- <b>Para usar o calendário
+
+```tsx
+import React, { Component } from "react";
+
+import { MyComponent } from "quero-components-web";
+import "@quero-delivery/quero-components-web/dist/index.css";
+import { registerLocale } from "react-datepicker";
+import br from "date-fns/locale/pt-BR";
+registerLocale("pt-BR", br);
+
+export function Example() {
+  return (
+    <Calendar
+      startDate={new Date()}
+      endDate={addDays(new Date(), 5)}
+      selected={new Date()}
+    />
+  )
+}
+```
+
+<img alt="Exemplo de uso do calendário da biblioteca Quero delivery" src="example/public/calendar.png" height="300" />
 
 ## 📊 Como usar gráficos?
 
