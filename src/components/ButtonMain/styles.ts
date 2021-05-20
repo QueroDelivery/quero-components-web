@@ -109,6 +109,7 @@ export const Button = styled.button<ButtonProps>`
         return colors.brand30;
     }};
     height: ${(props) => (props.size ? size(props.size) : "40px")};
+    /* padding: 1.5rem; */
     width: ${(props) =>{
         if (props.width) {
             if (typeof props.width === "string") {
