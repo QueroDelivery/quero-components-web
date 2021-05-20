@@ -14,6 +14,7 @@ interface ButtonProps {
     tertiary?: boolean;
     size?: ButtonSizes;
     rectangular?: boolean;
+    loading?: boolean;
 }
 interface TextFirstProps {
     firstStrong?: boolean;
@@ -22,6 +23,7 @@ interface TextFirstProps {
     colorText?: string;
     tertiary?: boolean;
     size?: ButtonSizes;
+    loading?: boolean;
 }
 interface TextEndProps {
     firstStrong?: boolean;
@@ -30,11 +32,17 @@ interface TextEndProps {
     colorText?: string;
     tertiary?: boolean;
     size?: ButtonSizes;
+    loading?: boolean;
+}
+interface IconProps {
+    loading?: boolean;
+    iconPosition?: 'left' | 'right';
 }
 export declare const Button: import("styled-components").StyledComponent<"button", any, ButtonProps, never>;
 export declare const TextFirst: import("styled-components").StyledComponent<"span", any, TextFirstProps, never>;
 export declare const TextEnd: import("styled-components").StyledComponent<"span", any, TextEndProps, never>;
 export declare const Notification: import("styled-components").StyledComponent<"button", any, {}, never>;
-export declare const Icon: import("styled-components").StyledComponent<"div", any, {}, never>;
+export declare const Icon: import("styled-components").StyledComponent<"div", any, IconProps, never>;
 export declare const Amount: import("styled-components").StyledComponent<"div", any, {}, never>;
+export declare const LoadingContainer: import("styled-components").StyledComponent<"div", any, {}, never>;
 export {};
