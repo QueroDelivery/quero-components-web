@@ -108,9 +108,8 @@ export const Button = styled.button<ButtonProps>`
 
         return colors.brand30;
     }};
-    box-sizing: border-box;
-    height: ${(props) => (props.size ? size(props.size) : "2.5rem")};
-    padding: 1.5rem;
+    height: ${(props) => (props.size ? size(props.size) : "40px")};
+    /* padding: 1.5rem; */
     width: ${(props) =>{
         if (props.width) {
             if (typeof props.width === "string") {
@@ -120,12 +119,12 @@ export const Button = styled.button<ButtonProps>`
             }
         }
 
-        return 'none'
+        return '100%'
     }};
     border-radius: ${(props) => {
         if (props.rectangular) return "10px";
 
-        return "1.87rem";
+        return "30px";
     }};
     cursor: pointer;
     border: ${(props) => {
@@ -143,7 +142,7 @@ export const Button = styled.button<ButtonProps>`
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: ${(props) => (props.icon ? "0 .93rem" : "")};
+    padding: ${(props) => (props.icon ? "0 15px" : "")};
 
     &:disabled {
         opacity: 0.5;
@@ -226,7 +225,7 @@ export const TextFirst = styled.span<TextFirstProps>`
 
         return "normal";
     }};
-    font-size: ${(props) => (props.size ? textSize(props.size) : "0.875rem")};
+    font-size: ${(props) => (props.size ? textSize(props.size) : "14px")};
 `;
 export const TextEnd = styled.span<TextEndProps>`
     color: ${(props) => {
@@ -247,13 +246,15 @@ export const TextEnd = styled.span<TextEndProps>`
 
         return "bold";
     }};
-    font-size: ${(props) => (props.size ? textSize(props.size) : "0.875rem")};
+    font-size: ${(props) => (props.size ? textSize(props.size) : "14px")};
 `;
 
 export const Notification = styled.button`
     font-family: MontSerrat !important;
     background-color: ${colors.brand10};
-    border-radius: 1.87rem;
+    height: 40px;
+    width: 100%;
+    border-radius: 30px;
     cursor: pointer;
     border: 1px solid ${colors.brand30};
     outline: none;
@@ -270,7 +271,7 @@ export const Notification = styled.button`
 
     span {
         color: ${colors.brand30};
-        margin-left: 1.25rem;
+        margin-left: 20px;
         font-weight: bold;
     }
 `;
@@ -280,13 +281,12 @@ export const Icon = styled.div``;
 export const Amount = styled.div`
     font-family: MontSerrat !important;
     background-color: ${colors.brand30};
-    margin-left: .5rem;
-    width: 1.25rem;
-    height: 1.25rem;
+    width: 20px;
+    height: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 50%;
     color: ${colors.brand10};
-    font-size: .62rem;
+    font-size: 10px;
 `;

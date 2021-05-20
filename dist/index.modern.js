@@ -18,6 +18,7 @@ import"semantic-ui-css/semantic.min.css";import e,{useState as t,useEffect as r}
     font-family: MontSerrat !important;
     background-color: ${0};
     height: ${0};
+    /* padding: 1.5rem; */
     width: ${0};
     border-radius: ${0};
     cursor: pointer;
