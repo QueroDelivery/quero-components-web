@@ -36,7 +36,7 @@ const Selection: React.FC<SelectionProps> = ({
     function renderSwitch() {
         return (
             <Switch size={size} ref={selectionRef} disabled={disabled}>
-                <input type="checkbox" defaultChecked={checked} />
+                <input type="checkbox" checked={checked} />
                 <span
                     className="control"
                     onClick={() =>

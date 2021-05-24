@@ -22,7 +22,7 @@ export default {
       defaultValue: "Título da Table",
       table: {
         type: {
-          summary: "string",
+          summary: "string | React.ReactNode",
         },
       },
     },

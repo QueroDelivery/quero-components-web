@@ -5,7 +5,7 @@ import { Container, Header, Title, Message } from './styles'
 import ButtonMain from '../ButtonMain/ButtonMain';
 
 export interface ITableComponent extends TableProps{
-    title?: string
+    title?: string | React.ReactNode
     titleStyle?: React.CSSProperties
     message?: string
     messageStyle?: React.CSSProperties
@@ -18,7 +18,7 @@ const TableComponent: React.FC<ITableComponent> = ({children, title, titleStyle,
   return (
       <div>
         {title || message ? <Header>
-            <Title style={titleStyle} >{title}</Title>
+            <Title style={titleStyle}>{title}</Title>
             <Message style={messageStyle}>{message}</Message>
         </Header> : null}
 
