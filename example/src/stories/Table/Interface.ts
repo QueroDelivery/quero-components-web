@@ -1,7 +1,7 @@
 import { TableProps } from "semantic-ui-react";
 
 export interface ITableComponent extends TableProps{
-  title?: string;
+  title?: string | React.ReactNode;
   message?: string;
   loading?: boolean;
   hasMore?: () => void;

@@ -17,6 +17,7 @@ interface ButtonProps {
     tertiary?: boolean;
     size?: ButtonSizes;
     rectangular?: boolean;
+    loading?: boolean;
 }
 
 interface TextFirstProps {
@@ -26,6 +27,7 @@ interface TextFirstProps {
     colorText?: string;
     tertiary?: boolean;
     size?: ButtonSizes;
+    loading?: boolean;
 }
 
 interface TextEndProps {
@@ -35,6 +37,12 @@ interface TextEndProps {
     colorText?: string;
     tertiary?: boolean;
     size?: ButtonSizes;
+    loading?: boolean;
+}
+
+interface IconProps {
+    loading?: boolean;
+    iconPosition?: 'left' | 'right';
 }
 
 const Sizes = {
@@ -96,6 +104,7 @@ const textSize = (size: string | number) => {
 
 export const Button = styled.button<ButtonProps>`
     font-family: MontSerrat !important;
+    position: ${props => props.loading ? 'relative' : 'initial'};
     background-color: ${(props) => {
         if (props.colorBackground) return props.colorBackground;
         if (props.secondary || props.tertiary) {
@@ -109,6 +118,7 @@ export const Button = styled.button<ButtonProps>`
         return colors.brand30;
     }};
     height: ${(props) => (props.size ? size(props.size) : "40px")};
+    padding: 0 20px;
     width: ${(props) =>{
         if (props.width) {
             if (typeof props.width === "string") {
@@ -118,7 +128,7 @@ export const Button = styled.button<ButtonProps>`
             }
         }
 
-        return '100%'
+        return 'none'
     }};
     border-radius: ${(props) => {
         if (props.rectangular) return "10px";
@@ -141,7 +151,6 @@ export const Button = styled.button<ButtonProps>`
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: ${(props) => (props.icon ? "0 15px" : "")};
 
     &:disabled {
         opacity: 0.5;
@@ -206,6 +215,7 @@ export const Button = styled.button<ButtonProps>`
 `;
 
 export const TextFirst = styled.span<TextFirstProps>`
+    visibility: ${props => props.loading ? 'hidden' : 'visible'};
     color: ${(props) => {
         if (props.colorText) {
             return props.colorText;
@@ -225,8 +235,10 @@ export const TextFirst = styled.span<TextFirstProps>`
         return "normal";
     }};
     font-size: ${(props) => (props.size ? textSize(props.size) : "14px")};
+    margin-right: 3.5px;
 `;
 export const TextEnd = styled.span<TextEndProps>`
+    visibility: ${props => props.loading ? 'hidden' : 'visible'};
     color: ${(props) => {
         if (props.colorText) {
             return props.colorText;
@@ -275,7 +287,11 @@ export const Notification = styled.button`
     }
 `;
 
-export const Icon = styled.div``;
+export const Icon = styled.div<IconProps>`
+    visibility: ${props => props.loading ? 'hidden' : 'visible'};
+    margin-right: ${props => props.iconPosition === 'left' ? '10px' : ''};
+    margin-left: ${props => props.iconPosition === 'right' ? '10px' : ''};
+`;
 
 export const Amount = styled.div`
     font-family: MontSerrat !important;
@@ -288,4 +304,15 @@ export const Amount = styled.div`
     border-radius: 50%;
     color: ${colors.brand10};
     font-size: 10px;
+`;
+
+export const LoadingContainer = styled.div`
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 `;

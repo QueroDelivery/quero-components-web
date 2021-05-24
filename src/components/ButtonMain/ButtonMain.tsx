@@ -9,6 +9,7 @@ import {
     Icon,
     Amount,
     Notification,
+    LoadingContainer
 } from "./styles";
 import Loader from "../Loader/Loader";
 import { colors } from "../../styles/colors";
@@ -123,16 +124,20 @@ const ButtonMain: React.FC<ButtonProps> = ({
                         {(icon || customIcon) && (
                             <React.Fragment>
                                 {customIcon ?
-                                    customIcon
+                                    <Icon loading={loading}>
+                                        {customIcon}
+                                    </Icon>
                                     :
-                                    <FontAwesomeIcon
-                                        icon={icon as IconDefinition}
-                                        color={
-                                            colorIcon ? colorIcon : colors.brand10
-                                        }
-                                        size={"lg"}
-                                        style={{ marginLeft: typeContent == 'icon' ? 0 : 10, ...iconStyle }}
-                                    />
+                                    <Icon loading={loading}>
+                                        <FontAwesomeIcon
+                                            icon={icon as IconDefinition}
+                                            color={
+                                                colorIcon ? colorIcon : colors.brand10
+                                            }
+                                            size={"lg"}
+                                            style={{ ...iconStyle }}
+                                        />
+                                    </Icon>
                                 }
                             </React.Fragment>
                         )}
@@ -159,28 +164,31 @@ const ButtonMain: React.FC<ButtonProps> = ({
                 rectangular={rectangular}
                 hoverBackgroundColor={hoverBackgroundColor}
                 hoverTextColor={hoverTextColor}
+                loading={loading}
             >
-                {loading ? (
-                    <Loader size="tiny" />
-                ) : children ? (
+                {children ? (
                     children
                 ) : typeContent ? (
                     renderButtonTypes(typeContent)
                 ) : (
-                    <div>
+                    <React.Fragment>
                         {(icon || customIcon) && iconPosition === 'left' && (
                             <React.Fragment>
                                 {customIcon ?
-                                    customIcon
+                                    <Icon loading={loading} iconPosition={iconPosition}>
+                                        {customIcon}
+                                    </Icon>
                                     :
-                                    <FontAwesomeIcon
-                                        icon={icon!}
-                                        color={
-                                            colorIcon ? colorIcon : colors.brand10
-                                        }
-                                        size={"lg"}
-                                        style={{ marginRight: 10, ...iconStyle }}
-                                    />
+                                    <Icon loading={loading} iconPosition={iconPosition}>
+                                        <FontAwesomeIcon
+                                            icon={icon!}
+                                            color={
+                                                colorIcon ? colorIcon : colors.brand10
+                                            }
+                                            size={"lg"}
+                                            style={{ ...iconStyle }}
+                                        />
+                                    </Icon>
                                 }
                             </React.Fragment>
                         )}
@@ -191,8 +199,9 @@ const ButtonMain: React.FC<ButtonProps> = ({
                             colorText={colorText}
                             tertiary={tertiary}
                             size={size}
+                            loading={loading}
                         >
-                            {`${textFirst} `}
+                            {textFirst}
                         </TextFirst>
                         <TextEnd
                             firstStrong={firstStrong}
@@ -201,27 +210,36 @@ const ButtonMain: React.FC<ButtonProps> = ({
                             colorText={colorText}
                             tertiary={tertiary}
                             size={size}
+                            loading={loading}
                         >
                             {textEnd}
                         </TextEnd>
                         {(icon || customIcon) && iconPosition === 'right' && (
                             <React.Fragment>
                                 {customIcon ?
-                                    customIcon
+                                    <Icon loading={loading} iconPosition={iconPosition}>
+                                        {customIcon}
+                                    </Icon>
                                     :
-                                    <FontAwesomeIcon
-                                        icon={icon!}
-                                        color={
-                                            colorIcon ? colorIcon : colors.brand10
-                                        }
-                                        size={"lg"}
-                                        style={{ marginLeft: 10, ...iconStyle }}
-                                    />
+                                    <Icon loading={loading} iconPosition={iconPosition}>
+                                        <FontAwesomeIcon
+                                            icon={icon!}
+                                            color={
+                                                colorIcon ? colorIcon : colors.brand10
+                                            }
+                                            size={"lg"}
+                                            style={{ ...iconStyle }}
+                                        />
+                                    </Icon>
                                 }
                             </React.Fragment>
                         )}
-                    </div>
+                    </React.Fragment>
                 )}
+
+                {loading && <LoadingContainer>
+                    <Loader size="tiny" />
+                </LoadingContainer>}
             </Button>
         )
     }
