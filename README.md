@@ -71,7 +71,7 @@ export function Example() {
 ```tsx
 import React, { Component } from "react";
 
-import { MyComponent } from "quero-components-web";
+import { Calendar } from "quero-components-web";
 import "@quero-delivery/quero-components-web/dist/index.css";
 import { registerLocale } from "react-datepicker";
 import br from "date-fns/locale/pt-BR";
@@ -116,11 +116,6 @@ yarn add victory
 ```
 <img alt="Exemplo de uso da biblioteca Victory" src="example/public/grafic.png" height="250" />
 
-## 📚 Quais bibliotecas são usadas?
-- [React Hook Form](https://reactdatepicker.com/)
-- [Semantic UI React](https://react.semantic-ui.com")
-- [React Datepicker](https://reactdatepicker.com/)
-
 
 ## 🎨 Quais cores foram utilizadas no padrão da biblioteca?
 
@@ -132,10 +127,13 @@ brandDark: #6700a2;
 brandLight: #d8b8f9;
 ```
 
-
 > Confira a documentação da biblioteca para mais detalhes de uso [Documentação victory](https://formidable.com/open-source/victory/docs).
 
-
+## 📚 Quais bibliotecas são usadas?
+- [React Hook Form](https://reactdatepicker.com/)
+- [Semantic UI React](https://react.semantic-ui.com")
+- [React Datepicker](https://reactdatepicker.com/)
+    
 ## 📝 Documentação
 
 Para verificar a documentação click [aqui](https://querodelivery.github.io/quero-components-web/)
