@@ -65,31 +65,6 @@ export function Example() {
 ```
 <img alt="Exemplo de uso da biblioteca Quero delivery" src="example/public/exampleInput.png" height="80" />
 
-
-- <b>Para usar o calendário
-
-```tsx
-import React, { Component } from "react";
-
-import { Calendar } from "quero-components-web";
-import "@quero-delivery/quero-components-web/dist/index.css";
-import { registerLocale } from "react-datepicker";
-import br from "date-fns/locale/pt-BR";
-registerLocale("pt-BR", br);
-
-export function Example() {
-  return (
-    <Calendar
-      startDate={new Date()}
-      endDate={addDays(new Date(), 5)}
-      selected={new Date()}
-    />
-  )
-}
-```
-
-<img alt="Exemplo de uso do calendário da biblioteca Quero delivery" src="example/public/calendar.png" height="300" />
-
 ## 📊 Como usar gráficos?
 
 Os gráficos são utilizados a partir da biblioteca [Victory](https://formidable.com/open-source/victory/docs)
@@ -133,7 +108,7 @@ brandLight: #d8b8f9;
 - [React Hook Form](https://reactdatepicker.com/)
 - [Semantic UI React](https://react.semantic-ui.com")
 - [React Datepicker](https://reactdatepicker.com/)
-    
+
 ## 📝 Documentação
 
 Para verificar a documentação click [aqui](https://querodelivery.github.io/quero-components-web/)
@@ -152,7 +127,7 @@ npm run storybook ou yarn storybook
 
 ## 🤝  Como contribuir para o projeto?
 
-- Entre em nosso repositorio no [GitHub](https://github.com/QueroDelivery/quero-components-web); 
+- Entre em nosso repositorio no [GitHub](https://github.com/QueroDelivery/quero-components-web);
 - Faça um **fork** do projeto;
 - Salve as alterações e crie uma mensagem de commit contando o que você fez.
 - Envie as suas alterações.

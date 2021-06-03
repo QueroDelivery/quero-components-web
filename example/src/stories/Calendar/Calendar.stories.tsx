@@ -6,10 +6,6 @@ import { CalendarProps } from "./Interface";
 import { addDays } from "date-fns";
 import "@quero-delivery/quero-components-web/dist/index.css";
 
-import { registerLocale } from "react-datepicker";
-import br from "date-fns/locale/pt-BR";
-registerLocale("pt-BR", br);
-
 export default {
   title: "Components/Calendar",
   component: Calendar,

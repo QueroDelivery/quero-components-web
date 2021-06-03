@@ -1,8 +1,9 @@
 import React from "react";
-import DatePicker, { ReactDatePickerProps } from "react-datepicker";
+import DatePicker, { ReactDatePickerProps, registerLocale } from "react-datepicker";
 import { Container } from "./styles";
 import MaskedInput from "react-input-mask";
-
+import br from "date-fns/locale/pt-BR";
+registerLocale("pt-BR", br);
 interface CalendarProps extends ReactDatePickerProps {
     label?: string;
     labelColor?: string;
