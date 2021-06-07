@@ -1,23 +1,32 @@
 import styled from "styled-components";
 import { colors } from "../../styles/colors";
+import { TTypes } from "./Card";
 
 interface CardProps {
     width?: number | string;
     colorText?: string;
-    type?: string;
+    type?: TTypes;
 }
 
 export const Shadow = styled.div<CardProps>`
     font-family: MontSerrat !important;
-    padding: 20px;
     box-shadow: ${(props) => {
-        if (props.type == "min-shadow") {
-            return "0px 2px 4px #00000029";
+        if (props.type == "none") {
+            return "none";
         }
-        return "0 20px 50px 0 rgba(0, 0, 0, 0.16)";
+        if (props.type == "border") {
+            return "none";
+        }
+        if (props.type == "min-shadow") {
+            return "0px 0.125rem 0.25rem #00000029";
+        }
+        return "0 1.25rem 3.125rem 0 rgba(0, 0, 0, 0.16)";
     }};
+
+    border: ${(props) => (props.type == "border" || props.style?.borderRadius? `1px solid  ${colors.default20}` : "")};
+    padding: 1.25rem;
     background-color: ${colors.white};
-    border-radius: 30px;
+    border-radius: 1.875rem;
     position: relative;
 
     width: ${(props) => {
@@ -52,8 +61,8 @@ export const Shadow = styled.div<CardProps>`
 export const Button = styled.a<CardProps>`
     font-family: MontSerrat !important;
     background-color: ${colors.card};
-    padding: 12px 25px;
-    border-radius: 30px;
+    padding: 0.75rem 1.5625rem;
+    border-radius: 1.875rem;
     border: 1px solid ${colors.default30};
     width: ${(props) => {
         if (props.width) {
@@ -75,9 +84,25 @@ export const Button = styled.a<CardProps>`
     }
 
     span {
-        margin-left: 15px;
-        font-size: 15px;
+        margin-left: 0.9375rem;
+        font-size: 0.9375rem;
         color: ${(props) =>
-        props.colorText ? props.colorText : colors.brandDark};
+            props.colorText ? props.colorText : colors.brandDark};
     }
+`;
+
+export const Complement = styled.div`
+    font-family: MontSerrat !important;
+
+    color: ${colors.gray20};
+    background-color: ${colors.default10};
+
+    border: 1px solid ${colors.default20};
+    text-align: center;
+    margin-top: -1.5625rem;
+    padding-top: 1.5625rem;
+    width: 100%;
+
+    border-bottom-left-radius: 1.875rem;
+    border-bottom-right-radius: 1.875rem;
 `;
