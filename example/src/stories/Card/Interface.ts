@@ -1,8 +1,9 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import { IconDefinition } from "@fortawesome/free-solid-svg-icons";
 
+export type TTypes =  "shadow" | "button" | "min-shadow" | "border" | "none";
 export interface CardProps {
-    type: "shadow" | "button" | "min-shadow";
+    type?: TTypes;
     text?: string;
     icon?: IconDefinition;
     sizeIcon?:
@@ -25,4 +26,7 @@ export interface CardProps {
     colorText?: string;
     colorIcon?: string;
     style?: React.CSSProperties | any;
+    complement?: ReactNode;
+    complementStyle?: React.CSSProperties;
+    complementClassName?: string;
 }

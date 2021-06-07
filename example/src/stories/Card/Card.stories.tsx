@@ -15,15 +15,17 @@ export default {
         control: {
           type: "inline-radio",
           options: [
-            "shadow",
-            "button",
-            "min-shadow"
+            "shadow", 
+            "button", 
+            "min-shadow", 
+            "border", 
+            "none"
           ],
       },
         description: "Tipos do Card",
         table: {
           type: {
-            summary: 'required | shadow | button | min-shadow',
+            summary: 'shadow | button | min-shadow | border | none',
           },
         },
       },
@@ -73,6 +75,15 @@ export default {
           type: {
             summary: "string",
           },
+      },
+      complement: {
+        control: "text",
+        description: "Elemento usado como complemento",
+        table: {
+          type: {
+            summary: "React.ReactNode",
+          },
+        },
       },
       width: {
         control: "text",
@@ -268,6 +279,25 @@ Loading.parameters = {
     />`
     }
   }
+};
+
+export const CardWithComplement = Template.bind({});
+CardWithComplement.args = {
+    type: "border",
+    text: "Escreve Aqui",
+    complement: <p style={{ cursor: "pointer" }}> Complement </p>,
+};
+
+CardWithComplement.parameters = {
+    docs: {
+        source: {
+            code: `<Card
+      type="shadow"
+      text="Escreve Aqui"
+      component={<p style={{ cursor: "pointer" }}> Complement </p>}
+    />`,
+        },
+    },
 };
 
 export const Colors = Template.bind({});
