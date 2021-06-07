@@ -1,5 +1,10 @@
 /* eslint-disable react/prop-types */
-import React, { useState, InputHTMLAttributes, useEffect, RefObject } from "react";
+import React, {
+    useState,
+    InputHTMLAttributes,
+    useEffect,
+    RefObject,
+} from "react";
 import { IconDefinition } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -108,9 +113,7 @@ const InputLine: React.FC<InputProps> = ({
                     placeholder={isFieldActive ? rest.placeholder : ""}
                     ref={inputRef}
                 />
-                <label style={labelStyle}>
-                    <span>{label}</span>
-                </label>
+                <label style={labelStyle}>{label}</label>
             </Container>
             {errorMessage ? <LabelError>{errorMessage}</LabelError> : null}
         </div>
