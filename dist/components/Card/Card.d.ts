@@ -1,7 +1,8 @@
-import React, { LinkHTMLAttributes } from "react";
+import React, { LinkHTMLAttributes, ReactNode } from "react";
 import { IconDefinition } from "@fortawesome/free-solid-svg-icons";
+export declare type TTypes = "shadow" | "button" | "min-shadow" | "border" | "none";
 interface CardProps extends Pick<LinkHTMLAttributes<HTMLLinkElement>, "href"> {
-    type: "shadow" | "button" | "min-shadow";
+    type?: TTypes;
     width?: number | string;
     style?: React.CSSProperties;
     icon?: IconDefinition;
@@ -12,6 +13,10 @@ interface CardProps extends Pick<LinkHTMLAttributes<HTMLLinkElement>, "href"> {
     onClick?(): void;
     loading?: boolean;
     className?: string;
+    id?: string;
+    complement?: ReactNode;
+    complementStyle?: React.CSSProperties;
+    complementClassName?: string;
 }
 declare const Card: React.FC<CardProps>;
 export default Card;

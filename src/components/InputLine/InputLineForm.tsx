@@ -146,9 +146,7 @@ const InputLineForm: React.FC<InputFormProps> = ({
                             : null
                     }
                 />
-                <label style={rest.labelStyle}>
-                    <span>{rest.label}</span>
-                </label>
+                <label style={rest.labelStyle}>{rest.label}</label>
             </Container>
             {errors ? (
                 <LabelError>
