@@ -2,14 +2,21 @@
 /* eslint-disable react/prop-types */
 import React from "react";
 
-import { Background, Dialog } from "./styles";
+import { Background, Dialog, Header, Icon } from "./styles";
 import Loader from "../Loader/Loader";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { colors } from "../../styles/colors";
+import { faTimes, faAngleLeft } from "@fortawesome/free-solid-svg-icons";
 
 export interface DialogProps {
     open: boolean;
     onClose: Function;
     loading?: boolean;
     maxHeight?: number | string;
+    title?: string;
+    onBack?: Function;
+    noBorder?: boolean;
+    closeIcon?: boolean;
 }
 
 const DialogComponent: React.FC<DialogProps> = ({
@@ -18,6 +25,10 @@ const DialogComponent: React.FC<DialogProps> = ({
     onClose,
     loading,
     maxHeight,
+    title,
+    onBack,
+    noBorder,
+    closeIcon = false,
 }) => {
     return (
         <Background
@@ -29,15 +40,51 @@ const DialogComponent: React.FC<DialogProps> = ({
         >
             <Dialog
                 open={open}
-                onClick={(event: any) => event.stopPropagation()}
+                onClick={(event) => event.stopPropagation()}
                 maxHeight={maxHeight}
             >
-                {loading && (
-                    <div className="loading-dialog">
-                        <Loader />
-                    </div>
-                )}
-                <div className="box-dialog">{children}</div>
+                {title ? (
+                    <Header
+                        iconBack={onBack ? true : false}
+                        noBorder={noBorder}
+                    >
+                        <div className="name-icon-modal">
+                            {onBack ? (
+                                <Icon onClick={() => onBack()}>
+                                    <FontAwesomeIcon
+                                        icon={faAngleLeft}
+                                        size="lg"
+                                        color={colors.brand10}
+                                    />
+                                </Icon>
+                            ) : null}
+                            <strong>{title}</strong>
+                        </div>
+                        {closeIcon && (
+                            <Icon
+                                onClick={(event) => {
+                                    event.stopPropagation();
+                                    onClose();
+                                }}
+                            >
+                                <FontAwesomeIcon
+                                    icon={faTimes}
+                                    style={{ fontSize: "1.25rem" }}
+                                    color={colors.brand10}
+                                />
+                            </Icon>
+                        )}
+                    </Header>
+                ) : null}
+
+                <div className="box-dialog">
+                    {loading && (
+                        <div className="loading-dialog">
+                            <Loader />
+                        </div>
+                    )}
+                    {children}
+                </div>
             </Dialog>
         </Background>
     );

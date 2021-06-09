@@ -10,6 +10,11 @@ interface DialogProps {
     maxHeight?: number | string;
 }
 
+interface HeaderProps {
+    iconBack?: boolean;
+    noBorder?: boolean;
+}
+
 export const Background = styled.div<BackgroundProps>`
     ${(props) =>
         props.open
@@ -46,13 +51,28 @@ export const Dialog = styled.div<DialogProps>`
                   margin-top: auto;
                   margin-left: auto;
                   margin-right: auto;
-                  padding: 20px;
                   position: relative;
+                  /* overflow: auto; */
 
-                  .box-dialog {
-                      overflow: auto;
-                      margin-bottom: -20px;
-                      maxHeight: ${() => {
+                  overflow: ${() => {
+                      if (props.maxHeight) {
+                          return "none";
+                      }
+                      return "auto";
+                  }};
+                  padding-bottom: ${() => {
+                      if (props.maxHeight) {
+                          return "0";
+                      }
+                      return "20px";
+                  }};
+                  height: ${() => {
+                      if (props.maxHeight) {
+                          return "100%";
+                      }
+                      return "none";
+                  }};
+                  max-height: ${() => {
                       if (props.maxHeight) {
                           if (typeof props.maxHeight === "string") {
                               return props.maxHeight;
@@ -63,6 +83,14 @@ export const Dialog = styled.div<DialogProps>`
 
                       return "100%";
                   }};
+
+                  .box-dialog {
+                      position: relative;
+                      padding: 20px 20px 0;
+                      overflow: auto;
+
+                      height: 100%;
+                      /* max-height: 100%; */
                   }
 
                   .loading-dialog {
@@ -85,4 +113,29 @@ export const Dialog = styled.div<DialogProps>`
                   transition: bottom 0.25s ease;
                   bottom: -100%;
               `}
+`;
+
+export const Header = styled.div<HeaderProps>`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: ${(props) =>
+        props.noBorder ? "none" : `1px solid ${colors.default20}`};
+    font-size: 1.25rem;
+
+    .name-icon-modal {
+        display: flex;
+        align-items: center;
+    }
+
+    & strong {
+        padding: ${(props) =>
+            props.iconBack ? "1.25rem 0" : "1.25rem 1.875rem"};
+        color: ${colors.brand10};
+    }
+`;
+
+export const Icon = styled.div`
+    padding: 1.25rem 1.875rem;
+    cursor: pointer;
 `;
