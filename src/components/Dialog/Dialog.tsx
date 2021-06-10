@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable react/prop-types */
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import { Background, Dialog, Header, Icon } from "./styles";
 import Loader from "../Loader/Loader";
@@ -30,6 +30,17 @@ const DialogComponent: React.FC<DialogProps> = ({
     noBorder,
     closeIcon = false,
 }) => {
+
+    const [sizeHeader, setSizeHeader] = useState(62)
+
+    useEffect(() => {
+        if(document.getElementById('headerDialog')){
+            setSizeHeader(document.getElementById('headerDialog')!.clientHeight)
+        }
+    }, [document.getElementById('headerDialog')])
+
+    console.log(maxHeight)
+
     return (
         <Background
             open={open}
@@ -42,11 +53,15 @@ const DialogComponent: React.FC<DialogProps> = ({
                 open={open}
                 onClick={(event) => event.stopPropagation()}
                 maxHeight={maxHeight}
+                sizeHeader={sizeHeader}
+                loading={loading}
+                title={title}
             >
                 {title ? (
                     <Header
                         iconBack={onBack ? true : false}
                         noBorder={noBorder}
+                        id='headerDialog'
                     >
                         <div className="name-icon-modal">
                             {onBack ? (
@@ -77,7 +92,7 @@ const DialogComponent: React.FC<DialogProps> = ({
                     </Header>
                 ) : null}
 
-                <div className="box-dialog">
+                <div className="box-dialog" id="sizeBody">
                     {loading && (
                         <div className="loading-dialog">
                             <Loader />

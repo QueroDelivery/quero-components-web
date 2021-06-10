@@ -4,6 +4,10 @@ interface BackgroundProps {
 interface DialogProps {
     open?: boolean;
     maxHeight?: number | string;
+    sizeHeader: number;
+    sizeBody?: number;
+    loading?: boolean;
+    title?: string;
 }
 interface HeaderProps {
     iconBack?: boolean;
