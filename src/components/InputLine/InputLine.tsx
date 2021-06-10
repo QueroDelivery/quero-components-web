@@ -113,7 +113,11 @@ const InputLine: React.FC<InputProps> = ({
                     placeholder={isFieldActive ? rest.placeholder : ""}
                     ref={inputRef}
                 />
-                <label style={labelStyle}>{label}</label>
+                <label>
+                    <span style={labelStyle}>
+                        {label}
+                    </span>
+                </label>
             </Container>
             {errorMessage ? <LabelError>{errorMessage}</LabelError> : null}
         </div>
