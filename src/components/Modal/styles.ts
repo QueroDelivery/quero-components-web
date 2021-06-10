@@ -74,7 +74,7 @@ export const Modal = styled.div<ModalProps>`
     width: ${(props) => {
         if (props.width) {
             if (typeof props.width === "string") {
-                return `${props.width.replace("%", "")}%`;
+                return props.width;
             } else {
                 return `${props.width}px`;
             }
@@ -117,6 +117,7 @@ export const Header = styled.div<HeaderProps>`
         color: ${colors.brand10};
     }
 `;
+
 export const Icon = styled.div`
     padding: 20px 30px;
     cursor: pointer;
