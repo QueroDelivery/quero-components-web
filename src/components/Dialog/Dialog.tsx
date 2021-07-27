@@ -30,16 +30,15 @@ const DialogComponent: React.FC<DialogProps> = ({
     noBorder,
     closeIcon = false,
 }) => {
-
-    const [sizeHeader, setSizeHeader] = useState(62)
+    const [sizeHeader, setSizeHeader] = useState(62);
 
     useEffect(() => {
-        if(document.getElementById('headerDialog')){
-            setSizeHeader(document.getElementById('headerDialog')!.clientHeight)
+        if (document.getElementById("headerDialog")) {
+            setSizeHeader(
+                document.getElementById("headerDialog")!.clientHeight
+            );
         }
-    }, [document.getElementById('headerDialog')])
-
-    console.log(maxHeight)
+    }, [document.getElementById("headerDialog")]);
 
     return (
         <Background
@@ -61,7 +60,7 @@ const DialogComponent: React.FC<DialogProps> = ({
                     <Header
                         iconBack={onBack ? true : false}
                         noBorder={noBorder}
-                        id='headerDialog'
+                        id="headerDialog"
                     >
                         <div className="name-icon-modal">
                             {onBack ? (

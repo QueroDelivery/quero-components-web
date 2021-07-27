@@ -52,6 +52,38 @@ const InputLineForm: React.FC<InputFormProps> = ({
         if (isFieldActive && !value) {
             setIsFieldActive(false);
         }
+        if (rest.onBlur) {
+            setImmediate(rest.onBlur);
+        }
+    };
+
+    const validadeRegister = (valueRegister: string) => {
+        let result = true;
+        let mensagem = "";
+
+        if (validate) {
+            if (validate(valueRegister)) {
+                mensagem = validate(valueRegister);
+                result = false;
+            }
+        }
+
+        if (limit) {
+            if (valueRegister.length > limit) {
+                mensagem = `${limit} caracteres permitidos.`;
+                result = false;
+            }
+        }
+
+        if (minimum) {
+            if (valueRegister.length < minimum) {
+                mensagem = `${name} deve ter ${minimum} ou mais caracteres.`;
+                result = false;
+            }
+        }
+
+        setMessage(mensagem);
+        return result;
     };
 
     return (
@@ -106,50 +138,13 @@ const InputLineForm: React.FC<InputFormProps> = ({
                         register
                             ? register({
                                   required: required,
-                                  validate:
-                                      validate && required
-                                          ? (value: any) => {
-                                                if (validate(value)) {
-                                                    setMessage(validate(value));
-                                                    return false;
-                                                } else {
-                                                    setMessage("");
-                                                    return true;
-                                                }
-                                            }
-                                          : limit && required
-                                          ? (value: any) => {
-                                                if (value.length > limit) {
-                                                    setMessage(
-                                                        `${limit} caracteres permitidos.`
-                                                    );
-                                                    return false;
-                                                } else {
-                                                    setMessage("");
-                                                    return true;
-                                                }
-                                            }
-                                          : minimum && required
-                                          ? (value: any) => {
-                                                if (value.length < minimum) {
-                                                    setMessage(
-                                                        `${name} deve ter ${minimum} ou mais caracteres.`
-                                                    );
-                                                    return false;
-                                                } else {
-                                                    setMessage("");
-                                                    return true;
-                                                }
-                                            }
-                                          : null,
+                                  validate: validadeRegister,
                               })
                             : null
                     }
                 />
                 <label>
-                    <span style={rest.labelStyle}>
-                        {rest.label}
-                    </span>
+                    <span style={rest.labelStyle}>{rest.label}</span>
                 </label>
             </Container>
             {errors ? (
