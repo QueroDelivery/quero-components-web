@@ -65,6 +65,9 @@ const InputLine: React.FC<InputProps> = ({
         if (isFieldActive && !rest.value) {
             setIsFieldActive(false);
         }
+        if (rest.onBlur) {
+            setImmediate(rest.onBlur);
+        }
     };
 
     return (
@@ -114,9 +117,7 @@ const InputLine: React.FC<InputProps> = ({
                     ref={inputRef}
                 />
                 <label>
-                    <span style={labelStyle}>
-                        {label}
-                    </span>
+                    <span style={labelStyle}>{label}</span>
                 </label>
             </Container>
             {errorMessage ? <LabelError>{errorMessage}</LabelError> : null}
