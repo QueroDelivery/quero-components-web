@@ -15,6 +15,7 @@ export interface InputFormProps extends InputProps {
     values: any;
     limit?: number;
     minimum?: number;
+    msgErrorValidate?: string;
 }
 
 const InputLineForm: React.FC<InputFormProps> = ({
@@ -26,6 +27,7 @@ const InputLineForm: React.FC<InputFormProps> = ({
     values,
     limit,
     minimum,
+    msgErrorValidate,
     ...rest
 }) => {
     const [isFieldActive, setIsFieldActive] = useState(false);
@@ -70,14 +72,19 @@ const InputLineForm: React.FC<InputFormProps> = ({
 
         if (limit) {
             if (valueRegister.length > limit) {
-                mensagem = `${limit} caracteres permitidos.`;
+                mensagem =
+                    `${msgErrorValidate}` || `${limit} caracteres permitidos.`;
                 result = false;
             }
         }
 
         if (minimum) {
             if (valueRegister.length < minimum) {
-                mensagem = `${name} deve ter ${minimum} ou mais caracteres.`;
+                mensagem =
+                    `${msgErrorValidate}` ||
+                    `${
+                        rest.label || name
+                    } deve ter ${minimum} ou mais caracteres.`;
                 result = false;
             }
         }
