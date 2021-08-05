@@ -9,6 +9,7 @@ export interface InputFormProps extends InputProps {
     values: any;
     limit?: number;
     minimum?: number;
+    msgErrorValidate?: string;
 }
 declare const InputLineForm: React.FC<InputFormProps>;
 export default InputLineForm;
