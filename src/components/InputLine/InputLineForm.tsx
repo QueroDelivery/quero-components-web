@@ -72,19 +72,20 @@ const InputLineForm: React.FC<InputFormProps> = ({
 
         if (limit) {
             if (valueRegister.length > limit) {
-                mensagem =
-                    `${msgErrorValidate}` || `${limit} caracteres permitidos.`;
+                mensagem = msgErrorValidate
+                    ? `${msgErrorValidate}`
+                    : `${limit} caracteres permitidos.`;
                 result = false;
             }
         }
 
         if (minimum) {
             if (valueRegister.length < minimum) {
-                mensagem =
-                    `${msgErrorValidate}` ||
-                    `${
-                        rest.label || name
-                    } deve ter ${minimum} ou mais caracteres.`;
+                mensagem = msgErrorValidate
+                    ? `${msgErrorValidate}`
+                    : `${
+                          rest.label || name
+                      } deve ter ${minimum} ou mais caracteres.`;
                 result = false;
             }
         }
