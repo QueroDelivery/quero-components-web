@@ -197,7 +197,6 @@ Subtitle.parameters = {
       title="Título"
       subtitle="Subtítulo"
       open={false}
-      secondary={false}
       onChange={() => {}}
     />`,
     },
@@ -219,7 +218,6 @@ Width.parameters = {
       code: `<Accordion
       title="Título"
       open={false}
-      secondary={false}
       width="50%"
       onChange={() => {}}
     />`,
@@ -242,7 +240,6 @@ Icon.parameters = {
       code: `<Accordion
       title="Titulo"
       open={false}
-      secondary={false}
       icon={faPhone}
       onChange={() => {}}
     />`,
@@ -266,7 +263,6 @@ Value.parameters = {
       title="Título"
       value="R$10,00"
       open={false}
-      secondary={false}
       onChange={() => {}}
     />`,
     },
@@ -296,7 +292,6 @@ Colors.parameters = {
       subtitle="Subtítulo"
       value="R$10,00"
       open={false}
-      secondary={false}
       icon={faPhone}
       colorIcon="blue"
       colorSubtitle="green"
@@ -344,7 +339,6 @@ CustomIcon.parameters = {
       code: `<Accordion
       title="Título"
       open={false}
-      secondary={false}
       customIcon={<FontAwesomeIcon icon={faPhone}/>}
       onChange={() => {}}
     />`,
@@ -367,7 +361,6 @@ fontSizeTitle.parameters = {
       code: `<Accordion
       title="Título"
       open={false}
-      secondary={false}
       fontSizeTitle={10}
       onChange={() => {}}
     />`,
