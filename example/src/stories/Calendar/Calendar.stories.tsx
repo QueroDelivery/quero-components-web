@@ -1,98 +1,104 @@
-import React, { useState } from "react";
+import { useState } from 'react';
 // also exported from '@storybook/react' if you can deal with breaking changes in 6.1
-import { Story, Meta } from "@storybook/react/types-6-0";
-import { Calendar } from "@quero-delivery/quero-components-web";
-import { CalendarProps } from "./Interface";
-import { addDays } from "date-fns";
-import "@quero-delivery/quero-components-web/dist/index.css";
+import { Story, Meta } from '@storybook/react/types-6-0';
+import { Calendar } from '@quero-delivery/quero-components-web';
+import { CalendarProps } from './Interface';
+import { addDays } from 'date-fns';
+import '@quero-delivery/quero-components-web/dist/index.css';
 
 export default {
-  title: "Components/Calendar",
+  title: 'Components/Calendar',
   component: Calendar,
   parameters: {
     docs: {
       description: {
-            component: `Calendario recebendo as propriedades da lib [React Datepicker](https://reactdatepicker.com/).`
-          }
+        component: `Calendario recebendo as propriedades da lib [React Datepicker](https://reactdatepicker.com/).`,
       },
+    },
   },
   argTypes: {
     label: {
-      control: "text",
-      defaultValue: "Label do calendário",
-      description: "Label do calendário",
+      control: 'text',
+      defaultValue: 'Label do calendário',
+      description: 'Label do calendário',
       table: {
         type: {
-          summary: "string",
+          summary: 'string',
         },
       },
     },
     labelColor: {
-      control: "text",
-      description: "Cor da label",
+      control: 'text',
+      description: 'Cor da label',
       table: {
         type: {
-          summary: "string",
+          summary: 'string',
         },
       },
     },
     brand: {
-      control: "boolean",
-      description: "Deseja alterar para o estilo da cor da marca?",
+      control: 'boolean',
+      description: 'Deseja alterar para o estilo da cor da marca?',
       table: {
         type: {
-          summary: "boolean",
+          summary: 'boolean',
         },
       },
     },
     otherFormatDate: {
-      control: "text",
-      description: "Outro formato de exibição de data",
+      control: 'text',
+      description: 'Outro formato de exibição de data',
       table: {
         type: {
-          summary: "string",
+          summary: 'string',
         },
       },
     },
     startDate: {
-      control: "date",
-      description: "Data inicial",
+      control: 'date',
+      description: 'Data inicial',
       table: {
         type: {
-          summary: "Date",
+          summary: 'Date',
         },
       },
     },
     selected: {
-      control: "date",
-      description: "Data selecionada",
+      control: 'date',
+      description: 'Data selecionada',
       table: {
         type: {
-          summary: "date",
+          summary: 'date',
         },
       },
     },
     endDate: {
-      control: "date",
-      description: "Data final",
+      control: 'date',
+      description: 'Data final',
       table: {
         type: {
-          summary: "date",
+          summary: 'date',
         },
       },
     },
   },
 } as Meta;
 
-const Template: Story<CalendarProps> = (args) => {
+const Template: Story<CalendarProps> = args => {
   const [selected, setSelected] = useState<Date | null>(new Date());
-  return <Calendar {...args} selected={selected} onChange={(date:Date) => {
-    if (date) {
-     setSelected(date)
-    } else {
-     setSelected(null)
-    }
-  }}/>
+  return (
+    <Calendar
+      {...args}
+      selected={selected}
+      onChange={(date: Date) => {
+        if (date) {
+          setSelected(date);
+        } else {
+          setSelected(null);
+        }
+      }}
+    />
+  );
 };
 
 export const Default = Template.bind({});
@@ -104,14 +110,14 @@ Default.args = {
 
 Default.parameters = {
   docs: {
-    source:{
-      code:`<Calendar
+    source: {
+      code: `<Calendar
       startDate={new Date()}
       endDate={addDays(new Date(), 5)}
       selected={new Date()}
-      />`
-    }
-  }
+      />`,
+    },
+  },
 };
 
 export const Label = Template.bind({});
@@ -119,20 +125,20 @@ Label.args = {
   startDate: new Date(),
   endDate: addDays(new Date(), 5),
   selected: new Date(),
-  label: "Label do calendário",
+  label: 'Label do calendário',
 };
 
 Label.parameters = {
   docs: {
-    source:{
-      code:`<Calendar
+    source: {
+      code: `<Calendar
       startDate={new Date()}
       endDate={addDays(new Date(), 5)}
       selected={new Date()}
       label="Label do calendário"
-      />`
-    }
-  }
+      />`,
+    },
+  },
 };
 
 export const LabelColor = Template.bind({});
@@ -140,22 +146,22 @@ LabelColor.args = {
   startDate: new Date(),
   endDate: addDays(new Date(), 5),
   selected: new Date(),
-  label: "Label do calendário",
-  labelColor: "blue",
+  label: 'Label do calendário',
+  labelColor: 'blue',
 };
 
 LabelColor.parameters = {
   docs: {
-    source:{
-      code:`<Calendar
+    source: {
+      code: `<Calendar
       startDate={new Date()}
       endDate={addDays(new Date(), 5)}
       selected={new Date()}
       label="Label do calendário"
       labelColor="blue"
-      />`
-    }
-  }
+      />`,
+    },
+  },
 };
 
 export const Brand = Template.bind({});
@@ -168,15 +174,15 @@ Brand.args = {
 
 Brand.parameters = {
   docs: {
-    source:{
-      code:`<Calendar
+    source: {
+      code: `<Calendar
       startDate={new Date()}
       endDate={addDays(new Date(), 5)}
       selected={new Date()}
       brand={true}
-      />`
-    }
-  }
+      />`,
+    },
+  },
 };
 
 export const OtherFormat = Template.bind({});
@@ -184,18 +190,18 @@ OtherFormat.args = {
   startDate: new Date(),
   endDate: addDays(new Date(), 5),
   selected: new Date(),
-  otherFormatDate: "dd/MM/yyyy hh:mm",
+  otherFormatDate: 'dd/MM/yyyy hh:mm',
 };
 
 OtherFormat.parameters = {
   docs: {
-    source:{
-      code:`<Calendar
+    source: {
+      code: `<Calendar
       startDate={new Date()}
       endDate={addDays(new Date(), 5)}
       selected={new Date()}
       otherFormatDate="dd/MM/yyyy hh:mm"
-      />`
-    }
-  }
+      />`,
+    },
+  },
 };

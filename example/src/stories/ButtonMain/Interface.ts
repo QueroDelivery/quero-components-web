@@ -1,18 +1,19 @@
-import { IconDefinition } from "@fortawesome/free-solid-svg-icons";
-import { ButtonHTMLAttributes } from "react";
+import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
+import { ButtonHTMLAttributes } from 'react';
 
-export interface ButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'style'> {
+export interface ButtonProps
+  extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'style'> {
   textFirst?: string;
   textEnd?: string;
   size?:
-    | "mini"
-    | "tiny"
-    | "small"
-    | "medium"
-    | "large"
-    | "big"
-    | "huge"
-    | "massive";
+    | 'mini'
+    | 'tiny'
+    | 'small'
+    | 'medium'
+    | 'large'
+    | 'big'
+    | 'huge'
+    | 'massive';
   width?: number | string;
   firstStrong?: boolean;
   notStrong?: boolean;
@@ -25,10 +26,10 @@ export interface ButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement
   rectangular?: boolean;
   notification?: boolean;
   amount?: number;
-  typeContent: "icon";
+  typeContent: 'icon';
   icon?: IconDefinition;
   customIcon?: React.ReactNode;
-  iconPosition?: "left" | "right";
+  iconPosition?: 'left' | 'right';
   colorIcon?: string;
   colorText?: string;
   colorBackground?: string;

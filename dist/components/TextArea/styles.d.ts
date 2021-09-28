@@ -1,4 +1,4 @@
-/// <reference types="react" />
+import React from 'react';
 interface InputProps {
     isFieldActive?: boolean;
     errorMessage?: string;

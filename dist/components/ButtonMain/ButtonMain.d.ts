@@ -1,8 +1,8 @@
-import React, { ButtonHTMLAttributes } from "react";
-import { IconDefinition } from "@fortawesome/free-solid-svg-icons";
+import React, { ButtonHTMLAttributes } from 'react';
+import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
 declare type ButtonTypes = 'icon';
 declare type IconPositions = 'left' | 'right';
-export declare type ButtonSizes = "mini" | "tiny" | "small" | "medium" | "large" | "big" | "huge" | "massive";
+export declare type ButtonSizes = 'mini' | 'tiny' | 'small' | 'medium' | 'large' | 'big' | 'huge' | 'massive';
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     textFirst?: string;
     textEnd?: string;

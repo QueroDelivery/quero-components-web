@@ -1,10 +1,10 @@
 export interface DialogProps {
-    open: boolean;
-    onClose: Function;
-    loading?: boolean;
-    maxHeight?: number | string;
-    title?: string;
-    onBack?: Function;
-    noBorder?: boolean;
-    closeIcon?: boolean;
+  open: boolean;
+  onClose: Function;
+  loading?: boolean;
+  maxHeight?: number | string;
+  title?: string;
+  onBack?: Function;
+  noBorder?: boolean;
+  closeIcon?: boolean;
 }

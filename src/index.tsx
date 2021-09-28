@@ -12,33 +12,33 @@ import TextAreaForm from "./components/TextArea/TextAreaForm";
 import Checkbox from "./components/Checkbox/Checkbox";
 import Radio from "./components/Radio/Radio";
 import Dropdown from "./components/Dropdown/Dropdown";
-import DropdownForm from './components/Dropdown/DropdownForm';
+import DropdownForm from "./components/Dropdown/DropdownForm";
 import Accordion from "./components/Accordion/Accordion";
 import Selection from "./components/Selection/Selection";
 import MoreLess from "./components/MoreLess/MoreLess";
 import Card from "./components/Card/Card";
 import Calendar from "./components/Calendar/Calendar";
-import Table from './components/Table/Table';
-import Pagination from './components/Pagination/Pagination';
+import Table from "./components/Table/Table";
+import Pagination from "./components/Pagination/Pagination";
 
 export {
-    ButtonMain,
-    Dialog,
-    InputLine,
-    InputLineForm,
-    Loader,
-    Modal,
-    TextArea,
-    TextAreaForm,
-    Checkbox,
-    Radio,
-    Dropdown,
-    DropdownForm,
-    Accordion,
-    Selection,
-    MoreLess,
-    Card,
-    Calendar,
-    Table,
-    Pagination
+  ButtonMain,
+  Dialog,
+  InputLine,
+  InputLineForm,
+  Loader,
+  Modal,
+  TextArea,
+  TextAreaForm,
+  Checkbox,
+  Radio,
+  Dropdown,
+  DropdownForm,
+  Accordion,
+  Selection,
+  MoreLess,
+  Card,
+  Calendar,
+  Table,
+  Pagination,
 };

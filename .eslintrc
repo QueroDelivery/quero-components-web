@@ -1,0 +1,112 @@
+{
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es6": true,
+    "node": true
+  },
+  "extends": [
+    "airbnb",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:prettier/recommended",
+    "prettier"
+  ],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly",
+    "zE": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true,
+      "experimentalObjectRestSpread": true
+    },
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "plugins": ["react", "@typescript-eslint", "react-hooks", "prettier"],
+  "rules": {
+    "no-const-assign": 2,
+    "no-this-before-super": 2,
+    "no-undef": 2,
+    "no-unreachable": 2,
+    "no-unused-vars": "warn",
+    "import/no-unresolved": "off",
+    "no-use-before-define": "off",
+    "@typescript-eslint/no-use-before-define": "off",
+    "@typescript-eslint/no-unused-vars": "warn",
+    "constructor-super": "error",
+    "valid-typeof": "warn",
+    "no-shadow": "off",
+    "react/jsx-uses-vars": 2,
+    "camelcase": "off",
+    "global-require": "off",
+    "react/jsx-uses-react": 1,
+    "@typescript-eslint/no-explicit-any": "warn",
+    "react-hooks/rules-of-hooks": "error",
+    "import/no-extraneous-dependencies": "off",
+    "import/extensions": "off",
+    "no-underscore-dangle": "off",
+    "import/order": "warn",
+    "eqeqeq": "off",
+    "no-unneeded-ternary": "warn",
+    "consistent-return": "off",
+    "react/jsx-curly-newline": "off",
+    "jsx-a11y/label-has-associated-control": "off",
+    "react/jsx-wrap-multilines": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/no-static-element-interactions": "off",
+    "no-nested-ternary": "off",
+    "import/prefer-default-export": "off",
+    "dot-notation": "off",
+    "react/no-array-index-key": "off",
+    "react/require-default-props": "off",
+    "react/destructuring-assignment": "warn",
+    "react/prop-types": "off",
+    "array-callback-return": "off",
+    "jsx-a11y/anchor-is-valid": "off",
+    "react/jsx-one-expression-per-line": "off",
+    "no-return-assign": "off",
+    "no-param-reassign": "off",
+    "react/jsx-props-no-spreading": "off",
+    "jsx-a11y/alt-text": "warn",
+    "no-alert": "off",
+    "no-restricted-globals": "off",
+    "no-plusplus": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/state-in-constructor": "off",
+    "react/no-unused-state": "off",
+    "react/sort-comp": "off",
+    "class-methods-use-this": "off",
+    "react/jsx-no-bind": "off",
+    "jsx-a11y/no-noninteractive-element-interactions": "off",
+    "react/button-has-type": "off",
+    "react/no-access-state-in-setstate": "off",
+    "jsx-a11y/no-autofocus": "off",
+    "new-cap": "off",
+    "react/jsx-fragments": "off",
+    "react/jsx-no-duplicate-props": [
+      2,
+      {
+        "ignoreCase": true
+      }
+    ],
+    "react/jsx-no-undef": [
+      "error",
+      {
+        "allowGlobals": false
+      }
+    ],
+    "react-hooks/exhaustive-deps": "off",
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [".tsx", ".jsx"]
+      }
+    ],
+    "prettier/prettier": "warn"
+  }
+}
