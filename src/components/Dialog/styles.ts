@@ -1,5 +1,5 @@
-import styled, { css } from "styled-components";
-import { colors } from "../../styles/colors";
+import styled, { css } from 'styled-components';
+import { colors } from '../../styles/colors';
 
 interface BackgroundProps {
   open?: boolean;
@@ -20,7 +20,7 @@ interface HeaderProps {
 }
 
 export const Background = styled.div<BackgroundProps>`
-  ${(props) =>
+  ${props =>
     props.open
       ? css`
           opacity: 1;
@@ -44,7 +44,7 @@ export const Background = styled.div<BackgroundProps>`
 
 export const Dialog = styled.div<DialogProps>`
   font-family: MontSerrat !important;
-  ${(props) =>
+  ${props =>
     props.open
       ? css`
           transition: bottom 0.25s ease;
@@ -60,41 +60,41 @@ export const Dialog = styled.div<DialogProps>`
 
           overflow: ${() => {
             if (props.maxHeight || props.loading) {
-              return "none";
+              return 'none';
             }
-            return "auto";
+            return 'auto';
           }};
           padding-bottom: ${() => {
             if (props.maxHeight) {
-              return "0";
+              return '0';
             }
-            return "20px";
+            return '20px';
           }};
           height: ${() => {
             if (props.maxHeight) {
-              return "100%";
+              return '100%';
             }
-            return "auto";
+            return 'auto';
           }};
           max-height: ${() => {
             if (props.maxHeight) {
-              if (typeof props.maxHeight === "string") {
+              if (typeof props.maxHeight === 'string') {
                 return props.maxHeight;
               }
               return `${props.maxHeight}px`;
             }
 
-            return "100%";
+            return '100%';
           }};
 
           .box-dialog {
             position: relative;
             padding: 20px 20px 0;
-            overflow: ${props.loading ? "hidden" : "auto"};
+            overflow: ${props.loading ? 'hidden' : 'auto'};
 
             height: ${props.title
               ? `calc(100% - ${props.sizeHeader}px)`
-              : "100%"};
+              : '100%'};
             /* max-height: 100%; */
           }
 
@@ -124,8 +124,8 @@ export const Header = styled.div<HeaderProps>`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: ${(props) =>
-    props.noBorder ? "none" : `1px solid ${colors.default20}`};
+  border-bottom: ${props =>
+    props.noBorder ? 'none' : `1px solid ${colors.default20}`};
   font-size: 1.25rem;
 
   .name-icon-modal {
@@ -134,7 +134,7 @@ export const Header = styled.div<HeaderProps>`
   }
 
   & strong {
-    padding: ${(props) => (props.iconBack ? "1.25rem 0" : "1.25rem 1.875rem")};
+    padding: ${props => (props.iconBack ? '1.25rem 0' : '1.25rem 1.875rem')};
     color: ${colors.brand10};
   }
 `;

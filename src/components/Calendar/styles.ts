@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { colors } from "../../styles/colors";
+import styled from 'styled-components';
+import { colors } from '../../styles/colors';
 
 interface CalendarProps {
   labelColor?: string;
@@ -16,24 +16,24 @@ export const Container = styled.div<CalendarProps>`
     padding: 7px 15px;
     border-radius: 20px;
     border: 1px solid
-      ${(props) => (props.brand ? colors.brandLight : colors.gray10)};
-    color: ${(props) => (props.brand ? colors.brand10 : colors.gray20)};
+      ${props => (props.brand ? colors.brandLight : colors.gray10)};
+    color: ${props => (props.brand ? colors.brand10 : colors.gray20)};
     cursor: pointer;
 
-    background-color: ${(props) =>
+    background-color: ${props =>
       props.brand ? colors.brandLight : colors.white};
 
     font-weight: bold;
 
     &::placeholder {
-      color: ${(props) =>
+      color: ${props =>
         props.brand ? colors.brandTransparent : colors.default10};
     }
   }
 
   span {
     font-size: 14px;
-    color: ${(props) => {
+    color: ${props => {
       if (props.labelColor) {
         return props.labelColor;
       }
@@ -44,24 +44,24 @@ export const Container = styled.div<CalendarProps>`
     margin-bottom: 3px;
   }
 
-  .react-datepicker-popper[data-placement^="bottom"]
+  .react-datepicker-popper[data-placement^='bottom']
     .react-datepicker__triangle,
-  .react-datepicker-popper[data-placement^="top"] .react-datepicker__triangle,
+  .react-datepicker-popper[data-placement^='top'] .react-datepicker__triangle,
   .react-datepicker__year-read-view--down-arrow,
   .react-datepicker__month-read-view--down-arrow,
   .react-datepicker__month-year-read-view--down-arrow {
     margin-left: -8px !important;
     position: absolute !important;
   }
-  .react-datepicker-popper[data-placement^="bottom"]
+  .react-datepicker-popper[data-placement^='bottom']
     .react-datepicker__triangle,
-  .react-datepicker-popper[data-placement^="top"] .react-datepicker__triangle,
+  .react-datepicker-popper[data-placement^='top'] .react-datepicker__triangle,
   .react-datepicker__year-read-view--down-arrow,
   .react-datepicker__month-read-view--down-arrow,
   .react-datepicker__month-year-read-view--down-arrow,
-  .react-datepicker-popper[data-placement^="bottom"]
+  .react-datepicker-popper[data-placement^='bottom']
     .react-datepicker__triangle::before,
-  .react-datepicker-popper[data-placement^="top"]
+  .react-datepicker-popper[data-placement^='top']
     .react-datepicker__triangle::before,
   .react-datepicker__year-read-view--down-arrow::before,
   .react-datepicker__month-read-view--down-arrow::before,
@@ -73,41 +73,41 @@ export const Container = styled.div<CalendarProps>`
     width: 1px !important;
   }
 
-  .react-datepicker-popper[data-placement^="bottom"]
+  .react-datepicker-popper[data-placement^='bottom']
     .react-datepicker__triangle::before,
-  .react-datepicker-popper[data-placement^="top"]
+  .react-datepicker-popper[data-placement^='top']
     .react-datepicker__triangle::before,
   .react-datepicker__year-read-view--down-arrow::before,
   .react-datepicker__month-read-view--down-arrow::before,
   .react-datepicker__month-year-read-view--down-arrow::before {
-    content: "" !important;
+    content: '' !important;
     z-index: -1 !important;
     border-width: 8px !important;
     left: -8px !important;
     border-bottom-color: #291f1f !important;
   }
 
-  .react-datepicker-popper[data-placement^="bottom"]
+  .react-datepicker-popper[data-placement^='bottom']
     .react-datepicker__triangle {
     top: 0 !important;
     margin-top: -8px !important;
   }
 
-  .react-datepicker-popper[data-placement^="bottom"]
+  .react-datepicker-popper[data-placement^='bottom']
     .react-datepicker__triangle,
-  .react-datepicker-popper[data-placement^="bottom"]
+  .react-datepicker-popper[data-placement^='bottom']
     .react-datepicker__triangle::before {
     border-top: none !important;
     border-bottom-color: #ffffff !important;
   }
 
-  .react-datepicker-popper[data-placement^="bottom"]
+  .react-datepicker-popper[data-placement^='bottom']
     .react-datepicker__triangle::before {
     top: -1px !important;
     border-bottom-color: #aeaeae !important;
   }
 
-  .react-datepicker-popper[data-placement^="top"] .react-datepicker__triangle,
+  .react-datepicker-popper[data-placement^='top'] .react-datepicker__triangle,
   .react-datepicker__year-read-view--down-arrow,
   .react-datepicker__month-read-view--down-arrow,
   .react-datepicker__month-year-read-view--down-arrow {
@@ -115,11 +115,11 @@ export const Container = styled.div<CalendarProps>`
     margin-bottom: -8px !important;
   }
 
-  .react-datepicker-popper[data-placement^="top"] .react-datepicker__triangle,
+  .react-datepicker-popper[data-placement^='top'] .react-datepicker__triangle,
   .react-datepicker__year-read-view--down-arrow,
   .react-datepicker__month-read-view--down-arrow,
   .react-datepicker__month-year-read-view--down-arrow,
-  .react-datepicker-popper[data-placement^="top"]
+  .react-datepicker-popper[data-placement^='top']
     .react-datepicker__triangle::before,
   .react-datepicker__year-read-view--down-arrow::before,
   .react-datepicker__month-read-view--down-arrow::before,
@@ -128,7 +128,7 @@ export const Container = styled.div<CalendarProps>`
     border-top-color: #fff !important;
   }
 
-  .react-datepicker-popper[data-placement^="top"]
+  .react-datepicker-popper[data-placement^='top']
     .react-datepicker__triangle::before,
   .react-datepicker__year-read-view--down-arrow::before,
   .react-datepicker__month-read-view--down-arrow::before,
@@ -144,7 +144,7 @@ export const Container = styled.div<CalendarProps>`
   }
 
   .react-datepicker {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
     font-size: 0.8rem !important;
     background-color: #fff !important;
     color: #000 !important;
@@ -177,37 +177,37 @@ export const Container = styled.div<CalendarProps>`
     z-index: 1 !important;
   }
 
-  .react-datepicker-popper[data-placement^="bottom"] {
+  .react-datepicker-popper[data-placement^='bottom'] {
     margin-top: 10px !important;
   }
 
-  .react-datepicker-popper[data-placement="bottom-end"]
+  .react-datepicker-popper[data-placement='bottom-end']
     .react-datepicker__triangle,
-  .react-datepicker-popper[data-placement="top-end"]
+  .react-datepicker-popper[data-placement='top-end']
     .react-datepicker__triangle {
     left: auto !important;
     right: 50px !important;
   }
 
-  .react-datepicker-popper[data-placement^="top"] {
+  .react-datepicker-popper[data-placement^='top'] {
     margin-bottom: 10px !important;
   }
 
-  .react-datepicker-popper[data-placement^="right"] {
+  .react-datepicker-popper[data-placement^='right'] {
     margin-left: 8px !important;
   }
 
-  .react-datepicker-popper[data-placement^="right"]
+  .react-datepicker-popper[data-placement^='right']
     .react-datepicker__triangle {
     left: auto !important;
     right: 42px !important;
   }
 
-  .react-datepicker-popper[data-placement^="left"] {
+  .react-datepicker-popper[data-placement^='left'] {
     margin-right: 8px !important;
   }
 
-  .react-datepicker-popper[data-placement^="left"] .react-datepicker__triangle {
+  .react-datepicker-popper[data-placement^='left'] .react-datepicker__triangle {
     left: 42px !important;
     right: auto !important;
   }
@@ -413,11 +413,11 @@ export const Container = styled.div<CalendarProps>`
   .react-datepicker__input-time-container
     .react-datepicker-time__input-container
     .react-datepicker-time__input
-    input[type="time"]::-webkit-inner-spin-button,
+    input[type='time']::-webkit-inner-spin-button,
   .react-datepicker__input-time-container
     .react-datepicker-time__input-container
     .react-datepicker-time__input
-    input[type="time"]::-webkit-outer-spin-button {
+    input[type='time']::-webkit-outer-spin-button {
     -webkit-appearance: none !important;
     margin: 0 !important;
   }
@@ -425,7 +425,7 @@ export const Container = styled.div<CalendarProps>`
   .react-datepicker__input-time-container
     .react-datepicker-time__input-container
     .react-datepicker-time__input
-    input[type="time"] {
+    input[type='time'] {
     -moz-appearance: textfield !important;
   }
 

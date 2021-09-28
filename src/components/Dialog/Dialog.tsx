@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable react/prop-types */
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTimes, faAngleLeft } from "@fortawesome/free-solid-svg-icons";
-import { Background, Dialog, Header, Icon } from "./styles";
-import Loader from "../Loader/Loader";
-import { colors } from "../../styles/colors";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimes, faAngleLeft } from '@fortawesome/free-solid-svg-icons';
+import { Background, Dialog, Header, Icon } from './styles';
+import Loader from '../Loader/Loader';
+import { colors } from '../../styles/colors';
 
 export interface DialogProps {
   open: boolean;
@@ -33,22 +33,22 @@ const DialogComponent: React.FC<DialogProps> = ({
   const [sizeHeader, setSizeHeader] = useState(62);
 
   useEffect(() => {
-    if (document.getElementById("headerDialog")) {
-      setSizeHeader(document.getElementById("headerDialog")!.clientHeight);
+    if (document.getElementById('headerDialog')) {
+      setSizeHeader(document.getElementById('headerDialog')!.clientHeight);
     }
-  }, [document.getElementById("headerDialog")]);
+  }, [document.getElementById('headerDialog')]);
 
   return (
     <Background
       open={open}
-      onClick={(event) => {
+      onClick={event => {
         event.stopPropagation();
         onClose();
       }}
     >
       <Dialog
         open={open}
-        onClick={(event) => event.stopPropagation()}
+        onClick={event => event.stopPropagation()}
         maxHeight={maxHeight}
         sizeHeader={sizeHeader}
         loading={loading}
@@ -70,14 +70,14 @@ const DialogComponent: React.FC<DialogProps> = ({
             </div>
             {closeIcon && (
               <Icon
-                onClick={(event) => {
+                onClick={event => {
                   event.stopPropagation();
                   onClose();
                 }}
               >
                 <FontAwesomeIcon
                   icon={faTimes}
-                  style={{ fontSize: "1.25rem" }}
+                  style={{ fontSize: '1.25rem' }}
                   color={colors.brand10}
                 />
               </Icon>

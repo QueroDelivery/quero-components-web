@@ -1,11 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable react/prop-types */
-import React, { useState, useEffect } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { InputProps } from "./InputLine";
+import React, { useState, useEffect } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { InputProps } from './InputLine';
 
-import { Container, LabelError } from "./styles";
-import { colors } from "../../styles/colors";
+import { Container, LabelError } from './styles';
+import { colors } from '../../styles/colors';
 
 export interface InputFormProps extends InputProps {
   required?: boolean;
@@ -33,7 +33,7 @@ const InputLineForm: React.FC<InputFormProps> = ({
 }) => {
   const [isFieldActive, setIsFieldActive] = useState(false);
 
-  const [message, setMessage] = useState("");
+  const [message, setMessage] = useState('');
 
   const value = values ? values(name) || rest.defaultValue : rest.value;
 
@@ -62,7 +62,7 @@ const InputLineForm: React.FC<InputFormProps> = ({
 
   const validadeRegister = (valueRegister: string) => {
     let result = true;
-    let mensagem = "";
+    let mensagem = '';
 
     if (validate) {
       if (validate(valueRegister)) {
@@ -101,7 +101,7 @@ const InputLineForm: React.FC<InputFormProps> = ({
     >
       <Container
         isFieldActive={isFieldActive}
-        requiredText={!!(errors && errors.type === "required")}
+        requiredText={!!(errors && errors.type === 'required')}
         errorMessage={errors}
         // action={rest.action?.icon ? true : false}
         containerStyle={rest.containerStyle}
@@ -113,7 +113,7 @@ const InputLineForm: React.FC<InputFormProps> = ({
         iconPosition={rest.iconPosition}
         action={rest.action}
         actionPosition={rest.action?.position}
-        date={rest.type === "date"}
+        date={rest.type === 'date'}
       >
         {rest.icon && (
           <div className="icon">
@@ -138,7 +138,7 @@ const InputLineForm: React.FC<InputFormProps> = ({
           onFocus={handleFocus}
           onBlur={handleBlur}
           name={name}
-          placeholder={isFieldActive ? rest.placeholder : ""}
+          placeholder={isFieldActive ? rest.placeholder : ''}
           ref={
             register
               ? register({
@@ -154,7 +154,7 @@ const InputLineForm: React.FC<InputFormProps> = ({
       </Container>
       {errors ? (
         <LabelError>
-          {errors.type === "required" ? "Obrigatório" : `${message}`}
+          {errors.type === 'required' ? 'Obrigatório' : `${message}`}
         </LabelError>
       ) : null}
     </div>

@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import { colors } from "../../styles/colors";
-import { TTypes } from "./Card";
+import styled from 'styled-components';
+import { colors } from '../../styles/colors';
+import { TTypes } from './Card';
 
 interface CardProps {
   width?: number | string;
@@ -10,37 +10,37 @@ interface CardProps {
 
 export const Shadow = styled.div<CardProps>`
   font-family: MontSerrat !important;
-  box-shadow: ${(props) => {
-    if (props.type == "none") {
-      return "none";
+  box-shadow: ${props => {
+    if (props.type == 'none') {
+      return 'none';
     }
-    if (props.type == "border") {
-      return "none";
+    if (props.type == 'border') {
+      return 'none';
     }
-    if (props.type == "min-shadow") {
-      return "0px 0.125rem 0.25rem #00000029";
+    if (props.type == 'min-shadow') {
+      return '0px 0.125rem 0.25rem #00000029';
     }
-    return "0 1.25rem 3.125rem 0 rgba(0, 0, 0, 0.16)";
+    return '0 1.25rem 3.125rem 0 rgba(0, 0, 0, 0.16)';
   }};
 
-  border: ${(props) =>
-    props.type == "border" || props.style?.borderRadius
+  border: ${props =>
+    props.type == 'border' || props.style?.borderRadius
       ? `1px solid  ${colors.default20}`
-      : ""};
+      : ''};
   padding: 1.25rem;
   background-color: ${colors.white};
   border-radius: 1.875rem;
   position: relative;
 
-  width: ${(props) => {
+  width: ${props => {
     if (props.width) {
-      if (typeof props.width === "string") {
+      if (typeof props.width === 'string') {
         return props.width;
       }
       return `${props.width}px`;
     }
 
-    return "100%";
+    return '100%';
   }};
 
   .loading-card {
@@ -66,15 +66,15 @@ export const Button = styled.a<CardProps>`
   padding: 0.75rem 1.5625rem;
   border-radius: 1.875rem;
   border: 1px solid ${colors.default30};
-  width: ${(props) => {
+  width: ${props => {
     if (props.width) {
-      if (typeof props.width === "string") {
+      if (typeof props.width === 'string') {
         return props.width;
       }
       return `${props.width}px`;
     }
 
-    return "100%";
+    return '100%';
   }};
   cursor: pointer;
   display: flex;
@@ -87,7 +87,7 @@ export const Button = styled.a<CardProps>`
   span {
     margin-left: 0.9375rem;
     font-size: 0.9375rem;
-    color: ${(props) => (props.colorText ? props.colorText : colors.brandDark)};
+    color: ${props => (props.colorText ? props.colorText : colors.brandDark)};
   }
 `;
 

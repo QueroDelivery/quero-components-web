@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {
   TableBody,
   TableCell,
@@ -6,8 +6,8 @@ import {
   TableHeader,
   TableHeaderCell,
   TableRow,
-} from "semantic-ui-react";
-import TableComponent, { ITableComponent } from "./TableComponent";
+} from 'semantic-ui-react';
+import TableComponent, { ITableComponent } from './TableComponent';
 
 interface TableComponentProps extends React.FunctionComponent<ITableComponent> {
   Body: typeof TableBody;

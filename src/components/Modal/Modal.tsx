@@ -1,11 +1,11 @@
 /* eslint-disable react/prop-types */
-import React, { useEffect } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { useEffect } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { faTimes, faAngleLeft } from "@fortawesome/free-solid-svg-icons";
-import Loader from "../Loader/Loader";
-import { Background, Modal, Header, Body, Actions, Icon } from "./styles";
-import { colors } from "../../styles/colors";
+import { faTimes, faAngleLeft } from '@fortawesome/free-solid-svg-icons';
+import Loader from '../Loader/Loader';
+import { Background, Modal, Header, Body, Actions, Icon } from './styles';
+import { colors } from '../../styles/colors';
 
 export interface ModalProps {
   open: boolean;
@@ -16,7 +16,7 @@ export interface ModalProps {
   closeOnDimerClick?: boolean;
   loading?: boolean;
   onBack?: Function;
-  size?: "mini" | "tiny" | "small" | "large" | "fullscreen";
+  size?: 'mini' | 'tiny' | 'small' | 'large' | 'fullscreen';
   noBorder?: boolean;
   closeIcon?: boolean;
 }
@@ -37,16 +37,16 @@ const ModalComponent: React.FC<ModalProps> = ({
 }) => {
   useEffect(() => {
     if (open) {
-      window.addEventListener("keydown", (event) => escModal(event));
+      window.addEventListener('keydown', event => escModal(event));
     } else {
-      window.removeEventListener("keydown", (event) => escModal(event));
+      window.removeEventListener('keydown', event => escModal(event));
     }
 
-    return window.removeEventListener("keydown", (event) => escModal(event));
+    return window.removeEventListener('keydown', event => escModal(event));
   }, [open]);
 
   function escModal(event: KeyboardEvent) {
-    if (open && event.key == "Escape" && closeOnDimerClick) {
+    if (open && event.key == 'Escape' && closeOnDimerClick) {
       event.stopPropagation();
       onClose();
     }
@@ -55,7 +55,7 @@ const ModalComponent: React.FC<ModalProps> = ({
   return (
     <Background
       open={open}
-      onClick={(event) => {
+      onClick={event => {
         if (closeOnDimerClick) {
           event.stopPropagation();
           onClose();
@@ -65,7 +65,7 @@ const ModalComponent: React.FC<ModalProps> = ({
       <Modal
         size={size}
         width={width}
-        onClick={(event) => event.stopPropagation()}
+        onClick={event => event.stopPropagation()}
       >
         <Header iconBack={!!onBack} noBorder={noBorder}>
           <div className="name-icon-modal">
@@ -82,7 +82,7 @@ const ModalComponent: React.FC<ModalProps> = ({
           </div>
           {closeIcon && (
             <Icon
-              onClick={(event) => {
+              onClick={event => {
                 event.stopPropagation();
                 onClose();
               }}

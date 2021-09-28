@@ -2712,41 +2712,41 @@ var colors = {
 
 var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7;
 var Sizes = {
-  mini: "mini",
-  tiny: "tiny",
-  small: "small",
-  medium: "medium",
-  large: "large",
-  big: "big",
-  huge: "huge",
-  massive: "massive"
+  mini: 'mini',
+  tiny: 'tiny',
+  small: 'small',
+  medium: 'medium',
+  large: 'large',
+  big: 'big',
+  huge: 'huge',
+  massive: 'massive'
 };
 
 var size = function size(_size) {
   switch (_size) {
     case Sizes.mini:
-      return "25px";
+      return '25px';
 
     case Sizes.tiny:
-      return "30px";
+      return '30px';
 
     case Sizes.small:
-      return "35px";
+      return '35px';
 
     case Sizes.medium:
-      return "40px";
+      return '40px';
 
     case Sizes.large:
-      return "45px";
+      return '45px';
 
     case Sizes.big:
-      return "50px";
+      return '50px';
 
     case Sizes.huge:
-      return "55px";
+      return '55px';
 
     case Sizes.massive:
-      return "60px";
+      return '60px';
 
     default:
       return _size;
@@ -2756,28 +2756,28 @@ var size = function size(_size) {
 var textSize = function textSize(size) {
   switch (size) {
     case Sizes.mini:
-      return "10px";
+      return '10px';
 
     case Sizes.tiny:
-      return "11px";
+      return '11px';
 
     case Sizes.small:
-      return "12px";
+      return '12px';
 
     case Sizes.medium:
-      return "14px";
+      return '14px';
 
     case Sizes.large:
-      return "16px";
+      return '16px';
 
     case Sizes.big:
-      return "18px";
+      return '18px';
 
     case Sizes.huge:
-      return "20px";
+      return '20px';
 
     case Sizes.massive:
-      return "22px";
+      return '22px';
 
     default:
       return size;
@@ -2785,7 +2785,7 @@ var textSize = function textSize(size) {
 };
 
 var Button = styled__default.button(_templateObject || (_templateObject = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  position: ", ";\n  background-color: ", ";\n  height: ", ";\n  padding: 0 20px;\n  width: ", ";\n  border-radius: ", ";\n  cursor: pointer;\n  border: ", ";\n  outline: none;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n\n  &:disabled {\n    opacity: 0.5;\n    cursor: not-allowed;\n    pointer-events: none;\n  }\n\n  &:hover {\n    background-color: ", ";\n\n    span {\n      color: ", ";\n    }\n  }\n"])), function (props) {
-  return props.loading ? "relative" : "initial";
+  return props.loading ? 'relative' : 'initial';
 }, function (props) {
   if (props.colorBackground) return props.colorBackground;
 
@@ -2794,25 +2794,25 @@ var Button = styled__default.button(_templateObject || (_templateObject = _tagge
   }
 
   if (props.noBorder) {
-    return "transparent";
+    return 'transparent';
   }
 
-  return colors.black;
+  return colors.brand30;
 }, function (props) {
-  return props.size ? size(props.size) : "40px";
+  return props.size ? size(props.size) : '40px';
 }, function (props) {
   if (props.width) {
-    if (typeof props.width === "string") {
+    if (typeof props.width === 'string') {
       return props.width;
     }
 
     return props.width + "px";
   }
 
-  return "none";
+  return 'none';
 }, function (props) {
-  if (props.rectangular) return "10px";
-  return "30px";
+  if (props.rectangular) return '10px';
+  return '30px';
 }, function (props) {
   if (props.secondary) {
     return "1px solid " + colors.brand10;
@@ -2822,7 +2822,7 @@ var Button = styled__default.button(_templateObject || (_templateObject = _tagge
     return "1px solid " + colors.gray10;
   }
 
-  return "none";
+  return 'none';
 }, function (props) {
   if (props.hoverBackgroundColor) {
     return props.hoverBackgroundColor;
@@ -2837,7 +2837,7 @@ var Button = styled__default.button(_templateObject || (_templateObject = _tagge
   }
 
   if (props.noBorder) {
-    return "transparent";
+    return 'transparent';
   }
 
   if (props.tertiary) {
@@ -2873,7 +2873,7 @@ var Button = styled__default.button(_templateObject || (_templateObject = _tagge
   return colors.brand30;
 });
 var TextFirst = styled__default.span(_templateObject2 || (_templateObject2 = _taggedTemplateLiteralLoose(["\n  visibility: ", ";\n  color: ", ";\n  font-weight: ", ";\n  font-size: ", ";\n  margin-right: 3.5px;\n"])), function (props) {
-  return props.loading ? "hidden" : "visible";
+  return props.loading ? 'hidden' : 'visible';
 }, function (props) {
   if (props.colorText) {
     return props.colorText;
@@ -2886,15 +2886,15 @@ var TextFirst = styled__default.span(_templateObject2 || (_templateObject2 = _ta
   return colors.brand10;
 }, function (props) {
   if (props.firstStrong || props.strong) {
-    return "bold";
+    return 'bold';
   }
 
-  return "normal";
+  return 'normal';
 }, function (props) {
-  return props.size ? textSize(props.size) : "14px";
+  return props.size ? textSize(props.size) : '14px';
 });
 var TextEnd = styled__default.span(_templateObject3 || (_templateObject3 = _taggedTemplateLiteralLoose(["\n  visibility: ", ";\n  color: ", ";\n  font-weight: ", ";\n  font-size: ", ";\n"])), function (props) {
-  return props.loading ? "hidden" : "visible";
+  return props.loading ? 'hidden' : 'visible';
 }, function (props) {
   if (props.colorText) {
     return props.colorText;
@@ -2907,20 +2907,20 @@ var TextEnd = styled__default.span(_templateObject3 || (_templateObject3 = _tagg
   return colors.brand10;
 }, function (props) {
   if (props.firstStrong || props.notStrong) {
-    return "normal";
+    return 'normal';
   }
 
-  return "bold";
+  return 'bold';
 }, function (props) {
-  return props.size ? textSize(props.size) : "14px";
+  return props.size ? textSize(props.size) : '14px';
 });
 var Notification = styled__default.button(_templateObject4 || (_templateObject4 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  background-color: ", ";\n  height: 40px;\n  width: 100%;\n  border-radius: 30px;\n  cursor: pointer;\n  border: 1px solid ", ";\n  outline: none;\n\n  &:disabled {\n    opacity: 0.5;\n    cursor: not-allowed;\n    pointer-events: none;\n  }\n\n  &:hover {\n    background-color: ", ";\n  }\n\n  span {\n    color: ", ";\n    margin-left: 20px;\n    font-weight: bold;\n  }\n"])), colors.brand10, colors.brand30, colors.brandTransparent2, colors.brand30);
 var Icon = styled__default.div(_templateObject5 || (_templateObject5 = _taggedTemplateLiteralLoose(["\n  visibility: ", ";\n  margin-right: ", ";\n  margin-left: ", ";\n"])), function (props) {
-  return props.loading ? "hidden" : "visible";
+  return props.loading ? 'hidden' : 'visible';
 }, function (props) {
-  return props.iconPosition === "left" ? "10px" : "";
+  return props.iconPosition === 'left' ? '10px' : '';
 }, function (props) {
-  return props.iconPosition === "right" ? "10px" : "";
+  return props.iconPosition === 'right' ? '10px' : '';
 });
 var Amount = styled__default.div(_templateObject6 || (_templateObject6 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  background-color: ", ";\n  width: 20px;\n  height: 20px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  border-radius: 50%;\n  color: ", ";\n  font-size: 10px;\n"])), colors.brand30, colors.brand10);
 var LoadingContainer = styled__default.div(_templateObject7 || (_templateObject7 = _taggedTemplateLiteralLoose(["\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n"])));

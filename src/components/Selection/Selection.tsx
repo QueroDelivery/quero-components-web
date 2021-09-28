@@ -1,29 +1,29 @@
-import React from "react";
+import React from 'react';
 
-import { Switch, Toggle, ActiveInactive } from "./styles";
+import { Switch, Toggle, ActiveInactive } from './styles';
 
 interface SelectionProps {
-  type: "switch" | "toggle" | "activeInactive";
+  type: 'switch' | 'toggle' | 'activeInactive';
   checked?: boolean;
   onChange?: () => void;
   size?:
-    | "mini"
-    | "tiny"
-    | "small"
-    | "medium"
-    | "large"
-    | "big"
-    | "huge"
-    | "massive";
+    | 'mini'
+    | 'tiny'
+    | 'small'
+    | 'medium'
+    | 'large'
+    | 'big'
+    | 'huge'
+    | 'massive';
   disabled?: boolean;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   selectionRef?: any;
 }
 
 const TYPES = {
-  switch: "switch",
-  toggle: "toggle",
-  activeInactive: "activeInactive",
+  switch: 'switch',
+  toggle: 'toggle',
+  activeInactive: 'activeInactive',
 };
 
 const Selection: React.FC<SelectionProps> = ({
@@ -92,7 +92,7 @@ const Selection: React.FC<SelectionProps> = ({
             !disabled ? (checked ? (onChange ? onChange() : null) : null) : null
           }
         >
-          <span>{checked ? "desativar" : "inativo"}</span>
+          <span>{checked ? 'desativar' : 'inativo'}</span>
         </div>
         <div
           className="btn right"
@@ -106,7 +106,7 @@ const Selection: React.FC<SelectionProps> = ({
               : null
           }
         >
-          <span>{checked ? "ativo" : "ativar"}</span>
+          <span>{checked ? 'ativo' : 'ativar'}</span>
         </div>
       </ActiveInactive>
     );

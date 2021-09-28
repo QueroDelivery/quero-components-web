@@ -1,8 +1,8 @@
-import React from "react";
-import { Table, TableProps } from "semantic-ui-react";
+import React from 'react';
+import { Table, TableProps } from 'semantic-ui-react';
 
-import { Container, Header, Title, Message } from "./styles";
-import ButtonMain from "../ButtonMain/ButtonMain";
+import { Container, Header, Title, Message } from './styles';
+import ButtonMain from '../ButtonMain/ButtonMain';
 
 export interface ITableComponent extends TableProps {
   title?: string | React.ReactNode;

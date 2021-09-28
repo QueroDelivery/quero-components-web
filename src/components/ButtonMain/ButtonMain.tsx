@@ -1,6 +1,6 @@
-import React, { ButtonHTMLAttributes } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBell, IconDefinition } from "@fortawesome/free-solid-svg-icons";
+import React, { ButtonHTMLAttributes } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBell, IconDefinition } from '@fortawesome/free-solid-svg-icons';
 
 import {
   Button,
@@ -10,21 +10,21 @@ import {
   Amount,
   Notification,
   LoadingContainer,
-} from "./styles";
-import Loader from "../Loader/Loader";
-import { colors } from "../../styles/colors";
+} from './styles';
+import Loader from '../Loader/Loader';
+import { colors } from '../../styles/colors';
 
-type ButtonTypes = "icon";
-type IconPositions = "left" | "right";
+type ButtonTypes = 'icon';
+type IconPositions = 'left' | 'right';
 export type ButtonSizes =
-  | "mini"
-  | "tiny"
-  | "small"
-  | "medium"
-  | "large"
-  | "big"
-  | "huge"
-  | "massive";
+  | 'mini'
+  | 'tiny'
+  | 'small'
+  | 'medium'
+  | 'large'
+  | 'big'
+  | 'huge'
+  | 'massive';
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   textFirst?: string;
   textEnd?: string;
@@ -68,7 +68,7 @@ const ButtonMain: React.FC<ButtonProps> = ({
   width,
   icon,
   customIcon,
-  iconPosition = "right",
+  iconPosition = 'right',
   colorIcon,
   noBorder,
   colorText,
@@ -91,14 +91,14 @@ const ButtonMain: React.FC<ButtonProps> = ({
           children || (
             <div
               style={{
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "center",
-                height: "50%",
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                height: '50%',
                 padding: 10,
               }}
             >
-              <div style={{ display: "flex", alignItems: "center" }}>
+              <div style={{ display: 'flex', alignItems: 'center' }}>
                 <Icon>
                   <FontAwesomeIcon
                     icon={faBell}
@@ -118,7 +118,7 @@ const ButtonMain: React.FC<ButtonProps> = ({
 
   function renderButtonTypes(type: ButtonTypes) {
     switch (type) {
-      case "icon":
+      case 'icon':
         return (
           <div>
             {(icon || customIcon) && (
@@ -167,7 +167,7 @@ const ButtonMain: React.FC<ButtonProps> = ({
             renderButtonTypes(typeContent)
           ) : (
             <React.Fragment>
-              {(icon || customIcon) && iconPosition === "left" && (
+              {(icon || customIcon) && iconPosition === 'left' && (
                 <React.Fragment>
                   {customIcon ? (
                     <Icon loading={loading} iconPosition={iconPosition}>
@@ -207,7 +207,7 @@ const ButtonMain: React.FC<ButtonProps> = ({
               >
                 {textEnd}
               </TextEnd>
-              {(icon || customIcon) && iconPosition === "right" && (
+              {(icon || customIcon) && iconPosition === 'right' && (
                 <React.Fragment>
                   {customIcon ? (
                     <Icon loading={loading} iconPosition={iconPosition}>

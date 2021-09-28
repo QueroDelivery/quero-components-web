@@ -1,31 +1,31 @@
-import React, { LinkHTMLAttributes, ReactNode } from "react";
-import { IconDefinition } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { LinkHTMLAttributes, ReactNode } from 'react';
+import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import Loader from "../Loader/Loader";
-import { colors } from "../../styles/colors";
-import { Shadow, Button, Complement } from "./styles";
+import Loader from '../Loader/Loader';
+import { colors } from '../../styles/colors';
+import { Shadow, Button, Complement } from './styles';
 
-export type TTypes = "shadow" | "button" | "min-shadow" | "border" | "none";
-interface CardProps extends Pick<LinkHTMLAttributes<HTMLLinkElement>, "href"> {
+export type TTypes = 'shadow' | 'button' | 'min-shadow' | 'border' | 'none';
+interface CardProps extends Pick<LinkHTMLAttributes<HTMLLinkElement>, 'href'> {
   type?: TTypes;
   width?: number | string;
   style?: React.CSSProperties;
   icon?: IconDefinition;
   sizeIcon?:
-    | "1x"
-    | "2x"
-    | "3x"
-    | "4x"
-    | "5x"
-    | "6x"
-    | "7x"
-    | "8x"
-    | "9x"
-    | "10x"
-    | "lg"
-    | "sm"
-    | "xs";
+    | '1x'
+    | '2x'
+    | '3x'
+    | '4x'
+    | '5x'
+    | '6x'
+    | '7x'
+    | '8x'
+    | '9x'
+    | '10x'
+    | 'lg'
+    | 'sm'
+    | 'xs';
   colorIcon?: string;
   text?: string;
   colorText?: string;
@@ -41,7 +41,7 @@ interface CardProps extends Pick<LinkHTMLAttributes<HTMLLinkElement>, "href"> {
 const Card: React.FC<CardProps> = ({
   children,
   width,
-  type = "shadow",
+  type = 'shadow',
   style,
   icon,
   sizeIcon,
@@ -116,7 +116,7 @@ const Card: React.FC<CardProps> = ({
             <FontAwesomeIcon
               icon={icon}
               color={colorIcon || colors.brandDark}
-              size={sizeIcon || "lg"}
+              size={sizeIcon || 'lg'}
             />
           </React.Fragment>
         )}
@@ -127,9 +127,9 @@ const Card: React.FC<CardProps> = ({
   }
 
   switch (type) {
-    case "shadow" || "min-shadow" || "border":
+    case 'shadow' || 'min-shadow' || 'border':
       return renderShadow();
-    case "button":
+    case 'button':
       return renderButton();
     default:
       return renderShadow();

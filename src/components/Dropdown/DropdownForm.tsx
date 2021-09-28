@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 
-import Dropdown, { Props } from "./Dropdown";
+import Dropdown, { Props } from './Dropdown';
 
-interface DropdownFormProps extends Omit<Props, "onChange" | "value"> {
+interface DropdownFormProps extends Omit<Props, 'onChange' | 'value'> {
   required?: boolean;
   name: string;
   errors: any;
@@ -26,7 +26,7 @@ const DropdownForm: React.FC<DropdownFormProps> = ({
   ...rest
 }) => {
   const [valueDefault, setValueDefault] = useState<any>();
-  const [message, setMessage] = useState("");
+  const [message, setMessage] = useState('');
 
   useEffect(() => {
     if (!valueDefault) {
@@ -53,11 +53,11 @@ const DropdownForm: React.FC<DropdownFormProps> = ({
                     setMessage(validate(value));
                     return false;
                   }
-                  setMessage("");
+                  setMessage('');
                   return true;
                 }
               : null,
-        }
+        },
       );
     }
   }, [register]);
@@ -76,10 +76,10 @@ const DropdownForm: React.FC<DropdownFormProps> = ({
       line={rest.line}
       errorMessage={
         errors
-          ? errors.type === "required"
-            ? "Obrigatório"
+          ? errors.type === 'required'
+            ? 'Obrigatório'
             : `${message}`
-          : ""
+          : ''
       }
     />
   );

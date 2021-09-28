@@ -1,21 +1,21 @@
-import React, { InputHTMLAttributes } from "react";
+import React, { InputHTMLAttributes } from 'react';
 
-import { Container } from "./styles";
+import { Container } from './styles';
 
 export interface InputProps
-  extends Omit<InputHTMLAttributes<HTMLInputElement>, "type"> {
+  extends Omit<InputHTMLAttributes<HTMLInputElement>, 'type'> {
   label?: string;
   labelStyle?: React.CSSProperties;
   onChange: () => void;
   sizeBox?:
-    | "mini"
-    | "tiny"
-    | "small"
-    | "medium"
-    | "large"
-    | "big"
-    | "huge"
-    | "massive";
+    | 'mini'
+    | 'tiny'
+    | 'small'
+    | 'medium'
+    | 'large'
+    | 'big'
+    | 'huge'
+    | 'massive';
 }
 
 const Radio: React.FC<InputProps> = ({

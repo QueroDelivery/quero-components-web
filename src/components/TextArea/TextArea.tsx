@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import React, { TextareaHTMLAttributes } from "react";
+import React, { TextareaHTMLAttributes } from 'react';
 
 import {
   Container,
@@ -7,7 +7,7 @@ import {
   Label,
   Footer,
   LabelLengthInfo,
-} from "./styles";
+} from './styles';
 
 export interface TextAreaProps
   extends TextareaHTMLAttributes<HTMLTextAreaElement> {
@@ -61,16 +61,16 @@ const TextArea: React.FC<TextAreaProps> = ({
       </Container>
       <Footer>
         <LabelError errorColor={errorColor}>{errorMessage}</LabelError>
-        {(lengthInfo || typeof lengthInfo == "number") && rest.maxLength ? (
+        {(lengthInfo || typeof lengthInfo == 'number') && rest.maxLength ? (
           <LabelLengthInfo>{`${
-            typeof lengthInfo == "number"
+            typeof lengthInfo == 'number'
               ? lengthInfo
-              : typeof rest.value == "string"
+              : typeof rest.value == 'string'
               ? rest.value.length
               : 0
           }/${rest.maxLength} caracteres`}</LabelLengthInfo>
         ) : (
-          ""
+          ''
         )}
       </Footer>
     </div>

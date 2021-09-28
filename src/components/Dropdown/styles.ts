@@ -1,9 +1,9 @@
-import styled from "styled-components";
-import { colors } from "../../styles/colors";
+import styled from 'styled-components';
+import { colors } from '../../styles/colors';
 
 interface DropdownProps {
   brand?: boolean;
-  textAlign?: "center";
+  textAlign?: 'center';
   line?: boolean;
   colorLabel?: string;
   error?: string;
@@ -14,12 +14,12 @@ export const Container = styled.div<DropdownProps>`
   width: 100% !important;
   display: flex !important;
   flex-direction: column !important;
-  padding-bottom: ${(props) => (props.error ? "" : "20px")};
+  padding-bottom: ${props => (props.error ? '' : '20px')};
 
   label {
     font-size: 14px;
     margin-left: 15px;
-    color: ${(props) =>
+    color: ${props =>
       props.error
         ? colors.brand20
         : props.colorLabel
@@ -46,8 +46,8 @@ export const Container = styled.div<DropdownProps>`
     position: relative;
     display: inline-block;
     outline: none;
-    text-align: ${(props) =>
-      props.textAlign && props.textAlign === "center" ? "center" : "left"};
+    text-align: ${props =>
+      props.textAlign && props.textAlign === 'center' ? 'center' : 'left'};
     color: ${colors.gray20};
     -webkit-transition: width 0.1s ease, -webkit-box-shadow 0.1s ease;
     transition: width 0.1s ease, -webkit-box-shadow 0.1s ease;
@@ -83,14 +83,14 @@ export const Container = styled.div<DropdownProps>`
     -webkit-box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);
     box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);
     border: 1px solid rgba(34, 36, 38, 0.15);
-    border-radius: ${(props) => (props.line ? "0" : "0.28571429rem")};
+    border-radius: ${props => (props.line ? '0' : '0.28571429rem')};
     -webkit-transition: opacity 0.1s ease;
     transition: opacity 0.1s ease;
     z-index: 11;
     will-change: transform, opacity;
-    /* border-top: ${(props) => (props.line ? "none" : "")};
-        border-left: ${(props) => (props.line ? "none" : "")};
-        border-right: ${(props) => (props.line ? "none" : "")}; */
+    /* border-top: ${props => (props.line ? 'none' : '')};
+        border-left: ${props => (props.line ? 'none' : '')};
+        border-right: ${props => (props.line ? 'none' : '')}; */
   }
   .ui.dropdown .menu > * {
     white-space: nowrap;
@@ -147,7 +147,7 @@ export const Container = styled.div<DropdownProps>`
     text-align: left;
     border-top: none;
     line-height: 1em;
-    color: ${(props) => (props.brand ? colors.brand10 : colors.gray20)};
+    color: ${props => (props.brand ? colors.brand10 : colors.gray20)};
     padding: 0.78571429rem 1.14285714rem !important;
     font-size: 1rem;
     text-transform: none;
@@ -164,14 +164,14 @@ export const Container = styled.div<DropdownProps>`
   Floated Content
 ---------------*/
 
-  .ui.dropdown > .text > [class*="right floated"],
-  .ui.dropdown .menu .item > [class*="right floated"] {
+  .ui.dropdown > .text > [class*='right floated'],
+  .ui.dropdown .menu .item > [class*='right floated'] {
     float: right !important;
     margin-right: 0em !important;
     margin-left: 1em !important;
   }
-  .ui.dropdown > .text > [class*="left floated"],
-  .ui.dropdown .menu .item > [class*="left floated"] {
+  .ui.dropdown > .text > [class*='left floated'],
+  .ui.dropdown .menu .item > [class*='left floated'] {
     float: left !important;
     margin-left: 0em !important;
     margin-right: 1em !important;
@@ -379,29 +379,29 @@ export const Container = styled.div<DropdownProps>`
     transform: rotateZ(0deg);
     min-width: 14em;
     min-height: 2.71428571em;
-    background: ${(props) => (props.brand ? colors.brandLight : colors.white)};
+    background: ${props => (props.brand ? colors.brandLight : colors.white)};
     display: inline-block;
     padding: 0.78571429em 2.6em 0.78571429em 1.1em;
-    color: ${(props) => (props.brand ? colors.brand10 : colors.gray20)};
+    color: ${props => (props.brand ? colors.brand10 : colors.gray20)};
     -webkit-box-shadow: none;
     box-shadow: none;
     border: 1px solid
-      ${(props) =>
+      ${props =>
         props.brand
           ? colors.brandLight
           : props.line
           ? colors.gray10
-          : "rgba(34, 36, 38, 0.15)"};
-    border-radius: ${(props) => (props.line ? 0 : "0.28571429rem")};
+          : 'rgba(34, 36, 38, 0.15)'};
+    border-radius: ${props => (props.line ? 0 : '0.28571429rem')};
     -webkit-transition: width 0.1s ease, -webkit-box-shadow 0.1s ease;
     transition: width 0.1s ease, -webkit-box-shadow 0.1s ease;
     transition: box-shadow 0.1s ease, width 0.1s ease;
     transition: box-shadow 0.1s ease, width 0.1s ease,
       -webkit-box-shadow 0.1s ease;
-    border-radius: ${(props) => (props.line ? "none" : "20px")};
-    border-top: ${(props) => (props.line ? "none" : "")};
-    border-left: ${(props) => (props.line ? "none" : "")};
-    border-right: ${(props) => (props.line ? "none" : "")};
+    border-radius: ${props => (props.line ? 'none' : '20px')};
+    border-top: ${props => (props.line ? 'none' : '')};
+    border-left: ${props => (props.line ? 'none' : '')};
+    border-right: ${props => (props.line ? 'none' : '')};
   }
   .ui.selection.dropdown.visible,
   .ui.selection.dropdown.active {
@@ -505,21 +505,20 @@ export const Container = styled.div<DropdownProps>`
 
   /* Hover */
   .ui.selection.dropdown:hover {
-    border-color: ${(props) =>
-      props.brand ? colors.brandLight : colors.gray10};
+    border-color: ${props => (props.brand ? colors.brandLight : colors.gray10)};
     -webkit-box-shadow: none;
     box-shadow: none;
   }
 
   /* Active */
   .ui.selection.active.dropdown {
-    border-color: ${(props) =>
+    border-color: ${props =>
       props.brand ? colors.brandTransparent : colors.gray10};
     -webkit-box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);
     box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);
   }
   .ui.selection.active.dropdown .menu {
-    border-color: ${(props) =>
+    border-color: ${props =>
       props.error
         ? colors.brand20
         : props.brand
@@ -531,7 +530,7 @@ export const Container = styled.div<DropdownProps>`
 
   /* Focus */
   .ui.selection.dropdown:focus {
-    border-color: ${(props) =>
+    border-color: ${props =>
       props.error
         ? colors.brand20
         : props.brand
@@ -541,7 +540,7 @@ export const Container = styled.div<DropdownProps>`
     box-shadow: none;
   }
   .ui.selection.dropdown:focus .menu {
-    border-color: ${(props) =>
+    border-color: ${props =>
       props.error
         ? colors.brand20
         : props.brand
@@ -554,12 +553,12 @@ export const Container = styled.div<DropdownProps>`
   /* Visible */
   .ui.selection.visible.dropdown > .text:not(.default) {
     font-weight: normal;
-    color: ${(props) => (props.brand ? colors.brandDark : colors.black)};
+    color: ${props => (props.brand ? colors.brandDark : colors.black)};
   }
 
   /* Visible Hover */
   .ui.selection.active.dropdown:hover {
-    border-color: ${(props) =>
+    border-color: ${props =>
       props.error
         ? colors.brand20
         : props.brand
@@ -569,7 +568,7 @@ export const Container = styled.div<DropdownProps>`
     box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);
   }
   .ui.selection.active.dropdown:hover .menu {
-    border-color: ${(props) =>
+    border-color: ${props =>
       props.error
         ? colors.brand20
         : props.brand
@@ -582,7 +581,7 @@ export const Container = styled.div<DropdownProps>`
   /* Dropdown Icon */
   .ui.active.selection.dropdown > .dropdown.icon,
   .ui.visible.selection.dropdown > .dropdown.icon {
-    opacity: "";
+    opacity: '';
     z-index: 3;
   }
 
@@ -610,7 +609,7 @@ export const Container = styled.div<DropdownProps>`
 
   /* Search Selection */
   .ui.search.dropdown {
-    min-width: "";
+    min-width: '';
   }
 
   /* Search Dropdown */
@@ -626,9 +625,9 @@ export const Container = styled.div<DropdownProps>`
     outline: none;
     -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
     padding: inherit;
-    color: ${(props) => (props.brand ? colors.brand10 : colors.gray20)};
-    text-align: ${(props) =>
-      props.textAlign && props.textAlign === "center" ? "center" : "left"};
+    color: ${props => (props.brand ? colors.brand10 : colors.gray20)};
+    text-align: ${props =>
+      props.textAlign && props.textAlign === 'center' ? 'center' : 'left'};
   }
 
   /* Text Layering */
@@ -661,7 +660,7 @@ export const Container = styled.div<DropdownProps>`
   .ui.search.dropdown.active > input.search,
   .ui.search.dropdown.visible > input.search {
     cursor: auto;
-    color: ${(props) => (props.brand ? colors.brandDark : colors.black)};
+    color: ${props => (props.brand ? colors.brandDark : colors.black)};
   }
   .ui.search.dropdown.active > .text,
   .ui.search.dropdown.visible > .text {
@@ -678,8 +677,7 @@ export const Container = styled.div<DropdownProps>`
   }
 
   .input.search::placeholder {
-    color: ${(props) =>
-      props.brand ? colors.brandTransparent : colors.gray10};
+    color: ${props => (props.brand ? colors.brandTransparent : colors.gray10)};
   }
   /* Search Menu */
   .ui.search.dropdown .menu {
@@ -743,15 +741,14 @@ export const Container = styled.div<DropdownProps>`
     -webkit-box-shadow: 0px 0px 0px 1px rgba(34, 36, 38, 0.15) inset;
     box-shadow: 0px 0px 0px 1px rgba(34, 36, 38, 0.15) inset;
     border-radius: 20px;
-    color: ${(props) => (props.brand ? colors.brandLight : colors.gray20)};
-    background-color: ${(props) =>
-      props.brand ? colors.brand10 : colors.card};
+    color: ${props => (props.brand ? colors.brandLight : colors.gray20)};
+    background-color: ${props => (props.brand ? colors.brand10 : colors.card)};
   }
 
   /* Dropdown Icon */
   .ui.multiple.dropdown .dropdown.icon {
-    margin: "";
-    padding: "";
+    margin: '';
+    padding: '';
   }
 
   /* Text */
@@ -831,7 +828,7 @@ export const Container = styled.div<DropdownProps>`
   .ui.dropdown .menu .active.item {
     background: transparent;
     font-weight: bold;
-    color: ${(props) => (props.brand ? colors.brandDark : colors.black)};
+    color: ${props => (props.brand ? colors.brandDark : colors.black)};
     -webkit-box-shadow: none;
     box-shadow: none;
     z-index: 12;
@@ -844,7 +841,7 @@ export const Container = styled.div<DropdownProps>`
   /* Menu Item Hover */
   .ui.dropdown .menu > .item:hover {
     background: rgba(0, 0, 0, 0.05);
-    color: ${(props) => (props.brand ? colors.brandDark : colors.black)};
+    color: ${props => (props.brand ? colors.brandDark : colors.black)};
     z-index: 13;
   }
 
@@ -860,7 +857,7 @@ export const Container = styled.div<DropdownProps>`
   }
   .ui.loading.dropdown > i.icon:before {
     position: absolute;
-    content: "";
+    content: '';
     top: 50%;
     left: 50%;
     margin: -0.64285714em 0em 0em -0.64285714em;
@@ -871,7 +868,7 @@ export const Container = styled.div<DropdownProps>`
   }
   .ui.loading.dropdown > i.icon:after {
     position: absolute;
-    content: "";
+    content: '';
     top: 50%;
     left: 50%;
     -webkit-box-shadow: 0px 0px 0px 1px transparent;
@@ -921,11 +918,11 @@ export const Container = styled.div<DropdownProps>`
 
   .ui.dropdown:not(.button) > .default.text,
   .ui.default.dropdown:not(.button) > .text {
-    color: ${(props) => (props.brand ? colors.brand10 : colors.default20)};
+    color: ${props => (props.brand ? colors.brand10 : colors.default20)};
   }
   .ui.dropdown:not(.button) > input:focus ~ .default.text,
   .ui.default.dropdown:not(.button) > input:focus ~ .text {
-    color: ${(props) => (props.brand ? colors.brand10 : colors.default20)};
+    color: ${props => (props.brand ? colors.brand10 : colors.default20)};
   }
 
   /*--------------------
@@ -960,7 +957,7 @@ export const Container = styled.div<DropdownProps>`
   .ui.dropdown.selected,
   .ui.dropdown .menu .selected.item {
     background: rgba(0, 0, 0, 0.03);
-    color: ${(props) => (props.brand ? colors.brandDark : colors.black)};
+    color: ${props => (props.brand ? colors.brandDark : colors.black)};
   }
 
   /*--------------------
@@ -985,7 +982,7 @@ export const Container = styled.div<DropdownProps>`
     color: #9f3a38;
   }
   .ui.selection.dropdown.error {
-    background: ${(props) => (props.line ? colors.white : colors.error)};
+    background: ${props => (props.line ? colors.white : colors.error)};
     border-color: ${colors.brand20};
   }
   .ui.selection.dropdown.error:hover {
@@ -1326,7 +1323,7 @@ export const Container = styled.div<DropdownProps>`
     display: block;
     position: absolute;
     pointer-events: none;
-    content: "";
+    content: '';
     visibility: visible;
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
@@ -1523,7 +1520,7 @@ export const Container = styled.div<DropdownProps>`
 
   /* Dropdown Carets */
   .ui.dropdown > .dropdown.icon {
-    font-family: "Dropdown";
+    font-family: 'Dropdown';
     line-height: 1;
     height: 1em;
     width: 1.23em;
@@ -1537,24 +1534,24 @@ export const Container = styled.div<DropdownProps>`
     width: auto;
   }
   .ui.dropdown > .dropdown.icon:before {
-    content: "\f0d7";
+    content: '\f0d7';
   }
 
   /* Sub Menu */
   .ui.dropdown .menu .item .dropdown.icon:before {
-    content: "\f0da" /*rtl:'\f0d9'*/;
+    content: '\f0da' /*rtl:'\f0d9'*/;
   }
   .ui.dropdown .item .left.dropdown.icon:before,
   .ui.dropdown .left.menu .item .dropdown.icon:before {
-    content: "\f0d9" /*rtl:"\f0da"*/;
+    content: '\f0d9' /*rtl:"\f0da"*/;
   }
 
   /* Vertical Menu Dropdown */
   .ui.vertical.menu .dropdown.item > .dropdown.icon:before {
-    content: "\f0da" /*rtl:"\f0d9"*/;
+    content: '\f0da' /*rtl:"\f0d9"*/;
   }
   .ui.dropdown > .clear.icon:before {
-    content: "\f00d";
+    content: '\f00d';
   }
 
   .ui.selection.active.dropdown .menu::-webkit-scrollbar {

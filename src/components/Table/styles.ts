@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { colors } from "../../styles/colors";
+import styled from 'styled-components';
+import { colors } from '../../styles/colors';
 
 interface ContainerProps {
   hasPagination: boolean;
@@ -27,8 +27,8 @@ export const Message = styled.span`
 `;
 
 export const Container = styled.div<ContainerProps>`
-  margin-bottom: ${(props) =>
-    props.hasMore || props.hasPagination ? "20px" : "0"};
+  margin-bottom: ${props =>
+    props.hasMore || props.hasPagination ? '20px' : '0'};
 
   /*!
  * # Semantic UI 2.4.1 - Table
@@ -301,13 +301,13 @@ export const Container = styled.div<ContainerProps>`
     background: none;
     font-weight: bold;
     color: ${colors.brand10};
-    text-transform: "";
-    -webkit-box-shadow: "";
-    box-shadow: "";
-    text-align: "";
+    text-transform: '';
+    -webkit-box-shadow: '';
+    box-shadow: '';
+    text-align: '';
     font-size: 1em;
-    padding-left: "";
-    padding-right: "";
+    padding-left: '';
+    padding-right: '';
   }
 
   /* Fix 2nd Column */
@@ -421,31 +421,31 @@ export const Container = styled.div<ContainerProps>`
   ---------------*/
 
   @media only screen and (max-width: 991px) {
-    .ui[class*="tablet stackable"].table,
-    .ui[class*="tablet stackable"].table tbody,
-    .ui[class*="tablet stackable"].table tr,
-    .ui[class*="tablet stackable"].table tr > th,
-    .ui[class*="tablet stackable"].table tr > td {
+    .ui[class*='tablet stackable'].table,
+    .ui[class*='tablet stackable'].table tbody,
+    .ui[class*='tablet stackable'].table tr,
+    .ui[class*='tablet stackable'].table tr > th,
+    .ui[class*='tablet stackable'].table tr > td {
       width: 100% !important;
       display: block !important;
     }
-    .ui[class*="tablet stackable"].table {
+    .ui[class*='tablet stackable'].table {
       padding: 0em;
     }
-    .ui[class*="tablet stackable"].table thead {
+    .ui[class*='tablet stackable'].table thead {
       display: block;
     }
-    .ui[class*="tablet stackable"].table tfoot {
+    .ui[class*='tablet stackable'].table tfoot {
       display: block;
     }
-    .ui[class*="tablet stackable"].table tr {
+    .ui[class*='tablet stackable'].table tr {
       padding-top: 1em;
       padding-bottom: 1em;
       -webkit-box-shadow: 0px -1px 0px 0px rgba(0, 0, 0, 0.1) inset !important;
       box-shadow: 0px -1px 0px 0px rgba(0, 0, 0, 0.1) inset !important;
     }
-    .ui[class*="tablet stackable"].table tr > th,
-    .ui[class*="tablet stackable"].table tr > td {
+    .ui[class*='tablet stackable'].table tr > th,
+    .ui[class*='tablet stackable'].table tr > td {
       background: none;
       border: none !important;
       padding: 0.25em 0.75em;
@@ -454,7 +454,7 @@ export const Container = styled.div<ContainerProps>`
     }
 
     /* Definition Table */
-    .ui.definition[class*="tablet stackable"].table thead th:first-child {
+    .ui.definition[class*='tablet stackable'].table thead th:first-child {
       -webkit-box-shadow: none !important;
       box-shadow: none !important;
     }
@@ -464,16 +464,16 @@ export const Container = styled.div<ContainerProps>`
    Text Alignment
   ---------------*/
 
-  .ui.table[class*="left aligned"],
-  .ui.table [class*="left aligned"] {
+  .ui.table[class*='left aligned'],
+  .ui.table [class*='left aligned'] {
     text-align: left;
   }
-  .ui.table[class*="center aligned"],
-  .ui.table [class*="center aligned"] {
+  .ui.table[class*='center aligned'],
+  .ui.table [class*='center aligned'] {
     text-align: center;
   }
-  .ui.table[class*="right aligned"],
-  .ui.table [class*="right aligned"] {
+  .ui.table[class*='right aligned'],
+  .ui.table [class*='right aligned'] {
     text-align: right;
   }
 
@@ -481,16 +481,16 @@ export const Container = styled.div<ContainerProps>`
    Vertical Alignment
   ------------------*/
 
-  .ui.table[class*="top aligned"],
-  .ui.table [class*="top aligned"] {
+  .ui.table[class*='top aligned'],
+  .ui.table [class*='top aligned'] {
     vertical-align: top;
   }
-  .ui.table[class*="middle aligned"],
-  .ui.table [class*="middle aligned"] {
+  .ui.table[class*='middle aligned'],
+  .ui.table [class*='middle aligned'] {
     vertical-align: middle;
   }
-  .ui.table[class*="bottom aligned"],
-  .ui.table [class*="bottom aligned"] {
+  .ui.table[class*='bottom aligned'],
+  .ui.table [class*='bottom aligned'] {
     vertical-align: bottom;
   }
 
@@ -595,19 +595,19 @@ export const Container = styled.div<ContainerProps>`
   }
 
   /* Top */
-  .ui[class*="top attached"].table {
+  .ui[class*='top attached'].table {
     bottom: 0px;
     margin-bottom: 0em;
     top: 0px;
     margin-top: 1em;
     border-radius: 0.28571429rem 0.28571429rem 0em 0em;
   }
-  .ui.table[class*="top attached"]:first-child {
+  .ui.table[class*='top attached']:first-child {
     margin-top: 0em;
   }
 
   /* Bottom */
-  .ui[class*="bottom attached"].table {
+  .ui[class*='bottom attached'].table {
     bottom: 0px;
     margin-top: 0em;
     top: 0px;
@@ -616,7 +616,7 @@ export const Container = styled.div<ContainerProps>`
     box-shadow: none, none;
     border-radius: 0em 0em 0.28571429rem 0.28571429rem;
   }
-  .ui[class*="bottom attached"].table:last-child {
+  .ui[class*='bottom attached'].table:last-child {
     margin-bottom: 0em;
   }
 
@@ -646,12 +646,12 @@ export const Container = styled.div<ContainerProps>`
      Single Line
   ---------------*/
 
-  .ui.table[class*="single line"],
-  .ui.table [class*="single line"] {
+  .ui.table[class*='single line'],
+  .ui.table [class*='single line'] {
     white-space: nowrap;
   }
-  .ui.table[class*="single line"],
-  .ui.table [class*="single line"] {
+  .ui.table[class*='single line'],
+  .ui.table [class*='single line'] {
     white-space: nowrap;
   }
 
@@ -921,18 +921,18 @@ export const Container = styled.div<ContainerProps>`
     font-style: normal;
     font-weight: normal;
     text-decoration: inherit;
-    content: "";
+    content: '';
     height: 1em;
     width: auto;
     opacity: 0.8;
     margin: 0em 0em 0em 0.5em;
-    font-family: "Icons";
+    font-family: 'Icons';
   }
   .ui.sortable.table thead th.ascending:after {
-    content: "\f0d8";
+    content: '\f0d8';
   }
   .ui.sortable.table thead th.descending:after {
-    content: "\f0d7";
+    content: '\f0d7';
   }
 
   /* Hover */
@@ -1056,22 +1056,22 @@ export const Container = styled.div<ContainerProps>`
   }
 
   /* Very Basic */
-  .ui[class*="very basic"].table {
+  .ui[class*='very basic'].table {
     border: none;
   }
-  .ui[class*="very basic"].table:not(.sortable):not(.striped) th,
-  .ui[class*="very basic"].table:not(.sortable):not(.striped) td {
-    padding: "";
+  .ui[class*='very basic'].table:not(.sortable):not(.striped) th,
+  .ui[class*='very basic'].table:not(.sortable):not(.striped) td {
+    padding: '';
   }
-  .ui[class*="very basic"].table:not(.sortable):not(.striped) th:first-child,
-  .ui[class*="very basic"].table:not(.sortable):not(.striped) td:first-child {
+  .ui[class*='very basic'].table:not(.sortable):not(.striped) th:first-child,
+  .ui[class*='very basic'].table:not(.sortable):not(.striped) td:first-child {
     padding-left: 0em;
   }
-  .ui[class*="very basic"].table:not(.sortable):not(.striped) th:last-child,
-  .ui[class*="very basic"].table:not(.sortable):not(.striped) td:last-child {
+  .ui[class*='very basic'].table:not(.sortable):not(.striped) th:last-child,
+  .ui[class*='very basic'].table:not(.sortable):not(.striped) td:last-child {
     padding-right: 0em;
   }
-  .ui[class*="very basic"].table:not(.sortable):not(.striped)
+  .ui[class*='very basic'].table:not(.sortable):not(.striped)
     thead
     tr:first-child
     th {
@@ -1105,11 +1105,11 @@ export const Container = styled.div<ContainerProps>`
   }
 
   /* Very */
-  .ui[class*="very padded"].table th {
+  .ui[class*='very padded'].table th {
     padding-left: 1.5em;
     padding-right: 1.5em;
   }
-  .ui[class*="very padded"].table td {
+  .ui[class*='very padded'].table td {
     padding: 1.5em 1.5em;
   }
 
@@ -1126,11 +1126,11 @@ export const Container = styled.div<ContainerProps>`
   }
 
   /* Very */
-  .ui[class*="very compact"].table th {
+  .ui[class*='very compact'].table th {
     padding-left: 0.6em;
     padding-right: 0.6em;
   }
-  .ui[class*="very compact"].table td {
+  .ui[class*='very compact'].table td {
     padding: 0.4em 0.6em;
   }
 

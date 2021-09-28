@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
-import { Container } from "./styles";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
+import { Container } from './styles';
 
 interface MoreLessProps {
-  size?: "small" | "medium" | "big";
+  size?: 'small' | 'medium' | 'big';
   disabled?: boolean;
   value: number;
   limit?: number;
@@ -28,8 +28,8 @@ const MoreLess: React.FC<MoreLessProps> = ({
 }) => {
   const [noLess, setNoLess] = useState(false);
   const [noMore, setNoMore] = useState(false);
-  const [sizeState, setSizeState] = useState<"small" | "medium" | "big">(
-    "medium"
+  const [sizeState, setSizeState] = useState<'small' | 'medium' | 'big'>(
+    'medium',
   );
 
   useEffect(() => {
@@ -73,9 +73,9 @@ const MoreLess: React.FC<MoreLessProps> = ({
         <FontAwesomeIcon icon={faMinus} />
       </div>
       <input
-        value={value || value === 0 ? value.toString() : ""}
+        value={value || value === 0 ? value.toString() : ''}
         type="number"
-        onChange={(event) =>
+        onChange={event =>
           onChange ? onChange(Number(event.target.value)) : null
         }
         disabled={disabled || !onChange}

@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable react/prop-types */
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-import TextArea, { TextAreaProps } from "./TextArea";
+import TextArea, { TextAreaProps } from './TextArea';
 
 export interface TextAreaFormProps extends TextAreaProps {
   required?: boolean;
@@ -25,7 +25,7 @@ const TextAreaForm: React.FC<TextAreaFormProps> = ({
   minimum,
   ...rest
 }) => {
-  const [message, setMessage] = useState("");
+  const [message, setMessage] = useState('');
 
   return (
     <TextArea
@@ -33,10 +33,10 @@ const TextAreaForm: React.FC<TextAreaFormProps> = ({
       name={name}
       errorMessage={
         errors
-          ? errors.type === "required"
-            ? "Obrigatório"
+          ? errors.type === 'required'
+            ? 'Obrigatório'
             : `${message}`
-          : ""
+          : ''
       }
       textAreaRef={
         register
@@ -49,7 +49,7 @@ const TextAreaForm: React.FC<TextAreaFormProps> = ({
                         setMessage(validate(value));
                         return false;
                       }
-                      setMessage("");
+                      setMessage('');
                       return true;
                     }
                   : limit && required
@@ -58,18 +58,18 @@ const TextAreaForm: React.FC<TextAreaFormProps> = ({
                         setMessage(`${limit} caracteres permitidos.`);
                         return false;
                       }
-                      setMessage("");
+                      setMessage('');
                       return true;
                     }
                   : minimum && required
                   ? (value: any) => {
                       if (value.length < minimum) {
                         setMessage(
-                          `${name} deve ter ${minimum} ou mais caracteres.`
+                          `${name} deve ter ${minimum} ou mais caracteres.`,
                         );
                         return false;
                       }
-                      setMessage("");
+                      setMessage('');
                       return true;
                     }
                   : null,

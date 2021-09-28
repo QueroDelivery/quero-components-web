@@ -1,41 +1,41 @@
-import styled from "styled-components";
-import { colors } from "../../styles/colors";
+import styled from 'styled-components';
+import { colors } from '../../styles/colors';
 
 const Sizes = {
-  mini: "mini",
-  tiny: "tiny",
-  small: "small",
-  medium: "medium",
-  large: "large",
-  big: "big",
-  huge: "huge",
-  massive: "massive",
+  mini: 'mini',
+  tiny: 'tiny',
+  small: 'small',
+  medium: 'medium',
+  large: 'large',
+  big: 'big',
+  huge: 'huge',
+  massive: 'massive',
 };
 
 interface LoaderProps {
   color?: string;
   size?: string | number;
-  position?: "left" | "center" | "right";
+  position?: 'left' | 'center' | 'right';
 }
 
 const widthLoader = (size: string | number) => {
   switch (size) {
     case Sizes.mini:
-      return "1em";
+      return '1em';
     case Sizes.tiny:
-      return "1.5em";
+      return '1.5em';
     case Sizes.small:
-      return "2em";
+      return '2em';
     case Sizes.medium:
-      return "2.5em";
+      return '2.5em';
     case Sizes.large:
-      return "3em";
+      return '3em';
     case Sizes.big:
-      return "3.5em";
+      return '3.5em';
     case Sizes.huge:
-      return "4em";
+      return '4em';
     case Sizes.massive:
-      return "4.5em";
+      return '4.5em';
     default:
       return size;
   }
@@ -44,21 +44,21 @@ const widthLoader = (size: string | number) => {
 const widthBorder = (size: string | number) => {
   switch (size) {
     case Sizes.mini:
-      return "2px";
+      return '2px';
     case Sizes.tiny:
-      return "2.5px";
+      return '2.5px';
     case Sizes.small:
-      return "3px";
+      return '3px';
     case Sizes.medium:
-      return "3.5px";
+      return '3.5px';
     case Sizes.large:
-      return "4px";
+      return '4px';
     case Sizes.big:
-      return "4.5px";
+      return '4.5px';
     case Sizes.huge:
-      return "5px";
+      return '5px';
     case Sizes.massive:
-      return "5.5px";
+      return '5.5px';
     default:
       return size;
   }
@@ -67,33 +67,33 @@ const widthBorder = (size: string | number) => {
 export const Container = styled.div<LoaderProps>`
   width: 100%;
   display: flex;
-  justify-content: ${(props) =>
-    props.position === "left"
-      ? "flex-start"
-      : props.position === "right"
-      ? "flex-end"
-      : "center"};
+  justify-content: ${props =>
+    props.position === 'left'
+      ? 'flex-start'
+      : props.position === 'right'
+      ? 'flex-end'
+      : 'center'};
 `;
 
 export const Load = styled.div<LoaderProps>`
-  border-width: ${(props) => {
+  border-width: ${props => {
     if (props.size) {
       return widthBorder(props.size);
     }
 
-    return "3.5px";
+    return '3.5px';
   }};
   border-style: solid;
   border-color: ${colors.default20};
-  border-top-width: ${(props) => {
+  border-top-width: ${props => {
     if (props.size) {
       return widthBorder(props.size);
     }
 
-    return "3.5px";
+    return '3.5px';
   }};
   border-top-style: solid;
-  border-top-color: ${(props) => {
+  border-top-color: ${props => {
     if (props.color) {
       return props.color;
     }
@@ -102,21 +102,21 @@ export const Load = styled.div<LoaderProps>`
   }};
 
   border-radius: 50%;
-  width: ${(props) => {
+  width: ${props => {
     if (props.size) {
       return widthLoader(props.size);
     }
 
-    return "2.5em";
+    return '2.5em';
   }};
-  height: ${(props) => {
+  height: ${props => {
     if (props.size) {
       if (props.size) {
         return widthLoader(props.size);
       }
     }
 
-    return "2.5em";
+    return '2.5em';
   }};
   animation: spin 0.6s linear infinite;
 

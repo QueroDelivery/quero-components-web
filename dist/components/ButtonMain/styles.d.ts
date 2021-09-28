@@ -1,5 +1,5 @@
-import { IconDefinition } from "@fortawesome/free-solid-svg-icons";
-import { ButtonSizes } from "./ButtonMain";
+import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
+import { ButtonSizes } from './ButtonMain';
 interface ButtonProps {
     secondary?: boolean;
     backPurple?: boolean;
@@ -36,7 +36,7 @@ interface TextEndProps {
 }
 interface IconProps {
     loading?: boolean;
-    iconPosition?: "left" | "right";
+    iconPosition?: 'left' | 'right';
 }
 export declare const Button: import("styled-components").StyledComponent<"button", any, ButtonProps, never>;
 export declare const TextFirst: import("styled-components").StyledComponent<"span", any, TextFirstProps, never>;

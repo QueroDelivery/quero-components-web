@@ -1,14 +1,14 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React from "react";
+import React from 'react';
 import DatePicker, {
   ReactDatePickerProps,
   registerLocale,
-} from "react-datepicker";
-import MaskedInput from "react-input-mask";
-import br from "date-fns/locale/pt-BR";
-import { Container } from "./styles";
+} from 'react-datepicker';
+import MaskedInput from 'react-input-mask';
+import br from 'date-fns/locale/pt-BR';
+import { Container } from './styles';
 
-registerLocale("pt-BR", br);
+registerLocale('pt-BR', br);
 interface CalendarProps extends ReactDatePickerProps {
   label?: string;
   labelColor?: string;
@@ -52,11 +52,9 @@ const Calendar: React.FC<CalendarProps> = ({
               />
             )
           }
-          dateFormat={otherFormatDate || "dd/MM/yyyy"}
+          dateFormat={otherFormatDate || 'dd/MM/yyyy'}
           readOnly={false}
-          onChangeRaw={(event) =>
-            rest.readOnly ? event.preventDefault() : null
-          }
+          onChangeRaw={event => (rest.readOnly ? event.preventDefault() : null)}
         />
       </div>
     </Container>

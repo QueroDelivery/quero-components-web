@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React from "react";
-import { Pagination, Icon } from "semantic-ui-react";
+import React from 'react';
+import { Pagination, Icon } from 'semantic-ui-react';
 
-import { Container } from "./styles";
+import { Container } from './styles';
 
 interface PaginacaoProps {
   page: number;
@@ -24,7 +24,7 @@ const PaginationComponent: React.FC<PaginacaoProps> = ({
     <Container>
       <Pagination
         totalPages={Math.ceil(totalCount / limit)}
-        size={mini ? "mini" : "small"}
+        size={mini ? 'mini' : 'small'}
         ellipsisItem={{
           content: <Icon name="ellipsis horizontal" />,
           icon: true,

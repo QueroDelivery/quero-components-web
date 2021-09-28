@@ -1,13 +1,13 @@
-import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faAngleUp,
   faAngleDown,
   IconDefinition,
-} from "@fortawesome/free-solid-svg-icons";
+} from '@fortawesome/free-solid-svg-icons';
 
-import { Container, Body } from "./styles";
-import { colors } from "../../styles/colors";
+import { Container, Body } from './styles';
+import { colors } from '../../styles/colors';
 
 interface AccordionProps {
   title: string;

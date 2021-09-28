@@ -2672,41 +2672,41 @@ let _ = t => t,
     _t6,
     _t7;
 const Sizes = {
-  mini: "mini",
-  tiny: "tiny",
-  small: "small",
-  medium: "medium",
-  large: "large",
-  big: "big",
-  huge: "huge",
-  massive: "massive"
+  mini: 'mini',
+  tiny: 'tiny',
+  small: 'small',
+  medium: 'medium',
+  large: 'large',
+  big: 'big',
+  huge: 'huge',
+  massive: 'massive'
 };
 
 const size = size => {
   switch (size) {
     case Sizes.mini:
-      return "25px";
+      return '25px';
 
     case Sizes.tiny:
-      return "30px";
+      return '30px';
 
     case Sizes.small:
-      return "35px";
+      return '35px';
 
     case Sizes.medium:
-      return "40px";
+      return '40px';
 
     case Sizes.large:
-      return "45px";
+      return '45px';
 
     case Sizes.big:
-      return "50px";
+      return '50px';
 
     case Sizes.huge:
-      return "55px";
+      return '55px';
 
     case Sizes.massive:
-      return "60px";
+      return '60px';
 
     default:
       return size;
@@ -2716,28 +2716,28 @@ const size = size => {
 const textSize = size => {
   switch (size) {
     case Sizes.mini:
-      return "10px";
+      return '10px';
 
     case Sizes.tiny:
-      return "11px";
+      return '11px';
 
     case Sizes.small:
-      return "12px";
+      return '12px';
 
     case Sizes.medium:
-      return "14px";
+      return '14px';
 
     case Sizes.large:
-      return "16px";
+      return '16px';
 
     case Sizes.big:
-      return "18px";
+      return '18px';
 
     case Sizes.huge:
-      return "20px";
+      return '20px';
 
     case Sizes.massive:
-      return "22px";
+      return '22px';
 
     default:
       return size;
@@ -2772,7 +2772,7 @@ const Button = styled.button(_t || (_t = _`
       color: ${0};
     }
   }
-`), props => props.loading ? "relative" : "initial", props => {
+`), props => props.loading ? 'relative' : 'initial', props => {
   if (props.colorBackground) return props.colorBackground;
 
   if (props.secondary || props.tertiary) {
@@ -2780,23 +2780,23 @@ const Button = styled.button(_t || (_t = _`
   }
 
   if (props.noBorder) {
-    return "transparent";
+    return 'transparent';
   }
 
-  return colors.black;
-}, props => props.size ? size(props.size) : "40px", props => {
+  return colors.brand30;
+}, props => props.size ? size(props.size) : '40px', props => {
   if (props.width) {
-    if (typeof props.width === "string") {
+    if (typeof props.width === 'string') {
       return props.width;
     }
 
     return `${props.width}px`;
   }
 
-  return "none";
+  return 'none';
 }, props => {
-  if (props.rectangular) return "10px";
-  return "30px";
+  if (props.rectangular) return '10px';
+  return '30px';
 }, props => {
   if (props.secondary) {
     return `1px solid ${colors.brand10}`;
@@ -2806,7 +2806,7 @@ const Button = styled.button(_t || (_t = _`
     return `1px solid ${colors.gray10}`;
   }
 
-  return "none";
+  return 'none';
 }, props => {
   if (props.hoverBackgroundColor) {
     return props.hoverBackgroundColor;
@@ -2821,7 +2821,7 @@ const Button = styled.button(_t || (_t = _`
   }
 
   if (props.noBorder) {
-    return "transparent";
+    return 'transparent';
   }
 
   if (props.tertiary) {
@@ -2862,7 +2862,7 @@ const TextFirst = styled.span(_t2 || (_t2 = _`
   font-weight: ${0};
   font-size: ${0};
   margin-right: 3.5px;
-`), props => props.loading ? "hidden" : "visible", props => {
+`), props => props.loading ? 'hidden' : 'visible', props => {
   if (props.colorText) {
     return props.colorText;
   }
@@ -2874,17 +2874,17 @@ const TextFirst = styled.span(_t2 || (_t2 = _`
   return colors.brand10;
 }, props => {
   if (props.firstStrong || props.strong) {
-    return "bold";
+    return 'bold';
   }
 
-  return "normal";
-}, props => props.size ? textSize(props.size) : "14px");
+  return 'normal';
+}, props => props.size ? textSize(props.size) : '14px');
 const TextEnd = styled.span(_t3 || (_t3 = _`
   visibility: ${0};
   color: ${0};
   font-weight: ${0};
   font-size: ${0};
-`), props => props.loading ? "hidden" : "visible", props => {
+`), props => props.loading ? 'hidden' : 'visible', props => {
   if (props.colorText) {
     return props.colorText;
   }
@@ -2896,11 +2896,11 @@ const TextEnd = styled.span(_t3 || (_t3 = _`
   return colors.brand10;
 }, props => {
   if (props.firstStrong || props.notStrong) {
-    return "normal";
+    return 'normal';
   }
 
-  return "bold";
-}, props => props.size ? textSize(props.size) : "14px");
+  return 'bold';
+}, props => props.size ? textSize(props.size) : '14px');
 const Notification = styled.button(_t4 || (_t4 = _`
   font-family: MontSerrat !important;
   background-color: ${0};
@@ -2931,7 +2931,7 @@ const Icon = styled.div(_t5 || (_t5 = _`
   visibility: ${0};
   margin-right: ${0};
   margin-left: ${0};
-`), props => props.loading ? "hidden" : "visible", props => props.iconPosition === "left" ? "10px" : "", props => props.iconPosition === "right" ? "10px" : "");
+`), props => props.loading ? 'hidden' : 'visible', props => props.iconPosition === 'left' ? '10px' : '', props => props.iconPosition === 'right' ? '10px' : '');
 const Amount = styled.div(_t6 || (_t6 = _`
   font-family: MontSerrat !important;
   background-color: ${0};

@@ -1,22 +1,22 @@
-import React, { InputHTMLAttributes } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { InputHTMLAttributes } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { faCheck } from "@fortawesome/free-solid-svg-icons";
-import { Container } from "./styles";
+import { faCheck } from '@fortawesome/free-solid-svg-icons';
+import { Container } from './styles';
 
 export interface InputProps
-  extends Omit<InputHTMLAttributes<HTMLInputElement>, "type"> {
+  extends Omit<InputHTMLAttributes<HTMLInputElement>, 'type'> {
   label?: string;
   labelStyle?: React.CSSProperties;
   sizeBox?:
-    | "mini"
-    | "tiny"
-    | "small"
-    | "medium"
-    | "large"
-    | "big"
-    | "huge"
-    | "massive";
+    | 'mini'
+    | 'tiny'
+    | 'small'
+    | 'medium'
+    | 'large'
+    | 'big'
+    | 'huge'
+    | 'massive';
   onChange?: () => void;
 }
 

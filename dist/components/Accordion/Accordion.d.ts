@@ -1,5 +1,5 @@
-import React from "react";
-import { IconDefinition } from "@fortawesome/free-solid-svg-icons";
+import React from 'react';
+import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
 interface AccordionProps {
     title: string;
     colorTitle?: string;
