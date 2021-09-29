@@ -34,6 +34,7 @@ jobs:
         run: |
           yarn --frozen-lockfile
       - name: Release
+        id: semantic
         run: |
           yarn release
         env:
@@ -44,6 +45,7 @@ jobs:
           git config user.email alanflpns@gmail.com
           yarn prepare-publish
       - name: Publish
+        if: steps.semantic.outputs.new_release_published == 'true'
         run: |
           echo "//registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN" >> ~/.npmrc
           npm publish --access public
