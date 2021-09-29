@@ -51,6 +51,11 @@ jobs:
           npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
-      - name: Publish docs
+      - name: Prepare publish docs
         run: |
-          yarn publish-docs
+          yarn prepare-publish-docs
+      - name: Publish docs
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./example/storybook-static
