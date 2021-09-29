@@ -22,7 +22,7 @@
     "lint": "eslint src --ext ts,tsx",
     "release": "semantic-release",
     "prepare-publish": "rm -rf dist && yarn build",
-    "publish-docs": "rm -rf example/storybook-static && cd example && yarn build-storybook && ../node_modules/.bin/gh-pages -d storybook-static && cd .."
+    "publish-docs": "rm -rf example/storybook-static && cd example && yarn --frozen-lockfile && yarn build-storybook && ../node_modules/.bin/gh-pages -d storybook-static && cd .."
   },
   "peerDependencies": {
     "react": ">16.0.0",
