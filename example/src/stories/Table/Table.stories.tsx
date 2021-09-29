@@ -1,12 +1,11 @@
-import React, { useState } from "react";
-// also exported from '@storybook/react' if you can deal with breaking changes in 6.1
-import { Meta, Story } from "@storybook/react/types-6-0";
-import { Table, Pagination, Card } from "@quero-delivery/quero-components-web";
-import "@quero-delivery/quero-components-web/dist/index.css";
-import { ITableComponent } from "./Interface";
+import { useState } from 'react';
+import { Meta, Story } from '@storybook/react/types-6-0';
+import { Table, Pagination, Card } from '@quero-delivery/quero-components-web';
+import '@quero-delivery/quero-components-web/dist/index.css';
+import { ITableComponent } from './Interface';
 
 export default {
-  title: "Components/Table",
+  title: 'Components/Table',
   component: Table,
   parameters: {
     docs: {
@@ -17,65 +16,65 @@ export default {
   },
   argTypes: {
     title: {
-      control: "text",
-      description: "Título da Table",
-      defaultValue: "Título da Table",
+      control: 'text',
+      description: 'Título da Table',
+      defaultValue: 'Título da Table',
       table: {
         type: {
-          summary: "string | React.ReactNode",
+          summary: 'string | React.ReactNode',
         },
       },
     },
     message: {
-      control: "text",
-      description: "Mensagem da Table",
-      defaultValue: "Mensagem da Table",
+      control: 'text',
+      description: 'Mensagem da Table',
+      defaultValue: 'Mensagem da Table',
       table: {
         type: {
-          summary: "string",
+          summary: 'string',
         },
       },
     },
     hasMore: {
-      control: "boolean",
-      description: "Função para saber se tem mais página",
+      control: 'boolean',
+      description: 'Função para saber se tem mais página',
       table: {
         type: {
-          summary: "function",
+          summary: 'function',
         },
       },
     },
     pagination: {
-      control: "string",
-      description: "Paginação da table",
+      control: 'string',
+      description: 'Paginação da table',
       table: {
         type: {
-          summary: "React.ReactElement",
+          summary: 'React.ReactElement',
         },
       },
     },
     titleStyle: {
-      control: "object",
-      description: "Estilização do Título",
+      control: 'object',
+      description: 'Estilização do Título',
       table: {
         type: {
-          summary: "React.CSSProperties",
+          summary: 'React.CSSProperties',
         },
       },
     },
     messageStyle: {
-      control: "object",
-      description: "Estilização da mensagem",
+      control: 'object',
+      description: 'Estilização da mensagem',
       table: {
         type: {
-          summary: "React.CSSProperties",
+          summary: 'React.CSSProperties',
         },
       },
     },
   },
 } as Meta;
 
-export const Primary: Story<ITableComponent> = (args) => {
+export const Primary: Story<ITableComponent> = args => {
   console.log(args);
   const hasMore = args.hasMore ? () => {} : undefined;
   const [page, setPage] = useState(1);
@@ -89,7 +88,7 @@ export const Primary: Story<ITableComponent> = (args) => {
             page={page}
             totalCount={5}
             limit={1}
-            onPageChange={(activePage) => {
+            onPageChange={activePage => {
               setPage(activePage);
             }}
           />

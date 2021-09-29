@@ -1,8 +1,1126 @@
-import"semantic-ui-css/semantic.min.css";import n,{useState as e,useEffect as t}from"react";import r,{css as o}from"styled-components";import{Dropdown as i,Table as a,TableRow as l,TableHeader as d,TableHeaderCell as c,TableBody as p,TableCell as s,TableFooter as u,Pagination as m,Icon as b}from"semantic-ui-react";import f,{registerLocale as h}from"react-datepicker";import g from"react-dom";import w from"date-fns/locale/pt-BR";function x(){return(x=Object.assign||function(n){for(var e=1;e<arguments.length;e++){var t=arguments[e];for(var r in t)Object.prototype.hasOwnProperty.call(t,r)&&(n[r]=t[r])}return n}).apply(this,arguments)}function v(n,e){if(null==n)return{};var t,r,o={},i=Object.keys(n);for(r=0;r<i.length;r++)e.indexOf(t=i[r])>=0||(o[t]=n[t]);return o}function k(n,e){return e||(e=n.slice(0)),n.raw=e,n}
+import 'semantic-ui-css/semantic.min.css';
+import React$2, { useState, useEffect } from 'react';
+import styled, { css as css$1 } from 'styled-components';
+import { Dropdown as Dropdown$1, Table as Table$1, TableRow, TableHeader, TableHeaderCell, TableBody, TableCell, TableFooter, Pagination, Icon as Icon$3 } from 'semantic-ui-react';
+import DatePicker, { registerLocale } from 'react-datepicker';
+import reactDom from 'react-dom';
+import br from 'date-fns/locale/pt-BR';
+
 /*!
- * Font Awesome Free 5.15.3 by @fontawesome - https://fontawesome.com
+ * Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
- */function y(n,e,t){return e in n?Object.defineProperty(n,e,{value:t,enumerable:!0,configurable:!0,writable:!0}):n[e]=t,n}function _(n){for(var e=1;e<arguments.length;e++){var t=null!=arguments[e]?arguments[e]:{},r=Object.keys(t);"function"==typeof Object.getOwnPropertySymbols&&(r=r.concat(Object.getOwnPropertySymbols(t).filter(function(n){return Object.getOwnPropertyDescriptor(t,n).enumerable}))),r.forEach(function(e){y(n,e,t[e])})}return n}function E(n,e){return function(n){if(Array.isArray(n))return n}(n)||function(n,e){var t=[],r=!0,o=!1,i=void 0;try{for(var a,l=n[Symbol.iterator]();!(r=(a=l.next()).done)&&(t.push(a.value),!e||t.length!==e);r=!0);}catch(n){o=!0,i=n}finally{try{r||null==l.return||l.return()}finally{if(o)throw i}}return t}(n,e)||function(){throw new TypeError("Invalid attempt to destructure non-iterable instance")}()}var S={},C={};try{"undefined"!=typeof window&&(S=window),"undefined"!=typeof document&&(C=document),"undefined"!=typeof MutationObserver&&MutationObserver,"undefined"!=typeof performance&&performance}catch(xn){}var z=(S.navigator||{}).userAgent,O=void 0===z?"":z,M=S,F=C,I=!!F.documentElement&&!!F.head&&"function"==typeof F.addEventListener&&"function"==typeof F.createElement,B=(~O.indexOf("MSIE")||O.indexOf("Trident/"),function(){try{process}catch(n){return!1}}(),"group"),D=M.FontAwesomeConfig||{};F&&"function"==typeof F.querySelector&&[["data-family-prefix","familyPrefix"],["data-replacement-class","replacementClass"],["data-auto-replace-svg","autoReplaceSvg"],["data-auto-add-css","autoAddCss"],["data-auto-a11y","autoA11y"],["data-search-pseudo-elements","searchPseudoElements"],["data-observe-mutations","observeMutations"],["data-mutate-approach","mutateApproach"],["data-keep-original-source","keepOriginalSource"],["data-measure-performance","measurePerformance"],["data-show-missing-icons","showMissingIcons"]].forEach(function(n){var e=E(n,2),t=e[1],r=function(n){return""===n||"false"!==n&&("true"===n||n)}(function(n){var e=F.querySelector("script["+n+"]");if(e)return e.getAttribute(n)}(e[0]));null!=r&&(D[t]=r)});var P=_({},{familyPrefix:"fa",replacementClass:"svg-inline--fa",autoReplaceSvg:!0,autoAddCss:!0,autoA11y:!0,searchPseudoElements:!1,observeMutations:!0,mutateApproach:"async",keepOriginalSource:!0,measurePerformance:!1,showMissingIcons:!0},D);P.autoReplaceSvg||(P.observeMutations=!1);var A=_({},P);M.FontAwesomeConfig=A;var T=M||{};T.___FONT_AWESOME___||(T.___FONT_AWESOME___={}),T.___FONT_AWESOME___.styles||(T.___FONT_AWESOME___.styles={}),T.___FONT_AWESOME___.hooks||(T.___FONT_AWESOME___.hooks={}),T.___FONT_AWESOME___.shims||(T.___FONT_AWESOME___.shims=[]);var N=T.___FONT_AWESOME___,j=[];I&&((F.documentElement.doScroll?/^loaded|^c/:/^loaded|^i|^c/).test(F.readyState)||F.addEventListener("DOMContentLoaded",function n(){F.removeEventListener("DOMContentLoaded",n),j.map(function(n){return n()})})),"undefined"==typeof setImmediate?setTimeout:setImmediate;var V={size:16,x:0,y:0,rotate:0,flipX:!1,flipY:!1};function L(){for(var n=12,e="";n-- >0;)e+="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"[62*Math.random()|0];return e}function R(n){return"".concat(n).replace(/&/g,"&amp;").replace(/"/g,"&quot;").replace(/'/g,"&#39;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}function q(n){return Object.keys(n||{}).reduce(function(e,t){return e+"".concat(t,": ").concat(n[t],";")},"")}function U(n){return n.size!==V.size||n.x!==V.x||n.y!==V.y||n.rotate!==V.rotate||n.flipX||n.flipY}function H(n){var e=n.transform,t=n.iconWidth,r={transform:"translate(".concat(n.containerWidth/2," 256)")},o="translate(".concat(32*e.x,", ").concat(32*e.y,") "),i="scale(".concat(e.size/16*(e.flipX?-1:1),", ").concat(e.size/16*(e.flipY?-1:1),") "),a="rotate(".concat(e.rotate," 0 0)");return{outer:r,inner:{transform:"".concat(o," ").concat(i," ").concat(a)},path:{transform:"translate(".concat(t/2*-1," -256)")}}}var $={x:0,y:0,width:"100%",height:"100%"};function W(n){var e=!(arguments.length>1&&void 0!==arguments[1])||arguments[1];return n.attributes&&(n.attributes.fill||e)&&(n.attributes.fill="black"),n}function X(n){var e=n.icons,t=e.main,r=e.mask,o=n.prefix,i=n.iconName,a=n.transform,l=n.symbol,d=n.title,c=n.maskId,p=n.titleId,s=n.extra,u=n.watchable,m=void 0!==u&&u,b=r.found?r:t,f=b.width,h=b.height,g="fak"===o,w=g?"":"fa-w-".concat(Math.ceil(f/h*16)),x=[A.replacementClass,i?"".concat(A.familyPrefix,"-").concat(i):"",w].filter(function(n){return-1===s.classes.indexOf(n)}).filter(function(n){return""!==n||!!n}).concat(s.classes).join(" "),v={children:[],attributes:_({},s.attributes,{"data-prefix":o,"data-icon":i,class:x,role:s.attributes.role||"img",xmlns:"http://www.w3.org/2000/svg",viewBox:"0 0 ".concat(f," ").concat(h)})},k=g&&!~s.classes.indexOf("fa-fw")?{width:"".concat(f/h*16*.0625,"em")}:{};m&&(v.attributes["data-fa-i2svg"]=""),d&&v.children.push({tag:"title",attributes:{id:v.attributes["aria-labelledby"]||"title-".concat(p||L())},children:[d]});var y=_({},v,{prefix:o,iconName:i,main:t,mask:r,maskId:c,transform:a,symbol:l,styles:_({},k,s.styles)}),E=r.found&&t.found?function(n){var e,t=n.children,r=n.attributes,o=n.main,i=n.mask,a=n.maskId,l=o.icon,d=i.icon,c=H({transform:n.transform,containerWidth:i.width,iconWidth:o.width}),p={tag:"rect",attributes:_({},$,{fill:"white"})},s=l.children?{children:l.children.map(W)}:{},u={tag:"g",attributes:_({},c.inner),children:[W(_({tag:l.tag,attributes:_({},l.attributes,c.path)},s))]},m={tag:"g",attributes:_({},c.outer),children:[u]},b="mask-".concat(a||L()),f="clip-".concat(a||L()),h={tag:"mask",attributes:_({},$,{id:b,maskUnits:"userSpaceOnUse",maskContentUnits:"userSpaceOnUse"}),children:[p,m]},g={tag:"defs",children:[{tag:"clipPath",attributes:{id:f},children:(e=d,"g"===e.tag?e.children:[e])},h]};return t.push(g,{tag:"rect",attributes:_({fill:"currentColor","clip-path":"url(#".concat(f,")"),mask:"url(#".concat(b,")")},$)}),{children:t,attributes:r}}(y):function(n){var e=n.children,t=n.attributes,r=n.main,o=n.transform,i=q(n.styles);if(i.length>0&&(t.style=i),U(o)){var a=H({transform:o,containerWidth:r.width,iconWidth:r.width});e.push({tag:"g",attributes:_({},a.outer),children:[{tag:"g",attributes:_({},a.inner),children:[{tag:r.icon.tag,children:r.icon.children,attributes:_({},r.icon.attributes,a.path)}]}]})}else e.push(r.icon);return{children:e,attributes:t}}(y),S=E.attributes;return y.children=E.children,y.attributes=S,l?function(n){var e=n.iconName,t=n.children,r=n.symbol;return[{tag:"svg",attributes:{style:"display: none;"},children:[{tag:"symbol",attributes:_({},n.attributes,{id:!0===r?"".concat(n.prefix,"-").concat(A.familyPrefix,"-").concat(e):r}),children:t}]}]}(y):function(n){var e=n.children,t=n.main,r=n.mask,o=n.attributes,i=n.styles,a=n.transform;if(U(a)&&t.found&&!r.found){var l={x:t.width/t.height/2,y:.5};o.style=q(_({},i,{"transform-origin":"".concat(l.x+a.x/16,"em ").concat(l.y+a.y/16,"em")}))}return[{tag:"svg",attributes:o,children:e}]}(y)}var Y=function(n,e,t,r){var o,i,a,l=Object.keys(n),d=l.length,c=void 0!==r?function(n,e){return function(t,r,o,i){return n.call(e,t,r,o,i)}}(e,r):e;for(void 0===t?(o=1,a=n[l[0]]):(o=0,a=t);o<d;o++)a=c(a,n[i=l[o]],i,n);return a};function Z(n,e){var t=arguments.length>2&&void 0!==arguments[2]?arguments[2]:{},r=t.skipHooks,o=void 0!==r&&r,i=Object.keys(e).reduce(function(n,t){var r=e[t];return r.icon?n[r.iconName]=r.icon:n[t]=r,n},{});"function"!=typeof N.hooks.addPack||o?N.styles[n]=_({},N.styles[n]||{},i):N.hooks.addPack(n,i),"fas"===n&&Z("fa",e)}var G=N.styles,J=N.shims,K=function(){var n=function(n){return Y(G,function(e,t,r){return e[r]=Y(t,n,{}),e},{})};n(function(n,e,t){return e[3]&&(n[e[3]]=t),n}),n(function(n,e,t){var r=e[2];return n[t]=t,r.forEach(function(e){n[e]=t}),n});var e="far"in G;Y(J,function(n,t){var r=t[1];return"far"!==r||e||(r="fas"),n[t[0]]={prefix:r,iconName:t[2]},n},{})};function Q(n,e,t){if(n&&n[e]&&n[e][t])return{prefix:e,iconName:t,icon:n[e][t]}}function nn(n){var e=n.tag,t=n.attributes,r=void 0===t?{}:t,o=n.children,i=void 0===o?[]:o;return"string"==typeof n?R(n):"<".concat(e," ").concat(function(n){return Object.keys(n||{}).reduce(function(e,t){return e+"".concat(t,'="').concat(R(n[t]),'" ')},"").trim()}(r),">").concat(i.map(nn).join(""),"</").concat(e,">")}function en(n){this.name="MissingIcon",this.message=n||"Icon unavailable",this.stack=(new Error).stack}K(),(en.prototype=Object.create(Error.prototype)).constructor=en;var tn={fill:"currentColor"},rn={attributeType:"XML",repeatCount:"indefinite",dur:"2s"},on=(_({},tn,{d:"M156.5,447.7l-12.6,29.5c-18.7-9.5-35.9-21.2-51.5-34.9l22.7-22.7C127.6,430.5,141.5,440,156.5,447.7z M40.6,272H8.5 c1.4,21.2,5.4,41.7,11.7,61.1L50,321.2C45.1,305.5,41.8,289,40.6,272z M40.6,240c1.4-18.8,5.2-37,11.1-54.1l-29.5-12.6 C14.7,194.3,10,216.7,8.5,240H40.6z M64.3,156.5c7.8-14.9,17.2-28.8,28.1-41.5L69.7,92.3c-13.7,15.6-25.5,32.8-34.9,51.5 L64.3,156.5z M397,419.6c-13.9,12-29.4,22.3-46.1,30.4l11.9,29.8c20.7-9.9,39.8-22.6,56.9-37.6L397,419.6z M115,92.4 c13.9-12,29.4-22.3,46.1-30.4l-11.9-29.8c-20.7,9.9-39.8,22.6-56.8,37.6L115,92.4z M447.7,355.5c-7.8,14.9-17.2,28.8-28.1,41.5 l22.7,22.7c13.7-15.6,25.5-32.9,34.9-51.5L447.7,355.5z M471.4,272c-1.4,18.8-5.2,37-11.1,54.1l29.5,12.6 c7.5-21.1,12.2-43.5,13.6-66.8H471.4z M321.2,462c-15.7,5-32.2,8.2-49.2,9.4v32.1c21.2-1.4,41.7-5.4,61.1-11.7L321.2,462z M240,471.4c-18.8-1.4-37-5.2-54.1-11.1l-12.6,29.5c21.1,7.5,43.5,12.2,66.8,13.6V471.4z M462,190.8c5,15.7,8.2,32.2,9.4,49.2h32.1 c-1.4-21.2-5.4-41.7-11.7-61.1L462,190.8z M92.4,397c-12-13.9-22.3-29.4-30.4-46.1l-29.8,11.9c9.9,20.7,22.6,39.8,37.6,56.9 L92.4,397z M272,40.6c18.8,1.4,36.9,5.2,54.1,11.1l12.6-29.5C317.7,14.7,295.3,10,272,8.5V40.6z M190.8,50 c15.7-5,32.2-8.2,49.2-9.4V8.5c-21.2,1.4-41.7,5.4-61.1,11.7L190.8,50z M442.3,92.3L419.6,115c12,13.9,22.3,29.4,30.5,46.1 l29.8-11.9C470,128.5,457.3,109.4,442.3,92.3z M397,92.4l22.7-22.7c-15.6-13.7-32.8-25.5-51.5-34.9l-12.6,29.5 C370.4,72.1,384.4,81.5,397,92.4z"}),_({},rn,{attributeName:"opacity"}));function an(n){var e=n[0],t=n[1],r=E(n.slice(4),1)[0];return{found:!0,width:e,height:t,icon:Array.isArray(r)?{tag:"g",attributes:{class:"".concat(A.familyPrefix,"-").concat(B)},children:[{tag:"path",attributes:{class:"".concat(A.familyPrefix,"-").concat("secondary"),fill:"currentColor",d:r[0]}},{tag:"path",attributes:{class:"".concat(A.familyPrefix,"-").concat("primary"),fill:"currentColor",d:r[1]}}]}:{tag:"path",attributes:{fill:"currentColor",d:r}}}}function ln(){A.autoAddCss&&!un&&(function(n){if(n&&I){var e=F.createElement("style");e.setAttribute("type","text/css"),e.innerHTML=n;for(var t=F.head.childNodes,r=null,o=t.length-1;o>-1;o--){var i=t[o],a=(i.tagName||"").toUpperCase();["STYLE","LINK"].indexOf(a)>-1&&(r=i)}F.head.insertBefore(e,r)}}(function(){var n="svg-inline--fa",e=A.familyPrefix,t=A.replacementClass,r='svg:not(:root).svg-inline--fa {\n  overflow: visible;\n}\n\n.svg-inline--fa {\n  display: inline-block;\n  font-size: inherit;\n  height: 1em;\n  overflow: visible;\n  vertical-align: -0.125em;\n}\n.svg-inline--fa.fa-lg {\n  vertical-align: -0.225em;\n}\n.svg-inline--fa.fa-w-1 {\n  width: 0.0625em;\n}\n.svg-inline--fa.fa-w-2 {\n  width: 0.125em;\n}\n.svg-inline--fa.fa-w-3 {\n  width: 0.1875em;\n}\n.svg-inline--fa.fa-w-4 {\n  width: 0.25em;\n}\n.svg-inline--fa.fa-w-5 {\n  width: 0.3125em;\n}\n.svg-inline--fa.fa-w-6 {\n  width: 0.375em;\n}\n.svg-inline--fa.fa-w-7 {\n  width: 0.4375em;\n}\n.svg-inline--fa.fa-w-8 {\n  width: 0.5em;\n}\n.svg-inline--fa.fa-w-9 {\n  width: 0.5625em;\n}\n.svg-inline--fa.fa-w-10 {\n  width: 0.625em;\n}\n.svg-inline--fa.fa-w-11 {\n  width: 0.6875em;\n}\n.svg-inline--fa.fa-w-12 {\n  width: 0.75em;\n}\n.svg-inline--fa.fa-w-13 {\n  width: 0.8125em;\n}\n.svg-inline--fa.fa-w-14 {\n  width: 0.875em;\n}\n.svg-inline--fa.fa-w-15 {\n  width: 0.9375em;\n}\n.svg-inline--fa.fa-w-16 {\n  width: 1em;\n}\n.svg-inline--fa.fa-w-17 {\n  width: 1.0625em;\n}\n.svg-inline--fa.fa-w-18 {\n  width: 1.125em;\n}\n.svg-inline--fa.fa-w-19 {\n  width: 1.1875em;\n}\n.svg-inline--fa.fa-w-20 {\n  width: 1.25em;\n}\n.svg-inline--fa.fa-pull-left {\n  margin-right: 0.3em;\n  width: auto;\n}\n.svg-inline--fa.fa-pull-right {\n  margin-left: 0.3em;\n  width: auto;\n}\n.svg-inline--fa.fa-border {\n  height: 1.5em;\n}\n.svg-inline--fa.fa-li {\n  width: 2em;\n}\n.svg-inline--fa.fa-fw {\n  width: 1.25em;\n}\n\n.fa-layers svg.svg-inline--fa {\n  bottom: 0;\n  left: 0;\n  margin: auto;\n  position: absolute;\n  right: 0;\n  top: 0;\n}\n\n.fa-layers {\n  display: inline-block;\n  height: 1em;\n  position: relative;\n  text-align: center;\n  vertical-align: -0.125em;\n  width: 1em;\n}\n.fa-layers svg.svg-inline--fa {\n  -webkit-transform-origin: center center;\n          transform-origin: center center;\n}\n\n.fa-layers-counter, .fa-layers-text {\n  display: inline-block;\n  position: absolute;\n  text-align: center;\n}\n\n.fa-layers-text {\n  left: 50%;\n  top: 50%;\n  -webkit-transform: translate(-50%, -50%);\n          transform: translate(-50%, -50%);\n  -webkit-transform-origin: center center;\n          transform-origin: center center;\n}\n\n.fa-layers-counter {\n  background-color: #ff253a;\n  border-radius: 1em;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  color: #fff;\n  height: 1.5em;\n  line-height: 1;\n  max-width: 5em;\n  min-width: 1.5em;\n  overflow: hidden;\n  padding: 0.25em;\n  right: 0;\n  text-overflow: ellipsis;\n  top: 0;\n  -webkit-transform: scale(0.25);\n          transform: scale(0.25);\n  -webkit-transform-origin: top right;\n          transform-origin: top right;\n}\n\n.fa-layers-bottom-right {\n  bottom: 0;\n  right: 0;\n  top: auto;\n  -webkit-transform: scale(0.25);\n          transform: scale(0.25);\n  -webkit-transform-origin: bottom right;\n          transform-origin: bottom right;\n}\n\n.fa-layers-bottom-left {\n  bottom: 0;\n  left: 0;\n  right: auto;\n  top: auto;\n  -webkit-transform: scale(0.25);\n          transform: scale(0.25);\n  -webkit-transform-origin: bottom left;\n          transform-origin: bottom left;\n}\n\n.fa-layers-top-right {\n  right: 0;\n  top: 0;\n  -webkit-transform: scale(0.25);\n          transform: scale(0.25);\n  -webkit-transform-origin: top right;\n          transform-origin: top right;\n}\n\n.fa-layers-top-left {\n  left: 0;\n  right: auto;\n  top: 0;\n  -webkit-transform: scale(0.25);\n          transform: scale(0.25);\n  -webkit-transform-origin: top left;\n          transform-origin: top left;\n}\n\n.fa-lg {\n  font-size: 1.3333333333em;\n  line-height: 0.75em;\n  vertical-align: -0.0667em;\n}\n\n.fa-xs {\n  font-size: 0.75em;\n}\n\n.fa-sm {\n  font-size: 0.875em;\n}\n\n.fa-1x {\n  font-size: 1em;\n}\n\n.fa-2x {\n  font-size: 2em;\n}\n\n.fa-3x {\n  font-size: 3em;\n}\n\n.fa-4x {\n  font-size: 4em;\n}\n\n.fa-5x {\n  font-size: 5em;\n}\n\n.fa-6x {\n  font-size: 6em;\n}\n\n.fa-7x {\n  font-size: 7em;\n}\n\n.fa-8x {\n  font-size: 8em;\n}\n\n.fa-9x {\n  font-size: 9em;\n}\n\n.fa-10x {\n  font-size: 10em;\n}\n\n.fa-fw {\n  text-align: center;\n  width: 1.25em;\n}\n\n.fa-ul {\n  list-style-type: none;\n  margin-left: 2.5em;\n  padding-left: 0;\n}\n.fa-ul > li {\n  position: relative;\n}\n\n.fa-li {\n  left: -2em;\n  position: absolute;\n  text-align: center;\n  width: 2em;\n  line-height: inherit;\n}\n\n.fa-border {\n  border: solid 0.08em #eee;\n  border-radius: 0.1em;\n  padding: 0.2em 0.25em 0.15em;\n}\n\n.fa-pull-left {\n  float: left;\n}\n\n.fa-pull-right {\n  float: right;\n}\n\n.fa.fa-pull-left,\n.fas.fa-pull-left,\n.far.fa-pull-left,\n.fal.fa-pull-left,\n.fab.fa-pull-left {\n  margin-right: 0.3em;\n}\n.fa.fa-pull-right,\n.fas.fa-pull-right,\n.far.fa-pull-right,\n.fal.fa-pull-right,\n.fab.fa-pull-right {\n  margin-left: 0.3em;\n}\n\n.fa-spin {\n  -webkit-animation: fa-spin 2s infinite linear;\n          animation: fa-spin 2s infinite linear;\n}\n\n.fa-pulse {\n  -webkit-animation: fa-spin 1s infinite steps(8);\n          animation: fa-spin 1s infinite steps(8);\n}\n\n@-webkit-keyframes fa-spin {\n  0% {\n    -webkit-transform: rotate(0deg);\n            transform: rotate(0deg);\n  }\n  100% {\n    -webkit-transform: rotate(360deg);\n            transform: rotate(360deg);\n  }\n}\n\n@keyframes fa-spin {\n  0% {\n    -webkit-transform: rotate(0deg);\n            transform: rotate(0deg);\n  }\n  100% {\n    -webkit-transform: rotate(360deg);\n            transform: rotate(360deg);\n  }\n}\n.fa-rotate-90 {\n  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=1)";\n  -webkit-transform: rotate(90deg);\n          transform: rotate(90deg);\n}\n\n.fa-rotate-180 {\n  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2)";\n  -webkit-transform: rotate(180deg);\n          transform: rotate(180deg);\n}\n\n.fa-rotate-270 {\n  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=3)";\n  -webkit-transform: rotate(270deg);\n          transform: rotate(270deg);\n}\n\n.fa-flip-horizontal {\n  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1)";\n  -webkit-transform: scale(-1, 1);\n          transform: scale(-1, 1);\n}\n\n.fa-flip-vertical {\n  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";\n  -webkit-transform: scale(1, -1);\n          transform: scale(1, -1);\n}\n\n.fa-flip-both, .fa-flip-horizontal.fa-flip-vertical {\n  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";\n  -webkit-transform: scale(-1, -1);\n          transform: scale(-1, -1);\n}\n\n:root .fa-rotate-90,\n:root .fa-rotate-180,\n:root .fa-rotate-270,\n:root .fa-flip-horizontal,\n:root .fa-flip-vertical,\n:root .fa-flip-both {\n  -webkit-filter: none;\n          filter: none;\n}\n\n.fa-stack {\n  display: inline-block;\n  height: 2em;\n  position: relative;\n  width: 2.5em;\n}\n\n.fa-stack-1x,\n.fa-stack-2x {\n  bottom: 0;\n  left: 0;\n  margin: auto;\n  position: absolute;\n  right: 0;\n  top: 0;\n}\n\n.svg-inline--fa.fa-stack-1x {\n  height: 1em;\n  width: 1.25em;\n}\n.svg-inline--fa.fa-stack-2x {\n  height: 2em;\n  width: 2.5em;\n}\n\n.fa-inverse {\n  color: #fff;\n}\n\n.sr-only {\n  border: 0;\n  clip: rect(0, 0, 0, 0);\n  height: 1px;\n  margin: -1px;\n  overflow: hidden;\n  padding: 0;\n  position: absolute;\n  width: 1px;\n}\n\n.sr-only-focusable:active, .sr-only-focusable:focus {\n  clip: auto;\n  height: auto;\n  margin: 0;\n  overflow: visible;\n  position: static;\n  width: auto;\n}\n\n.svg-inline--fa .fa-primary {\n  fill: var(--fa-primary-color, currentColor);\n  opacity: 1;\n  opacity: var(--fa-primary-opacity, 1);\n}\n\n.svg-inline--fa .fa-secondary {\n  fill: var(--fa-secondary-color, currentColor);\n  opacity: 0.4;\n  opacity: var(--fa-secondary-opacity, 0.4);\n}\n\n.svg-inline--fa.fa-swap-opacity .fa-primary {\n  opacity: 0.4;\n  opacity: var(--fa-secondary-opacity, 0.4);\n}\n\n.svg-inline--fa.fa-swap-opacity .fa-secondary {\n  opacity: 1;\n  opacity: var(--fa-primary-opacity, 1);\n}\n\n.svg-inline--fa mask .fa-primary,\n.svg-inline--fa mask .fa-secondary {\n  fill: black;\n}\n\n.fad.fa-inverse {\n  color: #fff;\n}';if("fa"!==e||t!==n){var o=new RegExp("\\.".concat("fa","\\-"),"g"),i=new RegExp("\\--".concat("fa","\\-"),"g"),a=new RegExp("\\.".concat(n),"g");r=r.replace(o,".".concat(e,"-")).replace(i,"--".concat(e,"-")).replace(a,".".concat(t))}return r}()),un=!0)}function dn(n,e){return Object.defineProperty(n,"abstract",{get:e}),Object.defineProperty(n,"html",{get:function(){return n.abstract.map(function(n){return nn(n)})}}),Object.defineProperty(n,"node",{get:function(){if(I){var e=F.createElement("div");return e.innerHTML=n.html,e.children}}}),n}function cn(n){var e=n.prefix,t=void 0===e?"fa":e,r=n.iconName;if(r)return Q(sn.definitions,t,r)||Q(N.styles,t,r)}_({},tn,{cx:"256",cy:"364",r:"28"}),_({},rn,{attributeName:"r",values:"28;14;28;28;14;28;"}),_({},on,{values:"1;0;1;1;0;1;"}),_({},tn,{opacity:"1",d:"M263.7,312h-16c-6.6,0-12-5.4-12-12c0-71,77.4-63.9,77.4-107.8c0-20-17.8-40.2-57.4-40.2c-29.1,0-44.3,9.6-59.2,28.7 c-3.9,5-11.1,6-16.2,2.4l-13.1-9.2c-5.6-3.9-6.9-11.8-2.6-17.2c21.2-27.2,46.4-44.7,91.2-44.7c52.3,0,97.4,29.8,97.4,80.2 c0,67.6-77.4,63.5-77.4,107.8C275.7,306.6,270.3,312,263.7,312z"}),_({},on,{values:"1;0;0;0;0;1;"}),_({},tn,{opacity:"0",d:"M232.5,134.5l7,168c0.3,6.4,5.6,11.5,12,11.5h9c6.4,0,11.7-5.1,12-11.5l7-168c0.3-6.8-5.2-12.5-12-12.5h-23 C237.7,122,232.2,127.7,232.5,134.5z"}),_({},on,{values:"0;0;1;1;0;0;"});var pn,sn=new(function(){function n(){!function(n,e){if(!(n instanceof e))throw new TypeError("Cannot call a class as a function")}(this,n),this.definitions={}}var e;return(e=[{key:"add",value:function(){for(var n=this,e=arguments.length,t=new Array(e),r=0;r<e;r++)t[r]=arguments[r];var o=t.reduce(this._pullDefinitions,{});Object.keys(o).forEach(function(e){n.definitions[e]=_({},n.definitions[e]||{},o[e]),Z(e,o[e]),K()})}},{key:"reset",value:function(){this.definitions={}}},{key:"_pullDefinitions",value:function(n,e){var t=e.prefix&&e.iconName&&e.icon?{0:e}:e;return Object.keys(t).map(function(e){var r=t[e],o=r.prefix,i=r.iconName,a=r.icon;n[o]||(n[o]={}),n[o][i]=a}),n}}])&&function(n,e){for(var t=0;t<e.length;t++){var r=e[t];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(n,r.key,r)}}(n.prototype,e),n}()),un=!1,mn={transform:function(n){return function(n){var e={size:16,x:0,y:0,flipX:!1,flipY:!1,rotate:0};return n?n.toLowerCase().split(" ").reduce(function(n,e){var t=e.toLowerCase().split("-"),r=t[0],o=t.slice(1).join("-");if(r&&"h"===o)return n.flipX=!0,n;if(r&&"v"===o)return n.flipY=!0,n;if(o=parseFloat(o),isNaN(o))return n;switch(r){case"grow":n.size=n.size+o;break;case"shrink":n.size=n.size-o;break;case"left":n.x=n.x-o;break;case"right":n.x=n.x+o;break;case"up":n.y=n.y-o;break;case"down":n.y=n.y+o;break;case"rotate":n.rotate=n.rotate+o}return n},e):e}(n)}},bn=(pn=function(n){var e=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{},t=e.transform,r=void 0===t?V:t,o=e.symbol,i=void 0!==o&&o,a=e.mask,l=void 0===a?null:a,d=e.maskId,c=void 0===d?null:d,p=e.title,s=void 0===p?null:p,u=e.titleId,m=void 0===u?null:u,b=e.classes,f=void 0===b?[]:b,h=e.attributes,g=void 0===h?{}:h,w=e.styles,x=void 0===w?{}:w;if(n){var v=n.prefix,k=n.iconName,y=n.icon;return dn(_({type:"icon"},n),function(){return ln(),A.autoA11y&&(s?g["aria-labelledby"]="".concat(A.replacementClass,"-title-").concat(m||L()):(g["aria-hidden"]="true",g.focusable="false")),X({icons:{main:an(y),mask:l?an(l.icon):{found:!1,width:null,height:null,icon:{}}},prefix:v,iconName:k,transform:_({},V,r),symbol:i,title:s,maskId:c,titleId:m,extra:{attributes:g,styles:x,classes:f}})})}},function(n){var e=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{},t=(n||{}).icon?n:cn(n||{}),r=e.mask;return r&&(r=(r||{}).icon?r:cn(r||{})),pn(t,_({},e,{mask:r}))});function fn(n,e){return n(e={exports:{}},e.exports),e.exports
+ */
+
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+function _defineProperties(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];
+    descriptor.enumerable = descriptor.enumerable || false;
+    descriptor.configurable = true;
+    if ("value" in descriptor) descriptor.writable = true;
+    Object.defineProperty(target, descriptor.key, descriptor);
+  }
+}
+
+function _createClass(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+  if (staticProps) _defineProperties(Constructor, staticProps);
+  return Constructor;
+}
+
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+}
+
+function _objectSpread(target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i] != null ? arguments[i] : {};
+    var ownKeys = Object.keys(source);
+
+    if (typeof Object.getOwnPropertySymbols === 'function') {
+      ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {
+        return Object.getOwnPropertyDescriptor(source, sym).enumerable;
+      }));
+    }
+
+    ownKeys.forEach(function (key) {
+      _defineProperty(target, key, source[key]);
+    });
+  }
+
+  return target;
+}
+
+function _slicedToArray(arr, i) {
+  return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest();
+}
+
+function _arrayWithHoles(arr) {
+  if (Array.isArray(arr)) return arr;
+}
+
+function _iterableToArrayLimit(arr, i) {
+  var _arr = [];
+  var _n = true;
+  var _d = false;
+  var _e = undefined;
+
+  try {
+    for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
+      _arr.push(_s.value);
+
+      if (i && _arr.length === i) break;
+    }
+  } catch (err) {
+    _d = true;
+    _e = err;
+  } finally {
+    try {
+      if (!_n && _i["return"] != null) _i["return"]();
+    } finally {
+      if (_d) throw _e;
+    }
+  }
+
+  return _arr;
+}
+
+function _nonIterableRest() {
+  throw new TypeError("Invalid attempt to destructure non-iterable instance");
+}
+
+var noop = function noop() {};
+
+var _WINDOW = {};
+var _DOCUMENT = {};
+var _MUTATION_OBSERVER = null;
+var _PERFORMANCE = {
+  mark: noop,
+  measure: noop
+};
+
+try {
+  if (typeof window !== 'undefined') _WINDOW = window;
+  if (typeof document !== 'undefined') _DOCUMENT = document;
+  if (typeof MutationObserver !== 'undefined') _MUTATION_OBSERVER = MutationObserver;
+  if (typeof performance !== 'undefined') _PERFORMANCE = performance;
+} catch (e) {}
+
+var _ref = _WINDOW.navigator || {},
+    _ref$userAgent = _ref.userAgent,
+    userAgent = _ref$userAgent === void 0 ? '' : _ref$userAgent;
+
+var WINDOW = _WINDOW;
+var DOCUMENT = _DOCUMENT;
+var IS_DOM = !!DOCUMENT.documentElement && !!DOCUMENT.head && typeof DOCUMENT.addEventListener === 'function' && typeof DOCUMENT.createElement === 'function';
+var IS_IE = ~userAgent.indexOf('MSIE') || ~userAgent.indexOf('Trident/');
+
+var NAMESPACE_IDENTIFIER = '___FONT_AWESOME___';
+var DEFAULT_FAMILY_PREFIX = 'fa';
+var DEFAULT_REPLACEMENT_CLASS = 'svg-inline--fa';
+var DATA_FA_I2SVG = 'data-fa-i2svg';
+var PRODUCTION = function () {
+  try {
+    return process.env.NODE_ENV === 'production';
+  } catch (e) {
+    return false;
+  }
+}();
+var DUOTONE_CLASSES = {
+  GROUP: 'group',
+  SWAP_OPACITY: 'swap-opacity',
+  PRIMARY: 'primary',
+  SECONDARY: 'secondary'
+};
+
+var initial = WINDOW.FontAwesomeConfig || {};
+
+function getAttrConfig(attr) {
+  var element = DOCUMENT.querySelector('script[' + attr + ']');
+
+  if (element) {
+    return element.getAttribute(attr);
+  }
+}
+
+function coerce(val) {
+  // Getting an empty string will occur if the attribute is set on the HTML tag but without a value
+  // We'll assume that this is an indication that it should be toggled to true
+  // For example <script data-search-pseudo-elements src="..."></script>
+  if (val === '') return true;
+  if (val === 'false') return false;
+  if (val === 'true') return true;
+  return val;
+}
+
+if (DOCUMENT && typeof DOCUMENT.querySelector === 'function') {
+  var attrs = [['data-family-prefix', 'familyPrefix'], ['data-replacement-class', 'replacementClass'], ['data-auto-replace-svg', 'autoReplaceSvg'], ['data-auto-add-css', 'autoAddCss'], ['data-auto-a11y', 'autoA11y'], ['data-search-pseudo-elements', 'searchPseudoElements'], ['data-observe-mutations', 'observeMutations'], ['data-mutate-approach', 'mutateApproach'], ['data-keep-original-source', 'keepOriginalSource'], ['data-measure-performance', 'measurePerformance'], ['data-show-missing-icons', 'showMissingIcons']];
+  attrs.forEach(function (_ref) {
+    var _ref2 = _slicedToArray(_ref, 2),
+        attr = _ref2[0],
+        key = _ref2[1];
+
+    var val = coerce(getAttrConfig(attr));
+
+    if (val !== undefined && val !== null) {
+      initial[key] = val;
+    }
+  });
+}
+
+var _default = {
+  familyPrefix: DEFAULT_FAMILY_PREFIX,
+  replacementClass: DEFAULT_REPLACEMENT_CLASS,
+  autoReplaceSvg: true,
+  autoAddCss: true,
+  autoA11y: true,
+  searchPseudoElements: false,
+  observeMutations: true,
+  mutateApproach: 'async',
+  keepOriginalSource: true,
+  measurePerformance: false,
+  showMissingIcons: true
+};
+
+var _config = _objectSpread({}, _default, initial);
+
+if (!_config.autoReplaceSvg) _config.observeMutations = false;
+
+var config = _objectSpread({}, _config);
+
+WINDOW.FontAwesomeConfig = config;
+
+var w = WINDOW || {};
+if (!w[NAMESPACE_IDENTIFIER]) w[NAMESPACE_IDENTIFIER] = {};
+if (!w[NAMESPACE_IDENTIFIER].styles) w[NAMESPACE_IDENTIFIER].styles = {};
+if (!w[NAMESPACE_IDENTIFIER].hooks) w[NAMESPACE_IDENTIFIER].hooks = {};
+if (!w[NAMESPACE_IDENTIFIER].shims) w[NAMESPACE_IDENTIFIER].shims = [];
+var namespace = w[NAMESPACE_IDENTIFIER];
+
+var functions = [];
+
+var listener = function listener() {
+  DOCUMENT.removeEventListener('DOMContentLoaded', listener);
+  loaded = 1;
+  functions.map(function (fn) {
+    return fn();
+  });
+};
+
+var loaded = false;
+
+if (IS_DOM) {
+  loaded = (DOCUMENT.documentElement.doScroll ? /^loaded|^c/ : /^loaded|^i|^c/).test(DOCUMENT.readyState);
+  if (!loaded) DOCUMENT.addEventListener('DOMContentLoaded', listener);
+}
+var asyncSetTimer = typeof setImmediate === 'undefined' ? setTimeout : setImmediate;
+var meaninglessTransform = {
+  size: 16,
+  x: 0,
+  y: 0,
+  rotate: 0,
+  flipX: false,
+  flipY: false
+};
+function insertCss(css) {
+  if (!css || !IS_DOM) {
+    return;
+  }
+
+  var style = DOCUMENT.createElement('style');
+  style.setAttribute('type', 'text/css');
+  style.innerHTML = css;
+  var headChildren = DOCUMENT.head.childNodes;
+  var beforeChild = null;
+
+  for (var i = headChildren.length - 1; i > -1; i--) {
+    var child = headChildren[i];
+    var tagName = (child.tagName || '').toUpperCase();
+
+    if (['STYLE', 'LINK'].indexOf(tagName) > -1) {
+      beforeChild = child;
+    }
+  }
+
+  DOCUMENT.head.insertBefore(style, beforeChild);
+  return css;
+}
+var idPool = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+function nextUniqueId() {
+  var size = 12;
+  var id = '';
+
+  while (size-- > 0) {
+    id += idPool[Math.random() * 62 | 0];
+  }
+
+  return id;
+}
+function htmlEscape(str) {
+  return "".concat(str).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/'/g, '&#39;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+function joinAttributes(attributes) {
+  return Object.keys(attributes || {}).reduce(function (acc, attributeName) {
+    return acc + "".concat(attributeName, "=\"").concat(htmlEscape(attributes[attributeName]), "\" ");
+  }, '').trim();
+}
+function joinStyles(styles) {
+  return Object.keys(styles || {}).reduce(function (acc, styleName) {
+    return acc + "".concat(styleName, ": ").concat(styles[styleName], ";");
+  }, '');
+}
+function transformIsMeaningful(transform) {
+  return transform.size !== meaninglessTransform.size || transform.x !== meaninglessTransform.x || transform.y !== meaninglessTransform.y || transform.rotate !== meaninglessTransform.rotate || transform.flipX || transform.flipY;
+}
+function transformForSvg(_ref) {
+  var transform = _ref.transform,
+      containerWidth = _ref.containerWidth,
+      iconWidth = _ref.iconWidth;
+  var outer = {
+    transform: "translate(".concat(containerWidth / 2, " 256)")
+  };
+  var innerTranslate = "translate(".concat(transform.x * 32, ", ").concat(transform.y * 32, ") ");
+  var innerScale = "scale(".concat(transform.size / 16 * (transform.flipX ? -1 : 1), ", ").concat(transform.size / 16 * (transform.flipY ? -1 : 1), ") ");
+  var innerRotate = "rotate(".concat(transform.rotate, " 0 0)");
+  var inner = {
+    transform: "".concat(innerTranslate, " ").concat(innerScale, " ").concat(innerRotate)
+  };
+  var path = {
+    transform: "translate(".concat(iconWidth / 2 * -1, " -256)")
+  };
+  return {
+    outer: outer,
+    inner: inner,
+    path: path
+  };
+}
+
+var ALL_SPACE = {
+  x: 0,
+  y: 0,
+  width: '100%',
+  height: '100%'
+};
+
+function fillBlack(abstract) {
+  var force = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
+
+  if (abstract.attributes && (abstract.attributes.fill || force)) {
+    abstract.attributes.fill = 'black';
+  }
+
+  return abstract;
+}
+
+function deGroup(abstract) {
+  if (abstract.tag === 'g') {
+    return abstract.children;
+  } else {
+    return [abstract];
+  }
+}
+
+function makeIconMasking (_ref) {
+  var children = _ref.children,
+      attributes = _ref.attributes,
+      main = _ref.main,
+      mask = _ref.mask,
+      explicitMaskId = _ref.maskId,
+      transform = _ref.transform;
+  var mainWidth = main.width,
+      mainPath = main.icon;
+  var maskWidth = mask.width,
+      maskPath = mask.icon;
+  var trans = transformForSvg({
+    transform: transform,
+    containerWidth: maskWidth,
+    iconWidth: mainWidth
+  });
+  var maskRect = {
+    tag: 'rect',
+    attributes: _objectSpread({}, ALL_SPACE, {
+      fill: 'white'
+    })
+  };
+  var maskInnerGroupChildrenMixin = mainPath.children ? {
+    children: mainPath.children.map(fillBlack)
+  } : {};
+  var maskInnerGroup = {
+    tag: 'g',
+    attributes: _objectSpread({}, trans.inner),
+    children: [fillBlack(_objectSpread({
+      tag: mainPath.tag,
+      attributes: _objectSpread({}, mainPath.attributes, trans.path)
+    }, maskInnerGroupChildrenMixin))]
+  };
+  var maskOuterGroup = {
+    tag: 'g',
+    attributes: _objectSpread({}, trans.outer),
+    children: [maskInnerGroup]
+  };
+  var maskId = "mask-".concat(explicitMaskId || nextUniqueId());
+  var clipId = "clip-".concat(explicitMaskId || nextUniqueId());
+  var maskTag = {
+    tag: 'mask',
+    attributes: _objectSpread({}, ALL_SPACE, {
+      id: maskId,
+      maskUnits: 'userSpaceOnUse',
+      maskContentUnits: 'userSpaceOnUse'
+    }),
+    children: [maskRect, maskOuterGroup]
+  };
+  var defs = {
+    tag: 'defs',
+    children: [{
+      tag: 'clipPath',
+      attributes: {
+        id: clipId
+      },
+      children: deGroup(maskPath)
+    }, maskTag]
+  };
+  children.push(defs, {
+    tag: 'rect',
+    attributes: _objectSpread({
+      fill: 'currentColor',
+      'clip-path': "url(#".concat(clipId, ")"),
+      mask: "url(#".concat(maskId, ")")
+    }, ALL_SPACE)
+  });
+  return {
+    children: children,
+    attributes: attributes
+  };
+}
+
+function makeIconStandard (_ref) {
+  var children = _ref.children,
+      attributes = _ref.attributes,
+      main = _ref.main,
+      transform = _ref.transform,
+      styles = _ref.styles;
+  var styleString = joinStyles(styles);
+
+  if (styleString.length > 0) {
+    attributes['style'] = styleString;
+  }
+
+  if (transformIsMeaningful(transform)) {
+    var trans = transformForSvg({
+      transform: transform,
+      containerWidth: main.width,
+      iconWidth: main.width
+    });
+    children.push({
+      tag: 'g',
+      attributes: _objectSpread({}, trans.outer),
+      children: [{
+        tag: 'g',
+        attributes: _objectSpread({}, trans.inner),
+        children: [{
+          tag: main.icon.tag,
+          children: main.icon.children,
+          attributes: _objectSpread({}, main.icon.attributes, trans.path)
+        }]
+      }]
+    });
+  } else {
+    children.push(main.icon);
+  }
+
+  return {
+    children: children,
+    attributes: attributes
+  };
+}
+
+function asIcon (_ref) {
+  var children = _ref.children,
+      main = _ref.main,
+      mask = _ref.mask,
+      attributes = _ref.attributes,
+      styles = _ref.styles,
+      transform = _ref.transform;
+
+  if (transformIsMeaningful(transform) && main.found && !mask.found) {
+    var width = main.width,
+        height = main.height;
+    var offset = {
+      x: width / height / 2,
+      y: 0.5
+    };
+    attributes['style'] = joinStyles(_objectSpread({}, styles, {
+      'transform-origin': "".concat(offset.x + transform.x / 16, "em ").concat(offset.y + transform.y / 16, "em")
+    }));
+  }
+
+  return [{
+    tag: 'svg',
+    attributes: attributes,
+    children: children
+  }];
+}
+
+function asSymbol (_ref) {
+  var prefix = _ref.prefix,
+      iconName = _ref.iconName,
+      children = _ref.children,
+      attributes = _ref.attributes,
+      symbol = _ref.symbol;
+  var id = symbol === true ? "".concat(prefix, "-").concat(config.familyPrefix, "-").concat(iconName) : symbol;
+  return [{
+    tag: 'svg',
+    attributes: {
+      style: 'display: none;'
+    },
+    children: [{
+      tag: 'symbol',
+      attributes: _objectSpread({}, attributes, {
+        id: id
+      }),
+      children: children
+    }]
+  }];
+}
+
+function makeInlineSvgAbstract(params) {
+  var _params$icons = params.icons,
+      main = _params$icons.main,
+      mask = _params$icons.mask,
+      prefix = params.prefix,
+      iconName = params.iconName,
+      transform = params.transform,
+      symbol = params.symbol,
+      title = params.title,
+      maskId = params.maskId,
+      titleId = params.titleId,
+      extra = params.extra,
+      _params$watchable = params.watchable,
+      watchable = _params$watchable === void 0 ? false : _params$watchable;
+
+  var _ref = mask.found ? mask : main,
+      width = _ref.width,
+      height = _ref.height;
+
+  var isUploadedIcon = prefix === 'fak';
+  var widthClass = isUploadedIcon ? '' : "fa-w-".concat(Math.ceil(width / height * 16));
+  var attrClass = [config.replacementClass, iconName ? "".concat(config.familyPrefix, "-").concat(iconName) : '', widthClass].filter(function (c) {
+    return extra.classes.indexOf(c) === -1;
+  }).filter(function (c) {
+    return c !== '' || !!c;
+  }).concat(extra.classes).join(' ');
+  var content = {
+    children: [],
+    attributes: _objectSpread({}, extra.attributes, {
+      'data-prefix': prefix,
+      'data-icon': iconName,
+      'class': attrClass,
+      'role': extra.attributes.role || 'img',
+      'xmlns': 'http://www.w3.org/2000/svg',
+      'viewBox': "0 0 ".concat(width, " ").concat(height)
+    })
+  };
+  var uploadedIconWidthStyle = isUploadedIcon && !~extra.classes.indexOf('fa-fw') ? {
+    width: "".concat(width / height * 16 * 0.0625, "em")
+  } : {};
+
+  if (watchable) {
+    content.attributes[DATA_FA_I2SVG] = '';
+  }
+
+  if (title) content.children.push({
+    tag: 'title',
+    attributes: {
+      id: content.attributes['aria-labelledby'] || "title-".concat(titleId || nextUniqueId())
+    },
+    children: [title]
+  });
+
+  var args = _objectSpread({}, content, {
+    prefix: prefix,
+    iconName: iconName,
+    main: main,
+    mask: mask,
+    maskId: maskId,
+    transform: transform,
+    symbol: symbol,
+    styles: _objectSpread({}, uploadedIconWidthStyle, extra.styles)
+  });
+
+  var _ref2 = mask.found && main.found ? makeIconMasking(args) : makeIconStandard(args),
+      children = _ref2.children,
+      attributes = _ref2.attributes;
+
+  args.children = children;
+  args.attributes = attributes;
+
+  if (symbol) {
+    return asSymbol(args);
+  } else {
+    return asIcon(args);
+  }
+}
+
+/**
+ * Internal helper to bind a function known to have 4 arguments
+ * to a given context.
+ */
+
+var bindInternal4 = function bindInternal4(func, thisContext) {
+  return function (a, b, c, d) {
+    return func.call(thisContext, a, b, c, d);
+  };
+};
+
+/**
+ * # Reduce
+ *
+ * A fast object `.reduce()` implementation.
+ *
+ * @param  {Object}   subject      The object to reduce over.
+ * @param  {Function} fn           The reducer function.
+ * @param  {mixed}    initialValue The initial value for the reducer, defaults to subject[0].
+ * @param  {Object}   thisContext  The context for the reducer.
+ * @return {mixed}                 The final result.
+ */
+
+
+var reduce = function fastReduceObject(subject, fn, initialValue, thisContext) {
+  var keys = Object.keys(subject),
+      length = keys.length,
+      iterator = thisContext !== undefined ? bindInternal4(fn, thisContext) : fn,
+      i,
+      key,
+      result;
+
+  if (initialValue === undefined) {
+    i = 1;
+    result = subject[keys[0]];
+  } else {
+    i = 0;
+    result = initialValue;
+  }
+
+  for (; i < length; i++) {
+    key = keys[i];
+    result = iterator(result, subject[key], key, subject);
+  }
+
+  return result;
+};
+
+function defineIcons(prefix, icons) {
+  var params = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+  var _params$skipHooks = params.skipHooks,
+      skipHooks = _params$skipHooks === void 0 ? false : _params$skipHooks;
+  var normalized = Object.keys(icons).reduce(function (acc, iconName) {
+    var icon = icons[iconName];
+    var expanded = !!icon.icon;
+
+    if (expanded) {
+      acc[icon.iconName] = icon.icon;
+    } else {
+      acc[iconName] = icon;
+    }
+
+    return acc;
+  }, {});
+
+  if (typeof namespace.hooks.addPack === 'function' && !skipHooks) {
+    namespace.hooks.addPack(prefix, normalized);
+  } else {
+    namespace.styles[prefix] = _objectSpread({}, namespace.styles[prefix] || {}, normalized);
+  }
+  /**
+   * Font Awesome 4 used the prefix of `fa` for all icons. With the introduction
+   * of new styles we needed to differentiate between them. Prefix `fa` is now an alias
+   * for `fas` so we'll easy the upgrade process for our users by automatically defining
+   * this as well.
+   */
+
+
+  if (prefix === 'fas') {
+    defineIcons('fa', icons);
+  }
+}
+
+var styles = namespace.styles,
+    shims = namespace.shims;
+var _byUnicode = {};
+var _byLigature = {};
+var _byOldName = {};
+var build = function build() {
+  var lookup = function lookup(reducer) {
+    return reduce(styles, function (o, style, prefix) {
+      o[prefix] = reduce(style, reducer, {});
+      return o;
+    }, {});
+  };
+
+  _byUnicode = lookup(function (acc, icon, iconName) {
+    if (icon[3]) {
+      acc[icon[3]] = iconName;
+    }
+
+    return acc;
+  });
+  _byLigature = lookup(function (acc, icon, iconName) {
+    var ligatures = icon[2];
+    acc[iconName] = iconName;
+    ligatures.forEach(function (ligature) {
+      acc[ligature] = iconName;
+    });
+    return acc;
+  });
+  var hasRegular = 'far' in styles;
+  _byOldName = reduce(shims, function (acc, shim) {
+    var oldName = shim[0];
+    var prefix = shim[1];
+    var iconName = shim[2];
+
+    if (prefix === 'far' && !hasRegular) {
+      prefix = 'fas';
+    }
+
+    acc[oldName] = {
+      prefix: prefix,
+      iconName: iconName
+    };
+    return acc;
+  }, {});
+};
+build();
+function iconFromMapping(mapping, prefix, iconName) {
+  if (mapping && mapping[prefix] && mapping[prefix][iconName]) {
+    return {
+      prefix: prefix,
+      iconName: iconName,
+      icon: mapping[prefix][iconName]
+    };
+  }
+}
+
+function toHtml(abstractNodes) {
+  var tag = abstractNodes.tag,
+      _abstractNodes$attrib = abstractNodes.attributes,
+      attributes = _abstractNodes$attrib === void 0 ? {} : _abstractNodes$attrib,
+      _abstractNodes$childr = abstractNodes.children,
+      children = _abstractNodes$childr === void 0 ? [] : _abstractNodes$childr;
+
+  if (typeof abstractNodes === 'string') {
+    return htmlEscape(abstractNodes);
+  } else {
+    return "<".concat(tag, " ").concat(joinAttributes(attributes), ">").concat(children.map(toHtml).join(''), "</").concat(tag, ">");
+  }
+}
+
+var parseTransformString = function parseTransformString(transformString) {
+  var transform = {
+    size: 16,
+    x: 0,
+    y: 0,
+    flipX: false,
+    flipY: false,
+    rotate: 0
+  };
+
+  if (!transformString) {
+    return transform;
+  } else {
+    return transformString.toLowerCase().split(' ').reduce(function (acc, n) {
+      var parts = n.toLowerCase().split('-');
+      var first = parts[0];
+      var rest = parts.slice(1).join('-');
+
+      if (first && rest === 'h') {
+        acc.flipX = true;
+        return acc;
+      }
+
+      if (first && rest === 'v') {
+        acc.flipY = true;
+        return acc;
+      }
+
+      rest = parseFloat(rest);
+
+      if (isNaN(rest)) {
+        return acc;
+      }
+
+      switch (first) {
+        case 'grow':
+          acc.size = acc.size + rest;
+          break;
+
+        case 'shrink':
+          acc.size = acc.size - rest;
+          break;
+
+        case 'left':
+          acc.x = acc.x - rest;
+          break;
+
+        case 'right':
+          acc.x = acc.x + rest;
+          break;
+
+        case 'up':
+          acc.y = acc.y - rest;
+          break;
+
+        case 'down':
+          acc.y = acc.y + rest;
+          break;
+
+        case 'rotate':
+          acc.rotate = acc.rotate + rest;
+          break;
+      }
+
+      return acc;
+    }, transform);
+  }
+};
+
+function MissingIcon(error) {
+  this.name = 'MissingIcon';
+  this.message = error || 'Icon unavailable';
+  this.stack = new Error().stack;
+}
+MissingIcon.prototype = Object.create(Error.prototype);
+MissingIcon.prototype.constructor = MissingIcon;
+
+var FILL = {
+  fill: 'currentColor'
+};
+var ANIMATION_BASE = {
+  attributeType: 'XML',
+  repeatCount: 'indefinite',
+  dur: '2s'
+};
+var RING = {
+  tag: 'path',
+  attributes: _objectSpread({}, FILL, {
+    d: 'M156.5,447.7l-12.6,29.5c-18.7-9.5-35.9-21.2-51.5-34.9l22.7-22.7C127.6,430.5,141.5,440,156.5,447.7z M40.6,272H8.5 c1.4,21.2,5.4,41.7,11.7,61.1L50,321.2C45.1,305.5,41.8,289,40.6,272z M40.6,240c1.4-18.8,5.2-37,11.1-54.1l-29.5-12.6 C14.7,194.3,10,216.7,8.5,240H40.6z M64.3,156.5c7.8-14.9,17.2-28.8,28.1-41.5L69.7,92.3c-13.7,15.6-25.5,32.8-34.9,51.5 L64.3,156.5z M397,419.6c-13.9,12-29.4,22.3-46.1,30.4l11.9,29.8c20.7-9.9,39.8-22.6,56.9-37.6L397,419.6z M115,92.4 c13.9-12,29.4-22.3,46.1-30.4l-11.9-29.8c-20.7,9.9-39.8,22.6-56.8,37.6L115,92.4z M447.7,355.5c-7.8,14.9-17.2,28.8-28.1,41.5 l22.7,22.7c13.7-15.6,25.5-32.9,34.9-51.5L447.7,355.5z M471.4,272c-1.4,18.8-5.2,37-11.1,54.1l29.5,12.6 c7.5-21.1,12.2-43.5,13.6-66.8H471.4z M321.2,462c-15.7,5-32.2,8.2-49.2,9.4v32.1c21.2-1.4,41.7-5.4,61.1-11.7L321.2,462z M240,471.4c-18.8-1.4-37-5.2-54.1-11.1l-12.6,29.5c21.1,7.5,43.5,12.2,66.8,13.6V471.4z M462,190.8c5,15.7,8.2,32.2,9.4,49.2h32.1 c-1.4-21.2-5.4-41.7-11.7-61.1L462,190.8z M92.4,397c-12-13.9-22.3-29.4-30.4-46.1l-29.8,11.9c9.9,20.7,22.6,39.8,37.6,56.9 L92.4,397z M272,40.6c18.8,1.4,36.9,5.2,54.1,11.1l12.6-29.5C317.7,14.7,295.3,10,272,8.5V40.6z M190.8,50 c15.7-5,32.2-8.2,49.2-9.4V8.5c-21.2,1.4-41.7,5.4-61.1,11.7L190.8,50z M442.3,92.3L419.6,115c12,13.9,22.3,29.4,30.5,46.1 l29.8-11.9C470,128.5,457.3,109.4,442.3,92.3z M397,92.4l22.7-22.7c-15.6-13.7-32.8-25.5-51.5-34.9l-12.6,29.5 C370.4,72.1,384.4,81.5,397,92.4z'
+  })
+};
+
+var OPACITY_ANIMATE = _objectSpread({}, ANIMATION_BASE, {
+  attributeName: 'opacity'
+});
+
+var DOT = {
+  tag: 'circle',
+  attributes: _objectSpread({}, FILL, {
+    cx: '256',
+    cy: '364',
+    r: '28'
+  }),
+  children: [{
+    tag: 'animate',
+    attributes: _objectSpread({}, ANIMATION_BASE, {
+      attributeName: 'r',
+      values: '28;14;28;28;14;28;'
+    })
+  }, {
+    tag: 'animate',
+    attributes: _objectSpread({}, OPACITY_ANIMATE, {
+      values: '1;0;1;1;0;1;'
+    })
+  }]
+};
+var QUESTION = {
+  tag: 'path',
+  attributes: _objectSpread({}, FILL, {
+    opacity: '1',
+    d: 'M263.7,312h-16c-6.6,0-12-5.4-12-12c0-71,77.4-63.9,77.4-107.8c0-20-17.8-40.2-57.4-40.2c-29.1,0-44.3,9.6-59.2,28.7 c-3.9,5-11.1,6-16.2,2.4l-13.1-9.2c-5.6-3.9-6.9-11.8-2.6-17.2c21.2-27.2,46.4-44.7,91.2-44.7c52.3,0,97.4,29.8,97.4,80.2 c0,67.6-77.4,63.5-77.4,107.8C275.7,306.6,270.3,312,263.7,312z'
+  }),
+  children: [{
+    tag: 'animate',
+    attributes: _objectSpread({}, OPACITY_ANIMATE, {
+      values: '1;0;0;0;0;1;'
+    })
+  }]
+};
+var EXCLAMATION = {
+  tag: 'path',
+  attributes: _objectSpread({}, FILL, {
+    opacity: '0',
+    d: 'M232.5,134.5l7,168c0.3,6.4,5.6,11.5,12,11.5h9c6.4,0,11.7-5.1,12-11.5l7-168c0.3-6.8-5.2-12.5-12-12.5h-23 C237.7,122,232.2,127.7,232.5,134.5z'
+  }),
+  children: [{
+    tag: 'animate',
+    attributes: _objectSpread({}, OPACITY_ANIMATE, {
+      values: '0;0;1;1;0;0;'
+    })
+  }]
+};
+function asFoundIcon(icon) {
+  var width = icon[0];
+  var height = icon[1];
+
+  var _icon$slice = icon.slice(4),
+      _icon$slice2 = _slicedToArray(_icon$slice, 1),
+      vectorData = _icon$slice2[0];
+
+  var element = null;
+
+  if (Array.isArray(vectorData)) {
+    element = {
+      tag: 'g',
+      attributes: {
+        class: "".concat(config.familyPrefix, "-").concat(DUOTONE_CLASSES.GROUP)
+      },
+      children: [{
+        tag: 'path',
+        attributes: {
+          class: "".concat(config.familyPrefix, "-").concat(DUOTONE_CLASSES.SECONDARY),
+          fill: 'currentColor',
+          d: vectorData[0]
+        }
+      }, {
+        tag: 'path',
+        attributes: {
+          class: "".concat(config.familyPrefix, "-").concat(DUOTONE_CLASSES.PRIMARY),
+          fill: 'currentColor',
+          d: vectorData[1]
+        }
+      }]
+    };
+  } else {
+    element = {
+      tag: 'path',
+      attributes: {
+        fill: 'currentColor',
+        d: vectorData
+      }
+    };
+  }
+
+  return {
+    found: true,
+    width: width,
+    height: height,
+    icon: element
+  };
+}
+
+var baseStyles = "svg:not(:root).svg-inline--fa {\n  overflow: visible;\n}\n\n.svg-inline--fa {\n  display: inline-block;\n  font-size: inherit;\n  height: 1em;\n  overflow: visible;\n  vertical-align: -0.125em;\n}\n.svg-inline--fa.fa-lg {\n  vertical-align: -0.225em;\n}\n.svg-inline--fa.fa-w-1 {\n  width: 0.0625em;\n}\n.svg-inline--fa.fa-w-2 {\n  width: 0.125em;\n}\n.svg-inline--fa.fa-w-3 {\n  width: 0.1875em;\n}\n.svg-inline--fa.fa-w-4 {\n  width: 0.25em;\n}\n.svg-inline--fa.fa-w-5 {\n  width: 0.3125em;\n}\n.svg-inline--fa.fa-w-6 {\n  width: 0.375em;\n}\n.svg-inline--fa.fa-w-7 {\n  width: 0.4375em;\n}\n.svg-inline--fa.fa-w-8 {\n  width: 0.5em;\n}\n.svg-inline--fa.fa-w-9 {\n  width: 0.5625em;\n}\n.svg-inline--fa.fa-w-10 {\n  width: 0.625em;\n}\n.svg-inline--fa.fa-w-11 {\n  width: 0.6875em;\n}\n.svg-inline--fa.fa-w-12 {\n  width: 0.75em;\n}\n.svg-inline--fa.fa-w-13 {\n  width: 0.8125em;\n}\n.svg-inline--fa.fa-w-14 {\n  width: 0.875em;\n}\n.svg-inline--fa.fa-w-15 {\n  width: 0.9375em;\n}\n.svg-inline--fa.fa-w-16 {\n  width: 1em;\n}\n.svg-inline--fa.fa-w-17 {\n  width: 1.0625em;\n}\n.svg-inline--fa.fa-w-18 {\n  width: 1.125em;\n}\n.svg-inline--fa.fa-w-19 {\n  width: 1.1875em;\n}\n.svg-inline--fa.fa-w-20 {\n  width: 1.25em;\n}\n.svg-inline--fa.fa-pull-left {\n  margin-right: 0.3em;\n  width: auto;\n}\n.svg-inline--fa.fa-pull-right {\n  margin-left: 0.3em;\n  width: auto;\n}\n.svg-inline--fa.fa-border {\n  height: 1.5em;\n}\n.svg-inline--fa.fa-li {\n  width: 2em;\n}\n.svg-inline--fa.fa-fw {\n  width: 1.25em;\n}\n\n.fa-layers svg.svg-inline--fa {\n  bottom: 0;\n  left: 0;\n  margin: auto;\n  position: absolute;\n  right: 0;\n  top: 0;\n}\n\n.fa-layers {\n  display: inline-block;\n  height: 1em;\n  position: relative;\n  text-align: center;\n  vertical-align: -0.125em;\n  width: 1em;\n}\n.fa-layers svg.svg-inline--fa {\n  -webkit-transform-origin: center center;\n          transform-origin: center center;\n}\n\n.fa-layers-counter, .fa-layers-text {\n  display: inline-block;\n  position: absolute;\n  text-align: center;\n}\n\n.fa-layers-text {\n  left: 50%;\n  top: 50%;\n  -webkit-transform: translate(-50%, -50%);\n          transform: translate(-50%, -50%);\n  -webkit-transform-origin: center center;\n          transform-origin: center center;\n}\n\n.fa-layers-counter {\n  background-color: #ff253a;\n  border-radius: 1em;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  color: #fff;\n  height: 1.5em;\n  line-height: 1;\n  max-width: 5em;\n  min-width: 1.5em;\n  overflow: hidden;\n  padding: 0.25em;\n  right: 0;\n  text-overflow: ellipsis;\n  top: 0;\n  -webkit-transform: scale(0.25);\n          transform: scale(0.25);\n  -webkit-transform-origin: top right;\n          transform-origin: top right;\n}\n\n.fa-layers-bottom-right {\n  bottom: 0;\n  right: 0;\n  top: auto;\n  -webkit-transform: scale(0.25);\n          transform: scale(0.25);\n  -webkit-transform-origin: bottom right;\n          transform-origin: bottom right;\n}\n\n.fa-layers-bottom-left {\n  bottom: 0;\n  left: 0;\n  right: auto;\n  top: auto;\n  -webkit-transform: scale(0.25);\n          transform: scale(0.25);\n  -webkit-transform-origin: bottom left;\n          transform-origin: bottom left;\n}\n\n.fa-layers-top-right {\n  right: 0;\n  top: 0;\n  -webkit-transform: scale(0.25);\n          transform: scale(0.25);\n  -webkit-transform-origin: top right;\n          transform-origin: top right;\n}\n\n.fa-layers-top-left {\n  left: 0;\n  right: auto;\n  top: 0;\n  -webkit-transform: scale(0.25);\n          transform: scale(0.25);\n  -webkit-transform-origin: top left;\n          transform-origin: top left;\n}\n\n.fa-lg {\n  font-size: 1.3333333333em;\n  line-height: 0.75em;\n  vertical-align: -0.0667em;\n}\n\n.fa-xs {\n  font-size: 0.75em;\n}\n\n.fa-sm {\n  font-size: 0.875em;\n}\n\n.fa-1x {\n  font-size: 1em;\n}\n\n.fa-2x {\n  font-size: 2em;\n}\n\n.fa-3x {\n  font-size: 3em;\n}\n\n.fa-4x {\n  font-size: 4em;\n}\n\n.fa-5x {\n  font-size: 5em;\n}\n\n.fa-6x {\n  font-size: 6em;\n}\n\n.fa-7x {\n  font-size: 7em;\n}\n\n.fa-8x {\n  font-size: 8em;\n}\n\n.fa-9x {\n  font-size: 9em;\n}\n\n.fa-10x {\n  font-size: 10em;\n}\n\n.fa-fw {\n  text-align: center;\n  width: 1.25em;\n}\n\n.fa-ul {\n  list-style-type: none;\n  margin-left: 2.5em;\n  padding-left: 0;\n}\n.fa-ul > li {\n  position: relative;\n}\n\n.fa-li {\n  left: -2em;\n  position: absolute;\n  text-align: center;\n  width: 2em;\n  line-height: inherit;\n}\n\n.fa-border {\n  border: solid 0.08em #eee;\n  border-radius: 0.1em;\n  padding: 0.2em 0.25em 0.15em;\n}\n\n.fa-pull-left {\n  float: left;\n}\n\n.fa-pull-right {\n  float: right;\n}\n\n.fa.fa-pull-left,\n.fas.fa-pull-left,\n.far.fa-pull-left,\n.fal.fa-pull-left,\n.fab.fa-pull-left {\n  margin-right: 0.3em;\n}\n.fa.fa-pull-right,\n.fas.fa-pull-right,\n.far.fa-pull-right,\n.fal.fa-pull-right,\n.fab.fa-pull-right {\n  margin-left: 0.3em;\n}\n\n.fa-spin {\n  -webkit-animation: fa-spin 2s infinite linear;\n          animation: fa-spin 2s infinite linear;\n}\n\n.fa-pulse {\n  -webkit-animation: fa-spin 1s infinite steps(8);\n          animation: fa-spin 1s infinite steps(8);\n}\n\n@-webkit-keyframes fa-spin {\n  0% {\n    -webkit-transform: rotate(0deg);\n            transform: rotate(0deg);\n  }\n  100% {\n    -webkit-transform: rotate(360deg);\n            transform: rotate(360deg);\n  }\n}\n\n@keyframes fa-spin {\n  0% {\n    -webkit-transform: rotate(0deg);\n            transform: rotate(0deg);\n  }\n  100% {\n    -webkit-transform: rotate(360deg);\n            transform: rotate(360deg);\n  }\n}\n.fa-rotate-90 {\n  -ms-filter: \"progid:DXImageTransform.Microsoft.BasicImage(rotation=1)\";\n  -webkit-transform: rotate(90deg);\n          transform: rotate(90deg);\n}\n\n.fa-rotate-180 {\n  -ms-filter: \"progid:DXImageTransform.Microsoft.BasicImage(rotation=2)\";\n  -webkit-transform: rotate(180deg);\n          transform: rotate(180deg);\n}\n\n.fa-rotate-270 {\n  -ms-filter: \"progid:DXImageTransform.Microsoft.BasicImage(rotation=3)\";\n  -webkit-transform: rotate(270deg);\n          transform: rotate(270deg);\n}\n\n.fa-flip-horizontal {\n  -ms-filter: \"progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1)\";\n  -webkit-transform: scale(-1, 1);\n          transform: scale(-1, 1);\n}\n\n.fa-flip-vertical {\n  -ms-filter: \"progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)\";\n  -webkit-transform: scale(1, -1);\n          transform: scale(1, -1);\n}\n\n.fa-flip-both, .fa-flip-horizontal.fa-flip-vertical {\n  -ms-filter: \"progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)\";\n  -webkit-transform: scale(-1, -1);\n          transform: scale(-1, -1);\n}\n\n:root .fa-rotate-90,\n:root .fa-rotate-180,\n:root .fa-rotate-270,\n:root .fa-flip-horizontal,\n:root .fa-flip-vertical,\n:root .fa-flip-both {\n  -webkit-filter: none;\n          filter: none;\n}\n\n.fa-stack {\n  display: inline-block;\n  height: 2em;\n  position: relative;\n  width: 2.5em;\n}\n\n.fa-stack-1x,\n.fa-stack-2x {\n  bottom: 0;\n  left: 0;\n  margin: auto;\n  position: absolute;\n  right: 0;\n  top: 0;\n}\n\n.svg-inline--fa.fa-stack-1x {\n  height: 1em;\n  width: 1.25em;\n}\n.svg-inline--fa.fa-stack-2x {\n  height: 2em;\n  width: 2.5em;\n}\n\n.fa-inverse {\n  color: #fff;\n}\n\n.sr-only {\n  border: 0;\n  clip: rect(0, 0, 0, 0);\n  height: 1px;\n  margin: -1px;\n  overflow: hidden;\n  padding: 0;\n  position: absolute;\n  width: 1px;\n}\n\n.sr-only-focusable:active, .sr-only-focusable:focus {\n  clip: auto;\n  height: auto;\n  margin: 0;\n  overflow: visible;\n  position: static;\n  width: auto;\n}\n\n.svg-inline--fa .fa-primary {\n  fill: var(--fa-primary-color, currentColor);\n  opacity: 1;\n  opacity: var(--fa-primary-opacity, 1);\n}\n\n.svg-inline--fa .fa-secondary {\n  fill: var(--fa-secondary-color, currentColor);\n  opacity: 0.4;\n  opacity: var(--fa-secondary-opacity, 0.4);\n}\n\n.svg-inline--fa.fa-swap-opacity .fa-primary {\n  opacity: 0.4;\n  opacity: var(--fa-secondary-opacity, 0.4);\n}\n\n.svg-inline--fa.fa-swap-opacity .fa-secondary {\n  opacity: 1;\n  opacity: var(--fa-primary-opacity, 1);\n}\n\n.svg-inline--fa mask .fa-primary,\n.svg-inline--fa mask .fa-secondary {\n  fill: black;\n}\n\n.fad.fa-inverse {\n  color: #fff;\n}";
+
+function css () {
+  var dfp = DEFAULT_FAMILY_PREFIX;
+  var drc = DEFAULT_REPLACEMENT_CLASS;
+  var fp = config.familyPrefix;
+  var rc = config.replacementClass;
+  var s = baseStyles;
+
+  if (fp !== dfp || rc !== drc) {
+    var dPatt = new RegExp("\\.".concat(dfp, "\\-"), 'g');
+    var customPropPatt = new RegExp("\\--".concat(dfp, "\\-"), 'g');
+    var rPatt = new RegExp("\\.".concat(drc), 'g');
+    s = s.replace(dPatt, ".".concat(fp, "-")).replace(customPropPatt, "--".concat(fp, "-")).replace(rPatt, ".".concat(rc));
+  }
+
+  return s;
+}
+
+var Library =
+/*#__PURE__*/
+function () {
+  function Library() {
+    _classCallCheck(this, Library);
+
+    this.definitions = {};
+  }
+
+  _createClass(Library, [{
+    key: "add",
+    value: function add() {
+      var _this = this;
+
+      for (var _len = arguments.length, definitions = new Array(_len), _key = 0; _key < _len; _key++) {
+        definitions[_key] = arguments[_key];
+      }
+
+      var additions = definitions.reduce(this._pullDefinitions, {});
+      Object.keys(additions).forEach(function (key) {
+        _this.definitions[key] = _objectSpread({}, _this.definitions[key] || {}, additions[key]);
+        defineIcons(key, additions[key]);
+        build();
+      });
+    }
+  }, {
+    key: "reset",
+    value: function reset() {
+      this.definitions = {};
+    }
+  }, {
+    key: "_pullDefinitions",
+    value: function _pullDefinitions(additions, definition) {
+      var normalized = definition.prefix && definition.iconName && definition.icon ? {
+        0: definition
+      } : definition;
+      Object.keys(normalized).map(function (key) {
+        var _normalized$key = normalized[key],
+            prefix = _normalized$key.prefix,
+            iconName = _normalized$key.iconName,
+            icon = _normalized$key.icon;
+        if (!additions[prefix]) additions[prefix] = {};
+        additions[prefix][iconName] = icon;
+      });
+      return additions;
+    }
+  }]);
+
+  return Library;
+}();
+
+function ensureCss() {
+  if (config.autoAddCss && !_cssInserted) {
+    insertCss(css());
+
+    _cssInserted = true;
+  }
+}
+
+function apiObject(val, abstractCreator) {
+  Object.defineProperty(val, 'abstract', {
+    get: abstractCreator
+  });
+  Object.defineProperty(val, 'html', {
+    get: function get() {
+      return val.abstract.map(function (a) {
+        return toHtml(a);
+      });
+    }
+  });
+  Object.defineProperty(val, 'node', {
+    get: function get() {
+      if (!IS_DOM) return;
+      var container = DOCUMENT.createElement('div');
+      container.innerHTML = val.html;
+      return container.children;
+    }
+  });
+  return val;
+}
+
+function findIconDefinition(iconLookup) {
+  var _iconLookup$prefix = iconLookup.prefix,
+      prefix = _iconLookup$prefix === void 0 ? 'fa' : _iconLookup$prefix,
+      iconName = iconLookup.iconName;
+  if (!iconName) return;
+  return iconFromMapping(library.definitions, prefix, iconName) || iconFromMapping(namespace.styles, prefix, iconName);
+}
+
+function resolveIcons(next) {
+  return function (maybeIconDefinition) {
+    var params = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+    var iconDefinition = (maybeIconDefinition || {}).icon ? maybeIconDefinition : findIconDefinition(maybeIconDefinition || {});
+    var mask = params.mask;
+
+    if (mask) {
+      mask = (mask || {}).icon ? mask : findIconDefinition(mask || {});
+    }
+
+    return next(iconDefinition, _objectSpread({}, params, {
+      mask: mask
+    }));
+  };
+}
+
+var library = new Library();
+var _cssInserted = false;
+var parse = {
+  transform: function transform(transformString) {
+    return parseTransformString(transformString);
+  }
+};
+var icon = resolveIcons(function (iconDefinition) {
+  var params = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+  var _params$transform = params.transform,
+      transform = _params$transform === void 0 ? meaninglessTransform : _params$transform,
+      _params$symbol = params.symbol,
+      symbol = _params$symbol === void 0 ? false : _params$symbol,
+      _params$mask = params.mask,
+      mask = _params$mask === void 0 ? null : _params$mask,
+      _params$maskId = params.maskId,
+      maskId = _params$maskId === void 0 ? null : _params$maskId,
+      _params$title = params.title,
+      title = _params$title === void 0 ? null : _params$title,
+      _params$titleId = params.titleId,
+      titleId = _params$titleId === void 0 ? null : _params$titleId,
+      _params$classes = params.classes,
+      classes = _params$classes === void 0 ? [] : _params$classes,
+      _params$attributes = params.attributes,
+      attributes = _params$attributes === void 0 ? {} : _params$attributes,
+      _params$styles = params.styles,
+      styles = _params$styles === void 0 ? {} : _params$styles;
+  if (!iconDefinition) return;
+  var prefix = iconDefinition.prefix,
+      iconName = iconDefinition.iconName,
+      icon = iconDefinition.icon;
+  return apiObject(_objectSpread({
+    type: 'icon'
+  }, iconDefinition), function () {
+    ensureCss();
+
+    if (config.autoA11y) {
+      if (title) {
+        attributes['aria-labelledby'] = "".concat(config.replacementClass, "-title-").concat(titleId || nextUniqueId());
+      } else {
+        attributes['aria-hidden'] = 'true';
+        attributes['focusable'] = 'false';
+      }
+    }
+
+    return makeInlineSvgAbstract({
+      icons: {
+        main: asFoundIcon(icon),
+        mask: mask ? asFoundIcon(mask.icon) : {
+          found: false,
+          width: null,
+          height: null,
+          icon: {}
+        }
+      },
+      prefix: prefix,
+      iconName: iconName,
+      transform: _objectSpread({}, meaninglessTransform, transform),
+      symbol: symbol,
+      title: title,
+      maskId: maskId,
+      titleId: titleId,
+      extra: {
+        attributes: attributes,
+        styles: styles,
+        classes: classes
+      }
+    });
+  });
+});
+
+function createCommonjsModule(fn, module) {
+	return module = { exports: {} }, fn(module, module.exports), module.exports;
+}
+
 /** @license React v16.13.1
  * react-is.production.min.js
  *
@@ -10,9 +1128,9994 @@ import"semantic-ui-css/semantic.min.css";import n,{useState as e,useEffect as t}
  *
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
- */}var hn="function"==typeof Symbol&&Symbol.for,gn=hn?Symbol.for("react.element"):60103,wn=hn?Symbol.for("react.portal"):60106,xn=hn?Symbol.for("react.fragment"):60107,vn=hn?Symbol.for("react.strict_mode"):60108,kn=hn?Symbol.for("react.profiler"):60114,yn=hn?Symbol.for("react.provider"):60109,_n=hn?Symbol.for("react.context"):60110,En=hn?Symbol.for("react.async_mode"):60111,Sn=hn?Symbol.for("react.concurrent_mode"):60111,Cn=hn?Symbol.for("react.forward_ref"):60112,zn=hn?Symbol.for("react.suspense"):60113,On=hn?Symbol.for("react.suspense_list"):60120,Mn=hn?Symbol.for("react.memo"):60115,Fn=hn?Symbol.for("react.lazy"):60116,In=hn?Symbol.for("react.block"):60121,Bn=hn?Symbol.for("react.fundamental"):60117,Dn=hn?Symbol.for("react.responder"):60118,Pn=hn?Symbol.for("react.scope"):60119;function An(n){if("object"==typeof n&&null!==n){var e=n.$$typeof;switch(e){case gn:switch(n=n.type){case En:case Sn:case xn:case kn:case vn:case zn:return n;default:switch(n=n&&n.$$typeof){case _n:case Cn:case Fn:case Mn:case yn:return n;default:return e}}case wn:return e}}}function Tn(n){return An(n)===Sn}var Nn={AsyncMode:En,ConcurrentMode:Sn,ContextConsumer:_n,ContextProvider:yn,Element:gn,ForwardRef:Cn,Fragment:xn,Lazy:Fn,Memo:Mn,Portal:wn,Profiler:kn,StrictMode:vn,Suspense:zn,isAsyncMode:function(n){return Tn(n)||An(n)===En},isConcurrentMode:Tn,isContextConsumer:function(n){return An(n)===_n},isContextProvider:function(n){return An(n)===yn},isElement:function(n){return"object"==typeof n&&null!==n&&n.$$typeof===gn},isForwardRef:function(n){return An(n)===Cn},isFragment:function(n){return An(n)===xn},isLazy:function(n){return An(n)===Fn},isMemo:function(n){return An(n)===Mn},isPortal:function(n){return An(n)===wn},isProfiler:function(n){return An(n)===kn},isStrictMode:function(n){return An(n)===vn},isSuspense:function(n){return An(n)===zn},isValidElementType:function(n){return"string"==typeof n||"function"==typeof n||n===xn||n===Sn||n===kn||n===vn||n===zn||n===On||"object"==typeof n&&null!==n&&(n.$$typeof===Fn||n.$$typeof===Mn||n.$$typeof===yn||n.$$typeof===_n||n.$$typeof===Cn||n.$$typeof===Bn||n.$$typeof===Dn||n.$$typeof===Pn||n.$$typeof===In)},typeOf:An},jn=fn(function(n,e){"production"!==process.env.NODE_ENV&&function(){var n="function"==typeof Symbol&&Symbol.for,t=n?Symbol.for("react.element"):60103,r=n?Symbol.for("react.portal"):60106,o=n?Symbol.for("react.fragment"):60107,i=n?Symbol.for("react.strict_mode"):60108,a=n?Symbol.for("react.profiler"):60114,l=n?Symbol.for("react.provider"):60109,d=n?Symbol.for("react.context"):60110,c=n?Symbol.for("react.async_mode"):60111,p=n?Symbol.for("react.concurrent_mode"):60111,s=n?Symbol.for("react.forward_ref"):60112,u=n?Symbol.for("react.suspense"):60113,m=n?Symbol.for("react.suspense_list"):60120,b=n?Symbol.for("react.memo"):60115,f=n?Symbol.for("react.lazy"):60116,h=n?Symbol.for("react.block"):60121,g=n?Symbol.for("react.fundamental"):60117,w=n?Symbol.for("react.responder"):60118,x=n?Symbol.for("react.scope"):60119;function v(n){if("object"==typeof n&&null!==n){var e=n.$$typeof;switch(e){case t:var m=n.type;switch(m){case c:case p:case o:case a:case i:case u:return m;default:var h=m&&m.$$typeof;switch(h){case d:case s:case f:case b:case l:return h;default:return e}}case r:return e}}}var k=p,y=d,_=l,E=t,S=s,C=o,z=f,O=b,M=r,F=a,I=i,B=u,D=!1;function P(n){return v(n)===p}e.AsyncMode=c,e.ConcurrentMode=k,e.ContextConsumer=y,e.ContextProvider=_,e.Element=E,e.ForwardRef=S,e.Fragment=C,e.Lazy=z,e.Memo=O,e.Portal=M,e.Profiler=F,e.StrictMode=I,e.Suspense=B,e.isAsyncMode=function(n){return D||(D=!0,console.warn("The ReactIs.isAsyncMode() alias has been deprecated, and will be removed in React 17+. Update your code to use ReactIs.isConcurrentMode() instead. It has the exact same API.")),P(n)||v(n)===c},e.isConcurrentMode=P,e.isContextConsumer=function(n){return v(n)===d},e.isContextProvider=function(n){return v(n)===l},e.isElement=function(n){return"object"==typeof n&&null!==n&&n.$$typeof===t},e.isForwardRef=function(n){return v(n)===s},e.isFragment=function(n){return v(n)===o},e.isLazy=function(n){return v(n)===f},e.isMemo=function(n){return v(n)===b},e.isPortal=function(n){return v(n)===r},e.isProfiler=function(n){return v(n)===a},e.isStrictMode=function(n){return v(n)===i},e.isSuspense=function(n){return v(n)===u},e.isValidElementType=function(n){return"string"==typeof n||"function"==typeof n||n===o||n===p||n===a||n===i||n===u||n===m||"object"==typeof n&&null!==n&&(n.$$typeof===f||n.$$typeof===b||n.$$typeof===l||n.$$typeof===d||n.$$typeof===s||n.$$typeof===g||n.$$typeof===w||n.$$typeof===x||n.$$typeof===h)},e.typeOf=v}()}),Vn=fn(function(n){n.exports="production"===process.env.NODE_ENV?Nn:jn}),Ln=Object.getOwnPropertySymbols,Rn=Object.prototype.hasOwnProperty,qn=Object.prototype.propertyIsEnumerable;function Un(n){if(null==n)throw new TypeError("Object.assign cannot be called with null or undefined");return Object(n)}var Hn=function(){try{if(!Object.assign)return!1;var n=new String("abc");if(n[5]="de","5"===Object.getOwnPropertyNames(n)[0])return!1;for(var e={},t=0;t<10;t++)e["_"+String.fromCharCode(t)]=t;if("0123456789"!==Object.getOwnPropertyNames(e).map(function(n){return e[n]}).join(""))return!1;var r={};return"abcdefghijklmnopqrst".split("").forEach(function(n){r[n]=n}),"abcdefghijklmnopqrst"===Object.keys(Object.assign({},r)).join("")}catch(n){return!1}}()?Object.assign:function(n,e){for(var t,r,o=Un(n),i=1;i<arguments.length;i++){for(var a in t=Object(arguments[i]))Rn.call(t,a)&&(o[a]=t[a]);if(Ln){r=Ln(t);for(var l=0;l<r.length;l++)qn.call(t,r[l])&&(o[r[l]]=t[r[l]])}}return o},$n="SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED",Wn=function(){};if("production"!==process.env.NODE_ENV){var Xn=$n,Yn={},Zn=Function.call.bind(Object.prototype.hasOwnProperty);Wn=function(n){var e="Warning: "+n;"undefined"!=typeof console&&console.error(e);try{throw new Error(e)}catch(n){}}}function Gn(n,e,t,r,o){if("production"!==process.env.NODE_ENV)for(var i in n)if(Zn(n,i)){var a;try{if("function"!=typeof n[i]){var l=Error((r||"React class")+": "+t+" type `"+i+"` is invalid; it must be a function, usually from the `prop-types` package, but received `"+typeof n[i]+"`.");throw l.name="Invariant Violation",l}a=n[i](e,i,r,t,null,Xn)}catch(n){a=n}if(!a||a instanceof Error||Wn((r||"React class")+": type specification of "+t+" `"+i+"` is invalid; the type checker function must return `null` or an `Error` but returned a "+typeof a+". You may have forgotten to pass an argument to the type checker creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and shape all require an argument)."),a instanceof Error&&!(a.message in Yn)){Yn[a.message]=!0;var d=o?o():"";Wn("Failed "+t+" type: "+a.message+(null!=d?d:""))}}}Gn.resetWarningCache=function(){"production"!==process.env.NODE_ENV&&(Yn={})};var Jn=Gn,Kn=Function.call.bind(Object.prototype.hasOwnProperty),Qn=function(){};function ne(){return null}function ee(){}function te(){}"production"!==process.env.NODE_ENV&&(Qn=function(n){var e="Warning: "+n;"undefined"!=typeof console&&console.error(e);try{throw new Error(e)}catch(n){}}),te.resetWarningCache=ee;var re=fn(function(n){n.exports="production"!==process.env.NODE_ENV?function(n,e){var t="function"==typeof Symbol&&Symbol.iterator,r={array:l("array"),bool:l("boolean"),func:l("function"),number:l("number"),object:l("object"),string:l("string"),symbol:l("symbol"),any:a(ne),arrayOf:function(n){return a(function(e,t,r,o,a){if("function"!=typeof n)return new i("Property `"+a+"` of component `"+r+"` has invalid PropType notation inside arrayOf.");var l=e[t];if(!Array.isArray(l))return new i("Invalid "+o+" `"+a+"` of type `"+c(l)+"` supplied to `"+r+"`, expected an array.");for(var d=0;d<l.length;d++){var p=n(l,d,r,o,a+"["+d+"]",$n);if(p instanceof Error)return p}return null})},element:a(function(e,t,r,o,a){var l=e[t];return n(l)?null:new i("Invalid "+o+" `"+a+"` of type `"+c(l)+"` supplied to `"+r+"`, expected a single ReactElement.")}),elementType:a(function(n,e,t,r,o){var a=n[e];return Vn.isValidElementType(a)?null:new i("Invalid "+r+" `"+o+"` of type `"+c(a)+"` supplied to `"+t+"`, expected a single ReactElement type.")}),instanceOf:function(n){return a(function(e,t,r,o,a){var l;return e[t]instanceof n?null:new i("Invalid "+o+" `"+a+"` of type `"+((l=e[t]).constructor&&l.constructor.name?l.constructor.name:"<<anonymous>>")+"` supplied to `"+r+"`, expected instance of `"+(n.name||"<<anonymous>>")+"`.")})},node:a(function(n,e,t,r,o){return d(n[e])?null:new i("Invalid "+r+" `"+o+"` supplied to `"+t+"`, expected a ReactNode.")}),objectOf:function(n){return a(function(e,t,r,o,a){if("function"!=typeof n)return new i("Property `"+a+"` of component `"+r+"` has invalid PropType notation inside objectOf.");var l=e[t],d=c(l);if("object"!==d)return new i("Invalid "+o+" `"+a+"` of type `"+d+"` supplied to `"+r+"`, expected an object.");for(var p in l)if(Kn(l,p)){var s=n(l,p,r,o,a+"."+p,$n);if(s instanceof Error)return s}return null})},oneOf:function(n){if(!Array.isArray(n))return"production"!==process.env.NODE_ENV&&Qn(arguments.length>1?"Invalid arguments supplied to oneOf, expected an array, got "+arguments.length+" arguments. A common mistake is to write oneOf(x, y, z) instead of oneOf([x, y, z]).":"Invalid argument supplied to oneOf, expected an array."),ne;function e(e,t,r,a,l){for(var d=e[t],c=0;c<n.length;c++)if(o(d,n[c]))return null;var s=JSON.stringify(n,function(n,e){return"symbol"===p(e)?String(e):e});return new i("Invalid "+a+" `"+l+"` of value `"+String(d)+"` supplied to `"+r+"`, expected one of "+s+".")}return a(e)},oneOfType:function(n){if(!Array.isArray(n))return"production"!==process.env.NODE_ENV&&Qn("Invalid argument supplied to oneOfType, expected an instance of array."),ne;for(var e=0;e<n.length;e++){var t=n[e];if("function"!=typeof t)return Qn("Invalid argument supplied to oneOfType. Expected an array of check functions, but received "+s(t)+" at index "+e+"."),ne}return a(function(e,t,r,o,a){for(var l=0;l<n.length;l++)if(null==(0,n[l])(e,t,r,o,a,$n))return null;return new i("Invalid "+o+" `"+a+"` supplied to `"+r+"`.")})},shape:function(n){return a(function(e,t,r,o,a){var l=e[t],d=c(l);if("object"!==d)return new i("Invalid "+o+" `"+a+"` of type `"+d+"` supplied to `"+r+"`, expected `object`.");for(var p in n){var s=n[p];if(s){var u=s(l,p,r,o,a+"."+p,$n);if(u)return u}}return null})},exact:function(n){return a(function(e,t,r,o,a){var l=e[t],d=c(l);if("object"!==d)return new i("Invalid "+o+" `"+a+"` of type `"+d+"` supplied to `"+r+"`, expected `object`.");var p=Hn({},e[t],n);for(var s in p){var u=n[s];if(!u)return new i("Invalid "+o+" `"+a+"` key `"+s+"` supplied to `"+r+"`.\nBad object: "+JSON.stringify(e[t],null,"  ")+"\nValid keys: "+JSON.stringify(Object.keys(n),null,"  "));var m=u(l,s,r,o,a+"."+s,$n);if(m)return m}return null})}};function o(n,e){return n===e?0!==n||1/n==1/e:n!=n&&e!=e}function i(n){this.message=n,this.stack=""}function a(n){function e(e,t,r,o,a,l,d){if(o=o||"<<anonymous>>",l=l||r,d!==$n){var c=new Error("Calling PropTypes validators directly is not supported by the `prop-types` package. Use `PropTypes.checkPropTypes()` to call them. Read more at http://fb.me/use-check-prop-types");throw c.name="Invariant Violation",c}return null==t[r]?e?new i(null===t[r]?"The "+a+" `"+l+"` is marked as required in `"+o+"`, but its value is `null`.":"The "+a+" `"+l+"` is marked as required in `"+o+"`, but its value is `undefined`."):null:n(t,r,o,a,l)}process;var t=e.bind(null,!1);return t.isRequired=e.bind(null,!0),t}function l(n){return a(function(e,t,r,o,a,l){var d=e[t];return c(d)!==n?new i("Invalid "+o+" `"+a+"` of type `"+p(d)+"` supplied to `"+r+"`, expected `"+n+"`."):null})}function d(e){switch(typeof e){case"number":case"string":case"undefined":return!0;case"boolean":return!e;case"object":if(Array.isArray(e))return e.every(d);if(null===e||n(e))return!0;var r=function(n){var e=n&&(t&&n[t]||n["@@iterator"]);if("function"==typeof e)return e}(e);if(!r)return!1;var o,i=r.call(e);if(r!==e.entries){for(;!(o=i.next()).done;)if(!d(o.value))return!1}else for(;!(o=i.next()).done;){var a=o.value;if(a&&!d(a[1]))return!1}return!0;default:return!1}}function c(n){var e=typeof n;return Array.isArray(n)?"array":n instanceof RegExp?"object":function(n,e){return"symbol"===n||!!e&&("Symbol"===e["@@toStringTag"]||"function"==typeof Symbol&&e instanceof Symbol)}(e,n)?"symbol":e}function p(n){if(null==n)return""+n;var e=c(n);if("object"===e){if(n instanceof Date)return"date";if(n instanceof RegExp)return"regexp"}return e}function s(n){var e=p(n);switch(e){case"array":case"object":return"an "+e;case"boolean":case"date":case"regexp":return"a "+e;default:return e}}return i.prototype=Error.prototype,r.checkPropTypes=Jn,r.resetWarningCache=Jn.resetWarningCache,r.PropTypes=r,r}(Vn.isElement):function(){function n(n,e,t,r,o,i){if(i!==$n){var a=new Error("Calling PropTypes validators directly is not supported by the `prop-types` package. Use PropTypes.checkPropTypes() to call them. Read more at http://fb.me/use-check-prop-types");throw a.name="Invariant Violation",a}}function e(){return n}n.isRequired=n;var t={array:n,bool:n,func:n,number:n,object:n,string:n,symbol:n,any:n,arrayOf:e,element:n,elementType:n,instanceOf:e,node:n,objectOf:e,oneOf:e,oneOfType:e,shape:e,exact:e,checkPropTypes:te,resetWarningCache:ee};return t.PropTypes=t,t}()});function oe(n){return(oe="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(n){return typeof n}:function(n){return n&&"function"==typeof Symbol&&n.constructor===Symbol&&n!==Symbol.prototype?"symbol":typeof n})(n)}function ie(n,e,t){return e in n?Object.defineProperty(n,e,{value:t,enumerable:!0,configurable:!0,writable:!0}):n[e]=t,n}function ae(n,e){var t=Object.keys(n);if(Object.getOwnPropertySymbols){var r=Object.getOwnPropertySymbols(n);e&&(r=r.filter(function(e){return Object.getOwnPropertyDescriptor(n,e).enumerable})),t.push.apply(t,r)}return t}function le(n){for(var e=1;e<arguments.length;e++){var t=null!=arguments[e]?arguments[e]:{};e%2?ae(Object(t),!0).forEach(function(e){ie(n,e,t[e])}):Object.getOwnPropertyDescriptors?Object.defineProperties(n,Object.getOwnPropertyDescriptors(t)):ae(Object(t)).forEach(function(e){Object.defineProperty(n,e,Object.getOwnPropertyDescriptor(t,e))})}return n}function de(n,e){if(null==n)return{};var t,r,o=function(n,e){if(null==n)return{};var t,r,o={},i=Object.keys(n);for(r=0;r<i.length;r++)e.indexOf(t=i[r])>=0||(o[t]=n[t]);return o}(n,e);if(Object.getOwnPropertySymbols){var i=Object.getOwnPropertySymbols(n);for(r=0;r<i.length;r++)e.indexOf(t=i[r])>=0||Object.prototype.propertyIsEnumerable.call(n,t)&&(o[t]=n[t])}return o}function ce(n){return function(n){if(Array.isArray(n)){for(var e=0,t=new Array(n.length);e<n.length;e++)t[e]=n[e];return t}}(n)||function(n){if(Symbol.iterator in Object(n)||"[object Arguments]"===Object.prototype.toString.call(n))return Array.from(n)}(n)||function(){throw new TypeError("Invalid attempt to spread non-iterable instance")}()}function pe(n){return e=n,(e-=0)==e?n:(n=n.replace(/[\-_\s]+(.)?/g,function(n,e){return e?e.toUpperCase():""})).substr(0,1).toLowerCase()+n.substr(1);var e}function se(n){return n.split(";").map(function(n){return n.trim()}).filter(function(n){return n}).reduce(function(n,e){var t,r=e.indexOf(":"),o=pe(e.slice(0,r)),i=e.slice(r+1).trim();return o.startsWith("webkit")?n[(t=o,t.charAt(0).toUpperCase()+t.slice(1))]=i:n[o]=i,n},{})}var ue=!1;try{ue="production"===process.env.NODE_ENV}catch(xn){}function me(n){return mn.icon?mn.icon(n):null===n?null:"object"===oe(n)&&n.prefix&&n.iconName?n:Array.isArray(n)&&2===n.length?{prefix:n[0],iconName:n[1]}:"string"==typeof n?{prefix:"fas",iconName:n}:void 0}function be(n,e){return Array.isArray(e)&&e.length>0||!Array.isArray(e)&&e?ie({},n,e):{}}function fe(n){var e=n.forwardedRef,t=de(n,["forwardedRef"]),r=t.mask,o=t.symbol,i=t.className,a=t.title,l=t.titleId,d=me(t.icon),c=be("classes",[].concat(ce(function(n){var e,t=n.flip,r=n.size,o=n.rotation,i=n.pull,a=(ie(e={"fa-spin":n.spin,"fa-pulse":n.pulse,"fa-fw":n.fixedWidth,"fa-inverse":n.inverse,"fa-border":n.border,"fa-li":n.listItem,"fa-flip-horizontal":"horizontal"===t||"both"===t,"fa-flip-vertical":"vertical"===t||"both"===t},"fa-".concat(r),null!=r),ie(e,"fa-rotate-".concat(o),null!=o&&0!==o),ie(e,"fa-pull-".concat(i),null!=i),ie(e,"fa-swap-opacity",n.swapOpacity),e);return Object.keys(a).map(function(n){return a[n]?n:null}).filter(function(n){return n})}(t)),ce(i.split(" ")))),p=be("transform","string"==typeof t.transform?mn.transform(t.transform):t.transform),s=be("mask",me(r)),u=bn(d,le({},c,{},p,{},s,{symbol:o,title:a,titleId:l}));if(!u)return function(){var n;!ue&&console&&"function"==typeof console.error&&(n=console).error.apply(n,arguments)}("Could not find icon",d),null;var m=u.abstract,b={ref:e};return Object.keys(t).forEach(function(n){fe.defaultProps.hasOwnProperty(n)||(b[n]=t[n])}),gt(m[0],b)}fe.displayName="FontAwesomeIcon",fe.propTypes={border:re.bool,className:re.string,mask:re.oneOfType([re.object,re.array,re.string]),fixedWidth:re.bool,inverse:re.bool,flip:re.oneOf(["horizontal","vertical","both"]),icon:re.oneOfType([re.object,re.array,re.string]),listItem:re.bool,pull:re.oneOf(["right","left"]),pulse:re.bool,rotation:re.oneOf([0,90,180,270]),size:re.oneOf(["lg","xs","sm","1x","2x","3x","4x","5x","6x","7x","8x","9x","10x"]),spin:re.bool,symbol:re.oneOfType([re.bool,re.string]),title:re.string,transform:re.oneOfType([re.string,re.object]),swapOpacity:re.bool},fe.defaultProps={border:!1,className:"",mask:null,fixedWidth:!1,inverse:!1,flip:null,icon:null,listItem:!1,pull:null,pulse:!1,rotation:null,size:null,spin:!1,symbol:!1,title:"",transform:null,swapOpacity:!1};var he,ge,we,xe,ve,ke,ye,_e,Ee,Se,Ce,ze,Oe,Me,Fe,Ie,Be,De,Pe,Ae,Te,Ne,je,Ve,Le,Re,qe,Ue,He,$e,We,Xe,Ye,Ze,Ge,Je,Ke,Qe,nt,et,tt,rt,ot,it,at,lt,dt,ct,pt,st,ut,mt,bt,ft,ht,gt=function n(e,t){var r=arguments.length>2&&void 0!==arguments[2]?arguments[2]:{};if("string"==typeof t)return t;var o=(t.children||[]).map(function(t){return n(e,t)}),i=Object.keys(t.attributes||{}).reduce(function(n,e){var r=t.attributes[e];switch(e){case"class":n.attrs.className=r,delete t.attributes.class;break;case"style":n.attrs.style=se(r);break;default:0===e.indexOf("aria-")||0===e.indexOf("data-")?n.attrs[e.toLowerCase()]=r:n.attrs[pe(e)]=r}return n},{attrs:{}}),a=r.style,l=void 0===a?{}:a,d=de(r,["style"]);return i.attrs.style=le({},i.attrs.style,{},l),e.apply(void 0,[t.tag,le({},i.attrs,{},d)].concat(ce(o)))}.bind(null,n.createElement),wt={prefix:"fas",iconName:"angle-down",icon:[320,512,[],"f107","M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"]},xt={prefix:"fas",iconName:"angle-left",icon:[256,512,[],"f104","M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"]},vt={prefix:"fas",iconName:"angle-up",icon:[320,512,[],"f106","M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"]},kt={prefix:"fas",iconName:"bell",icon:[448,512,[],"f0f3","M224 512c35.32 0 63.97-28.65 63.97-64H160.03c0 35.35 28.65 64 63.97 64zm215.39-149.71c-19.32-20.76-55.47-51.99-55.47-154.29 0-77.7-54.48-139.9-127.94-155.16V32c0-17.67-14.32-32-31.98-32s-31.98 14.33-31.98 32v20.84C118.56 68.1 64.08 130.3 64.08 208c0 102.3-36.15 133.53-55.47 154.29-6 6.45-8.66 14.16-8.61 21.71.11 16.4 12.98 32 32.1 32h383.8c19.12 0 32-15.6 32.1-32 .05-7.55-2.61-15.27-8.61-21.71z"]},yt={prefix:"fas",iconName:"check",icon:[512,512,[],"f00c","M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"]},_t={prefix:"fas",iconName:"minus",icon:[448,512,[],"f068","M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"]},Et={prefix:"fas",iconName:"plus",icon:[448,512,[],"f067","M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"]},St={prefix:"fas",iconName:"times",icon:[352,512,[],"f00d","M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"]},Ct=function(n){switch(n){case"mini":return"10px";case"tiny":return"11px";case"small":return"12px";case"medium":return"14px";case"large":return"16px";case"big":return"18px";case"huge":return"20px";case"massive":return"22px";default:return n}},zt=r.button(he||(he=k(["\n    font-family: MontSerrat !important;\n    position: ",";\n    background-color: ",";\n    height: ",";\n    padding: 0 20px;\n    width: ",";\n    border-radius: ",";\n    cursor: pointer;\n    border: ",";\n    outline: none;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n\n    &:disabled {\n        opacity: 0.5;\n        cursor: not-allowed;\n        pointer-events: none;\n    }\n\n    &:hover {\n        background-color: ",";\n\n        span {\n            color: ",";\n        }\n    }\n"])),function(n){return n.loading?"relative":"initial"},function(n){return n.colorBackground?n.colorBackground:n.secondary||n.tertiary?"#FFFFFF":n.noBorder?"transparent":"#F7EA48"},function(n){return n.size?function(n){switch(n){case"mini":return"25px";case"tiny":return"30px";case"small":return"35px";case"medium":return"40px";case"large":return"45px";case"big":return"50px";case"huge":return"55px";case"massive":return"60px";default:return n}}(n.size):"40px"},function(n){return n.width?"string"==typeof n.width?n.width:n.width+"px":"none"},function(n){return n.rectangular?"10px":"30px"},function(n){return n.secondary?"1px solid #9B4DEE":n.tertiary?"1px solid #ACACAC":"none"},function(n){return n.hoverBackgroundColor?n.hoverBackgroundColor:n.secondary?"rgba(155, 77, 238, 0.2)":n.backPurple?"#E0457B":n.noBorder?"transparent":n.tertiary?"rgba(211, 211, 211, 0.4)":"#9B4DEE"},function(n){return n.hoverTextColor?n.hoverTextColor:n.secondary?"#9B4DEE":n.backPurple?"#FFFFFF":n.noBorder?n.colorText?n.colorText:"#9B4DEE":n.tertiary?"#707070":"#F7EA48"}),Ot=r.span(ge||(ge=k(["\n    visibility: ",";\n    color: ",";\n    font-weight: ",";\n    font-size: ",";\n    margin-right: 3.5px;\n"])),function(n){return n.loading?"hidden":"visible"},function(n){return n.colorText?n.colorText:n.tertiary?"#707070":"#9B4DEE"},function(n){return n.firstStrong||n.strong?"bold":"normal"},function(n){return n.size?Ct(n.size):"14px"}),Mt=r.span(we||(we=k(["\n    visibility: ",";\n    color: ",";\n    font-weight: ",";\n    font-size: ",";\n"])),function(n){return n.loading?"hidden":"visible"},function(n){return n.colorText?n.colorText:n.tertiary?"#707070":"#9B4DEE"},function(n){return n.firstStrong||n.notStrong?"normal":"bold"},function(n){return n.size?Ct(n.size):"14px"}),Ft=r.button(xe||(xe=k(["\n    font-family: MontSerrat !important;\n    background-color: ",";\n    height: 40px;\n    width: 100%;\n    border-radius: 30px;\n    cursor: pointer;\n    border: 1px solid ",";\n    outline: none;\n\n    &:disabled {\n        opacity: 0.5;\n        cursor: not-allowed;\n        pointer-events: none;\n    }\n\n    &:hover {\n        background-color: ",";\n    }\n\n    span {\n        color: ",";\n        margin-left: 20px;\n        font-weight: bold;\n    }\n"])),"#9B4DEE","#F7EA48","rgba(155, 77, 238, 0.9)","#F7EA48"),It=r.div(ve||(ve=k(["\n    visibility: ",";\n    margin-right: ",";\n    margin-left: ",";\n"])),function(n){return n.loading?"hidden":"visible"},function(n){return"left"===n.iconPosition?"10px":""},function(n){return"right"===n.iconPosition?"10px":""}),Bt=r.div(ke||(ke=k(["\n    font-family: MontSerrat !important;\n    background-color: ",";\n    width: 20px;\n    height: 20px;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    border-radius: 50%;\n    color: ",";\n    font-size: 10px;\n"])),"#F7EA48","#9B4DEE"),Dt=r.div(ye||(ye=k(["\n    position: absolute;\n    top: 0;\n    left: 0;\n    right: 0;\n    bottom: 0;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n"]))),Pt=function(n){switch(n){case"mini":return"1em";case"tiny":return"1.5em";case"small":return"2em";case"medium":return"2.5em";case"large":return"3em";case"big":return"3.5em";case"huge":return"4em";case"massive":return"4.5em";default:return n}},At=function(n){switch(n){case"mini":return"2px";case"tiny":return"2.5px";case"small":return"3px";case"medium":return"3.5px";case"large":return"4px";case"big":return"4.5px";case"huge":return"5px";case"massive":return"5.5px";default:return n}},Tt=r.div(_e||(_e=k(["\n    width: 100%;\n    display: flex;\n    justify-content: ",";\n"])),function(n){return"left"===n.position?"flex-start":"right"===n.position?"flex-end":"center"}),Nt=r.div(Ee||(Ee=k(["\n    border-width: ",";\n    border-style: solid;\n    border-color: ",";\n    border-top-width: ",";\n    border-top-style: solid;\n    border-top-color: ",";\n\n    border-radius: 50%;\n    width: ",";\n    height: ",";\n    animation: spin 0.6s linear infinite;\n\n    @keyframes spin {\n        0% {\n            transform: rotate(0deg);\n        }\n        100% {\n            transform: rotate(360deg);\n        }\n    }\n"])),function(n){return n.size?At(n.size):"3.5px"},"#E1E6EB",function(n){return n.size?At(n.size):"3.5px"},function(n){return n.color?n.color:"#9B4DEE"},function(n){return n.size?Pt(n.size):"2.5em"},function(n){return n.size&&n.size?Pt(n.size):"2.5em"}),jt=function(e){return n.createElement(Tt,{position:e.position},n.createElement(Nt,{color:e.color,size:e.size,style:e.style,className:e.className}))},Vt=["textFirst","textEnd","firstStrong","notStrong","strong","loading","secondary","backPurple","children","notification","amount","width","icon","customIcon","iconPosition","colorIcon","noBorder","colorText","colorBackground","tertiary","size","rectangular","typeContent","hoverBackgroundColor","hoverTextColor","iconStyle"],Lt=function(e){var t=e.textFirst,r=e.textEnd,o=e.firstStrong,i=e.notStrong,a=e.strong,l=e.loading,d=e.secondary,c=e.backPurple,p=e.children,s=e.notification,u=e.amount,m=e.width,b=e.icon,f=e.customIcon,h=e.iconPosition,g=void 0===h?"right":h,w=e.colorIcon,k=e.noBorder,y=e.colorText,_=e.colorBackground,E=e.tertiary,S=e.size,C=e.rectangular,z=e.typeContent,O=e.hoverBackgroundColor,M=e.hoverTextColor,F=e.iconStyle,I=v(e,Vt);return s?n.createElement(Ft,Object.assign({},I),l?n.createElement(jt,{size:"tiny"}):p||n.createElement("div",{style:{display:"flex",justifyContent:"space-between",alignItems:"center",height:"50%",padding:10}},n.createElement("div",{style:{display:"flex",alignItems:"center"}},n.createElement(It,null,n.createElement(fe,{icon:kt,size:"lg",color:"#F7EA48"})),n.createElement("span",null,"notificações")),n.createElement(Bt,null,u))):n.createElement(zt,Object.assign({},I,{secondary:d,backPurple:c,width:m,icon:b,noBorder:k,colorText:y,colorBackground:_,tertiary:E,size:S,rectangular:C,hoverBackgroundColor:O,hoverTextColor:M,loading:l}),p||(z?function(e){switch(e){case"icon":return n.createElement("div",null,(b||f)&&n.createElement(n.Fragment,null,n.createElement(It,{loading:l},f||n.createElement(fe,{icon:b,color:w||"#9B4DEE",size:"lg",style:x({},F)}))));default:return null}}(z):n.createElement(n.Fragment,null,(b||f)&&"left"===g&&n.createElement(n.Fragment,null,n.createElement(It,{loading:l,iconPosition:g},f||n.createElement(fe,{icon:b,color:w||"#9B4DEE",size:"lg",style:x({},F)}))),n.createElement(Ot,{firstStrong:o,strong:a,notStrong:i,colorText:y,tertiary:E,size:S,loading:l},t),n.createElement(Mt,{firstStrong:o,strong:a,notStrong:i,colorText:y,tertiary:E,size:S,loading:l},r),(b||f)&&"right"===g&&n.createElement(n.Fragment,null,n.createElement(It,{loading:l,iconPosition:g},f||n.createElement(fe,{icon:b,color:w||"#9B4DEE",size:"lg",style:x({},F)}))))),l&&n.createElement(Dt,null,n.createElement(jt,{size:"tiny"})))},Rt=r.div(Se||(Se=k(["\n    ","\n"])),function(n){return o(n.open?Ce||(Ce=k(["\n                  opacity: 1;\n                  visibility: visible;\n                  position: fixed;\n                  top: 0;\n                  right: 0;\n                  bottom: 0;\n                  left: 0;\n                  background: rgba(0, 0, 0, 0.5);\n                  transition: opacity 0.25s ease;\n                  overflow: auto;\n                  display: flex;\n                  z-index: 999;\n              "])):ze||(ze=k(["\n                  opacity: 1;\n                  visibility: hidden;\n              "])))}),qt=r.div(Oe||(Oe=k(["\n    font-family: MontSerrat !important;\n    ","\n"])),function(n){return n.open?o(Me||(Me=k(["\n                  transition: bottom 0.25s ease;\n                  width: 97%;\n                  background: ",";\n                  border-top-left-radius: 30px;\n                  border-top-right-radius: 30px;\n                  margin-top: auto;\n                  margin-left: auto;\n                  margin-right: auto;\n                  position: relative;\n                  /* overflow: auto; */\n\n                  overflow: ",";\n                  padding-bottom: ",";\n                  height: ",";\n                  max-height: ",";\n\n                  .box-dialog {\n                      position: relative;\n                      padding: 20px 20px 0;\n                      overflow: ",";\n\n                      height: ",";\n                      /* max-height: 100%; */\n                  }\n\n                  .loading-dialog {\n                      display: flex;\n                      justify-content: center;\n                      align-items: center;\n                      background-color: rgba(255, 255, 255, 0.8);\n                      width: 100%;\n                      height: 100%;\n                      top: 0;\n                      left: 0;\n                      right: 0;\n                      bottom: 0;\n                      border-radius: 30px;\n                      z-index: 2;\n                      position: absolute;\n                  }\n              "])),"#FFFFFF",function(){return n.maxHeight||n.loading?"none":"auto"},function(){return n.maxHeight?"0":"20px"},function(){return n.maxHeight?"100%":"auto"},function(){return n.maxHeight?"string"==typeof n.maxHeight?n.maxHeight:n.maxHeight+"px":"100%"},n.loading?"hidden":"auto",n.title?"calc(100% - "+n.sizeHeader+"px)":"100%"):o(Fe||(Fe=k(["\n                  transition: bottom 0.25s ease;\n                  bottom: -100%;\n              "])))}),Ut=r.div(Ie||(Ie=k(["\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    border-bottom: ",";\n    font-size: 1.25rem;\n\n    .name-icon-modal {\n        display: flex;\n        align-items: center;\n    }\n\n    & strong {\n        padding: ",";\n        color: ",";\n    }\n"])),function(n){return n.noBorder?"none":"1px solid #E1E6EB"},function(n){return n.iconBack?"1.25rem 0":"1.25rem 1.875rem"},"#9B4DEE"),Ht=r.div(Be||(Be=k(["\n    padding: 1.25rem 1.875rem;\n    cursor: pointer;\n"]))),$t=function(r){var o=r.open,i=r.children,a=r.onClose,l=r.loading,d=r.maxHeight,c=r.title,p=r.onBack,s=r.noBorder,u=r.closeIcon,m=void 0!==u&&u,b=e(62),f=b[0],h=b[1];return t(function(){document.getElementById("headerDialog")&&h(document.getElementById("headerDialog").clientHeight)},[document.getElementById("headerDialog")]),n.createElement(Rt,{open:o,onClick:function(n){n.stopPropagation(),a()}},n.createElement(qt,{open:o,onClick:function(n){return n.stopPropagation()},maxHeight:d,sizeHeader:f,loading:l,title:c},c?n.createElement(Ut,{iconBack:!!p,noBorder:s,id:"headerDialog"},n.createElement("div",{className:"name-icon-modal"},p?n.createElement(Ht,{onClick:function(){return p()}},n.createElement(fe,{icon:xt,size:"lg",color:"#9B4DEE"})):null,n.createElement("strong",null,c)),m&&n.createElement(Ht,{onClick:function(n){n.stopPropagation(),a()}},n.createElement(fe,{icon:St,style:{fontSize:"1.25rem"},color:"#9B4DEE"}))):null,n.createElement("div",{className:"box-dialog",id:"sizeBody"},l&&n.createElement("div",{className:"loading-dialog"},n.createElement(jt,null)),i)))},Wt=r.div(De||(De=k(["\n    font-family: MontSerrat !important;\n    position: relative;\n    opacity: ",";\n    width: ",";\n\n    input {\n        font-family: MontSerrat !important;\n        color: ",";\n        width: 100%;\n        height: 100%;\n        padding-top: 20px;\n        padding-left: ",";\n        padding-bottom: 5px;\n        padding-right: ",";\n        border: none;\n        outline: none;\n        background-color: transparent;\n\n        &::placeholder {\n            color: ",";\n        }\n    }\n\n    ","\n\n    input:disabled {\n        background-color: transparent;\n    }\n\n    label {\n        font-family: MontSerrat !important;\n        position: absolute;\n        bottom: 0px;\n        top: 0px;\n        left: 0px;\n        width: 100%;\n        right: 100%;\n        pointer-events: none;\n        border-bottom-width: 1px;\n        border-bottom-style: solid;\n        border-bottom-color: ",";\n\n        ","\n    }\n\n    span {\n        font-family: MontSerrat !important;\n        position: absolute;\n        bottom: 5px;\n        left: ",";\n        transition: all 0.3s ease;\n\n        ","\n    }\n\n    .icon {\n        position: absolute;\n        bottom: 0;\n        padding: 5px 10px;\n        ","\n    }\n\n    .icon-action {\n        position: absolute;\n        bottom: 0;\n        padding: 5px 10px;\n        ","\n        cursor: pointer;\n    }\n"])),function(n){return n.disabled?"50%":"100%"},function(n){return n.width?"string"==typeof n.width?n.width:n.width+"px":"100%"},function(n){return n.textColor?n.textColor:"#707070"},function(n){return n.icon&&!n.action?"right"===n.iconPosition?"15px":"40px":n.action&&!n.icon?"left"===n.actionPosition?"40px":"15px":n.action||n.icon?"40px":"15px"},function(n){return n.icon&&!n.action?"right"===n.iconPosition?"40px":"0px":n.action&&!n.icon?"left"===n.actionPosition?"0px":"40px":n.action&&n.icon?"40px":"0px"},"#F1F1F1",function(n){return n.date&&!n.isFieldActive?o(Pe||(Pe=k(['\n                  input::-webkit-calendar-picker-indicator {\n                      display: none !important;\n                  }\n\n                  input[type="date"]::-webkit-input-placeholder {\n                      display: none !important;\n                      visibility: hidden !important;\n                      -webkit-appearance: none;\n                  }\n\n                  input[type="date"]::-webkit-datetime-edit-fields-wrapper,\n                  input[type="date"]::-webkit-datetime-edit-fields-wrapper {\n                      visibility: hidden;\n                  }\n              ']))):null},function(n){return(n.requiredText||n.errorMessage)&&n.errorColor?n.errorColor:n.requiredText||n.errorMessage?"#E53935":"#ACACAC"},function(n){return n.isFieldActive?o(Ae||(Ae=k(["\n                      color: ",";\n                  "])),"#9B4DEE"):o(Te||(Te=k(["\n                      color: ",";\n                  "])),"#707070")},function(n){return n.icon&&!n.action?"right"===n.iconPosition?"15px":"40px":n.action&&!n.icon?"left"===n.actionPosition?"40px":"15px":n.action||n.icon?"40px":"15px"},function(n){return n.isFieldActive?o(Ne||(Ne=k(["\n                      transform: translateY(-100%);\n                      font-size: 14px;\n                      color: ",";\n                  "])),function(n){return(n.requiredText||n.errorMessage)&&n.errorColor?n.errorColor:n.requiredText||n.errorMessage?"#E53935":"#9B4DEE"}):o(je||(je=k(["\n                      font-size: 16px;\n                      color: ",";\n                  "])),function(n){return(n.requiredText||n.errorMessage)&&n.errorColor?n.errorColor:n.requiredText||n.errorMessage?"#E53935":"#707070"})},function(n){return"right"===n.iconPosition&&"right: 0;"},function(n){return n.actionPosition&&"left"===n.actionPosition?"left: 0;":"right: 0;"}),Xt=r.span(Ve||(Ve=k(["\n    font-family: MontSerrat !important;\n    font-size: 10px;\n    margin-left: 0;\n    color: ",";\n"])),function(n){return n.errorColor?n.errorColor:"#E53935"}),Yt=["containerStyle","label","labelStyle","errorMessage","width","textColor","inputRef","name","icon","iconPosition","iconColor","action"],Zt=function(r){var o=r.containerStyle,i=r.label,a=r.labelStyle,l=r.errorMessage,d=r.width,c=r.textColor,p=r.inputRef,s=r.name,u=r.icon,m=r.iconPosition,b=r.iconColor,f=r.action,h=v(r,Yt),g=e(!1),w=g[0],x=g[1];return t(function(){h.value&&(w||x(!0))},[h.value]),n.createElement("div",{style:{paddingBottom:l?0:20}},n.createElement(Wt,{isFieldActive:w,errorMessage:l,containerStyle:o,width:d,disabled:h.disabled?h.disabled:void 0,style:o,textColor:c,icon:!!u,iconPosition:m,action:f,actionPosition:null==f?void 0:f.position,date:"date"===h.type},u&&n.createElement("div",{className:"icon"},n.createElement(fe,{icon:u,color:b||"#9B4DEE"})),f&&n.createElement("div",{className:"icon-action",onClick:f.onClick},n.createElement(fe,{icon:f.icon,color:f.iconColor||"#9B4DEE"})),n.createElement("input",Object.assign({},h,{onFocus:function(){w||x(!0)},onBlur:function(){w&&!h.value&&x(!1),h.onBlur&&setImmediate(h.onBlur)},name:s,placeholder:w?h.placeholder:"",ref:p})),n.createElement("label",null,n.createElement("span",{style:a},i))),l?n.createElement(Xt,null,l):null)},Gt=["register","errors","validate","name","required","values","limit","minimum","msgErrorValidate"],Jt=function(r){var o,i=r.register,a=r.errors,l=r.validate,d=r.name,c=r.required,p=r.values,s=r.limit,u=r.minimum,m=r.msgErrorValidate,b=v(r,Gt),f=e(!1),h=f[0],g=f[1],w=e(""),x=w[0],k=w[1],y=p?p(d)||b.defaultValue:b.value;return t(function(){y&&(h||g(!0))},[y]),n.createElement("div",{style:{paddingBottom:x||a?0:20}},n.createElement(Wt,{isFieldActive:h,requiredText:!(!a||"required"!==a.type),errorMessage:a,containerStyle:b.containerStyle,width:b.width,disabled:b.disabled,style:b.containerStyle,textColor:b.textColor,icon:!!b.icon,iconPosition:b.iconPosition,action:b.action,actionPosition:null===(o=b.action)||void 0===o?void 0:o.position,date:"date"===b.type},b.icon&&n.createElement("div",{className:"icon"},n.createElement(fe,{icon:b.icon,color:b.iconColor||"#9B4DEE"})),b.action&&n.createElement("div",{className:"icon-action",onClick:b.action.onClick},n.createElement(fe,{icon:b.action.icon,color:b.action.iconColor||"#9B4DEE"})),n.createElement("input",Object.assign({},b,{onFocus:function(){h||g(!0)},onBlur:function(){h&&!y&&g(!1),b.onBlur&&setImmediate(b.onBlur)},name:d,placeholder:h?b.placeholder:"",ref:i?i({required:c,validate:function(n){var e=!0,t="";return l&&l(n)&&(t=l(n),e=!1),s&&n.length>s&&(t=m?""+m:s+" caracteres permitidos.",e=!1),u&&n.length<u&&(t=m?""+m:(b.label||d)+" deve ter "+u+" ou mais caracteres.",e=!1),k(t),e}}):null})),n.createElement("label",null,n.createElement("span",{style:b.labelStyle},b.label))),a?n.createElement(Xt,null,"required"===a.type?"Obrigatório":""+x):null)},Kt=r.div(Le||(Le=k(["\n    ","\n"])),function(n){return o(n.open?Re||(Re=k(["\n                  opacity: 1;\n                  visibility: visible;\n                  position: fixed;\n                  top: 0;\n                  right: 0;\n                  bottom: 0;\n                  left: 0;\n                  background: rgba(0, 0, 0, 0.5);\n                  transition: opacity 0.25s ease;\n                  overflow: auto;\n                  padding: 40px 0;\n                  display: flex;\n                  z-index: 999;\n              "])):qe||(qe=k(["\n                  opacity: 1;\n                  visibility: hidden;\n              "])))}),Qt=r.div(Ue||(Ue=k(["\n    font-family: MontSerrat !important;\n    transition: top 0.25s ease;\n    top: 0;\n    right: 0;\n    bottom: 0;\n    left: 0;\n    width: ",";\n    margin: auto;\n    background: ",";\n    border-radius: 30px;\n"])),function(n){return n.width?"string"==typeof n.width?n.width:n.width+"px":n.size?function(n){switch(n){case"mini":return"35%";case"tiny":return"45%";case"small":return"55%";case"large":return"65%";case"fullscreen":return"95%";default:return n}}(n.size):"80%"},"#FFFFFF"),nr=(r.div(He||(He=k(["\n    transition: bottom 1s ease;\n    width: 90%;\n    background: ",";\n    border-top-left-radius: 30px;\n    border-top-right-radius: 30px;\n"])),"#FFFFFF"),r.div($e||($e=k(["\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    border-bottom: ",";\n    font-size: 20px;\n\n    .name-icon-modal {\n        display: flex;\n        align-items: center;\n    }\n\n    & strong {\n        padding: ",";\n        color: ",";\n    }\n"])),function(n){return n.noBorder?"none":"1px solid #E1E6EB"},function(n){return n.iconBack?"20px 0":"20px 30px"},"#9B4DEE")),er=r.div(We||(We=k(["\n    padding: 20px 30px;\n    cursor: pointer;\n"]))),tr=r.div(Xe||(Xe=k(["\n    padding: 20px 30px;\n    height: 100%;\n    position: relative;\n\n    .loading-modal {\n        display: flex;\n        justify-content: center;\n        align-items: center;\n        background-color: rgba(255, 255, 255, 0.8);\n        width: 100%;\n        height: 100%;\n        top: 0;\n        left: 0;\n        right: 0;\n        bottom: 0;\n        border-radius: 30px;\n        z-index: 2;\n        position: absolute;\n    }\n"]))),rr=r.div(Ye||(Ye=k(["\n    border-top: 1px solid ",";\n    margin: 0 30px;\n    padding: 20px 0;\n    display: flex;\n    flex-direction: row-reverse;\n"])),"#E1E6EB"),or=function(e){var r=e.open,o=e.title,i=e.children,a=e.actions,l=e.width,d=e.onClose,c=e.closeOnDimerClick,p=e.loading,s=e.onBack,u=e.size,m=e.noBorder,b=e.closeIcon,f=void 0===b||b;function h(n){r&&"Escape"==n.key&&c&&(n.stopPropagation(),d())}return t(function(){return r?window.addEventListener("keydown",function(n){return h(n)}):window.removeEventListener("keydown",function(n){return h(n)}),window.removeEventListener("keydown",function(n){return h(n)})},[r]),n.createElement(Kt,{open:r,onClick:function(n){c&&(n.stopPropagation(),d())}},n.createElement(Qt,{size:u,width:l,onClick:function(n){return n.stopPropagation()}},n.createElement(nr,{iconBack:!!s,noBorder:m},n.createElement("div",{className:"name-icon-modal"},s?n.createElement(er,{onClick:function(){return s()}},n.createElement(fe,{icon:xt,size:"lg",color:"#9B4DEE"})):null,n.createElement("strong",null,o)),f&&n.createElement(er,{onClick:function(n){n.stopPropagation(),d()}},n.createElement(fe,{icon:St,style:{fontSize:20},color:"#9B4DEE"}))),n.createElement(tr,null,p&&n.createElement("div",{className:"loading-modal"},n.createElement(jt,null)),i),a&&n.createElement(rr,null,a)))},ir=r.span(Ze||(Ze=k(["\n    font-family: MontSerrat !important;\n    font-size: 14px;\n    color: ",";\n    margin-left: 15px;\n"])),function(n){return n.errorMessage?"#E0457B":n.labelColor?n.labelColor:"#9B4DEE"}),ar=r.div(Ge||(Ge=k(["\n    font-family: MontSerrat !important;\n    width: ",";\n    position: relative;\n\n    opacity: ",";\n\n    textarea {\n        font-family: MontSerrat !important;\n        color: ",";\n        resize: none;\n        width: ",";\n\n        border-radius: 20px;\n        height: ",";\n\n        margin: 0px;\n        outline: none;\n        padding: 20px;\n        border-color: ",";\n\n        &::placeholder {\n            color: ",";\n        }\n\n        -moz-appearance: none;\n        -webkit-appearance: none;\n    }\n\n    label {\n        position: absolute;\n        bottom: 0px;\n        top: 0px;\n        left: 0px;\n        width: 100%;\n        right: 100%;\n        pointer-events: none;\n        border-bottom-width: 1px;\n        border-bottom-style: solid;\n        border-bottom-color: ",";\n\n        ","\n    }\n\n    textarea::-webkit-scrollbar {\n        width: 7px;\n        border-radius: 50px;\n    }\n\n    textarea::-webkit-scrollbar-thumb {\n        background-color: ",";\n        border-radius: 50px;\n    }\n\n    textarea::-webkit-scrollbar-thumb:hover {\n        background-color: ",";\n    }\n"])),function(n){return n.width?n.width:"100%"},function(n){return n.disabled?"50%":"100%"},function(n){return n.textColor?n.textColor:"#707070"},function(n){return n.width?"string"==typeof n.width?n.width:n.width+"px":"100%"},function(n){return n.height?"string"==typeof n.height?n.height:n.height+"px":"100%"},function(n){return n.errorMessage&&n.errorColor?n.errorColor:n.errorMessage?"#E53935":"#ACACAC"},"#F1F1F1",function(n){return n.errorMessage&&n.errorColor?n.errorColor:n.errorMessage?"#E53935":"#ACACAC"},function(n){return n.isFieldActive?o(Je||(Je=k(["\n                      color: ",";\n                  "])),"#9B4DEE"):o(Ke||(Ke=k(["\n                      color: ",";\n                  "])),"#707070")},"#9B4DEE","rgba(155, 77, 238, 0.9)"),lr=r.span(Qe||(Qe=k(["\n    font-family: MontSerrat !important;\n    font-size: 10px;\n    margin-left: 0;\n    margin-top: -2px;\n    color: ",";\n"])),function(n){return n.errorColor?n.errorColor:"#E0457B"}),dr=r.div(nt||(nt=k(["\n    font-family: MontSerrat !important;\n    display: flex;\n    flex-wrap: wrap;\n    justify-content: space-between;\n    font-size: 10px;\n"]))),cr=r.div(et||(et=k(["\n    font-size: 10px;\n    color: ",";\n"])),"#ACACAC"),pr=["containerStyle","label","labelColor","labelStyle","errorMessage","errorColor","width","height","textColor","textAreaRef","lengthInfo"],sr=function(e){var t=e.containerStyle,r=e.label,o=e.labelColor,i=e.labelStyle,a=e.errorMessage,l=e.errorColor,d=e.width,c=e.height,p=e.textColor,s=e.textAreaRef,u=e.lengthInfo,m=v(e,pr);return n.createElement("div",{style:{paddingBottom:a?0:20}},r&&n.createElement(ir,{errorMessage:a,labelColor:o},r),n.createElement(ar,{errorMessage:a,errorColor:l,labelStyle:i,containerStyle:t,width:d,style:t,disabled:m.disabled,textColor:p,height:c},n.createElement("textarea",Object.assign({},m,{placeholder:m.placeholder,ref:s}))),n.createElement(dr,null,n.createElement(lr,{errorColor:l},a),(u||"number"==typeof u)&&m.maxLength?n.createElement(cr,null,("number"==typeof u?u:"string"==typeof m.value?m.value.length:0)+"/"+m.maxLength+" caracteres"):""))},ur=["register","errors","validate","name","required","limit","minimum"],mr=function(t){var r=t.register,o=t.errors,i=t.validate,a=t.name,l=t.required,d=t.limit,c=t.minimum,p=v(t,ur),s=e(""),u=s[1];return n.createElement(sr,Object.assign({},p,{name:a,errorMessage:o?"required"===o.type?"Obrigatório":""+s[0]:"",textAreaRef:r?r({required:l,validate:i&&l?function(n){return i(n)?(u(i(n)),!1):(u(""),!0)}:d&&l?function(n){return n.length>d?(u(d+" caracteres permitidos."),!1):(u(""),!0)}:c&&l?function(n){return n.length<c?(u(a+" deve ter "+c+" ou mais caracteres."),!1):(u(""),!0)}:null}):null}))},br=function(n){switch(n){case"mini":return"10px";case"tiny":return"12px";case"small":return"14px";case"medium":return"17px";case"large":return"20px";case"big":return"23px";case"huge":return"26px";case"massive":return"30px";default:return n}},fr=r.div(tt||(tt=k(["\n    font-family: MontSerrat !important;\n    display: flex;\n    align-items: center;\n\n    > input {\n        display: none;\n    }\n\n    label {\n        font-size: ",";\n        color: ",";\n        cursor: ",";\n        opacity: ",";\n    }\n\n    > input + div {\n        position: relative;\n        cursor: ",";\n        opacity: ",";\n        display: flex;\n        align-items: center;\n\n        &:before {\n            content: '';\n            position: absolute;\n            width: ",";\n            height: ",";\n            border: 1px solid ",";\n            background: ",";\n            border-radius: 5px;\n        }\n        &:after {\n            content: ' ';\n            position: absolute;\n            width: ",";\n            height: ",";\n            border: 1px solid ",";\n            background: ",";\n            border-radius: 5px;\n            color: ",";\n            text-align: center;\n            font-size: 12px;\n        }\n    }\n    > input:not(:checked) + div {\n        &:after {\n            opacity: 0;\n            transform: scale(0);\n        }\n    }\n    > input:checked + div {\n        &:after {\n            opacity: 1;\n            transform: scale(1);\n        }\n    }\n\n    span {\n        margin-left: ",";\n        margin-right: ",";\n        font-size: ",";\n        color: ",";\n        z-index: 1;\n    }\n"])),function(n){return n.sizeBox?function(n){switch(n){case"mini":return"10px";case"tiny":return"13px";case"small":return"14px";case"medium":return"16px";case"large":return"18px";case"big":return"20px";case"huge":return"22px";case"massive":return"24px";default:return n}}(n.sizeBox):"17px"},"#707070",function(n){return n.disabled?"default":"pointer"},function(n){return n.disabled?.5:1},function(n){return n.disabled?"default":"pointer"},function(n){return n.disabled?.5:1},function(n){return n.sizeBox?br(n.sizeBox):"17px"},function(n){return n.sizeBox?br(n.sizeBox):"17px"},"#E1E6EB","#E1E6EB",function(n){return n.sizeBox?br(n.sizeBox):"17px"},function(n){return n.sizeBox?br(n.sizeBox):"17px"},"#68349F","#68349F","#FFFFFF",function(n){return n.sizeBox?function(n){switch(n){case"mini":return"1px";case"tiny":return"1.2px";case"small":return"1.4px";case"medium":case"large":case"big":return"2px";case"huge":return"3px";case"massive":return"4px";default:return n}}(n.sizeBox):"2.5px"},function(n){return n.sizeBox?function(n){switch(n){case"mini":return"5px";case"tiny":return"6px";case"small":return"7px";case"medium":return"8px";case"large":return"9px";case"big":return"10px";case"huge":return"11px";case"massive":return"12px";default:return n}}(n.sizeBox):"8px"},function(n){return n.sizeBox?function(n){switch(n){case"mini":return"8px";case"tiny":return"10px";case"small":return"11px";case"medium":return"13px";case"large":return"16px";case"big":return"19px";case"huge":return"21px";case"massive":return"23px";default:return n}}(n.sizeBox):"13px"},function(n){return n.checked?"#FFFFFF":"#E1E6EB"}),hr=["label","labelStyle","sizeBox"],gr=function(e){var t=e.label,r=e.labelStyle,o=e.sizeBox,i=v(e,hr);return n.createElement(fr,{onClick:function(){return i.disabled?null:i.onChange?i.onChange():null},disabled:i.disabled,sizeBox:o,checked:i.checked},n.createElement("input",Object.assign({type:"checkbox"},i)),n.createElement("div",null,n.createElement("span",null,n.createElement(fe,{icon:yt})),n.createElement("label",{style:r},t)))},wr=function(n){switch(n){case"mini":return"10px";case"tiny":return"12px";case"small":return"14px";case"medium":return"17px";case"large":return"20px";case"big":return"23px";case"huge":return"26px";case"massive":return"30px";default:return n}},xr=function(n){switch(n){case"mini":return"2px";case"tiny":return"4px";case"small":return"6px";case"medium":return"9px";case"large":return"12px";case"big":return"15px";case"huge":return"18px";case"massive":return"22px";default:return n}},vr=r.div(rt||(rt=k(["\n    font-family: MontSerrat !important;\n\n    > input {\n        display: none;\n    }\n\n    label {\n        font-size: ",";\n        color: ",";\n        cursor: ",";\n        opacity: ",";\n        padding-top: ",";\n    }\n\n    > input + div {\n        position: relative;\n        padding-left: ",";\n        cursor: ",";\n        opacity: ",';\n        display: flex;\n        align-items: center;\n\n        &:before {\n            content: "";\n            position: absolute;\n            left: 0;\n            top: ',";\n            width: ",";\n            height: ",";\n            border: 1px solid ",";\n            background: ",';\n            border-radius: 50%;\n        }\n        &:after {\n            content: " ";\n            position: absolute;\n            left: 4px;\n            top: ',";\n            width: ",";\n            height: ",";\n            border: 1px solid ",";\n            background: ",";\n            border-radius: 50%;\n            color: ",";\n            text-align: center;\n            font-size: 12px;\n        }\n    }\n    > input:not(:checked) + div {\n        &:after {\n            opacity: 0;\n            transform: scale(0);\n        }\n    }\n    > input:checked + div {\n        &:after {\n            opacity: 1;\n            transform: scale(1);\n        }\n    }\n"])),function(n){return n.sizeBox?function(n){switch(n){case"mini":return"10px";case"tiny":return"13px";case"small":return"14px";case"medium":return"16px";case"large":return"18px";case"big":return"20px";case"huge":return"22px";case"massive":return"24px";default:return n}}(n.sizeBox):"17px"},"#707070",function(n){return n.disabled?"default":"pointer"},function(n){return n.disabled?.5:1},function(n){return n.sizeBox?function(n){switch(n){case"mini":case"tiny":case"small":case"medium":return"0px";case"large":case"big":return"2px";case"huge":return"3px";case"massive":return"4px";default:return n}}(n.sizeBox):"0px"},function(n){return n.sizeBox?function(n){switch(n){case"mini":return"15px";case"tiny":return"18px";case"small":return"20px";case"medium":return"25px";case"large":return"28px";case"big":return"32px";case"huge":return"35px";case"massive":return"40px";default:return n}}(n.sizeBox):"25px"},function(n){return n.disabled?"default":"pointer"},function(n){return n.disabled?.5:1},function(n){return n.sizeBox?function(n){switch(n){case"mini":return"5px";case"tiny":return"4px";case"small":return"3px";case"medium":return"1px";case"large":case"big":case"huge":case"massive":return"0px";default:return n}}(n.sizeBox):"1px"},function(n){return n.sizeBox?wr(n.sizeBox):"17px"},function(n){return n.sizeBox?wr(n.sizeBox):"17px"},"#D1D8DC","#E1E6EB",function(n){return n.sizeBox?function(n){switch(n){case"mini":return"9px";case"tiny":return"8px";case"small":return"7px";case"medium":return"5px";case"large":case"big":case"huge":case"massive":return"4px";default:return n}}(n.sizeBox):"5px"},function(n){return n.sizeBox?xr(n.sizeBox):"9px"},function(n){return n.sizeBox?xr(n.sizeBox):"9px"},"#707070","#707070","#FFFFFF"),kr=["label","labelStyle","sizeBox"],yr=function(e){var t=e.label,r=e.labelStyle,o=e.sizeBox,i=v(e,kr);return n.createElement(vr,{onClick:function(){return i.disabled?null:i.onChange?i.onChange():null},disabled:i.disabled,sizeBox:o},n.createElement("input",Object.assign({type:"radio"},i)),n.createElement("div",null,n.createElement("label",{style:r},t)))},_r=r.div(ot||(ot=k(["\n    font-family: MontSerrat !important;\n    width: 100% !important;\n    display: flex !important;\n    flex-direction: column !important;\n    padding-bottom: ",";\n\n    label {\n        font-size: 14px;\n        margin-left: 15px;\n        color: ",";\n    }\n\n    /*!\n * # Semantic UI 2.4.0 - Dropdown\n * http://github.com/semantic-org/semantic-ui/\n *\n *\n * Released under the MIT license\n * http://opensource.org/licenses/MIT\n *\n */\n\n    /*******************************\n            Dropdown\n*******************************/\n\n    .ui.dropdown {\n        cursor: pointer;\n        position: relative;\n        display: inline-block;\n        outline: none;\n        text-align: ",";\n        color: ",";\n        -webkit-transition: width 0.1s ease, -webkit-box-shadow 0.1s ease;\n        transition: width 0.1s ease, -webkit-box-shadow 0.1s ease;\n        transition: box-shadow 0.1s ease, width 0.1s ease;\n        transition: box-shadow 0.1s ease, width 0.1s ease,\n            -webkit-box-shadow 0.1s ease;\n        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);\n    }\n\n    /*******************************\n            Content\n*******************************/\n\n    /*--------------\n      Menu\n---------------*/\n\n    .ui.dropdown .menu {\n        cursor: auto;\n        position: absolute;\n        display: none;\n        outline: none;\n        top: 100%;\n        min-width: -webkit-max-content;\n        min-width: -moz-max-content;\n        min-width: max-content;\n        margin: 0em;\n        padding: 0em 0em;\n        background: #ffffff;\n        font-size: 1em;\n        text-shadow: none;\n        text-align: left;\n        -webkit-box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n        box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n        border: 1px solid rgba(34, 36, 38, 0.15);\n        border-radius: ",";\n        -webkit-transition: opacity 0.1s ease;\n        transition: opacity 0.1s ease;\n        z-index: 11;\n        will-change: transform, opacity;\n        /* border-top: ",";\n        border-left: ",";\n        border-right: ","; */\n    }\n    .ui.dropdown .menu > * {\n        white-space: nowrap;\n    }\n\n    /*--------------\n  Hidden Input\n---------------*/\n\n    .ui.dropdown > input:not(.search):first-child,\n    .ui.dropdown > select {\n        display: none !important;\n    }\n\n    /*--------------\n Dropdown Icon\n---------------*/\n\n    .ui.dropdown > .dropdown.icon {\n        position: relative;\n        width: auto;\n        font-size: 0.85714286em;\n        margin: 0em 0em 0em 1em;\n    }\n    .ui.dropdown .menu > .item .dropdown.icon {\n        width: auto;\n        float: right;\n        margin: 0em 0em 0em 1em;\n    }\n    .ui.dropdown .menu > .item .dropdown.icon + .text {\n        margin-right: 1em;\n    }\n\n    /*--------------\n      Text\n---------------*/\n\n    .ui.dropdown > .text {\n        display: inline-block;\n        -webkit-transition: none;\n        transition: none;\n    }\n\n    /*--------------\n    Menu Item\n---------------*/\n\n    .ui.dropdown .menu > .item {\n        position: relative;\n        cursor: pointer;\n        display: block;\n        border: none;\n        height: auto;\n        text-align: left;\n        border-top: none;\n        line-height: 1em;\n        color: ",';\n        padding: 0.78571429rem 1.14285714rem !important;\n        font-size: 1rem;\n        text-transform: none;\n        font-weight: normal;\n        -webkit-box-shadow: none;\n        box-shadow: none;\n        -webkit-touch-callout: none;\n    }\n    .ui.dropdown .menu > .item:first-child {\n        border-top-width: 0px;\n    }\n\n    /*--------------\n  Floated Content\n---------------*/\n\n    .ui.dropdown > .text > [class*="right floated"],\n    .ui.dropdown .menu .item > [class*="right floated"] {\n        float: right !important;\n        margin-right: 0em !important;\n        margin-left: 1em !important;\n    }\n    .ui.dropdown > .text > [class*="left floated"],\n    .ui.dropdown .menu .item > [class*="left floated"] {\n        float: left !important;\n        margin-left: 0em !important;\n        margin-right: 1em !important;\n    }\n    .ui.dropdown .menu .item > .icon.floated,\n    .ui.dropdown .menu .item > .flag.floated,\n    .ui.dropdown .menu .item > .image.floated,\n    .ui.dropdown .menu .item > img.floated {\n        margin-top: 0em;\n    }\n\n    /*--------------\n  Menu Divider\n---------------*/\n\n    .ui.dropdown .menu > .header {\n        margin: 1rem 0rem 0.75rem;\n        padding: 0em 1.14285714rem;\n        color: rgba(0, 0, 0, 0.85);\n        font-size: 0.78571429em;\n        font-weight: bold;\n        text-transform: uppercase;\n    }\n    .ui.dropdown .menu > .divider {\n        border-top: 1px solid rgba(34, 36, 38, 0.1);\n        height: 0em;\n        margin: 0.5em 0em;\n    }\n    .ui.dropdown.dropdown .menu > .input {\n        width: auto;\n        display: -webkit-box;\n        display: -ms-flexbox;\n        display: flex;\n        margin: 1.14285714rem 0.78571429rem;\n        min-width: 10rem;\n    }\n    .ui.dropdown .menu > .header + .input {\n        margin-top: 0em;\n    }\n    .ui.dropdown .menu > .input:not(.transparent) input {\n        padding: 0.5em 1em;\n    }\n    .ui.dropdown .menu > .input:not(.transparent) .button,\n    .ui.dropdown .menu > .input:not(.transparent) .icon,\n    .ui.dropdown .menu > .input:not(.transparent) .label {\n        padding-top: 0.5em;\n        padding-bottom: 0.5em;\n    }\n\n    /*-----------------\n  Item Description\n-------------------*/\n\n    .ui.dropdown > .text > .description,\n    .ui.dropdown .menu > .item > .description {\n        float: right;\n        margin: 0em 0em 0em 1em;\n        color: rgba(0, 0, 0, 0.4);\n    }\n\n    /*-----------------\n       Message\n-------------------*/\n\n    .ui.dropdown .menu > .message {\n        padding: 0.78571429rem 1.14285714rem;\n        font-weight: normal;\n    }\n    .ui.dropdown .menu > .message:not(.ui) {\n        color: rgba(0, 0, 0, 0.4);\n    }\n\n    /*--------------\n    Sub Menu\n---------------*/\n\n    .ui.dropdown .menu .menu {\n        top: 0% !important;\n        left: 100%;\n        right: auto;\n        margin: 0em 0em 0em -0.5em !important;\n        border-radius: 0.28571429rem !important;\n        z-index: 21 !important;\n    }\n\n    /* Hide Arrow */\n    .ui.dropdown .menu .menu:after {\n        display: none;\n    }\n\n    /*--------------\n   Sub Elements\n---------------*/\n\n    /* Icons / Flags / Labels / Image */\n    .ui.dropdown > .text > .icon,\n    .ui.dropdown > .text > .label,\n    .ui.dropdown > .text > .flag,\n    .ui.dropdown > .text > img,\n    .ui.dropdown > .text > .image {\n        margin-top: 0em;\n    }\n    .ui.dropdown .menu > .item > .icon,\n    .ui.dropdown .menu > .item > .label,\n    .ui.dropdown .menu > .item > .flag,\n    .ui.dropdown .menu > .item > .image,\n    .ui.dropdown .menu > .item > img {\n        margin-top: 0em;\n    }\n    .ui.dropdown > .text > .icon,\n    .ui.dropdown > .text > .label,\n    .ui.dropdown > .text > .flag,\n    .ui.dropdown > .text > img,\n    .ui.dropdown > .text > .image,\n    .ui.dropdown .menu > .item > .icon,\n    .ui.dropdown .menu > .item > .label,\n    .ui.dropdown .menu > .item > .flag,\n    .ui.dropdown .menu > .item > .image,\n    .ui.dropdown .menu > .item > img {\n        margin-left: 0em;\n        float: none;\n        margin-right: 0.78571429rem;\n    }\n\n    /*--------------\n     Image\n---------------*/\n\n    .ui.dropdown > .text > img,\n    .ui.dropdown > .text > .image,\n    .ui.dropdown .menu > .item > .image,\n    .ui.dropdown .menu > .item > img {\n        display: inline-block;\n        vertical-align: top;\n        width: auto;\n        margin-top: -0.5em;\n        margin-bottom: -0.5em;\n        max-height: 2em;\n    }\n\n    /*******************************\n            Coupling\n*******************************/\n\n    /*--------------\n      Menu\n---------------*/\n\n    /* Remove Menu Item Divider */\n    .ui.dropdown .ui.menu > .item:before,\n    .ui.menu .ui.dropdown .menu > .item:before {\n        display: none;\n    }\n\n    /* Prevent Menu Item Border */\n    .ui.menu .ui.dropdown .menu .active.item {\n        border-left: none;\n    }\n\n    /* Automatically float dropdown menu right on last menu item */\n    .ui.menu .right.menu .dropdown:last-child .menu,\n    .ui.menu .right.dropdown.item .menu,\n    .ui.buttons > .ui.dropdown:last-child .menu {\n        left: auto;\n        right: 0em;\n    }\n\n    /*--------------\n      Label\n---------------*/\n\n    /* Dropdown Menu */\n    .ui.label.dropdown .menu {\n        min-width: 100%;\n    }\n\n    /*--------------\n     Button\n---------------*/\n\n    /* No Margin On Icon Button */\n    .ui.dropdown.icon.button > .dropdown.icon {\n        margin: 0em;\n    }\n    .ui.button.dropdown .menu {\n        min-width: 100%;\n    }\n\n    /*******************************\n              Types\n*******************************/\n\n    /*--------------\n    Selection\n---------------*/\n\n    /* Displays like a select box */\n    .ui.selection.dropdown {\n        cursor: pointer;\n        word-wrap: break-word;\n        line-height: 1em;\n        white-space: normal;\n        outline: 0;\n        -webkit-transform: rotateZ(0deg);\n        transform: rotateZ(0deg);\n        min-width: 14em;\n        min-height: 2.71428571em;\n        background: ',";\n        display: inline-block;\n        padding: 0.78571429em 2.6em 0.78571429em 1.1em;\n        color: ",";\n        -webkit-box-shadow: none;\n        box-shadow: none;\n        border: 1px solid\n            ",";\n        border-radius: ",";\n        -webkit-transition: width 0.1s ease, -webkit-box-shadow 0.1s ease;\n        transition: width 0.1s ease, -webkit-box-shadow 0.1s ease;\n        transition: box-shadow 0.1s ease, width 0.1s ease;\n        transition: box-shadow 0.1s ease, width 0.1s ease,\n            -webkit-box-shadow 0.1s ease;\n        border-radius: ",";\n        border-top: ",";\n        border-left: ",";\n        border-right: ",";\n    }\n    .ui.selection.dropdown.visible,\n    .ui.selection.dropdown.active {\n        z-index: 10;\n    }\n    select.ui.dropdown {\n        height: 38px;\n        padding: 0.5em;\n        border: 1px solid rgba(34, 36, 38, 0.15);\n        visibility: visible;\n    }\n    .ui.selection.dropdown > .search.icon,\n    .ui.selection.dropdown > .delete.icon,\n    .ui.selection.dropdown > .dropdown.icon {\n        cursor: pointer;\n        position: absolute;\n        width: auto;\n        height: auto;\n        line-height: 1.21428571em;\n        top: 0.78571429em;\n        right: 1em;\n        z-index: 3;\n        margin: -0.78571429em;\n        padding: 0.91666667em;\n        opacity: 0.8;\n        -webkit-transition: opacity 0.1s ease;\n        transition: opacity 0.1s ease;\n    }\n\n    /* Compact */\n    .ui.compact.selection.dropdown {\n        min-width: 0px;\n    }\n\n    /*  Selection Menu */\n    .ui.selection.dropdown .menu {\n        overflow-x: hidden;\n        overflow-y: auto;\n        -webkit-backface-visibility: hidden;\n        backface-visibility: hidden;\n        -webkit-overflow-scrolling: touch;\n        border-top-width: 0px !important;\n        width: auto;\n        outline: none;\n        margin: 0px -1px;\n        min-width: calc(100% + 2px);\n        width: calc(100% + 2px);\n        border-radius: 0em 0em 0.28571429rem 0.28571429rem;\n        -webkit-box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n        box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n        -webkit-transition: opacity 0.1s ease;\n        transition: opacity 0.1s ease;\n        border-bottom-left-radius: 20px;\n        border-bottom-right-radius: 20px;\n    }\n    .ui.selection.dropdown .menu:after,\n    .ui.selection.dropdown .menu:before {\n        display: none;\n    }\n\n    /*--------------\n    Message\n---------------*/\n\n    .ui.selection.dropdown .menu > .message {\n        padding: 0.78571429rem 1.14285714rem;\n    }\n    @media only screen and (max-width: 767px) {\n        .ui.selection.dropdown .menu {\n            max-height: 8.01428571rem;\n        }\n    }\n    @media only screen and (min-width: 768px) {\n        .ui.selection.dropdown .menu {\n            max-height: 10.68571429rem;\n        }\n    }\n    @media only screen and (min-width: 992px) {\n        .ui.selection.dropdown .menu {\n            max-height: 16.02857143rem;\n        }\n    }\n    @media only screen and (min-width: 1920px) {\n        .ui.selection.dropdown .menu {\n            max-height: 21.37142857rem;\n        }\n    }\n\n    /* Menu Item */\n    .ui.selection.dropdown .menu > .item {\n        border-top: 1px solid #fafafa;\n        padding: 0.78571429rem 1.04285714rem !important;\n        white-space: normal;\n        word-wrap: normal;\n    }\n\n    /* User Item */\n    .ui.selection.dropdown .menu > .hidden.addition.item {\n        display: none;\n    }\n\n    /* Hover */\n    .ui.selection.dropdown:hover {\n        border-color: ",";\n        -webkit-box-shadow: none;\n        box-shadow: none;\n    }\n\n    /* Active */\n    .ui.selection.active.dropdown {\n        border-color: ",";\n        -webkit-box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n        box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n    }\n    .ui.selection.active.dropdown .menu {\n        border-color: ",";\n        -webkit-box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n        box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n    }\n\n    /* Focus */\n    .ui.selection.dropdown:focus {\n        border-color: ",";\n        -webkit-box-shadow: none;\n        box-shadow: none;\n    }\n    .ui.selection.dropdown:focus .menu {\n        border-color: ",";\n        -webkit-box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n        box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n    }\n\n    /* Visible */\n    .ui.selection.visible.dropdown > .text:not(.default) {\n        font-weight: normal;\n        color: ",";\n    }\n\n    /* Visible Hover */\n    .ui.selection.active.dropdown:hover {\n        border-color: ",";\n        -webkit-box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n        box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n    }\n    .ui.selection.active.dropdown:hover .menu {\n        border-color: ",';\n        -webkit-box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n        box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n    }\n\n    /* Dropdown Icon */\n    .ui.active.selection.dropdown > .dropdown.icon,\n    .ui.visible.selection.dropdown > .dropdown.icon {\n        opacity: "";\n        z-index: 3;\n    }\n\n    /* Connecting Border */\n    .ui.active.selection.dropdown {\n        border-bottom-left-radius: 0em !important;\n        border-bottom-right-radius: 0em !important;\n    }\n\n    /* Empty Connecting Border */\n    .ui.active.empty.selection.dropdown {\n        border-radius: 0.28571429rem !important;\n        -webkit-box-shadow: none !important;\n        box-shadow: none !important;\n    }\n    .ui.active.empty.selection.dropdown .menu {\n        border: none !important;\n        -webkit-box-shadow: none !important;\n        box-shadow: none !important;\n    }\n\n    /*--------------\n   Searchable\n---------------*/\n\n    /* Search Selection */\n    .ui.search.dropdown {\n        min-width: "";\n    }\n\n    /* Search Dropdown */\n    .ui.search.dropdown > input.search {\n        background: none transparent !important;\n        border: none !important;\n        -webkit-box-shadow: none !important;\n        box-shadow: none !important;\n        cursor: text;\n        top: 0em;\n        left: 1px;\n        width: 100%;\n        outline: none;\n        -webkit-tap-highlight-color: rgba(255, 255, 255, 0);\n        padding: inherit;\n        color: ',";\n        text-align: ",";\n    }\n\n    /* Text Layering */\n    .ui.search.dropdown > input.search {\n        position: absolute;\n        z-index: 2;\n    }\n    .ui.search.dropdown > .text {\n        cursor: text;\n        position: relative;\n        left: 1px;\n        z-index: 3;\n    }\n\n    /* Search Selection */\n    .ui.search.selection.dropdown > input.search {\n        line-height: 1.21428571em;\n        padding: 0.67857143em 2.1em 0.67857143em 1em;\n    }\n\n    /* Used to size multi select input to character width */\n    .ui.search.selection.dropdown > span.sizer {\n        line-height: 1.21428571em;\n        padding: 0.67857143em 2.1em 0.67857143em 1em;\n        display: none;\n        white-space: pre;\n    }\n\n    /* Active/Visible Search */\n    .ui.search.dropdown.active > input.search,\n    .ui.search.dropdown.visible > input.search {\n        cursor: auto;\n        color: ",";\n    }\n    .ui.search.dropdown.active > .text,\n    .ui.search.dropdown.visible > .text {\n        pointer-events: none;\n    }\n\n    /* Filtered Text */\n    .ui.active.search.dropdown input.search:focus + .text .icon,\n    .ui.active.search.dropdown input.search:focus + .text .flag {\n        opacity: 0.45;\n    }\n    .ui.active.search.dropdown input.search:focus + .text {\n        color: rgba(115, 115, 115, 0.87) !important;\n    }\n\n    .input.search::placeholder {\n        color: ",";\n    }\n    /* Search Menu */\n    .ui.search.dropdown .menu {\n        overflow-x: hidden;\n        overflow-y: auto;\n        -webkit-backface-visibility: hidden;\n        backface-visibility: hidden;\n        -webkit-overflow-scrolling: touch;\n    }\n    @media only screen and (max-width: 767px) {\n        .ui.search.dropdown .menu {\n            max-height: 8.01428571rem;\n        }\n    }\n    @media only screen and (min-width: 768px) {\n        .ui.search.dropdown .menu {\n            max-height: 10.68571429rem;\n        }\n    }\n    @media only screen and (min-width: 992px) {\n        .ui.search.dropdown .menu {\n            max-height: 16.02857143rem;\n        }\n    }\n    @media only screen and (min-width: 1920px) {\n        .ui.search.dropdown .menu {\n            max-height: 21.37142857rem;\n        }\n    }\n\n    /*--------------\n    Multiple\n---------------*/\n\n    /* Multiple Selection */\n    .ui.multiple.dropdown {\n        padding: 0.22619048em 2.1em 0.22619048em 0.35714286em;\n    }\n    .ui.multiple.dropdown .menu {\n        cursor: auto;\n    }\n\n    /* Multiple Search Selection */\n    .ui.multiple.search.dropdown,\n    .ui.multiple.search.dropdown > input.search {\n        cursor: text;\n    }\n\n    /* Selection Label */\n    .ui.multiple.dropdown > .label {\n        -webkit-user-select: none;\n        -moz-user-select: none;\n        -ms-user-select: none;\n        user-select: none;\n        display: inline-block;\n        vertical-align: top;\n        white-space: normal;\n        font-size: 1em;\n        padding: 0.35714286em 0.78571429em;\n        margin: 0.14285714rem 0.28571429rem 0.14285714rem 0.5em;\n        -webkit-box-shadow: 0px 0px 0px 1px rgba(34, 36, 38, 0.15) inset;\n        box-shadow: 0px 0px 0px 1px rgba(34, 36, 38, 0.15) inset;\n        border-radius: 20px;\n        color: ",";\n        background-color: ",';\n    }\n\n    /* Dropdown Icon */\n    .ui.multiple.dropdown .dropdown.icon {\n        margin: "";\n        padding: "";\n    }\n\n    /* Text */\n    .ui.multiple.dropdown > .text {\n        position: static;\n        padding: 0;\n        max-width: 100%;\n        margin: 0.45238095em 0em 0.45238095em 0.64285714em;\n        line-height: 1.21428571em;\n    }\n    .ui.multiple.dropdown > .label ~ input.search {\n        margin-left: 0.14285714em !important;\n    }\n    .ui.multiple.dropdown > .label ~ .text {\n        display: none;\n    }\n\n    /*-----------------\n  Multiple Search\n-----------------*/\n\n    /* Prompt Text */\n    .ui.multiple.search.dropdown > .text {\n        display: inline-block;\n        position: absolute;\n        top: 0;\n        left: 0;\n        padding: inherit;\n        margin: 0.45238095em 0em 0.45238095em 0.64285714em;\n        line-height: 1.21428571em;\n    }\n    .ui.multiple.search.dropdown > .label ~ .text {\n        display: none;\n    }\n\n    /* Search */\n    .ui.multiple.search.dropdown > input.search {\n        position: static;\n        padding: 0;\n        max-width: 100%;\n        margin: 0.45238095em 0em 0.45238095em 0.64285714em;\n        width: 2.2em;\n        line-height: 1.21428571em;\n    }\n\n    /*--------------\n     Inline\n---------------*/\n\n    .ui.inline.dropdown {\n        cursor: pointer;\n        display: inline-block;\n        color: inherit;\n    }\n    .ui.inline.dropdown .dropdown.icon {\n        margin: 0em 0.21428571em 0em 0.21428571em;\n        vertical-align: baseline;\n    }\n    .ui.inline.dropdown > .text {\n        font-weight: bold;\n    }\n    .ui.inline.dropdown .menu {\n        cursor: auto;\n        margin-top: 0.21428571em;\n        border-radius: 0.28571429rem;\n    }\n\n    /*******************************\n            States\n*******************************/\n\n    /*--------------------\n        Active\n----------------------*/\n\n    /* Menu Item Active */\n    .ui.dropdown .menu .active.item {\n        background: transparent;\n        font-weight: bold;\n        color: ',";\n        -webkit-box-shadow: none;\n        box-shadow: none;\n        z-index: 12;\n    }\n\n    /*--------------------\n        Hover\n----------------------*/\n\n    /* Menu Item Hover */\n    .ui.dropdown .menu > .item:hover {\n        background: rgba(0, 0, 0, 0.05);\n        color: ",';\n        z-index: 13;\n    }\n\n    /*--------------------\n       Loading\n---------------------*/\n\n    .ui.loading.dropdown > i.icon {\n        height: 1em !important;\n    }\n    .ui.loading.selection.dropdown > i.icon {\n        padding: 1.5em 1.28571429em !important;\n    }\n    .ui.loading.dropdown > i.icon:before {\n        position: absolute;\n        content: "";\n        top: 50%;\n        left: 50%;\n        margin: -0.64285714em 0em 0em -0.64285714em;\n        width: 1.28571429em;\n        height: 1.28571429em;\n        border-radius: 500rem;\n        border: 0.2em solid rgba(0, 0, 0, 0.1);\n    }\n    .ui.loading.dropdown > i.icon:after {\n        position: absolute;\n        content: "";\n        top: 50%;\n        left: 50%;\n        -webkit-box-shadow: 0px 0px 0px 1px transparent;\n        box-shadow: 0px 0px 0px 1px transparent;\n        margin: -0.64285714em 0em 0em -0.64285714em;\n        width: 1.28571429em;\n        height: 1.28571429em;\n        -webkit-animation: dropdown-spin 0.6s linear;\n        animation: dropdown-spin 0.6s linear;\n        -webkit-animation-iteration-count: infinite;\n        animation-iteration-count: infinite;\n        border-radius: 500rem;\n        border-color: '," transparent transparent;\n        border-style: solid;\n        border-width: 0.2em;\n    }\n\n    /* Coupling */\n    .ui.loading.dropdown.button > i.icon:before,\n    .ui.loading.dropdown.button > i.icon:after {\n        display: none;\n    }\n    @-webkit-keyframes dropdown-spin {\n        from {\n            -webkit-transform: rotate(0deg);\n            transform: rotate(0deg);\n        }\n        to {\n            -webkit-transform: rotate(360deg);\n            transform: rotate(360deg);\n        }\n    }\n    @keyframes dropdown-spin {\n        from {\n            -webkit-transform: rotate(0deg);\n            transform: rotate(0deg);\n        }\n        to {\n            -webkit-transform: rotate(360deg);\n            transform: rotate(360deg);\n        }\n    }\n\n    /*--------------------\n     Default Text\n----------------------*/\n\n    .ui.dropdown:not(.button) > .default.text,\n    .ui.default.dropdown:not(.button) > .text {\n        color: ",";\n    }\n    .ui.dropdown:not(.button) > input:focus ~ .default.text,\n    .ui.default.dropdown:not(.button) > input:focus ~ .text {\n        color: ",";\n    }\n\n    /*--------------------\n        Loading\n----------------------*/\n\n    .ui.loading.dropdown > .text {\n        -webkit-transition: none;\n        transition: none;\n    }\n\n    /* Used To Check Position */\n    .ui.dropdown .loading.menu {\n        display: block;\n        visibility: hidden;\n        z-index: -1;\n    }\n    .ui.dropdown > .loading.menu {\n        left: 0px !important;\n        right: auto !important;\n    }\n    .ui.dropdown > .menu .loading.menu {\n        left: 100% !important;\n        right: auto !important;\n    }\n\n    /*--------------------\n    Keyboard Select\n----------------------*/\n\n    /* Selected Item */\n    .ui.dropdown.selected,\n    .ui.dropdown .menu .selected.item {\n        background: rgba(0, 0, 0, 0.03);\n        color: ",";\n    }\n\n    /*--------------------\n    Search Filtered\n----------------------*/\n\n    /* Filtered Item */\n    .ui.dropdown > .filtered.text {\n        visibility: hidden;\n    }\n    .ui.dropdown .filtered.item {\n        display: none !important;\n    }\n\n    /*--------------------\n        Error\n----------------------*/\n\n    .ui.dropdown.error,\n    .ui.dropdown.error > .text,\n    .ui.dropdown.error > .default.text {\n        color: #9f3a38;\n    }\n    .ui.selection.dropdown.error {\n        background: ",";\n        border-color: ",";\n    }\n    .ui.selection.dropdown.error:hover {\n        border-color: ",";\n    }\n    .ui.dropdown.error > .menu,\n    .ui.dropdown.error > .menu .menu {\n        border-color: ",";\n    }\n    .ui.dropdown.error > .menu > .item {\n        color: ",";\n    }\n    .ui.multiple.selection.error.dropdown > .label {\n        border-color: ",";\n    }\n\n    /* Item Hover */\n    .ui.dropdown.error > .menu > .item:hover {\n        background-color: ",";\n    }\n\n    /* Item Active */\n    .ui.dropdown.error > .menu .active.item {\n        background-color: ",';\n    }\n\n    /*--------------------\n        Clear\n----------------------*/\n\n    .ui.dropdown > .clear.dropdown.icon {\n        opacity: 0.8;\n        -webkit-transition: opacity 0.1s ease;\n        transition: opacity 0.1s ease;\n    }\n    .ui.dropdown > .clear.dropdown.icon:hover {\n        opacity: 1;\n    }\n\n    /*--------------------\n        Disabled\n----------------------*/\n\n    /* Disabled */\n    .ui.disabled.dropdown,\n    .ui.dropdown .menu > .disabled.item {\n        cursor: default;\n        pointer-events: none;\n        opacity: 0.45;\n    }\n\n    /*******************************\n           Variations\n*******************************/\n\n    /*--------------\n    Direction\n---------------*/\n\n    /* Flyout Direction */\n    .ui.dropdown .menu {\n        left: 0px;\n    }\n\n    /* Default Side (Right) */\n    .ui.dropdown .right.menu > .menu,\n    .ui.dropdown .menu .right.menu {\n        left: 100% !important;\n        right: auto !important;\n        border-radius: 0.28571429rem !important;\n    }\n\n    /* Leftward Opening Menu */\n    .ui.dropdown > .left.menu {\n        left: auto !important;\n        right: 0px !important;\n    }\n    .ui.dropdown > .left.menu .menu,\n    .ui.dropdown .menu .left.menu {\n        left: auto;\n        right: 100%;\n        margin: 0em -0.5em 0em 0em !important;\n        border-radius: 0.28571429rem !important;\n    }\n    .ui.dropdown .item .left.dropdown.icon,\n    .ui.dropdown .left.menu .item .dropdown.icon {\n        width: auto;\n        float: left;\n        margin: 0em 0em 0em 0em;\n    }\n    .ui.dropdown .item .left.dropdown.icon,\n    .ui.dropdown .left.menu .item .dropdown.icon {\n        width: auto;\n        float: left;\n        margin: 0em 0em 0em 0em;\n    }\n    .ui.dropdown .item .left.dropdown.icon + .text,\n    .ui.dropdown .left.menu .item .dropdown.icon + .text {\n        margin-left: 1em;\n        margin-right: 0em;\n    }\n\n    /*--------------\n     Upward\n---------------*/\n\n    /* Upward Main Menu */\n    .ui.upward.dropdown > .menu {\n        top: auto;\n        bottom: 100%;\n        -webkit-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.08);\n        box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.08);\n        border-radius: 0.28571429rem 0.28571429rem 0em 0em;\n    }\n\n    /* Upward Sub Menu */\n    .ui.dropdown .upward.menu {\n        top: auto !important;\n        bottom: 0 !important;\n    }\n\n    /* Active Upward */\n    .ui.simple.upward.active.dropdown,\n    .ui.simple.upward.dropdown:hover {\n        border-radius: 0.28571429rem 0.28571429rem 0em 0em !important;\n    }\n    .ui.upward.dropdown.button:not(.pointing):not(.floating).active {\n        border-radius: 0.28571429rem 0.28571429rem 0em 0em;\n    }\n\n    /* Selection */\n    .ui.upward.selection.dropdown .menu {\n        border-top-width: 1px !important;\n        border-bottom-width: 0px !important;\n        -webkit-box-shadow: 0px -2px 3px 0px rgba(0, 0, 0, 0.08);\n        box-shadow: 0px -2px 3px 0px rgba(0, 0, 0, 0.08);\n        border-top-left-radius: 20px;\n        border-top-right-radius: 20px;\n    }\n    .ui.upward.selection.dropdown:hover {\n        -webkit-box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.05);\n        box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.05);\n    }\n\n    /* Active Upward */\n    .ui.active.upward.selection.dropdown {\n        border-radius: 0em 0em 20px 20px !important;\n    }\n\n    /* Visible Upward */\n    .ui.upward.selection.dropdown.visible {\n        -webkit-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.08);\n        box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.08);\n        border-radius: 0em 0em 20px 20px !important;\n    }\n\n    /* Visible Hover Upward */\n    .ui.upward.active.selection.dropdown:hover {\n        -webkit-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.05);\n        box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.05);\n    }\n    .ui.upward.active.selection.dropdown:hover .menu {\n        -webkit-box-shadow: 0px -2px 3px 0px rgba(0, 0, 0, 0.08);\n        box-shadow: 0px -2px 3px 0px rgba(0, 0, 0, 0.08);\n    }\n\n    /*--------------\n     Simple\n---------------*/\n\n    /*  Selection Menu */\n    .ui.scrolling.dropdown .menu,\n    .ui.dropdown .scrolling.menu {\n        overflow-x: hidden;\n        overflow-y: auto;\n    }\n    .ui.scrolling.dropdown .menu {\n        overflow-x: hidden;\n        overflow-y: auto;\n        -webkit-backface-visibility: hidden;\n        backface-visibility: hidden;\n        -webkit-overflow-scrolling: touch;\n        min-width: 100% !important;\n        width: auto !important;\n    }\n    .ui.dropdown .scrolling.menu {\n        position: static;\n        overflow-y: auto;\n        border: none;\n        -webkit-box-shadow: none !important;\n        box-shadow: none !important;\n        border-radius: 0 !important;\n        margin: 0 !important;\n        min-width: 100% !important;\n        width: auto !important;\n        border-top: 1px solid rgba(34, 36, 38, 0.15);\n    }\n    .ui.scrolling.dropdown .menu .item.item.item,\n    .ui.dropdown .scrolling.menu > .item.item.item {\n        border-top: none;\n    }\n    .ui.scrolling.dropdown .menu .item:first-child,\n    .ui.dropdown .scrolling.menu .item:first-child {\n        border-top: none;\n    }\n    .ui.dropdown > .animating.menu .scrolling.menu,\n    .ui.dropdown > .visible.menu .scrolling.menu {\n        display: block;\n    }\n\n    /* Scrollbar in IE */\n    @media all and (-ms-high-contrast: none) {\n        .ui.scrolling.dropdown .menu,\n        .ui.dropdown .scrolling.menu {\n            min-width: calc(100% - 17px);\n        }\n    }\n    @media only screen and (max-width: 767px) {\n        .ui.scrolling.dropdown .menu,\n        .ui.dropdown .scrolling.menu {\n            max-height: 10.28571429rem;\n        }\n    }\n    @media only screen and (min-width: 768px) {\n        .ui.scrolling.dropdown .menu,\n        .ui.dropdown .scrolling.menu {\n            max-height: 15.42857143rem;\n        }\n    }\n    @media only screen and (min-width: 992px) {\n        .ui.scrolling.dropdown .menu,\n        .ui.dropdown .scrolling.menu {\n            max-height: 20.57142857rem;\n        }\n    }\n    @media only screen and (min-width: 1920px) {\n        .ui.scrolling.dropdown .menu,\n        .ui.dropdown .scrolling.menu {\n            max-height: 20.57142857rem;\n        }\n    }\n\n    /*--------------\n     Simple\n---------------*/\n\n    /* Displays without javascript */\n    .ui.simple.dropdown .menu:before,\n    .ui.simple.dropdown .menu:after {\n        display: none;\n    }\n    .ui.simple.dropdown .menu {\n        position: absolute;\n        display: block;\n        overflow: hidden;\n        top: -9999px !important;\n        opacity: 0;\n        width: 0;\n        height: 0;\n        -webkit-transition: opacity 0.1s ease;\n        transition: opacity 0.1s ease;\n    }\n    .ui.simple.active.dropdown,\n    .ui.simple.dropdown:hover {\n        border-bottom-left-radius: 0em !important;\n        border-bottom-right-radius: 0em !important;\n    }\n    .ui.simple.active.dropdown > .menu,\n    .ui.simple.dropdown:hover > .menu {\n        overflow: visible;\n        width: auto;\n        height: auto;\n        top: 100% !important;\n        opacity: 1;\n    }\n    .ui.simple.dropdown > .menu > .item:active > .menu,\n    .ui.simple.dropdown:hover > .menu > .item:hover > .menu {\n        overflow: visible;\n        width: auto;\n        height: auto;\n        top: 0% !important;\n        left: 100% !important;\n        opacity: 1;\n    }\n    .ui.simple.disabled.dropdown:hover .menu {\n        display: none;\n        height: 0px;\n        width: 0px;\n        overflow: hidden;\n    }\n\n    /* Visible */\n    .ui.simple.visible.dropdown > .menu {\n        display: block;\n    }\n\n    /*--------------\n      Fluid\n---------------*/\n\n    .ui.fluid.dropdown {\n        display: block;\n        width: 100%;\n        min-width: 0em;\n    }\n    .ui.fluid.dropdown > .dropdown.icon {\n        float: right;\n    }\n\n    /*--------------\n    Floating\n---------------*/\n\n    .ui.floating.dropdown .menu {\n        left: 0;\n        right: auto;\n        -webkit-box-shadow: 0px 2px 4px 0px rgba(34, 36, 38, 0.12),\n            0px 2px 10px 0px rgba(34, 36, 38, 0.15) !important;\n        box-shadow: 0px 2px 4px 0px rgba(34, 36, 38, 0.12),\n            0px 2px 10px 0px rgba(34, 36, 38, 0.15) !important;\n        border-radius: 0.28571429rem !important;\n    }\n    .ui.floating.dropdown > .menu {\n        margin-top: 0.5em !important;\n        border-radius: 0.28571429rem !important;\n    }\n\n    /*--------------\n     Pointing\n---------------*/\n\n    .ui.pointing.dropdown > .menu {\n        top: 100%;\n        margin-top: 0.78571429rem;\n        border-radius: 0.28571429rem;\n    }\n    .ui.pointing.dropdown > .menu:after {\n        display: block;\n        position: absolute;\n        pointer-events: none;\n        content: "";\n        visibility: visible;\n        -webkit-transform: rotate(45deg);\n        transform: rotate(45deg);\n        width: 0.5em;\n        height: 0.5em;\n        -webkit-box-shadow: -1px -1px 0px 0px rgba(34, 36, 38, 0.15);\n        box-shadow: -1px -1px 0px 0px rgba(34, 36, 38, 0.15);\n        background: #ffffff;\n        z-index: 2;\n    }\n    .ui.pointing.dropdown > .menu:after {\n        top: -0.25em;\n        left: 50%;\n        margin: 0em 0em 0em -0.25em;\n    }\n\n    /* Top Left Pointing */\n    .ui.top.left.pointing.dropdown > .menu {\n        top: 100%;\n        bottom: auto;\n        left: 0%;\n        right: auto;\n        margin: 1em 0em 0em;\n    }\n    .ui.top.left.pointing.dropdown > .menu {\n        top: 100%;\n        bottom: auto;\n        left: 0%;\n        right: auto;\n        margin: 1em 0em 0em;\n    }\n    .ui.top.left.pointing.dropdown > .menu:after {\n        top: -0.25em;\n        left: 1em;\n        right: auto;\n        margin: 0em;\n        -webkit-transform: rotate(45deg);\n        transform: rotate(45deg);\n    }\n\n    /* Top Right Pointing */\n    .ui.top.right.pointing.dropdown > .menu {\n        top: 100%;\n        bottom: auto;\n        right: 0%;\n        left: auto;\n        margin: 1em 0em 0em;\n    }\n    .ui.top.pointing.dropdown > .left.menu:after,\n    .ui.top.right.pointing.dropdown > .menu:after {\n        top: -0.25em;\n        left: auto !important;\n        right: 1em !important;\n        margin: 0em;\n        -webkit-transform: rotate(45deg);\n        transform: rotate(45deg);\n    }\n\n    /* Left Pointing */\n    .ui.left.pointing.dropdown > .menu {\n        top: 0%;\n        left: 100%;\n        right: auto;\n        margin: 0em 0em 0em 1em;\n    }\n    .ui.left.pointing.dropdown > .menu:after {\n        top: 1em;\n        left: -0.25em;\n        margin: 0em 0em 0em 0em;\n        -webkit-transform: rotate(-45deg);\n        transform: rotate(-45deg);\n    }\n    .ui.left:not(.top):not(.bottom).pointing.dropdown > .left.menu {\n        left: auto !important;\n        right: 100% !important;\n        margin: 0em 1em 0em 0em;\n    }\n    .ui.left:not(.top):not(.bottom).pointing.dropdown > .left.menu:after {\n        top: 1em;\n        left: auto;\n        right: -0.25em;\n        margin: 0em 0em 0em 0em;\n        -webkit-transform: rotate(135deg);\n        transform: rotate(135deg);\n    }\n\n    /* Right Pointing */\n    .ui.right.pointing.dropdown > .menu {\n        top: 0%;\n        left: auto;\n        right: 100%;\n        margin: 0em 1em 0em 0em;\n    }\n    .ui.right.pointing.dropdown > .menu:after {\n        top: 1em;\n        left: auto;\n        right: -0.25em;\n        margin: 0em 0em 0em 0em;\n        -webkit-transform: rotate(135deg);\n        transform: rotate(135deg);\n    }\n\n    /* Bottom Pointing */\n    .ui.bottom.pointing.dropdown > .menu {\n        top: auto;\n        bottom: 100%;\n        left: 0%;\n        right: auto;\n        margin: 0em 0em 1em;\n    }\n    .ui.bottom.pointing.dropdown > .menu:after {\n        top: auto;\n        bottom: -0.25em;\n        right: auto;\n        margin: 0em;\n        -webkit-transform: rotate(-135deg);\n        transform: rotate(-135deg);\n    }\n\n    /* Reverse Sub-Menu Direction */\n    .ui.bottom.pointing.dropdown > .menu .menu {\n        top: auto !important;\n        bottom: 0px !important;\n    }\n\n    /* Bottom Left */\n    .ui.bottom.left.pointing.dropdown > .menu {\n        left: 0%;\n        right: auto;\n    }\n    .ui.bottom.left.pointing.dropdown > .menu:after {\n        left: 1em;\n        right: auto;\n    }\n\n    /* Bottom Right */\n    .ui.bottom.right.pointing.dropdown > .menu {\n        right: 0%;\n        left: auto;\n    }\n    .ui.bottom.right.pointing.dropdown > .menu:after {\n        left: auto;\n        right: 1em;\n    }\n\n    /* Upward pointing */\n    .ui.pointing.upward.dropdown .menu,\n    .ui.top.pointing.upward.dropdown .menu {\n        top: auto !important;\n        bottom: 100% !important;\n        margin: 0em 0em 0.78571429rem;\n        border-radius: 0.28571429rem;\n    }\n    .ui.pointing.upward.dropdown .menu:after,\n    .ui.top.pointing.upward.dropdown .menu:after {\n        top: 100% !important;\n        bottom: auto !important;\n        -webkit-box-shadow: 1px 1px 0px 0px rgba(34, 36, 38, 0.15);\n        box-shadow: 1px 1px 0px 0px rgba(34, 36, 38, 0.15);\n        margin: -0.25em 0em 0em;\n    }\n\n    /* Right Pointing Upward */\n    .ui.right.pointing.upward.dropdown:not(.top):not(.bottom) .menu {\n        top: auto !important;\n        bottom: 0 !important;\n        margin: 0em 1em 0em 0em;\n    }\n    .ui.right.pointing.upward.dropdown:not(.top):not(.bottom) .menu:after {\n        top: auto !important;\n        bottom: 0 !important;\n        margin: 0em 0em 1em 0em;\n        -webkit-box-shadow: -1px -1px 0px 0px rgba(34, 36, 38, 0.15);\n        box-shadow: -1px -1px 0px 0px rgba(34, 36, 38, 0.15);\n    }\n\n    /* Left Pointing Upward */\n    .ui.left.pointing.upward.dropdown:not(.top):not(.bottom) .menu {\n        top: auto !important;\n        bottom: 0 !important;\n        margin: 0em 0em 0em 1em;\n    }\n    .ui.left.pointing.upward.dropdown:not(.top):not(.bottom) .menu:after {\n        top: auto !important;\n        bottom: 0 !important;\n        margin: 0em 0em 1em 0em;\n        -webkit-box-shadow: -1px -1px 0px 0px rgba(34, 36, 38, 0.15);\n        box-shadow: -1px -1px 0px 0px rgba(34, 36, 38, 0.15);\n    }\n\n    /*******************************\n         Theme Overrides\n*******************************/\n\n    /* Dropdown Carets */\n    .ui.dropdown > .dropdown.icon {\n        font-family: "Dropdown";\n        line-height: 1;\n        height: 1em;\n        width: 1.23em;\n        -webkit-backface-visibility: hidden;\n        backface-visibility: hidden;\n        font-weight: normal;\n        font-style: normal;\n        text-align: center;\n    }\n    .ui.dropdown > .dropdown.icon {\n        width: auto;\n    }\n    .ui.dropdown > .dropdown.icon:before {\n        content: "\f0d7";\n    }\n\n    /* Sub Menu */\n    .ui.dropdown .menu .item .dropdown.icon:before {\n        content: "\f0da" /*rtl:\'\f0d9\'*/;\n    }\n    .ui.dropdown .item .left.dropdown.icon:before,\n    .ui.dropdown .left.menu .item .dropdown.icon:before {\n        content: "\f0d9" /*rtl:"\f0da"*/;\n    }\n\n    /* Vertical Menu Dropdown */\n    .ui.vertical.menu .dropdown.item > .dropdown.icon:before {\n        content: "\f0da" /*rtl:"\f0d9"*/;\n    }\n    .ui.dropdown > .clear.icon:before {\n        content: "\f00d";\n    }\n\n    .ui.selection.active.dropdown .menu::-webkit-scrollbar {\n        width: 7px;\n        border-radius: 50px;\n        z-index: -1px;\n    }\n\n    .ui.selection.active.dropdown .menu::-webkit-scrollbar-thumb {\n        background-color: ',";\n        border-radius: 50px;\n    }\n\n    .ui.selection.active.dropdown .menu::-webkit-scrollbar-thumb:hover {\n        background-color: ",';\n    }\n    /* Icons for Reference (Subsetted in 2.4.0)\n  .dropdown.down:before { content: "\f0d7"; }\n  .dropdown.up:before { content: "\f0d8"; }\n  .dropdown.left:before { content: "\f0d9"; }\n  .dropdown.right:before { content: "\f0da"; }\n  .dropdown.close:before { content: "\f00d"; }\n*/\n\n    /*******************************\n        User Overrides\n*******************************/\n\n    small {\n        margin-left: 15px;\n        font-size: 10px;\n        color: ',";\n    }\n"],["\n    font-family: MontSerrat !important;\n    width: 100% !important;\n    display: flex !important;\n    flex-direction: column !important;\n    padding-bottom: ",";\n\n    label {\n        font-size: 14px;\n        margin-left: 15px;\n        color: ",";\n    }\n\n    /*!\n * # Semantic UI 2.4.0 - Dropdown\n * http://github.com/semantic-org/semantic-ui/\n *\n *\n * Released under the MIT license\n * http://opensource.org/licenses/MIT\n *\n */\n\n    /*******************************\n            Dropdown\n*******************************/\n\n    .ui.dropdown {\n        cursor: pointer;\n        position: relative;\n        display: inline-block;\n        outline: none;\n        text-align: ",";\n        color: ",";\n        -webkit-transition: width 0.1s ease, -webkit-box-shadow 0.1s ease;\n        transition: width 0.1s ease, -webkit-box-shadow 0.1s ease;\n        transition: box-shadow 0.1s ease, width 0.1s ease;\n        transition: box-shadow 0.1s ease, width 0.1s ease,\n            -webkit-box-shadow 0.1s ease;\n        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);\n    }\n\n    /*******************************\n            Content\n*******************************/\n\n    /*--------------\n      Menu\n---------------*/\n\n    .ui.dropdown .menu {\n        cursor: auto;\n        position: absolute;\n        display: none;\n        outline: none;\n        top: 100%;\n        min-width: -webkit-max-content;\n        min-width: -moz-max-content;\n        min-width: max-content;\n        margin: 0em;\n        padding: 0em 0em;\n        background: #ffffff;\n        font-size: 1em;\n        text-shadow: none;\n        text-align: left;\n        -webkit-box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n        box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n        border: 1px solid rgba(34, 36, 38, 0.15);\n        border-radius: ",";\n        -webkit-transition: opacity 0.1s ease;\n        transition: opacity 0.1s ease;\n        z-index: 11;\n        will-change: transform, opacity;\n        /* border-top: ",";\n        border-left: ",";\n        border-right: ","; */\n    }\n    .ui.dropdown .menu > * {\n        white-space: nowrap;\n    }\n\n    /*--------------\n  Hidden Input\n---------------*/\n\n    .ui.dropdown > input:not(.search):first-child,\n    .ui.dropdown > select {\n        display: none !important;\n    }\n\n    /*--------------\n Dropdown Icon\n---------------*/\n\n    .ui.dropdown > .dropdown.icon {\n        position: relative;\n        width: auto;\n        font-size: 0.85714286em;\n        margin: 0em 0em 0em 1em;\n    }\n    .ui.dropdown .menu > .item .dropdown.icon {\n        width: auto;\n        float: right;\n        margin: 0em 0em 0em 1em;\n    }\n    .ui.dropdown .menu > .item .dropdown.icon + .text {\n        margin-right: 1em;\n    }\n\n    /*--------------\n      Text\n---------------*/\n\n    .ui.dropdown > .text {\n        display: inline-block;\n        -webkit-transition: none;\n        transition: none;\n    }\n\n    /*--------------\n    Menu Item\n---------------*/\n\n    .ui.dropdown .menu > .item {\n        position: relative;\n        cursor: pointer;\n        display: block;\n        border: none;\n        height: auto;\n        text-align: left;\n        border-top: none;\n        line-height: 1em;\n        color: ",';\n        padding: 0.78571429rem 1.14285714rem !important;\n        font-size: 1rem;\n        text-transform: none;\n        font-weight: normal;\n        -webkit-box-shadow: none;\n        box-shadow: none;\n        -webkit-touch-callout: none;\n    }\n    .ui.dropdown .menu > .item:first-child {\n        border-top-width: 0px;\n    }\n\n    /*--------------\n  Floated Content\n---------------*/\n\n    .ui.dropdown > .text > [class*="right floated"],\n    .ui.dropdown .menu .item > [class*="right floated"] {\n        float: right !important;\n        margin-right: 0em !important;\n        margin-left: 1em !important;\n    }\n    .ui.dropdown > .text > [class*="left floated"],\n    .ui.dropdown .menu .item > [class*="left floated"] {\n        float: left !important;\n        margin-left: 0em !important;\n        margin-right: 1em !important;\n    }\n    .ui.dropdown .menu .item > .icon.floated,\n    .ui.dropdown .menu .item > .flag.floated,\n    .ui.dropdown .menu .item > .image.floated,\n    .ui.dropdown .menu .item > img.floated {\n        margin-top: 0em;\n    }\n\n    /*--------------\n  Menu Divider\n---------------*/\n\n    .ui.dropdown .menu > .header {\n        margin: 1rem 0rem 0.75rem;\n        padding: 0em 1.14285714rem;\n        color: rgba(0, 0, 0, 0.85);\n        font-size: 0.78571429em;\n        font-weight: bold;\n        text-transform: uppercase;\n    }\n    .ui.dropdown .menu > .divider {\n        border-top: 1px solid rgba(34, 36, 38, 0.1);\n        height: 0em;\n        margin: 0.5em 0em;\n    }\n    .ui.dropdown.dropdown .menu > .input {\n        width: auto;\n        display: -webkit-box;\n        display: -ms-flexbox;\n        display: flex;\n        margin: 1.14285714rem 0.78571429rem;\n        min-width: 10rem;\n    }\n    .ui.dropdown .menu > .header + .input {\n        margin-top: 0em;\n    }\n    .ui.dropdown .menu > .input:not(.transparent) input {\n        padding: 0.5em 1em;\n    }\n    .ui.dropdown .menu > .input:not(.transparent) .button,\n    .ui.dropdown .menu > .input:not(.transparent) .icon,\n    .ui.dropdown .menu > .input:not(.transparent) .label {\n        padding-top: 0.5em;\n        padding-bottom: 0.5em;\n    }\n\n    /*-----------------\n  Item Description\n-------------------*/\n\n    .ui.dropdown > .text > .description,\n    .ui.dropdown .menu > .item > .description {\n        float: right;\n        margin: 0em 0em 0em 1em;\n        color: rgba(0, 0, 0, 0.4);\n    }\n\n    /*-----------------\n       Message\n-------------------*/\n\n    .ui.dropdown .menu > .message {\n        padding: 0.78571429rem 1.14285714rem;\n        font-weight: normal;\n    }\n    .ui.dropdown .menu > .message:not(.ui) {\n        color: rgba(0, 0, 0, 0.4);\n    }\n\n    /*--------------\n    Sub Menu\n---------------*/\n\n    .ui.dropdown .menu .menu {\n        top: 0% !important;\n        left: 100%;\n        right: auto;\n        margin: 0em 0em 0em -0.5em !important;\n        border-radius: 0.28571429rem !important;\n        z-index: 21 !important;\n    }\n\n    /* Hide Arrow */\n    .ui.dropdown .menu .menu:after {\n        display: none;\n    }\n\n    /*--------------\n   Sub Elements\n---------------*/\n\n    /* Icons / Flags / Labels / Image */\n    .ui.dropdown > .text > .icon,\n    .ui.dropdown > .text > .label,\n    .ui.dropdown > .text > .flag,\n    .ui.dropdown > .text > img,\n    .ui.dropdown > .text > .image {\n        margin-top: 0em;\n    }\n    .ui.dropdown .menu > .item > .icon,\n    .ui.dropdown .menu > .item > .label,\n    .ui.dropdown .menu > .item > .flag,\n    .ui.dropdown .menu > .item > .image,\n    .ui.dropdown .menu > .item > img {\n        margin-top: 0em;\n    }\n    .ui.dropdown > .text > .icon,\n    .ui.dropdown > .text > .label,\n    .ui.dropdown > .text > .flag,\n    .ui.dropdown > .text > img,\n    .ui.dropdown > .text > .image,\n    .ui.dropdown .menu > .item > .icon,\n    .ui.dropdown .menu > .item > .label,\n    .ui.dropdown .menu > .item > .flag,\n    .ui.dropdown .menu > .item > .image,\n    .ui.dropdown .menu > .item > img {\n        margin-left: 0em;\n        float: none;\n        margin-right: 0.78571429rem;\n    }\n\n    /*--------------\n     Image\n---------------*/\n\n    .ui.dropdown > .text > img,\n    .ui.dropdown > .text > .image,\n    .ui.dropdown .menu > .item > .image,\n    .ui.dropdown .menu > .item > img {\n        display: inline-block;\n        vertical-align: top;\n        width: auto;\n        margin-top: -0.5em;\n        margin-bottom: -0.5em;\n        max-height: 2em;\n    }\n\n    /*******************************\n            Coupling\n*******************************/\n\n    /*--------------\n      Menu\n---------------*/\n\n    /* Remove Menu Item Divider */\n    .ui.dropdown .ui.menu > .item:before,\n    .ui.menu .ui.dropdown .menu > .item:before {\n        display: none;\n    }\n\n    /* Prevent Menu Item Border */\n    .ui.menu .ui.dropdown .menu .active.item {\n        border-left: none;\n    }\n\n    /* Automatically float dropdown menu right on last menu item */\n    .ui.menu .right.menu .dropdown:last-child .menu,\n    .ui.menu .right.dropdown.item .menu,\n    .ui.buttons > .ui.dropdown:last-child .menu {\n        left: auto;\n        right: 0em;\n    }\n\n    /*--------------\n      Label\n---------------*/\n\n    /* Dropdown Menu */\n    .ui.label.dropdown .menu {\n        min-width: 100%;\n    }\n\n    /*--------------\n     Button\n---------------*/\n\n    /* No Margin On Icon Button */\n    .ui.dropdown.icon.button > .dropdown.icon {\n        margin: 0em;\n    }\n    .ui.button.dropdown .menu {\n        min-width: 100%;\n    }\n\n    /*******************************\n              Types\n*******************************/\n\n    /*--------------\n    Selection\n---------------*/\n\n    /* Displays like a select box */\n    .ui.selection.dropdown {\n        cursor: pointer;\n        word-wrap: break-word;\n        line-height: 1em;\n        white-space: normal;\n        outline: 0;\n        -webkit-transform: rotateZ(0deg);\n        transform: rotateZ(0deg);\n        min-width: 14em;\n        min-height: 2.71428571em;\n        background: ',";\n        display: inline-block;\n        padding: 0.78571429em 2.6em 0.78571429em 1.1em;\n        color: ",";\n        -webkit-box-shadow: none;\n        box-shadow: none;\n        border: 1px solid\n            ",";\n        border-radius: ",";\n        -webkit-transition: width 0.1s ease, -webkit-box-shadow 0.1s ease;\n        transition: width 0.1s ease, -webkit-box-shadow 0.1s ease;\n        transition: box-shadow 0.1s ease, width 0.1s ease;\n        transition: box-shadow 0.1s ease, width 0.1s ease,\n            -webkit-box-shadow 0.1s ease;\n        border-radius: ",";\n        border-top: ",";\n        border-left: ",";\n        border-right: ",";\n    }\n    .ui.selection.dropdown.visible,\n    .ui.selection.dropdown.active {\n        z-index: 10;\n    }\n    select.ui.dropdown {\n        height: 38px;\n        padding: 0.5em;\n        border: 1px solid rgba(34, 36, 38, 0.15);\n        visibility: visible;\n    }\n    .ui.selection.dropdown > .search.icon,\n    .ui.selection.dropdown > .delete.icon,\n    .ui.selection.dropdown > .dropdown.icon {\n        cursor: pointer;\n        position: absolute;\n        width: auto;\n        height: auto;\n        line-height: 1.21428571em;\n        top: 0.78571429em;\n        right: 1em;\n        z-index: 3;\n        margin: -0.78571429em;\n        padding: 0.91666667em;\n        opacity: 0.8;\n        -webkit-transition: opacity 0.1s ease;\n        transition: opacity 0.1s ease;\n    }\n\n    /* Compact */\n    .ui.compact.selection.dropdown {\n        min-width: 0px;\n    }\n\n    /*  Selection Menu */\n    .ui.selection.dropdown .menu {\n        overflow-x: hidden;\n        overflow-y: auto;\n        -webkit-backface-visibility: hidden;\n        backface-visibility: hidden;\n        -webkit-overflow-scrolling: touch;\n        border-top-width: 0px !important;\n        width: auto;\n        outline: none;\n        margin: 0px -1px;\n        min-width: calc(100% + 2px);\n        width: calc(100% + 2px);\n        border-radius: 0em 0em 0.28571429rem 0.28571429rem;\n        -webkit-box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n        box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n        -webkit-transition: opacity 0.1s ease;\n        transition: opacity 0.1s ease;\n        border-bottom-left-radius: 20px;\n        border-bottom-right-radius: 20px;\n    }\n    .ui.selection.dropdown .menu:after,\n    .ui.selection.dropdown .menu:before {\n        display: none;\n    }\n\n    /*--------------\n    Message\n---------------*/\n\n    .ui.selection.dropdown .menu > .message {\n        padding: 0.78571429rem 1.14285714rem;\n    }\n    @media only screen and (max-width: 767px) {\n        .ui.selection.dropdown .menu {\n            max-height: 8.01428571rem;\n        }\n    }\n    @media only screen and (min-width: 768px) {\n        .ui.selection.dropdown .menu {\n            max-height: 10.68571429rem;\n        }\n    }\n    @media only screen and (min-width: 992px) {\n        .ui.selection.dropdown .menu {\n            max-height: 16.02857143rem;\n        }\n    }\n    @media only screen and (min-width: 1920px) {\n        .ui.selection.dropdown .menu {\n            max-height: 21.37142857rem;\n        }\n    }\n\n    /* Menu Item */\n    .ui.selection.dropdown .menu > .item {\n        border-top: 1px solid #fafafa;\n        padding: 0.78571429rem 1.04285714rem !important;\n        white-space: normal;\n        word-wrap: normal;\n    }\n\n    /* User Item */\n    .ui.selection.dropdown .menu > .hidden.addition.item {\n        display: none;\n    }\n\n    /* Hover */\n    .ui.selection.dropdown:hover {\n        border-color: ",";\n        -webkit-box-shadow: none;\n        box-shadow: none;\n    }\n\n    /* Active */\n    .ui.selection.active.dropdown {\n        border-color: ",";\n        -webkit-box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n        box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n    }\n    .ui.selection.active.dropdown .menu {\n        border-color: ",";\n        -webkit-box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n        box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n    }\n\n    /* Focus */\n    .ui.selection.dropdown:focus {\n        border-color: ",";\n        -webkit-box-shadow: none;\n        box-shadow: none;\n    }\n    .ui.selection.dropdown:focus .menu {\n        border-color: ",";\n        -webkit-box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n        box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n    }\n\n    /* Visible */\n    .ui.selection.visible.dropdown > .text:not(.default) {\n        font-weight: normal;\n        color: ",";\n    }\n\n    /* Visible Hover */\n    .ui.selection.active.dropdown:hover {\n        border-color: ",";\n        -webkit-box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n        box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n    }\n    .ui.selection.active.dropdown:hover .menu {\n        border-color: ",';\n        -webkit-box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n        box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n    }\n\n    /* Dropdown Icon */\n    .ui.active.selection.dropdown > .dropdown.icon,\n    .ui.visible.selection.dropdown > .dropdown.icon {\n        opacity: "";\n        z-index: 3;\n    }\n\n    /* Connecting Border */\n    .ui.active.selection.dropdown {\n        border-bottom-left-radius: 0em !important;\n        border-bottom-right-radius: 0em !important;\n    }\n\n    /* Empty Connecting Border */\n    .ui.active.empty.selection.dropdown {\n        border-radius: 0.28571429rem !important;\n        -webkit-box-shadow: none !important;\n        box-shadow: none !important;\n    }\n    .ui.active.empty.selection.dropdown .menu {\n        border: none !important;\n        -webkit-box-shadow: none !important;\n        box-shadow: none !important;\n    }\n\n    /*--------------\n   Searchable\n---------------*/\n\n    /* Search Selection */\n    .ui.search.dropdown {\n        min-width: "";\n    }\n\n    /* Search Dropdown */\n    .ui.search.dropdown > input.search {\n        background: none transparent !important;\n        border: none !important;\n        -webkit-box-shadow: none !important;\n        box-shadow: none !important;\n        cursor: text;\n        top: 0em;\n        left: 1px;\n        width: 100%;\n        outline: none;\n        -webkit-tap-highlight-color: rgba(255, 255, 255, 0);\n        padding: inherit;\n        color: ',";\n        text-align: ",";\n    }\n\n    /* Text Layering */\n    .ui.search.dropdown > input.search {\n        position: absolute;\n        z-index: 2;\n    }\n    .ui.search.dropdown > .text {\n        cursor: text;\n        position: relative;\n        left: 1px;\n        z-index: 3;\n    }\n\n    /* Search Selection */\n    .ui.search.selection.dropdown > input.search {\n        line-height: 1.21428571em;\n        padding: 0.67857143em 2.1em 0.67857143em 1em;\n    }\n\n    /* Used to size multi select input to character width */\n    .ui.search.selection.dropdown > span.sizer {\n        line-height: 1.21428571em;\n        padding: 0.67857143em 2.1em 0.67857143em 1em;\n        display: none;\n        white-space: pre;\n    }\n\n    /* Active/Visible Search */\n    .ui.search.dropdown.active > input.search,\n    .ui.search.dropdown.visible > input.search {\n        cursor: auto;\n        color: ",";\n    }\n    .ui.search.dropdown.active > .text,\n    .ui.search.dropdown.visible > .text {\n        pointer-events: none;\n    }\n\n    /* Filtered Text */\n    .ui.active.search.dropdown input.search:focus + .text .icon,\n    .ui.active.search.dropdown input.search:focus + .text .flag {\n        opacity: 0.45;\n    }\n    .ui.active.search.dropdown input.search:focus + .text {\n        color: rgba(115, 115, 115, 0.87) !important;\n    }\n\n    .input.search::placeholder {\n        color: ",";\n    }\n    /* Search Menu */\n    .ui.search.dropdown .menu {\n        overflow-x: hidden;\n        overflow-y: auto;\n        -webkit-backface-visibility: hidden;\n        backface-visibility: hidden;\n        -webkit-overflow-scrolling: touch;\n    }\n    @media only screen and (max-width: 767px) {\n        .ui.search.dropdown .menu {\n            max-height: 8.01428571rem;\n        }\n    }\n    @media only screen and (min-width: 768px) {\n        .ui.search.dropdown .menu {\n            max-height: 10.68571429rem;\n        }\n    }\n    @media only screen and (min-width: 992px) {\n        .ui.search.dropdown .menu {\n            max-height: 16.02857143rem;\n        }\n    }\n    @media only screen and (min-width: 1920px) {\n        .ui.search.dropdown .menu {\n            max-height: 21.37142857rem;\n        }\n    }\n\n    /*--------------\n    Multiple\n---------------*/\n\n    /* Multiple Selection */\n    .ui.multiple.dropdown {\n        padding: 0.22619048em 2.1em 0.22619048em 0.35714286em;\n    }\n    .ui.multiple.dropdown .menu {\n        cursor: auto;\n    }\n\n    /* Multiple Search Selection */\n    .ui.multiple.search.dropdown,\n    .ui.multiple.search.dropdown > input.search {\n        cursor: text;\n    }\n\n    /* Selection Label */\n    .ui.multiple.dropdown > .label {\n        -webkit-user-select: none;\n        -moz-user-select: none;\n        -ms-user-select: none;\n        user-select: none;\n        display: inline-block;\n        vertical-align: top;\n        white-space: normal;\n        font-size: 1em;\n        padding: 0.35714286em 0.78571429em;\n        margin: 0.14285714rem 0.28571429rem 0.14285714rem 0.5em;\n        -webkit-box-shadow: 0px 0px 0px 1px rgba(34, 36, 38, 0.15) inset;\n        box-shadow: 0px 0px 0px 1px rgba(34, 36, 38, 0.15) inset;\n        border-radius: 20px;\n        color: ",";\n        background-color: ",';\n    }\n\n    /* Dropdown Icon */\n    .ui.multiple.dropdown .dropdown.icon {\n        margin: "";\n        padding: "";\n    }\n\n    /* Text */\n    .ui.multiple.dropdown > .text {\n        position: static;\n        padding: 0;\n        max-width: 100%;\n        margin: 0.45238095em 0em 0.45238095em 0.64285714em;\n        line-height: 1.21428571em;\n    }\n    .ui.multiple.dropdown > .label ~ input.search {\n        margin-left: 0.14285714em !important;\n    }\n    .ui.multiple.dropdown > .label ~ .text {\n        display: none;\n    }\n\n    /*-----------------\n  Multiple Search\n-----------------*/\n\n    /* Prompt Text */\n    .ui.multiple.search.dropdown > .text {\n        display: inline-block;\n        position: absolute;\n        top: 0;\n        left: 0;\n        padding: inherit;\n        margin: 0.45238095em 0em 0.45238095em 0.64285714em;\n        line-height: 1.21428571em;\n    }\n    .ui.multiple.search.dropdown > .label ~ .text {\n        display: none;\n    }\n\n    /* Search */\n    .ui.multiple.search.dropdown > input.search {\n        position: static;\n        padding: 0;\n        max-width: 100%;\n        margin: 0.45238095em 0em 0.45238095em 0.64285714em;\n        width: 2.2em;\n        line-height: 1.21428571em;\n    }\n\n    /*--------------\n     Inline\n---------------*/\n\n    .ui.inline.dropdown {\n        cursor: pointer;\n        display: inline-block;\n        color: inherit;\n    }\n    .ui.inline.dropdown .dropdown.icon {\n        margin: 0em 0.21428571em 0em 0.21428571em;\n        vertical-align: baseline;\n    }\n    .ui.inline.dropdown > .text {\n        font-weight: bold;\n    }\n    .ui.inline.dropdown .menu {\n        cursor: auto;\n        margin-top: 0.21428571em;\n        border-radius: 0.28571429rem;\n    }\n\n    /*******************************\n            States\n*******************************/\n\n    /*--------------------\n        Active\n----------------------*/\n\n    /* Menu Item Active */\n    .ui.dropdown .menu .active.item {\n        background: transparent;\n        font-weight: bold;\n        color: ',";\n        -webkit-box-shadow: none;\n        box-shadow: none;\n        z-index: 12;\n    }\n\n    /*--------------------\n        Hover\n----------------------*/\n\n    /* Menu Item Hover */\n    .ui.dropdown .menu > .item:hover {\n        background: rgba(0, 0, 0, 0.05);\n        color: ",';\n        z-index: 13;\n    }\n\n    /*--------------------\n       Loading\n---------------------*/\n\n    .ui.loading.dropdown > i.icon {\n        height: 1em !important;\n    }\n    .ui.loading.selection.dropdown > i.icon {\n        padding: 1.5em 1.28571429em !important;\n    }\n    .ui.loading.dropdown > i.icon:before {\n        position: absolute;\n        content: "";\n        top: 50%;\n        left: 50%;\n        margin: -0.64285714em 0em 0em -0.64285714em;\n        width: 1.28571429em;\n        height: 1.28571429em;\n        border-radius: 500rem;\n        border: 0.2em solid rgba(0, 0, 0, 0.1);\n    }\n    .ui.loading.dropdown > i.icon:after {\n        position: absolute;\n        content: "";\n        top: 50%;\n        left: 50%;\n        -webkit-box-shadow: 0px 0px 0px 1px transparent;\n        box-shadow: 0px 0px 0px 1px transparent;\n        margin: -0.64285714em 0em 0em -0.64285714em;\n        width: 1.28571429em;\n        height: 1.28571429em;\n        -webkit-animation: dropdown-spin 0.6s linear;\n        animation: dropdown-spin 0.6s linear;\n        -webkit-animation-iteration-count: infinite;\n        animation-iteration-count: infinite;\n        border-radius: 500rem;\n        border-color: '," transparent transparent;\n        border-style: solid;\n        border-width: 0.2em;\n    }\n\n    /* Coupling */\n    .ui.loading.dropdown.button > i.icon:before,\n    .ui.loading.dropdown.button > i.icon:after {\n        display: none;\n    }\n    @-webkit-keyframes dropdown-spin {\n        from {\n            -webkit-transform: rotate(0deg);\n            transform: rotate(0deg);\n        }\n        to {\n            -webkit-transform: rotate(360deg);\n            transform: rotate(360deg);\n        }\n    }\n    @keyframes dropdown-spin {\n        from {\n            -webkit-transform: rotate(0deg);\n            transform: rotate(0deg);\n        }\n        to {\n            -webkit-transform: rotate(360deg);\n            transform: rotate(360deg);\n        }\n    }\n\n    /*--------------------\n     Default Text\n----------------------*/\n\n    .ui.dropdown:not(.button) > .default.text,\n    .ui.default.dropdown:not(.button) > .text {\n        color: ",";\n    }\n    .ui.dropdown:not(.button) > input:focus ~ .default.text,\n    .ui.default.dropdown:not(.button) > input:focus ~ .text {\n        color: ",";\n    }\n\n    /*--------------------\n        Loading\n----------------------*/\n\n    .ui.loading.dropdown > .text {\n        -webkit-transition: none;\n        transition: none;\n    }\n\n    /* Used To Check Position */\n    .ui.dropdown .loading.menu {\n        display: block;\n        visibility: hidden;\n        z-index: -1;\n    }\n    .ui.dropdown > .loading.menu {\n        left: 0px !important;\n        right: auto !important;\n    }\n    .ui.dropdown > .menu .loading.menu {\n        left: 100% !important;\n        right: auto !important;\n    }\n\n    /*--------------------\n    Keyboard Select\n----------------------*/\n\n    /* Selected Item */\n    .ui.dropdown.selected,\n    .ui.dropdown .menu .selected.item {\n        background: rgba(0, 0, 0, 0.03);\n        color: ",";\n    }\n\n    /*--------------------\n    Search Filtered\n----------------------*/\n\n    /* Filtered Item */\n    .ui.dropdown > .filtered.text {\n        visibility: hidden;\n    }\n    .ui.dropdown .filtered.item {\n        display: none !important;\n    }\n\n    /*--------------------\n        Error\n----------------------*/\n\n    .ui.dropdown.error,\n    .ui.dropdown.error > .text,\n    .ui.dropdown.error > .default.text {\n        color: #9f3a38;\n    }\n    .ui.selection.dropdown.error {\n        background: ",";\n        border-color: ",";\n    }\n    .ui.selection.dropdown.error:hover {\n        border-color: ",";\n    }\n    .ui.dropdown.error > .menu,\n    .ui.dropdown.error > .menu .menu {\n        border-color: ",";\n    }\n    .ui.dropdown.error > .menu > .item {\n        color: ",";\n    }\n    .ui.multiple.selection.error.dropdown > .label {\n        border-color: ",";\n    }\n\n    /* Item Hover */\n    .ui.dropdown.error > .menu > .item:hover {\n        background-color: ",";\n    }\n\n    /* Item Active */\n    .ui.dropdown.error > .menu .active.item {\n        background-color: ",';\n    }\n\n    /*--------------------\n        Clear\n----------------------*/\n\n    .ui.dropdown > .clear.dropdown.icon {\n        opacity: 0.8;\n        -webkit-transition: opacity 0.1s ease;\n        transition: opacity 0.1s ease;\n    }\n    .ui.dropdown > .clear.dropdown.icon:hover {\n        opacity: 1;\n    }\n\n    /*--------------------\n        Disabled\n----------------------*/\n\n    /* Disabled */\n    .ui.disabled.dropdown,\n    .ui.dropdown .menu > .disabled.item {\n        cursor: default;\n        pointer-events: none;\n        opacity: 0.45;\n    }\n\n    /*******************************\n           Variations\n*******************************/\n\n    /*--------------\n    Direction\n---------------*/\n\n    /* Flyout Direction */\n    .ui.dropdown .menu {\n        left: 0px;\n    }\n\n    /* Default Side (Right) */\n    .ui.dropdown .right.menu > .menu,\n    .ui.dropdown .menu .right.menu {\n        left: 100% !important;\n        right: auto !important;\n        border-radius: 0.28571429rem !important;\n    }\n\n    /* Leftward Opening Menu */\n    .ui.dropdown > .left.menu {\n        left: auto !important;\n        right: 0px !important;\n    }\n    .ui.dropdown > .left.menu .menu,\n    .ui.dropdown .menu .left.menu {\n        left: auto;\n        right: 100%;\n        margin: 0em -0.5em 0em 0em !important;\n        border-radius: 0.28571429rem !important;\n    }\n    .ui.dropdown .item .left.dropdown.icon,\n    .ui.dropdown .left.menu .item .dropdown.icon {\n        width: auto;\n        float: left;\n        margin: 0em 0em 0em 0em;\n    }\n    .ui.dropdown .item .left.dropdown.icon,\n    .ui.dropdown .left.menu .item .dropdown.icon {\n        width: auto;\n        float: left;\n        margin: 0em 0em 0em 0em;\n    }\n    .ui.dropdown .item .left.dropdown.icon + .text,\n    .ui.dropdown .left.menu .item .dropdown.icon + .text {\n        margin-left: 1em;\n        margin-right: 0em;\n    }\n\n    /*--------------\n     Upward\n---------------*/\n\n    /* Upward Main Menu */\n    .ui.upward.dropdown > .menu {\n        top: auto;\n        bottom: 100%;\n        -webkit-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.08);\n        box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.08);\n        border-radius: 0.28571429rem 0.28571429rem 0em 0em;\n    }\n\n    /* Upward Sub Menu */\n    .ui.dropdown .upward.menu {\n        top: auto !important;\n        bottom: 0 !important;\n    }\n\n    /* Active Upward */\n    .ui.simple.upward.active.dropdown,\n    .ui.simple.upward.dropdown:hover {\n        border-radius: 0.28571429rem 0.28571429rem 0em 0em !important;\n    }\n    .ui.upward.dropdown.button:not(.pointing):not(.floating).active {\n        border-radius: 0.28571429rem 0.28571429rem 0em 0em;\n    }\n\n    /* Selection */\n    .ui.upward.selection.dropdown .menu {\n        border-top-width: 1px !important;\n        border-bottom-width: 0px !important;\n        -webkit-box-shadow: 0px -2px 3px 0px rgba(0, 0, 0, 0.08);\n        box-shadow: 0px -2px 3px 0px rgba(0, 0, 0, 0.08);\n        border-top-left-radius: 20px;\n        border-top-right-radius: 20px;\n    }\n    .ui.upward.selection.dropdown:hover {\n        -webkit-box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.05);\n        box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.05);\n    }\n\n    /* Active Upward */\n    .ui.active.upward.selection.dropdown {\n        border-radius: 0em 0em 20px 20px !important;\n    }\n\n    /* Visible Upward */\n    .ui.upward.selection.dropdown.visible {\n        -webkit-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.08);\n        box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.08);\n        border-radius: 0em 0em 20px 20px !important;\n    }\n\n    /* Visible Hover Upward */\n    .ui.upward.active.selection.dropdown:hover {\n        -webkit-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.05);\n        box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.05);\n    }\n    .ui.upward.active.selection.dropdown:hover .menu {\n        -webkit-box-shadow: 0px -2px 3px 0px rgba(0, 0, 0, 0.08);\n        box-shadow: 0px -2px 3px 0px rgba(0, 0, 0, 0.08);\n    }\n\n    /*--------------\n     Simple\n---------------*/\n\n    /*  Selection Menu */\n    .ui.scrolling.dropdown .menu,\n    .ui.dropdown .scrolling.menu {\n        overflow-x: hidden;\n        overflow-y: auto;\n    }\n    .ui.scrolling.dropdown .menu {\n        overflow-x: hidden;\n        overflow-y: auto;\n        -webkit-backface-visibility: hidden;\n        backface-visibility: hidden;\n        -webkit-overflow-scrolling: touch;\n        min-width: 100% !important;\n        width: auto !important;\n    }\n    .ui.dropdown .scrolling.menu {\n        position: static;\n        overflow-y: auto;\n        border: none;\n        -webkit-box-shadow: none !important;\n        box-shadow: none !important;\n        border-radius: 0 !important;\n        margin: 0 !important;\n        min-width: 100% !important;\n        width: auto !important;\n        border-top: 1px solid rgba(34, 36, 38, 0.15);\n    }\n    .ui.scrolling.dropdown .menu .item.item.item,\n    .ui.dropdown .scrolling.menu > .item.item.item {\n        border-top: none;\n    }\n    .ui.scrolling.dropdown .menu .item:first-child,\n    .ui.dropdown .scrolling.menu .item:first-child {\n        border-top: none;\n    }\n    .ui.dropdown > .animating.menu .scrolling.menu,\n    .ui.dropdown > .visible.menu .scrolling.menu {\n        display: block;\n    }\n\n    /* Scrollbar in IE */\n    @media all and (-ms-high-contrast: none) {\n        .ui.scrolling.dropdown .menu,\n        .ui.dropdown .scrolling.menu {\n            min-width: calc(100% - 17px);\n        }\n    }\n    @media only screen and (max-width: 767px) {\n        .ui.scrolling.dropdown .menu,\n        .ui.dropdown .scrolling.menu {\n            max-height: 10.28571429rem;\n        }\n    }\n    @media only screen and (min-width: 768px) {\n        .ui.scrolling.dropdown .menu,\n        .ui.dropdown .scrolling.menu {\n            max-height: 15.42857143rem;\n        }\n    }\n    @media only screen and (min-width: 992px) {\n        .ui.scrolling.dropdown .menu,\n        .ui.dropdown .scrolling.menu {\n            max-height: 20.57142857rem;\n        }\n    }\n    @media only screen and (min-width: 1920px) {\n        .ui.scrolling.dropdown .menu,\n        .ui.dropdown .scrolling.menu {\n            max-height: 20.57142857rem;\n        }\n    }\n\n    /*--------------\n     Simple\n---------------*/\n\n    /* Displays without javascript */\n    .ui.simple.dropdown .menu:before,\n    .ui.simple.dropdown .menu:after {\n        display: none;\n    }\n    .ui.simple.dropdown .menu {\n        position: absolute;\n        display: block;\n        overflow: hidden;\n        top: -9999px !important;\n        opacity: 0;\n        width: 0;\n        height: 0;\n        -webkit-transition: opacity 0.1s ease;\n        transition: opacity 0.1s ease;\n    }\n    .ui.simple.active.dropdown,\n    .ui.simple.dropdown:hover {\n        border-bottom-left-radius: 0em !important;\n        border-bottom-right-radius: 0em !important;\n    }\n    .ui.simple.active.dropdown > .menu,\n    .ui.simple.dropdown:hover > .menu {\n        overflow: visible;\n        width: auto;\n        height: auto;\n        top: 100% !important;\n        opacity: 1;\n    }\n    .ui.simple.dropdown > .menu > .item:active > .menu,\n    .ui.simple.dropdown:hover > .menu > .item:hover > .menu {\n        overflow: visible;\n        width: auto;\n        height: auto;\n        top: 0% !important;\n        left: 100% !important;\n        opacity: 1;\n    }\n    .ui.simple.disabled.dropdown:hover .menu {\n        display: none;\n        height: 0px;\n        width: 0px;\n        overflow: hidden;\n    }\n\n    /* Visible */\n    .ui.simple.visible.dropdown > .menu {\n        display: block;\n    }\n\n    /*--------------\n      Fluid\n---------------*/\n\n    .ui.fluid.dropdown {\n        display: block;\n        width: 100%;\n        min-width: 0em;\n    }\n    .ui.fluid.dropdown > .dropdown.icon {\n        float: right;\n    }\n\n    /*--------------\n    Floating\n---------------*/\n\n    .ui.floating.dropdown .menu {\n        left: 0;\n        right: auto;\n        -webkit-box-shadow: 0px 2px 4px 0px rgba(34, 36, 38, 0.12),\n            0px 2px 10px 0px rgba(34, 36, 38, 0.15) !important;\n        box-shadow: 0px 2px 4px 0px rgba(34, 36, 38, 0.12),\n            0px 2px 10px 0px rgba(34, 36, 38, 0.15) !important;\n        border-radius: 0.28571429rem !important;\n    }\n    .ui.floating.dropdown > .menu {\n        margin-top: 0.5em !important;\n        border-radius: 0.28571429rem !important;\n    }\n\n    /*--------------\n     Pointing\n---------------*/\n\n    .ui.pointing.dropdown > .menu {\n        top: 100%;\n        margin-top: 0.78571429rem;\n        border-radius: 0.28571429rem;\n    }\n    .ui.pointing.dropdown > .menu:after {\n        display: block;\n        position: absolute;\n        pointer-events: none;\n        content: "";\n        visibility: visible;\n        -webkit-transform: rotate(45deg);\n        transform: rotate(45deg);\n        width: 0.5em;\n        height: 0.5em;\n        -webkit-box-shadow: -1px -1px 0px 0px rgba(34, 36, 38, 0.15);\n        box-shadow: -1px -1px 0px 0px rgba(34, 36, 38, 0.15);\n        background: #ffffff;\n        z-index: 2;\n    }\n    .ui.pointing.dropdown > .menu:after {\n        top: -0.25em;\n        left: 50%;\n        margin: 0em 0em 0em -0.25em;\n    }\n\n    /* Top Left Pointing */\n    .ui.top.left.pointing.dropdown > .menu {\n        top: 100%;\n        bottom: auto;\n        left: 0%;\n        right: auto;\n        margin: 1em 0em 0em;\n    }\n    .ui.top.left.pointing.dropdown > .menu {\n        top: 100%;\n        bottom: auto;\n        left: 0%;\n        right: auto;\n        margin: 1em 0em 0em;\n    }\n    .ui.top.left.pointing.dropdown > .menu:after {\n        top: -0.25em;\n        left: 1em;\n        right: auto;\n        margin: 0em;\n        -webkit-transform: rotate(45deg);\n        transform: rotate(45deg);\n    }\n\n    /* Top Right Pointing */\n    .ui.top.right.pointing.dropdown > .menu {\n        top: 100%;\n        bottom: auto;\n        right: 0%;\n        left: auto;\n        margin: 1em 0em 0em;\n    }\n    .ui.top.pointing.dropdown > .left.menu:after,\n    .ui.top.right.pointing.dropdown > .menu:after {\n        top: -0.25em;\n        left: auto !important;\n        right: 1em !important;\n        margin: 0em;\n        -webkit-transform: rotate(45deg);\n        transform: rotate(45deg);\n    }\n\n    /* Left Pointing */\n    .ui.left.pointing.dropdown > .menu {\n        top: 0%;\n        left: 100%;\n        right: auto;\n        margin: 0em 0em 0em 1em;\n    }\n    .ui.left.pointing.dropdown > .menu:after {\n        top: 1em;\n        left: -0.25em;\n        margin: 0em 0em 0em 0em;\n        -webkit-transform: rotate(-45deg);\n        transform: rotate(-45deg);\n    }\n    .ui.left:not(.top):not(.bottom).pointing.dropdown > .left.menu {\n        left: auto !important;\n        right: 100% !important;\n        margin: 0em 1em 0em 0em;\n    }\n    .ui.left:not(.top):not(.bottom).pointing.dropdown > .left.menu:after {\n        top: 1em;\n        left: auto;\n        right: -0.25em;\n        margin: 0em 0em 0em 0em;\n        -webkit-transform: rotate(135deg);\n        transform: rotate(135deg);\n    }\n\n    /* Right Pointing */\n    .ui.right.pointing.dropdown > .menu {\n        top: 0%;\n        left: auto;\n        right: 100%;\n        margin: 0em 1em 0em 0em;\n    }\n    .ui.right.pointing.dropdown > .menu:after {\n        top: 1em;\n        left: auto;\n        right: -0.25em;\n        margin: 0em 0em 0em 0em;\n        -webkit-transform: rotate(135deg);\n        transform: rotate(135deg);\n    }\n\n    /* Bottom Pointing */\n    .ui.bottom.pointing.dropdown > .menu {\n        top: auto;\n        bottom: 100%;\n        left: 0%;\n        right: auto;\n        margin: 0em 0em 1em;\n    }\n    .ui.bottom.pointing.dropdown > .menu:after {\n        top: auto;\n        bottom: -0.25em;\n        right: auto;\n        margin: 0em;\n        -webkit-transform: rotate(-135deg);\n        transform: rotate(-135deg);\n    }\n\n    /* Reverse Sub-Menu Direction */\n    .ui.bottom.pointing.dropdown > .menu .menu {\n        top: auto !important;\n        bottom: 0px !important;\n    }\n\n    /* Bottom Left */\n    .ui.bottom.left.pointing.dropdown > .menu {\n        left: 0%;\n        right: auto;\n    }\n    .ui.bottom.left.pointing.dropdown > .menu:after {\n        left: 1em;\n        right: auto;\n    }\n\n    /* Bottom Right */\n    .ui.bottom.right.pointing.dropdown > .menu {\n        right: 0%;\n        left: auto;\n    }\n    .ui.bottom.right.pointing.dropdown > .menu:after {\n        left: auto;\n        right: 1em;\n    }\n\n    /* Upward pointing */\n    .ui.pointing.upward.dropdown .menu,\n    .ui.top.pointing.upward.dropdown .menu {\n        top: auto !important;\n        bottom: 100% !important;\n        margin: 0em 0em 0.78571429rem;\n        border-radius: 0.28571429rem;\n    }\n    .ui.pointing.upward.dropdown .menu:after,\n    .ui.top.pointing.upward.dropdown .menu:after {\n        top: 100% !important;\n        bottom: auto !important;\n        -webkit-box-shadow: 1px 1px 0px 0px rgba(34, 36, 38, 0.15);\n        box-shadow: 1px 1px 0px 0px rgba(34, 36, 38, 0.15);\n        margin: -0.25em 0em 0em;\n    }\n\n    /* Right Pointing Upward */\n    .ui.right.pointing.upward.dropdown:not(.top):not(.bottom) .menu {\n        top: auto !important;\n        bottom: 0 !important;\n        margin: 0em 1em 0em 0em;\n    }\n    .ui.right.pointing.upward.dropdown:not(.top):not(.bottom) .menu:after {\n        top: auto !important;\n        bottom: 0 !important;\n        margin: 0em 0em 1em 0em;\n        -webkit-box-shadow: -1px -1px 0px 0px rgba(34, 36, 38, 0.15);\n        box-shadow: -1px -1px 0px 0px rgba(34, 36, 38, 0.15);\n    }\n\n    /* Left Pointing Upward */\n    .ui.left.pointing.upward.dropdown:not(.top):not(.bottom) .menu {\n        top: auto !important;\n        bottom: 0 !important;\n        margin: 0em 0em 0em 1em;\n    }\n    .ui.left.pointing.upward.dropdown:not(.top):not(.bottom) .menu:after {\n        top: auto !important;\n        bottom: 0 !important;\n        margin: 0em 0em 1em 0em;\n        -webkit-box-shadow: -1px -1px 0px 0px rgba(34, 36, 38, 0.15);\n        box-shadow: -1px -1px 0px 0px rgba(34, 36, 38, 0.15);\n    }\n\n    /*******************************\n         Theme Overrides\n*******************************/\n\n    /* Dropdown Carets */\n    .ui.dropdown > .dropdown.icon {\n        font-family: "Dropdown";\n        line-height: 1;\n        height: 1em;\n        width: 1.23em;\n        -webkit-backface-visibility: hidden;\n        backface-visibility: hidden;\n        font-weight: normal;\n        font-style: normal;\n        text-align: center;\n    }\n    .ui.dropdown > .dropdown.icon {\n        width: auto;\n    }\n    .ui.dropdown > .dropdown.icon:before {\n        content: "\\f0d7";\n    }\n\n    /* Sub Menu */\n    .ui.dropdown .menu .item .dropdown.icon:before {\n        content: "\\f0da" /*rtl:\'\\f0d9\'*/;\n    }\n    .ui.dropdown .item .left.dropdown.icon:before,\n    .ui.dropdown .left.menu .item .dropdown.icon:before {\n        content: "\\f0d9" /*rtl:"\\f0da"*/;\n    }\n\n    /* Vertical Menu Dropdown */\n    .ui.vertical.menu .dropdown.item > .dropdown.icon:before {\n        content: "\\f0da" /*rtl:"\\f0d9"*/;\n    }\n    .ui.dropdown > .clear.icon:before {\n        content: "\\f00d";\n    }\n\n    .ui.selection.active.dropdown .menu::-webkit-scrollbar {\n        width: 7px;\n        border-radius: 50px;\n        z-index: -1px;\n    }\n\n    .ui.selection.active.dropdown .menu::-webkit-scrollbar-thumb {\n        background-color: ',";\n        border-radius: 50px;\n    }\n\n    .ui.selection.active.dropdown .menu::-webkit-scrollbar-thumb:hover {\n        background-color: ",';\n    }\n    /* Icons for Reference (Subsetted in 2.4.0)\n  .dropdown.down:before { content: "\\f0d7"; }\n  .dropdown.up:before { content: "\\f0d8"; }\n  .dropdown.left:before { content: "\\f0d9"; }\n  .dropdown.right:before { content: "\\f0da"; }\n  .dropdown.close:before { content: "\\f00d"; }\n*/\n\n    /*******************************\n        User Overrides\n*******************************/\n\n    small {\n        margin-left: 15px;\n        font-size: 10px;\n        color: ',";\n    }\n"])),function(n){return n.error?"":"20px"},function(n){return n.error?"#E0457B":n.colorLabel?n.colorLabel:"#9B4DEE"},function(n){return n.textAlign&&"center"===n.textAlign?"center":"left"},"#707070",function(n){return n.line?"0":"0.28571429rem"},function(n){return n.line?"none":""},function(n){return n.line?"none":""},function(n){return n.line?"none":""},function(n){return n.brand?"#9B4DEE":"#707070"},function(n){return n.brand?"#D8B8F9":"#FFFFFF"},function(n){return n.brand?"#9B4DEE":"#707070"},function(n){return n.brand?"#D8B8F9":n.line?"#ACACAC":"rgba(34, 36, 38, 0.15)"},function(n){return n.line?0:"0.28571429rem"},function(n){return n.line?"none":"20px"},function(n){return n.line?"none":""},function(n){return n.line?"none":""},function(n){return n.line?"none":""},function(n){return n.brand?"#D8B8F9":"#ACACAC"},function(n){return n.brand?"rgba(155, 77, 238, 0.2)":"#ACACAC"},function(n){return n.error?"#E0457B":n.brand?"#D8B8F9":"#ACACAC"},function(n){return n.error?"#E0457B":n.brand?"#D8B8F9":"#ACACAC"},function(n){return n.error?"#E0457B":n.brand?"#D8B8F9":"#ACACAC"},function(n){return n.brand?"#68349F":"#000000"},function(n){return n.error?"#E0457B":n.brand?"#D8B8F9":"#ACACAC"},function(n){return n.error?"#E0457B":n.brand?"#D8B8F9":"#ACACAC"},function(n){return n.brand?"#9B4DEE":"#707070"},function(n){return n.textAlign&&"center"===n.textAlign?"center":"left"},function(n){return n.brand?"#68349F":"#000000"},function(n){return n.brand?"rgba(155, 77, 238, 0.2)":"#ACACAC"},function(n){return n.brand?"#D8B8F9":"#707070"},function(n){return n.brand?"#9B4DEE":"#eeeeee"},function(n){return n.brand?"#68349F":"#000000"},function(n){return n.brand?"#68349F":"#000000"},"#9B4DEE",function(n){return n.brand?"#9B4DEE":"#E1E6EB"},function(n){return n.brand?"#9B4DEE":"#E1E6EB"},function(n){return n.brand?"#68349F":"#000000"},function(n){return n.line?"#FFFFFF":"#e0457b25"},"#E0457B","#E0457B","#E0457B","#E0457B","#E0457B","#e0457b25","#e0457b25","#9B4DEE","rgba(155, 77, 238, 0.9)","#E0457B"),Er=["options","brand","textAlign","errorMessage","label","colorLabel","line"],Sr=function(e){var t=e.options,r=e.brand,o=e.textAlign,a=e.errorMessage,l=e.label,d=e.colorLabel,c=e.line,p=v(e,Er);return n.createElement(_r,{brand:r,textAlign:o,error:a,colorLabel:d,line:c},l&&n.createElement("label",null,l),n.createElement(i,Object.assign({},p,{selection:!0,noResultsMessage:"Nenhum resultado encontrado",error:!!a,options:t})),a&&n.createElement("small",null,a))},Cr=["value","clearError","errors","name","register","required","setValue","validate"],zr=function(r){var o=r.value,i=r.clearError,a=r.errors,l=r.name,d=r.register,c=r.required,p=r.setValue,s=r.validate,u=v(r,Cr),m=e(),b=m[0],f=m[1],h=e(""),g=h[0],w=h[1];return t(function(){p(l,b||o)},[b]),t(function(){f(o)},[o]),t(function(){d&&d({name:l},{required:c,validate:s&&c?function(n){return s(n)?(w(s(n)),!1):(w(""),!0)}:null})},[d]),n.createElement(Sr,Object.assign({},u,{value:b,onChange:function(n,e){f(e.value),p(l,o),a&&i&&i(l)},line:u.line,errorMessage:a?"required"===a.type?"Obrigatório":""+g:""}))},Or=r.div(it||(it=k(["\n    font-family: MontSerrat !important;\n    display: flex;\n    width: ",";\n    justify-content: space-between;\n    background-color: ",";\n    border: 1px solid ",";\n    padding: 15px 20px;\n    align-items: center;\n    cursor: pointer;\n    box-shadow: 0px 3px 2px 0px rgba(0, 0, 0, 0.16);\n\n    .icon-title {\n        display: flex;\n        align-items: center;\n    }\n\n    .title-subtitle {\n        display: flex;\n        flex-direction: column;\n        flex: 1;\n        margin-left: ",";\n\n        .title {\n          font-size: ",";\n\n          color: ",";\n        }\n\n        .subtitle {\n            color: ",";\n            font-size: 12px;\n        }\n    }\n\n    .value-icon {\n        display: flex;\n        align-items: center;\n        flex: 1;\n        justify-content: flex-end;\n\n        .value {\n            margin-right: 20px;\n            color: ",";\n        }\n    }\n\n    ","\n"])),function(n){return n.width?"string"==typeof n.width?n.width:n.width+"px":"100%"},function(n){return n.secondary?"#eeeeee":"#FFFFFF"},"#eeeeee",function(n){return n.icon?"15px":"0"},function(n){return n.fontSizeTitle?"string"==typeof n.fontSizeTitle?n.fontSizeTitle:n.fontSizeTitle+"px":n.subtitle?"14px":"16px"},function(n){return n.colorTitle?n.colorTitle:"#707070"},function(n){return n.colorSubtitle?n.colorSubtitle:"#ACACAC"},function(n){return n.colorValue?n.colorValue:"#707070"},function(n){return o(n.open?at||(at=k(["\n                  border-top-left-radius: 20px;\n                  border-top-right-radius: 20px;\n              "])):lt||(lt=k(["\n                  border-radius: 30px;\n              "])))}),Mr=r.div(dt||(dt=k(["\n    font-family: MontSerrat !important;\n    width: ",";\n    padding: 20px;\n    border: 1px solid ",";\n    border-top: 0;\n    border-bottom-left-radius: 20px;\n    border-bottom-right-radius: 20px;\n    display: ",";\n    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.16);\n"])),function(n){return n.width?n.width+"%":"100%"},"#eeeeee",function(n){return n.open?"block":"none"}),Fr=function(e){var t=e.title,r=e.subtitle,o=e.value,i=e.children,a=e.secondary,l=e.open,d=e.onChange,c=e.width,p=e.icon,s=e.customIcon;return n.createElement(n.Fragment,null,n.createElement(Or,{colorTitle:e.colorTitle,colorSubtitle:e.colorSubtitle,colorValue:e.colorValue,secondary:a,subtitle:r,open:l,onClick:function(){return d()},width:c,icon:!(!p&&!s),fontSizeTitle:e.fontSizeTitle},n.createElement("div",{className:"icon-title"},s||(p?n.createElement(fe,{icon:p,size:"lg",color:e.colorIcon||"#9B4DEE"}):null),n.createElement("div",{className:"title-subtitle"},n.createElement("span",{className:"title"},t),r&&n.createElement("span",{className:"subtitle"},r))),n.createElement("div",{className:"value-icon"},n.createElement("span",{className:"value"},o),n.createElement(fe,a?{icon:l?vt:wt,style:{fontSize:20}}:{icon:l?vt:wt,style:{fontSize:20},color:"#9B4DEE"}))),n.createElement(Mr,{open:l,width:c},i))},Ir=function(n){switch(n){case"mini":return 30;case"tiny":return 35;case"small":return 40;case"medium":return 50;case"large":return 60;case"big":return 70;case"huge":return 80;case"massive":return 90;default:return 50}},Br=function(n){switch(n){case"mini":return 20;case"tiny":return 22.5;case"small":return 25;case"medium":return 30;case"large":return 35;case"big":return 40;case"huge":return 45;case"massive":return 50;default:return 30}},Dr=function(n){switch(n){case"mini":case"tiny":case"small":case"medium":case"large":case"big":case"huge":case"massive":default:return 5}},Pr=function(n){switch(n){case"mini":return"40px !important";case"tiny":return"50px !important";case"small":return"60px !important";case"medium":return"65px !important";case"large":return"70px !important";case"big":return"80px !important";case"huge":return"90px !important";case"massive":return"100px !important";default:return"65px !important"}},Ar=r.label(ct||(ct=k(["\n    font-family: MontSerrat !important;\n    display: flex !important;\n    flex-direction: row !important;\n    position: relative !important;\n    /* padding-left: ","; */\n    /* margin-bottom: 12px; */\n    cursor: ",";\n    font-size: 22px !important;\n    user-select: none !important;\n\n    input {\n        position: absolute !important;\n        opacity: 0 !important;\n        cursor: pointer !important;\n        height: 0 !important;\n        width: 0 !important;\n        display: none !important;\n    }\n\n    input:checked ~ .control {\n        background-color: ",";\n\n        &:after {\n            left: ",";\n        }\n    }\n\n    .control {\n        height: ",";\n        width: ",";\n        border-radius: ",";\n        background-color: "," !important;\n        transition: background-color 0.15s ease-in !important;\n\n        &:after {\n            content: '' !important;\n            position: absolute !important;\n            left: 5px !important;\n            top: 5px !important;\n            height: ",";\n            width: ",";\n            border-radius: 50px !important;\n            background-color: white !important;\n            transition: left 0.15s ease-in !important;\n            border: 1px solid "," !important;\n        }\n    }\n"])),function(n){return n.size?Ir(n.size)+"px":"50px"},function(n){return n.disabled?"normal !important":"pointer !important"},function(n){return n.disabled?"rgba(155, 77, 238, 0.2) !important":"#68349F !important"},function(n){return n.size?Ir(n.size)-(Br(n.size)-2*Dr(n.size))-Dr(n.size)+"px !important":"25px !important"},function(n){return n.size?Br(n.size)+"px !important":"30px !important"},function(n){return n.size?Ir(n.size)+"px !important":"50px !important"},function(n){return n.size?Br(n.size)/2+"px !important":"15px !important"},"#eeeeee",function(n){return n.size?Br(n.size)-2*Dr(n.size)+"px !important":"20px !important"},function(n){return n.size?Br(n.size)-2*Dr(n.size)+"px !important":"20px !important"},"#F1F1F1"),Tr=r.div(pt||(pt=k(["\n    font-family: MontSerrat !important;\n    display: flex !important;\n    flex-direction: row !important;\n\n    .btn {\n        display: flex !important;\n        align-items: center !important;\n        justify-content: center !important;\n        opacity: ",";\n        width: ",";\n        border: 1px solid "," !important;\n        padding: 4px 0 !important;\n\n        span {\n            font-size: ",";\n        }\n    }\n\n    .left {\n        cursor: ",";\n        background-color: ",";\n        border-top-left-radius: 20px !important;\n        border-bottom-left-radius: 20px !important;\n        border-right: 0 !important;\n        transition: 400ms !important;\n\n        span {\n            color: ",";\n        }\n    }\n\n    .right {\n        cursor: ",";\n        background-color: ",";\n        border-top-right-radius: 20px !important;\n        border-bottom-right-radius: 20px !important;\n        border-left: 0 !important;\n        transition: 400ms !important;\n\n        span {\n            color: ",";\n        }\n    }\n"])),function(n){return n.disabled?"0.5 !important":"1 !important"},function(n){return n.size?Pr(n.size):"65px !important"},"#eeeeee",function(n){return n.size?function(n){switch(n){case"mini":return"8px !important";case"tiny":return"9px !important";case"small":return"10px !important";case"medium":return"11px !important";case"large":return"12px !important";case"big":return"13px !important";case"huge":return"14px !important";case"massive":return"15px !important";default:return"11px !important"}}(n.size):"11px !important"},function(n){return n.disabled?"default !important":n.checked?"pointer !important":"default !important"},function(n){return n.checked?"#FFFFFF !important":"#9B4DEE !important"},function(n){return n.checked?"#707070 !important":"#FFFFFF !important"},function(n){return n.disabled||n.checked?"default !important":"pointer !important"},function(n){return n.checked?"#9B4DEE !important":"#FFFFFF !important"},function(n){return n.checked?"#FFFFFF !important":"#707070 !important"}),Nr=r.div(st||(st=k(["\n    font-family: MontSerrat !important;\n    display: flex !important;\n    flex-direction: row !important;\n\n    .btn {\n        display: flex !important;\n        align-items: center !important;\n        justify-content: center !important;\n        opacity: ",";\n        width: ",";\n        border: 1px solid "," !important;\n        padding: 4px 0 !important;\n\n        span {\n            font-size: ",";\n        }\n    }\n\n    .left {\n        cursor: ",";\n        background-color: ",";\n        border-top-left-radius: 20px !important;\n        border-bottom-left-radius: 20px !important;\n        border-right: 0 !important;\n        transition: 400ms !important;\n\n        span {\n            color: ",";\n        }\n    }\n\n    .right {\n        cursor: ",";\n        background-color: ",";\n        border-top-right-radius: 20px !important;\n        border-bottom-right-radius: 20px !important;\n        border-left: 0 !important;\n        transition: 400ms !important;\n\n        span {\n            color: ",";\n        }\n    }\n"])),function(n){return n.disabled?"0.5 !important":"1 !important"},function(n){return n.size?Pr(n.size):"70px !important"},"#eeeeee",function(n){return n.size?function(n){switch(n){case"mini":return"7px !important";case"tiny":return"8px !important";case"small":return"9px !important";case"medium":return"10px !important";case"large":return"11px !important";case"big":return"12px !important";case"huge":return"13px !important";case"massive":return"14px !important";default:return"10px !important"}}(n.size):"10px !important"},function(n){return n.disabled?"default !important":n.checked?"pointer !important":"default !important"},function(n){return n.checked?"#FFFFFF !important":"#E0457B !important"},function(n){return n.checked?"#707070 !important":"#FFFFFF !important"},function(n){return n.disabled||n.checked?"default !important":"pointer !important"},function(n){return n.checked?"#4BA047 !important":"#FFFFFF !important"},function(n){return n.checked?"#FFFFFF !important":"#707070 !important"}),jr=function(e){var t=e.checked,r=e.onChange,o=e.size,i=e.disabled,a=e.selectionRef;switch(e.type){case"switch":return n.createElement(Ar,{size:o,ref:a,disabled:i},n.createElement("input",{type:"checkbox",checked:t}),n.createElement("span",{className:"control",onClick:function(){return i?null:r?r():null}}));case"toggle":return n.createElement(Tr,{checked:t,ref:a,size:o,disabled:i},n.createElement("div",{className:"btn left",onClick:function(){return i?null:t&&r?r():null}},n.createElement("span",null,"não")),n.createElement("div",{className:"btn right",onClick:function(){return i||t?null:r?r():null}},n.createElement("span",null,"sim")));case"activeInactive":return n.createElement(Nr,{checked:t,ref:a,size:o,disabled:i},n.createElement("div",{className:"btn left",onClick:function(){return i?null:t&&r?r():null}},n.createElement("span",null,t?"desativar":"inativo")),n.createElement("div",{className:"btn right",onClick:function(){return i||t?null:r?r():null}},n.createElement("span",null,t?"ativo":"ativar")))}return n.createElement("div",null)},Vr=function(n){switch(n){case"small":return"10px";case"medium":return"15px";case"big":return"22px";default:return"15px"}},Lr=r.div(ut||(ut=k(["\n    font-family: MontSerrat !important;\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n    opacity: ",";\n\n    .btn {\n        width: ",";\n        font-size: ",";\n        display: flex;\n        align-items: center;\n        justify-content: center;\n        height: ",";\n        color: ",";\n    }\n\n    .left {\n        opacity: ",";\n\n        cursor: ",";\n    }\n\n    .right {\n        opacity: ",";\n\n        cursor: ",";\n    }\n\n    input {\n        text-align: center;\n        width: ",";\n        font-size: ",";\n        display: flex;\n        align-items: center;\n        justify-content: center;\n        color: ",";\n        border: none;\n        outline: none;\n    }\n\n    input[type='number']::-webkit-inner-spin-button {\n        -webkit-appearance: none;\n    }\n    input[type='number'] {\n        -moz-appearance: textfield;\n        appearance: textfield;\n    }\n\n    input:disabled {\n        background-color: transparent;\n    }\n"])),function(n){return n.disabled?"0.5":"1"},function(n){return n.size?function(n){switch(n){case"small":return"20px";case"medium":return"30px";case"big":return"40px";default:return"30px"}}(n.size):"30px"},function(n){return n.size?Vr(n.size):"15px"},function(n){return n.size?function(n){switch(n){case"small":return"20px";case"medium":return"30px";case"big":return"40px";default:return"30px"}}(n.size):"30px"},"#707070",function(n){return n.noLess?"0.2":"1"},function(n){return n.disabled||n.noLess?"default":"pointer"},function(n){return n.noMore?"0.2":"1"},function(n){return n.disabled||n.noMore?"default":"pointer"},function(n){return n.size?(t=n.value,"small"===(e=n.size)?t<100?"15px":t<1e3?"20px":t<1e4?"25px":"30px":"medium"===e?t<100?"20px":t<1e3?"30px":t<1e4?"40px":"50px":"big"===e?t<100?"30px":t<1e3?"40px":t<1e4?"55px":"70px":"50px"):"15px";var e,t},function(n){return n.size?Vr(n.size):"15px"},"#707070"),Rr=function(r){var o=r.size,i=r.disabled,a=r.value,l=r.limit,d=r.minimum,c=r.more,p=r.less,s=r.onChange,u=e(!1),m=u[0],b=u[1],f=e(!1),h=f[0],g=f[1],w=e("medium"),x=w[0],v=w[1];return t(function(){o&&v(o)},[o]),t(function(){b(!!(d&&a<=d||a<=0))},[d,a]),t(function(){g(!!(l&&a>=l))},[l,a]),n.createElement(Lr,{limit:l,minimum:d,value:a,size:x,disabled:i,noLess:m,noMore:h},n.createElement("div",{className:"btn left",onClick:function(){return i?null:p?m?null:p():null}},n.createElement(fe,{icon:_t})),n.createElement("input",{value:a||0===a?a.toString():"",type:"number",onChange:function(n){return s?s(Number(n.target.value)):null},disabled:i||!s}),n.createElement("div",{className:"btn right",onClick:function(){return i||h?null:c?c():null}},n.createElement(fe,{icon:Et})))},qr=r.div(mt||(mt=k(["\n    font-family: MontSerrat !important;\n    box-shadow: ",";\n\n    border: ",";\n    padding: 1.25rem;\n    background-color: ",";\n    border-radius: 1.875rem;\n    position: relative;\n\n    width: ",";\n\n    .loading-card {\n        display: flex;\n        justify-content: center;\n        align-items: center;\n        background-color: rgba(255, 255, 255, 0.8);\n        width: 100%;\n        height: 100%;\n        top: 0;\n        left: 0;\n        right: 0;\n        bottom: 0;\n        border-radius: 30px;\n        z-index: 2;\n        position: absolute;\n    }\n"])),function(n){return"none"==n.type||"border"==n.type?"none":"min-shadow"==n.type?"0px 0.125rem 0.25rem #00000029":"0 1.25rem 3.125rem 0 rgba(0, 0, 0, 0.16)"},function(n){var e;return"border"==n.type||null!==(e=n.style)&&void 0!==e&&e.borderRadius?"1px solid  #E1E6EB":""},"#FFFFFF",function(n){return n.width?"string"==typeof n.width?n.width:n.width+"px":"100%"}),Ur=r.a(bt||(bt=k(["\n    font-family: MontSerrat !important;\n    background-color: ",";\n    padding: 0.75rem 1.5625rem;\n    border-radius: 1.875rem;\n    border: 1px solid ",";\n    width: ",";\n    cursor: pointer;\n    display: flex;\n    align-items: center;\n\n    :hover {\n        background-color: ",";\n    }\n\n    span {\n        margin-left: 0.9375rem;\n        font-size: 0.9375rem;\n        color: ",";\n    }\n"])),"#eeeeee","#D1D8DC",function(n){return n.width?"string"==typeof n.width?n.width:n.width+"px":"100%"},"#F1F1F1",function(n){return n.colorText?n.colorText:"#68349F"}),Hr=r.div(ft||(ft=k(["\n    font-family: MontSerrat !important;\n\n    color: ",";\n    background-color: ",";\n\n    border: 1px solid ",";\n    text-align: center;\n    margin-top: -1.5625rem;\n    padding-top: 1.5625rem;\n    width: 100%;\n\n    border-bottom-left-radius: 1.875rem;\n    border-bottom-right-radius: 1.875rem;\n"])),"#707070","#F1F1F1","#E1E6EB"),$r=["children","width","type","style","icon","sizeIcon","colorIcon","text","colorText","onClick","loading","className","id","complement","complementStyle","complementClassName"],Wr=function(e){var t=e.children,r=e.width,o=e.type,i=void 0===o?"shadow":o,a=e.style,l=e.icon,d=e.sizeIcon,c=e.colorIcon,p=e.text,s=e.colorText,u=e.onClick,m=e.loading,b=e.className,f=e.id,h=e.complement,g=e.complementStyle,w=e.complementClassName,x=v(e,$r);function k(){return h?n.createElement("div",null,n.createElement(qr,{className:b,width:r,style:a,type:i,id:f},m&&n.createElement("div",{className:"loading-card"},n.createElement(jt,null)),t),n.createElement(Hr,{className:w,style:g},h)):n.createElement(qr,{className:b,width:r,style:a,type:i,id:f},m&&n.createElement("div",{className:"loading-card"},n.createElement(jt,null)),t)}switch(i){case"shadow":return k();case"button":return n.createElement(Ur,{style:a,colorText:s,onClick:u,href:x.href,width:r,className:b,id:f},l&&n.createElement(n.Fragment,null,n.createElement(fe,{icon:l,color:c||"#68349F",size:d||"lg"})),n.createElement("span",null,p));default:return k()}},Xr=r.div(ht||(ht=k(["\n    font-family: MontSerrat !important;\n    display: flex;\n    flex-direction: column;\n\n    input {\n        outline: none;\n        padding: 7px 15px;\n        border-radius: 20px;\n        border: 1px solid\n            ",";\n        color: ",";\n        cursor: pointer;\n\n        background-color: ",";\n\n        font-weight: bold;\n\n        &::placeholder {\n            color: ",";\n        }\n    }\n\n    span {\n        font-size: 14px;\n        color: ",';\n        margin-left: 15px;\n        margin-bottom: 3px;\n    }\n\n    .react-datepicker-popper[data-placement^="bottom"] .react-datepicker__triangle,\n    .react-datepicker-popper[data-placement^="top"] .react-datepicker__triangle,\n    .react-datepicker__year-read-view--down-arrow,\n    .react-datepicker__month-read-view--down-arrow,\n    .react-datepicker__month-year-read-view--down-arrow {\n        margin-left: -8px !important;\n        position: absolute !important;\n    }\n    .react-datepicker-popper[data-placement^="bottom"] .react-datepicker__triangle,\n    .react-datepicker-popper[data-placement^="top"] .react-datepicker__triangle,\n    .react-datepicker__year-read-view--down-arrow,\n    .react-datepicker__month-read-view--down-arrow,\n    .react-datepicker__month-year-read-view--down-arrow,\n    .react-datepicker-popper[data-placement^="bottom"]\n    .react-datepicker__triangle::before,\n    .react-datepicker-popper[data-placement^="top"]\n    .react-datepicker__triangle::before,\n    .react-datepicker__year-read-view--down-arrow::before,\n    .react-datepicker__month-read-view--down-arrow::before,\n    .react-datepicker__month-year-read-view--down-arrow::before {\n        box-sizing: content-box !important;\n        position: absolute !important;\n        border: 8px solid transparent !important;\n        height: 0 !important;\n        width: 1px !important;\n    }\n\n    .react-datepicker-popper[data-placement^="bottom"]\n    .react-datepicker__triangle::before,\n    .react-datepicker-popper[data-placement^="top"]\n    .react-datepicker__triangle::before,\n    .react-datepicker__year-read-view--down-arrow::before,\n    .react-datepicker__month-read-view--down-arrow::before,\n    .react-datepicker__month-year-read-view--down-arrow::before {\n        content: "" !important;\n        z-index: -1 !important;\n        border-width: 8px !important;\n        left: -8px !important;\n        border-bottom-color: #291f1f !important;\n    }\n\n    .react-datepicker-popper[data-placement^="bottom"] .react-datepicker__triangle {\n        top: 0 !important;\n        margin-top: -8px !important;\n    }\n\n    .react-datepicker-popper[data-placement^="bottom"] .react-datepicker__triangle,\n    .react-datepicker-popper[data-placement^="bottom"]\n    .react-datepicker__triangle::before {\n        border-top: none !important;\n        border-bottom-color: #ffffff !important;\n    }\n\n    .react-datepicker-popper[data-placement^="bottom"]\n    .react-datepicker__triangle::before {\n        top: -1px !important;\n        border-bottom-color: #aeaeae !important;\n    }\n\n    .react-datepicker-popper[data-placement^="top"] .react-datepicker__triangle,\n    .react-datepicker__year-read-view--down-arrow,\n    .react-datepicker__month-read-view--down-arrow,\n    .react-datepicker__month-year-read-view--down-arrow {\n        bottom: 0 !important;\n        margin-bottom: -8px !important;\n    }\n\n    .react-datepicker-popper[data-placement^="top"] .react-datepicker__triangle,\n    .react-datepicker__year-read-view--down-arrow,\n    .react-datepicker__month-read-view--down-arrow,\n    .react-datepicker__month-year-read-view--down-arrow,\n    .react-datepicker-popper[data-placement^="top"]\n    .react-datepicker__triangle::before,\n    .react-datepicker__year-read-view--down-arrow::before,\n    .react-datepicker__month-read-view--down-arrow::before,\n    .react-datepicker__month-year-read-view--down-arrow::before {\n        border-bottom: none !important;\n        border-top-color: #fff !important;\n    }\n\n    .react-datepicker-popper[data-placement^="top"]\n    .react-datepicker__triangle::before,\n    .react-datepicker__year-read-view--down-arrow::before,\n    .react-datepicker__month-read-view--down-arrow::before,\n    .react-datepicker__month-year-read-view--down-arrow::before {\n        bottom: -1px !important;\n        border-top-color: #aeaeae !important;\n    }\n\n    .react-datepicker-wrapper {\n        display: inline-block;\n        padding: 0;\n        border: 0;\n    }\n\n    .react-datepicker {\n        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;\n        font-size: 0.8rem !important;\n        background-color: #fff !important;\n        color: #000 !important;\n        border: 1px solid #aeaeae !important;\n        border-radius: 20px !important;\n        display: inline-block !important;\n        position: relative !important;\n    }\n\n    .react-datepicker--time-only .react-datepicker__triangle {\n        left: 35px !important;\n    }\n\n    .react-datepicker--time-only .react-datepicker__time-container {\n        border-left: 0 !important;\n    }\n\n    .react-datepicker--time-only .react-datepicker__time,\n    .react-datepicker--time-only .react-datepicker__time-box {\n        border-bottom-left-radius: 20px !important;\n        border-bottom-right-radius: 20px !important;\n    }\n\n    .react-datepicker__triangle {\n        position: absolute !important;\n        left: 50px !important;\n    }\n\n    .react-datepicker-popper {\n        z-index: 1 !important;\n    }\n\n    .react-datepicker-popper[data-placement^="bottom"] {\n        margin-top: 10px !important;\n    }\n\n    .react-datepicker-popper[data-placement="bottom-end"]\n    .react-datepicker__triangle,\n    .react-datepicker-popper[data-placement="top-end"] .react-datepicker__triangle {\n        left: auto !important;\n        right: 50px !important;\n    }\n\n    .react-datepicker-popper[data-placement^="top"] {\n        margin-bottom: 10px !important;\n    }\n\n    .react-datepicker-popper[data-placement^="right"] {\n        margin-left: 8px !important;\n    }\n\n    .react-datepicker-popper[data-placement^="right"] .react-datepicker__triangle {\n        left: auto !important;\n        right: 42px !important;\n    }\n\n    .react-datepicker-popper[data-placement^="left"] {\n        margin-right: 8px !important;\n    }\n\n    .react-datepicker-popper[data-placement^="left"] .react-datepicker__triangle {\n        left: 42px !important;\n        right: auto !important;\n    }\n\n    .react-datepicker__header {\n        text-align: center !important;\n        background-color: #ffffff !important;\n        border-bottom: 1px solid #aeaeae !important;\n        border-top-left-radius: 20px !important;\n        padding-top: 18px !important;\n        position: relative !important;\n        padding-bottom: 10px !important;\n    }\n\n    .react-datepicker__header--time {\n        padding-bottom: 8px !important;\n        padding-left: 5px !important;\n        padding-right: 5px !important;\n    }\n\n    .react-datepicker__header--time:not(.react-datepicker__header--time--only) {\n        border-top-left-radius: 0 !important;\n    }\n\n    .react-datepicker__header:not(.react-datepicker__header--has-time-select) {\n        border-top-right-radius: 20px !important;\n    }\n\n    .react-datepicker__year-dropdown-container--select,\n    .react-datepicker__month-dropdown-container--select,\n    .react-datepicker__month-year-dropdown-container--select,\n    .react-datepicker__year-dropdown-container--scroll,\n    .react-datepicker__month-dropdown-container--scroll,\n    .react-datepicker__month-year-dropdown-container--scroll {\n        display: inline-block !important;\n        margin: 0 2px !important;\n    }\n\n    .react-datepicker__current-month,\n    .react-datepicker-time__header,\n    .react-datepicker-year-header {\n        margin-top: 0 !important;\n        color: #707070 !important;\n        font-weight: bold !important;\n        font-size: 0.944rem !important;\n    }\n\n    .react-datepicker-time__header {\n        text-overflow: ellipsis !important;\n        white-space: nowrap !important;\n        overflow: hidden !important;\n    }\n\n    .react-datepicker__navigation {\n        background: none !important;\n        line-height: 1.7rem !important;\n        text-align: center !important;\n        cursor: pointer !important;\n        position: absolute !important;\n        top: 20px !important;\n        width: 0 !important;\n        padding: 0 !important;\n        border: 0.5rem solid transparent !important;\n        z-index: 1 !important;\n        height: 15px !important;\n        width: 20px !important;\n        text-indent: -999em !important;\n        overflow: hidden !important;\n        outline: none !important;\n    }\n\n    .react-datepicker__navigation--previous {\n        left: 10px !important;\n        border-right-color: #9b4dee !important;\n    }\n\n    .react-datepicker__navigation--previous:hover {\n        border-right-color: rgba(155, 77, 238, 0.2) !important;\n    }\n\n    .react-datepicker__navigation--previous--disabled,\n    .react-datepicker__navigation--previous--disabled:hover {\n        border-right-color: rgba(155, 77, 238, 0.2) !important;\n        cursor: default !important;\n    }\n\n    .react-datepicker__navigation--next {\n        right: 10px !important;\n        border-left-color: #9b4dee !important;\n    }\n\n    .react-datepicker__navigation--next--with-time:not(.react-datepicker__navigation--next--with-today-button) {\n        right: 95px !important;\n    }\n\n    .react-datepicker__navigation--next:hover {\n        border-left-color: rgba(155, 77, 238, 0.2) !important;\n    }\n\n    .react-datepicker__navigation--next--disabled,\n    .react-datepicker__navigation--next--disabled:hover {\n        border-left-color: rgba(155, 77, 238, 0.2) !important;\n        cursor: default !important;\n    }\n\n    .react-datepicker__navigation--years {\n        position: relative !important;\n        top: 0 !important;\n        display: block !important;\n        margin-left: auto !important;\n        margin-right: auto !important;\n    }\n\n    .react-datepicker__navigation--years-previous {\n        top: 4px !important;\n        border-top-color: #ccc !important;\n    }\n\n    .react-datepicker__navigation--years-previous:hover {\n        border-top-color: #b3b3b3 !important;\n    }\n\n    .react-datepicker__navigation--years-upcoming {\n        top: -4px !important;\n        border-bottom-color: #ccc !important;\n    }\n\n    .react-datepicker__navigation--years-upcoming:hover {\n        border-bottom-color: #b3b3b3 !important;\n    }\n\n    .react-datepicker__month-container {\n        float: left !important;\n    }\n\n    .react-datepicker__year {\n        margin: 0.4rem !important;\n        text-align: center !important;\n    }\n\n    .react-datepicker__year-wrapper {\n        display: flex !important;\n        flex-wrap: wrap !important;\n        max-width: 180px !important;\n    }\n\n    .react-datepicker__year .react-datepicker__year-text {\n        display: inline-block !important;\n        width: 4rem !important;\n        margin: 2px !important;\n    }\n\n    .react-datepicker__month {\n        margin: 10px 0.4rem !important;\n        text-align: center !important;\n    }\n\n    .react-datepicker__month .react-datepicker__month-text,\n    .react-datepicker__month .react-datepicker__quarter-text {\n        display: inline-block !important;\n        width: 4rem !important;\n        margin: 2px !important;\n    }\n\n    .react-datepicker__input-time-container {\n        clear: both !important;\n        width: 100% !important;\n        float: left !important;\n        margin: 5px 0 10px 15px !important;\n        text-align: left !important;\n    }\n\n    .react-datepicker__input-time-container .react-datepicker-time__caption {\n        display: inline-block !important;\n        color: #707070 !important;\n    }\n\n    .react-datepicker__input-time-container\n    .react-datepicker-time__input-container {\n        display: inline-block !important;\n    }\n\n    .react-datepicker__input-time-container\n    .react-datepicker-time__input-container\n    .react-datepicker-time__input {\n        display: inline-block !important;\n        margin-left: 10px !important;\n    }\n\n    .react-datepicker__input-time-container\n    .react-datepicker-time__input-container\n    .react-datepicker-time__input\n    input {\n        width: 85px !important;\n        border-radius: 20px !important;\n        padding: 5px 10px !important;\n        outline: none !important;\n        border-style: solid !important;\n        border-width: 1px !important;\n        border-color: #707070 !important;\n    }\n\n    .react-datepicker__input-time-container\n    .react-datepicker-time__input-container\n    .react-datepicker-time__input\n    input[type="time"]::-webkit-inner-spin-button,\n    .react-datepicker__input-time-container\n    .react-datepicker-time__input-container\n    .react-datepicker-time__input\n    input[type="time"]::-webkit-outer-spin-button {\n        -webkit-appearance: none !important;\n        margin: 0 !important;\n    }\n\n    .react-datepicker__input-time-container\n    .react-datepicker-time__input-container\n    .react-datepicker-time__input\n    input[type="time"] {\n        -moz-appearance: textfield !important;\n    }\n\n    .react-datepicker__input-time-container\n    .react-datepicker-time__input-container\n    .react-datepicker-time__delimiter {\n        margin-left: 5px !important;\n        display: inline-block !important;\n    }\n\n    .react-datepicker__time-container {\n        float: right !important;\n        border-left: 1px solid #aeaeae !important;\n        width: 85px !important;\n    }\n\n    .react-datepicker__time-container--with-today-button {\n        display: inline !important;\n        border: 1px solid #aeaeae !important;\n        border-radius: 0.3rem !important;\n        position: absolute !important;\n        right: -72px !important;\n        top: 0 !important;\n    }\n\n    .react-datepicker__time-container .react-datepicker__time {\n        position: relative !important;\n        background: white !important;\n        border-bottom-right-radius: 20px !important;\n    }\n\n    .react-datepicker__time-container\n    .react-datepicker__time\n    .react-datepicker__time-box {\n        width: 85px !important;\n        overflow-x: hidden !important;\n        margin: 0 auto !important;\n        text-align: center !important;\n        border-bottom-right-radius: 20px !important;\n    }\n\n    .react-datepicker__time-container\n    .react-datepicker__time\n    .react-datepicker__time-box\n    ul.react-datepicker__time-list {\n        list-style: none !important;\n        margin: 0 !important;\n        height: calc(195px + (1.7rem / 2)) !important;\n        overflow-y: scroll !important;\n        padding-right: 0px !important;\n        padding-left: 0px !important;\n        width: 100% !important;\n        box-sizing: content-box !important;\n    }\n\n    .react-datepicker__time-container\n    .react-datepicker__time\n    .react-datepicker__time-box\n    ul.react-datepicker__time-list\n    li.react-datepicker__time-list-item {\n        height: 30px !important;\n        padding: 5px 10px !important;\n        white-space: nowrap !important;\n        color: #707070 !important;\n    }\n\n    .react-datepicker__time-container\n    .react-datepicker__time\n    .react-datepicker__time-box\n    ul.react-datepicker__time-list\n    li.react-datepicker__time-list-item:hover {\n        cursor: pointer !important;\n        background-color: #f0f0f0 !important;\n    }\n\n    .react-datepicker__time-container\n    .react-datepicker__time\n    .react-datepicker__time-box\n    ul.react-datepicker__time-list\n    li.react-datepicker__time-list-item--selected {\n        background-color: #9b4dee !important;\n        color: white !important;\n        font-weight: bold !important;\n    }\n\n    .react-datepicker__time-container\n    .react-datepicker__time\n    .react-datepicker__time-box\n    ul.react-datepicker__time-list\n    li.react-datepicker__time-list-item--selected:hover {\n        background-color: #9b4dee !important;\n    }\n\n    .react-datepicker__time-container\n    .react-datepicker__time\n    .react-datepicker__time-box\n    ul.react-datepicker__time-list\n    li.react-datepicker__time-list-item--disabled {\n        color: #ccc !important;\n    }\n\n    .react-datepicker__time-container\n    .react-datepicker__time\n    .react-datepicker__time-box\n    ul.react-datepicker__time-list\n    li.react-datepicker__time-list-item--disabled:hover {\n        cursor: default !important;\n        background-color: transparent !important;\n    }\n\n    .react-datepicker__week-number {\n        color: #ccc !important;\n        display: inline-block !important;\n        width: 1.7rem !important;\n        line-height: 1.7rem !important;\n        text-align: center !important;\n        margin: 0.166rem !important;\n    }\n\n    .react-datepicker__week-number.react-datepicker__week-number--clickable {\n        cursor: pointer !important;\n    }\n\n    .react-datepicker__week-number.react-datepicker__week-number--clickable:hover {\n        border-radius: 0.3rem !important;\n        background-color: #f0f0f0 !important;\n    }\n\n    .react-datepicker__day-names,\n    .react-datepicker__week {\n        white-space: nowrap !important;\n        margin-top: 10px !important;\n    }\n\n    .react-datepicker__day-name,\n    .react-datepicker__day,\n    .react-datepicker__time-name {\n        color: #707070 !important;\n        display: inline-block !important;\n        width: 1.7rem !important;\n        line-height: 1.7rem !important;\n        text-align: center !important;\n        margin: 0.166rem !important;\n        outline: none !important;\n    }\n\n    .react-datepicker__month--selected,\n    .react-datepicker__month--in-selecting-range,\n    .react-datepicker__month--in-range,\n    .react-datepicker__quarter--selected,\n    .react-datepicker__quarter--in-selecting-range,\n    .react-datepicker__quarter--in-range {\n        border-radius: 10px !important;\n        background-color: #9b4dee !important;\n        color: #fff !important;\n    }\n\n    .react-datepicker__month--selected:hover,\n    .react-datepicker__month--in-selecting-range:hover,\n    .react-datepicker__month--in-range:hover,\n    .react-datepicker__quarter--selected:hover,\n    .react-datepicker__quarter--in-selecting-range:hover,\n    .react-datepicker__quarter--in-range:hover {\n        background-color: rgba(155, 77, 238, 0.8) !important;\n    }\n\n    .react-datepicker__month--disabled,\n    .react-datepicker__quarter--disabled {\n        color: #ccc !important;\n        pointer-events: none !important;\n    }\n\n    .react-datepicker__month--disabled:hover,\n    .react-datepicker__quarter--disabled:hover {\n        cursor: default !important;\n        background-color: transparent !important;\n    }\n\n    .react-datepicker__day,\n    .react-datepicker__month-text,\n    .react-datepicker__quarter-text,\n    .react-datepicker__year-text {\n        cursor: pointer !important;\n    }\n\n    .react-datepicker__day:hover {\n        border-radius: 50% !important;\n        background-color: #f0f0f0 !important;\n    }\n    .react-datepicker__month-text:hover,\n    .react-datepicker__quarter-text:hover,\n    .react-datepicker__year-text:hover {\n        border-radius: 10px !important;\n        background-color: #f0f0f0 !important;\n    }\n\n    .react-datepicker__day--today,\n    .react-datepicker__month-text--today,\n    .react-datepicker__quarter-text--today,\n    .react-datepicker__year-text--today {\n        font-weight: bold !important;\n    }\n\n    .react-datepicker__day--highlighted,\n    .react-datepicker__month-text--highlighted,\n    .react-datepicker__quarter-text--highlighted,\n    .react-datepicker__year-text--highlighted {\n        border-radius: 0.3rem !important;\n        background-color: #3dcc4a !important;\n        color: #fff !important;\n    }\n\n    .react-datepicker__day--highlighted:hover,\n    .react-datepicker__month-text--highlighted:hover,\n    .react-datepicker__quarter-text--highlighted:hover,\n    .react-datepicker__year-text--highlighted:hover {\n        background-color: #32be3f !important;\n    }\n\n    .react-datepicker__day--highlighted-custom-1,\n    .react-datepicker__month-text--highlighted-custom-1,\n    .react-datepicker__quarter-text--highlighted-custom-1,\n    .react-datepicker__year-text--highlighted-custom-1 {\n        color: magenta !important;\n    }\n\n    .react-datepicker__day--highlighted-custom-2,\n    .react-datepicker__month-text--highlighted-custom-2,\n    .react-datepicker__quarter-text--highlighted-custom-2,\n    .react-datepicker__year-text--highlighted-custom-2 {\n        color: green !important;\n    }\n\n    .react-datepicker__day--selected,\n    .react-datepicker__day--in-selecting-range,\n    .react-datepicker__day--in-range {\n        border-radius: 50% !important;\n        background-color: #9b4dee !important;\n        color: #fff !important;\n        outline: none !important;\n    }\n    .react-datepicker__month-text--selected,\n    .react-datepicker__month-text--in-selecting-range,\n    .react-datepicker__month-text--in-range,\n    .react-datepicker__quarter-text--selected,\n    .react-datepicker__quarter-text--in-selecting-range,\n    .react-datepicker__quarter-text--in-range,\n    .react-datepicker__year-text--selected,\n    .react-datepicker__year-text--in-selecting-range,\n    .react-datepicker__year-text--in-range {\n        border-radius: 10px !important;\n        background-color: #9b4dee !important;\n        color: #fff !important;\n        outline: none !important;\n    }\n\n    .react-datepicker__day--selected:hover,\n    .react-datepicker__day--in-selecting-range:hover,\n    .react-datepicker__day--in-range:hover,\n    .react-datepicker__month-text--selected:hover,\n    .react-datepicker__month-text--in-selecting-range:hover,\n    .react-datepicker__month-text--in-range:hover,\n    .react-datepicker__quarter-text--selected:hover,\n    .react-datepicker__quarter-text--in-selecting-range:hover,\n    .react-datepicker__quarter-text--in-range:hover,\n    .react-datepicker__year-text--selected:hover,\n    .react-datepicker__year-text--in-selecting-range:hover,\n    .react-datepicker__year-text--in-range:hover {\n        background-color: rgba(155, 77, 238, 0.8) !important;\n        outline: none !important;\n    }\n\n    .react-datepicker__day--keyboard-selected {\n        border-radius: 50% !important;\n        background-color: #9b4dee !important;\n        color: #fff !important;\n        outline: none !important;\n    }\n    .react-datepicker__month-text--keyboard-selected,\n    .react-datepicker__quarter-text--keyboard-selected,\n    .react-datepicker__year-text--keyboard-selected {\n        border-radius: 10px !important;\n        background-color: #9b4dee !important;\n        color: #fff !important;\n        outline: none !important;\n    }\n\n    .react-datepicker__day--keyboard-selected:hover,\n    .react-datepicker__month-text--keyboard-selected:hover,\n    .react-datepicker__quarter-text--keyboard-selected:hover,\n    .react-datepicker__year-text--keyboard-selected:hover {\n        background-color: rgba(155, 77, 238, 0.8) !important;\n    }\n\n    .react-datepicker__day--in-selecting-range,\n    .react-datepicker__month-text--in-selecting-range,\n    .react-datepicker__quarter-text--in-selecting-range,\n    .react-datepicker__year-text--in-selecting-range {\n        background-color: rgba(155, 77, 238, 0.5) !important;\n        outline: none !important;\n    }\n\n    .react-datepicker__month--selecting-range .react-datepicker__day--in-range,\n    .react-datepicker__month--selecting-range\n    .react-datepicker__month-text--in-range,\n    .react-datepicker__month--selecting-range\n    .react-datepicker__quarter-text--in-range,\n    .react-datepicker__month--selecting-range\n    .react-datepicker__year-text--in-range {\n        background-color: #f0f0f0 !important;\n        color: #000 !important;\n        outline: none !important;\n    }\n\n    .react-datepicker__day--disabled,\n    .react-datepicker__month-text--disabled,\n    .react-datepicker__quarter-text--disabled,\n    .react-datepicker__year-text--disabled {\n        cursor: default !important;\n        color: #ccc !important;\n    }\n\n    .react-datepicker__day--disabled:hover,\n    .react-datepicker__month-text--disabled:hover,\n    .react-datepicker__quarter-text--disabled:hover,\n    .react-datepicker__year-text--disabled:hover {\n        background-color: transparent !important;\n    }\n\n    .react-datepicker__month-text.react-datepicker__month--selected:hover,\n    .react-datepicker__month-text.react-datepicker__month--in-range:hover,\n    .react-datepicker__month-text.react-datepicker__quarter--selected:hover,\n    .react-datepicker__month-text.react-datepicker__quarter--in-range:hover,\n    .react-datepicker__quarter-text.react-datepicker__month--selected:hover,\n    .react-datepicker__quarter-text.react-datepicker__month--in-range:hover,\n    .react-datepicker__quarter-text.react-datepicker__quarter--selected:hover,\n    .react-datepicker__quarter-text.react-datepicker__quarter--in-range:hover {\n        background-color: #9b4dee !important;\n    }\n\n    .react-datepicker__month-text:hover,\n    .react-datepicker__quarter-text:hover {\n        background-color: #f0f0f0 !important;\n    }\n\n    .react-datepicker__input-container {\n        position: relative !important;\n        display: inline-block !important;\n        width: 100% !important;\n    }\n\n    .react-datepicker__year-read-view,\n    .react-datepicker__month-read-view,\n    .react-datepicker__month-year-read-view {\n        border: 1px solid transparent !important;\n        border-radius: 0.3rem !important;\n    }\n\n    .react-datepicker__year-read-view:hover,\n    .react-datepicker__month-read-view:hover,\n    .react-datepicker__month-year-read-view:hover {\n        cursor: pointer !important;\n    }\n\n    .react-datepicker__year-read-view:hover,\n    .react-datepicker__year-read-view--down-arrow,\n    .react-datepicker__year-read-view:hover,\n    .react-datepicker__month-read-view--down-arrow,\n    .react-datepicker__month-read-view:hover,\n    .react-datepicker__year-read-view--down-arrow,\n    .react-datepicker__month-read-view:hover,\n    .react-datepicker__month-read-view--down-arrow,\n    .react-datepicker__month-year-read-view:hover,\n    .react-datepicker__year-read-view--down-arrow,\n    .react-datepicker__month-year-read-view:hover,\n    .react-datepicker__month-read-view--down-arrow {\n        border-top-color: #b3b3b3 !important;\n    }\n\n    .react-datepicker__year-read-view--down-arrow,\n    .react-datepicker__month-read-view--down-arrow,\n    .react-datepicker__month-year-read-view--down-arrow {\n        border-top-color: #ccc !important;\n        float: right !important;\n        margin-left: 20px !important;\n        top: 5px !important;\n        position: relative !important;\n        border-width: 0.45rem !important;\n    }\n\n    .react-datepicker__year-dropdown,\n    .react-datepicker__month-dropdown,\n    .react-datepicker__month-year-dropdown {\n        background-color: #f0f0f0 !important;\n        position: absolute !important;\n        width: 50% !important;\n        left: 25% !important;\n        top: 30px !important;\n        z-index: 1 !important;\n        text-align: center !important;\n        border-radius: 0.3rem !important;\n        border: 1px solid #aeaeae !important;\n    }\n\n    .react-datepicker__year-dropdown:hover,\n    .react-datepicker__month-dropdown:hover,\n    .react-datepicker__month-year-dropdown:hover {\n        cursor: pointer !important;\n    }\n\n    .react-datepicker__year-dropdown--scrollable,\n    .react-datepicker__month-dropdown--scrollable,\n    .react-datepicker__month-year-dropdown--scrollable {\n        height: 150px !important;\n        overflow-y: scroll !important;\n    }\n\n    .react-datepicker__year-option,\n    .react-datepicker__month-option,\n    .react-datepicker__month-year-option {\n        line-height: 20px !important;\n        width: 100% !important;\n        display: block !important;\n        margin-left: auto !important;\n        margin-right: auto !important;\n    }\n\n    .react-datepicker__year-option:first-of-type,\n    .react-datepicker__month-option:first-of-type,\n    .react-datepicker__month-year-option:first-of-type {\n        border-top-left-radius: 0.3rem !important;\n        border-top-right-radius: 0.3rem !important;\n    }\n\n    .react-datepicker__year-option:last-of-type,\n    .react-datepicker__month-option:last-of-type,\n    .react-datepicker__month-year-option:last-of-type {\n        -webkit-user-select: none !important;\n        -moz-user-select: none !important;\n        -ms-user-select: none !important;\n        user-select: none !important;\n        border-bottom-left-radius: 0.3rem !important;\n        border-bottom-right-radius: 0.3rem !important;\n    }\n\n    .react-datepicker__year-option:hover,\n    .react-datepicker__month-option:hover,\n    .react-datepicker__month-year-option:hover {\n        background-color: #ccc !important;\n    }\n\n    .react-datepicker__year-option:hover\n    .react-datepicker__navigation--years-upcoming,\n    .react-datepicker__month-option:hover\n    .react-datepicker__navigation--years-upcoming,\n    .react-datepicker__month-year-option:hover\n    .react-datepicker__navigation--years-upcoming {\n        border-bottom-color: #b3b3b3 !important;\n    }\n\n    .react-datepicker__year-option:hover\n    .react-datepicker__navigation--years-previous,\n    .react-datepicker__month-option:hover\n    .react-datepicker__navigation--years-previous,\n    .react-datepicker__month-year-option:hover\n    .react-datepicker__navigation--years-previous {\n        border-top-color: #b3b3b3 !important;\n    }\n\n    .react-datepicker__year-option--selected,\n    .react-datepicker__month-option--selected,\n    .react-datepicker__month-year-option--selected {\n        position: absolute !important;\n        left: 15px !important;\n    }\n\n    .react-datepicker__close-icon {\n        cursor: pointer !important;\n        background-color: transparent !important;\n        border: 0 !important;\n        outline: 0 !important;\n        padding: 0px 6px 0px 0px !important;\n        position: absolute !important;\n        top: 0 !important;\n        right: 0 !important;\n        height: 100% !important;\n        display: table-cell !important;\n        vertical-align: middle !important;\n    }\n\n    .react-datepicker__close-icon::after {\n        cursor: pointer !important;\n        background-color: #9b4dee !important;\n        color: #fff !important;\n        border-radius: 50% !important;\n        height: 16px !important;\n        width: 16px !important;\n        padding: 2px !important;\n        font-size: 12px !important;\n        line-height: 1 !important;\n        text-align: center !important;\n        display: table-cell !important;\n        vertical-align: middle !important;\n    }\n\n    .react-datepicker__today-button {\n        background: rgba(155, 77, 238, 0.1) !important;\n        border-top: 1px solid #aeaeae !important;\n        cursor: pointer !important;\n        text-align: center !important;\n        font-weight: bold !important;\n        padding: 5px 0 !important;\n        clear: left !important;\n        border-bottom-left-radius: 20px !important;\n        border-bottom-right-radius: 20px !important;\n    }\n\n    .react-datepicker__portal {\n        position: fixed !important;\n        width: 100vw !important;\n        height: 100vh !important;\n        background-color: rgba(0, 0, 0, 0.8) !important;\n        left: 0 !important;\n        top: 0 !important;\n        justify-content: center !important;\n        align-items: center !important;\n        display: flex !important;\n        z-index: 2147483647 !important;\n    }\n\n    .react-datepicker__portal .react-datepicker__day-name,\n    .react-datepicker__portal .react-datepicker__day,\n    .react-datepicker__portal .react-datepicker__time-name {\n        width: 3rem !important;\n        line-height: 3rem !important;\n    }\n\n    @media (max-width: 400px), (max-height: 550px) {\n    .react-datepicker__portal .react-datepicker__day-name,\n    .react-datepicker__portal .react-datepicker__day,\n    .react-datepicker__portal .react-datepicker__time-name {\n        width: 2rem !important;\n        line-height: 2rem !important;\n    }\n}\n\n.react-datepicker__portal .react-datepicker__current-month,\n.react-datepicker__portal .react-datepicker-time__header {\n    font-size: 1.44rem !important;\n}\n\n.react-datepicker__portal .react-datepicker__navigation {\n    border: 0.81rem solid transparent !important;\n}\n\n.react-datepicker__portal .react-datepicker__navigation--previous {\n    border-right-color: #ccc !important;\n}\n\n.react-datepicker__portal .react-datepicker__navigation--previous:hover {\n    border-right-color: #b3b3b3 !important;\n}\n\n.react-datepicker__portal .react-datepicker__navigation--previous--disabled,\n.react-datepicker__portal\n.react-datepicker__navigation--previous--disabled:hover {\n    border-right-color: #e6e6e6 !important;\n    cursor: default !important;\n}\n\n.react-datepicker__portal .react-datepicker__navigation--next {\n    border-left-color: #ccc !important;\n}\n\n.react-datepicker__portal .react-datepicker__navigation--next:hover {\n    border-left-color: #b3b3b3 !important;\n}\n\n.react-datepicker__portal .react-datepicker__navigation--next--disabled,\n.react-datepicker__portal .react-datepicker__navigation--next--disabled:hover {\n    border-left-color: #e6e6e6 !important;\n    cursor: default !important;\n}\n\n'])),function(n){return n.brand?"#D8B8F9":"#ACACAC"},function(n){return n.brand?"#9B4DEE":"#707070"},function(n){return n.brand?"#D8B8F9":"#FFFFFF"},function(n){return n.brand?"rgba(155, 77, 238, 0.2)":"#F1F1F1"},function(n){return n.labelColor?n.labelColor:"#9B4DEE"}),Yr=n&&"object"==typeof n&&"default"in n?n.default:n;
+ */
+var b="function"===typeof Symbol&&Symbol.for,c=b?Symbol.for("react.element"):60103,d=b?Symbol.for("react.portal"):60106,e=b?Symbol.for("react.fragment"):60107,f=b?Symbol.for("react.strict_mode"):60108,g=b?Symbol.for("react.profiler"):60114,h=b?Symbol.for("react.provider"):60109,k=b?Symbol.for("react.context"):60110,l=b?Symbol.for("react.async_mode"):60111,m=b?Symbol.for("react.concurrent_mode"):60111,n=b?Symbol.for("react.forward_ref"):60112,p=b?Symbol.for("react.suspense"):60113,q=b?
+Symbol.for("react.suspense_list"):60120,r=b?Symbol.for("react.memo"):60115,t=b?Symbol.for("react.lazy"):60116,v=b?Symbol.for("react.block"):60121,w$1=b?Symbol.for("react.fundamental"):60117,x=b?Symbol.for("react.responder"):60118,y=b?Symbol.for("react.scope"):60119;
+function z(a){if("object"===typeof a&&null!==a){var u=a.$$typeof;switch(u){case c:switch(a=a.type,a){case l:case m:case e:case g:case f:case p:return a;default:switch(a=a&&a.$$typeof,a){case k:case n:case t:case r:case h:return a;default:return u}}case d:return u}}}function A(a){return z(a)===m}var AsyncMode=l;var ConcurrentMode=m;var ContextConsumer=k;var ContextProvider=h;var Element=c;var ForwardRef=n;var Fragment=e;var Lazy=t;var Memo=r;var Portal=d;
+var Profiler=g;var StrictMode=f;var Suspense=p;var isAsyncMode=function(a){return A(a)||z(a)===l};var isConcurrentMode=A;var isContextConsumer=function(a){return z(a)===k};var isContextProvider=function(a){return z(a)===h};var isElement=function(a){return "object"===typeof a&&null!==a&&a.$$typeof===c};var isForwardRef=function(a){return z(a)===n};var isFragment=function(a){return z(a)===e};var isLazy=function(a){return z(a)===t};
+var isMemo=function(a){return z(a)===r};var isPortal=function(a){return z(a)===d};var isProfiler=function(a){return z(a)===g};var isStrictMode=function(a){return z(a)===f};var isSuspense=function(a){return z(a)===p};
+var isValidElementType=function(a){return "string"===typeof a||"function"===typeof a||a===e||a===m||a===g||a===f||a===p||a===q||"object"===typeof a&&null!==a&&(a.$$typeof===t||a.$$typeof===r||a.$$typeof===h||a.$$typeof===k||a.$$typeof===n||a.$$typeof===w$1||a.$$typeof===x||a.$$typeof===y||a.$$typeof===v)};var typeOf=z;
+
+var reactIs_production_min = {
+	AsyncMode: AsyncMode,
+	ConcurrentMode: ConcurrentMode,
+	ContextConsumer: ContextConsumer,
+	ContextProvider: ContextProvider,
+	Element: Element,
+	ForwardRef: ForwardRef,
+	Fragment: Fragment,
+	Lazy: Lazy,
+	Memo: Memo,
+	Portal: Portal,
+	Profiler: Profiler,
+	StrictMode: StrictMode,
+	Suspense: Suspense,
+	isAsyncMode: isAsyncMode,
+	isConcurrentMode: isConcurrentMode,
+	isContextConsumer: isContextConsumer,
+	isContextProvider: isContextProvider,
+	isElement: isElement,
+	isForwardRef: isForwardRef,
+	isFragment: isFragment,
+	isLazy: isLazy,
+	isMemo: isMemo,
+	isPortal: isPortal,
+	isProfiler: isProfiler,
+	isStrictMode: isStrictMode,
+	isSuspense: isSuspense,
+	isValidElementType: isValidElementType,
+	typeOf: typeOf
+};
+
+var reactIs_development = createCommonjsModule(function (module, exports) {
+
+
+
+if (process.env.NODE_ENV !== "production") {
+  (function() {
+
+// The Symbol used to tag the ReactElement-like types. If there is no native Symbol
+// nor polyfill, then a plain number is used for performance.
+var hasSymbol = typeof Symbol === 'function' && Symbol.for;
+var REACT_ELEMENT_TYPE = hasSymbol ? Symbol.for('react.element') : 0xeac7;
+var REACT_PORTAL_TYPE = hasSymbol ? Symbol.for('react.portal') : 0xeaca;
+var REACT_FRAGMENT_TYPE = hasSymbol ? Symbol.for('react.fragment') : 0xeacb;
+var REACT_STRICT_MODE_TYPE = hasSymbol ? Symbol.for('react.strict_mode') : 0xeacc;
+var REACT_PROFILER_TYPE = hasSymbol ? Symbol.for('react.profiler') : 0xead2;
+var REACT_PROVIDER_TYPE = hasSymbol ? Symbol.for('react.provider') : 0xeacd;
+var REACT_CONTEXT_TYPE = hasSymbol ? Symbol.for('react.context') : 0xeace; // TODO: We don't use AsyncMode or ConcurrentMode anymore. They were temporary
+// (unstable) APIs that have been removed. Can we remove the symbols?
+
+var REACT_ASYNC_MODE_TYPE = hasSymbol ? Symbol.for('react.async_mode') : 0xeacf;
+var REACT_CONCURRENT_MODE_TYPE = hasSymbol ? Symbol.for('react.concurrent_mode') : 0xeacf;
+var REACT_FORWARD_REF_TYPE = hasSymbol ? Symbol.for('react.forward_ref') : 0xead0;
+var REACT_SUSPENSE_TYPE = hasSymbol ? Symbol.for('react.suspense') : 0xead1;
+var REACT_SUSPENSE_LIST_TYPE = hasSymbol ? Symbol.for('react.suspense_list') : 0xead8;
+var REACT_MEMO_TYPE = hasSymbol ? Symbol.for('react.memo') : 0xead3;
+var REACT_LAZY_TYPE = hasSymbol ? Symbol.for('react.lazy') : 0xead4;
+var REACT_BLOCK_TYPE = hasSymbol ? Symbol.for('react.block') : 0xead9;
+var REACT_FUNDAMENTAL_TYPE = hasSymbol ? Symbol.for('react.fundamental') : 0xead5;
+var REACT_RESPONDER_TYPE = hasSymbol ? Symbol.for('react.responder') : 0xead6;
+var REACT_SCOPE_TYPE = hasSymbol ? Symbol.for('react.scope') : 0xead7;
+
+function isValidElementType(type) {
+  return typeof type === 'string' || typeof type === 'function' || // Note: its typeof might be other than 'symbol' or 'number' if it's a polyfill.
+  type === REACT_FRAGMENT_TYPE || type === REACT_CONCURRENT_MODE_TYPE || type === REACT_PROFILER_TYPE || type === REACT_STRICT_MODE_TYPE || type === REACT_SUSPENSE_TYPE || type === REACT_SUSPENSE_LIST_TYPE || typeof type === 'object' && type !== null && (type.$$typeof === REACT_LAZY_TYPE || type.$$typeof === REACT_MEMO_TYPE || type.$$typeof === REACT_PROVIDER_TYPE || type.$$typeof === REACT_CONTEXT_TYPE || type.$$typeof === REACT_FORWARD_REF_TYPE || type.$$typeof === REACT_FUNDAMENTAL_TYPE || type.$$typeof === REACT_RESPONDER_TYPE || type.$$typeof === REACT_SCOPE_TYPE || type.$$typeof === REACT_BLOCK_TYPE);
+}
+
+function typeOf(object) {
+  if (typeof object === 'object' && object !== null) {
+    var $$typeof = object.$$typeof;
+
+    switch ($$typeof) {
+      case REACT_ELEMENT_TYPE:
+        var type = object.type;
+
+        switch (type) {
+          case REACT_ASYNC_MODE_TYPE:
+          case REACT_CONCURRENT_MODE_TYPE:
+          case REACT_FRAGMENT_TYPE:
+          case REACT_PROFILER_TYPE:
+          case REACT_STRICT_MODE_TYPE:
+          case REACT_SUSPENSE_TYPE:
+            return type;
+
+          default:
+            var $$typeofType = type && type.$$typeof;
+
+            switch ($$typeofType) {
+              case REACT_CONTEXT_TYPE:
+              case REACT_FORWARD_REF_TYPE:
+              case REACT_LAZY_TYPE:
+              case REACT_MEMO_TYPE:
+              case REACT_PROVIDER_TYPE:
+                return $$typeofType;
+
+              default:
+                return $$typeof;
+            }
+
+        }
+
+      case REACT_PORTAL_TYPE:
+        return $$typeof;
+    }
+  }
+
+  return undefined;
+} // AsyncMode is deprecated along with isAsyncMode
+
+var AsyncMode = REACT_ASYNC_MODE_TYPE;
+var ConcurrentMode = REACT_CONCURRENT_MODE_TYPE;
+var ContextConsumer = REACT_CONTEXT_TYPE;
+var ContextProvider = REACT_PROVIDER_TYPE;
+var Element = REACT_ELEMENT_TYPE;
+var ForwardRef = REACT_FORWARD_REF_TYPE;
+var Fragment = REACT_FRAGMENT_TYPE;
+var Lazy = REACT_LAZY_TYPE;
+var Memo = REACT_MEMO_TYPE;
+var Portal = REACT_PORTAL_TYPE;
+var Profiler = REACT_PROFILER_TYPE;
+var StrictMode = REACT_STRICT_MODE_TYPE;
+var Suspense = REACT_SUSPENSE_TYPE;
+var hasWarnedAboutDeprecatedIsAsyncMode = false; // AsyncMode should be deprecated
+
+function isAsyncMode(object) {
+  {
+    if (!hasWarnedAboutDeprecatedIsAsyncMode) {
+      hasWarnedAboutDeprecatedIsAsyncMode = true; // Using console['warn'] to evade Babel and ESLint
+
+      console['warn']('The ReactIs.isAsyncMode() alias has been deprecated, ' + 'and will be removed in React 17+. Update your code to use ' + 'ReactIs.isConcurrentMode() instead. It has the exact same API.');
+    }
+  }
+
+  return isConcurrentMode(object) || typeOf(object) === REACT_ASYNC_MODE_TYPE;
+}
+function isConcurrentMode(object) {
+  return typeOf(object) === REACT_CONCURRENT_MODE_TYPE;
+}
+function isContextConsumer(object) {
+  return typeOf(object) === REACT_CONTEXT_TYPE;
+}
+function isContextProvider(object) {
+  return typeOf(object) === REACT_PROVIDER_TYPE;
+}
+function isElement(object) {
+  return typeof object === 'object' && object !== null && object.$$typeof === REACT_ELEMENT_TYPE;
+}
+function isForwardRef(object) {
+  return typeOf(object) === REACT_FORWARD_REF_TYPE;
+}
+function isFragment(object) {
+  return typeOf(object) === REACT_FRAGMENT_TYPE;
+}
+function isLazy(object) {
+  return typeOf(object) === REACT_LAZY_TYPE;
+}
+function isMemo(object) {
+  return typeOf(object) === REACT_MEMO_TYPE;
+}
+function isPortal(object) {
+  return typeOf(object) === REACT_PORTAL_TYPE;
+}
+function isProfiler(object) {
+  return typeOf(object) === REACT_PROFILER_TYPE;
+}
+function isStrictMode(object) {
+  return typeOf(object) === REACT_STRICT_MODE_TYPE;
+}
+function isSuspense(object) {
+  return typeOf(object) === REACT_SUSPENSE_TYPE;
+}
+
+exports.AsyncMode = AsyncMode;
+exports.ConcurrentMode = ConcurrentMode;
+exports.ContextConsumer = ContextConsumer;
+exports.ContextProvider = ContextProvider;
+exports.Element = Element;
+exports.ForwardRef = ForwardRef;
+exports.Fragment = Fragment;
+exports.Lazy = Lazy;
+exports.Memo = Memo;
+exports.Portal = Portal;
+exports.Profiler = Profiler;
+exports.StrictMode = StrictMode;
+exports.Suspense = Suspense;
+exports.isAsyncMode = isAsyncMode;
+exports.isConcurrentMode = isConcurrentMode;
+exports.isContextConsumer = isContextConsumer;
+exports.isContextProvider = isContextProvider;
+exports.isElement = isElement;
+exports.isForwardRef = isForwardRef;
+exports.isFragment = isFragment;
+exports.isLazy = isLazy;
+exports.isMemo = isMemo;
+exports.isPortal = isPortal;
+exports.isProfiler = isProfiler;
+exports.isStrictMode = isStrictMode;
+exports.isSuspense = isSuspense;
+exports.isValidElementType = isValidElementType;
+exports.typeOf = typeOf;
+  })();
+}
+});
+
+var reactIs = createCommonjsModule(function (module) {
+
+if (process.env.NODE_ENV === 'production') {
+  module.exports = reactIs_production_min;
+} else {
+  module.exports = reactIs_development;
+}
+});
+
+/*
+object-assign
+(c) Sindre Sorhus
+@license MIT
+*/
+/* eslint-disable no-unused-vars */
+var getOwnPropertySymbols = Object.getOwnPropertySymbols;
+var hasOwnProperty = Object.prototype.hasOwnProperty;
+var propIsEnumerable = Object.prototype.propertyIsEnumerable;
+
+function toObject(val) {
+	if (val === null || val === undefined) {
+		throw new TypeError('Object.assign cannot be called with null or undefined');
+	}
+
+	return Object(val);
+}
+
+function shouldUseNative() {
+	try {
+		if (!Object.assign) {
+			return false;
+		}
+
+		// Detect buggy property enumeration order in older V8 versions.
+
+		// https://bugs.chromium.org/p/v8/issues/detail?id=4118
+		var test1 = new String('abc');  // eslint-disable-line no-new-wrappers
+		test1[5] = 'de';
+		if (Object.getOwnPropertyNames(test1)[0] === '5') {
+			return false;
+		}
+
+		// https://bugs.chromium.org/p/v8/issues/detail?id=3056
+		var test2 = {};
+		for (var i = 0; i < 10; i++) {
+			test2['_' + String.fromCharCode(i)] = i;
+		}
+		var order2 = Object.getOwnPropertyNames(test2).map(function (n) {
+			return test2[n];
+		});
+		if (order2.join('') !== '0123456789') {
+			return false;
+		}
+
+		// https://bugs.chromium.org/p/v8/issues/detail?id=3056
+		var test3 = {};
+		'abcdefghijklmnopqrst'.split('').forEach(function (letter) {
+			test3[letter] = letter;
+		});
+		if (Object.keys(Object.assign({}, test3)).join('') !==
+				'abcdefghijklmnopqrst') {
+			return false;
+		}
+
+		return true;
+	} catch (err) {
+		// We don't expect any of the above to throw, but better to be safe.
+		return false;
+	}
+}
+
+var objectAssign = shouldUseNative() ? Object.assign : function (target, source) {
+	var from;
+	var to = toObject(target);
+	var symbols;
+
+	for (var s = 1; s < arguments.length; s++) {
+		from = Object(arguments[s]);
+
+		for (var key in from) {
+			if (hasOwnProperty.call(from, key)) {
+				to[key] = from[key];
+			}
+		}
+
+		if (getOwnPropertySymbols) {
+			symbols = getOwnPropertySymbols(from);
+			for (var i = 0; i < symbols.length; i++) {
+				if (propIsEnumerable.call(from, symbols[i])) {
+					to[symbols[i]] = from[symbols[i]];
+				}
+			}
+		}
+	}
+
+	return to;
+};
+
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
+
+var ReactPropTypesSecret_1 = ReactPropTypesSecret;
+
+var printWarning = function() {};
+
+if (process.env.NODE_ENV !== 'production') {
+  var ReactPropTypesSecret$1 = ReactPropTypesSecret_1;
+  var loggedTypeFailures = {};
+  var has = Function.call.bind(Object.prototype.hasOwnProperty);
+
+  printWarning = function(text) {
+    var message = 'Warning: ' + text;
+    if (typeof console !== 'undefined') {
+      console.error(message);
+    }
+    try {
+      // --- Welcome to debugging React ---
+      // This error was thrown as a convenience so that you can use this stack
+      // to find the callsite that caused this warning to fire.
+      throw new Error(message);
+    } catch (x) {}
+  };
+}
+
+/**
+ * Assert that the values match with the type specs.
+ * Error messages are memorized and will only be shown once.
+ *
+ * @param {object} typeSpecs Map of name to a ReactPropType
+ * @param {object} values Runtime values that need to be type-checked
+ * @param {string} location e.g. "prop", "context", "child context"
+ * @param {string} componentName Name of the component for error messages.
+ * @param {?Function} getStack Returns the component stack.
+ * @private
+ */
+function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
+  if (process.env.NODE_ENV !== 'production') {
+    for (var typeSpecName in typeSpecs) {
+      if (has(typeSpecs, typeSpecName)) {
+        var error;
+        // Prop type validation may throw. In case they do, we don't want to
+        // fail the render phase where it didn't fail before. So we log it.
+        // After these have been cleaned up, we'll let them throw.
+        try {
+          // This is intentionally an invariant that gets caught. It's the same
+          // behavior as without this statement except with a better message.
+          if (typeof typeSpecs[typeSpecName] !== 'function') {
+            var err = Error(
+              (componentName || 'React class') + ': ' + location + ' type `' + typeSpecName + '` is invalid; ' +
+              'it must be a function, usually from the `prop-types` package, but received `' + typeof typeSpecs[typeSpecName] + '`.'
+            );
+            err.name = 'Invariant Violation';
+            throw err;
+          }
+          error = typeSpecs[typeSpecName](values, typeSpecName, componentName, location, null, ReactPropTypesSecret$1);
+        } catch (ex) {
+          error = ex;
+        }
+        if (error && !(error instanceof Error)) {
+          printWarning(
+            (componentName || 'React class') + ': type specification of ' +
+            location + ' `' + typeSpecName + '` is invalid; the type checker ' +
+            'function must return `null` or an `Error` but returned a ' + typeof error + '. ' +
+            'You may have forgotten to pass an argument to the type checker ' +
+            'creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and ' +
+            'shape all require an argument).'
+          );
+        }
+        if (error instanceof Error && !(error.message in loggedTypeFailures)) {
+          // Only monitor this failure once because there tends to be a lot of the
+          // same error.
+          loggedTypeFailures[error.message] = true;
+
+          var stack = getStack ? getStack() : '';
+
+          printWarning(
+            'Failed ' + location + ' type: ' + error.message + (stack != null ? stack : '')
+          );
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Resets warning cache when testing.
+ *
+ * @private
+ */
+checkPropTypes.resetWarningCache = function() {
+  if (process.env.NODE_ENV !== 'production') {
+    loggedTypeFailures = {};
+  }
+};
+
+var checkPropTypes_1 = checkPropTypes;
+
+var has$1 = Function.call.bind(Object.prototype.hasOwnProperty);
+var printWarning$1 = function() {};
+
+if (process.env.NODE_ENV !== 'production') {
+  printWarning$1 = function(text) {
+    var message = 'Warning: ' + text;
+    if (typeof console !== 'undefined') {
+      console.error(message);
+    }
+    try {
+      // --- Welcome to debugging React ---
+      // This error was thrown as a convenience so that you can use this stack
+      // to find the callsite that caused this warning to fire.
+      throw new Error(message);
+    } catch (x) {}
+  };
+}
+
+function emptyFunctionThatReturnsNull() {
+  return null;
+}
+
+var factoryWithTypeCheckers = function(isValidElement, throwOnDirectAccess) {
+  /* global Symbol */
+  var ITERATOR_SYMBOL = typeof Symbol === 'function' && Symbol.iterator;
+  var FAUX_ITERATOR_SYMBOL = '@@iterator'; // Before Symbol spec.
+
+  /**
+   * Returns the iterator method function contained on the iterable object.
+   *
+   * Be sure to invoke the function with the iterable as context:
+   *
+   *     var iteratorFn = getIteratorFn(myIterable);
+   *     if (iteratorFn) {
+   *       var iterator = iteratorFn.call(myIterable);
+   *       ...
+   *     }
+   *
+   * @param {?object} maybeIterable
+   * @return {?function}
+   */
+  function getIteratorFn(maybeIterable) {
+    var iteratorFn = maybeIterable && (ITERATOR_SYMBOL && maybeIterable[ITERATOR_SYMBOL] || maybeIterable[FAUX_ITERATOR_SYMBOL]);
+    if (typeof iteratorFn === 'function') {
+      return iteratorFn;
+    }
+  }
+
+  /**
+   * Collection of methods that allow declaration and validation of props that are
+   * supplied to React components. Example usage:
+   *
+   *   var Props = require('ReactPropTypes');
+   *   var MyArticle = React.createClass({
+   *     propTypes: {
+   *       // An optional string prop named "description".
+   *       description: Props.string,
+   *
+   *       // A required enum prop named "category".
+   *       category: Props.oneOf(['News','Photos']).isRequired,
+   *
+   *       // A prop named "dialog" that requires an instance of Dialog.
+   *       dialog: Props.instanceOf(Dialog).isRequired
+   *     },
+   *     render: function() { ... }
+   *   });
+   *
+   * A more formal specification of how these methods are used:
+   *
+   *   type := array|bool|func|object|number|string|oneOf([...])|instanceOf(...)
+   *   decl := ReactPropTypes.{type}(.isRequired)?
+   *
+   * Each and every declaration produces a function with the same signature. This
+   * allows the creation of custom validation functions. For example:
+   *
+   *  var MyLink = React.createClass({
+   *    propTypes: {
+   *      // An optional string or URI prop named "href".
+   *      href: function(props, propName, componentName) {
+   *        var propValue = props[propName];
+   *        if (propValue != null && typeof propValue !== 'string' &&
+   *            !(propValue instanceof URI)) {
+   *          return new Error(
+   *            'Expected a string or an URI for ' + propName + ' in ' +
+   *            componentName
+   *          );
+   *        }
+   *      }
+   *    },
+   *    render: function() {...}
+   *  });
+   *
+   * @internal
+   */
+
+  var ANONYMOUS = '<<anonymous>>';
+
+  // Important!
+  // Keep this list in sync with production version in `./factoryWithThrowingShims.js`.
+  var ReactPropTypes = {
+    array: createPrimitiveTypeChecker('array'),
+    bool: createPrimitiveTypeChecker('boolean'),
+    func: createPrimitiveTypeChecker('function'),
+    number: createPrimitiveTypeChecker('number'),
+    object: createPrimitiveTypeChecker('object'),
+    string: createPrimitiveTypeChecker('string'),
+    symbol: createPrimitiveTypeChecker('symbol'),
+
+    any: createAnyTypeChecker(),
+    arrayOf: createArrayOfTypeChecker,
+    element: createElementTypeChecker(),
+    elementType: createElementTypeTypeChecker(),
+    instanceOf: createInstanceTypeChecker,
+    node: createNodeChecker(),
+    objectOf: createObjectOfTypeChecker,
+    oneOf: createEnumTypeChecker,
+    oneOfType: createUnionTypeChecker,
+    shape: createShapeTypeChecker,
+    exact: createStrictShapeTypeChecker,
+  };
+
+  /**
+   * inlined Object.is polyfill to avoid requiring consumers ship their own
+   * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is
+   */
+  /*eslint-disable no-self-compare*/
+  function is(x, y) {
+    // SameValue algorithm
+    if (x === y) {
+      // Steps 1-5, 7-10
+      // Steps 6.b-6.e: +0 != -0
+      return x !== 0 || 1 / x === 1 / y;
+    } else {
+      // Step 6.a: NaN == NaN
+      return x !== x && y !== y;
+    }
+  }
+  /*eslint-enable no-self-compare*/
+
+  /**
+   * We use an Error-like object for backward compatibility as people may call
+   * PropTypes directly and inspect their output. However, we don't use real
+   * Errors anymore. We don't inspect their stack anyway, and creating them
+   * is prohibitively expensive if they are created too often, such as what
+   * happens in oneOfType() for any type before the one that matched.
+   */
+  function PropTypeError(message) {
+    this.message = message;
+    this.stack = '';
+  }
+  // Make `instanceof Error` still work for returned errors.
+  PropTypeError.prototype = Error.prototype;
+
+  function createChainableTypeChecker(validate) {
+    if (process.env.NODE_ENV !== 'production') {
+      var manualPropTypeCallCache = {};
+      var manualPropTypeWarningCount = 0;
+    }
+    function checkType(isRequired, props, propName, componentName, location, propFullName, secret) {
+      componentName = componentName || ANONYMOUS;
+      propFullName = propFullName || propName;
+
+      if (secret !== ReactPropTypesSecret_1) {
+        if (throwOnDirectAccess) {
+          // New behavior only for users of `prop-types` package
+          var err = new Error(
+            'Calling PropTypes validators directly is not supported by the `prop-types` package. ' +
+            'Use `PropTypes.checkPropTypes()` to call them. ' +
+            'Read more at http://fb.me/use-check-prop-types'
+          );
+          err.name = 'Invariant Violation';
+          throw err;
+        } else if (process.env.NODE_ENV !== 'production' && typeof console !== 'undefined') {
+          // Old behavior for people using React.PropTypes
+          var cacheKey = componentName + ':' + propName;
+          if (
+            !manualPropTypeCallCache[cacheKey] &&
+            // Avoid spamming the console because they are often not actionable except for lib authors
+            manualPropTypeWarningCount < 3
+          ) {
+            printWarning$1(
+              'You are manually calling a React.PropTypes validation ' +
+              'function for the `' + propFullName + '` prop on `' + componentName  + '`. This is deprecated ' +
+              'and will throw in the standalone `prop-types` package. ' +
+              'You may be seeing this warning due to a third-party PropTypes ' +
+              'library. See https://fb.me/react-warning-dont-call-proptypes ' + 'for details.'
+            );
+            manualPropTypeCallCache[cacheKey] = true;
+            manualPropTypeWarningCount++;
+          }
+        }
+      }
+      if (props[propName] == null) {
+        if (isRequired) {
+          if (props[propName] === null) {
+            return new PropTypeError('The ' + location + ' `' + propFullName + '` is marked as required ' + ('in `' + componentName + '`, but its value is `null`.'));
+          }
+          return new PropTypeError('The ' + location + ' `' + propFullName + '` is marked as required in ' + ('`' + componentName + '`, but its value is `undefined`.'));
+        }
+        return null;
+      } else {
+        return validate(props, propName, componentName, location, propFullName);
+      }
+    }
+
+    var chainedCheckType = checkType.bind(null, false);
+    chainedCheckType.isRequired = checkType.bind(null, true);
+
+    return chainedCheckType;
+  }
+
+  function createPrimitiveTypeChecker(expectedType) {
+    function validate(props, propName, componentName, location, propFullName, secret) {
+      var propValue = props[propName];
+      var propType = getPropType(propValue);
+      if (propType !== expectedType) {
+        // `propValue` being instance of, say, date/regexp, pass the 'object'
+        // check, but we can offer a more precise error message here rather than
+        // 'of type `object`'.
+        var preciseType = getPreciseType(propValue);
+
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + preciseType + '` supplied to `' + componentName + '`, expected ') + ('`' + expectedType + '`.'));
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createAnyTypeChecker() {
+    return createChainableTypeChecker(emptyFunctionThatReturnsNull);
+  }
+
+  function createArrayOfTypeChecker(typeChecker) {
+    function validate(props, propName, componentName, location, propFullName) {
+      if (typeof typeChecker !== 'function') {
+        return new PropTypeError('Property `' + propFullName + '` of component `' + componentName + '` has invalid PropType notation inside arrayOf.');
+      }
+      var propValue = props[propName];
+      if (!Array.isArray(propValue)) {
+        var propType = getPropType(propValue);
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected an array.'));
+      }
+      for (var i = 0; i < propValue.length; i++) {
+        var error = typeChecker(propValue, i, componentName, location, propFullName + '[' + i + ']', ReactPropTypesSecret_1);
+        if (error instanceof Error) {
+          return error;
+        }
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createElementTypeChecker() {
+    function validate(props, propName, componentName, location, propFullName) {
+      var propValue = props[propName];
+      if (!isValidElement(propValue)) {
+        var propType = getPropType(propValue);
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected a single ReactElement.'));
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createElementTypeTypeChecker() {
+    function validate(props, propName, componentName, location, propFullName) {
+      var propValue = props[propName];
+      if (!reactIs.isValidElementType(propValue)) {
+        var propType = getPropType(propValue);
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected a single ReactElement type.'));
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createInstanceTypeChecker(expectedClass) {
+    function validate(props, propName, componentName, location, propFullName) {
+      if (!(props[propName] instanceof expectedClass)) {
+        var expectedClassName = expectedClass.name || ANONYMOUS;
+        var actualClassName = getClassName(props[propName]);
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + actualClassName + '` supplied to `' + componentName + '`, expected ') + ('instance of `' + expectedClassName + '`.'));
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createEnumTypeChecker(expectedValues) {
+    if (!Array.isArray(expectedValues)) {
+      if (process.env.NODE_ENV !== 'production') {
+        if (arguments.length > 1) {
+          printWarning$1(
+            'Invalid arguments supplied to oneOf, expected an array, got ' + arguments.length + ' arguments. ' +
+            'A common mistake is to write oneOf(x, y, z) instead of oneOf([x, y, z]).'
+          );
+        } else {
+          printWarning$1('Invalid argument supplied to oneOf, expected an array.');
+        }
+      }
+      return emptyFunctionThatReturnsNull;
+    }
+
+    function validate(props, propName, componentName, location, propFullName) {
+      var propValue = props[propName];
+      for (var i = 0; i < expectedValues.length; i++) {
+        if (is(propValue, expectedValues[i])) {
+          return null;
+        }
+      }
+
+      var valuesString = JSON.stringify(expectedValues, function replacer(key, value) {
+        var type = getPreciseType(value);
+        if (type === 'symbol') {
+          return String(value);
+        }
+        return value;
+      });
+      return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of value `' + String(propValue) + '` ' + ('supplied to `' + componentName + '`, expected one of ' + valuesString + '.'));
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createObjectOfTypeChecker(typeChecker) {
+    function validate(props, propName, componentName, location, propFullName) {
+      if (typeof typeChecker !== 'function') {
+        return new PropTypeError('Property `' + propFullName + '` of component `' + componentName + '` has invalid PropType notation inside objectOf.');
+      }
+      var propValue = props[propName];
+      var propType = getPropType(propValue);
+      if (propType !== 'object') {
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected an object.'));
+      }
+      for (var key in propValue) {
+        if (has$1(propValue, key)) {
+          var error = typeChecker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret_1);
+          if (error instanceof Error) {
+            return error;
+          }
+        }
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createUnionTypeChecker(arrayOfTypeCheckers) {
+    if (!Array.isArray(arrayOfTypeCheckers)) {
+      process.env.NODE_ENV !== 'production' ? printWarning$1('Invalid argument supplied to oneOfType, expected an instance of array.') : void 0;
+      return emptyFunctionThatReturnsNull;
+    }
+
+    for (var i = 0; i < arrayOfTypeCheckers.length; i++) {
+      var checker = arrayOfTypeCheckers[i];
+      if (typeof checker !== 'function') {
+        printWarning$1(
+          'Invalid argument supplied to oneOfType. Expected an array of check functions, but ' +
+          'received ' + getPostfixForTypeWarning(checker) + ' at index ' + i + '.'
+        );
+        return emptyFunctionThatReturnsNull;
+      }
+    }
+
+    function validate(props, propName, componentName, location, propFullName) {
+      for (var i = 0; i < arrayOfTypeCheckers.length; i++) {
+        var checker = arrayOfTypeCheckers[i];
+        if (checker(props, propName, componentName, location, propFullName, ReactPropTypesSecret_1) == null) {
+          return null;
+        }
+      }
+
+      return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` supplied to ' + ('`' + componentName + '`.'));
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createNodeChecker() {
+    function validate(props, propName, componentName, location, propFullName) {
+      if (!isNode(props[propName])) {
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` supplied to ' + ('`' + componentName + '`, expected a ReactNode.'));
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createShapeTypeChecker(shapeTypes) {
+    function validate(props, propName, componentName, location, propFullName) {
+      var propValue = props[propName];
+      var propType = getPropType(propValue);
+      if (propType !== 'object') {
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type `' + propType + '` ' + ('supplied to `' + componentName + '`, expected `object`.'));
+      }
+      for (var key in shapeTypes) {
+        var checker = shapeTypes[key];
+        if (!checker) {
+          continue;
+        }
+        var error = checker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret_1);
+        if (error) {
+          return error;
+        }
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createStrictShapeTypeChecker(shapeTypes) {
+    function validate(props, propName, componentName, location, propFullName) {
+      var propValue = props[propName];
+      var propType = getPropType(propValue);
+      if (propType !== 'object') {
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type `' + propType + '` ' + ('supplied to `' + componentName + '`, expected `object`.'));
+      }
+      // We need to check all keys in case some are required but missing from
+      // props.
+      var allKeys = objectAssign({}, props[propName], shapeTypes);
+      for (var key in allKeys) {
+        var checker = shapeTypes[key];
+        if (!checker) {
+          return new PropTypeError(
+            'Invalid ' + location + ' `' + propFullName + '` key `' + key + '` supplied to `' + componentName + '`.' +
+            '\nBad object: ' + JSON.stringify(props[propName], null, '  ') +
+            '\nValid keys: ' +  JSON.stringify(Object.keys(shapeTypes), null, '  ')
+          );
+        }
+        var error = checker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret_1);
+        if (error) {
+          return error;
+        }
+      }
+      return null;
+    }
+
+    return createChainableTypeChecker(validate);
+  }
+
+  function isNode(propValue) {
+    switch (typeof propValue) {
+      case 'number':
+      case 'string':
+      case 'undefined':
+        return true;
+      case 'boolean':
+        return !propValue;
+      case 'object':
+        if (Array.isArray(propValue)) {
+          return propValue.every(isNode);
+        }
+        if (propValue === null || isValidElement(propValue)) {
+          return true;
+        }
+
+        var iteratorFn = getIteratorFn(propValue);
+        if (iteratorFn) {
+          var iterator = iteratorFn.call(propValue);
+          var step;
+          if (iteratorFn !== propValue.entries) {
+            while (!(step = iterator.next()).done) {
+              if (!isNode(step.value)) {
+                return false;
+              }
+            }
+          } else {
+            // Iterator will provide entry [k,v] tuples rather than values.
+            while (!(step = iterator.next()).done) {
+              var entry = step.value;
+              if (entry) {
+                if (!isNode(entry[1])) {
+                  return false;
+                }
+              }
+            }
+          }
+        } else {
+          return false;
+        }
+
+        return true;
+      default:
+        return false;
+    }
+  }
+
+  function isSymbol(propType, propValue) {
+    // Native Symbol.
+    if (propType === 'symbol') {
+      return true;
+    }
+
+    // falsy value can't be a Symbol
+    if (!propValue) {
+      return false;
+    }
+
+    // 19.4.3.5 Symbol.prototype[@@toStringTag] === 'Symbol'
+    if (propValue['@@toStringTag'] === 'Symbol') {
+      return true;
+    }
+
+    // Fallback for non-spec compliant Symbols which are polyfilled.
+    if (typeof Symbol === 'function' && propValue instanceof Symbol) {
+      return true;
+    }
+
+    return false;
+  }
+
+  // Equivalent of `typeof` but with special handling for array and regexp.
+  function getPropType(propValue) {
+    var propType = typeof propValue;
+    if (Array.isArray(propValue)) {
+      return 'array';
+    }
+    if (propValue instanceof RegExp) {
+      // Old webkits (at least until Android 4.0) return 'function' rather than
+      // 'object' for typeof a RegExp. We'll normalize this here so that /bla/
+      // passes PropTypes.object.
+      return 'object';
+    }
+    if (isSymbol(propType, propValue)) {
+      return 'symbol';
+    }
+    return propType;
+  }
+
+  // This handles more types than `getPropType`. Only used for error messages.
+  // See `createPrimitiveTypeChecker`.
+  function getPreciseType(propValue) {
+    if (typeof propValue === 'undefined' || propValue === null) {
+      return '' + propValue;
+    }
+    var propType = getPropType(propValue);
+    if (propType === 'object') {
+      if (propValue instanceof Date) {
+        return 'date';
+      } else if (propValue instanceof RegExp) {
+        return 'regexp';
+      }
+    }
+    return propType;
+  }
+
+  // Returns a string that is postfixed to a warning about an invalid type.
+  // For example, "undefined" or "of type array"
+  function getPostfixForTypeWarning(value) {
+    var type = getPreciseType(value);
+    switch (type) {
+      case 'array':
+      case 'object':
+        return 'an ' + type;
+      case 'boolean':
+      case 'date':
+      case 'regexp':
+        return 'a ' + type;
+      default:
+        return type;
+    }
+  }
+
+  // Returns class name of the object, if any.
+  function getClassName(propValue) {
+    if (!propValue.constructor || !propValue.constructor.name) {
+      return ANONYMOUS;
+    }
+    return propValue.constructor.name;
+  }
+
+  ReactPropTypes.checkPropTypes = checkPropTypes_1;
+  ReactPropTypes.resetWarningCache = checkPropTypes_1.resetWarningCache;
+  ReactPropTypes.PropTypes = ReactPropTypes;
+
+  return ReactPropTypes;
+};
+
+function emptyFunction() {}
+function emptyFunctionWithReset() {}
+emptyFunctionWithReset.resetWarningCache = emptyFunction;
+
+var factoryWithThrowingShims = function() {
+  function shim(props, propName, componentName, location, propFullName, secret) {
+    if (secret === ReactPropTypesSecret_1) {
+      // It is still safe when called from React.
+      return;
+    }
+    var err = new Error(
+      'Calling PropTypes validators directly is not supported by the `prop-types` package. ' +
+      'Use PropTypes.checkPropTypes() to call them. ' +
+      'Read more at http://fb.me/use-check-prop-types'
+    );
+    err.name = 'Invariant Violation';
+    throw err;
+  }  shim.isRequired = shim;
+  function getShim() {
+    return shim;
+  }  // Important!
+  // Keep this list in sync with production version in `./factoryWithTypeCheckers.js`.
+  var ReactPropTypes = {
+    array: shim,
+    bool: shim,
+    func: shim,
+    number: shim,
+    object: shim,
+    string: shim,
+    symbol: shim,
+
+    any: shim,
+    arrayOf: getShim,
+    element: shim,
+    elementType: shim,
+    instanceOf: getShim,
+    node: shim,
+    objectOf: getShim,
+    oneOf: getShim,
+    oneOfType: getShim,
+    shape: getShim,
+    exact: getShim,
+
+    checkPropTypes: emptyFunctionWithReset,
+    resetWarningCache: emptyFunction
+  };
+
+  ReactPropTypes.PropTypes = ReactPropTypes;
+
+  return ReactPropTypes;
+};
+
+var propTypes = createCommonjsModule(function (module) {
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+if (process.env.NODE_ENV !== 'production') {
+  var ReactIs = reactIs;
+
+  // By explicitly using `prop-types` you are opting into new development behavior.
+  // http://fb.me/prop-types-in-prod
+  var throwOnDirectAccess = true;
+  module.exports = factoryWithTypeCheckers(ReactIs.isElement, throwOnDirectAccess);
+} else {
+  // By explicitly using `prop-types` you are opting into new production behavior.
+  // http://fb.me/prop-types-in-prod
+  module.exports = factoryWithThrowingShims();
+}
+});
+
+function _typeof(obj) {
+  if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+    _typeof = function (obj) {
+      return typeof obj;
+    };
+  } else {
+    _typeof = function (obj) {
+      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+    };
+  }
+
+  return _typeof(obj);
+}
+
+function _defineProperty$1(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+}
+
+function ownKeys(object, enumerableOnly) {
+  var keys = Object.keys(object);
+
+  if (Object.getOwnPropertySymbols) {
+    var symbols = Object.getOwnPropertySymbols(object);
+    if (enumerableOnly) symbols = symbols.filter(function (sym) {
+      return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+    });
+    keys.push.apply(keys, symbols);
+  }
+
+  return keys;
+}
+
+function _objectSpread2(target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i] != null ? arguments[i] : {};
+
+    if (i % 2) {
+      ownKeys(Object(source), true).forEach(function (key) {
+        _defineProperty$1(target, key, source[key]);
+      });
+    } else if (Object.getOwnPropertyDescriptors) {
+      Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+    } else {
+      ownKeys(Object(source)).forEach(function (key) {
+        Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+      });
+    }
+  }
+
+  return target;
+}
+
+function _objectWithoutPropertiesLoose(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  var sourceKeys = Object.keys(source);
+  var key, i;
+
+  for (i = 0; i < sourceKeys.length; i++) {
+    key = sourceKeys[i];
+    if (excluded.indexOf(key) >= 0) continue;
+    target[key] = source[key];
+  }
+
+  return target;
+}
+
+function _objectWithoutProperties(source, excluded) {
+  if (source == null) return {};
+
+  var target = _objectWithoutPropertiesLoose(source, excluded);
+
+  var key, i;
+
+  if (Object.getOwnPropertySymbols) {
+    var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
+
+    for (i = 0; i < sourceSymbolKeys.length; i++) {
+      key = sourceSymbolKeys[i];
+      if (excluded.indexOf(key) >= 0) continue;
+      if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
+      target[key] = source[key];
+    }
+  }
+
+  return target;
+}
+
+function _toConsumableArray(arr) {
+  return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread();
+}
+
+function _arrayWithoutHoles(arr) {
+  if (Array.isArray(arr)) {
+    for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) arr2[i] = arr[i];
+
+    return arr2;
+  }
+}
+
+function _iterableToArray(iter) {
+  if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter);
+}
+
+function _nonIterableSpread() {
+  throw new TypeError("Invalid attempt to spread non-iterable instance");
+}
+
+// Get CSS class list from a props object
+function classList(props) {
+  var _classes;
+
+  var spin = props.spin,
+      pulse = props.pulse,
+      fixedWidth = props.fixedWidth,
+      inverse = props.inverse,
+      border = props.border,
+      listItem = props.listItem,
+      flip = props.flip,
+      size = props.size,
+      rotation = props.rotation,
+      pull = props.pull; // map of CSS class names to properties
+
+  var classes = (_classes = {
+    'fa-spin': spin,
+    'fa-pulse': pulse,
+    'fa-fw': fixedWidth,
+    'fa-inverse': inverse,
+    'fa-border': border,
+    'fa-li': listItem,
+    'fa-flip-horizontal': flip === 'horizontal' || flip === 'both',
+    'fa-flip-vertical': flip === 'vertical' || flip === 'both'
+  }, _defineProperty$1(_classes, "fa-".concat(size), typeof size !== 'undefined' && size !== null), _defineProperty$1(_classes, "fa-rotate-".concat(rotation), typeof rotation !== 'undefined' && rotation !== null && rotation !== 0), _defineProperty$1(_classes, "fa-pull-".concat(pull), typeof pull !== 'undefined' && pull !== null), _defineProperty$1(_classes, 'fa-swap-opacity', props.swapOpacity), _classes); // map over all the keys in the classes object
+  // return an array of the keys where the value for the key is not null
+
+  return Object.keys(classes).map(function (key) {
+    return classes[key] ? key : null;
+  }).filter(function (key) {
+    return key;
+  });
+}
+
+// Camelize taken from humps
+// humps is copyright © 2012+ Dom Christie
+// Released under the MIT license.
+// Performant way to determine if object coerces to a number
+function _isNumerical(obj) {
+  obj = obj - 0; // eslint-disable-next-line no-self-compare
+
+  return obj === obj;
+}
+
+function camelize(string) {
+  if (_isNumerical(string)) {
+    return string;
+  } // eslint-disable-next-line no-useless-escape
+
+
+  string = string.replace(/[\-_\s]+(.)?/g, function (match, chr) {
+    return chr ? chr.toUpperCase() : '';
+  }); // Ensure 1st char is always lowercase
+
+  return string.substr(0, 1).toLowerCase() + string.substr(1);
+}
+
+function capitalize(val) {
+  return val.charAt(0).toUpperCase() + val.slice(1);
+}
+
+function styleToObject(style) {
+  return style.split(';').map(function (s) {
+    return s.trim();
+  }).filter(function (s) {
+    return s;
+  }).reduce(function (acc, pair) {
+    var i = pair.indexOf(':');
+    var prop = camelize(pair.slice(0, i));
+    var value = pair.slice(i + 1).trim();
+    prop.startsWith('webkit') ? acc[capitalize(prop)] = value : acc[prop] = value;
+    return acc;
+  }, {});
+}
+
+function convert(createElement, element) {
+  var extraProps = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+
+  if (typeof element === 'string') {
+    return element;
+  }
+
+  var children = (element.children || []).map(function (child) {
+    return convert(createElement, child);
+  });
+  /* eslint-disable dot-notation */
+
+  var mixins = Object.keys(element.attributes || {}).reduce(function (acc, key) {
+    var val = element.attributes[key];
+
+    switch (key) {
+      case 'class':
+        acc.attrs['className'] = val;
+        delete element.attributes['class'];
+        break;
+
+      case 'style':
+        acc.attrs['style'] = styleToObject(val);
+        break;
+
+      default:
+        if (key.indexOf('aria-') === 0 || key.indexOf('data-') === 0) {
+          acc.attrs[key.toLowerCase()] = val;
+        } else {
+          acc.attrs[camelize(key)] = val;
+        }
+
+    }
+
+    return acc;
+  }, {
+    attrs: {}
+  });
+
+  var _extraProps$style = extraProps.style,
+      existingStyle = _extraProps$style === void 0 ? {} : _extraProps$style,
+      remaining = _objectWithoutProperties(extraProps, ["style"]);
+
+  mixins.attrs['style'] = _objectSpread2({}, mixins.attrs['style'], {}, existingStyle);
+  /* eslint-enable */
+
+  return createElement.apply(void 0, [element.tag, _objectSpread2({}, mixins.attrs, {}, remaining)].concat(_toConsumableArray(children)));
+}
+
+var PRODUCTION$1 = false;
+
+try {
+  PRODUCTION$1 = process.env.NODE_ENV === 'production';
+} catch (e) {}
+
+function log () {
+  if (!PRODUCTION$1 && console && typeof console.error === 'function') {
+    var _console;
+
+    (_console = console).error.apply(_console, arguments);
+  }
+}
+
+function normalizeIconArgs(icon) {
+  // this has everything that it needs to be rendered which means it was probably imported
+  // directly from an icon svg package
+  if (icon && _typeof(icon) === 'object' && icon.prefix && icon.iconName && icon.icon) {
+    return icon;
+  }
+
+  if (parse.icon) {
+    return parse.icon(icon);
+  } // if the icon is null, there's nothing to do
+
+
+  if (icon === null) {
+    return null;
+  } // if the icon is an object and has a prefix and an icon name, return it
+
+
+  if (icon && _typeof(icon) === 'object' && icon.prefix && icon.iconName) {
+    return icon;
+  } // if it's an array with length of two
+
+
+  if (Array.isArray(icon) && icon.length === 2) {
+    // use the first item as prefix, second as icon name
+    return {
+      prefix: icon[0],
+      iconName: icon[1]
+    };
+  } // if it's a string, use it as the icon name
+
+
+  if (typeof icon === 'string') {
+    return {
+      prefix: 'fas',
+      iconName: icon
+    };
+  }
+}
+
+// creates an object with a key of key
+// and a value of value
+// if certain conditions are met
+function objectWithKey(key, value) {
+  // if the value is a non-empty array
+  // or it's not an array but it is truthy
+  // then create the object with the key and the value
+  // if not, return an empty array
+  return Array.isArray(value) && value.length > 0 || !Array.isArray(value) && value ? _defineProperty$1({}, key, value) : {};
+}
+
+function FontAwesomeIcon(_ref) {
+  var forwardedRef = _ref.forwardedRef,
+      props = _objectWithoutProperties(_ref, ["forwardedRef"]);
+
+  var iconArgs = props.icon,
+      maskArgs = props.mask,
+      symbol = props.symbol,
+      className = props.className,
+      title = props.title,
+      titleId = props.titleId;
+  var iconLookup = normalizeIconArgs(iconArgs);
+  var classes = objectWithKey('classes', [].concat(_toConsumableArray(classList(props)), _toConsumableArray(className.split(' '))));
+  var transform = objectWithKey('transform', typeof props.transform === 'string' ? parse.transform(props.transform) : props.transform);
+  var mask = objectWithKey('mask', normalizeIconArgs(maskArgs));
+  var renderedIcon = icon(iconLookup, _objectSpread2({}, classes, {}, transform, {}, mask, {
+    symbol: symbol,
+    title: title,
+    titleId: titleId
+  }));
+
+  if (!renderedIcon) {
+    log('Could not find icon', iconLookup);
+    return null;
+  }
+
+  var abstract = renderedIcon.abstract;
+  var extraProps = {
+    ref: forwardedRef
+  };
+  Object.keys(props).forEach(function (key) {
+    // eslint-disable-next-line no-prototype-builtins
+    if (!FontAwesomeIcon.defaultProps.hasOwnProperty(key)) {
+      extraProps[key] = props[key];
+    }
+  });
+  return convertCurry(abstract[0], extraProps);
+}
+FontAwesomeIcon.displayName = 'FontAwesomeIcon';
+FontAwesomeIcon.propTypes = {
+  border: propTypes.bool,
+  className: propTypes.string,
+  mask: propTypes.oneOfType([propTypes.object, propTypes.array, propTypes.string]),
+  fixedWidth: propTypes.bool,
+  inverse: propTypes.bool,
+  flip: propTypes.oneOf(['horizontal', 'vertical', 'both']),
+  icon: propTypes.oneOfType([propTypes.object, propTypes.array, propTypes.string]),
+  listItem: propTypes.bool,
+  pull: propTypes.oneOf(['right', 'left']),
+  pulse: propTypes.bool,
+  rotation: propTypes.oneOf([0, 90, 180, 270]),
+  size: propTypes.oneOf(['lg', 'xs', 'sm', '1x', '2x', '3x', '4x', '5x', '6x', '7x', '8x', '9x', '10x']),
+  spin: propTypes.bool,
+  symbol: propTypes.oneOfType([propTypes.bool, propTypes.string]),
+  title: propTypes.string,
+  transform: propTypes.oneOfType([propTypes.string, propTypes.object]),
+  swapOpacity: propTypes.bool
+};
+FontAwesomeIcon.defaultProps = {
+  border: false,
+  className: '',
+  mask: null,
+  fixedWidth: false,
+  inverse: false,
+  flip: null,
+  icon: null,
+  listItem: false,
+  pull: null,
+  pulse: false,
+  rotation: null,
+  size: null,
+  spin: false,
+  symbol: false,
+  title: '',
+  transform: null,
+  swapOpacity: false
+};
+var convertCurry = convert.bind(null, React$2.createElement);
+
 /*!
- * Font Awesome Free 5.15.3 by @fontawesome - https://fontawesome.com
+ * Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
- */function Zr(){return(Zr=Object.assign||function(n){for(var e=1;e<arguments.length;e++){var t=arguments[e];for(var r in t)Object.prototype.hasOwnProperty.call(t,r)&&(n[r]=t[r])}return n}).apply(this,arguments)}function Gr(n){if(void 0===n)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return n}var Jr=function(n,e,t,r,o,i,a,l){if(!n){var d;if(void 0===e)d=new Error("Minified exception occurred; use the non-minified dev environment for the full error message and additional helpful warnings.");else{var c=[t,r,o,i,a,l],p=0;(d=new Error(e.replace(/%s/g,function(){return c[p++]}))).name="Invariant Violation"}throw d.framesToPop=1,d}};function Kr(n,e,t){if("selectionStart"in n&&"selectionEnd"in n)n.selectionStart=e,n.selectionEnd=t;else{var r=n.createTextRange();r.collapse(!0),r.moveStart("character",e),r.moveEnd("character",t-e),r.select()}}var Qr={9:"[0-9]",a:"[A-Za-z]","*":"[A-Za-z0-9]"};function no(n,e,t){var r="",o="",i=null,a=[];if(void 0===e&&(e="_"),null==t&&(t=Qr),!n||"string"!=typeof n)return{maskChar:e,formatChars:t,mask:null,prefix:null,lastEditablePosition:null,permanents:[]};var l=!1;return n.split("").forEach(function(n){l=!l&&"\\"===n||(l||!t[n]?(a.push(r.length),r.length===a.length-1&&(o+=n)):i=r.length+1,r+=n,!1)}),{maskChar:e,formatChars:t,prefix:o,mask:r,lastEditablePosition:i,permanents:a}}function eo(n,e){return-1!==n.permanents.indexOf(e)}function to(n,e,t){var r=n.mask,o=n.formatChars;return!!t&&(eo(n,e)?r[e]===t:new RegExp(o[r[e]]).test(t))}function ro(n,e){return e.split("").every(function(e,t){return eo(n,t)||!to(n,t,e)})}function oo(n,e){var t=n.prefix;if(!n.maskChar){for(;e.length>t.length&&eo(n,e.length-1);)e=e.slice(0,e.length-1);return e.length}for(var r=t.length,o=e.length;o>=t.length;o--){var i=e[o];if(!eo(n,o)&&to(n,o,i)){r=o+1;break}}return r}function io(n,e){return oo(n,e)===n.mask.length}function ao(n,e){var t=n.maskChar,r=n.mask,o=n.prefix;if(!t){for((e=lo(n,"",e,0)).length<o.length&&(e=o);e.length<r.length&&eo(n,e.length);)e+=r[e.length];return e}if(e)return lo(n,ao(n,""),e,0);for(var i=0;i<r.length;i++)eo(n,i)?e+=r[i]:e+=t;return e}function lo(n,e,t,r){var o=n.mask,i=n.maskChar,a=n.prefix,l=t.split(""),d=io(n,e);return!i&&r>e.length&&(e+=o.slice(e.length,r)),l.every(function(t){for(;p=t,eo(n,c=r)&&p!==o[c];){if(r>=e.length&&(e+=o[r]),l=t,i&&eo(n,r)&&l===i)return!0;if(++r>=o.length)return!1}var l,c,p;return!to(n,r,t)&&t!==i||(r<e.length?e=i||d||r<a.length?e.slice(0,r)+t+e.slice(r+1):(e=e.slice(0,r)+t+e.slice(r),ao(n,e)):i||(e+=t),++r<o.length)}),e}function co(n,e){for(var t=n.mask,r=e;r<t.length;++r)if(!eo(n,r))return r;return null}function po(n){return n||0===n?n+"":""}function so(n){return"function"==typeof n}function uo(){return window.cancelAnimationFrame||window.webkitCancelRequestAnimationFrame||window.webkitCancelAnimationFrame||window.mozCancelAnimationFrame}function mo(n){return(uo()?window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame:function(){return setTimeout(n,1e3/60)})(n)}function bo(n){(uo()||clearTimeout)(n)}var fo=function(n){function e(e){var t=n.call(this,e)||this;t.focused=!1,t.mounted=!1,t.previousSelection=null,t.selectionDeferId=null,t.saveSelectionLoopDeferId=null,t.saveSelectionLoop=function(){t.previousSelection=t.getSelection(),t.saveSelectionLoopDeferId=mo(t.saveSelectionLoop)},t.runSaveSelectionLoop=function(){null===t.saveSelectionLoopDeferId&&t.saveSelectionLoop()},t.stopSaveSelectionLoop=function(){null!==t.saveSelectionLoopDeferId&&(bo(t.saveSelectionLoopDeferId),t.saveSelectionLoopDeferId=null,t.previousSelection=null)},t.getInputDOMNode=function(){if(!t.mounted)return null;var n=g.findDOMNode(Gr(Gr(t))),e="undefined"!=typeof window&&n instanceof window.Element;if(n&&!e)return null;if("INPUT"!==n.nodeName&&(n=n.querySelector("input")),!n)throw new Error("react-input-mask: inputComponent doesn't contain input node");return n},t.getInputValue=function(){var n=t.getInputDOMNode();return n?n.value:null},t.setInputValue=function(n){var e=t.getInputDOMNode();e&&(t.value=n,e.value=n)},t.setCursorToEnd=function(){var n=oo(t.maskOptions,t.value),e=co(t.maskOptions,n);null!==e&&t.setCursorPosition(e)},t.setSelection=function(n,e,r){void 0===r&&(r={});var o=t.getInputDOMNode(),i=t.isFocused();o&&i&&(r.deferred||Kr(o,n,e),null!==t.selectionDeferId&&bo(t.selectionDeferId),t.selectionDeferId=mo(function(){t.selectionDeferId=null,Kr(o,n,e)}),t.previousSelection={start:n,end:e,length:Math.abs(e-n)})},t.getSelection=function(){return function(n){var e=0,t=0;if("selectionStart"in n&&"selectionEnd"in n)e=n.selectionStart,t=n.selectionEnd;else{var r=document.selection.createRange();r.parentElement()===n&&(e=-r.moveStart("character",-n.value.length),t=-r.moveEnd("character",-n.value.length))}return{start:e,end:t,length:t-e}}(t.getInputDOMNode())},t.getCursorPosition=function(){return t.getSelection().start},t.setCursorPosition=function(n){t.setSelection(n,n)},t.isFocused=function(){return t.focused},t.getBeforeMaskedValueChangeConfig=function(){var n=t.maskOptions;return{mask:n.mask,maskChar:n.maskChar,permanents:n.permanents,alwaysShowMask:!!t.props.alwaysShowMask,formatChars:n.formatChars}},t.isInputAutofilled=function(n,e,r,o){var i=t.getInputDOMNode();try{if(i.matches(":-webkit-autofill"))return!0}catch(n){}return!t.focused||o.end<r.length&&e.end===n.length},t.onChange=function(n){var e=Gr(Gr(t)).beforePasteState,r=Gr(Gr(t)).previousSelection,o=t.props.beforeMaskedValueChange,i=t.getInputValue(),a=t.value,l=t.getSelection();t.isInputAutofilled(i,l,a,r)&&(a=ao(t.maskOptions,""),r={start:0,end:0,length:0}),e&&(l={start:(r=e.selection).start+i.length,end:r.start+i.length,length:0},i=(a=e.value).slice(0,r.start)+i+a.slice(r.end),t.beforePasteState=null);var d=function(n,e,t,r,o){var i=n.mask,a=n.prefix,l=n.lastEditablePosition,d=e,c="",p=0,s=0,u=Math.min(o.start,t.start);return t.end>o.start?s=(p=function(n,e,t,r){var o=n.mask,i=n.maskChar,a=t.split(""),l=r;return a.every(function(e){for(;a=e,eo(n,t=r)&&a!==o[t];)if(++r>=o.length)return!1;var t,a;return(to(n,r,e)||e===i)&&r++,r<o.length}),r-l}(n,0,c=d.slice(o.start,t.end),u))?o.length:0:d.length<r.length&&(s=r.length-d.length),d=r,s&&(1!==s||o.length||(u=o.start===t.start?co(n,t.start):function(n,e){for(var t=e;0<=t;--t)if(!eo(n,t))return t;return null}(n,t.start)),d=function(n,e,t,r){var o=t+r,i=n.maskChar,a=n.mask,l=n.prefix,d=e.split("");if(i)return d.map(function(e,r){return r<t||o<=r?e:eo(n,r)?a[r]:i}).join("");for(var c=o;c<d.length;c++)eo(n,c)&&(d[c]="");return t=Math.max(l.length,t),d.splice(t,o-t),e=d.join(""),ao(n,e)}(n,d,u,s)),d=lo(n,d,c,u),(u+=p)>=i.length?u=i.length:u<a.length&&!p?u=a.length:u>=a.length&&u<l&&p&&(u=co(n,u)),c||(c=null),{value:d=ao(n,d),enteredString:c,selection:{start:u,end:u}}}(t.maskOptions,i,l,a,r),c=d.enteredString,p=d.selection,s=d.value;if(so(o)){var u=o({value:s,selection:p},{value:a,selection:r},c,t.getBeforeMaskedValueChangeConfig());s=u.value,p=u.selection}t.setInputValue(s),so(t.props.onChange)&&t.props.onChange(n),t.isWindowsPhoneBrowser?t.setSelection(p.start,p.end,{deferred:!0}):t.setSelection(p.start,p.end)},t.onFocus=function(n){var e=t.props.beforeMaskedValueChange,r=t.maskOptions,o=r.mask,i=r.prefix;if(t.focused=!0,t.mounted=!0,o){if(t.value)oo(t.maskOptions,t.value)<t.maskOptions.mask.length&&t.setCursorToEnd();else{var a=ao(t.maskOptions,i),l=ao(t.maskOptions,a),d=oo(t.maskOptions,l),c=co(t.maskOptions,d),p={start:c,end:c};if(so(e)){var s=e({value:l,selection:p},{value:t.value,selection:null},null,t.getBeforeMaskedValueChangeConfig());l=s.value,p=s.selection}var u=l!==t.getInputValue();u&&t.setInputValue(l),u&&so(t.props.onChange)&&t.props.onChange(n),t.setSelection(p.start,p.end)}t.runSaveSelectionLoop()}so(t.props.onFocus)&&t.props.onFocus(n)},t.onBlur=function(n){var e=t.props.beforeMaskedValueChange,r=t.maskOptions.mask;if(t.stopSaveSelectionLoop(),t.focused=!1,r&&!t.props.alwaysShowMask&&ro(t.maskOptions,t.value)){var o="";so(e)&&(o=e({value:o,selection:null},{value:t.value,selection:t.previousSelection},null,t.getBeforeMaskedValueChangeConfig()).value);var i=o!==t.getInputValue();i&&t.setInputValue(o),i&&so(t.props.onChange)&&t.props.onChange(n)}so(t.props.onBlur)&&t.props.onBlur(n)},t.onMouseDown=function(n){!t.focused&&document.addEventListener&&(t.mouseDownX=n.clientX,t.mouseDownY=n.clientY,t.mouseDownTime=(new Date).getTime(),document.addEventListener("mouseup",function n(e){if(document.removeEventListener("mouseup",n),t.focused){var r=Math.abs(e.clientX-t.mouseDownX),o=Math.abs(e.clientY-t.mouseDownY),i=Math.max(r,o),a=(new Date).getTime()-t.mouseDownTime;(i<=10&&a<=200||i<=5&&a<=300)&&t.setCursorToEnd()}})),so(t.props.onMouseDown)&&t.props.onMouseDown(n)},t.onPaste=function(n){so(t.props.onPaste)&&t.props.onPaste(n),n.defaultPrevented||(t.beforePasteState={value:t.getInputValue(),selection:t.getSelection()},t.setInputValue(""))},t.handleRef=function(n){null==t.props.children&&so(t.props.inputRef)&&t.props.inputRef(n)};var r=e.alwaysShowMask,o=e.beforeMaskedValueChange,i=e.defaultValue,a=e.value;t.maskOptions=no(e.mask,e.maskChar,e.formatChars),null==i&&(i=""),null==a&&(a=i);var l=po(a);if(t.maskOptions.mask&&(r||l)&&(l=ao(t.maskOptions,l),so(o))){var d=e.value;null==e.value&&(d=i),l=o({value:l,selection:null},{value:d=po(d),selection:null},null,t.getBeforeMaskedValueChangeConfig()).value}return t.value=l,t}!function(n,e){n.prototype=Object.create(e.prototype),function(n,e){for(var t=Object.getOwnPropertyNames(e),r=0;r<t.length;r++){var o=t[r],i=Object.getOwnPropertyDescriptor(e,o);i&&i.configurable&&void 0===n[o]&&Object.defineProperty(n,o,i)}}(n.prototype.constructor=n,e)}(e,n);var t=e.prototype;return t.componentDidMount=function(){this.mounted=!0,this.getInputDOMNode()&&(this.isWindowsPhoneBrowser=function(){var n=new RegExp("windows","i"),e=new RegExp("phone","i"),t=navigator.userAgent;return n.test(t)&&e.test(t)}(),this.maskOptions.mask&&this.getInputValue()!==this.value&&this.setInputValue(this.value))},t.componentDidUpdate=function(){var n=this.previousSelection,e=this.props,t=e.beforeMaskedValueChange,r=e.mask,o=e.maskChar,i=e.formatChars,a=this.maskOptions,l=e.alwaysShowMask||this.isFocused(),d=null!=this.props.value,c=d?po(this.props.value):this.value,p=n?n.start:null;if(this.maskOptions=no(r,o,i),this.maskOptions.mask){!a.mask&&this.isFocused()&&this.runSaveSelectionLoop();var s=this.maskOptions.mask&&this.maskOptions.mask!==a.mask;if(a.mask||d||(c=this.getInputValue()),(s||this.maskOptions.mask&&(c||l))&&(c=ao(this.maskOptions,c)),s){var u=oo(this.maskOptions,c);(null===p||u<p)&&(p=io(this.maskOptions,c)?u:co(this.maskOptions,u))}!this.maskOptions.mask||!ro(this.maskOptions,c)||l||d&&this.props.value||(c="");var m={start:p,end:p};if(so(t)){var b=t({value:c,selection:m},{value:this.value,selection:this.previousSelection},null,this.getBeforeMaskedValueChangeConfig());c=b.value,m=b.selection}this.value=c;var f=this.getInputValue()!==this.value;f?(this.setInputValue(this.value),this.forceUpdate()):s&&this.forceUpdate();var h=!1;null!=m.start&&null!=m.end&&(h=!n||n.start!==m.start||n.end!==m.end),(h||f)&&this.setSelection(m.start,m.end)}else a.mask&&(this.stopSaveSelectionLoop(),this.forceUpdate())},t.componentWillUnmount=function(){this.mounted=!1,null!==this.selectionDeferId&&bo(this.selectionDeferId),this.stopSaveSelectionLoop()},t.render=function(){var n,e=this.props,t=e.children,r=function(n,e){if(null==n)return{};var t,r,o={},i=Object.keys(n);for(r=0;r<i.length;r++)0<=e.indexOf(t=i[r])||(o[t]=n[t]);return o}(e,["mask","alwaysShowMask","maskChar","formatChars","inputRef","beforeMaskedValueChange","children"]);if(t){so(t)||Jr(!1);var o=["onChange","onPaste","onMouseDown","onFocus","onBlur","value","disabled","readOnly"],i=Zr({},r);o.forEach(function(n){return delete i[n]}),n=t(i),o.filter(function(e){return null!=n.props[e]&&n.props[e]!==r[e]}).length&&Jr(!1)}else n=Yr.createElement("input",Zr({ref:this.handleRef},r));var a={onFocus:this.onFocus,onBlur:this.onBlur};return this.maskOptions.mask&&(r.disabled||r.readOnly||(a.onChange=this.onChange,a.onPaste=this.onPaste,a.onMouseDown=this.onMouseDown),null!=r.value&&(a.value=this.value)),n=Yr.cloneElement(n,a)},e}(Yr.Component),ho=function(){};if("production"!==process.env.NODE_ENV){var go=function(n,e){var t=arguments.length;e=new Array(t>1?t-1:0);for(var r=1;r<t;r++)e[r-1]=arguments[r];var o=0,i="Warning: "+n.replace(/%s/g,function(){return e[o++]});"undefined"!=typeof console&&console.error(i);try{throw new Error(i)}catch(n){}};ho=function(n,e,t){var r=arguments.length;t=new Array(r>2?r-2:0);for(var o=2;o<r;o++)t[o-2]=arguments[o];if(void 0===e)throw new Error("`warning(condition, format, ...args)` requires a warning message argument");n||go.apply(null,[e].concat(t))}}var wo=ho;function xo(n){return n&&"object"==typeof n&&"default"in n?n.default:n}var vo=xo(n),ko=xo(function(n,e,t,r,o,i,a,l){if("production"!==process.env.NODE_ENV&&void 0===e)throw new Error("invariant requires an error message argument");if(!n){var d;if(void 0===e)d=new Error("Minified exception occurred; use the non-minified dev environment for the full error message and additional helpful warnings.");else{var c=[t,r,o,i,a,l],p=0;(d=new Error(e.replace(/%s/g,function(){return c[p++]}))).name="Invariant Violation"}throw d.framesToPop=1,d}}),yo=xo(wo);function _o(){return(_o=Object.assign||function(n){for(var e=1;e<arguments.length;e++){var t=arguments[e];for(var r in t)Object.prototype.hasOwnProperty.call(t,r)&&(n[r]=t[r])}return n}).apply(this,arguments)}function Eo(n){if(void 0===n)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return n}function So(n,e,t){if("selectionStart"in n&&"selectionEnd"in n)n.selectionStart=e,n.selectionEnd=t;else{var r=n.createTextRange();r.collapse(!0),r.moveStart("character",e),r.moveEnd("character",t-e),r.select()}}var Co={9:"[0-9]",a:"[A-Za-z]","*":"[A-Za-z0-9]"};function zo(n,e,t){var r="",o="",i=null,a=[];if(void 0===e&&(e="_"),null==t&&(t=Co),!n||"string"!=typeof n)return{maskChar:e,formatChars:t,mask:null,prefix:null,lastEditablePosition:null,permanents:[]};var l=!1;return n.split("").forEach(function(n){l||"\\"!==n?(l||!t[n]?(a.push(r.length),r.length===a.length-1&&(o+=n)):i=r.length+1,r+=n,l=!1):l=!0}),{maskChar:e,formatChars:t,prefix:o,mask:r,lastEditablePosition:i,permanents:a}}function Oo(n,e){return-1!==n.permanents.indexOf(e)}function Mo(n,e,t){var r=n.mask,o=n.formatChars;return!!t&&(Oo(n,e)?r[e]===t:new RegExp(o[r[e]]).test(t))}function Fo(n,e){return e.split("").every(function(e,t){return Oo(n,t)||!Mo(n,t,e)})}function Io(n,e){var t=n.prefix;if(!n.maskChar){for(;e.length>t.length&&Oo(n,e.length-1);)e=e.slice(0,e.length-1);return e.length}for(var r=t.length,o=e.length;o>=t.length;o--){var i=e[o];if(!Oo(n,o)&&Mo(n,o,i)){r=o+1;break}}return r}function Bo(n,e){return Io(n,e)===n.mask.length}function Do(n,e){var t=n.maskChar,r=n.mask,o=n.prefix;if(!t){for((e=Po(n,"",e,0)).length<o.length&&(e=o);e.length<r.length&&Oo(n,e.length);)e+=r[e.length];return e}if(e)return Po(n,Do(n,""),e,0);for(var i=0;i<r.length;i++)Oo(n,i)?e+=r[i]:e+=t;return e}function Po(n,e,t,r){var o=n.mask,i=n.maskChar,a=n.prefix,l=t.split(""),d=Bo(n,e),c=function(e,t){return!i||!Oo(n,t)||e!==i};return!i&&r>e.length&&(e+=o.slice(e.length,r)),l.every(function(t){for(;p=t,Oo(n,l=r)&&p!==o[l];){if(r>=e.length&&(e+=o[r]),!c(t,r))return!0;if(++r>=o.length)return!1}var l,p;return!Mo(n,r,t)&&t!==i||(r<e.length?i||d||r<a.length?e=e.slice(0,r)+t+e.slice(r+1):(e=e.slice(0,r)+t+e.slice(r),e=Do(n,e)):i||(e+=t),++r<o.length)}),e}function Ao(n,e){for(var t=n.mask,r=e;r<t.length;++r)if(!Oo(n,r))return r;return null}function To(n){return n||0===n?n+"":""}function No(n){return"function"==typeof n}function jo(){return window.cancelAnimationFrame||window.webkitCancelRequestAnimationFrame||window.webkitCancelAnimationFrame||window.mozCancelAnimationFrame}function Vo(n){return(jo()?window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame:function(){return setTimeout(n,1e3/60)})(n)}function Lo(n){(jo()||clearTimeout)(n)}var Ro=function(n){function e(e){var t;(t=n.call(this,e)||this).focused=!1,t.mounted=!1,t.previousSelection=null,t.selectionDeferId=null,t.saveSelectionLoopDeferId=null,t.saveSelectionLoop=function(){t.previousSelection=t.getSelection(),t.saveSelectionLoopDeferId=Vo(t.saveSelectionLoop)},t.runSaveSelectionLoop=function(){null===t.saveSelectionLoopDeferId&&t.saveSelectionLoop()},t.stopSaveSelectionLoop=function(){null!==t.saveSelectionLoopDeferId&&(Lo(t.saveSelectionLoopDeferId),t.saveSelectionLoopDeferId=null,t.previousSelection=null)},t.getInputDOMNode=function(){if(!t.mounted)return null;var n=g.findDOMNode(Eo(Eo(t))),e="undefined"!=typeof window&&n instanceof window.Element;if(n&&!e)return null;if("INPUT"!==n.nodeName&&(n=n.querySelector("input")),!n)throw new Error("react-input-mask: inputComponent doesn't contain input node");return n},t.getInputValue=function(){var n=t.getInputDOMNode();return n?n.value:null},t.setInputValue=function(n){var e=t.getInputDOMNode();e&&(t.value=n,e.value=n)},t.setCursorToEnd=function(){var n=Io(t.maskOptions,t.value),e=Ao(t.maskOptions,n);null!==e&&t.setCursorPosition(e)},t.setSelection=function(n,e,r){void 0===r&&(r={});var o=t.getInputDOMNode(),i=t.isFocused();o&&i&&(r.deferred||So(o,n,e),null!==t.selectionDeferId&&Lo(t.selectionDeferId),t.selectionDeferId=Vo(function(){t.selectionDeferId=null,So(o,n,e)}),t.previousSelection={start:n,end:e,length:Math.abs(e-n)})},t.getSelection=function(){return function(n){var e=0,t=0;if("selectionStart"in n&&"selectionEnd"in n)e=n.selectionStart,t=n.selectionEnd;else{var r=document.selection.createRange();r.parentElement()===n&&(e=-r.moveStart("character",-n.value.length),t=-r.moveEnd("character",-n.value.length))}return{start:e,end:t,length:t-e}}(t.getInputDOMNode())},t.getCursorPosition=function(){return t.getSelection().start},t.setCursorPosition=function(n){t.setSelection(n,n)},t.isFocused=function(){return t.focused},t.getBeforeMaskedValueChangeConfig=function(){var n=t.maskOptions;return{mask:n.mask,maskChar:n.maskChar,permanents:n.permanents,alwaysShowMask:!!t.props.alwaysShowMask,formatChars:n.formatChars}},t.isInputAutofilled=function(n,e,r,o){var i=t.getInputDOMNode();try{if(i.matches(":-webkit-autofill"))return!0}catch(n){}return!t.focused||o.end<r.length&&e.end===n.length},t.onChange=function(n){var e=Eo(Eo(t)).beforePasteState,r=Eo(Eo(t)).previousSelection,o=t.props.beforeMaskedValueChange,i=t.getInputValue(),a=t.value,l=t.getSelection();t.isInputAutofilled(i,l,a,r)&&(a=Do(t.maskOptions,""),r={start:0,end:0,length:0}),e&&(l={start:(r=e.selection).start+i.length,end:r.start+i.length,length:0},i=(a=e.value).slice(0,r.start)+i+a.slice(r.end),t.beforePasteState=null);var d=function(n,e,t,r,o){var i=n.mask,a=n.prefix,l=n.lastEditablePosition,d=e,c="",p=0,s=0,u=Math.min(o.start,t.start);return t.end>o.start?s=(p=function(n,e,t,r){var o=n.mask,i=n.maskChar,a=t.split(""),l=r;return a.every(function(e){for(;a=e,Oo(n,t=r)&&a!==o[t];)if(++r>=o.length)return!1;var t,a;return(Mo(n,r,e)||e===i)&&r++,r<o.length}),r-l}(n,0,c=d.slice(o.start,t.end),u))?o.length:0:d.length<r.length&&(s=r.length-d.length),d=r,s&&(1!==s||o.length||(u=o.start===t.start?Ao(n,t.start):function(n,e){for(var t=e;t>=0;--t)if(!Oo(n,t))return t;return null}(n,t.start)),d=function(n,e,t,r){var o=t+r,i=n.maskChar,a=n.mask,l=n.prefix,d=e.split("");if(!i){for(var c=o;c<d.length;c++)Oo(n,c)&&(d[c]="");return t=Math.max(l.length,t),d.splice(t,o-t),e=d.join(""),Do(n,e)}return d.map(function(e,r){return r<t||r>=o?e:Oo(n,r)?a[r]:i}).join("")}(n,d,u,s)),d=Po(n,d,c,u),(u+=p)>=i.length?u=i.length:u<a.length&&!p?u=a.length:u>=a.length&&u<l&&p&&(u=Ao(n,u)),c||(c=null),{value:d=Do(n,d),enteredString:c,selection:{start:u,end:u}}}(t.maskOptions,i,l,a,r),c=d.enteredString,p=d.selection,s=d.value;if(No(o)){var u=o({value:s,selection:p},{value:a,selection:r},c,t.getBeforeMaskedValueChangeConfig());s=u.value,p=u.selection}t.setInputValue(s),No(t.props.onChange)&&t.props.onChange(n),t.isWindowsPhoneBrowser?t.setSelection(p.start,p.end,{deferred:!0}):t.setSelection(p.start,p.end)},t.onFocus=function(n){var e=t.props.beforeMaskedValueChange,r=t.maskOptions,o=r.mask,i=r.prefix;if(t.focused=!0,t.mounted=!0,o){if(t.value)Io(t.maskOptions,t.value)<t.maskOptions.mask.length&&t.setCursorToEnd();else{var a=Do(t.maskOptions,i),l=Do(t.maskOptions,a),d=Io(t.maskOptions,l),c=Ao(t.maskOptions,d),p={start:c,end:c};if(No(e)){var s=e({value:l,selection:p},{value:t.value,selection:null},null,t.getBeforeMaskedValueChangeConfig());l=s.value,p=s.selection}var u=l!==t.getInputValue();u&&t.setInputValue(l),u&&No(t.props.onChange)&&t.props.onChange(n),t.setSelection(p.start,p.end)}t.runSaveSelectionLoop()}No(t.props.onFocus)&&t.props.onFocus(n)},t.onBlur=function(n){var e=t.props.beforeMaskedValueChange,r=t.maskOptions.mask;if(t.stopSaveSelectionLoop(),t.focused=!1,r&&!t.props.alwaysShowMask&&Fo(t.maskOptions,t.value)){var o="";No(e)&&(o=e({value:o,selection:null},{value:t.value,selection:t.previousSelection},null,t.getBeforeMaskedValueChangeConfig()).value);var i=o!==t.getInputValue();i&&t.setInputValue(o),i&&No(t.props.onChange)&&t.props.onChange(n)}No(t.props.onBlur)&&t.props.onBlur(n)},t.onMouseDown=function(n){!t.focused&&document.addEventListener&&(t.mouseDownX=n.clientX,t.mouseDownY=n.clientY,t.mouseDownTime=(new Date).getTime(),document.addEventListener("mouseup",function n(e){if(document.removeEventListener("mouseup",n),t.focused){var r=Math.abs(e.clientX-t.mouseDownX),o=Math.abs(e.clientY-t.mouseDownY),i=Math.max(r,o),a=(new Date).getTime()-t.mouseDownTime;(i<=10&&a<=200||i<=5&&a<=300)&&t.setCursorToEnd()}})),No(t.props.onMouseDown)&&t.props.onMouseDown(n)},t.onPaste=function(n){No(t.props.onPaste)&&t.props.onPaste(n),n.defaultPrevented||(t.beforePasteState={value:t.getInputValue(),selection:t.getSelection()},t.setInputValue(""))},t.handleRef=function(n){null==t.props.children&&No(t.props.inputRef)&&t.props.inputRef(n)};var r=e.alwaysShowMask,o=e.beforeMaskedValueChange,i=e.defaultValue,a=e.value;t.maskOptions=zo(e.mask,e.maskChar,e.formatChars),null==i&&(i=""),null==a&&(a=i);var l=To(a);if(t.maskOptions.mask&&(r||l)&&(l=Do(t.maskOptions,l),No(o))){var d=e.value;null==e.value&&(d=i),l=o({value:l,selection:null},{value:d=To(d),selection:null},null,t.getBeforeMaskedValueChangeConfig()).value}return t.value=l,t}var t,r;r=n,(t=e).prototype=Object.create(r.prototype),t.prototype.constructor=t,function(n,e){for(var t=Object.getOwnPropertyNames(e),r=0;r<t.length;r++){var o=t[r],i=Object.getOwnPropertyDescriptor(e,o);i&&i.configurable&&void 0===n[o]&&Object.defineProperty(n,o,i)}}(t,r);var o=e.prototype;return o.componentDidMount=function(){var n,e,t;this.mounted=!0,this.getInputDOMNode()&&(this.isWindowsPhoneBrowser=(n=new RegExp("windows","i"),e=new RegExp("phone","i"),t=navigator.userAgent,n.test(t)&&e.test(t)),this.maskOptions.mask&&this.getInputValue()!==this.value&&this.setInputValue(this.value))},o.componentDidUpdate=function(){var n=this.previousSelection,e=this.props,t=e.beforeMaskedValueChange,r=e.mask,o=e.maskChar,i=e.formatChars,a=this.maskOptions,l=e.alwaysShowMask||this.isFocused(),d=null!=this.props.value,c=d?To(this.props.value):this.value,p=n?n.start:null;if(this.maskOptions=zo(r,o,i),this.maskOptions.mask){!a.mask&&this.isFocused()&&this.runSaveSelectionLoop();var s=this.maskOptions.mask&&this.maskOptions.mask!==a.mask;if(a.mask||d||(c=this.getInputValue()),(s||this.maskOptions.mask&&(c||l))&&(c=Do(this.maskOptions,c)),s){var u=Io(this.maskOptions,c);(null===p||u<p)&&(p=Bo(this.maskOptions,c)?u:Ao(this.maskOptions,u))}!this.maskOptions.mask||!Fo(this.maskOptions,c)||l||d&&this.props.value||(c="");var m={start:p,end:p};if(No(t)){var b=t({value:c,selection:m},{value:this.value,selection:this.previousSelection},null,this.getBeforeMaskedValueChangeConfig());c=b.value,m=b.selection}this.value=c;var f=this.getInputValue()!==this.value;f?(this.setInputValue(this.value),this.forceUpdate()):s&&this.forceUpdate();var h=!1;null!=m.start&&null!=m.end&&(h=!n||n.start!==m.start||n.end!==m.end),(h||f)&&this.setSelection(m.start,m.end)}else a.mask&&(this.stopSaveSelectionLoop(),this.forceUpdate())},o.componentWillUnmount=function(){this.mounted=!1,null!==this.selectionDeferId&&Lo(this.selectionDeferId),this.stopSaveSelectionLoop()},o.render=function(){var n,e=this.props,t=e.mask,r=e.maskChar,o=e.formatChars,i=e.inputRef,a=e.children,l=function(n,e){if(null==n)return{};var t,r,o={},i=Object.keys(n);for(r=0;r<i.length;r++)e.indexOf(t=i[r])>=0||(o[t]=n[t]);return o}(e,["mask","alwaysShowMask","maskChar","formatChars","inputRef","beforeMaskedValueChange","children"]);if("production"!==process.env.NODE_ENV&&yo(!l.maxLength||!zo(t,r,o).mask,"react-input-mask: maxLength property shouldn't be passed to the masked input. It breaks masking and unnecessary because length is limited by the mask length."),a){No(a)||("production"!==process.env.NODE_ENV?ko(!1,"react-input-mask: children must be a function"):ko(!1));var d=["onChange","onPaste","onMouseDown","onFocus","onBlur","value","disabled","readOnly"],c=_o({},l);d.forEach(function(n){return delete c[n]}),n=a(c);var p=d.filter(function(e){return null!=n.props[e]&&n.props[e]!==l[e]});p.length&&("production"!==process.env.NODE_ENV?ko(!1,"react-input-mask: the following props should be passed to the react-input-mask's component and should not be altered in children's function: "+p.join(", ")):ko(!1)),"production"!==process.env.NODE_ENV&&yo(!i,"react-input-mask: inputRef is ignored when children is passed, attach ref to the children instead")}else n=vo.createElement("input",_o({ref:this.handleRef},l));var s={onFocus:this.onFocus,onBlur:this.onBlur};return this.maskOptions.mask&&(l.disabled||l.readOnly||(s.onChange=this.onChange,s.onPaste=this.onPaste,s.onMouseDown=this.onMouseDown),null!=l.value&&(s.value=this.value)),n=vo.cloneElement(n,s)},e}(vo.Component),qo=fn(function(n){n.exports="production"===process.env.NODE_ENV?fo:Ro}),Uo=["labelColor","label","brand","otherFormatDate"];h("pt-BR",w);var Ho,$o,Wo,Xo,Yo,Zo=function(e){var t=e.labelColor,r=e.label,o=e.brand,i=e.otherFormatDate,a=v(e,Uo),l=n.forwardRef(function(e,t){return n.createElement(qo,{ref:t,mask:"99/99/9999",onClick:e.onClick,value:e.value,readOnly:a.readOnly,onChange:e.onChange,placeholder:a.placeholderText})});return n.createElement(Xr,{brand:o,labelColor:t},r&&n.createElement("span",null,r),n.createElement("div",null,n.createElement(f,Object.assign({},a,{locale:"pt-BR",customInput:i?void 0:n.createElement(l,{onClick:a.onCalendarOpen,value:a.value,onChange:a.onChange}),dateFormat:i||"dd/MM/yyyy",readOnly:!1,onChangeRaw:function(n){return a.readOnly?n.preventDefault():null}}))))},Go=r.div(Ho||(Ho=k(["\n    font-family: MontSerrat !important;\n    display: flex;\n    margin-bottom: 10px;\n"]))),Jo=r.span($o||($o=k(["\n    font-family: MontSerrat !important;\n    flex: 1;\n    text-align: left;\n    color: ",";\n    font-weight: bold;\n"])),"#707070"),Ko=r.span(Wo||(Wo=k(["\n    flex: 1;\n    text-align: right;\n    color: ",";\n"])),"#ACACAC"),Qo=r.div(Xo||(Xo=k(["\n    margin-bottom: ",";\n\n    /*!\n * # Semantic UI 2.4.1 - Table\n * http://github.com/semantic-org/semantic-ui/\n *\n *\n * Released under the MIT license\n * http://opensource.org/licenses/MIT\n *\n */\n\n    /*******************************\n             Table\n*******************************/\n\n    /* Prototype */\n    .ui.table {\n        width: 100%;\n        background: #ffffff;\n        margin: 1em 0em;\n        border: none !important;\n        -webkit-box-shadow: none;\n        box-shadow: none;\n        border-radius: 0.28571429rem;\n        text-align: left;\n        color: #707070;\n        border-collapse: separate;\n        border-spacing: 0px;\n    }\n    .ui.table:first-child {\n        margin-top: 0em;\n    }\n    .ui.table:last-child {\n        margin-bottom: 0em;\n    }\n\n    /*******************************\n               Parts\n  *******************************/\n\n    /* Table Content */\n    .ui.table th,\n    .ui.table td {\n        -webkit-transition: background 0.1s ease, color 0.1s ease;\n        transition: background 0.1s ease, color 0.1s ease;\n    }\n\n    /* Headers */\n    .ui.table thead {\n        -webkit-box-shadow: none;\n        box-shadow: none;\n    }\n    .ui.table thead th {\n        cursor: auto;\n        background: none !important;\n        text-align: inherit;\n        color: #9b4dee !important;\n        padding: 0.92857143em 0.78571429em;\n        vertical-align: inherit;\n        font-style: none;\n        font-weight: bold;\n        text-transform: none;\n        border-bottom: 1px solid rgba(34, 36, 38, 0.1);\n        border-left: none;\n    }\n    .ui.table thead tr > th:first-child {\n        border-left: none;\n    }\n    .ui.table thead tr:first-child > th:first-child {\n        border-radius: 0.28571429rem 0em 0em 0em;\n    }\n    .ui.table thead tr:first-child > th:last-child {\n        border-radius: 0em 0.28571429rem 0em 0em;\n    }\n    .ui.table thead tr:first-child > th:only-child {\n        border-radius: 0.28571429rem 0.28571429rem 0em 0em;\n    }\n\n    /* Footer */\n    .ui.table tfoot {\n        -webkit-box-shadow: none;\n        box-shadow: none;\n        margin-top: 20px;\n    }\n    .ui.table tfoot th {\n        cursor: auto;\n        border-top: 1px solid rgba(34, 36, 38, 0.15);\n        background: #f9fafb;\n        text-align: inherit;\n        color: rgba(0, 0, 0, 0.87);\n        padding: 0.78571429em 0.78571429em;\n        vertical-align: middle;\n        font-style: normal;\n        font-weight: normal;\n        text-transform: none;\n    }\n    .ui.table tfoot tr > th:first-child {\n        border-left: none;\n    }\n    .ui.table tfoot tr:first-child > th:first-child {\n        border-radius: 0em 0em 0em 0.28571429rem;\n    }\n    .ui.table tfoot tr:first-child > th:last-child {\n        border-radius: 0em 0em 0.28571429rem 0em;\n    }\n    .ui.table tfoot tr:first-child > th:only-child {\n        border-radius: 0em 0em 0.28571429rem 0.28571429rem;\n    }\n\n    /* Table Row */\n    .ui.table tr td {\n        border-top: 1px solid rgba(34, 36, 38, 0.1);\n    }\n    .ui.table tr:first-child td {\n        border-top: none;\n    }\n\n    /* Repeated tbody */\n    .ui.table tbody + tbody tr:first-child td {\n        border-top: 1px solid rgba(34, 36, 38, 0.1);\n    }\n\n    /* Table Cells */\n    .ui.table td {\n        padding: 0.78571429em 0.78571429em;\n        text-align: inherit;\n    }\n\n    /* Icons */\n    .ui.table > .icon {\n        vertical-align: baseline;\n    }\n    .ui.table > .icon:only-child {\n        margin: 0em;\n    }\n\n    /* Table Segment */\n    .ui.table.segment {\n        padding: 0em;\n    }\n    .ui.table.segment:after {\n        display: none;\n    }\n    .ui.table.segment.stacked:after {\n        display: block;\n    }\n\n    /* Responsive */\n    @media only screen and (max-width: 767px) {\n        .ui.table:not(.unstackable) {\n            width: 100%;\n        }\n        .ui.table:not(.unstackable) tbody,\n        .ui.table:not(.unstackable) tr,\n        .ui.table:not(.unstackable) tr > th,\n        .ui.table:not(.unstackable) tr > td {\n            width: auto !important;\n            display: block !important;\n        }\n        .ui.table:not(.unstackable) {\n            padding: 0em;\n        }\n        .ui.table:not(.unstackable) thead {\n            display: block;\n        }\n        .ui.table:not(.unstackable) tfoot {\n            display: block;\n        }\n        .ui.table:not(.unstackable) tr {\n            padding-top: 1em;\n            padding-bottom: 1em;\n            -webkit-box-shadow: 0px -1px 0px 0px rgba(0, 0, 0, 0.1) inset !important;\n            box-shadow: 0px -1px 0px 0px rgba(0, 0, 0, 0.1) inset !important;\n        }\n        .ui.table:not(.unstackable) tr > th,\n        .ui.table:not(.unstackable) tr > td {\n            background: none;\n            border: none !important;\n            padding: 0.25em 0.75em !important;\n            -webkit-box-shadow: none !important;\n            box-shadow: none !important;\n        }\n        .ui.table:not(.unstackable) th:first-child,\n        .ui.table:not(.unstackable) td:first-child {\n            font-weight: bold;\n        }\n\n        /* Definition Table */\n        .ui.definition.table:not(.unstackable) thead th:first-child {\n            -webkit-box-shadow: none !important;\n            box-shadow: none !important;\n        }\n    }\n\n    /*******************************\n              Coupling\n  *******************************/\n\n    /* UI Image */\n    .ui.table th .image,\n    .ui.table th .image img,\n    .ui.table td .image,\n    .ui.table td .image img {\n        max-width: none;\n    }\n\n    /*******************************\n               Types\n  *******************************/\n\n    /*--------------\n      Complex\n  ---------------*/\n\n    .ui.structured.table {\n        border-collapse: collapse;\n    }\n    .ui.structured.table thead th {\n        border-left: none;\n        border-right: none;\n    }\n    .ui.structured.sortable.table thead th {\n        border-left: 1px solid rgba(34, 36, 38, 0.15);\n        border-right: 1px solid rgba(34, 36, 38, 0.15);\n    }\n    .ui.structured.basic.table th {\n        border-left: none;\n        border-right: none;\n    }\n    .ui.structured.celled.table tr th,\n    .ui.structured.celled.table tr td {\n        border-left: 1px solid rgba(34, 36, 38, 0.1);\n        border-right: 1px solid rgba(34, 36, 38, 0.1);\n    }\n\n    /*--------------\n     Definition\n  ---------------*/\n\n    .ui.definition.table thead:not(.full-width) th:first-child {\n        pointer-events: none;\n        background: transparent;\n        font-weight: normal;\n        color: rgba(0, 0, 0, 0.4);\n        -webkit-box-shadow: -1px -1px 0px 1px #ffffff;\n        box-shadow: -1px -1px 0px 1px #ffffff;\n    }\n    .ui.definition.table tfoot:not(.full-width) th:first-child {\n        pointer-events: none;\n        background: transparent;\n        font-weight: rgba(0, 0, 0, 0.4);\n        color: normal;\n        -webkit-box-shadow: 1px 1px 0px 1px #ffffff;\n        box-shadow: 1px 1px 0px 1px #ffffff;\n    }\n\n    /* Remove Border */\n    .ui.celled.definition.table thead:not(.full-width) th:first-child {\n        -webkit-box-shadow: 0px -1px 0px 1px #ffffff;\n        box-shadow: 0px -1px 0px 1px #ffffff;\n    }\n    .ui.celled.definition.table tfoot:not(.full-width) th:first-child {\n        -webkit-box-shadow: 0px 1px 0px 1px #ffffff;\n        box-shadow: 0px 1px 0px 1px #ffffff;\n    }\n\n    /* Highlight Defining Column */\n    .ui.definition.table tr td:first-child:not(.ignored),\n    .ui.definition.table tr td.definition {\n        background: none;\n        font-weight: bold;\n        color: ",';\n        text-transform: "";\n        -webkit-box-shadow: "";\n        box-shadow: "";\n        text-align: "";\n        font-size: 1em;\n        padding-left: "";\n        padding-right: "";\n    }\n\n    /* Fix 2nd Column */\n    .ui.definition.table thead:not(.full-width) th:nth-child(2) {\n        border-left: 1px solid rgba(34, 36, 38, 0.15);\n    }\n    .ui.definition.table tfoot:not(.full-width) th:nth-child(2) {\n        border-left: 1px solid rgba(34, 36, 38, 0.15);\n    }\n    .ui.definition.table td:nth-child(2) {\n        border-left: 1px solid rgba(34, 36, 38, 0.15);\n    }\n\n    /*******************************\n               States\n  *******************************/\n\n    /*--------------\n      Positive\n  ---------------*/\n\n    .ui.table tr.positive,\n    .ui.table td.positive {\n        -webkit-box-shadow: 0px 0px 0px #a3c293 inset;\n        box-shadow: 0px 0px 0px #a3c293 inset;\n    }\n    .ui.table tr.positive,\n    .ui.table td.positive {\n        background: #fcfff5 !important;\n        color: #2c662d !important;\n    }\n\n    /*--------------\n       Negative\n  ---------------*/\n\n    .ui.table tr.negative,\n    .ui.table td.negative {\n        -webkit-box-shadow: 0px 0px 0px #e0b4b4 inset;\n        box-shadow: 0px 0px 0px #e0b4b4 inset;\n    }\n    .ui.table tr.negative,\n    .ui.table td.negative {\n        background: #fff6f6 !important;\n        color: #9f3a38 !important;\n    }\n\n    /*--------------\n        Error\n  ---------------*/\n\n    .ui.table tr.error,\n    .ui.table td.error {\n        -webkit-box-shadow: 0px 0px 0px #e0b4b4 inset;\n        box-shadow: 0px 0px 0px #e0b4b4 inset;\n    }\n    .ui.table tr.error,\n    .ui.table td.error {\n        background: #fff6f6 !important;\n        color: #9f3a38 !important;\n    }\n\n    /*--------------\n       Warning\n  ---------------*/\n\n    .ui.table tr.warning,\n    .ui.table td.warning {\n        -webkit-box-shadow: 0px 0px 0px #c9ba9b inset;\n        box-shadow: 0px 0px 0px #c9ba9b inset;\n    }\n    .ui.table tr.warning,\n    .ui.table td.warning {\n        background: #fffaf3 !important;\n        color: #573a08 !important;\n    }\n\n    /*--------------\n       Active\n  ---------------*/\n\n    .ui.table tr.active,\n    .ui.table td.active {\n        -webkit-box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.87) inset;\n        box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.87) inset;\n    }\n    .ui.table tr.active,\n    .ui.table td.active {\n        background: #e0e0e0 !important;\n        color: rgba(0, 0, 0, 0.87) !important;\n    }\n\n    /*--------------\n       Disabled\n  ---------------*/\n\n    .ui.table tr.disabled td,\n    .ui.table tr td.disabled,\n    .ui.table tr.disabled:hover,\n    .ui.table tr:hover td.disabled {\n        pointer-events: none;\n        color: rgba(40, 40, 40, 0.3);\n    }\n\n    /*******************************\n            Variations\n  *******************************/\n\n    /*--------------\n      Stackable\n  ---------------*/\n\n    @media only screen and (max-width: 991px) {\n        .ui[class*="tablet stackable"].table,\n        .ui[class*="tablet stackable"].table tbody,\n        .ui[class*="tablet stackable"].table tr,\n        .ui[class*="tablet stackable"].table tr > th,\n        .ui[class*="tablet stackable"].table tr > td {\n            width: 100% !important;\n            display: block !important;\n        }\n        .ui[class*="tablet stackable"].table {\n            padding: 0em;\n        }\n        .ui[class*="tablet stackable"].table thead {\n            display: block;\n        }\n        .ui[class*="tablet stackable"].table tfoot {\n            display: block;\n        }\n        .ui[class*="tablet stackable"].table tr {\n            padding-top: 1em;\n            padding-bottom: 1em;\n            -webkit-box-shadow: 0px -1px 0px 0px rgba(0, 0, 0, 0.1) inset !important;\n            box-shadow: 0px -1px 0px 0px rgba(0, 0, 0, 0.1) inset !important;\n        }\n        .ui[class*="tablet stackable"].table tr > th,\n        .ui[class*="tablet stackable"].table tr > td {\n            background: none;\n            border: none !important;\n            padding: 0.25em 0.75em;\n            -webkit-box-shadow: none !important;\n            box-shadow: none !important;\n        }\n\n        /* Definition Table */\n        .ui.definition[class*="tablet stackable"].table thead th:first-child {\n            -webkit-box-shadow: none !important;\n            box-shadow: none !important;\n        }\n    }\n\n    /*--------------\n   Text Alignment\n  ---------------*/\n\n    .ui.table[class*="left aligned"],\n    .ui.table [class*="left aligned"] {\n        text-align: left;\n    }\n    .ui.table[class*="center aligned"],\n    .ui.table [class*="center aligned"] {\n        text-align: center;\n    }\n    .ui.table[class*="right aligned"],\n    .ui.table [class*="right aligned"] {\n        text-align: right;\n    }\n\n    /*------------------\n   Vertical Alignment\n  ------------------*/\n\n    .ui.table[class*="top aligned"],\n    .ui.table [class*="top aligned"] {\n        vertical-align: top;\n    }\n    .ui.table[class*="middle aligned"],\n    .ui.table [class*="middle aligned"] {\n        vertical-align: middle;\n    }\n    .ui.table[class*="bottom aligned"],\n    .ui.table [class*="bottom aligned"] {\n        vertical-align: bottom;\n    }\n\n    /*--------------\n      Collapsing\n  ---------------*/\n\n    .ui.table th.collapsing,\n    .ui.table td.collapsing {\n        width: 1px;\n        white-space: nowrap;\n    }\n\n    /*--------------\n       Fixed\n  ---------------*/\n\n    .ui.fixed.table {\n        table-layout: fixed;\n    }\n    .ui.fixed.table th,\n    .ui.fixed.table td {\n        overflow: hidden;\n        text-overflow: ellipsis;\n    }\n\n    /*--------------\n     Selectable\n  ---------------*/\n\n    .ui.selectable.table tbody tr:hover,\n    .ui.table tbody tr td.selectable:hover {\n        background: rgba(0, 0, 0, 0.05) !important;\n        color: rgba(0, 0, 0, 0.95) !important;\n    }\n    .ui.selectable.inverted.table tbody tr:hover,\n    .ui.inverted.table tbody tr td.selectable:hover {\n        background: rgba(255, 255, 255, 0.08) !important;\n        color: #ffffff !important;\n    }\n\n    /* Selectable Cell Link */\n    .ui.table tbody tr td.selectable {\n        padding: 0em;\n    }\n    .ui.table tbody tr td.selectable > a:not(.ui) {\n        display: block;\n        color: inherit;\n        padding: 0.78571429em 0.78571429em;\n    }\n\n    /* Other States */\n    .ui.selectable.table tr.error:hover,\n    .ui.table tr td.selectable.error:hover,\n    .ui.selectable.table tr:hover td.error {\n        background: #ffe7e7 !important;\n        color: #943634 !important;\n    }\n    .ui.selectable.table tr.warning:hover,\n    .ui.table tr td.selectable.warning:hover,\n    .ui.selectable.table tr:hover td.warning {\n        background: #fff4e4 !important;\n        color: #493107 !important;\n    }\n    .ui.selectable.table tr.active:hover,\n    .ui.table tr td.selectable.active:hover,\n    .ui.selectable.table tr:hover td.active {\n        background: #e0e0e0 !important;\n        color: rgba(0, 0, 0, 0.87) !important;\n    }\n    .ui.selectable.table tr.positive:hover,\n    .ui.table tr td.selectable.positive:hover,\n    .ui.selectable.table tr:hover td.positive {\n        background: #f7ffe6 !important;\n        color: #275b28 !important;\n    }\n    .ui.selectable.table tr.negative:hover,\n    .ui.table tr td.selectable.negative:hover,\n    .ui.selectable.table tr:hover td.negative {\n        background: #ffe7e7 !important;\n        color: #943634 !important;\n    }\n\n    /*-------------------\n        Attached\n  --------------------*/\n\n    /* Middle */\n    .ui.attached.table {\n        top: 0px;\n        bottom: 0px;\n        border-radius: 0px;\n        margin: 0em -1px;\n        width: calc(100% - (-1px * 2));\n        max-width: calc(100% - (-1px * 2));\n        -webkit-box-shadow: none;\n        box-shadow: none;\n        border: 1px solid #d4d4d5;\n    }\n    .ui.attached + .ui.attached.table:not(.top) {\n        border-top: none;\n    }\n\n    /* Top */\n    .ui[class*="top attached"].table {\n        bottom: 0px;\n        margin-bottom: 0em;\n        top: 0px;\n        margin-top: 1em;\n        border-radius: 0.28571429rem 0.28571429rem 0em 0em;\n    }\n    .ui.table[class*="top attached"]:first-child {\n        margin-top: 0em;\n    }\n\n    /* Bottom */\n    .ui[class*="bottom attached"].table {\n        bottom: 0px;\n        margin-top: 0em;\n        top: 0px;\n        margin-bottom: 1em;\n        -webkit-box-shadow: none, none;\n        box-shadow: none, none;\n        border-radius: 0em 0em 0.28571429rem 0.28571429rem;\n    }\n    .ui[class*="bottom attached"].table:last-child {\n        margin-bottom: 0em;\n    }\n\n    /*--------------\n       Striped\n  ---------------*/\n\n    /* Table Striping */\n    .ui.striped.table > tr:nth-child(2n),\n    .ui.striped.table tbody tr:nth-child(2n) {\n        background-color: rgba(0, 0, 50, 0.02);\n    }\n\n    /* Stripes */\n    .ui.inverted.striped.table > tr:nth-child(2n),\n    .ui.inverted.striped.table tbody tr:nth-child(2n) {\n        background-color: rgba(255, 255, 255, 0.05);\n    }\n\n    /* Allow striped active hover */\n    .ui.striped.selectable.selectable.selectable.table tbody tr.active:hover {\n        background: #efefef !important;\n        color: rgba(0, 0, 0, 0.95) !important;\n    }\n\n    /*--------------\n     Single Line\n  ---------------*/\n\n    .ui.table[class*="single line"],\n    .ui.table [class*="single line"] {\n        white-space: nowrap;\n    }\n    .ui.table[class*="single line"],\n    .ui.table [class*="single line"] {\n        white-space: nowrap;\n    }\n\n    /*-------------------\n         Colors\n  --------------------*/\n\n    /* Red */\n    .ui.red.table {\n        border-top: 0.2em solid #db2828;\n    }\n    .ui.inverted.red.table {\n        background-color: #db2828 !important;\n        color: #ffffff !important;\n    }\n\n    /* Orange */\n    .ui.orange.table {\n        border-top: 0.2em solid #f2711c;\n    }\n    .ui.inverted.orange.table {\n        background-color: #f2711c !important;\n        color: #ffffff !important;\n    }\n\n    /* Yellow */\n    .ui.yellow.table {\n        border-top: 0.2em solid #fbbd08;\n    }\n    .ui.inverted.yellow.table {\n        background-color: #fbbd08 !important;\n        color: #ffffff !important;\n    }\n\n    /* Olive */\n    .ui.olive.table {\n        border-top: 0.2em solid #b5cc18;\n    }\n    .ui.inverted.olive.table {\n        background-color: #b5cc18 !important;\n        color: #ffffff !important;\n    }\n\n    /* Green */\n    .ui.green.table {\n        border-top: 0.2em solid #21ba45;\n    }\n    .ui.inverted.green.table {\n        background-color: #21ba45 !important;\n        color: #ffffff !important;\n    }\n\n    /* Teal */\n    .ui.teal.table {\n        border-top: 0.2em solid #00b5ad;\n    }\n    .ui.inverted.teal.table {\n        background-color: #00b5ad !important;\n        color: #ffffff !important;\n    }\n\n    /* Blue */\n    .ui.blue.table {\n        border-top: 0.2em solid #2185d0;\n    }\n    .ui.inverted.blue.table {\n        background-color: #2185d0 !important;\n        color: #ffffff !important;\n    }\n\n    /* Violet */\n    .ui.violet.table {\n        border-top: 0.2em solid #6435c9;\n    }\n    .ui.inverted.violet.table {\n        background-color: #6435c9 !important;\n        color: #ffffff !important;\n    }\n\n    /* Purple */\n    .ui.purple.table {\n        border-top: 0.2em solid #a333c8;\n    }\n    .ui.inverted.purple.table {\n        background-color: #a333c8 !important;\n        color: #ffffff !important;\n    }\n\n    /* Pink */\n    .ui.pink.table {\n        border-top: 0.2em solid #e03997;\n    }\n    .ui.inverted.pink.table {\n        background-color: #e03997 !important;\n        color: #ffffff !important;\n    }\n\n    /* Brown */\n    .ui.brown.table {\n        border-top: 0.2em solid #a5673f;\n    }\n    .ui.inverted.brown.table {\n        background-color: #a5673f !important;\n        color: #ffffff !important;\n    }\n\n    /* Grey */\n    .ui.grey.table {\n        border-top: 0.2em solid #767676;\n    }\n    .ui.inverted.grey.table {\n        background-color: #767676 !important;\n        color: #ffffff !important;\n    }\n\n    /* Black */\n    .ui.black.table {\n        border-top: 0.2em solid #1b1c1d;\n    }\n    .ui.inverted.black.table {\n        background-color: #1b1c1d !important;\n        color: #ffffff !important;\n    }\n\n    /*--------------\n    Column Count\n  ---------------*/\n\n    /* Grid Based */\n    .ui.one.column.table td {\n        width: 100%;\n    }\n    .ui.two.column.table td {\n        width: 50%;\n    }\n    .ui.three.column.table td {\n        width: 33.33333333%;\n    }\n    .ui.four.column.table td {\n        width: 25%;\n    }\n    .ui.five.column.table td {\n        width: 20%;\n    }\n    .ui.six.column.table td {\n        width: 16.66666667%;\n    }\n    .ui.seven.column.table td {\n        width: 14.28571429%;\n    }\n    .ui.eight.column.table td {\n        width: 12.5%;\n    }\n    .ui.nine.column.table td {\n        width: 11.11111111%;\n    }\n    .ui.ten.column.table td {\n        width: 10%;\n    }\n    .ui.eleven.column.table td {\n        width: 9.09090909%;\n    }\n    .ui.twelve.column.table td {\n        width: 8.33333333%;\n    }\n    .ui.thirteen.column.table td {\n        width: 7.69230769%;\n    }\n    .ui.fourteen.column.table td {\n        width: 7.14285714%;\n    }\n    .ui.fifteen.column.table td {\n        width: 6.66666667%;\n    }\n    .ui.sixteen.column.table td {\n        width: 6.25%;\n    }\n\n    /* Column Width */\n    .ui.table th.one.wide,\n    .ui.table td.one.wide {\n        width: 6.25%;\n    }\n    .ui.table th.two.wide,\n    .ui.table td.two.wide {\n        width: 12.5%;\n    }\n    .ui.table th.three.wide,\n    .ui.table td.three.wide {\n        width: 18.75%;\n    }\n    .ui.table th.four.wide,\n    .ui.table td.four.wide {\n        width: 25%;\n    }\n    .ui.table th.five.wide,\n    .ui.table td.five.wide {\n        width: 31.25%;\n    }\n    .ui.table th.six.wide,\n    .ui.table td.six.wide {\n        width: 37.5%;\n    }\n    .ui.table th.seven.wide,\n    .ui.table td.seven.wide {\n        width: 43.75%;\n    }\n    .ui.table th.eight.wide,\n    .ui.table td.eight.wide {\n        width: 50%;\n    }\n    .ui.table th.nine.wide,\n    .ui.table td.nine.wide {\n        width: 56.25%;\n    }\n    .ui.table th.ten.wide,\n    .ui.table td.ten.wide {\n        width: 62.5%;\n    }\n    .ui.table th.eleven.wide,\n    .ui.table td.eleven.wide {\n        width: 68.75%;\n    }\n    .ui.table th.twelve.wide,\n    .ui.table td.twelve.wide {\n        width: 75%;\n    }\n    .ui.table th.thirteen.wide,\n    .ui.table td.thirteen.wide {\n        width: 81.25%;\n    }\n    .ui.table th.fourteen.wide,\n    .ui.table td.fourteen.wide {\n        width: 87.5%;\n    }\n    .ui.table th.fifteen.wide,\n    .ui.table td.fifteen.wide {\n        width: 93.75%;\n    }\n    .ui.table th.sixteen.wide,\n    .ui.table td.sixteen.wide {\n        width: 100%;\n    }\n\n    /*--------------\n      Sortable\n  ---------------*/\n\n    .ui.sortable.table thead th {\n        cursor: pointer;\n        white-space: nowrap;\n        border-left: 1px solid rgba(34, 36, 38, 0.15);\n        color: rgba(0, 0, 0, 0.87);\n    }\n    .ui.sortable.table thead th:first-child {\n        border-left: none;\n    }\n    .ui.sortable.table thead th.sorted,\n    .ui.sortable.table thead th.sorted:hover {\n        -webkit-user-select: none;\n        -moz-user-select: none;\n        -ms-user-select: none;\n        user-select: none;\n    }\n    .ui.sortable.table thead th:after {\n        display: none;\n        font-style: normal;\n        font-weight: normal;\n        text-decoration: inherit;\n        content: "";\n        height: 1em;\n        width: auto;\n        opacity: 0.8;\n        margin: 0em 0em 0em 0.5em;\n        font-family: "Icons";\n    }\n    .ui.sortable.table thead th.ascending:after {\n        content: "\f0d8";\n    }\n    .ui.sortable.table thead th.descending:after {\n        content: "\f0d7";\n    }\n\n    /* Hover */\n    .ui.sortable.table th.disabled:hover {\n        cursor: auto;\n        color: rgba(40, 40, 40, 0.3);\n    }\n    .ui.sortable.table thead th:hover {\n        background: rgba(0, 0, 0, 0.05);\n        color: rgba(0, 0, 0, 0.8);\n    }\n\n    /* Sorted */\n    .ui.sortable.table thead th.sorted {\n        background: rgba(0, 0, 0, 0.05);\n        color: rgba(0, 0, 0, 0.95);\n    }\n    .ui.sortable.table thead th.sorted:after {\n        display: inline-block;\n    }\n\n    /* Sorted Hover */\n    .ui.sortable.table thead th.sorted:hover {\n        background: rgba(0, 0, 0, 0.05);\n        color: rgba(0, 0, 0, 0.95);\n    }\n\n    /* Inverted */\n    .ui.inverted.sortable.table thead th.sorted {\n        background: rgba(255, 255, 255, 0.15) -webkit-gradient(linear, left top, left\n                    bottom, from(transparent), to(rgba(0, 0, 0, 0.05)));\n        background: rgba(255, 255, 255, 0.15) -webkit-linear-gradient(transparent, rgba(0, 0, 0, 0.05));\n        background: rgba(255, 255, 255, 0.15)\n            linear-gradient(transparent, rgba(0, 0, 0, 0.05));\n        color: #ffffff;\n    }\n    .ui.inverted.sortable.table thead th:hover {\n        background: rgba(255, 255, 255, 0.08) -webkit-gradient(linear, left top, left\n                    bottom, from(transparent), to(rgba(0, 0, 0, 0.05)));\n        background: rgba(255, 255, 255, 0.08) -webkit-linear-gradient(transparent, rgba(0, 0, 0, 0.05));\n        background: rgba(255, 255, 255, 0.08)\n            linear-gradient(transparent, rgba(0, 0, 0, 0.05));\n        color: #ffffff;\n    }\n    .ui.inverted.sortable.table thead th {\n        border-left-color: transparent;\n        border-right-color: transparent;\n    }\n\n    /*--------------\n      Inverted\n  ---------------*/\n\n    /* Text Color */\n    .ui.inverted.table {\n        background: #333333;\n        color: rgba(255, 255, 255, 0.9);\n        border: none;\n    }\n    .ui.inverted.table th {\n        background-color: rgba(0, 0, 0, 0.15);\n        border-color: rgba(255, 255, 255, 0.1) !important;\n        color: rgba(255, 255, 255, 0.9) !important;\n    }\n    .ui.inverted.table tr td {\n        border-color: rgba(255, 255, 255, 0.1) !important;\n    }\n    .ui.inverted.table tr.disabled td,\n    .ui.inverted.table tr td.disabled,\n    .ui.inverted.table tr.disabled:hover td,\n    .ui.inverted.table tr:hover td.disabled {\n        pointer-events: none;\n        color: rgba(225, 225, 225, 0.3);\n    }\n\n    /* Definition */\n    .ui.inverted.definition.table tfoot:not(.full-width) th:first-child,\n    .ui.inverted.definition.table thead:not(.full-width) th:first-child {\n        background: #ffffff;\n    }\n    .ui.inverted.definition.table tr td:first-child {\n        background: rgba(255, 255, 255, 0.02);\n        color: #ffffff;\n    }\n\n    /*--------------\n     Collapsing\n  ---------------*/\n\n    .ui.collapsing.table {\n        width: auto;\n    }\n\n    /*--------------\n        Basic\n  ---------------*/\n\n    .ui.basic.table {\n        background: transparent;\n        border: 1px solid rgba(34, 36, 38, 0.15);\n        -webkit-box-shadow: none;\n        box-shadow: none;\n    }\n    .ui.basic.table thead,\n    .ui.basic.table tfoot {\n        -webkit-box-shadow: none;\n        box-shadow: none;\n    }\n    .ui.basic.table th {\n        background: transparent;\n        border-left: none;\n    }\n    .ui.basic.table tbody tr {\n        border-bottom: 1px solid rgba(0, 0, 0, 0.1);\n    }\n    .ui.basic.table td {\n        background: transparent;\n    }\n    .ui.basic.striped.table tbody tr:nth-child(2n) {\n        background-color: rgba(0, 0, 0, 0.05) !important;\n    }\n\n    /* Very Basic */\n    .ui[class*="very basic"].table {\n        border: none;\n    }\n    .ui[class*="very basic"].table:not(.sortable):not(.striped) th,\n    .ui[class*="very basic"].table:not(.sortable):not(.striped) td {\n        padding: "";\n    }\n    .ui[class*="very basic"].table:not(.sortable):not(.striped) th:first-child,\n    .ui[class*="very basic"].table:not(.sortable):not(.striped) td:first-child {\n        padding-left: 0em;\n    }\n    .ui[class*="very basic"].table:not(.sortable):not(.striped) th:last-child,\n    .ui[class*="very basic"].table:not(.sortable):not(.striped) td:last-child {\n        padding-right: 0em;\n    }\n    .ui[class*="very basic"].table:not(.sortable):not(.striped)\n        thead\n        tr:first-child\n        th {\n        padding-top: 0em;\n    }\n\n    /*--------------\n       Celled\n  ---------------*/\n\n    .ui.celled.table tr th,\n    .ui.celled.table tr td {\n        border-left: 1px solid rgba(34, 36, 38, 0.1);\n    }\n    .ui.celled.table tr th:first-child,\n    .ui.celled.table tr td:first-child {\n        border-left: none;\n    }\n\n    /*--------------\n       Padded\n  ---------------*/\n\n    .ui.padded.table th {\n        padding-left: 1em;\n        padding-right: 1em;\n    }\n    .ui.padded.table th,\n    .ui.padded.table td {\n        padding: 1em 1em;\n    }\n\n    /* Very */\n    .ui[class*="very padded"].table th {\n        padding-left: 1.5em;\n        padding-right: 1.5em;\n    }\n    .ui[class*="very padded"].table td {\n        padding: 1.5em 1.5em;\n    }\n\n    /*--------------\n       Compact\n  ---------------*/\n\n    .ui.compact.table th {\n        padding-left: 0.7em;\n        padding-right: 0.7em;\n    }\n    .ui.compact.table td {\n        padding: 0.5em 0.7em;\n    }\n\n    /* Very */\n    .ui[class*="very compact"].table th {\n        padding-left: 0.6em;\n        padding-right: 0.6em;\n    }\n    .ui[class*="very compact"].table td {\n        padding: 0.4em 0.6em;\n    }\n\n    /*--------------\n        Sizes\n  ---------------*/\n\n    /* Small */\n    .ui.small.table {\n        font-size: 0.9em;\n    }\n\n    /* Standard */\n    .ui.table {\n        font-size: 1em;\n    }\n\n    /* Large */\n    .ui.large.table {\n        font-size: 1.1em;\n    }\n\n    /*******************************\n           Site Overrides\n  *******************************/\n'],["\n    margin-bottom: ",";\n\n    /*!\n * # Semantic UI 2.4.1 - Table\n * http://github.com/semantic-org/semantic-ui/\n *\n *\n * Released under the MIT license\n * http://opensource.org/licenses/MIT\n *\n */\n\n    /*******************************\n             Table\n*******************************/\n\n    /* Prototype */\n    .ui.table {\n        width: 100%;\n        background: #ffffff;\n        margin: 1em 0em;\n        border: none !important;\n        -webkit-box-shadow: none;\n        box-shadow: none;\n        border-radius: 0.28571429rem;\n        text-align: left;\n        color: #707070;\n        border-collapse: separate;\n        border-spacing: 0px;\n    }\n    .ui.table:first-child {\n        margin-top: 0em;\n    }\n    .ui.table:last-child {\n        margin-bottom: 0em;\n    }\n\n    /*******************************\n               Parts\n  *******************************/\n\n    /* Table Content */\n    .ui.table th,\n    .ui.table td {\n        -webkit-transition: background 0.1s ease, color 0.1s ease;\n        transition: background 0.1s ease, color 0.1s ease;\n    }\n\n    /* Headers */\n    .ui.table thead {\n        -webkit-box-shadow: none;\n        box-shadow: none;\n    }\n    .ui.table thead th {\n        cursor: auto;\n        background: none !important;\n        text-align: inherit;\n        color: #9b4dee !important;\n        padding: 0.92857143em 0.78571429em;\n        vertical-align: inherit;\n        font-style: none;\n        font-weight: bold;\n        text-transform: none;\n        border-bottom: 1px solid rgba(34, 36, 38, 0.1);\n        border-left: none;\n    }\n    .ui.table thead tr > th:first-child {\n        border-left: none;\n    }\n    .ui.table thead tr:first-child > th:first-child {\n        border-radius: 0.28571429rem 0em 0em 0em;\n    }\n    .ui.table thead tr:first-child > th:last-child {\n        border-radius: 0em 0.28571429rem 0em 0em;\n    }\n    .ui.table thead tr:first-child > th:only-child {\n        border-radius: 0.28571429rem 0.28571429rem 0em 0em;\n    }\n\n    /* Footer */\n    .ui.table tfoot {\n        -webkit-box-shadow: none;\n        box-shadow: none;\n        margin-top: 20px;\n    }\n    .ui.table tfoot th {\n        cursor: auto;\n        border-top: 1px solid rgba(34, 36, 38, 0.15);\n        background: #f9fafb;\n        text-align: inherit;\n        color: rgba(0, 0, 0, 0.87);\n        padding: 0.78571429em 0.78571429em;\n        vertical-align: middle;\n        font-style: normal;\n        font-weight: normal;\n        text-transform: none;\n    }\n    .ui.table tfoot tr > th:first-child {\n        border-left: none;\n    }\n    .ui.table tfoot tr:first-child > th:first-child {\n        border-radius: 0em 0em 0em 0.28571429rem;\n    }\n    .ui.table tfoot tr:first-child > th:last-child {\n        border-radius: 0em 0em 0.28571429rem 0em;\n    }\n    .ui.table tfoot tr:first-child > th:only-child {\n        border-radius: 0em 0em 0.28571429rem 0.28571429rem;\n    }\n\n    /* Table Row */\n    .ui.table tr td {\n        border-top: 1px solid rgba(34, 36, 38, 0.1);\n    }\n    .ui.table tr:first-child td {\n        border-top: none;\n    }\n\n    /* Repeated tbody */\n    .ui.table tbody + tbody tr:first-child td {\n        border-top: 1px solid rgba(34, 36, 38, 0.1);\n    }\n\n    /* Table Cells */\n    .ui.table td {\n        padding: 0.78571429em 0.78571429em;\n        text-align: inherit;\n    }\n\n    /* Icons */\n    .ui.table > .icon {\n        vertical-align: baseline;\n    }\n    .ui.table > .icon:only-child {\n        margin: 0em;\n    }\n\n    /* Table Segment */\n    .ui.table.segment {\n        padding: 0em;\n    }\n    .ui.table.segment:after {\n        display: none;\n    }\n    .ui.table.segment.stacked:after {\n        display: block;\n    }\n\n    /* Responsive */\n    @media only screen and (max-width: 767px) {\n        .ui.table:not(.unstackable) {\n            width: 100%;\n        }\n        .ui.table:not(.unstackable) tbody,\n        .ui.table:not(.unstackable) tr,\n        .ui.table:not(.unstackable) tr > th,\n        .ui.table:not(.unstackable) tr > td {\n            width: auto !important;\n            display: block !important;\n        }\n        .ui.table:not(.unstackable) {\n            padding: 0em;\n        }\n        .ui.table:not(.unstackable) thead {\n            display: block;\n        }\n        .ui.table:not(.unstackable) tfoot {\n            display: block;\n        }\n        .ui.table:not(.unstackable) tr {\n            padding-top: 1em;\n            padding-bottom: 1em;\n            -webkit-box-shadow: 0px -1px 0px 0px rgba(0, 0, 0, 0.1) inset !important;\n            box-shadow: 0px -1px 0px 0px rgba(0, 0, 0, 0.1) inset !important;\n        }\n        .ui.table:not(.unstackable) tr > th,\n        .ui.table:not(.unstackable) tr > td {\n            background: none;\n            border: none !important;\n            padding: 0.25em 0.75em !important;\n            -webkit-box-shadow: none !important;\n            box-shadow: none !important;\n        }\n        .ui.table:not(.unstackable) th:first-child,\n        .ui.table:not(.unstackable) td:first-child {\n            font-weight: bold;\n        }\n\n        /* Definition Table */\n        .ui.definition.table:not(.unstackable) thead th:first-child {\n            -webkit-box-shadow: none !important;\n            box-shadow: none !important;\n        }\n    }\n\n    /*******************************\n              Coupling\n  *******************************/\n\n    /* UI Image */\n    .ui.table th .image,\n    .ui.table th .image img,\n    .ui.table td .image,\n    .ui.table td .image img {\n        max-width: none;\n    }\n\n    /*******************************\n               Types\n  *******************************/\n\n    /*--------------\n      Complex\n  ---------------*/\n\n    .ui.structured.table {\n        border-collapse: collapse;\n    }\n    .ui.structured.table thead th {\n        border-left: none;\n        border-right: none;\n    }\n    .ui.structured.sortable.table thead th {\n        border-left: 1px solid rgba(34, 36, 38, 0.15);\n        border-right: 1px solid rgba(34, 36, 38, 0.15);\n    }\n    .ui.structured.basic.table th {\n        border-left: none;\n        border-right: none;\n    }\n    .ui.structured.celled.table tr th,\n    .ui.structured.celled.table tr td {\n        border-left: 1px solid rgba(34, 36, 38, 0.1);\n        border-right: 1px solid rgba(34, 36, 38, 0.1);\n    }\n\n    /*--------------\n     Definition\n  ---------------*/\n\n    .ui.definition.table thead:not(.full-width) th:first-child {\n        pointer-events: none;\n        background: transparent;\n        font-weight: normal;\n        color: rgba(0, 0, 0, 0.4);\n        -webkit-box-shadow: -1px -1px 0px 1px #ffffff;\n        box-shadow: -1px -1px 0px 1px #ffffff;\n    }\n    .ui.definition.table tfoot:not(.full-width) th:first-child {\n        pointer-events: none;\n        background: transparent;\n        font-weight: rgba(0, 0, 0, 0.4);\n        color: normal;\n        -webkit-box-shadow: 1px 1px 0px 1px #ffffff;\n        box-shadow: 1px 1px 0px 1px #ffffff;\n    }\n\n    /* Remove Border */\n    .ui.celled.definition.table thead:not(.full-width) th:first-child {\n        -webkit-box-shadow: 0px -1px 0px 1px #ffffff;\n        box-shadow: 0px -1px 0px 1px #ffffff;\n    }\n    .ui.celled.definition.table tfoot:not(.full-width) th:first-child {\n        -webkit-box-shadow: 0px 1px 0px 1px #ffffff;\n        box-shadow: 0px 1px 0px 1px #ffffff;\n    }\n\n    /* Highlight Defining Column */\n    .ui.definition.table tr td:first-child:not(.ignored),\n    .ui.definition.table tr td.definition {\n        background: none;\n        font-weight: bold;\n        color: ",';\n        text-transform: "";\n        -webkit-box-shadow: "";\n        box-shadow: "";\n        text-align: "";\n        font-size: 1em;\n        padding-left: "";\n        padding-right: "";\n    }\n\n    /* Fix 2nd Column */\n    .ui.definition.table thead:not(.full-width) th:nth-child(2) {\n        border-left: 1px solid rgba(34, 36, 38, 0.15);\n    }\n    .ui.definition.table tfoot:not(.full-width) th:nth-child(2) {\n        border-left: 1px solid rgba(34, 36, 38, 0.15);\n    }\n    .ui.definition.table td:nth-child(2) {\n        border-left: 1px solid rgba(34, 36, 38, 0.15);\n    }\n\n    /*******************************\n               States\n  *******************************/\n\n    /*--------------\n      Positive\n  ---------------*/\n\n    .ui.table tr.positive,\n    .ui.table td.positive {\n        -webkit-box-shadow: 0px 0px 0px #a3c293 inset;\n        box-shadow: 0px 0px 0px #a3c293 inset;\n    }\n    .ui.table tr.positive,\n    .ui.table td.positive {\n        background: #fcfff5 !important;\n        color: #2c662d !important;\n    }\n\n    /*--------------\n       Negative\n  ---------------*/\n\n    .ui.table tr.negative,\n    .ui.table td.negative {\n        -webkit-box-shadow: 0px 0px 0px #e0b4b4 inset;\n        box-shadow: 0px 0px 0px #e0b4b4 inset;\n    }\n    .ui.table tr.negative,\n    .ui.table td.negative {\n        background: #fff6f6 !important;\n        color: #9f3a38 !important;\n    }\n\n    /*--------------\n        Error\n  ---------------*/\n\n    .ui.table tr.error,\n    .ui.table td.error {\n        -webkit-box-shadow: 0px 0px 0px #e0b4b4 inset;\n        box-shadow: 0px 0px 0px #e0b4b4 inset;\n    }\n    .ui.table tr.error,\n    .ui.table td.error {\n        background: #fff6f6 !important;\n        color: #9f3a38 !important;\n    }\n\n    /*--------------\n       Warning\n  ---------------*/\n\n    .ui.table tr.warning,\n    .ui.table td.warning {\n        -webkit-box-shadow: 0px 0px 0px #c9ba9b inset;\n        box-shadow: 0px 0px 0px #c9ba9b inset;\n    }\n    .ui.table tr.warning,\n    .ui.table td.warning {\n        background: #fffaf3 !important;\n        color: #573a08 !important;\n    }\n\n    /*--------------\n       Active\n  ---------------*/\n\n    .ui.table tr.active,\n    .ui.table td.active {\n        -webkit-box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.87) inset;\n        box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.87) inset;\n    }\n    .ui.table tr.active,\n    .ui.table td.active {\n        background: #e0e0e0 !important;\n        color: rgba(0, 0, 0, 0.87) !important;\n    }\n\n    /*--------------\n       Disabled\n  ---------------*/\n\n    .ui.table tr.disabled td,\n    .ui.table tr td.disabled,\n    .ui.table tr.disabled:hover,\n    .ui.table tr:hover td.disabled {\n        pointer-events: none;\n        color: rgba(40, 40, 40, 0.3);\n    }\n\n    /*******************************\n            Variations\n  *******************************/\n\n    /*--------------\n      Stackable\n  ---------------*/\n\n    @media only screen and (max-width: 991px) {\n        .ui[class*="tablet stackable"].table,\n        .ui[class*="tablet stackable"].table tbody,\n        .ui[class*="tablet stackable"].table tr,\n        .ui[class*="tablet stackable"].table tr > th,\n        .ui[class*="tablet stackable"].table tr > td {\n            width: 100% !important;\n            display: block !important;\n        }\n        .ui[class*="tablet stackable"].table {\n            padding: 0em;\n        }\n        .ui[class*="tablet stackable"].table thead {\n            display: block;\n        }\n        .ui[class*="tablet stackable"].table tfoot {\n            display: block;\n        }\n        .ui[class*="tablet stackable"].table tr {\n            padding-top: 1em;\n            padding-bottom: 1em;\n            -webkit-box-shadow: 0px -1px 0px 0px rgba(0, 0, 0, 0.1) inset !important;\n            box-shadow: 0px -1px 0px 0px rgba(0, 0, 0, 0.1) inset !important;\n        }\n        .ui[class*="tablet stackable"].table tr > th,\n        .ui[class*="tablet stackable"].table tr > td {\n            background: none;\n            border: none !important;\n            padding: 0.25em 0.75em;\n            -webkit-box-shadow: none !important;\n            box-shadow: none !important;\n        }\n\n        /* Definition Table */\n        .ui.definition[class*="tablet stackable"].table thead th:first-child {\n            -webkit-box-shadow: none !important;\n            box-shadow: none !important;\n        }\n    }\n\n    /*--------------\n   Text Alignment\n  ---------------*/\n\n    .ui.table[class*="left aligned"],\n    .ui.table [class*="left aligned"] {\n        text-align: left;\n    }\n    .ui.table[class*="center aligned"],\n    .ui.table [class*="center aligned"] {\n        text-align: center;\n    }\n    .ui.table[class*="right aligned"],\n    .ui.table [class*="right aligned"] {\n        text-align: right;\n    }\n\n    /*------------------\n   Vertical Alignment\n  ------------------*/\n\n    .ui.table[class*="top aligned"],\n    .ui.table [class*="top aligned"] {\n        vertical-align: top;\n    }\n    .ui.table[class*="middle aligned"],\n    .ui.table [class*="middle aligned"] {\n        vertical-align: middle;\n    }\n    .ui.table[class*="bottom aligned"],\n    .ui.table [class*="bottom aligned"] {\n        vertical-align: bottom;\n    }\n\n    /*--------------\n      Collapsing\n  ---------------*/\n\n    .ui.table th.collapsing,\n    .ui.table td.collapsing {\n        width: 1px;\n        white-space: nowrap;\n    }\n\n    /*--------------\n       Fixed\n  ---------------*/\n\n    .ui.fixed.table {\n        table-layout: fixed;\n    }\n    .ui.fixed.table th,\n    .ui.fixed.table td {\n        overflow: hidden;\n        text-overflow: ellipsis;\n    }\n\n    /*--------------\n     Selectable\n  ---------------*/\n\n    .ui.selectable.table tbody tr:hover,\n    .ui.table tbody tr td.selectable:hover {\n        background: rgba(0, 0, 0, 0.05) !important;\n        color: rgba(0, 0, 0, 0.95) !important;\n    }\n    .ui.selectable.inverted.table tbody tr:hover,\n    .ui.inverted.table tbody tr td.selectable:hover {\n        background: rgba(255, 255, 255, 0.08) !important;\n        color: #ffffff !important;\n    }\n\n    /* Selectable Cell Link */\n    .ui.table tbody tr td.selectable {\n        padding: 0em;\n    }\n    .ui.table tbody tr td.selectable > a:not(.ui) {\n        display: block;\n        color: inherit;\n        padding: 0.78571429em 0.78571429em;\n    }\n\n    /* Other States */\n    .ui.selectable.table tr.error:hover,\n    .ui.table tr td.selectable.error:hover,\n    .ui.selectable.table tr:hover td.error {\n        background: #ffe7e7 !important;\n        color: #943634 !important;\n    }\n    .ui.selectable.table tr.warning:hover,\n    .ui.table tr td.selectable.warning:hover,\n    .ui.selectable.table tr:hover td.warning {\n        background: #fff4e4 !important;\n        color: #493107 !important;\n    }\n    .ui.selectable.table tr.active:hover,\n    .ui.table tr td.selectable.active:hover,\n    .ui.selectable.table tr:hover td.active {\n        background: #e0e0e0 !important;\n        color: rgba(0, 0, 0, 0.87) !important;\n    }\n    .ui.selectable.table tr.positive:hover,\n    .ui.table tr td.selectable.positive:hover,\n    .ui.selectable.table tr:hover td.positive {\n        background: #f7ffe6 !important;\n        color: #275b28 !important;\n    }\n    .ui.selectable.table tr.negative:hover,\n    .ui.table tr td.selectable.negative:hover,\n    .ui.selectable.table tr:hover td.negative {\n        background: #ffe7e7 !important;\n        color: #943634 !important;\n    }\n\n    /*-------------------\n        Attached\n  --------------------*/\n\n    /* Middle */\n    .ui.attached.table {\n        top: 0px;\n        bottom: 0px;\n        border-radius: 0px;\n        margin: 0em -1px;\n        width: calc(100% - (-1px * 2));\n        max-width: calc(100% - (-1px * 2));\n        -webkit-box-shadow: none;\n        box-shadow: none;\n        border: 1px solid #d4d4d5;\n    }\n    .ui.attached + .ui.attached.table:not(.top) {\n        border-top: none;\n    }\n\n    /* Top */\n    .ui[class*="top attached"].table {\n        bottom: 0px;\n        margin-bottom: 0em;\n        top: 0px;\n        margin-top: 1em;\n        border-radius: 0.28571429rem 0.28571429rem 0em 0em;\n    }\n    .ui.table[class*="top attached"]:first-child {\n        margin-top: 0em;\n    }\n\n    /* Bottom */\n    .ui[class*="bottom attached"].table {\n        bottom: 0px;\n        margin-top: 0em;\n        top: 0px;\n        margin-bottom: 1em;\n        -webkit-box-shadow: none, none;\n        box-shadow: none, none;\n        border-radius: 0em 0em 0.28571429rem 0.28571429rem;\n    }\n    .ui[class*="bottom attached"].table:last-child {\n        margin-bottom: 0em;\n    }\n\n    /*--------------\n       Striped\n  ---------------*/\n\n    /* Table Striping */\n    .ui.striped.table > tr:nth-child(2n),\n    .ui.striped.table tbody tr:nth-child(2n) {\n        background-color: rgba(0, 0, 50, 0.02);\n    }\n\n    /* Stripes */\n    .ui.inverted.striped.table > tr:nth-child(2n),\n    .ui.inverted.striped.table tbody tr:nth-child(2n) {\n        background-color: rgba(255, 255, 255, 0.05);\n    }\n\n    /* Allow striped active hover */\n    .ui.striped.selectable.selectable.selectable.table tbody tr.active:hover {\n        background: #efefef !important;\n        color: rgba(0, 0, 0, 0.95) !important;\n    }\n\n    /*--------------\n     Single Line\n  ---------------*/\n\n    .ui.table[class*="single line"],\n    .ui.table [class*="single line"] {\n        white-space: nowrap;\n    }\n    .ui.table[class*="single line"],\n    .ui.table [class*="single line"] {\n        white-space: nowrap;\n    }\n\n    /*-------------------\n         Colors\n  --------------------*/\n\n    /* Red */\n    .ui.red.table {\n        border-top: 0.2em solid #db2828;\n    }\n    .ui.inverted.red.table {\n        background-color: #db2828 !important;\n        color: #ffffff !important;\n    }\n\n    /* Orange */\n    .ui.orange.table {\n        border-top: 0.2em solid #f2711c;\n    }\n    .ui.inverted.orange.table {\n        background-color: #f2711c !important;\n        color: #ffffff !important;\n    }\n\n    /* Yellow */\n    .ui.yellow.table {\n        border-top: 0.2em solid #fbbd08;\n    }\n    .ui.inverted.yellow.table {\n        background-color: #fbbd08 !important;\n        color: #ffffff !important;\n    }\n\n    /* Olive */\n    .ui.olive.table {\n        border-top: 0.2em solid #b5cc18;\n    }\n    .ui.inverted.olive.table {\n        background-color: #b5cc18 !important;\n        color: #ffffff !important;\n    }\n\n    /* Green */\n    .ui.green.table {\n        border-top: 0.2em solid #21ba45;\n    }\n    .ui.inverted.green.table {\n        background-color: #21ba45 !important;\n        color: #ffffff !important;\n    }\n\n    /* Teal */\n    .ui.teal.table {\n        border-top: 0.2em solid #00b5ad;\n    }\n    .ui.inverted.teal.table {\n        background-color: #00b5ad !important;\n        color: #ffffff !important;\n    }\n\n    /* Blue */\n    .ui.blue.table {\n        border-top: 0.2em solid #2185d0;\n    }\n    .ui.inverted.blue.table {\n        background-color: #2185d0 !important;\n        color: #ffffff !important;\n    }\n\n    /* Violet */\n    .ui.violet.table {\n        border-top: 0.2em solid #6435c9;\n    }\n    .ui.inverted.violet.table {\n        background-color: #6435c9 !important;\n        color: #ffffff !important;\n    }\n\n    /* Purple */\n    .ui.purple.table {\n        border-top: 0.2em solid #a333c8;\n    }\n    .ui.inverted.purple.table {\n        background-color: #a333c8 !important;\n        color: #ffffff !important;\n    }\n\n    /* Pink */\n    .ui.pink.table {\n        border-top: 0.2em solid #e03997;\n    }\n    .ui.inverted.pink.table {\n        background-color: #e03997 !important;\n        color: #ffffff !important;\n    }\n\n    /* Brown */\n    .ui.brown.table {\n        border-top: 0.2em solid #a5673f;\n    }\n    .ui.inverted.brown.table {\n        background-color: #a5673f !important;\n        color: #ffffff !important;\n    }\n\n    /* Grey */\n    .ui.grey.table {\n        border-top: 0.2em solid #767676;\n    }\n    .ui.inverted.grey.table {\n        background-color: #767676 !important;\n        color: #ffffff !important;\n    }\n\n    /* Black */\n    .ui.black.table {\n        border-top: 0.2em solid #1b1c1d;\n    }\n    .ui.inverted.black.table {\n        background-color: #1b1c1d !important;\n        color: #ffffff !important;\n    }\n\n    /*--------------\n    Column Count\n  ---------------*/\n\n    /* Grid Based */\n    .ui.one.column.table td {\n        width: 100%;\n    }\n    .ui.two.column.table td {\n        width: 50%;\n    }\n    .ui.three.column.table td {\n        width: 33.33333333%;\n    }\n    .ui.four.column.table td {\n        width: 25%;\n    }\n    .ui.five.column.table td {\n        width: 20%;\n    }\n    .ui.six.column.table td {\n        width: 16.66666667%;\n    }\n    .ui.seven.column.table td {\n        width: 14.28571429%;\n    }\n    .ui.eight.column.table td {\n        width: 12.5%;\n    }\n    .ui.nine.column.table td {\n        width: 11.11111111%;\n    }\n    .ui.ten.column.table td {\n        width: 10%;\n    }\n    .ui.eleven.column.table td {\n        width: 9.09090909%;\n    }\n    .ui.twelve.column.table td {\n        width: 8.33333333%;\n    }\n    .ui.thirteen.column.table td {\n        width: 7.69230769%;\n    }\n    .ui.fourteen.column.table td {\n        width: 7.14285714%;\n    }\n    .ui.fifteen.column.table td {\n        width: 6.66666667%;\n    }\n    .ui.sixteen.column.table td {\n        width: 6.25%;\n    }\n\n    /* Column Width */\n    .ui.table th.one.wide,\n    .ui.table td.one.wide {\n        width: 6.25%;\n    }\n    .ui.table th.two.wide,\n    .ui.table td.two.wide {\n        width: 12.5%;\n    }\n    .ui.table th.three.wide,\n    .ui.table td.three.wide {\n        width: 18.75%;\n    }\n    .ui.table th.four.wide,\n    .ui.table td.four.wide {\n        width: 25%;\n    }\n    .ui.table th.five.wide,\n    .ui.table td.five.wide {\n        width: 31.25%;\n    }\n    .ui.table th.six.wide,\n    .ui.table td.six.wide {\n        width: 37.5%;\n    }\n    .ui.table th.seven.wide,\n    .ui.table td.seven.wide {\n        width: 43.75%;\n    }\n    .ui.table th.eight.wide,\n    .ui.table td.eight.wide {\n        width: 50%;\n    }\n    .ui.table th.nine.wide,\n    .ui.table td.nine.wide {\n        width: 56.25%;\n    }\n    .ui.table th.ten.wide,\n    .ui.table td.ten.wide {\n        width: 62.5%;\n    }\n    .ui.table th.eleven.wide,\n    .ui.table td.eleven.wide {\n        width: 68.75%;\n    }\n    .ui.table th.twelve.wide,\n    .ui.table td.twelve.wide {\n        width: 75%;\n    }\n    .ui.table th.thirteen.wide,\n    .ui.table td.thirteen.wide {\n        width: 81.25%;\n    }\n    .ui.table th.fourteen.wide,\n    .ui.table td.fourteen.wide {\n        width: 87.5%;\n    }\n    .ui.table th.fifteen.wide,\n    .ui.table td.fifteen.wide {\n        width: 93.75%;\n    }\n    .ui.table th.sixteen.wide,\n    .ui.table td.sixteen.wide {\n        width: 100%;\n    }\n\n    /*--------------\n      Sortable\n  ---------------*/\n\n    .ui.sortable.table thead th {\n        cursor: pointer;\n        white-space: nowrap;\n        border-left: 1px solid rgba(34, 36, 38, 0.15);\n        color: rgba(0, 0, 0, 0.87);\n    }\n    .ui.sortable.table thead th:first-child {\n        border-left: none;\n    }\n    .ui.sortable.table thead th.sorted,\n    .ui.sortable.table thead th.sorted:hover {\n        -webkit-user-select: none;\n        -moz-user-select: none;\n        -ms-user-select: none;\n        user-select: none;\n    }\n    .ui.sortable.table thead th:after {\n        display: none;\n        font-style: normal;\n        font-weight: normal;\n        text-decoration: inherit;\n        content: "";\n        height: 1em;\n        width: auto;\n        opacity: 0.8;\n        margin: 0em 0em 0em 0.5em;\n        font-family: "Icons";\n    }\n    .ui.sortable.table thead th.ascending:after {\n        content: "\\f0d8";\n    }\n    .ui.sortable.table thead th.descending:after {\n        content: "\\f0d7";\n    }\n\n    /* Hover */\n    .ui.sortable.table th.disabled:hover {\n        cursor: auto;\n        color: rgba(40, 40, 40, 0.3);\n    }\n    .ui.sortable.table thead th:hover {\n        background: rgba(0, 0, 0, 0.05);\n        color: rgba(0, 0, 0, 0.8);\n    }\n\n    /* Sorted */\n    .ui.sortable.table thead th.sorted {\n        background: rgba(0, 0, 0, 0.05);\n        color: rgba(0, 0, 0, 0.95);\n    }\n    .ui.sortable.table thead th.sorted:after {\n        display: inline-block;\n    }\n\n    /* Sorted Hover */\n    .ui.sortable.table thead th.sorted:hover {\n        background: rgba(0, 0, 0, 0.05);\n        color: rgba(0, 0, 0, 0.95);\n    }\n\n    /* Inverted */\n    .ui.inverted.sortable.table thead th.sorted {\n        background: rgba(255, 255, 255, 0.15) -webkit-gradient(linear, left top, left\n                    bottom, from(transparent), to(rgba(0, 0, 0, 0.05)));\n        background: rgba(255, 255, 255, 0.15) -webkit-linear-gradient(transparent, rgba(0, 0, 0, 0.05));\n        background: rgba(255, 255, 255, 0.15)\n            linear-gradient(transparent, rgba(0, 0, 0, 0.05));\n        color: #ffffff;\n    }\n    .ui.inverted.sortable.table thead th:hover {\n        background: rgba(255, 255, 255, 0.08) -webkit-gradient(linear, left top, left\n                    bottom, from(transparent), to(rgba(0, 0, 0, 0.05)));\n        background: rgba(255, 255, 255, 0.08) -webkit-linear-gradient(transparent, rgba(0, 0, 0, 0.05));\n        background: rgba(255, 255, 255, 0.08)\n            linear-gradient(transparent, rgba(0, 0, 0, 0.05));\n        color: #ffffff;\n    }\n    .ui.inverted.sortable.table thead th {\n        border-left-color: transparent;\n        border-right-color: transparent;\n    }\n\n    /*--------------\n      Inverted\n  ---------------*/\n\n    /* Text Color */\n    .ui.inverted.table {\n        background: #333333;\n        color: rgba(255, 255, 255, 0.9);\n        border: none;\n    }\n    .ui.inverted.table th {\n        background-color: rgba(0, 0, 0, 0.15);\n        border-color: rgba(255, 255, 255, 0.1) !important;\n        color: rgba(255, 255, 255, 0.9) !important;\n    }\n    .ui.inverted.table tr td {\n        border-color: rgba(255, 255, 255, 0.1) !important;\n    }\n    .ui.inverted.table tr.disabled td,\n    .ui.inverted.table tr td.disabled,\n    .ui.inverted.table tr.disabled:hover td,\n    .ui.inverted.table tr:hover td.disabled {\n        pointer-events: none;\n        color: rgba(225, 225, 225, 0.3);\n    }\n\n    /* Definition */\n    .ui.inverted.definition.table tfoot:not(.full-width) th:first-child,\n    .ui.inverted.definition.table thead:not(.full-width) th:first-child {\n        background: #ffffff;\n    }\n    .ui.inverted.definition.table tr td:first-child {\n        background: rgba(255, 255, 255, 0.02);\n        color: #ffffff;\n    }\n\n    /*--------------\n     Collapsing\n  ---------------*/\n\n    .ui.collapsing.table {\n        width: auto;\n    }\n\n    /*--------------\n        Basic\n  ---------------*/\n\n    .ui.basic.table {\n        background: transparent;\n        border: 1px solid rgba(34, 36, 38, 0.15);\n        -webkit-box-shadow: none;\n        box-shadow: none;\n    }\n    .ui.basic.table thead,\n    .ui.basic.table tfoot {\n        -webkit-box-shadow: none;\n        box-shadow: none;\n    }\n    .ui.basic.table th {\n        background: transparent;\n        border-left: none;\n    }\n    .ui.basic.table tbody tr {\n        border-bottom: 1px solid rgba(0, 0, 0, 0.1);\n    }\n    .ui.basic.table td {\n        background: transparent;\n    }\n    .ui.basic.striped.table tbody tr:nth-child(2n) {\n        background-color: rgba(0, 0, 0, 0.05) !important;\n    }\n\n    /* Very Basic */\n    .ui[class*="very basic"].table {\n        border: none;\n    }\n    .ui[class*="very basic"].table:not(.sortable):not(.striped) th,\n    .ui[class*="very basic"].table:not(.sortable):not(.striped) td {\n        padding: "";\n    }\n    .ui[class*="very basic"].table:not(.sortable):not(.striped) th:first-child,\n    .ui[class*="very basic"].table:not(.sortable):not(.striped) td:first-child {\n        padding-left: 0em;\n    }\n    .ui[class*="very basic"].table:not(.sortable):not(.striped) th:last-child,\n    .ui[class*="very basic"].table:not(.sortable):not(.striped) td:last-child {\n        padding-right: 0em;\n    }\n    .ui[class*="very basic"].table:not(.sortable):not(.striped)\n        thead\n        tr:first-child\n        th {\n        padding-top: 0em;\n    }\n\n    /*--------------\n       Celled\n  ---------------*/\n\n    .ui.celled.table tr th,\n    .ui.celled.table tr td {\n        border-left: 1px solid rgba(34, 36, 38, 0.1);\n    }\n    .ui.celled.table tr th:first-child,\n    .ui.celled.table tr td:first-child {\n        border-left: none;\n    }\n\n    /*--------------\n       Padded\n  ---------------*/\n\n    .ui.padded.table th {\n        padding-left: 1em;\n        padding-right: 1em;\n    }\n    .ui.padded.table th,\n    .ui.padded.table td {\n        padding: 1em 1em;\n    }\n\n    /* Very */\n    .ui[class*="very padded"].table th {\n        padding-left: 1.5em;\n        padding-right: 1.5em;\n    }\n    .ui[class*="very padded"].table td {\n        padding: 1.5em 1.5em;\n    }\n\n    /*--------------\n       Compact\n  ---------------*/\n\n    .ui.compact.table th {\n        padding-left: 0.7em;\n        padding-right: 0.7em;\n    }\n    .ui.compact.table td {\n        padding: 0.5em 0.7em;\n    }\n\n    /* Very */\n    .ui[class*="very compact"].table th {\n        padding-left: 0.6em;\n        padding-right: 0.6em;\n    }\n    .ui[class*="very compact"].table td {\n        padding: 0.4em 0.6em;\n    }\n\n    /*--------------\n        Sizes\n  ---------------*/\n\n    /* Small */\n    .ui.small.table {\n        font-size: 0.9em;\n    }\n\n    /* Standard */\n    .ui.table {\n        font-size: 1em;\n    }\n\n    /* Large */\n    .ui.large.table {\n        font-size: 1.1em;\n    }\n\n    /*******************************\n           Site Overrides\n  *******************************/\n'])),function(n){return n.hasMore||n.hasPagination?"20px":"0"},"#9B4DEE"),ni=["children","title","titleStyle","message","messageStyle","hasMore","pagination","loading"],ei=function(e){var t=e.children,r=e.title,o=e.titleStyle,i=e.message,l=e.messageStyle,d=e.hasMore,c=e.pagination,p=v(e,ni);return n.createElement("div",null,r||i?n.createElement(Go,null,n.createElement(Jo,{style:o},r),n.createElement(Ko,{style:l},i)):null,n.createElement(Qo,{hasMore:!!d,hasPagination:!!c},n.createElement(a,Object.assign({},p),t)),d?n.createElement(Lt,{secondary:!0,textFirst:"ver a",textEnd:"lista completa",onClick:function(){return d()}}):null,c?n.createElement("div",null,n.createElement("br",null),c):null)};ei.Row=l,ei.Header=d,ei.HeaderCell=c,ei.Body=p,ei.Cell=s,ei.Footer=u;var ti=r.div(Yo||(Yo=k(["\n    font-family: MontSerrat !important;\n\n    /*--------------\n   Pagination\n---------------*/\n\n    .ui.pagination.menu {\n        margin: 0em;\n        display: -webkit-inline-box;\n        display: -ms-inline-flexbox;\n        display: inline-flex;\n        vertical-align: middle;\n    }\n    .ui.pagination.menu .item:last-child {\n        border-radius: 0em 0.28571429rem 0.28571429rem 0em;\n    }\n    .ui.compact.menu .item:last-child {\n        border-radius: 0em 0.28571429rem 0.28571429rem 0em;\n    }\n    .ui.pagination.menu .item:last-child:before {\n        display: none;\n    }\n    .ui.pagination.menu .item {\n        font-family: MontSerrat !important;\n        min-width: 3em;\n        text-align: center;\n    }\n    .ui.pagination.menu .icon.item i.icon {\n        vertical-align: top;\n    }\n\n    /* Active */\n    .ui.pagination.menu .active.item {\n        border-top: none;\n        padding-top: 0.92857143em;\n        background-color: rgba(0, 0, 0, 0.05);\n        color: rgba(0, 0, 0, 0.95);\n        -webkit-box-shadow: none;\n        box-shadow: none;\n    }\n"]))),ri=function(e){var t=e.page,r=e.onPageChange,o=e.mini;return n.createElement(ti,null,n.createElement(m,{totalPages:Math.ceil(e.totalCount/e.limit),size:o?"mini":"small",ellipsisItem:{content:n.createElement(b,{name:"ellipsis horizontal"}),icon:!0},firstItem:{content:n.createElement(b,{name:"angle double left"}),icon:!0},lastItem:{content:n.createElement(b,{name:"angle double right"}),icon:!0},prevItem:{content:n.createElement(b,{name:"angle left"}),icon:!0},nextItem:{content:n.createElement(b,{name:"angle right"}),icon:!0},onPageChange:function(n,e){return r(e.activePage)},activePage:t}))};export{Fr as Accordion,Lt as ButtonMain,Zo as Calendar,Wr as Card,gr as Checkbox,$t as Dialog,Sr as Dropdown,zr as DropdownForm,Zt as InputLine,Jt as InputLineForm,jt as Loader,or as Modal,Rr as MoreLess,ri as Pagination,yr as Radio,jr as Selection,ei as Table,sr as TextArea,mr as TextAreaForm};
+ */
+var faAngleDown = {
+  prefix: 'fas',
+  iconName: 'angle-down',
+  icon: [320, 512, [], "f107", "M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"]
+};
+var faAngleLeft = {
+  prefix: 'fas',
+  iconName: 'angle-left',
+  icon: [256, 512, [], "f104", "M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"]
+};
+var faAngleUp = {
+  prefix: 'fas',
+  iconName: 'angle-up',
+  icon: [320, 512, [], "f106", "M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"]
+};
+var faBell = {
+  prefix: 'fas',
+  iconName: 'bell',
+  icon: [448, 512, [], "f0f3", "M224 512c35.32 0 63.97-28.65 63.97-64H160.03c0 35.35 28.65 64 63.97 64zm215.39-149.71c-19.32-20.76-55.47-51.99-55.47-154.29 0-77.7-54.48-139.9-127.94-155.16V32c0-17.67-14.32-32-31.98-32s-31.98 14.33-31.98 32v20.84C118.56 68.1 64.08 130.3 64.08 208c0 102.3-36.15 133.53-55.47 154.29-6 6.45-8.66 14.16-8.61 21.71.11 16.4 12.98 32 32.1 32h383.8c19.12 0 32-15.6 32.1-32 .05-7.55-2.61-15.27-8.61-21.71z"]
+};
+var faCheck = {
+  prefix: 'fas',
+  iconName: 'check',
+  icon: [512, 512, [], "f00c", "M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"]
+};
+var faMinus = {
+  prefix: 'fas',
+  iconName: 'minus',
+  icon: [448, 512, [], "f068", "M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"]
+};
+var faPlus = {
+  prefix: 'fas',
+  iconName: 'plus',
+  icon: [448, 512, [], "f067", "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"]
+};
+var faTimes = {
+  prefix: 'fas',
+  iconName: 'times',
+  icon: [352, 512, [], "f00d", "M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"]
+};
+
+const colors = {
+  brand10: '#9B4DEE',
+  brand20: '#E0457B',
+  brand30: '#F7EA48',
+  brandDark: '#68349F',
+  brandLight: '#D8B8F9',
+  brandGreen: '#4BA047',
+  default10: '#F1F1F1',
+  default20: '#E1E6EB',
+  default30: '#D1D8DC',
+  gray10: '#ACACAC',
+  gray20: '#707070',
+  gray30: '#333333',
+  sutil: '#FEFEFE',
+  white: '#FFFFFF',
+  black: '#000000',
+  card: '#eeeeee',
+  transparent: 'rgba(0, 0, 0, 0)',
+  hover: 'rgba(211, 211, 211, 0.4)',
+  highlight: '#FF0000',
+  success10: '#E8F5E9',
+  success20: '#43a047',
+  success30: '#1b5e20',
+  successLight: '#5bcc5f',
+  warning10: '#FFF3E0',
+  warning20: '#FB8C00',
+  warning30: '#E65100',
+  gold: '#FEBF00',
+  danger10: '#FFEBEE',
+  danger20: '#E53935',
+  danger30: '#B71C1C',
+  info10: '#E3F2FD',
+  info20: '#1E88E5',
+  info30: '#0D47A1',
+  brandTransparent: 'rgba(155, 77, 238, 0.2)',
+  brandTransparent2: 'rgba(155, 77, 238, 0.9)',
+  error: '#e0457b25'
+};
+
+let _ = t => t,
+    _t,
+    _t2,
+    _t3,
+    _t4,
+    _t5,
+    _t6,
+    _t7;
+const Sizes = {
+  mini: 'mini',
+  tiny: 'tiny',
+  small: 'small',
+  medium: 'medium',
+  large: 'large',
+  big: 'big',
+  huge: 'huge',
+  massive: 'massive'
+};
+
+const size = size => {
+  switch (size) {
+    case Sizes.mini:
+      return '25px';
+
+    case Sizes.tiny:
+      return '30px';
+
+    case Sizes.small:
+      return '35px';
+
+    case Sizes.medium:
+      return '40px';
+
+    case Sizes.large:
+      return '45px';
+
+    case Sizes.big:
+      return '50px';
+
+    case Sizes.huge:
+      return '55px';
+
+    case Sizes.massive:
+      return '60px';
+
+    default:
+      return size;
+  }
+};
+
+const textSize = size => {
+  switch (size) {
+    case Sizes.mini:
+      return '10px';
+
+    case Sizes.tiny:
+      return '11px';
+
+    case Sizes.small:
+      return '12px';
+
+    case Sizes.medium:
+      return '14px';
+
+    case Sizes.large:
+      return '16px';
+
+    case Sizes.big:
+      return '18px';
+
+    case Sizes.huge:
+      return '20px';
+
+    case Sizes.massive:
+      return '22px';
+
+    default:
+      return size;
+  }
+};
+
+const Button = styled.button(_t || (_t = _`
+  font-family: MontSerrat !important;
+  position: ${0};
+  background-color: ${0};
+  height: ${0};
+  padding: 0 20px;
+  width: ${0};
+  border-radius: ${0};
+  cursor: pointer;
+  border: ${0};
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  &:hover {
+    background-color: ${0};
+
+    span {
+      color: ${0};
+    }
+  }
+`), props => props.loading ? 'relative' : 'initial', props => {
+  if (props.colorBackground) return props.colorBackground;
+
+  if (props.secondary || props.tertiary) {
+    return colors.white;
+  }
+
+  if (props.noBorder) {
+    return 'transparent';
+  }
+
+  return colors.brand30;
+}, props => props.size ? size(props.size) : '40px', props => {
+  if (props.width) {
+    if (typeof props.width === 'string') {
+      return props.width;
+    }
+
+    return `${props.width}px`;
+  }
+
+  return 'none';
+}, props => {
+  if (props.rectangular) return '10px';
+  return '30px';
+}, props => {
+  if (props.secondary) {
+    return `1px solid ${colors.brand10}`;
+  }
+
+  if (props.tertiary) {
+    return `1px solid ${colors.gray10}`;
+  }
+
+  return 'none';
+}, props => {
+  if (props.hoverBackgroundColor) {
+    return props.hoverBackgroundColor;
+  }
+
+  if (props.secondary) {
+    return colors.brandTransparent;
+  }
+
+  if (props.backPurple) {
+    return colors.brand20;
+  }
+
+  if (props.noBorder) {
+    return 'transparent';
+  }
+
+  if (props.tertiary) {
+    return colors.hover;
+  }
+
+  return colors.brand10;
+}, props => {
+  if (props.hoverTextColor) {
+    return props.hoverTextColor;
+  }
+
+  if (props.secondary) {
+    return colors.brand10;
+  }
+
+  if (props.backPurple) {
+    return colors.white;
+  }
+
+  if (props.noBorder) {
+    if (props.colorText) {
+      return props.colorText;
+    }
+
+    return colors.brand10;
+  }
+
+  if (props.tertiary) {
+    return colors.gray20;
+  }
+
+  return colors.brand30;
+});
+const TextFirst = styled.span(_t2 || (_t2 = _`
+  visibility: ${0};
+  color: ${0};
+  font-weight: ${0};
+  font-size: ${0};
+  margin-right: 3.5px;
+`), props => props.loading ? 'hidden' : 'visible', props => {
+  if (props.colorText) {
+    return props.colorText;
+  }
+
+  if (props.tertiary) {
+    return colors.gray20;
+  }
+
+  return colors.brand10;
+}, props => {
+  if (props.firstStrong || props.strong) {
+    return 'bold';
+  }
+
+  return 'normal';
+}, props => props.size ? textSize(props.size) : '14px');
+const TextEnd = styled.span(_t3 || (_t3 = _`
+  visibility: ${0};
+  color: ${0};
+  font-weight: ${0};
+  font-size: ${0};
+`), props => props.loading ? 'hidden' : 'visible', props => {
+  if (props.colorText) {
+    return props.colorText;
+  }
+
+  if (props.tertiary) {
+    return colors.gray20;
+  }
+
+  return colors.brand10;
+}, props => {
+  if (props.firstStrong || props.notStrong) {
+    return 'normal';
+  }
+
+  return 'bold';
+}, props => props.size ? textSize(props.size) : '14px');
+const Notification = styled.button(_t4 || (_t4 = _`
+  font-family: MontSerrat !important;
+  background-color: ${0};
+  height: 40px;
+  width: 100%;
+  border-radius: 30px;
+  cursor: pointer;
+  border: 1px solid ${0};
+  outline: none;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  &:hover {
+    background-color: ${0};
+  }
+
+  span {
+    color: ${0};
+    margin-left: 20px;
+    font-weight: bold;
+  }
+`), colors.brand10, colors.brand30, colors.brandTransparent2, colors.brand30);
+const Icon = styled.div(_t5 || (_t5 = _`
+  visibility: ${0};
+  margin-right: ${0};
+  margin-left: ${0};
+`), props => props.loading ? 'hidden' : 'visible', props => props.iconPosition === 'left' ? '10px' : '', props => props.iconPosition === 'right' ? '10px' : '');
+const Amount = styled.div(_t6 || (_t6 = _`
+  font-family: MontSerrat !important;
+  background-color: ${0};
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: ${0};
+  font-size: 10px;
+`), colors.brand30, colors.brand10);
+const LoadingContainer = styled.div(_t7 || (_t7 = _`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`));
+
+let _$1 = t => t,
+    _t$1,
+    _t2$1;
+const Sizes$1 = {
+  mini: 'mini',
+  tiny: 'tiny',
+  small: 'small',
+  medium: 'medium',
+  large: 'large',
+  big: 'big',
+  huge: 'huge',
+  massive: 'massive'
+};
+
+const widthLoader = size => {
+  switch (size) {
+    case Sizes$1.mini:
+      return '1em';
+
+    case Sizes$1.tiny:
+      return '1.5em';
+
+    case Sizes$1.small:
+      return '2em';
+
+    case Sizes$1.medium:
+      return '2.5em';
+
+    case Sizes$1.large:
+      return '3em';
+
+    case Sizes$1.big:
+      return '3.5em';
+
+    case Sizes$1.huge:
+      return '4em';
+
+    case Sizes$1.massive:
+      return '4.5em';
+
+    default:
+      return size;
+  }
+};
+
+const widthBorder = size => {
+  switch (size) {
+    case Sizes$1.mini:
+      return '2px';
+
+    case Sizes$1.tiny:
+      return '2.5px';
+
+    case Sizes$1.small:
+      return '3px';
+
+    case Sizes$1.medium:
+      return '3.5px';
+
+    case Sizes$1.large:
+      return '4px';
+
+    case Sizes$1.big:
+      return '4.5px';
+
+    case Sizes$1.huge:
+      return '5px';
+
+    case Sizes$1.massive:
+      return '5.5px';
+
+    default:
+      return size;
+  }
+};
+
+const Container = styled.div(_t$1 || (_t$1 = _$1`
+  width: 100%;
+  display: flex;
+  justify-content: ${0};
+`), props => props.position === 'left' ? 'flex-start' : props.position === 'right' ? 'flex-end' : 'center');
+const Load = styled.div(_t2$1 || (_t2$1 = _$1`
+  border-width: ${0};
+  border-style: solid;
+  border-color: ${0};
+  border-top-width: ${0};
+  border-top-style: solid;
+  border-top-color: ${0};
+
+  border-radius: 50%;
+  width: ${0};
+  height: ${0};
+  animation: spin 0.6s linear infinite;
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+`), props => {
+  if (props.size) {
+    return widthBorder(props.size);
+  }
+
+  return '3.5px';
+}, colors.default20, props => {
+  if (props.size) {
+    return widthBorder(props.size);
+  }
+
+  return '3.5px';
+}, props => {
+  if (props.color) {
+    return props.color;
+  }
+
+  return colors.brand10;
+}, props => {
+  if (props.size) {
+    return widthLoader(props.size);
+  }
+
+  return '2.5em';
+}, props => {
+  if (props.size) {
+    if (props.size) {
+      return widthLoader(props.size);
+    }
+  }
+
+  return '2.5em';
+});
+
+const Loader = ({
+  color,
+  size,
+  className,
+  style,
+  position
+}) => {
+  return React$2.createElement(Container, {
+    position: position
+  }, React$2.createElement(Load, {
+    color: color,
+    size: size,
+    style: style,
+    className: className
+  }));
+};
+
+const ButtonMain = ({
+  textFirst,
+  textEnd,
+  firstStrong,
+  notStrong,
+  strong,
+  loading,
+  secondary,
+  backPurple,
+  children,
+  notification,
+  amount,
+  width,
+  icon,
+  customIcon,
+  iconPosition: _iconPosition = 'right',
+  colorIcon,
+  noBorder,
+  colorText,
+  colorBackground,
+  tertiary,
+  size,
+  rectangular,
+  typeContent,
+  hoverBackgroundColor,
+  hoverTextColor,
+  iconStyle,
+  ...rest
+}) => {
+  function renderButtonNotification() {
+    return React$2.createElement(Notification, Object.assign({}, rest), loading ? React$2.createElement(Loader, {
+      size: "tiny"
+    }) : children || React$2.createElement("div", {
+      style: {
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        height: '50%',
+        padding: 10
+      }
+    }, React$2.createElement("div", {
+      style: {
+        display: 'flex',
+        alignItems: 'center'
+      }
+    }, React$2.createElement(Icon, null, React$2.createElement(FontAwesomeIcon, {
+      icon: faBell,
+      size: "lg",
+      color: colors.brand30
+    })), React$2.createElement("span", null, "notifica\u00E7\u00F5es")), React$2.createElement(Amount, null, amount)));
+  }
+
+  function renderButtonTypes(type) {
+    switch (type) {
+      case 'icon':
+        return React$2.createElement("div", null, (icon || customIcon) && React$2.createElement(React$2.Fragment, null, customIcon ? React$2.createElement(Icon, {
+          loading: loading
+        }, customIcon) : React$2.createElement(Icon, {
+          loading: loading
+        }, React$2.createElement(FontAwesomeIcon, {
+          icon: icon,
+          color: colorIcon || colors.brand10,
+          size: "lg",
+          style: { ...iconStyle
+          }
+        }))));
+
+      default:
+        return null;
+    }
+  }
+
+  function renderButton() {
+    return React$2.createElement(Button, Object.assign({}, rest, {
+      secondary: secondary,
+      backPurple: backPurple,
+      width: width,
+      icon: icon,
+      noBorder: noBorder,
+      colorText: colorText,
+      colorBackground: colorBackground,
+      tertiary: tertiary,
+      size: size,
+      rectangular: rectangular,
+      hoverBackgroundColor: hoverBackgroundColor,
+      hoverTextColor: hoverTextColor,
+      loading: loading
+    }), children || (typeContent ? renderButtonTypes(typeContent) : React$2.createElement(React$2.Fragment, null, (icon || customIcon) && _iconPosition === 'left' && React$2.createElement(React$2.Fragment, null, customIcon ? React$2.createElement(Icon, {
+      loading: loading,
+      iconPosition: _iconPosition
+    }, customIcon) : React$2.createElement(Icon, {
+      loading: loading,
+      iconPosition: _iconPosition
+    }, React$2.createElement(FontAwesomeIcon, {
+      icon: icon,
+      color: colorIcon || colors.brand10,
+      size: "lg",
+      style: { ...iconStyle
+      }
+    }))), React$2.createElement(TextFirst, {
+      firstStrong: firstStrong,
+      strong: strong,
+      notStrong: notStrong,
+      colorText: colorText,
+      tertiary: tertiary,
+      size: size,
+      loading: loading
+    }, textFirst), React$2.createElement(TextEnd, {
+      firstStrong: firstStrong,
+      strong: strong,
+      notStrong: notStrong,
+      colorText: colorText,
+      tertiary: tertiary,
+      size: size,
+      loading: loading
+    }, textEnd), (icon || customIcon) && _iconPosition === 'right' && React$2.createElement(React$2.Fragment, null, customIcon ? React$2.createElement(Icon, {
+      loading: loading,
+      iconPosition: _iconPosition
+    }, customIcon) : React$2.createElement(Icon, {
+      loading: loading,
+      iconPosition: _iconPosition
+    }, React$2.createElement(FontAwesomeIcon, {
+      icon: icon,
+      color: colorIcon || colors.brand10,
+      size: "lg",
+      style: { ...iconStyle
+      }
+    }))))), loading && React$2.createElement(LoadingContainer, null, React$2.createElement(Loader, {
+      size: "tiny"
+    })));
+  }
+
+  if (notification) {
+    return renderButtonNotification();
+  }
+
+  return renderButton();
+};
+
+let _$2 = t => t,
+    _t$2,
+    _t2$2,
+    _t3$1,
+    _t4$1,
+    _t5$1,
+    _t6$1,
+    _t7$1,
+    _t8;
+const Background = styled.div(_t$2 || (_t$2 = _$2`
+  ${0}
+`), props => props.open ? css$1(_t2$2 || (_t2$2 = _$2`
+          opacity: 1;
+          visibility: visible;
+          position: fixed;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background: rgba(0, 0, 0, 0.5);
+          transition: opacity 0.25s ease;
+          overflow: auto;
+          display: flex;
+          z-index: 999;
+        `)) : css$1(_t3$1 || (_t3$1 = _$2`
+          opacity: 1;
+          visibility: hidden;
+        `)));
+const Dialog = styled.div(_t4$1 || (_t4$1 = _$2`
+  font-family: MontSerrat !important;
+  ${0}
+`), props => props.open ? css$1(_t5$1 || (_t5$1 = _$2`
+          transition: bottom 0.25s ease;
+          width: 97%;
+          background: ${0};
+          border-top-left-radius: 30px;
+          border-top-right-radius: 30px;
+          margin-top: auto;
+          margin-left: auto;
+          margin-right: auto;
+          position: relative;
+          /* overflow: auto; */
+
+          overflow: ${0};
+          padding-bottom: ${0};
+          height: ${0};
+          max-height: ${0};
+
+          .box-dialog {
+            position: relative;
+            padding: 20px 20px 0;
+            overflow: ${0};
+
+            height: ${0};
+            /* max-height: 100%; */
+          }
+
+          .loading-dialog {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.8);
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 30px;
+            z-index: 2;
+            position: absolute;
+          }
+        `), colors.white, () => {
+  if (props.maxHeight || props.loading) {
+    return 'none';
+  }
+
+  return 'auto';
+}, () => {
+  if (props.maxHeight) {
+    return '0';
+  }
+
+  return '20px';
+}, () => {
+  if (props.maxHeight) {
+    return '100%';
+  }
+
+  return 'auto';
+}, () => {
+  if (props.maxHeight) {
+    if (typeof props.maxHeight === 'string') {
+      return props.maxHeight;
+    }
+
+    return `${props.maxHeight}px`;
+  }
+
+  return '100%';
+}, props.loading ? 'hidden' : 'auto', props.title ? `calc(100% - ${props.sizeHeader}px)` : '100%') : css$1(_t6$1 || (_t6$1 = _$2`
+          transition: bottom 0.25s ease;
+          bottom: -100%;
+        `)));
+const Header = styled.div(_t7$1 || (_t7$1 = _$2`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: ${0};
+  font-size: 1.25rem;
+
+  .name-icon-modal {
+    display: flex;
+    align-items: center;
+  }
+
+  & strong {
+    padding: ${0};
+    color: ${0};
+  }
+`), props => props.noBorder ? 'none' : `1px solid ${colors.default20}`, props => props.iconBack ? '1.25rem 0' : '1.25rem 1.875rem', colors.brand10);
+const Icon$1 = styled.div(_t8 || (_t8 = _$2`
+  padding: 1.25rem 1.875rem;
+  cursor: pointer;
+`));
+
+const DialogComponent = ({
+  open,
+  children,
+  onClose,
+  loading,
+  maxHeight,
+  title,
+  onBack,
+  noBorder,
+  closeIcon: _closeIcon = false
+}) => {
+  const [sizeHeader, setSizeHeader] = useState(62);
+  useEffect(() => {
+    if (document.getElementById('headerDialog')) {
+      setSizeHeader(document.getElementById('headerDialog').clientHeight);
+    }
+  }, [document.getElementById('headerDialog')]);
+  return React$2.createElement(Background, {
+    open: open,
+    onClick: event => {
+      event.stopPropagation();
+      onClose();
+    }
+  }, React$2.createElement(Dialog, {
+    open: open,
+    onClick: event => event.stopPropagation(),
+    maxHeight: maxHeight,
+    sizeHeader: sizeHeader,
+    loading: loading,
+    title: title
+  }, title ? React$2.createElement(Header, {
+    iconBack: !!onBack,
+    noBorder: noBorder,
+    id: "headerDialog"
+  }, React$2.createElement("div", {
+    className: "name-icon-modal"
+  }, onBack ? React$2.createElement(Icon$1, {
+    onClick: () => onBack()
+  }, React$2.createElement(FontAwesomeIcon, {
+    icon: faAngleLeft,
+    size: "lg",
+    color: colors.brand10
+  })) : null, React$2.createElement("strong", null, title)), _closeIcon && React$2.createElement(Icon$1, {
+    onClick: event => {
+      event.stopPropagation();
+      onClose();
+    }
+  }, React$2.createElement(FontAwesomeIcon, {
+    icon: faTimes,
+    style: {
+      fontSize: '1.25rem'
+    },
+    color: colors.brand10
+  }))) : null, React$2.createElement("div", {
+    className: "box-dialog",
+    id: "sizeBody"
+  }, loading && React$2.createElement("div", {
+    className: "loading-dialog"
+  }, React$2.createElement(Loader, null)), children)));
+};
+
+let _$3 = t => t,
+    _t$3,
+    _t2$3,
+    _t3$2,
+    _t4$2,
+    _t5$2,
+    _t6$2,
+    _t7$2;
+const Container$1 = styled.div(_t$3 || (_t$3 = _$3`
+  font-family: MontSerrat !important;
+  position: relative;
+  opacity: ${0};
+  width: ${0};
+
+  input {
+    font-family: MontSerrat !important;
+    color: ${0};
+    width: 100%;
+    height: 100%;
+    padding-top: 20px;
+    padding-left: ${0};
+    padding-bottom: 5px;
+    padding-right: ${0};
+    border: none;
+    outline: none;
+    background-color: transparent;
+
+    &::placeholder {
+      color: ${0};
+    }
+  }
+
+  ${0}
+
+  input:disabled {
+    background-color: transparent;
+  }
+
+  label {
+    font-family: MontSerrat !important;
+    position: absolute;
+    bottom: 0px;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    right: 100%;
+    pointer-events: none;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: ${0};
+
+    ${0}
+  }
+
+  span {
+    font-family: MontSerrat !important;
+    position: absolute;
+    bottom: 5px;
+    left: ${0};
+    transition: all 0.3s ease;
+
+    ${0}
+  }
+
+  .icon {
+    position: absolute;
+    bottom: 0;
+    padding: 5px 10px;
+    ${0}
+  }
+
+  .icon-action {
+    position: absolute;
+    bottom: 0;
+    padding: 5px 10px;
+    ${0}
+    cursor: pointer;
+  }
+`), props => props.disabled ? '50%' : '100%', props => {
+  if (props.width) {
+    if (typeof props.width === 'string') {
+      return props.width;
+    }
+
+    return `${props.width}px`;
+  }
+
+  return '100%';
+}, props => props.textColor ? props.textColor : colors.gray20, props => {
+  if (props.icon && !props.action) {
+    if (props.iconPosition === 'right') {
+      return '15px';
+    }
+
+    return '40px';
+  }
+
+  if (props.action && !props.icon) {
+    if (props.actionPosition === 'left') {
+      return '40px';
+    }
+
+    return '15px';
+  }
+
+  if (props.action || props.icon) {
+    return '40px';
+  }
+
+  return '15px';
+}, props => {
+  if (props.icon && !props.action) {
+    if (props.iconPosition === 'right') {
+      return '40px';
+    }
+
+    return '0px';
+  }
+
+  if (props.action && !props.icon) {
+    if (props.actionPosition === 'left') {
+      return '0px';
+    }
+
+    return '40px';
+  }
+
+  if (props.action && props.icon) {
+    return '40px';
+  }
+
+  return '0px';
+}, colors.default10, props => props.date && !props.isFieldActive ? css$1(_t2$3 || (_t2$3 = _$3`
+          input::-webkit-calendar-picker-indicator {
+            display: none !important;
+          }
+
+          input[type='date']::-webkit-input-placeholder {
+            display: none !important;
+            visibility: hidden !important;
+            -webkit-appearance: none;
+          }
+
+          input[type='date']::-webkit-datetime-edit-fields-wrapper,
+          input[type='date']::-webkit-datetime-edit-fields-wrapper {
+            visibility: hidden;
+          }
+        `)) : null, props => {
+  if ((props.requiredText || props.errorMessage) && props.errorColor) {
+    return props.errorColor;
+  }
+
+  if (props.requiredText || props.errorMessage) {
+    return colors.danger20;
+  }
+
+  return colors.gray10;
+}, props => props.isFieldActive ? css$1(_t3$2 || (_t3$2 = _$3`
+            color: ${0};
+          `), colors.brand10) : css$1(_t4$2 || (_t4$2 = _$3`
+            color: ${0};
+          `), colors.gray20), props => {
+  if (props.icon && !props.action) {
+    if (props.iconPosition === 'right') {
+      return '15px';
+    }
+
+    return '40px';
+  }
+
+  if (props.action && !props.icon) {
+    if (props.actionPosition === 'left') {
+      return '40px';
+    }
+
+    return '15px';
+  }
+
+  if (props.action || props.icon) {
+    return '40px';
+  }
+
+  return '15px';
+}, props => props.isFieldActive ? css$1(_t5$2 || (_t5$2 = _$3`
+            transform: translateY(-100%);
+            font-size: 14px;
+            color: ${0};
+          `), props => {
+  if ((props.requiredText || props.errorMessage) && props.errorColor) {
+    return props.errorColor;
+  }
+
+  if (props.requiredText || props.errorMessage) {
+    return colors.danger20;
+  }
+
+  return colors.brand10;
+}) : css$1(_t6$2 || (_t6$2 = _$3`
+            font-size: 16px;
+            color: ${0};
+          `), props => {
+  if ((props.requiredText || props.errorMessage) && props.errorColor) {
+    return props.errorColor;
+  }
+
+  if (props.requiredText || props.errorMessage) {
+    return colors.danger20;
+  }
+
+  return colors.gray20;
+}), props => props.iconPosition === 'right' && 'right: 0;', props => props.actionPosition && props.actionPosition === 'left' ? 'left: 0;' : 'right: 0;');
+const LabelError = styled.span(_t7$2 || (_t7$2 = _$3`
+  font-family: MontSerrat !important;
+  font-size: 10px;
+  margin-left: 0;
+  color: ${0};
+`), props => {
+  if (props.errorColor) {
+    return props.errorColor;
+  }
+
+  return colors.danger20;
+});
+
+const InputLine = ({
+  containerStyle,
+  label,
+  labelStyle,
+  errorMessage,
+  width,
+  textColor,
+  inputRef,
+  name,
+  icon,
+  iconPosition,
+  iconColor,
+  action,
+  ...rest
+}) => {
+  const [isFieldActive, setIsFieldActive] = useState(false);
+  useEffect(() => {
+    if (rest.value) {
+      if (!isFieldActive) {
+        setIsFieldActive(true);
+      }
+    }
+  }, [rest.value]);
+
+  const handleFocus = () => {
+    if (!isFieldActive) {
+      setIsFieldActive(true);
+    }
+  };
+
+  const handleBlur = () => {
+    if (isFieldActive && !rest.value) {
+      setIsFieldActive(false);
+    }
+
+    if (rest.onBlur) {
+      setImmediate(rest.onBlur);
+    }
+  };
+
+  return React$2.createElement("div", {
+    style: {
+      paddingBottom: errorMessage ? 0 : 20
+    }
+  }, React$2.createElement(Container$1, {
+    isFieldActive: isFieldActive,
+    errorMessage: errorMessage,
+    containerStyle: containerStyle,
+    width: width,
+    disabled: rest.disabled ? rest.disabled : undefined,
+    style: containerStyle,
+    textColor: textColor,
+    icon: !!icon,
+    iconPosition: iconPosition,
+    action: action,
+    actionPosition: action === null || action === void 0 ? void 0 : action.position,
+    date: rest.type === 'date'
+  }, icon && React$2.createElement("div", {
+    className: "icon"
+  }, React$2.createElement(FontAwesomeIcon, {
+    icon: icon,
+    color: iconColor || colors.brand10
+  })), action && React$2.createElement("div", {
+    className: "icon-action",
+    onClick: action.onClick
+  }, React$2.createElement(FontAwesomeIcon, {
+    icon: action.icon,
+    color: action.iconColor || colors.brand10
+  })), React$2.createElement("input", Object.assign({}, rest, {
+    onFocus: handleFocus,
+    onBlur: handleBlur,
+    name: name,
+    placeholder: isFieldActive ? rest.placeholder : '',
+    ref: inputRef
+  })), React$2.createElement("label", null, React$2.createElement("span", {
+    style: labelStyle
+  }, label))), errorMessage ? React$2.createElement(LabelError, null, errorMessage) : null);
+};
+
+const InputLineForm = ({
+  register,
+  errors,
+  validate,
+  name,
+  required,
+  values,
+  limit,
+  minimum,
+  msgErrorValidate,
+  ...rest
+}) => {
+  var _rest$action;
+
+  const [isFieldActive, setIsFieldActive] = useState(false);
+  const [message, setMessage] = useState('');
+  const value = values ? values(name) || rest.defaultValue : rest.value;
+  useEffect(() => {
+    if (value) {
+      if (!isFieldActive) {
+        setIsFieldActive(true);
+      }
+    }
+  }, [value]);
+
+  const handleFocus = () => {
+    if (!isFieldActive) {
+      setIsFieldActive(true);
+    }
+  };
+
+  const handleBlur = () => {
+    if (isFieldActive && !value) {
+      setIsFieldActive(false);
+    }
+
+    if (rest.onBlur) {
+      setImmediate(rest.onBlur);
+    }
+  };
+
+  const validadeRegister = valueRegister => {
+    let result = true;
+    let mensagem = '';
+
+    if (validate) {
+      if (validate(valueRegister)) {
+        mensagem = validate(valueRegister);
+        result = false;
+      }
+    }
+
+    if (limit) {
+      if (valueRegister.length > limit) {
+        mensagem = msgErrorValidate ? `${msgErrorValidate}` : `${limit} caracteres permitidos.`;
+        result = false;
+      }
+    }
+
+    if (minimum) {
+      if (valueRegister.length < minimum) {
+        mensagem = msgErrorValidate ? `${msgErrorValidate}` : `${rest.label || name} deve ter ${minimum} ou mais caracteres.`;
+        result = false;
+      }
+    }
+
+    setMessage(mensagem);
+    return result;
+  };
+
+  return React$2.createElement("div", {
+    style: {
+      paddingBottom: message || errors ? 0 : 20
+    }
+  }, React$2.createElement(Container$1, {
+    isFieldActive: isFieldActive,
+    requiredText: !!(errors && errors.type === 'required'),
+    errorMessage: errors,
+    containerStyle: rest.containerStyle,
+    width: rest.width,
+    disabled: rest.disabled,
+    style: rest.containerStyle,
+    textColor: rest.textColor,
+    icon: !!rest.icon,
+    iconPosition: rest.iconPosition,
+    action: rest.action,
+    actionPosition: (_rest$action = rest.action) === null || _rest$action === void 0 ? void 0 : _rest$action.position,
+    date: rest.type === 'date'
+  }, rest.icon && React$2.createElement("div", {
+    className: "icon"
+  }, React$2.createElement(FontAwesomeIcon, {
+    icon: rest.icon,
+    color: rest.iconColor || colors.brand10
+  })), rest.action && React$2.createElement("div", {
+    className: "icon-action",
+    onClick: rest.action.onClick
+  }, React$2.createElement(FontAwesomeIcon, {
+    icon: rest.action.icon,
+    color: rest.action.iconColor || colors.brand10
+  })), React$2.createElement("input", Object.assign({}, rest, {
+    onFocus: handleFocus,
+    onBlur: handleBlur,
+    name: name,
+    placeholder: isFieldActive ? rest.placeholder : '',
+    ref: register ? register({
+      required,
+      validate: validadeRegister
+    }) : null
+  })), React$2.createElement("label", null, React$2.createElement("span", {
+    style: rest.labelStyle
+  }, rest.label))), errors ? React$2.createElement(LabelError, null, errors.type === 'required' ? 'Obrigatório' : `${message}`) : null);
+};
+
+let _$4 = t => t,
+    _t$4,
+    _t2$4,
+    _t3$3,
+    _t4$3,
+    _t5$3,
+    _t6$3,
+    _t7$3,
+    _t8$1,
+    _t9;
+const Sizes$2 = {
+  mini: 'mini',
+  tiny: 'tiny',
+  small: 'small',
+  large: 'large',
+  fullscreen: 'fullscreen'
+};
+
+const sizeWidth = size => {
+  switch (size) {
+    case Sizes$2.mini:
+      return '35%';
+
+    case Sizes$2.tiny:
+      return '45%';
+
+    case Sizes$2.small:
+      return '55%';
+
+    case Sizes$2.large:
+      return '65%';
+
+    case Sizes$2.fullscreen:
+      return '95%';
+
+    default:
+      return size;
+  }
+};
+
+const Background$1 = styled.div(_t$4 || (_t$4 = _$4`
+  ${0}
+`), props => props.open ? css$1(_t2$4 || (_t2$4 = _$4`
+          opacity: 1;
+          visibility: visible;
+          position: fixed;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background: rgba(0, 0, 0, 0.5);
+          transition: opacity 0.25s ease;
+          overflow: auto;
+          padding: 40px 0;
+          display: flex;
+          z-index: 999;
+        `)) : css$1(_t3$3 || (_t3$3 = _$4`
+          opacity: 1;
+          visibility: hidden;
+        `)));
+const Modal = styled.div(_t4$3 || (_t4$3 = _$4`
+  font-family: MontSerrat !important;
+  transition: top 0.25s ease;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: ${0};
+  margin: auto;
+  background: ${0};
+  border-radius: 30px;
+`), props => {
+  if (props.width) {
+    if (typeof props.width === 'string') {
+      return props.width;
+    }
+
+    return `${props.width}px`;
+  }
+
+  if (props.size) {
+    return sizeWidth(props.size);
+  }
+
+  return '80%';
+}, colors.white);
+const Dialog$1 = styled.div(_t5$3 || (_t5$3 = _$4`
+  transition: bottom 1s ease;
+  width: 90%;
+  background: ${0};
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+`), colors.white);
+const Header$1 = styled.div(_t6$3 || (_t6$3 = _$4`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: ${0};
+  font-size: 20px;
+
+  .name-icon-modal {
+    display: flex;
+    align-items: center;
+  }
+
+  & strong {
+    padding: ${0};
+    color: ${0};
+  }
+`), props => props.noBorder ? 'none' : `1px solid ${colors.default20}`, props => props.iconBack ? '20px 0' : '20px 30px', colors.brand10);
+const Icon$2 = styled.div(_t7$3 || (_t7$3 = _$4`
+  padding: 20px 30px;
+  cursor: pointer;
+`));
+const Body = styled.div(_t8$1 || (_t8$1 = _$4`
+  padding: 20px 30px;
+  height: 100%;
+  position: relative;
+
+  .loading-modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 30px;
+    z-index: 2;
+    position: absolute;
+  }
+`));
+const Actions = styled.div(_t9 || (_t9 = _$4`
+  border-top: 1px solid ${0};
+  margin: 0 30px;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: row-reverse;
+`), colors.default20);
+
+const ModalComponent = ({
+  open,
+  title,
+  children,
+  actions,
+  width,
+  onClose,
+  closeOnDimerClick,
+  loading,
+  onBack,
+  size,
+  noBorder,
+  closeIcon: _closeIcon = true
+}) => {
+  useEffect(() => {
+    if (open) {
+      window.addEventListener('keydown', event => escModal(event));
+    } else {
+      window.removeEventListener('keydown', event => escModal(event));
+    }
+
+    return window.removeEventListener('keydown', event => escModal(event));
+  }, [open]);
+
+  function escModal(event) {
+    if (open && event.key == 'Escape' && closeOnDimerClick) {
+      event.stopPropagation();
+      onClose();
+    }
+  }
+
+  return React$2.createElement(Background$1, {
+    open: open,
+    onClick: event => {
+      if (closeOnDimerClick) {
+        event.stopPropagation();
+        onClose();
+      }
+    }
+  }, React$2.createElement(Modal, {
+    size: size,
+    width: width,
+    onClick: event => event.stopPropagation()
+  }, React$2.createElement(Header$1, {
+    iconBack: !!onBack,
+    noBorder: noBorder
+  }, React$2.createElement("div", {
+    className: "name-icon-modal"
+  }, onBack ? React$2.createElement(Icon$2, {
+    onClick: () => onBack()
+  }, React$2.createElement(FontAwesomeIcon, {
+    icon: faAngleLeft,
+    size: "lg",
+    color: colors.brand10
+  })) : null, React$2.createElement("strong", null, title)), _closeIcon && React$2.createElement(Icon$2, {
+    onClick: event => {
+      event.stopPropagation();
+      onClose();
+    }
+  }, React$2.createElement(FontAwesomeIcon, {
+    icon: faTimes,
+    style: {
+      fontSize: 20
+    },
+    color: colors.brand10
+  }))), React$2.createElement(Body, null, loading && React$2.createElement("div", {
+    className: "loading-modal"
+  }, React$2.createElement(Loader, null)), children), actions && React$2.createElement(Actions, null, actions)));
+};
+
+let _$5 = t => t,
+    _t$5,
+    _t2$5,
+    _t3$4,
+    _t4$4,
+    _t5$4,
+    _t6$4,
+    _t7$4;
+const Label = styled.span(_t$5 || (_t$5 = _$5`
+  font-family: MontSerrat !important;
+  font-size: 14px;
+  color: ${0};
+  margin-left: 15px;
+`), props => {
+  if (props.errorMessage) {
+    return colors.brand20;
+  }
+
+  if (props.labelColor) {
+    return props.labelColor;
+  }
+
+  return colors.brand10;
+});
+const Container$2 = styled.div(_t2$5 || (_t2$5 = _$5`
+  font-family: MontSerrat !important;
+  width: ${0};
+  position: relative;
+
+  opacity: ${0};
+
+  textarea {
+    font-family: MontSerrat !important;
+    color: ${0};
+    resize: none;
+    width: ${0};
+
+    border-radius: 20px;
+    height: ${0};
+
+    margin: 0px;
+    outline: none;
+    padding: 20px;
+    border-color: ${0};
+
+    &::placeholder {
+      color: ${0};
+    }
+
+    -moz-appearance: none;
+    -webkit-appearance: none;
+  }
+
+  label {
+    position: absolute;
+    bottom: 0px;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    right: 100%;
+    pointer-events: none;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: ${0};
+
+    ${0}
+  }
+
+  textarea::-webkit-scrollbar {
+    width: 7px;
+    border-radius: 50px;
+  }
+
+  textarea::-webkit-scrollbar-thumb {
+    background-color: ${0};
+    border-radius: 50px;
+  }
+
+  textarea::-webkit-scrollbar-thumb:hover {
+    background-color: ${0};
+  }
+`), props => props.width ? props.width : '100%', props => props.disabled ? '50%' : '100%', props => props.textColor ? props.textColor : colors.gray20, props => {
+  if (props.width) {
+    if (typeof props.width === 'string') {
+      return props.width;
+    }
+
+    return `${props.width}px`;
+  }
+
+  return '100%';
+}, props => {
+  if (props.height) {
+    if (typeof props.height === 'string') {
+      return props.height;
+    }
+
+    return `${props.height}px`;
+  }
+
+  return '100%';
+}, props => {
+  if (props.errorMessage && props.errorColor) {
+    return props.errorColor;
+  }
+
+  if (props.errorMessage) {
+    return colors.danger20;
+  }
+
+  return colors.gray10;
+}, colors.default10, props => {
+  if (props.errorMessage && props.errorColor) {
+    return props.errorColor;
+  }
+
+  if (props.errorMessage) {
+    return colors.danger20;
+  }
+
+  return colors.gray10;
+}, props => props.isFieldActive ? css$1(_t3$4 || (_t3$4 = _$5`
+            color: ${0};
+          `), colors.brand10) : css$1(_t4$4 || (_t4$4 = _$5`
+            color: ${0};
+          `), colors.gray20), colors.brand10, colors.brandTransparent2);
+const LabelError$1 = styled.span(_t5$4 || (_t5$4 = _$5`
+  font-family: MontSerrat !important;
+  font-size: 10px;
+  margin-left: 0;
+  margin-top: -2px;
+  color: ${0};
+`), props => {
+  if (props.errorColor) {
+    return props.errorColor;
+  }
+
+  return colors.brand20;
+});
+const Footer = styled.div(_t6$4 || (_t6$4 = _$5`
+  font-family: MontSerrat !important;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  font-size: 10px;
+`));
+const LabelLengthInfo = styled.div(_t7$4 || (_t7$4 = _$5`
+  font-size: 10px;
+  color: ${0};
+`), colors.gray10);
+
+const TextArea = ({
+  containerStyle,
+  label,
+  labelColor,
+  labelStyle,
+  errorMessage,
+  errorColor,
+  width,
+  height,
+  textColor,
+  textAreaRef,
+  lengthInfo,
+  ...rest
+}) => {
+  return React$2.createElement("div", {
+    style: {
+      paddingBottom: errorMessage ? 0 : 20
+    }
+  }, label && React$2.createElement(Label, {
+    errorMessage: errorMessage,
+    labelColor: labelColor
+  }, label), React$2.createElement(Container$2, {
+    errorMessage: errorMessage,
+    errorColor: errorColor,
+    labelStyle: labelStyle,
+    containerStyle: containerStyle,
+    width: width,
+    style: containerStyle,
+    disabled: rest.disabled,
+    textColor: textColor,
+    height: height
+  }, React$2.createElement("textarea", Object.assign({}, rest, {
+    placeholder: rest.placeholder,
+    ref: textAreaRef
+  }))), React$2.createElement(Footer, null, React$2.createElement(LabelError$1, {
+    errorColor: errorColor
+  }, errorMessage), (lengthInfo || typeof lengthInfo == 'number') && rest.maxLength ? React$2.createElement(LabelLengthInfo, null, `${typeof lengthInfo == 'number' ? lengthInfo : typeof rest.value == 'string' ? rest.value.length : 0}/${rest.maxLength} caracteres`) : ''));
+};
+
+const TextAreaForm = ({
+  register,
+  errors,
+  validate,
+  name,
+  required,
+  limit,
+  minimum,
+  ...rest
+}) => {
+  const [message, setMessage] = useState('');
+  return React$2.createElement(TextArea, Object.assign({}, rest, {
+    name: name,
+    errorMessage: errors ? errors.type === 'required' ? 'Obrigatório' : `${message}` : '',
+    textAreaRef: register ? register({
+      required,
+      validate: validate && required ? value => {
+        if (validate(value)) {
+          setMessage(validate(value));
+          return false;
+        }
+
+        setMessage('');
+        return true;
+      } : limit && required ? value => {
+        if (value.length > limit) {
+          setMessage(`${limit} caracteres permitidos.`);
+          return false;
+        }
+
+        setMessage('');
+        return true;
+      } : minimum && required ? value => {
+        if (value.length < minimum) {
+          setMessage(`${name} deve ter ${minimum} ou mais caracteres.`);
+          return false;
+        }
+
+        setMessage('');
+        return true;
+      } : null
+    }) : null
+  }));
+};
+
+let _$6 = t => t,
+    _t$6;
+const Sizes$3 = {
+  mini: 'mini',
+  tiny: 'tiny',
+  small: 'small',
+  medium: 'medium',
+  large: 'large',
+  big: 'big',
+  huge: 'huge',
+  massive: 'massive'
+};
+
+const size$1 = size => {
+  switch (size) {
+    case Sizes$3.mini:
+      return '10px';
+
+    case Sizes$3.tiny:
+      return '12px';
+
+    case Sizes$3.small:
+      return '14px';
+
+    case Sizes$3.medium:
+      return '17px';
+
+    case Sizes$3.large:
+      return '20px';
+
+    case Sizes$3.big:
+      return '23px';
+
+    case Sizes$3.huge:
+      return '26px';
+
+    case Sizes$3.massive:
+      return '30px';
+
+    default:
+      return size;
+  }
+};
+
+const sizeChecked = size => {
+  switch (size) {
+    case Sizes$3.mini:
+      return '8px';
+
+    case Sizes$3.tiny:
+      return '10px';
+
+    case Sizes$3.small:
+      return '11px';
+
+    case Sizes$3.medium:
+      return '13px';
+
+    case Sizes$3.large:
+      return '16px';
+
+    case Sizes$3.big:
+      return '19px';
+
+    case Sizes$3.huge:
+      return '21px';
+
+    case Sizes$3.massive:
+      return '23px';
+
+    default:
+      return size;
+  }
+};
+
+const marginLeft = size => {
+  switch (size) {
+    case Sizes$3.mini:
+      return '1px';
+
+    case Sizes$3.tiny:
+      return '1.2px';
+
+    case Sizes$3.small:
+      return '1.4px';
+
+    case Sizes$3.medium:
+      return '2px';
+
+    case Sizes$3.large:
+      return '2px';
+
+    case Sizes$3.big:
+      return '2px';
+
+    case Sizes$3.huge:
+      return '3px';
+
+    case Sizes$3.massive:
+      return '4px';
+
+    default:
+      return size;
+  }
+};
+
+const labelSize = size => {
+  switch (size) {
+    case Sizes$3.mini:
+      return '10px';
+
+    case Sizes$3.tiny:
+      return '13px';
+
+    case Sizes$3.small:
+      return '14px';
+
+    case Sizes$3.medium:
+      return '16px';
+
+    case Sizes$3.large:
+      return '18px';
+
+    case Sizes$3.big:
+      return '20px';
+
+    case Sizes$3.huge:
+      return '22px';
+
+    case Sizes$3.massive:
+      return '24px';
+
+    default:
+      return size;
+  }
+};
+
+const marginRight = size => {
+  switch (size) {
+    case Sizes$3.mini:
+      return '5px';
+
+    case Sizes$3.tiny:
+      return '6px';
+
+    case Sizes$3.small:
+      return '7px';
+
+    case Sizes$3.medium:
+      return '8px';
+
+    case Sizes$3.large:
+      return '9px';
+
+    case Sizes$3.big:
+      return '10px';
+
+    case Sizes$3.huge:
+      return '11px';
+
+    case Sizes$3.massive:
+      return '12px';
+
+    default:
+      return size;
+  }
+};
+
+const Container$3 = styled.div(_t$6 || (_t$6 = _$6`
+  font-family: MontSerrat !important;
+  display: flex;
+  align-items: center;
+
+  > input {
+    display: none;
+  }
+
+  label {
+    font-size: ${0};
+    color: ${0};
+    cursor: ${0};
+    opacity: ${0};
+  }
+
+  > input + div {
+    position: relative;
+    cursor: ${0};
+    opacity: ${0};
+    display: flex;
+    align-items: center;
+
+    &:before {
+      content: '';
+      position: absolute;
+      width: ${0};
+      height: ${0};
+      border: 1px solid ${0};
+      background: ${0};
+      border-radius: 5px;
+    }
+    &:after {
+      content: ' ';
+      position: absolute;
+      width: ${0};
+      height: ${0};
+      border: 1px solid ${0};
+      background: ${0};
+      border-radius: 5px;
+      color: ${0};
+      text-align: center;
+      font-size: 12px;
+    }
+  }
+  > input:not(:checked) + div {
+    &:after {
+      opacity: 0;
+      transform: scale(0);
+    }
+  }
+  > input:checked + div {
+    &:after {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  span {
+    margin-left: ${0};
+    margin-right: ${0};
+    font-size: ${0};
+    color: ${0};
+    z-index: 1;
+  }
+`), props => {
+  if (props.sizeBox) {
+    return labelSize(props.sizeBox);
+  }
+
+  return '17px';
+}, colors.gray20, props => props.disabled ? 'default' : 'pointer', props => props.disabled ? 0.5 : 1, props => props.disabled ? 'default' : 'pointer', props => props.disabled ? 0.5 : 1, props => {
+  if (props.sizeBox) {
+    return size$1(props.sizeBox);
+  }
+
+  return '17px';
+}, props => {
+  if (props.sizeBox) {
+    return size$1(props.sizeBox);
+  }
+
+  return '17px';
+}, colors.default20, colors.default20, props => {
+  if (props.sizeBox) {
+    return size$1(props.sizeBox);
+  }
+
+  return '17px';
+}, props => {
+  if (props.sizeBox) {
+    return size$1(props.sizeBox);
+  }
+
+  return '17px';
+}, colors.brandDark, colors.brandDark, colors.white, props => {
+  if (props.sizeBox) {
+    return marginLeft(props.sizeBox);
+  }
+
+  return '2.5px';
+}, props => {
+  if (props.sizeBox) {
+    return marginRight(props.sizeBox);
+  }
+
+  return '8px';
+}, props => {
+  if (props.sizeBox) {
+    return sizeChecked(props.sizeBox);
+  }
+
+  return '13px';
+}, props => props.checked ? colors.white : colors.default20);
+
+const Checkbox = ({
+  label,
+  labelStyle,
+  sizeBox,
+  ...rest
+}) => {
+  return React$2.createElement(Container$3, {
+    onClick: () => !rest.disabled ? rest.onChange ? rest.onChange() : null : null,
+    disabled: rest.disabled,
+    sizeBox: sizeBox,
+    checked: rest.checked
+  }, React$2.createElement("input", Object.assign({
+    type: "checkbox"
+  }, rest)), React$2.createElement("div", null, React$2.createElement("span", null, React$2.createElement(FontAwesomeIcon, {
+    icon: faCheck
+  })), React$2.createElement("label", {
+    style: labelStyle
+  }, label)));
+};
+
+let _$7 = t => t,
+    _t$7;
+const Sizes$4 = {
+  mini: 'mini',
+  tiny: 'tiny',
+  small: 'small',
+  medium: 'medium',
+  large: 'large',
+  big: 'big',
+  huge: 'huge',
+  massive: 'massive'
+};
+
+const size$2 = size => {
+  switch (size) {
+    case Sizes$4.mini:
+      return '10px';
+
+    case Sizes$4.tiny:
+      return '12px';
+
+    case Sizes$4.small:
+      return '14px';
+
+    case Sizes$4.medium:
+      return '17px';
+
+    case Sizes$4.large:
+      return '20px';
+
+    case Sizes$4.big:
+      return '23px';
+
+    case Sizes$4.huge:
+      return '26px';
+
+    case Sizes$4.massive:
+      return '30px';
+
+    default:
+      return size;
+  }
+};
+
+const sizeChecked$1 = size => {
+  switch (size) {
+    case Sizes$4.mini:
+      return '2px';
+
+    case Sizes$4.tiny:
+      return '4px';
+
+    case Sizes$4.small:
+      return '6px';
+
+    case Sizes$4.medium:
+      return '9px';
+
+    case Sizes$4.large:
+      return '12px';
+
+    case Sizes$4.big:
+      return '15px';
+
+    case Sizes$4.huge:
+      return '18px';
+
+    case Sizes$4.massive:
+      return '22px';
+
+    default:
+      return size;
+  }
+};
+
+const labelSize$1 = size => {
+  switch (size) {
+    case Sizes$4.mini:
+      return '10px';
+
+    case Sizes$4.tiny:
+      return '13px';
+
+    case Sizes$4.small:
+      return '14px';
+
+    case Sizes$4.medium:
+      return '16px';
+
+    case Sizes$4.large:
+      return '18px';
+
+    case Sizes$4.big:
+      return '20px';
+
+    case Sizes$4.huge:
+      return '22px';
+
+    case Sizes$4.massive:
+      return '24px';
+
+    default:
+      return size;
+  }
+};
+
+const paddingLeft = size => {
+  switch (size) {
+    case Sizes$4.mini:
+      return '15px';
+
+    case Sizes$4.tiny:
+      return '18px';
+
+    case Sizes$4.small:
+      return '20px';
+
+    case Sizes$4.medium:
+      return '25px';
+
+    case Sizes$4.large:
+      return '28px';
+
+    case Sizes$4.big:
+      return '32px';
+
+    case Sizes$4.huge:
+      return '35px';
+
+    case Sizes$4.massive:
+      return '40px';
+
+    default:
+      return size;
+  }
+};
+
+const paddingTop = size => {
+  switch (size) {
+    case Sizes$4.mini:
+      return '0px';
+
+    case Sizes$4.tiny:
+      return '0px';
+
+    case Sizes$4.small:
+      return '0px';
+
+    case Sizes$4.medium:
+      return '0px';
+
+    case Sizes$4.large:
+      return '2px';
+
+    case Sizes$4.big:
+      return '2px';
+
+    case Sizes$4.huge:
+      return '3px';
+
+    case Sizes$4.massive:
+      return '4px';
+
+    default:
+      return size;
+  }
+};
+
+const topBoxBefore = size => {
+  switch (size) {
+    case Sizes$4.mini:
+      return '5px';
+
+    case Sizes$4.tiny:
+      return '4px';
+
+    case Sizes$4.small:
+      return '3px';
+
+    case Sizes$4.medium:
+      return '1px';
+
+    case Sizes$4.large:
+      return '0px';
+
+    case Sizes$4.big:
+      return '0px';
+
+    case Sizes$4.huge:
+      return '0px';
+
+    case Sizes$4.massive:
+      return '0px';
+
+    default:
+      return size;
+  }
+};
+
+const topBoxAfter = size => {
+  switch (size) {
+    case Sizes$4.mini:
+      return '9px';
+
+    case Sizes$4.tiny:
+      return '8px';
+
+    case Sizes$4.small:
+      return '7px';
+
+    case Sizes$4.medium:
+      return '5px';
+
+    case Sizes$4.large:
+      return '4px';
+
+    case Sizes$4.big:
+      return '4px';
+
+    case Sizes$4.huge:
+      return '4px';
+
+    case Sizes$4.massive:
+      return '4px';
+
+    default:
+      return size;
+  }
+};
+
+const Container$4 = styled.div(_t$7 || (_t$7 = _$7`
+  font-family: MontSerrat !important;
+
+  > input {
+    display: none;
+  }
+
+  label {
+    font-size: ${0};
+    color: ${0};
+    cursor: ${0};
+    opacity: ${0};
+    padding-top: ${0};
+  }
+
+  > input + div {
+    position: relative;
+    padding-left: ${0};
+    cursor: ${0};
+    opacity: ${0};
+    display: flex;
+    align-items: center;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: ${0};
+      width: ${0};
+      height: ${0};
+      border: 1px solid ${0};
+      background: ${0};
+      border-radius: 50%;
+    }
+    &:after {
+      content: ' ';
+      position: absolute;
+      left: 4px;
+      top: ${0};
+      width: ${0};
+      height: ${0};
+      border: 1px solid ${0};
+      background: ${0};
+      border-radius: 50%;
+      color: ${0};
+      text-align: center;
+      font-size: 12px;
+    }
+  }
+  > input:not(:checked) + div {
+    &:after {
+      opacity: 0;
+      transform: scale(0);
+    }
+  }
+  > input:checked + div {
+    &:after {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+`), props => {
+  if (props.sizeBox) {
+    return labelSize$1(props.sizeBox);
+  }
+
+  return '17px';
+}, colors.gray20, props => props.disabled ? 'default' : 'pointer', props => props.disabled ? 0.5 : 1, props => {
+  if (props.sizeBox) {
+    return paddingTop(props.sizeBox);
+  }
+
+  return '0px';
+}, props => {
+  if (props.sizeBox) {
+    return paddingLeft(props.sizeBox);
+  }
+
+  return '25px';
+}, props => props.disabled ? 'default' : 'pointer', props => props.disabled ? 0.5 : 1, props => {
+  if (props.sizeBox) {
+    return topBoxBefore(props.sizeBox);
+  }
+
+  return '1px';
+}, props => {
+  if (props.sizeBox) {
+    return size$2(props.sizeBox);
+  }
+
+  return '17px';
+}, props => {
+  if (props.sizeBox) {
+    return size$2(props.sizeBox);
+  }
+
+  return '17px';
+}, colors.default30, colors.default20, props => {
+  if (props.sizeBox) {
+    return topBoxAfter(props.sizeBox);
+  }
+
+  return '5px';
+}, props => {
+  if (props.sizeBox) {
+    return sizeChecked$1(props.sizeBox);
+  }
+
+  return '9px';
+}, props => {
+  if (props.sizeBox) {
+    return sizeChecked$1(props.sizeBox);
+  }
+
+  return '9px';
+}, colors.gray20, colors.gray20, colors.white);
+
+const Radio = ({
+  label,
+  labelStyle,
+  sizeBox,
+  ...rest
+}) => {
+  return React$2.createElement(Container$4, {
+    onClick: () => !rest.disabled ? rest.onChange ? rest.onChange() : null : null,
+    disabled: rest.disabled,
+    sizeBox: sizeBox
+  }, React$2.createElement("input", Object.assign({
+    type: "radio"
+  }, rest)), React$2.createElement("div", null, React$2.createElement("label", {
+    style: labelStyle
+  }, label)));
+};
+
+let _$8 = t => t,
+    _t$8;
+const Container$5 = styled.div(_t$8 || (_t$8 = _$8`
+  font-family: MontSerrat !important;
+  width: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  padding-bottom: ${0};
+
+  label {
+    font-size: 14px;
+    margin-left: 15px;
+    color: ${0};
+  }
+
+  /*!
+ * # Semantic UI 2.4.0 - Dropdown
+ * http://github.com/semantic-org/semantic-ui/
+ *
+ *
+ * Released under the MIT license
+ * http://opensource.org/licenses/MIT
+ *
+ */
+
+  /*******************************
+            Dropdown
+*******************************/
+
+  .ui.dropdown {
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    text-align: ${0};
+    color: ${0};
+    -webkit-transition: width 0.1s ease, -webkit-box-shadow 0.1s ease;
+    transition: width 0.1s ease, -webkit-box-shadow 0.1s ease;
+    transition: box-shadow 0.1s ease, width 0.1s ease;
+    transition: box-shadow 0.1s ease, width 0.1s ease,
+      -webkit-box-shadow 0.1s ease;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+
+  /*******************************
+            Content
+*******************************/
+
+  /*--------------
+      Menu
+---------------*/
+
+  .ui.dropdown .menu {
+    cursor: auto;
+    position: absolute;
+    display: none;
+    outline: none;
+    top: 100%;
+    min-width: -webkit-max-content;
+    min-width: -moz-max-content;
+    min-width: max-content;
+    margin: 0em;
+    padding: 0em 0em;
+    background: #ffffff;
+    font-size: 1em;
+    text-shadow: none;
+    text-align: left;
+    -webkit-box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);
+    box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);
+    border: 1px solid rgba(34, 36, 38, 0.15);
+    border-radius: ${0};
+    -webkit-transition: opacity 0.1s ease;
+    transition: opacity 0.1s ease;
+    z-index: 11;
+    will-change: transform, opacity;
+    /* border-top: ${0};
+        border-left: ${0};
+        border-right: ${0}; */
+  }
+  .ui.dropdown .menu > * {
+    white-space: nowrap;
+  }
+
+  /*--------------
+  Hidden Input
+---------------*/
+
+  .ui.dropdown > input:not(.search):first-child,
+  .ui.dropdown > select {
+    display: none !important;
+  }
+
+  /*--------------
+ Dropdown Icon
+---------------*/
+
+  .ui.dropdown > .dropdown.icon {
+    position: relative;
+    width: auto;
+    font-size: 0.85714286em;
+    margin: 0em 0em 0em 1em;
+  }
+  .ui.dropdown .menu > .item .dropdown.icon {
+    width: auto;
+    float: right;
+    margin: 0em 0em 0em 1em;
+  }
+  .ui.dropdown .menu > .item .dropdown.icon + .text {
+    margin-right: 1em;
+  }
+
+  /*--------------
+      Text
+---------------*/
+
+  .ui.dropdown > .text {
+    display: inline-block;
+    -webkit-transition: none;
+    transition: none;
+  }
+
+  /*--------------
+    Menu Item
+---------------*/
+
+  .ui.dropdown .menu > .item {
+    position: relative;
+    cursor: pointer;
+    display: block;
+    border: none;
+    height: auto;
+    text-align: left;
+    border-top: none;
+    line-height: 1em;
+    color: ${0};
+    padding: 0.78571429rem 1.14285714rem !important;
+    font-size: 1rem;
+    text-transform: none;
+    font-weight: normal;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -webkit-touch-callout: none;
+  }
+  .ui.dropdown .menu > .item:first-child {
+    border-top-width: 0px;
+  }
+
+  /*--------------
+  Floated Content
+---------------*/
+
+  .ui.dropdown > .text > [class*='right floated'],
+  .ui.dropdown .menu .item > [class*='right floated'] {
+    float: right !important;
+    margin-right: 0em !important;
+    margin-left: 1em !important;
+  }
+  .ui.dropdown > .text > [class*='left floated'],
+  .ui.dropdown .menu .item > [class*='left floated'] {
+    float: left !important;
+    margin-left: 0em !important;
+    margin-right: 1em !important;
+  }
+  .ui.dropdown .menu .item > .icon.floated,
+  .ui.dropdown .menu .item > .flag.floated,
+  .ui.dropdown .menu .item > .image.floated,
+  .ui.dropdown .menu .item > img.floated {
+    margin-top: 0em;
+  }
+
+  /*--------------
+  Menu Divider
+---------------*/
+
+  .ui.dropdown .menu > .header {
+    margin: 1rem 0rem 0.75rem;
+    padding: 0em 1.14285714rem;
+    color: rgba(0, 0, 0, 0.85);
+    font-size: 0.78571429em;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  .ui.dropdown .menu > .divider {
+    border-top: 1px solid rgba(34, 36, 38, 0.1);
+    height: 0em;
+    margin: 0.5em 0em;
+  }
+  .ui.dropdown.dropdown .menu > .input {
+    width: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 1.14285714rem 0.78571429rem;
+    min-width: 10rem;
+  }
+  .ui.dropdown .menu > .header + .input {
+    margin-top: 0em;
+  }
+  .ui.dropdown .menu > .input:not(.transparent) input {
+    padding: 0.5em 1em;
+  }
+  .ui.dropdown .menu > .input:not(.transparent) .button,
+  .ui.dropdown .menu > .input:not(.transparent) .icon,
+  .ui.dropdown .menu > .input:not(.transparent) .label {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+  }
+
+  /*-----------------
+  Item Description
+-------------------*/
+
+  .ui.dropdown > .text > .description,
+  .ui.dropdown .menu > .item > .description {
+    float: right;
+    margin: 0em 0em 0em 1em;
+    color: rgba(0, 0, 0, 0.4);
+  }
+
+  /*-----------------
+       Message
+-------------------*/
+
+  .ui.dropdown .menu > .message {
+    padding: 0.78571429rem 1.14285714rem;
+    font-weight: normal;
+  }
+  .ui.dropdown .menu > .message:not(.ui) {
+    color: rgba(0, 0, 0, 0.4);
+  }
+
+  /*--------------
+    Sub Menu
+---------------*/
+
+  .ui.dropdown .menu .menu {
+    top: 0% !important;
+    left: 100%;
+    right: auto;
+    margin: 0em 0em 0em -0.5em !important;
+    border-radius: 0.28571429rem !important;
+    z-index: 21 !important;
+  }
+
+  /* Hide Arrow */
+  .ui.dropdown .menu .menu:after {
+    display: none;
+  }
+
+  /*--------------
+   Sub Elements
+---------------*/
+
+  /* Icons / Flags / Labels / Image */
+  .ui.dropdown > .text > .icon,
+  .ui.dropdown > .text > .label,
+  .ui.dropdown > .text > .flag,
+  .ui.dropdown > .text > img,
+  .ui.dropdown > .text > .image {
+    margin-top: 0em;
+  }
+  .ui.dropdown .menu > .item > .icon,
+  .ui.dropdown .menu > .item > .label,
+  .ui.dropdown .menu > .item > .flag,
+  .ui.dropdown .menu > .item > .image,
+  .ui.dropdown .menu > .item > img {
+    margin-top: 0em;
+  }
+  .ui.dropdown > .text > .icon,
+  .ui.dropdown > .text > .label,
+  .ui.dropdown > .text > .flag,
+  .ui.dropdown > .text > img,
+  .ui.dropdown > .text > .image,
+  .ui.dropdown .menu > .item > .icon,
+  .ui.dropdown .menu > .item > .label,
+  .ui.dropdown .menu > .item > .flag,
+  .ui.dropdown .menu > .item > .image,
+  .ui.dropdown .menu > .item > img {
+    margin-left: 0em;
+    float: none;
+    margin-right: 0.78571429rem;
+  }
+
+  /*--------------
+     Image
+---------------*/
+
+  .ui.dropdown > .text > img,
+  .ui.dropdown > .text > .image,
+  .ui.dropdown .menu > .item > .image,
+  .ui.dropdown .menu > .item > img {
+    display: inline-block;
+    vertical-align: top;
+    width: auto;
+    margin-top: -0.5em;
+    margin-bottom: -0.5em;
+    max-height: 2em;
+  }
+
+  /*******************************
+            Coupling
+*******************************/
+
+  /*--------------
+      Menu
+---------------*/
+
+  /* Remove Menu Item Divider */
+  .ui.dropdown .ui.menu > .item:before,
+  .ui.menu .ui.dropdown .menu > .item:before {
+    display: none;
+  }
+
+  /* Prevent Menu Item Border */
+  .ui.menu .ui.dropdown .menu .active.item {
+    border-left: none;
+  }
+
+  /* Automatically float dropdown menu right on last menu item */
+  .ui.menu .right.menu .dropdown:last-child .menu,
+  .ui.menu .right.dropdown.item .menu,
+  .ui.buttons > .ui.dropdown:last-child .menu {
+    left: auto;
+    right: 0em;
+  }
+
+  /*--------------
+      Label
+---------------*/
+
+  /* Dropdown Menu */
+  .ui.label.dropdown .menu {
+    min-width: 100%;
+  }
+
+  /*--------------
+     Button
+---------------*/
+
+  /* No Margin On Icon Button */
+  .ui.dropdown.icon.button > .dropdown.icon {
+    margin: 0em;
+  }
+  .ui.button.dropdown .menu {
+    min-width: 100%;
+  }
+
+  /*******************************
+              Types
+*******************************/
+
+  /*--------------
+    Selection
+---------------*/
+
+  /* Displays like a select box */
+  .ui.selection.dropdown {
+    cursor: pointer;
+    word-wrap: break-word;
+    line-height: 1em;
+    white-space: normal;
+    outline: 0;
+    -webkit-transform: rotateZ(0deg);
+    transform: rotateZ(0deg);
+    min-width: 14em;
+    min-height: 2.71428571em;
+    background: ${0};
+    display: inline-block;
+    padding: 0.78571429em 2.6em 0.78571429em 1.1em;
+    color: ${0};
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: 1px solid
+      ${0};
+    border-radius: ${0};
+    -webkit-transition: width 0.1s ease, -webkit-box-shadow 0.1s ease;
+    transition: width 0.1s ease, -webkit-box-shadow 0.1s ease;
+    transition: box-shadow 0.1s ease, width 0.1s ease;
+    transition: box-shadow 0.1s ease, width 0.1s ease,
+      -webkit-box-shadow 0.1s ease;
+    border-radius: ${0};
+    border-top: ${0};
+    border-left: ${0};
+    border-right: ${0};
+  }
+  .ui.selection.dropdown.visible,
+  .ui.selection.dropdown.active {
+    z-index: 10;
+  }
+  select.ui.dropdown {
+    height: 38px;
+    padding: 0.5em;
+    border: 1px solid rgba(34, 36, 38, 0.15);
+    visibility: visible;
+  }
+  .ui.selection.dropdown > .search.icon,
+  .ui.selection.dropdown > .delete.icon,
+  .ui.selection.dropdown > .dropdown.icon {
+    cursor: pointer;
+    position: absolute;
+    width: auto;
+    height: auto;
+    line-height: 1.21428571em;
+    top: 0.78571429em;
+    right: 1em;
+    z-index: 3;
+    margin: -0.78571429em;
+    padding: 0.91666667em;
+    opacity: 0.8;
+    -webkit-transition: opacity 0.1s ease;
+    transition: opacity 0.1s ease;
+  }
+
+  /* Compact */
+  .ui.compact.selection.dropdown {
+    min-width: 0px;
+  }
+
+  /*  Selection Menu */
+  .ui.selection.dropdown .menu {
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-overflow-scrolling: touch;
+    border-top-width: 0px !important;
+    width: auto;
+    outline: none;
+    margin: 0px -1px;
+    min-width: calc(100% + 2px);
+    width: calc(100% + 2px);
+    border-radius: 0em 0em 0.28571429rem 0.28571429rem;
+    -webkit-box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);
+    box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);
+    -webkit-transition: opacity 0.1s ease;
+    transition: opacity 0.1s ease;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+  .ui.selection.dropdown .menu:after,
+  .ui.selection.dropdown .menu:before {
+    display: none;
+  }
+
+  /*--------------
+    Message
+---------------*/
+
+  .ui.selection.dropdown .menu > .message {
+    padding: 0.78571429rem 1.14285714rem;
+  }
+  @media only screen and (max-width: 767px) {
+    .ui.selection.dropdown .menu {
+      max-height: 8.01428571rem;
+    }
+  }
+  @media only screen and (min-width: 768px) {
+    .ui.selection.dropdown .menu {
+      max-height: 10.68571429rem;
+    }
+  }
+  @media only screen and (min-width: 992px) {
+    .ui.selection.dropdown .menu {
+      max-height: 16.02857143rem;
+    }
+  }
+  @media only screen and (min-width: 1920px) {
+    .ui.selection.dropdown .menu {
+      max-height: 21.37142857rem;
+    }
+  }
+
+  /* Menu Item */
+  .ui.selection.dropdown .menu > .item {
+    border-top: 1px solid #fafafa;
+    padding: 0.78571429rem 1.04285714rem !important;
+    white-space: normal;
+    word-wrap: normal;
+  }
+
+  /* User Item */
+  .ui.selection.dropdown .menu > .hidden.addition.item {
+    display: none;
+  }
+
+  /* Hover */
+  .ui.selection.dropdown:hover {
+    border-color: ${0};
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+
+  /* Active */
+  .ui.selection.active.dropdown {
+    border-color: ${0};
+    -webkit-box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);
+    box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);
+  }
+  .ui.selection.active.dropdown .menu {
+    border-color: ${0};
+    -webkit-box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);
+    box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);
+  }
+
+  /* Focus */
+  .ui.selection.dropdown:focus {
+    border-color: ${0};
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  .ui.selection.dropdown:focus .menu {
+    border-color: ${0};
+    -webkit-box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);
+    box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);
+  }
+
+  /* Visible */
+  .ui.selection.visible.dropdown > .text:not(.default) {
+    font-weight: normal;
+    color: ${0};
+  }
+
+  /* Visible Hover */
+  .ui.selection.active.dropdown:hover {
+    border-color: ${0};
+    -webkit-box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);
+    box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);
+  }
+  .ui.selection.active.dropdown:hover .menu {
+    border-color: ${0};
+    -webkit-box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);
+    box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);
+  }
+
+  /* Dropdown Icon */
+  .ui.active.selection.dropdown > .dropdown.icon,
+  .ui.visible.selection.dropdown > .dropdown.icon {
+    opacity: '';
+    z-index: 3;
+  }
+
+  /* Connecting Border */
+  .ui.active.selection.dropdown {
+    border-bottom-left-radius: 0em !important;
+    border-bottom-right-radius: 0em !important;
+  }
+
+  /* Empty Connecting Border */
+  .ui.active.empty.selection.dropdown {
+    border-radius: 0.28571429rem !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+  }
+  .ui.active.empty.selection.dropdown .menu {
+    border: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+  }
+
+  /*--------------
+   Searchable
+---------------*/
+
+  /* Search Selection */
+  .ui.search.dropdown {
+    min-width: '';
+  }
+
+  /* Search Dropdown */
+  .ui.search.dropdown > input.search {
+    background: none transparent !important;
+    border: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    cursor: text;
+    top: 0em;
+    left: 1px;
+    width: 100%;
+    outline: none;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    padding: inherit;
+    color: ${0};
+    text-align: ${0};
+  }
+
+  /* Text Layering */
+  .ui.search.dropdown > input.search {
+    position: absolute;
+    z-index: 2;
+  }
+  .ui.search.dropdown > .text {
+    cursor: text;
+    position: relative;
+    left: 1px;
+    z-index: 3;
+  }
+
+  /* Search Selection */
+  .ui.search.selection.dropdown > input.search {
+    line-height: 1.21428571em;
+    padding: 0.67857143em 2.1em 0.67857143em 1em;
+  }
+
+  /* Used to size multi select input to character width */
+  .ui.search.selection.dropdown > span.sizer {
+    line-height: 1.21428571em;
+    padding: 0.67857143em 2.1em 0.67857143em 1em;
+    display: none;
+    white-space: pre;
+  }
+
+  /* Active/Visible Search */
+  .ui.search.dropdown.active > input.search,
+  .ui.search.dropdown.visible > input.search {
+    cursor: auto;
+    color: ${0};
+  }
+  .ui.search.dropdown.active > .text,
+  .ui.search.dropdown.visible > .text {
+    pointer-events: none;
+  }
+
+  /* Filtered Text */
+  .ui.active.search.dropdown input.search:focus + .text .icon,
+  .ui.active.search.dropdown input.search:focus + .text .flag {
+    opacity: 0.45;
+  }
+  .ui.active.search.dropdown input.search:focus + .text {
+    color: rgba(115, 115, 115, 0.87) !important;
+  }
+
+  .input.search::placeholder {
+    color: ${0};
+  }
+  /* Search Menu */
+  .ui.search.dropdown .menu {
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+  @media only screen and (max-width: 767px) {
+    .ui.search.dropdown .menu {
+      max-height: 8.01428571rem;
+    }
+  }
+  @media only screen and (min-width: 768px) {
+    .ui.search.dropdown .menu {
+      max-height: 10.68571429rem;
+    }
+  }
+  @media only screen and (min-width: 992px) {
+    .ui.search.dropdown .menu {
+      max-height: 16.02857143rem;
+    }
+  }
+  @media only screen and (min-width: 1920px) {
+    .ui.search.dropdown .menu {
+      max-height: 21.37142857rem;
+    }
+  }
+
+  /*--------------
+    Multiple
+---------------*/
+
+  /* Multiple Selection */
+  .ui.multiple.dropdown {
+    padding: 0.22619048em 2.1em 0.22619048em 0.35714286em;
+  }
+  .ui.multiple.dropdown .menu {
+    cursor: auto;
+  }
+
+  /* Multiple Search Selection */
+  .ui.multiple.search.dropdown,
+  .ui.multiple.search.dropdown > input.search {
+    cursor: text;
+  }
+
+  /* Selection Label */
+  .ui.multiple.dropdown > .label {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    display: inline-block;
+    vertical-align: top;
+    white-space: normal;
+    font-size: 1em;
+    padding: 0.35714286em 0.78571429em;
+    margin: 0.14285714rem 0.28571429rem 0.14285714rem 0.5em;
+    -webkit-box-shadow: 0px 0px 0px 1px rgba(34, 36, 38, 0.15) inset;
+    box-shadow: 0px 0px 0px 1px rgba(34, 36, 38, 0.15) inset;
+    border-radius: 20px;
+    color: ${0};
+    background-color: ${0};
+  }
+
+  /* Dropdown Icon */
+  .ui.multiple.dropdown .dropdown.icon {
+    margin: '';
+    padding: '';
+  }
+
+  /* Text */
+  .ui.multiple.dropdown > .text {
+    position: static;
+    padding: 0;
+    max-width: 100%;
+    margin: 0.45238095em 0em 0.45238095em 0.64285714em;
+    line-height: 1.21428571em;
+  }
+  .ui.multiple.dropdown > .label ~ input.search {
+    margin-left: 0.14285714em !important;
+  }
+  .ui.multiple.dropdown > .label ~ .text {
+    display: none;
+  }
+
+  /*-----------------
+  Multiple Search
+-----------------*/
+
+  /* Prompt Text */
+  .ui.multiple.search.dropdown > .text {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: inherit;
+    margin: 0.45238095em 0em 0.45238095em 0.64285714em;
+    line-height: 1.21428571em;
+  }
+  .ui.multiple.search.dropdown > .label ~ .text {
+    display: none;
+  }
+
+  /* Search */
+  .ui.multiple.search.dropdown > input.search {
+    position: static;
+    padding: 0;
+    max-width: 100%;
+    margin: 0.45238095em 0em 0.45238095em 0.64285714em;
+    width: 2.2em;
+    line-height: 1.21428571em;
+  }
+
+  /*--------------
+     Inline
+---------------*/
+
+  .ui.inline.dropdown {
+    cursor: pointer;
+    display: inline-block;
+    color: inherit;
+  }
+  .ui.inline.dropdown .dropdown.icon {
+    margin: 0em 0.21428571em 0em 0.21428571em;
+    vertical-align: baseline;
+  }
+  .ui.inline.dropdown > .text {
+    font-weight: bold;
+  }
+  .ui.inline.dropdown .menu {
+    cursor: auto;
+    margin-top: 0.21428571em;
+    border-radius: 0.28571429rem;
+  }
+
+  /*******************************
+            States
+*******************************/
+
+  /*--------------------
+        Active
+----------------------*/
+
+  /* Menu Item Active */
+  .ui.dropdown .menu .active.item {
+    background: transparent;
+    font-weight: bold;
+    color: ${0};
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    z-index: 12;
+  }
+
+  /*--------------------
+        Hover
+----------------------*/
+
+  /* Menu Item Hover */
+  .ui.dropdown .menu > .item:hover {
+    background: rgba(0, 0, 0, 0.05);
+    color: ${0};
+    z-index: 13;
+  }
+
+  /*--------------------
+       Loading
+---------------------*/
+
+  .ui.loading.dropdown > i.icon {
+    height: 1em !important;
+  }
+  .ui.loading.selection.dropdown > i.icon {
+    padding: 1.5em 1.28571429em !important;
+  }
+  .ui.loading.dropdown > i.icon:before {
+    position: absolute;
+    content: '';
+    top: 50%;
+    left: 50%;
+    margin: -0.64285714em 0em 0em -0.64285714em;
+    width: 1.28571429em;
+    height: 1.28571429em;
+    border-radius: 500rem;
+    border: 0.2em solid rgba(0, 0, 0, 0.1);
+  }
+  .ui.loading.dropdown > i.icon:after {
+    position: absolute;
+    content: '';
+    top: 50%;
+    left: 50%;
+    -webkit-box-shadow: 0px 0px 0px 1px transparent;
+    box-shadow: 0px 0px 0px 1px transparent;
+    margin: -0.64285714em 0em 0em -0.64285714em;
+    width: 1.28571429em;
+    height: 1.28571429em;
+    -webkit-animation: dropdown-spin 0.6s linear;
+    animation: dropdown-spin 0.6s linear;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    border-radius: 500rem;
+    border-color: ${0} transparent transparent;
+    border-style: solid;
+    border-width: 0.2em;
+  }
+
+  /* Coupling */
+  .ui.loading.dropdown.button > i.icon:before,
+  .ui.loading.dropdown.button > i.icon:after {
+    display: none;
+  }
+  @-webkit-keyframes dropdown-spin {
+    from {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    to {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes dropdown-spin {
+    from {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    to {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+
+  /*--------------------
+     Default Text
+----------------------*/
+
+  .ui.dropdown:not(.button) > .default.text,
+  .ui.default.dropdown:not(.button) > .text {
+    color: ${0};
+  }
+  .ui.dropdown:not(.button) > input:focus ~ .default.text,
+  .ui.default.dropdown:not(.button) > input:focus ~ .text {
+    color: ${0};
+  }
+
+  /*--------------------
+        Loading
+----------------------*/
+
+  .ui.loading.dropdown > .text {
+    -webkit-transition: none;
+    transition: none;
+  }
+
+  /* Used To Check Position */
+  .ui.dropdown .loading.menu {
+    display: block;
+    visibility: hidden;
+    z-index: -1;
+  }
+  .ui.dropdown > .loading.menu {
+    left: 0px !important;
+    right: auto !important;
+  }
+  .ui.dropdown > .menu .loading.menu {
+    left: 100% !important;
+    right: auto !important;
+  }
+
+  /*--------------------
+    Keyboard Select
+----------------------*/
+
+  /* Selected Item */
+  .ui.dropdown.selected,
+  .ui.dropdown .menu .selected.item {
+    background: rgba(0, 0, 0, 0.03);
+    color: ${0};
+  }
+
+  /*--------------------
+    Search Filtered
+----------------------*/
+
+  /* Filtered Item */
+  .ui.dropdown > .filtered.text {
+    visibility: hidden;
+  }
+  .ui.dropdown .filtered.item {
+    display: none !important;
+  }
+
+  /*--------------------
+        Error
+----------------------*/
+
+  .ui.dropdown.error,
+  .ui.dropdown.error > .text,
+  .ui.dropdown.error > .default.text {
+    color: #9f3a38;
+  }
+  .ui.selection.dropdown.error {
+    background: ${0};
+    border-color: ${0};
+  }
+  .ui.selection.dropdown.error:hover {
+    border-color: ${0};
+  }
+  .ui.dropdown.error > .menu,
+  .ui.dropdown.error > .menu .menu {
+    border-color: ${0};
+  }
+  .ui.dropdown.error > .menu > .item {
+    color: ${0};
+  }
+  .ui.multiple.selection.error.dropdown > .label {
+    border-color: ${0};
+  }
+
+  /* Item Hover */
+  .ui.dropdown.error > .menu > .item:hover {
+    background-color: ${0};
+  }
+
+  /* Item Active */
+  .ui.dropdown.error > .menu .active.item {
+    background-color: ${0};
+  }
+
+  /*--------------------
+        Clear
+----------------------*/
+
+  .ui.dropdown > .clear.dropdown.icon {
+    opacity: 0.8;
+    -webkit-transition: opacity 0.1s ease;
+    transition: opacity 0.1s ease;
+  }
+  .ui.dropdown > .clear.dropdown.icon:hover {
+    opacity: 1;
+  }
+
+  /*--------------------
+        Disabled
+----------------------*/
+
+  /* Disabled */
+  .ui.disabled.dropdown,
+  .ui.dropdown .menu > .disabled.item {
+    cursor: default;
+    pointer-events: none;
+    opacity: 0.45;
+  }
+
+  /*******************************
+           Variations
+*******************************/
+
+  /*--------------
+    Direction
+---------------*/
+
+  /* Flyout Direction */
+  .ui.dropdown .menu {
+    left: 0px;
+  }
+
+  /* Default Side (Right) */
+  .ui.dropdown .right.menu > .menu,
+  .ui.dropdown .menu .right.menu {
+    left: 100% !important;
+    right: auto !important;
+    border-radius: 0.28571429rem !important;
+  }
+
+  /* Leftward Opening Menu */
+  .ui.dropdown > .left.menu {
+    left: auto !important;
+    right: 0px !important;
+  }
+  .ui.dropdown > .left.menu .menu,
+  .ui.dropdown .menu .left.menu {
+    left: auto;
+    right: 100%;
+    margin: 0em -0.5em 0em 0em !important;
+    border-radius: 0.28571429rem !important;
+  }
+  .ui.dropdown .item .left.dropdown.icon,
+  .ui.dropdown .left.menu .item .dropdown.icon {
+    width: auto;
+    float: left;
+    margin: 0em 0em 0em 0em;
+  }
+  .ui.dropdown .item .left.dropdown.icon,
+  .ui.dropdown .left.menu .item .dropdown.icon {
+    width: auto;
+    float: left;
+    margin: 0em 0em 0em 0em;
+  }
+  .ui.dropdown .item .left.dropdown.icon + .text,
+  .ui.dropdown .left.menu .item .dropdown.icon + .text {
+    margin-left: 1em;
+    margin-right: 0em;
+  }
+
+  /*--------------
+     Upward
+---------------*/
+
+  /* Upward Main Menu */
+  .ui.upward.dropdown > .menu {
+    top: auto;
+    bottom: 100%;
+    -webkit-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.08);
+    box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.08);
+    border-radius: 0.28571429rem 0.28571429rem 0em 0em;
+  }
+
+  /* Upward Sub Menu */
+  .ui.dropdown .upward.menu {
+    top: auto !important;
+    bottom: 0 !important;
+  }
+
+  /* Active Upward */
+  .ui.simple.upward.active.dropdown,
+  .ui.simple.upward.dropdown:hover {
+    border-radius: 0.28571429rem 0.28571429rem 0em 0em !important;
+  }
+  .ui.upward.dropdown.button:not(.pointing):not(.floating).active {
+    border-radius: 0.28571429rem 0.28571429rem 0em 0em;
+  }
+
+  /* Selection */
+  .ui.upward.selection.dropdown .menu {
+    border-top-width: 1px !important;
+    border-bottom-width: 0px !important;
+    -webkit-box-shadow: 0px -2px 3px 0px rgba(0, 0, 0, 0.08);
+    box-shadow: 0px -2px 3px 0px rgba(0, 0, 0, 0.08);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+  }
+  .ui.upward.selection.dropdown:hover {
+    -webkit-box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.05);
+    box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.05);
+  }
+
+  /* Active Upward */
+  .ui.active.upward.selection.dropdown {
+    border-radius: 0em 0em 20px 20px !important;
+  }
+
+  /* Visible Upward */
+  .ui.upward.selection.dropdown.visible {
+    -webkit-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.08);
+    box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.08);
+    border-radius: 0em 0em 20px 20px !important;
+  }
+
+  /* Visible Hover Upward */
+  .ui.upward.active.selection.dropdown:hover {
+    -webkit-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.05);
+    box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.05);
+  }
+  .ui.upward.active.selection.dropdown:hover .menu {
+    -webkit-box-shadow: 0px -2px 3px 0px rgba(0, 0, 0, 0.08);
+    box-shadow: 0px -2px 3px 0px rgba(0, 0, 0, 0.08);
+  }
+
+  /*--------------
+     Simple
+---------------*/
+
+  /*  Selection Menu */
+  .ui.scrolling.dropdown .menu,
+  .ui.dropdown .scrolling.menu {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  .ui.scrolling.dropdown .menu {
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-overflow-scrolling: touch;
+    min-width: 100% !important;
+    width: auto !important;
+  }
+  .ui.dropdown .scrolling.menu {
+    position: static;
+    overflow-y: auto;
+    border: none;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+    min-width: 100% !important;
+    width: auto !important;
+    border-top: 1px solid rgba(34, 36, 38, 0.15);
+  }
+  .ui.scrolling.dropdown .menu .item.item.item,
+  .ui.dropdown .scrolling.menu > .item.item.item {
+    border-top: none;
+  }
+  .ui.scrolling.dropdown .menu .item:first-child,
+  .ui.dropdown .scrolling.menu .item:first-child {
+    border-top: none;
+  }
+  .ui.dropdown > .animating.menu .scrolling.menu,
+  .ui.dropdown > .visible.menu .scrolling.menu {
+    display: block;
+  }
+
+  /* Scrollbar in IE */
+  @media all and (-ms-high-contrast: none) {
+    .ui.scrolling.dropdown .menu,
+    .ui.dropdown .scrolling.menu {
+      min-width: calc(100% - 17px);
+    }
+  }
+  @media only screen and (max-width: 767px) {
+    .ui.scrolling.dropdown .menu,
+    .ui.dropdown .scrolling.menu {
+      max-height: 10.28571429rem;
+    }
+  }
+  @media only screen and (min-width: 768px) {
+    .ui.scrolling.dropdown .menu,
+    .ui.dropdown .scrolling.menu {
+      max-height: 15.42857143rem;
+    }
+  }
+  @media only screen and (min-width: 992px) {
+    .ui.scrolling.dropdown .menu,
+    .ui.dropdown .scrolling.menu {
+      max-height: 20.57142857rem;
+    }
+  }
+  @media only screen and (min-width: 1920px) {
+    .ui.scrolling.dropdown .menu,
+    .ui.dropdown .scrolling.menu {
+      max-height: 20.57142857rem;
+    }
+  }
+
+  /*--------------
+     Simple
+---------------*/
+
+  /* Displays without javascript */
+  .ui.simple.dropdown .menu:before,
+  .ui.simple.dropdown .menu:after {
+    display: none;
+  }
+  .ui.simple.dropdown .menu {
+    position: absolute;
+    display: block;
+    overflow: hidden;
+    top: -9999px !important;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    -webkit-transition: opacity 0.1s ease;
+    transition: opacity 0.1s ease;
+  }
+  .ui.simple.active.dropdown,
+  .ui.simple.dropdown:hover {
+    border-bottom-left-radius: 0em !important;
+    border-bottom-right-radius: 0em !important;
+  }
+  .ui.simple.active.dropdown > .menu,
+  .ui.simple.dropdown:hover > .menu {
+    overflow: visible;
+    width: auto;
+    height: auto;
+    top: 100% !important;
+    opacity: 1;
+  }
+  .ui.simple.dropdown > .menu > .item:active > .menu,
+  .ui.simple.dropdown:hover > .menu > .item:hover > .menu {
+    overflow: visible;
+    width: auto;
+    height: auto;
+    top: 0% !important;
+    left: 100% !important;
+    opacity: 1;
+  }
+  .ui.simple.disabled.dropdown:hover .menu {
+    display: none;
+    height: 0px;
+    width: 0px;
+    overflow: hidden;
+  }
+
+  /* Visible */
+  .ui.simple.visible.dropdown > .menu {
+    display: block;
+  }
+
+  /*--------------
+      Fluid
+---------------*/
+
+  .ui.fluid.dropdown {
+    display: block;
+    width: 100%;
+    min-width: 0em;
+  }
+  .ui.fluid.dropdown > .dropdown.icon {
+    float: right;
+  }
+
+  /*--------------
+    Floating
+---------------*/
+
+  .ui.floating.dropdown .menu {
+    left: 0;
+    right: auto;
+    -webkit-box-shadow: 0px 2px 4px 0px rgba(34, 36, 38, 0.12),
+      0px 2px 10px 0px rgba(34, 36, 38, 0.15) !important;
+    box-shadow: 0px 2px 4px 0px rgba(34, 36, 38, 0.12),
+      0px 2px 10px 0px rgba(34, 36, 38, 0.15) !important;
+    border-radius: 0.28571429rem !important;
+  }
+  .ui.floating.dropdown > .menu {
+    margin-top: 0.5em !important;
+    border-radius: 0.28571429rem !important;
+  }
+
+  /*--------------
+     Pointing
+---------------*/
+
+  .ui.pointing.dropdown > .menu {
+    top: 100%;
+    margin-top: 0.78571429rem;
+    border-radius: 0.28571429rem;
+  }
+  .ui.pointing.dropdown > .menu:after {
+    display: block;
+    position: absolute;
+    pointer-events: none;
+    content: '';
+    visibility: visible;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    width: 0.5em;
+    height: 0.5em;
+    -webkit-box-shadow: -1px -1px 0px 0px rgba(34, 36, 38, 0.15);
+    box-shadow: -1px -1px 0px 0px rgba(34, 36, 38, 0.15);
+    background: #ffffff;
+    z-index: 2;
+  }
+  .ui.pointing.dropdown > .menu:after {
+    top: -0.25em;
+    left: 50%;
+    margin: 0em 0em 0em -0.25em;
+  }
+
+  /* Top Left Pointing */
+  .ui.top.left.pointing.dropdown > .menu {
+    top: 100%;
+    bottom: auto;
+    left: 0%;
+    right: auto;
+    margin: 1em 0em 0em;
+  }
+  .ui.top.left.pointing.dropdown > .menu {
+    top: 100%;
+    bottom: auto;
+    left: 0%;
+    right: auto;
+    margin: 1em 0em 0em;
+  }
+  .ui.top.left.pointing.dropdown > .menu:after {
+    top: -0.25em;
+    left: 1em;
+    right: auto;
+    margin: 0em;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+  /* Top Right Pointing */
+  .ui.top.right.pointing.dropdown > .menu {
+    top: 100%;
+    bottom: auto;
+    right: 0%;
+    left: auto;
+    margin: 1em 0em 0em;
+  }
+  .ui.top.pointing.dropdown > .left.menu:after,
+  .ui.top.right.pointing.dropdown > .menu:after {
+    top: -0.25em;
+    left: auto !important;
+    right: 1em !important;
+    margin: 0em;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+  /* Left Pointing */
+  .ui.left.pointing.dropdown > .menu {
+    top: 0%;
+    left: 100%;
+    right: auto;
+    margin: 0em 0em 0em 1em;
+  }
+  .ui.left.pointing.dropdown > .menu:after {
+    top: 1em;
+    left: -0.25em;
+    margin: 0em 0em 0em 0em;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+  .ui.left:not(.top):not(.bottom).pointing.dropdown > .left.menu {
+    left: auto !important;
+    right: 100% !important;
+    margin: 0em 1em 0em 0em;
+  }
+  .ui.left:not(.top):not(.bottom).pointing.dropdown > .left.menu:after {
+    top: 1em;
+    left: auto;
+    right: -0.25em;
+    margin: 0em 0em 0em 0em;
+    -webkit-transform: rotate(135deg);
+    transform: rotate(135deg);
+  }
+
+  /* Right Pointing */
+  .ui.right.pointing.dropdown > .menu {
+    top: 0%;
+    left: auto;
+    right: 100%;
+    margin: 0em 1em 0em 0em;
+  }
+  .ui.right.pointing.dropdown > .menu:after {
+    top: 1em;
+    left: auto;
+    right: -0.25em;
+    margin: 0em 0em 0em 0em;
+    -webkit-transform: rotate(135deg);
+    transform: rotate(135deg);
+  }
+
+  /* Bottom Pointing */
+  .ui.bottom.pointing.dropdown > .menu {
+    top: auto;
+    bottom: 100%;
+    left: 0%;
+    right: auto;
+    margin: 0em 0em 1em;
+  }
+  .ui.bottom.pointing.dropdown > .menu:after {
+    top: auto;
+    bottom: -0.25em;
+    right: auto;
+    margin: 0em;
+    -webkit-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+  }
+
+  /* Reverse Sub-Menu Direction */
+  .ui.bottom.pointing.dropdown > .menu .menu {
+    top: auto !important;
+    bottom: 0px !important;
+  }
+
+  /* Bottom Left */
+  .ui.bottom.left.pointing.dropdown > .menu {
+    left: 0%;
+    right: auto;
+  }
+  .ui.bottom.left.pointing.dropdown > .menu:after {
+    left: 1em;
+    right: auto;
+  }
+
+  /* Bottom Right */
+  .ui.bottom.right.pointing.dropdown > .menu {
+    right: 0%;
+    left: auto;
+  }
+  .ui.bottom.right.pointing.dropdown > .menu:after {
+    left: auto;
+    right: 1em;
+  }
+
+  /* Upward pointing */
+  .ui.pointing.upward.dropdown .menu,
+  .ui.top.pointing.upward.dropdown .menu {
+    top: auto !important;
+    bottom: 100% !important;
+    margin: 0em 0em 0.78571429rem;
+    border-radius: 0.28571429rem;
+  }
+  .ui.pointing.upward.dropdown .menu:after,
+  .ui.top.pointing.upward.dropdown .menu:after {
+    top: 100% !important;
+    bottom: auto !important;
+    -webkit-box-shadow: 1px 1px 0px 0px rgba(34, 36, 38, 0.15);
+    box-shadow: 1px 1px 0px 0px rgba(34, 36, 38, 0.15);
+    margin: -0.25em 0em 0em;
+  }
+
+  /* Right Pointing Upward */
+  .ui.right.pointing.upward.dropdown:not(.top):not(.bottom) .menu {
+    top: auto !important;
+    bottom: 0 !important;
+    margin: 0em 1em 0em 0em;
+  }
+  .ui.right.pointing.upward.dropdown:not(.top):not(.bottom) .menu:after {
+    top: auto !important;
+    bottom: 0 !important;
+    margin: 0em 0em 1em 0em;
+    -webkit-box-shadow: -1px -1px 0px 0px rgba(34, 36, 38, 0.15);
+    box-shadow: -1px -1px 0px 0px rgba(34, 36, 38, 0.15);
+  }
+
+  /* Left Pointing Upward */
+  .ui.left.pointing.upward.dropdown:not(.top):not(.bottom) .menu {
+    top: auto !important;
+    bottom: 0 !important;
+    margin: 0em 0em 0em 1em;
+  }
+  .ui.left.pointing.upward.dropdown:not(.top):not(.bottom) .menu:after {
+    top: auto !important;
+    bottom: 0 !important;
+    margin: 0em 0em 1em 0em;
+    -webkit-box-shadow: -1px -1px 0px 0px rgba(34, 36, 38, 0.15);
+    box-shadow: -1px -1px 0px 0px rgba(34, 36, 38, 0.15);
+  }
+
+  /*******************************
+         Theme Overrides
+*******************************/
+
+  /* Dropdown Carets */
+  .ui.dropdown > .dropdown.icon {
+    font-family: 'Dropdown';
+    line-height: 1;
+    height: 1em;
+    width: 1.23em;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    font-weight: normal;
+    font-style: normal;
+    text-align: center;
+  }
+  .ui.dropdown > .dropdown.icon {
+    width: auto;
+  }
+  .ui.dropdown > .dropdown.icon:before {
+    content: '\f0d7';
+  }
+
+  /* Sub Menu */
+  .ui.dropdown .menu .item .dropdown.icon:before {
+    content: '\f0da' /*rtl:'\f0d9'*/;
+  }
+  .ui.dropdown .item .left.dropdown.icon:before,
+  .ui.dropdown .left.menu .item .dropdown.icon:before {
+    content: '\f0d9' /*rtl:"\f0da"*/;
+  }
+
+  /* Vertical Menu Dropdown */
+  .ui.vertical.menu .dropdown.item > .dropdown.icon:before {
+    content: '\f0da' /*rtl:"\f0d9"*/;
+  }
+  .ui.dropdown > .clear.icon:before {
+    content: '\f00d';
+  }
+
+  .ui.selection.active.dropdown .menu::-webkit-scrollbar {
+    width: 7px;
+    border-radius: 50px;
+    z-index: -1px;
+  }
+
+  .ui.selection.active.dropdown .menu::-webkit-scrollbar-thumb {
+    background-color: ${0};
+    border-radius: 50px;
+  }
+
+  .ui.selection.active.dropdown .menu::-webkit-scrollbar-thumb:hover {
+    background-color: ${0};
+  }
+  /* Icons for Reference (Subsetted in 2.4.0)
+  .dropdown.down:before { content: "\f0d7"; }
+  .dropdown.up:before { content: "\f0d8"; }
+  .dropdown.left:before { content: "\f0d9"; }
+  .dropdown.right:before { content: "\f0da"; }
+  .dropdown.close:before { content: "\f00d"; }
+*/
+
+  /*******************************
+        User Overrides
+*******************************/
+
+  small {
+    margin-left: 15px;
+    font-size: 10px;
+    color: ${0};
+  }
+`), props => props.error ? '' : '20px', props => props.error ? colors.brand20 : props.colorLabel ? props.colorLabel : colors.brand10, props => props.textAlign && props.textAlign === 'center' ? 'center' : 'left', colors.gray20, props => props.line ? '0' : '0.28571429rem', props => props.line ? 'none' : '', props => props.line ? 'none' : '', props => props.line ? 'none' : '', props => props.brand ? colors.brand10 : colors.gray20, props => props.brand ? colors.brandLight : colors.white, props => props.brand ? colors.brand10 : colors.gray20, props => props.brand ? colors.brandLight : props.line ? colors.gray10 : 'rgba(34, 36, 38, 0.15)', props => props.line ? 0 : '0.28571429rem', props => props.line ? 'none' : '20px', props => props.line ? 'none' : '', props => props.line ? 'none' : '', props => props.line ? 'none' : '', props => props.brand ? colors.brandLight : colors.gray10, props => props.brand ? colors.brandTransparent : colors.gray10, props => props.error ? colors.brand20 : props.brand ? colors.brandLight : colors.gray10, props => props.error ? colors.brand20 : props.brand ? colors.brandLight : colors.gray10, props => props.error ? colors.brand20 : props.brand ? colors.brandLight : colors.gray10, props => props.brand ? colors.brandDark : colors.black, props => props.error ? colors.brand20 : props.brand ? colors.brandLight : colors.gray10, props => props.error ? colors.brand20 : props.brand ? colors.brandLight : colors.gray10, props => props.brand ? colors.brand10 : colors.gray20, props => props.textAlign && props.textAlign === 'center' ? 'center' : 'left', props => props.brand ? colors.brandDark : colors.black, props => props.brand ? colors.brandTransparent : colors.gray10, props => props.brand ? colors.brandLight : colors.gray20, props => props.brand ? colors.brand10 : colors.card, props => props.brand ? colors.brandDark : colors.black, props => props.brand ? colors.brandDark : colors.black, colors.brand10, props => props.brand ? colors.brand10 : colors.default20, props => props.brand ? colors.brand10 : colors.default20, props => props.brand ? colors.brandDark : colors.black, props => props.line ? colors.white : colors.error, colors.brand20, colors.brand20, colors.brand20, colors.brand20, colors.brand20, colors.error, colors.error, colors.brand10, colors.brandTransparent2, colors.brand20);
+
+const Dropdown = ({
+  options,
+  brand,
+  textAlign,
+  errorMessage,
+  label,
+  colorLabel,
+  line,
+  ...rest
+}) => {
+  return React$2.createElement(Container$5, {
+    brand: brand,
+    textAlign: textAlign,
+    error: errorMessage,
+    colorLabel: colorLabel,
+    line: line
+  }, label && React$2.createElement("label", null, label), React$2.createElement(Dropdown$1, Object.assign({}, rest, {
+    selection: true,
+    noResultsMessage: "Nenhum resultado encontrado",
+    error: !!errorMessage,
+    options: options
+  })), errorMessage && React$2.createElement("small", null, errorMessage));
+};
+
+const DropdownForm = ({
+  value,
+  clearError,
+  errors,
+  name,
+  register,
+  required,
+  setValue,
+  validate,
+  ...rest
+}) => {
+  const [valueDefault, setValueDefault] = useState();
+  const [message, setMessage] = useState('');
+  useEffect(() => {
+    if (!valueDefault) {
+      setValue(name, value);
+    } else {
+      setValue(name, valueDefault);
+    }
+  }, [valueDefault]);
+  useEffect(() => {
+    setValueDefault(value);
+  }, [value]);
+  useEffect(() => {
+    if (register) {
+      register({
+        name
+      }, {
+        required,
+        validate: validate && required ? value => {
+          if (validate(value)) {
+            setMessage(validate(value));
+            return false;
+          }
+
+          setMessage('');
+          return true;
+        } : null
+      });
+    }
+  }, [register]);
+  return React$2.createElement(Dropdown, Object.assign({}, rest, {
+    value: valueDefault,
+    onChange: (_ev, data) => {
+      setValueDefault(data.value);
+      setValue(name, value);
+
+      if (errors && clearError) {
+        clearError(name);
+      }
+    },
+    line: rest.line,
+    errorMessage: errors ? errors.type === 'required' ? 'Obrigatório' : `${message}` : ''
+  }));
+};
+
+let _$9 = t => t,
+    _t$9,
+    _t2$6,
+    _t3$5,
+    _t4$5;
+const Container$6 = styled.div(_t$9 || (_t$9 = _$9`
+  font-family: MontSerrat !important;
+  display: flex;
+  width: ${0};
+  justify-content: space-between;
+  background-color: ${0};
+  border: 1px solid ${0};
+  padding: 15px 20px;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0px 3px 2px 0px rgba(0, 0, 0, 0.16);
+
+  .icon-title {
+    display: flex;
+    align-items: center;
+  }
+
+  .title-subtitle {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-left: ${0};
+
+    .title {
+      font-size: ${0};
+
+      color: ${0};
+    }
+
+    .subtitle {
+      color: ${0};
+      font-size: 12px;
+    }
+  }
+
+  .value-icon {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    justify-content: flex-end;
+
+    .value {
+      margin-right: 20px;
+      color: ${0};
+    }
+  }
+
+  ${0}
+`), props => {
+  if (props.width) {
+    if (typeof props.width === 'string') {
+      return props.width;
+    }
+
+    return `${props.width}px`;
+  }
+
+  return '100%';
+}, props => props.secondary ? colors.card : colors.white, colors.card, props => props.icon ? '15px' : '0', props => {
+  if (props.fontSizeTitle) {
+    if (typeof props.fontSizeTitle === 'string') {
+      return props.fontSizeTitle;
+    }
+
+    return `${props.fontSizeTitle}px`;
+  }
+
+  return props.subtitle ? '14px' : '16px';
+}, props => props.colorTitle ? props.colorTitle : `${colors.gray20}`, props => props.colorSubtitle ? props.colorSubtitle : `${colors.gray10}`, props => props.colorValue ? props.colorValue : `${colors.gray20}`, props => props.open ? css$1(_t2$6 || (_t2$6 = _$9`
+          border-top-left-radius: 20px;
+          border-top-right-radius: 20px;
+        `)) : css$1(_t3$5 || (_t3$5 = _$9`
+          border-radius: 30px;
+        `)));
+const Body$1 = styled.div(_t4$5 || (_t4$5 = _$9`
+  font-family: MontSerrat !important;
+  width: ${0};
+  padding: 20px;
+  border: 1px solid ${0};
+  border-top: 0;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  display: ${0};
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.16);
+`), props => props.width ? `${props.width}%` : '100%', colors.card, props => props.open ? 'block' : 'none');
+
+const Accordion = ({
+  title,
+  colorTitle,
+  subtitle,
+  colorSubtitle,
+  value,
+  colorValue,
+  children,
+  secondary,
+  open,
+  onChange,
+  width,
+  icon,
+  customIcon,
+  colorIcon,
+  fontSizeTitle
+}) => {
+  return React$2.createElement(React$2.Fragment, null, React$2.createElement(Container$6, {
+    colorTitle: colorTitle,
+    colorSubtitle: colorSubtitle,
+    colorValue: colorValue,
+    secondary: secondary,
+    subtitle: subtitle,
+    open: open,
+    onClick: () => onChange(),
+    width: width,
+    icon: !!(icon || customIcon),
+    fontSizeTitle: fontSizeTitle
+  }, React$2.createElement("div", {
+    className: "icon-title"
+  }, customIcon || (icon ? React$2.createElement(FontAwesomeIcon, {
+    icon: icon,
+    size: "lg",
+    color: colorIcon || colors.brand10
+  }) : null), React$2.createElement("div", {
+    className: "title-subtitle"
+  }, React$2.createElement("span", {
+    className: "title"
+  }, title), subtitle && React$2.createElement("span", {
+    className: "subtitle"
+  }, subtitle))), React$2.createElement("div", {
+    className: "value-icon"
+  }, React$2.createElement("span", {
+    className: "value"
+  }, value), secondary ? React$2.createElement(FontAwesomeIcon, {
+    icon: open ? faAngleUp : faAngleDown,
+    style: {
+      fontSize: 20
+    }
+  }) : React$2.createElement(FontAwesomeIcon, {
+    icon: open ? faAngleUp : faAngleDown,
+    style: {
+      fontSize: 20
+    },
+    color: colors.brand10
+  }))), React$2.createElement(Body$1, {
+    open: open,
+    width: width
+  }, children));
+};
+
+let _$a = t => t,
+    _t$a,
+    _t2$7,
+    _t3$6;
+const toggleWidth = 50;
+const toggleHeight = 30;
+const toggleGutter = 5;
+const toggleRadius = toggleHeight / 2;
+const toggleControlSsize = toggleHeight - toggleGutter * 2;
+const Sizes$5 = {
+  mini: 'mini',
+  tiny: 'tiny',
+  small: 'small',
+  medium: 'medium',
+  large: 'large',
+  big: 'big',
+  huge: 'huge',
+  massive: 'massive'
+};
+
+const widthSwitch = size => {
+  switch (size) {
+    case Sizes$5.mini:
+      return 30;
+
+    case Sizes$5.tiny:
+      return 35;
+
+    case Sizes$5.small:
+      return 40;
+
+    case Sizes$5.medium:
+      return 50;
+
+    case Sizes$5.large:
+      return 60;
+
+    case Sizes$5.big:
+      return 70;
+
+    case Sizes$5.huge:
+      return 80;
+
+    case Sizes$5.massive:
+      return 90;
+
+    default:
+      return 50;
+  }
+};
+
+const heightSwitch = size => {
+  switch (size) {
+    case Sizes$5.mini:
+      return 20;
+
+    case Sizes$5.tiny:
+      return 22.5;
+
+    case Sizes$5.small:
+      return 25;
+
+    case Sizes$5.medium:
+      return 30;
+
+    case Sizes$5.large:
+      return 35;
+
+    case Sizes$5.big:
+      return 40;
+
+    case Sizes$5.huge:
+      return 45;
+
+    case Sizes$5.massive:
+      return 50;
+
+    default:
+      return 30;
+  }
+};
+
+const sizeGutter = size => {
+  switch (size) {
+    case Sizes$5.mini:
+      return 5;
+
+    case Sizes$5.tiny:
+      return 5;
+
+    case Sizes$5.small:
+      return 5;
+
+    case Sizes$5.medium:
+      return 5;
+
+    case Sizes$5.large:
+      return 5;
+
+    case Sizes$5.big:
+      return 5;
+
+    case Sizes$5.huge:
+      return 5;
+
+    case Sizes$5.massive:
+      return 5;
+
+    default:
+      return 5;
+  }
+};
+
+const widthToggle = size => {
+  switch (size) {
+    case Sizes$5.mini:
+      return '40px !important';
+
+    case Sizes$5.tiny:
+      return '50px !important';
+
+    case Sizes$5.small:
+      return '60px !important';
+
+    case Sizes$5.medium:
+      return '65px !important';
+
+    case Sizes$5.large:
+      return '70px !important';
+
+    case Sizes$5.big:
+      return '80px !important';
+
+    case Sizes$5.huge:
+      return '90px !important';
+
+    case Sizes$5.massive:
+      return '100px !important';
+
+    default:
+      return '65px !important';
+  }
+};
+
+const fontToggle = size => {
+  switch (size) {
+    case Sizes$5.mini:
+      return '8px !important';
+
+    case Sizes$5.tiny:
+      return '9px !important';
+
+    case Sizes$5.small:
+      return '10px !important';
+
+    case Sizes$5.medium:
+      return '11px !important';
+
+    case Sizes$5.large:
+      return '12px !important';
+
+    case Sizes$5.big:
+      return '13px !important';
+
+    case Sizes$5.huge:
+      return '14px !important';
+
+    case Sizes$5.massive:
+      return '15px !important';
+
+    default:
+      return '11px !important';
+  }
+};
+
+const fontActiveInactive = size => {
+  switch (size) {
+    case Sizes$5.mini:
+      return '7px !important';
+
+    case Sizes$5.tiny:
+      return '8px !important';
+
+    case Sizes$5.small:
+      return '9px !important';
+
+    case Sizes$5.medium:
+      return '10px !important';
+
+    case Sizes$5.large:
+      return '11px !important';
+
+    case Sizes$5.big:
+      return '12px !important';
+
+    case Sizes$5.huge:
+      return '13px !important';
+
+    case Sizes$5.massive:
+      return '14px !important';
+
+    default:
+      return '10px !important';
+  }
+};
+
+const Switch = styled.label(_t$a || (_t$a = _$a`
+  font-family: MontSerrat !important;
+  display: flex !important;
+  flex-direction: row !important;
+  position: relative !important;
+  /* padding-left: ${0}; */
+  /* margin-bottom: 12px; */
+  cursor: ${0};
+  font-size: 22px !important;
+  user-select: none !important;
+
+  input {
+    position: absolute !important;
+    opacity: 0 !important;
+    cursor: pointer !important;
+    height: 0 !important;
+    width: 0 !important;
+    display: none !important;
+  }
+
+  input:checked ~ .control {
+    background-color: ${0};
+
+    &:after {
+      left: ${0};
+    }
+  }
+
+  .control {
+    height: ${0};
+    width: ${0};
+    border-radius: ${0};
+    background-color: ${0} !important;
+    transition: background-color 0.15s ease-in !important;
+
+    &:after {
+      content: '' !important;
+      position: absolute !important;
+      left: 5px !important;
+      top: 5px !important;
+      height: ${0};
+      width: ${0};
+      border-radius: 50px !important;
+      background-color: white !important;
+      transition: left 0.15s ease-in !important;
+      border: 1px solid ${0} !important;
+    }
+  }
+`), props => props.size ? `${widthSwitch(props.size)}px` : `${toggleWidth}px`, props => props.disabled ? 'normal !important' : 'pointer !important', props => props.disabled ? `${colors.brandTransparent} !important` : `${colors.brandDark} !important`, props => props.size ? `${widthSwitch(props.size) - (heightSwitch(props.size) - sizeGutter(props.size) * 2) - sizeGutter(props.size)}px !important` : `${toggleWidth - toggleControlSsize - toggleGutter}px !important`, props => props.size ? `${heightSwitch(props.size)}px !important` : `${toggleHeight}px !important`, props => props.size ? `${widthSwitch(props.size)}px !important` : `${toggleWidth}px !important`, props => props.size ? `${heightSwitch(props.size) / 2}px !important` : `${toggleRadius}px !important`, colors.card, props => props.size ? `${heightSwitch(props.size) - sizeGutter(props.size) * 2}px !important` : `${toggleControlSsize}px !important`, props => props.size ? `${heightSwitch(props.size) - sizeGutter(props.size) * 2}px !important` : `${toggleControlSsize}px !important`, colors.default10);
+const Toggle = styled.div(_t2$7 || (_t2$7 = _$a`
+  font-family: MontSerrat !important;
+  display: flex !important;
+  flex-direction: row !important;
+
+  .btn {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    opacity: ${0};
+    width: ${0};
+    border: 1px solid ${0} !important;
+    padding: 4px 0 !important;
+
+    span {
+      font-size: ${0};
+    }
+  }
+
+  .left {
+    cursor: ${0};
+    background-color: ${0};
+    border-top-left-radius: 20px !important;
+    border-bottom-left-radius: 20px !important;
+    border-right: 0 !important;
+    transition: 400ms !important;
+
+    span {
+      color: ${0};
+    }
+  }
+
+  .right {
+    cursor: ${0};
+    background-color: ${0};
+    border-top-right-radius: 20px !important;
+    border-bottom-right-radius: 20px !important;
+    border-left: 0 !important;
+    transition: 400ms !important;
+
+    span {
+      color: ${0};
+    }
+  }
+`), props => props.disabled ? '0.5 !important' : '1 !important', props => props.size ? widthToggle(props.size) : '65px !important', colors.card, props => props.size ? fontToggle(props.size) : '11px !important', props => props.disabled ? 'default !important' : !props.checked ? 'default !important' : 'pointer !important', props => !props.checked ? `${colors.brand10} !important` : `${colors.white} !important`, props => !props.checked ? `${colors.white} !important` : `${colors.gray20} !important`, props => props.disabled ? 'default !important' : props.checked ? 'default !important' : 'pointer !important', props => props.checked ? `${colors.brand10} !important` : `${colors.white} !important`, props => props.checked ? `${colors.white} !important` : `${colors.gray20} !important`);
+const ActiveInactive = styled.div(_t3$6 || (_t3$6 = _$a`
+  font-family: MontSerrat !important;
+  display: flex !important;
+  flex-direction: row !important;
+
+  .btn {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    opacity: ${0};
+    width: ${0};
+    border: 1px solid ${0} !important;
+    padding: 4px 0 !important;
+
+    span {
+      font-size: ${0};
+    }
+  }
+
+  .left {
+    cursor: ${0};
+    background-color: ${0};
+    border-top-left-radius: 20px !important;
+    border-bottom-left-radius: 20px !important;
+    border-right: 0 !important;
+    transition: 400ms !important;
+
+    span {
+      color: ${0};
+    }
+  }
+
+  .right {
+    cursor: ${0};
+    background-color: ${0};
+    border-top-right-radius: 20px !important;
+    border-bottom-right-radius: 20px !important;
+    border-left: 0 !important;
+    transition: 400ms !important;
+
+    span {
+      color: ${0};
+    }
+  }
+`), props => props.disabled ? '0.5 !important' : '1 !important', props => props.size ? widthToggle(props.size) : '70px !important', colors.card, props => props.size ? fontActiveInactive(props.size) : '10px !important', props => props.disabled ? 'default !important' : !props.checked ? 'default !important' : 'pointer !important', props => !props.checked ? `${colors.brand20} !important` : `${colors.white} !important`, props => !props.checked ? `${colors.white} !important` : `${colors.gray20} !important`, props => props.disabled ? 'default !important' : props.checked ? 'default !important' : 'pointer !important', props => props.checked ? `${colors.brandGreen} !important` : `${colors.white} !important`, props => props.checked ? `${colors.white} !important` : `${colors.gray20} !important`);
+
+const TYPES = {
+  switch: 'switch',
+  toggle: 'toggle',
+  activeInactive: 'activeInactive'
+};
+
+const Selection = ({
+  type,
+  checked,
+  onChange,
+  size,
+  disabled,
+  selectionRef
+}) => {
+  function renderSwitch() {
+    return React$2.createElement(Switch, {
+      size: size,
+      ref: selectionRef,
+      disabled: disabled
+    }, React$2.createElement("input", {
+      type: "checkbox",
+      checked: checked
+    }), React$2.createElement("span", {
+      className: "control",
+      onClick: () => !disabled ? onChange ? onChange() : null : null
+    }));
+  }
+
+  function renderToggle() {
+    return React$2.createElement(Toggle, {
+      checked: checked,
+      ref: selectionRef,
+      size: size,
+      disabled: disabled
+    }, React$2.createElement("div", {
+      className: "btn left",
+      onClick: () => !disabled ? checked ? onChange ? onChange() : null : null : null
+    }, React$2.createElement("span", null, "n\u00E3o")), React$2.createElement("div", {
+      className: "btn right",
+      onClick: () => !disabled ? !checked ? onChange ? onChange() : null : null : null
+    }, React$2.createElement("span", null, "sim")));
+  }
+
+  function renderActiveInactive() {
+    return React$2.createElement(ActiveInactive, {
+      checked: checked,
+      ref: selectionRef,
+      size: size,
+      disabled: disabled
+    }, React$2.createElement("div", {
+      className: "btn left",
+      onClick: () => !disabled ? checked ? onChange ? onChange() : null : null : null
+    }, React$2.createElement("span", null, checked ? 'desativar' : 'inativo')), React$2.createElement("div", {
+      className: "btn right",
+      onClick: () => !disabled ? !checked ? onChange ? onChange() : null : null : null
+    }, React$2.createElement("span", null, checked ? 'ativo' : 'ativar')));
+  }
+
+  switch (type) {
+    case TYPES.switch:
+      return renderSwitch();
+
+    case TYPES.toggle:
+      return renderToggle();
+
+    case TYPES.activeInactive:
+      return renderActiveInactive();
+
+    default:
+      return React$2.createElement("div", null);
+  }
+};
+
+let _$b = t => t,
+    _t$b;
+const Sizes$6 = {
+  small: 'small',
+  medium: 'medium',
+  big: 'big'
+};
+
+const widthBtnMoreLess = size => {
+  switch (size) {
+    case Sizes$6.small:
+      return '20px';
+
+    case Sizes$6.medium:
+      return '30px';
+
+    case Sizes$6.big:
+      return '40px';
+
+    default:
+      return '30px';
+  }
+};
+
+const heightBtnMoreLess = size => {
+  switch (size) {
+    case Sizes$6.small:
+      return '20px';
+
+    case Sizes$6.medium:
+      return '30px';
+
+    case Sizes$6.big:
+      return '40px';
+
+    default:
+      return '30px';
+  }
+};
+
+const widthValueMoreLess = (size, value) => {
+  if (size === Sizes$6.small) {
+    if (value < 100) {
+      return '15px';
+    }
+
+    if (value < 1000) {
+      return '20px';
+    }
+
+    if (value < 10000) {
+      return '25px';
+    }
+
+    return '30px';
+  }
+
+  if (size === Sizes$6.medium) {
+    if (value < 100) {
+      return '20px';
+    }
+
+    if (value < 1000) {
+      return '30px';
+    }
+
+    if (value < 10000) {
+      return '40px';
+    }
+
+    return '50px';
+  }
+
+  if (size === Sizes$6.big) {
+    if (value < 100) {
+      return '30px';
+    }
+
+    if (value < 1000) {
+      return '40px';
+    }
+
+    if (value < 10000) {
+      return '55px';
+    }
+
+    return '70px';
+  }
+
+  return '50px';
+};
+
+const fontMoreLess = size => {
+  switch (size) {
+    case Sizes$6.small:
+      return '10px';
+
+    case Sizes$6.medium:
+      return '15px';
+
+    case Sizes$6.big:
+      return '22px';
+
+    default:
+      return '15px';
+  }
+};
+
+const Container$7 = styled.div(_t$b || (_t$b = _$b`
+  font-family: MontSerrat !important;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  opacity: ${0};
+
+  .btn {
+    width: ${0};
+    font-size: ${0};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: ${0};
+    color: ${0};
+  }
+
+  .left {
+    opacity: ${0};
+
+    cursor: ${0};
+  }
+
+  .right {
+    opacity: ${0};
+
+    cursor: ${0};
+  }
+
+  input {
+    text-align: center;
+    width: ${0};
+    font-size: ${0};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: ${0};
+    border: none;
+    outline: none;
+  }
+
+  input[type='number']::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+  input[type='number'] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+  }
+
+  input:disabled {
+    background-color: transparent;
+  }
+`), props => props.disabled ? '0.5' : '1', props => props.size ? widthBtnMoreLess(props.size) : '30px', props => props.size ? fontMoreLess(props.size) : '15px', props => props.size ? heightBtnMoreLess(props.size) : '30px', colors.gray20, props => props.noLess ? '0.2' : '1', props => props.disabled || props.noLess ? 'default' : 'pointer', props => props.noMore ? '0.2' : '1', props => props.disabled || props.noMore ? 'default' : 'pointer', props => props.size ? widthValueMoreLess(props.size, props.value) : '15px', props => props.size ? fontMoreLess(props.size) : '15px', colors.gray20);
+
+const MoreLess = ({
+  size,
+  disabled,
+  value,
+  limit,
+  minimum,
+  more,
+  less,
+  onChange
+}) => {
+  const [noLess, setNoLess] = useState(false);
+  const [noMore, setNoMore] = useState(false);
+  const [sizeState, setSizeState] = useState('medium');
+  useEffect(() => {
+    if (size) {
+      setSizeState(size);
+    }
+  }, [size]);
+  useEffect(() => {
+    if (minimum && value <= minimum || value <= 0) {
+      setNoLess(true);
+    } else {
+      setNoLess(false);
+    }
+  }, [minimum, value]);
+  useEffect(() => {
+    if (limit && value >= limit) {
+      setNoMore(true);
+    } else {
+      setNoMore(false);
+    }
+  }, [limit, value]);
+  return React$2.createElement(Container$7, {
+    limit: limit,
+    minimum: minimum,
+    value: value,
+    size: sizeState,
+    disabled: disabled,
+    noLess: noLess,
+    noMore: noMore
+  }, React$2.createElement("div", {
+    className: "btn left",
+    onClick: () => !disabled ? less ? noLess ? null : less() : null : null
+  }, React$2.createElement(FontAwesomeIcon, {
+    icon: faMinus
+  })), React$2.createElement("input", {
+    value: value || value === 0 ? value.toString() : '',
+    type: "number",
+    onChange: event => onChange ? onChange(Number(event.target.value)) : null,
+    disabled: disabled || !onChange
+  }), React$2.createElement("div", {
+    className: "btn right",
+    onClick: () => !disabled ? noMore ? null : more ? more() : null : null
+  }, React$2.createElement(FontAwesomeIcon, {
+    icon: faPlus
+  })));
+};
+
+let _$c = t => t,
+    _t$c,
+    _t2$8,
+    _t3$7;
+const Shadow = styled.div(_t$c || (_t$c = _$c`
+  font-family: MontSerrat !important;
+  box-shadow: ${0};
+
+  border: ${0};
+  padding: 1.25rem;
+  background-color: ${0};
+  border-radius: 1.875rem;
+  position: relative;
+
+  width: ${0};
+
+  .loading-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 30px;
+    z-index: 2;
+    position: absolute;
+  }
+`), props => {
+  if (props.type == 'none') {
+    return 'none';
+  }
+
+  if (props.type == 'border') {
+    return 'none';
+  }
+
+  if (props.type == 'min-shadow') {
+    return '0px 0.125rem 0.25rem #00000029';
+  }
+
+  return '0 1.25rem 3.125rem 0 rgba(0, 0, 0, 0.16)';
+}, props => {
+  var _props$style;
+
+  return props.type == 'border' || (_props$style = props.style) !== null && _props$style !== void 0 && _props$style.borderRadius ? `1px solid  ${colors.default20}` : '';
+}, colors.white, props => {
+  if (props.width) {
+    if (typeof props.width === 'string') {
+      return props.width;
+    }
+
+    return `${props.width}px`;
+  }
+
+  return '100%';
+});
+const Button$1 = styled.a(_t2$8 || (_t2$8 = _$c`
+  font-family: MontSerrat !important;
+  background-color: ${0};
+  padding: 0.75rem 1.5625rem;
+  border-radius: 1.875rem;
+  border: 1px solid ${0};
+  width: ${0};
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+
+  :hover {
+    background-color: ${0};
+  }
+
+  span {
+    margin-left: 0.9375rem;
+    font-size: 0.9375rem;
+    color: ${0};
+  }
+`), colors.card, colors.default30, props => {
+  if (props.width) {
+    if (typeof props.width === 'string') {
+      return props.width;
+    }
+
+    return `${props.width}px`;
+  }
+
+  return '100%';
+}, colors.default10, props => props.colorText ? props.colorText : colors.brandDark);
+const Complement = styled.div(_t3$7 || (_t3$7 = _$c`
+  font-family: MontSerrat !important;
+
+  color: ${0};
+  background-color: ${0};
+
+  border: 1px solid ${0};
+  text-align: center;
+  margin-top: -1.5625rem;
+  padding-top: 1.5625rem;
+  width: 100%;
+
+  border-bottom-left-radius: 1.875rem;
+  border-bottom-right-radius: 1.875rem;
+`), colors.gray20, colors.default10, colors.default20);
+
+const Card = ({
+  children,
+  width,
+  type: _type = 'shadow',
+  style,
+  icon,
+  sizeIcon,
+  colorIcon,
+  text,
+  colorText,
+  onClick,
+  loading,
+  className,
+  id,
+  complement,
+  complementStyle,
+  complementClassName,
+  ...rest
+}) => {
+  function renderShadow() {
+    if (complement) {
+      return React$2.createElement("div", null, React$2.createElement(Shadow, {
+        className: className,
+        width: width,
+        style: style,
+        type: _type,
+        id: id
+      }, loading && React$2.createElement("div", {
+        className: "loading-card"
+      }, React$2.createElement(Loader, null)), children), React$2.createElement(Complement, {
+        className: complementClassName,
+        style: complementStyle
+      }, complement));
+    }
+
+    return React$2.createElement(Shadow, {
+      className: className,
+      width: width,
+      style: style,
+      type: _type,
+      id: id
+    }, loading && React$2.createElement("div", {
+      className: "loading-card"
+    }, React$2.createElement(Loader, null)), children);
+  }
+
+  function renderButton() {
+    return React$2.createElement(Button$1, {
+      style: style,
+      colorText: colorText,
+      onClick: onClick,
+      href: rest.href,
+      width: width,
+      className: className,
+      id: id
+    }, icon && React$2.createElement(React$2.Fragment, null, React$2.createElement(FontAwesomeIcon, {
+      icon: icon,
+      color: colorIcon || colors.brandDark,
+      size: sizeIcon || 'lg'
+    })), React$2.createElement("span", null, text));
+  }
+
+  switch (_type) {
+    case 'shadow'  :
+      return renderShadow();
+
+    case 'button':
+      return renderButton();
+
+    default:
+      return renderShadow();
+  }
+};
+
+function _interopDefault(e){return e&&"object"==typeof e&&"default"in e?e["default"]:e}var React=_interopDefault(React$2);function _defaults2(e,t){for(var n=Object.getOwnPropertyNames(t),a=0;a<n.length;a++){var i=n[a],r=Object.getOwnPropertyDescriptor(t,i);r&&r.configurable&&e[i]===undefined&&Object.defineProperty(e,i,r);}return e}function _extends(){return (_extends=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var a in n)Object.prototype.hasOwnProperty.call(n,a)&&(e[a]=n[a]);}return e}).apply(this,arguments)}function _inheritsLoose(e,t){e.prototype=Object.create(t.prototype),_defaults2(e.prototype.constructor=e,t);}function _objectWithoutPropertiesLoose$1(e,t){if(null==e)return {};var n,a,i={},r=Object.keys(e);for(a=0;a<r.length;a++)n=r[a],0<=t.indexOf(n)||(i[n]=e[n]);return i}function _assertThisInitialized(e){if(void 0===e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return e}var invariant=function(e,t,n,a,i,r,o,s){if(!e){var l;if(t===undefined)l=new Error("Minified exception occurred; use the non-minified dev environment for the full error message and additional helpful warnings.");else {var u=[n,a,i,r,o,s],c=0;(l=new Error(t.replace(/%s/g,function(){return u[c++]}))).name="Invariant Violation";}throw l.framesToPop=1,l}},invariant_1=invariant;function setInputSelection(e,t,n){if("selectionStart"in e&&"selectionEnd"in e)e.selectionStart=t,e.selectionEnd=n;else {var a=e.createTextRange();a.collapse(!0),a.moveStart("character",t),a.moveEnd("character",n-t),a.select();}}function getInputSelection(e){var t=0,n=0;if("selectionStart"in e&&"selectionEnd"in e)t=e.selectionStart,n=e.selectionEnd;else {var a=document.selection.createRange();a.parentElement()===e&&(t=-a.moveStart("character",-e.value.length),n=-a.moveEnd("character",-e.value.length));}return {start:t,end:n,length:n-t}}var defaultFormatChars={9:"[0-9]",a:"[A-Za-z]","*":"[A-Za-z0-9]"},defaultMaskChar="_";function parseMask(e,t,n){var a="",i="",r=null,o=[];if(t===undefined&&(t=defaultMaskChar),null==n&&(n=defaultFormatChars),!e||"string"!=typeof e)return {maskChar:t,formatChars:n,mask:null,prefix:null,lastEditablePosition:null,permanents:[]};var s=!1;return e.split("").forEach(function(e){s=!s&&"\\"===e||(s||!n[e]?(o.push(a.length),a.length===o.length-1&&(i+=e)):r=a.length+1,a+=e,!1);}),{maskChar:t,formatChars:n,prefix:i,mask:a,lastEditablePosition:r,permanents:o}}function isPermanentCharacter(e,t){return -1!==e.permanents.indexOf(t)}function isAllowedCharacter(e,t,n){var a=e.mask,i=e.formatChars;if(!n)return !1;if(isPermanentCharacter(e,t))return a[t]===n;var r=i[a[t]];return new RegExp(r).test(n)}function isEmpty(n,e){return e.split("").every(function(e,t){return isPermanentCharacter(n,t)||!isAllowedCharacter(n,t,e)})}function getFilledLength(e,t){var n=e.maskChar,a=e.prefix;if(!n){for(;t.length>a.length&&isPermanentCharacter(e,t.length-1);)t=t.slice(0,t.length-1);return t.length}for(var i=a.length,r=t.length;r>=a.length;r--){var o=t[r];if(!isPermanentCharacter(e,r)&&isAllowedCharacter(e,r,o)){i=r+1;break}}return i}function isFilled(e,t){return getFilledLength(e,t)===e.mask.length}function formatValue(e,t){var n=e.maskChar,a=e.mask,i=e.prefix;if(!n){for((t=insertString(e,"",t,0)).length<i.length&&(t=i);t.length<a.length&&isPermanentCharacter(e,t.length);)t+=a[t.length];return t}if(t)return insertString(e,formatValue(e,""),t,0);for(var r=0;r<a.length;r++)isPermanentCharacter(e,r)?t+=a[r]:t+=n;return t}function clearRange(n,e,a,t){var i=a+t,r=n.maskChar,o=n.mask,s=n.prefix,l=e.split("");if(r)return l.map(function(e,t){return t<a||i<=t?e:isPermanentCharacter(n,t)?o[t]:r}).join("");for(var u=i;u<l.length;u++)isPermanentCharacter(n,u)&&(l[u]="");return a=Math.max(s.length,a),l.splice(a,i-a),e=l.join(""),formatValue(n,e)}function insertString(r,o,e,s){var l=r.mask,u=r.maskChar,c=r.prefix,t=e.split(""),h=isFilled(r,o);return !u&&s>o.length&&(o+=l.slice(o.length,s)),t.every(function(e){for(;i=e,isPermanentCharacter(r,a=s)&&i!==l[a];){if(s>=o.length&&(o+=l[s]),t=e,n=s,u&&isPermanentCharacter(r,n)&&t===u)return !0;if(++s>=l.length)return !1}var t,n,a,i;return !isAllowedCharacter(r,s,e)&&e!==u||(s<o.length?o=u||h||s<c.length?o.slice(0,s)+e+o.slice(s+1):(o=o.slice(0,s)+e+o.slice(s),formatValue(r,o)):u||(o+=e),++s<l.length)}),o}function getInsertStringLength(a,e,t,i){var r=a.mask,o=a.maskChar,n=t.split(""),s=i;return n.every(function(e){for(;n=e,isPermanentCharacter(a,t=i)&&n!==r[t];)if(++i>=r.length)return !1;var t,n;return (isAllowedCharacter(a,i,e)||e===o)&&i++,i<r.length}),i-s}function getLeftEditablePosition(e,t){for(var n=t;0<=n;--n)if(!isPermanentCharacter(e,n))return n;return null}function getRightEditablePosition(e,t){for(var n=e.mask,a=t;a<n.length;++a)if(!isPermanentCharacter(e,a))return a;return null}function getStringValue(e){return e||0===e?e+"":""}function processChange(e,t,n,a,i){var r=e.mask,o=e.prefix,s=e.lastEditablePosition,l=t,u="",c=0,h=0,f=Math.min(i.start,n.start);if(n.end>i.start?h=(c=getInsertStringLength(e,a,u=l.slice(i.start,n.end),f))?i.length:0:l.length<a.length&&(h=a.length-l.length),l=a,h){if(1===h&&!i.length)f=i.start===n.start?getRightEditablePosition(e,n.start):getLeftEditablePosition(e,n.start);l=clearRange(e,l,f,h);}return l=insertString(e,l,u,f),(f+=c)>=r.length?f=r.length:f<o.length&&!c?f=o.length:f>=o.length&&f<s&&c&&(f=getRightEditablePosition(e,f)),u||(u=null),{value:l=formatValue(e,l),enteredString:u,selection:{start:f,end:f}}}function isWindowsPhoneBrowser(){var e=new RegExp("windows","i"),t=new RegExp("phone","i"),n=navigator.userAgent;return e.test(n)&&t.test(n)}function isFunction(e){return "function"==typeof e}function getRequestAnimationFrame(){return window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame}function getCancelAnimationFrame(){return window.cancelAnimationFrame||window.webkitCancelRequestAnimationFrame||window.webkitCancelAnimationFrame||window.mozCancelAnimationFrame}function defer(e){return (!!getCancelAnimationFrame()?getRequestAnimationFrame():function(){return setTimeout(e,1e3/60)})(e)}function cancelDefer(e){(getCancelAnimationFrame()||clearTimeout)(e);}var InputElement=function(c){function e(e){var f=c.call(this,e)||this;f.focused=!1,f.mounted=!1,f.previousSelection=null,f.selectionDeferId=null,f.saveSelectionLoopDeferId=null,f.saveSelectionLoop=function(){f.previousSelection=f.getSelection(),f.saveSelectionLoopDeferId=defer(f.saveSelectionLoop);},f.runSaveSelectionLoop=function(){null===f.saveSelectionLoopDeferId&&f.saveSelectionLoop();},f.stopSaveSelectionLoop=function(){null!==f.saveSelectionLoopDeferId&&(cancelDefer(f.saveSelectionLoopDeferId),f.saveSelectionLoopDeferId=null,f.previousSelection=null);},f.getInputDOMNode=function(){if(!f.mounted)return null;var e=reactDom.findDOMNode(_assertThisInitialized(_assertThisInitialized(f))),t="undefined"!=typeof window&&e instanceof window.Element;if(e&&!t)return null;if("INPUT"!==e.nodeName&&(e=e.querySelector("input")),!e)throw new Error("react-input-mask: inputComponent doesn't contain input node");return e},f.getInputValue=function(){var e=f.getInputDOMNode();return e?e.value:null},f.setInputValue=function(e){var t=f.getInputDOMNode();t&&(f.value=e,t.value=e);},f.setCursorToEnd=function(){var e=getFilledLength(f.maskOptions,f.value),t=getRightEditablePosition(f.maskOptions,e);null!==t&&f.setCursorPosition(t);},f.setSelection=function(e,t,n){void 0===n&&(n={});var a=f.getInputDOMNode(),i=f.isFocused();a&&i&&(n.deferred||setInputSelection(a,e,t),null!==f.selectionDeferId&&cancelDefer(f.selectionDeferId),f.selectionDeferId=defer(function(){f.selectionDeferId=null,setInputSelection(a,e,t);}),f.previousSelection={start:e,end:t,length:Math.abs(t-e)});},f.getSelection=function(){return getInputSelection(f.getInputDOMNode())},f.getCursorPosition=function(){return f.getSelection().start},f.setCursorPosition=function(e){f.setSelection(e,e);},f.isFocused=function(){return f.focused},f.getBeforeMaskedValueChangeConfig=function(){var e=f.maskOptions,t=e.mask,n=e.maskChar,a=e.permanents,i=e.formatChars;return {mask:t,maskChar:n,permanents:a,alwaysShowMask:!!f.props.alwaysShowMask,formatChars:i}},f.isInputAutofilled=function(e,t,n,a){var i=f.getInputDOMNode();try{if(i.matches(":-webkit-autofill"))return !0}catch(r){}return !f.focused||a.end<n.length&&t.end===e.length},f.onChange=function(e){var t=_assertThisInitialized(_assertThisInitialized(f)).beforePasteState,n=_assertThisInitialized(_assertThisInitialized(f)).previousSelection,a=f.props.beforeMaskedValueChange,i=f.getInputValue(),r=f.value,o=f.getSelection();f.isInputAutofilled(i,o,r,n)&&(r=formatValue(f.maskOptions,""),n={start:0,end:0,length:0}),t&&(n=t.selection,r=t.value,o={start:n.start+i.length,end:n.start+i.length,length:0},i=r.slice(0,n.start)+i+r.slice(n.end),f.beforePasteState=null);var s=processChange(f.maskOptions,i,o,r,n),l=s.enteredString,u=s.selection,c=s.value;if(isFunction(a)){var h=a({value:c,selection:u},{value:r,selection:n},l,f.getBeforeMaskedValueChangeConfig());c=h.value,u=h.selection;}f.setInputValue(c),isFunction(f.props.onChange)&&f.props.onChange(e),f.isWindowsPhoneBrowser?f.setSelection(u.start,u.end,{deferred:!0}):f.setSelection(u.start,u.end);},f.onFocus=function(e){var t=f.props.beforeMaskedValueChange,n=f.maskOptions,a=n.mask,i=n.prefix;if(f.focused=!0,f.mounted=!0,a){if(f.value)getFilledLength(f.maskOptions,f.value)<f.maskOptions.mask.length&&f.setCursorToEnd();else {var r=formatValue(f.maskOptions,i),o=formatValue(f.maskOptions,r),s=getFilledLength(f.maskOptions,o),l=getRightEditablePosition(f.maskOptions,s),u={start:l,end:l};if(isFunction(t)){var c=t({value:o,selection:u},{value:f.value,selection:null},null,f.getBeforeMaskedValueChangeConfig());o=c.value,u=c.selection;}var h=o!==f.getInputValue();h&&f.setInputValue(o),h&&isFunction(f.props.onChange)&&f.props.onChange(e),f.setSelection(u.start,u.end);}f.runSaveSelectionLoop();}isFunction(f.props.onFocus)&&f.props.onFocus(e);},f.onBlur=function(e){var t=f.props.beforeMaskedValueChange,n=f.maskOptions.mask;if(f.stopSaveSelectionLoop(),f.focused=!1,n&&!f.props.alwaysShowMask&&isEmpty(f.maskOptions,f.value)){var a="";if(isFunction(t))a=t({value:a,selection:null},{value:f.value,selection:f.previousSelection},null,f.getBeforeMaskedValueChangeConfig()).value;var i=a!==f.getInputValue();i&&f.setInputValue(a),i&&isFunction(f.props.onChange)&&f.props.onChange(e);}isFunction(f.props.onBlur)&&f.props.onBlur(e);},f.onMouseDown=function(e){if(!f.focused&&document.addEventListener){f.mouseDownX=e.clientX,f.mouseDownY=e.clientY,f.mouseDownTime=(new Date).getTime();var r=function r(e){if(document.removeEventListener("mouseup",r),f.focused){var t=Math.abs(e.clientX-f.mouseDownX),n=Math.abs(e.clientY-f.mouseDownY),a=Math.max(t,n),i=(new Date).getTime()-f.mouseDownTime;(a<=10&&i<=200||a<=5&&i<=300)&&f.setCursorToEnd();}};document.addEventListener("mouseup",r);}isFunction(f.props.onMouseDown)&&f.props.onMouseDown(e);},f.onPaste=function(e){isFunction(f.props.onPaste)&&f.props.onPaste(e),e.defaultPrevented||(f.beforePasteState={value:f.getInputValue(),selection:f.getSelection()},f.setInputValue(""));},f.handleRef=function(e){null==f.props.children&&isFunction(f.props.inputRef)&&f.props.inputRef(e);};var t=e.mask,n=e.maskChar,a=e.formatChars,i=e.alwaysShowMask,r=e.beforeMaskedValueChange,o=e.defaultValue,s=e.value;f.maskOptions=parseMask(t,n,a),null==o&&(o=""),null==s&&(s=o);var l=getStringValue(s);if(f.maskOptions.mask&&(i||l)&&(l=formatValue(f.maskOptions,l),isFunction(r))){var u=e.value;null==e.value&&(u=o),l=r({value:l,selection:null},{value:u=getStringValue(u),selection:null},null,f.getBeforeMaskedValueChangeConfig()).value;}return f.value=l,f}_inheritsLoose(e,c);var t=e.prototype;return t.componentDidMount=function(){this.mounted=!0,this.getInputDOMNode()&&(this.isWindowsPhoneBrowser=isWindowsPhoneBrowser(),this.maskOptions.mask&&this.getInputValue()!==this.value&&this.setInputValue(this.value));},t.componentDidUpdate=function(){var e=this.previousSelection,t=this.props,n=t.beforeMaskedValueChange,a=t.alwaysShowMask,i=t.mask,r=t.maskChar,o=t.formatChars,s=this.maskOptions,l=a||this.isFocused(),u=null!=this.props.value,c=u?getStringValue(this.props.value):this.value,h=e?e.start:null;if(this.maskOptions=parseMask(i,r,o),this.maskOptions.mask){!s.mask&&this.isFocused()&&this.runSaveSelectionLoop();var f=this.maskOptions.mask&&this.maskOptions.mask!==s.mask;if(s.mask||u||(c=this.getInputValue()),(f||this.maskOptions.mask&&(c||l))&&(c=formatValue(this.maskOptions,c)),f){var p=getFilledLength(this.maskOptions,c);(null===h||p<h)&&(h=isFilled(this.maskOptions,c)?p:getRightEditablePosition(this.maskOptions,p));}!this.maskOptions.mask||!isEmpty(this.maskOptions,c)||l||u&&this.props.value||(c="");var d={start:h,end:h};if(isFunction(n)){var m=n({value:c,selection:d},{value:this.value,selection:this.previousSelection},null,this.getBeforeMaskedValueChangeConfig());c=m.value,d=m.selection;}this.value=c;var g=this.getInputValue()!==this.value;g?(this.setInputValue(this.value),this.forceUpdate()):f&&this.forceUpdate();var v=!1;null!=d.start&&null!=d.end&&(v=!e||e.start!==d.start||e.end!==d.end),(v||g)&&this.setSelection(d.start,d.end);}else s.mask&&(this.stopSaveSelectionLoop(),this.forceUpdate());},t.componentWillUnmount=function(){this.mounted=!1,null!==this.selectionDeferId&&cancelDefer(this.selectionDeferId),this.stopSaveSelectionLoop();},t.render=function(){var t,e=this.props,n=(e.children),a=_objectWithoutPropertiesLoose$1(e,["mask","alwaysShowMask","maskChar","formatChars","inputRef","beforeMaskedValueChange","children"]);if(n){isFunction(n)||invariant_1(!1);var i=["onChange","onPaste","onMouseDown","onFocus","onBlur","value","disabled","readOnly"],r=_extends({},a);i.forEach(function(e){return delete r[e]}),t=n(r),i.filter(function(e){return null!=t.props[e]&&t.props[e]!==a[e]}).length&&invariant_1(!1);}else t=React.createElement("input",_extends({ref:this.handleRef},a));var o={onFocus:this.onFocus,onBlur:this.onBlur};return this.maskOptions.mask&&(a.disabled||a.readOnly||(o.onChange=this.onChange,o.onPaste=this.onPaste,o.onMouseDown=this.onMouseDown),null!=a.value&&(o.value=this.value)),t=React.cloneElement(t,o)},e}(React.Component);var reactInputMask_production_min=InputElement;
+
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/**
+ * Use invariant() to assert state which your program assumes to be true.
+ *
+ * Provide sprintf-style format (only %s is supported) and arguments
+ * to provide information about what broke and what you were
+ * expecting.
+ *
+ * The invariant message will be stripped in production, but the invariant
+ * will remain to ensure logic does not differ in production.
+ */
+
+var invariant$1 = function(condition, format, a, b, c, d, e, f) {
+  if (process.env.NODE_ENV !== 'production') {
+    if (format === undefined) {
+      throw new Error('invariant requires an error message argument');
+    }
+  }
+
+  if (!condition) {
+    var error;
+    if (format === undefined) {
+      error = new Error(
+        'Minified exception occurred; use the non-minified dev environment ' +
+        'for the full error message and additional helpful warnings.'
+      );
+    } else {
+      var args = [a, b, c, d, e, f];
+      var argIndex = 0;
+      error = new Error(
+        format.replace(/%s/g, function() { return args[argIndex++]; })
+      );
+      error.name = 'Invariant Violation';
+    }
+
+    error.framesToPop = 1; // we don't care about invariant's own frame
+    throw error;
+  }
+};
+
+var browser = invariant$1;
+
+/**
+ * Copyright (c) 2014-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/**
+ * Similar to invariant but only logs a warning if the condition is not met.
+ * This can be used to log issues in development environments in critical
+ * paths. Removing the logging code for production environments will keep the
+ * same logic and follow the same code paths.
+ */
+
+var __DEV__ = process.env.NODE_ENV !== 'production';
+
+var warning = function() {};
+
+if (__DEV__) {
+  var printWarning$2 = function printWarning(format, args) {
+    var len = arguments.length;
+    args = new Array(len > 1 ? len - 1 : 0);
+    for (var key = 1; key < len; key++) {
+      args[key - 1] = arguments[key];
+    }
+    var argIndex = 0;
+    var message = 'Warning: ' +
+      format.replace(/%s/g, function() {
+        return args[argIndex++];
+      });
+    if (typeof console !== 'undefined') {
+      console.error(message);
+    }
+    try {
+      // --- Welcome to debugging React ---
+      // This error was thrown as a convenience so that you can use this stack
+      // to find the callsite that caused this warning to fire.
+      throw new Error(message);
+    } catch (x) {}
+  };
+
+  warning = function(condition, format, args) {
+    var len = arguments.length;
+    args = new Array(len > 2 ? len - 2 : 0);
+    for (var key = 2; key < len; key++) {
+      args[key - 2] = arguments[key];
+    }
+    if (format === undefined) {
+      throw new Error(
+          '`warning(condition, format, ...args)` requires a warning ' +
+          'message argument'
+      );
+    }
+    if (!condition) {
+      printWarning$2.apply(null, [format].concat(args));
+    }
+  };
+}
+
+var warning_1 = warning;
+
+function _interopDefault$1 (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
+
+var React$1 = _interopDefault$1(React$2);
+
+var invariant$2 = _interopDefault$1(browser);
+var warning$1 = _interopDefault$1(warning_1);
+
+function _defaults2$1(obj, defaults) { var keys = Object.getOwnPropertyNames(defaults); for (var i = 0; i < keys.length; i++) { var key = keys[i]; var value = Object.getOwnPropertyDescriptor(defaults, key); if (value && value.configurable && obj[key] === undefined) { Object.defineProperty(obj, key, value); } } return obj; }
+
+function _extends$1() {
+  _extends$1 = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  return _extends$1.apply(this, arguments);
+}
+
+function _inheritsLoose$1(subClass, superClass) {
+  subClass.prototype = Object.create(superClass.prototype);
+  subClass.prototype.constructor = subClass;
+
+  _defaults2$1(subClass, superClass);
+}
+
+function _objectWithoutPropertiesLoose$2(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  var sourceKeys = Object.keys(source);
+  var key, i;
+
+  for (i = 0; i < sourceKeys.length; i++) {
+    key = sourceKeys[i];
+    if (excluded.indexOf(key) >= 0) continue;
+    target[key] = source[key];
+  }
+
+  return target;
+}
+
+function _assertThisInitialized$1(self) {
+  if (self === void 0) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }
+
+  return self;
+}
+
+function setInputSelection$1(input, start, end) {
+  if ('selectionStart' in input && 'selectionEnd' in input) {
+    input.selectionStart = start;
+    input.selectionEnd = end;
+  } else {
+    var range = input.createTextRange();
+    range.collapse(true);
+    range.moveStart('character', start);
+    range.moveEnd('character', end - start);
+    range.select();
+  }
+}
+function getInputSelection$1(input) {
+  var start = 0;
+  var end = 0;
+
+  if ('selectionStart' in input && 'selectionEnd' in input) {
+    start = input.selectionStart;
+    end = input.selectionEnd;
+  } else {
+    var range = document.selection.createRange();
+
+    if (range.parentElement() === input) {
+      start = -range.moveStart('character', -input.value.length);
+      end = -range.moveEnd('character', -input.value.length);
+    }
+  }
+
+  return {
+    start: start,
+    end: end,
+    length: end - start
+  };
+}
+
+var defaultFormatChars$1 = {
+  '9': '[0-9]',
+  'a': '[A-Za-z]',
+  '*': '[A-Za-z0-9]'
+};
+var defaultMaskChar$1 = '_';
+
+function parseMask$1 (mask, maskChar, formatChars) {
+  var parsedMaskString = '';
+  var prefix = '';
+  var lastEditablePosition = null;
+  var permanents = [];
+
+  if (maskChar === undefined) {
+    maskChar = defaultMaskChar$1;
+  }
+
+  if (formatChars == null) {
+    formatChars = defaultFormatChars$1;
+  }
+
+  if (!mask || typeof mask !== 'string') {
+    return {
+      maskChar: maskChar,
+      formatChars: formatChars,
+      mask: null,
+      prefix: null,
+      lastEditablePosition: null,
+      permanents: []
+    };
+  }
+
+  var isPermanent = false;
+  mask.split('').forEach(function (character) {
+    if (!isPermanent && character === '\\') {
+      isPermanent = true;
+    } else {
+      if (isPermanent || !formatChars[character]) {
+        permanents.push(parsedMaskString.length);
+
+        if (parsedMaskString.length === permanents.length - 1) {
+          prefix += character;
+        }
+      } else {
+        lastEditablePosition = parsedMaskString.length + 1;
+      }
+
+      parsedMaskString += character;
+      isPermanent = false;
+    }
+  });
+  return {
+    maskChar: maskChar,
+    formatChars: formatChars,
+    prefix: prefix,
+    mask: parsedMaskString,
+    lastEditablePosition: lastEditablePosition,
+    permanents: permanents
+  };
+}
+
+/* eslint no-use-before-define: ["error", { functions: false }] */
+function isPermanentCharacter$1(maskOptions, pos) {
+  return maskOptions.permanents.indexOf(pos) !== -1;
+}
+function isAllowedCharacter$1(maskOptions, pos, character) {
+  var mask = maskOptions.mask,
+      formatChars = maskOptions.formatChars;
+
+  if (!character) {
+    return false;
+  }
+
+  if (isPermanentCharacter$1(maskOptions, pos)) {
+    return mask[pos] === character;
+  }
+
+  var ruleChar = mask[pos];
+  var charRule = formatChars[ruleChar];
+  return new RegExp(charRule).test(character);
+}
+function isEmpty$1(maskOptions, value) {
+  return value.split('').every(function (character, i) {
+    return isPermanentCharacter$1(maskOptions, i) || !isAllowedCharacter$1(maskOptions, i, character);
+  });
+}
+function getFilledLength$1(maskOptions, value) {
+  var maskChar = maskOptions.maskChar,
+      prefix = maskOptions.prefix;
+
+  if (!maskChar) {
+    while (value.length > prefix.length && isPermanentCharacter$1(maskOptions, value.length - 1)) {
+      value = value.slice(0, value.length - 1);
+    }
+
+    return value.length;
+  }
+
+  var filledLength = prefix.length;
+
+  for (var i = value.length; i >= prefix.length; i--) {
+    var character = value[i];
+    var isEnteredCharacter = !isPermanentCharacter$1(maskOptions, i) && isAllowedCharacter$1(maskOptions, i, character);
+
+    if (isEnteredCharacter) {
+      filledLength = i + 1;
+      break;
+    }
+  }
+
+  return filledLength;
+}
+function isFilled$1(maskOptions, value) {
+  return getFilledLength$1(maskOptions, value) === maskOptions.mask.length;
+}
+function formatValue$1(maskOptions, value) {
+  var maskChar = maskOptions.maskChar,
+      mask = maskOptions.mask,
+      prefix = maskOptions.prefix;
+
+  if (!maskChar) {
+    value = insertString$1(maskOptions, '', value, 0);
+
+    if (value.length < prefix.length) {
+      value = prefix;
+    }
+
+    while (value.length < mask.length && isPermanentCharacter$1(maskOptions, value.length)) {
+      value += mask[value.length];
+    }
+
+    return value;
+  }
+
+  if (value) {
+    var emptyValue = formatValue$1(maskOptions, '');
+    return insertString$1(maskOptions, emptyValue, value, 0);
+  }
+
+  for (var i = 0; i < mask.length; i++) {
+    if (isPermanentCharacter$1(maskOptions, i)) {
+      value += mask[i];
+    } else {
+      value += maskChar;
+    }
+  }
+
+  return value;
+}
+function clearRange$1(maskOptions, value, start, len) {
+  var end = start + len;
+  var maskChar = maskOptions.maskChar,
+      mask = maskOptions.mask,
+      prefix = maskOptions.prefix;
+  var arrayValue = value.split('');
+
+  if (!maskChar) {
+    // remove any permanent chars after clear range, they will be added back by formatValue
+    for (var i = end; i < arrayValue.length; i++) {
+      if (isPermanentCharacter$1(maskOptions, i)) {
+        arrayValue[i] = '';
+      }
+    }
+
+    start = Math.max(prefix.length, start);
+    arrayValue.splice(start, end - start);
+    value = arrayValue.join('');
+    return formatValue$1(maskOptions, value);
+  }
+
+  return arrayValue.map(function (character, i) {
+    if (i < start || i >= end) {
+      return character;
+    }
+
+    if (isPermanentCharacter$1(maskOptions, i)) {
+      return mask[i];
+    }
+
+    return maskChar;
+  }).join('');
+}
+function insertString$1(maskOptions, value, insertStr, insertPosition) {
+  var mask = maskOptions.mask,
+      maskChar = maskOptions.maskChar,
+      prefix = maskOptions.prefix;
+  var arrayInsertStr = insertStr.split('');
+  var isInputFilled = isFilled$1(maskOptions, value);
+
+  var isUsablePosition = function isUsablePosition(pos, character) {
+    return !isPermanentCharacter$1(maskOptions, pos) || character === mask[pos];
+  };
+
+  var isUsableCharacter = function isUsableCharacter(character, pos) {
+    return !maskChar || !isPermanentCharacter$1(maskOptions, pos) || character !== maskChar;
+  };
+
+  if (!maskChar && insertPosition > value.length) {
+    value += mask.slice(value.length, insertPosition);
+  }
+
+  arrayInsertStr.every(function (insertCharacter) {
+    while (!isUsablePosition(insertPosition, insertCharacter)) {
+      if (insertPosition >= value.length) {
+        value += mask[insertPosition];
+      }
+
+      if (!isUsableCharacter(insertCharacter, insertPosition)) {
+        return true;
+      }
+
+      insertPosition++; // stop iteration if maximum value length reached
+
+      if (insertPosition >= mask.length) {
+        return false;
+      }
+    }
+
+    var isAllowed = isAllowedCharacter$1(maskOptions, insertPosition, insertCharacter) || insertCharacter === maskChar;
+
+    if (!isAllowed) {
+      return true;
+    }
+
+    if (insertPosition < value.length) {
+      if (maskChar || isInputFilled || insertPosition < prefix.length) {
+        value = value.slice(0, insertPosition) + insertCharacter + value.slice(insertPosition + 1);
+      } else {
+        value = value.slice(0, insertPosition) + insertCharacter + value.slice(insertPosition);
+        value = formatValue$1(maskOptions, value);
+      }
+    } else if (!maskChar) {
+      value += insertCharacter;
+    }
+
+    insertPosition++; // stop iteration if maximum value length reached
+
+    return insertPosition < mask.length;
+  });
+  return value;
+}
+function getInsertStringLength$1(maskOptions, value, insertStr, insertPosition) {
+  var mask = maskOptions.mask,
+      maskChar = maskOptions.maskChar;
+  var arrayInsertStr = insertStr.split('');
+  var initialInsertPosition = insertPosition;
+
+  var isUsablePosition = function isUsablePosition(pos, character) {
+    return !isPermanentCharacter$1(maskOptions, pos) || character === mask[pos];
+  };
+
+  arrayInsertStr.every(function (insertCharacter) {
+    while (!isUsablePosition(insertPosition, insertCharacter)) {
+      insertPosition++; // stop iteration if maximum value length reached
+
+      if (insertPosition >= mask.length) {
+        return false;
+      }
+    }
+
+    var isAllowed = isAllowedCharacter$1(maskOptions, insertPosition, insertCharacter) || insertCharacter === maskChar;
+
+    if (isAllowed) {
+      insertPosition++;
+    } // stop iteration if maximum value length reached
+
+
+    return insertPosition < mask.length;
+  });
+  return insertPosition - initialInsertPosition;
+}
+function getLeftEditablePosition$1(maskOptions, pos) {
+  for (var i = pos; i >= 0; --i) {
+    if (!isPermanentCharacter$1(maskOptions, i)) {
+      return i;
+    }
+  }
+
+  return null;
+}
+function getRightEditablePosition$1(maskOptions, pos) {
+  var mask = maskOptions.mask;
+
+  for (var i = pos; i < mask.length; ++i) {
+    if (!isPermanentCharacter$1(maskOptions, i)) {
+      return i;
+    }
+  }
+
+  return null;
+}
+function getStringValue$1(value) {
+  return !value && value !== 0 ? '' : value + '';
+}
+
+function processChange$1(maskOptions, value, selection, previousValue, previousSelection) {
+  var mask = maskOptions.mask,
+      prefix = maskOptions.prefix,
+      lastEditablePosition = maskOptions.lastEditablePosition;
+  var newValue = value;
+  var enteredString = '';
+  var formattedEnteredStringLength = 0;
+  var removedLength = 0;
+  var cursorPosition = Math.min(previousSelection.start, selection.start);
+
+  if (selection.end > previousSelection.start) {
+    enteredString = newValue.slice(previousSelection.start, selection.end);
+    formattedEnteredStringLength = getInsertStringLength$1(maskOptions, previousValue, enteredString, cursorPosition);
+
+    if (!formattedEnteredStringLength) {
+      removedLength = 0;
+    } else {
+      removedLength = previousSelection.length;
+    }
+  } else if (newValue.length < previousValue.length) {
+    removedLength = previousValue.length - newValue.length;
+  }
+
+  newValue = previousValue;
+
+  if (removedLength) {
+    if (removedLength === 1 && !previousSelection.length) {
+      var deleteFromRight = previousSelection.start === selection.start;
+      cursorPosition = deleteFromRight ? getRightEditablePosition$1(maskOptions, selection.start) : getLeftEditablePosition$1(maskOptions, selection.start);
+    }
+
+    newValue = clearRange$1(maskOptions, newValue, cursorPosition, removedLength);
+  }
+
+  newValue = insertString$1(maskOptions, newValue, enteredString, cursorPosition);
+  cursorPosition = cursorPosition + formattedEnteredStringLength;
+
+  if (cursorPosition >= mask.length) {
+    cursorPosition = mask.length;
+  } else if (cursorPosition < prefix.length && !formattedEnteredStringLength) {
+    cursorPosition = prefix.length;
+  } else if (cursorPosition >= prefix.length && cursorPosition < lastEditablePosition && formattedEnteredStringLength) {
+    cursorPosition = getRightEditablePosition$1(maskOptions, cursorPosition);
+  }
+
+  newValue = formatValue$1(maskOptions, newValue);
+
+  if (!enteredString) {
+    enteredString = null;
+  }
+
+  return {
+    value: newValue,
+    enteredString: enteredString,
+    selection: {
+      start: cursorPosition,
+      end: cursorPosition
+    }
+  };
+}
+
+function isWindowsPhoneBrowser$1() {
+  var windows = new RegExp('windows', 'i');
+  var phone = new RegExp('phone', 'i');
+  var ua = navigator.userAgent;
+  return windows.test(ua) && phone.test(ua);
+}
+
+function isFunction$1(value) {
+  return typeof value === 'function';
+}
+
+function getRequestAnimationFrame$1() {
+  return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame;
+}
+
+function getCancelAnimationFrame$1() {
+  return window.cancelAnimationFrame || window.webkitCancelRequestAnimationFrame || window.webkitCancelAnimationFrame || window.mozCancelAnimationFrame;
+}
+
+function defer$1(fn) {
+  var hasCancelAnimationFrame = !!getCancelAnimationFrame$1();
+  var deferFn;
+
+  if (hasCancelAnimationFrame) {
+    deferFn = getRequestAnimationFrame$1();
+  } else {
+    deferFn = function deferFn() {
+      return setTimeout(fn, 1000 / 60);
+    };
+  }
+
+  return deferFn(fn);
+}
+function cancelDefer$1(deferId) {
+  var cancelFn = getCancelAnimationFrame$1() || clearTimeout;
+  cancelFn(deferId);
+}
+
+var InputElement$1 =
+/*#__PURE__*/
+function (_React$Component) {
+  _inheritsLoose$1(InputElement, _React$Component);
+
+  function InputElement(props) {
+    var _this;
+
+    _this = _React$Component.call(this, props) || this;
+    _this.focused = false;
+    _this.mounted = false;
+    _this.previousSelection = null;
+    _this.selectionDeferId = null;
+    _this.saveSelectionLoopDeferId = null;
+
+    _this.saveSelectionLoop = function () {
+      _this.previousSelection = _this.getSelection();
+      _this.saveSelectionLoopDeferId = defer$1(_this.saveSelectionLoop);
+    };
+
+    _this.runSaveSelectionLoop = function () {
+      if (_this.saveSelectionLoopDeferId === null) {
+        _this.saveSelectionLoop();
+      }
+    };
+
+    _this.stopSaveSelectionLoop = function () {
+      if (_this.saveSelectionLoopDeferId !== null) {
+        cancelDefer$1(_this.saveSelectionLoopDeferId);
+        _this.saveSelectionLoopDeferId = null;
+        _this.previousSelection = null;
+      }
+    };
+
+    _this.getInputDOMNode = function () {
+      if (!_this.mounted) {
+        return null;
+      }
+
+      var input = reactDom.findDOMNode(_assertThisInitialized$1(_assertThisInitialized$1(_this)));
+      var isDOMNode = typeof window !== 'undefined' && input instanceof window.Element; // workaround for react-test-renderer
+      // https://github.com/sanniassin/react-input-mask/issues/147
+
+      if (input && !isDOMNode) {
+        return null;
+      }
+
+      if (input.nodeName !== 'INPUT') {
+        input = input.querySelector('input');
+      }
+
+      if (!input) {
+        throw new Error('react-input-mask: inputComponent doesn\'t contain input node');
+      }
+
+      return input;
+    };
+
+    _this.getInputValue = function () {
+      var input = _this.getInputDOMNode();
+
+      if (!input) {
+        return null;
+      }
+
+      return input.value;
+    };
+
+    _this.setInputValue = function (value) {
+      var input = _this.getInputDOMNode();
+
+      if (!input) {
+        return;
+      }
+
+      _this.value = value;
+      input.value = value;
+    };
+
+    _this.setCursorToEnd = function () {
+      var filledLength = getFilledLength$1(_this.maskOptions, _this.value);
+      var pos = getRightEditablePosition$1(_this.maskOptions, filledLength);
+
+      if (pos !== null) {
+        _this.setCursorPosition(pos);
+      }
+    };
+
+    _this.setSelection = function (start, end, options) {
+      if (options === void 0) {
+        options = {};
+      }
+
+      var input = _this.getInputDOMNode();
+
+      var isFocused = _this.isFocused(); // don't change selection on unfocused input
+      // because Safari sets focus on selection change (#154)
+
+
+      if (!input || !isFocused) {
+        return;
+      }
+
+      var _options = options,
+          deferred = _options.deferred;
+
+      if (!deferred) {
+        setInputSelection$1(input, start, end);
+      }
+
+      if (_this.selectionDeferId !== null) {
+        cancelDefer$1(_this.selectionDeferId);
+      } // deferred selection update is required for pre-Lollipop Android browser,
+      // but for consistent behavior we do it for all browsers
+
+
+      _this.selectionDeferId = defer$1(function () {
+        _this.selectionDeferId = null;
+        setInputSelection$1(input, start, end);
+      });
+      _this.previousSelection = {
+        start: start,
+        end: end,
+        length: Math.abs(end - start)
+      };
+    };
+
+    _this.getSelection = function () {
+      var input = _this.getInputDOMNode();
+
+      return getInputSelection$1(input);
+    };
+
+    _this.getCursorPosition = function () {
+      return _this.getSelection().start;
+    };
+
+    _this.setCursorPosition = function (pos) {
+      _this.setSelection(pos, pos);
+    };
+
+    _this.isFocused = function () {
+      return _this.focused;
+    };
+
+    _this.getBeforeMaskedValueChangeConfig = function () {
+      var _this$maskOptions = _this.maskOptions,
+          mask = _this$maskOptions.mask,
+          maskChar = _this$maskOptions.maskChar,
+          permanents = _this$maskOptions.permanents,
+          formatChars = _this$maskOptions.formatChars;
+      var alwaysShowMask = _this.props.alwaysShowMask;
+      return {
+        mask: mask,
+        maskChar: maskChar,
+        permanents: permanents,
+        alwaysShowMask: !!alwaysShowMask,
+        formatChars: formatChars
+      };
+    };
+
+    _this.isInputAutofilled = function (value, selection, previousValue, previousSelection) {
+      var input = _this.getInputDOMNode(); // only check for positive match because it will be false negative
+      // in case of autofill simulation in tests
+      //
+      // input.matches throws an exception if selector isn't supported
+
+
+      try {
+        if (input.matches(':-webkit-autofill')) {
+          return true;
+        }
+      } catch (e) {} // if input isn't focused then change event must have been triggered
+      // either by autofill or event simulation in tests
+
+
+      if (!_this.focused) {
+        return true;
+      } // if cursor has moved to the end while previousSelection forbids it
+      // then it must be autofill
+
+
+      return previousSelection.end < previousValue.length && selection.end === value.length;
+    };
+
+    _this.onChange = function (event) {
+      var _assertThisInitialize = _assertThisInitialized$1(_assertThisInitialized$1(_this)),
+          beforePasteState = _assertThisInitialize.beforePasteState;
+
+      var _assertThisInitialize2 = _assertThisInitialized$1(_assertThisInitialized$1(_this)),
+          previousSelection = _assertThisInitialize2.previousSelection;
+
+      var beforeMaskedValueChange = _this.props.beforeMaskedValueChange;
+
+      var value = _this.getInputValue();
+
+      var previousValue = _this.value;
+
+      var selection = _this.getSelection(); // autofill replaces entire value, ignore old one
+      // https://github.com/sanniassin/react-input-mask/issues/113
+
+
+      if (_this.isInputAutofilled(value, selection, previousValue, previousSelection)) {
+        previousValue = formatValue$1(_this.maskOptions, '');
+        previousSelection = {
+          start: 0,
+          end: 0,
+          length: 0
+        };
+      } // set value and selection as if we haven't
+      // cleared input in onPaste handler
+
+
+      if (beforePasteState) {
+        previousSelection = beforePasteState.selection;
+        previousValue = beforePasteState.value;
+        selection = {
+          start: previousSelection.start + value.length,
+          end: previousSelection.start + value.length,
+          length: 0
+        };
+        value = previousValue.slice(0, previousSelection.start) + value + previousValue.slice(previousSelection.end);
+        _this.beforePasteState = null;
+      }
+
+      var changedState = processChange$1(_this.maskOptions, value, selection, previousValue, previousSelection);
+      var enteredString = changedState.enteredString;
+      var newSelection = changedState.selection;
+      var newValue = changedState.value;
+
+      if (isFunction$1(beforeMaskedValueChange)) {
+        var modifiedValue = beforeMaskedValueChange({
+          value: newValue,
+          selection: newSelection
+        }, {
+          value: previousValue,
+          selection: previousSelection
+        }, enteredString, _this.getBeforeMaskedValueChangeConfig());
+        newValue = modifiedValue.value;
+        newSelection = modifiedValue.selection;
+      }
+
+      _this.setInputValue(newValue);
+
+      if (isFunction$1(_this.props.onChange)) {
+        _this.props.onChange(event);
+      }
+
+      if (_this.isWindowsPhoneBrowser) {
+        _this.setSelection(newSelection.start, newSelection.end, {
+          deferred: true
+        });
+      } else {
+        _this.setSelection(newSelection.start, newSelection.end);
+      }
+    };
+
+    _this.onFocus = function (event) {
+      var beforeMaskedValueChange = _this.props.beforeMaskedValueChange;
+      var _this$maskOptions2 = _this.maskOptions,
+          mask = _this$maskOptions2.mask,
+          prefix = _this$maskOptions2.prefix;
+      _this.focused = true; // if autoFocus is set, onFocus triggers before componentDidMount
+
+      _this.mounted = true;
+
+      if (mask) {
+        if (!_this.value) {
+          var emptyValue = formatValue$1(_this.maskOptions, prefix);
+          var newValue = formatValue$1(_this.maskOptions, emptyValue);
+          var filledLength = getFilledLength$1(_this.maskOptions, newValue);
+          var cursorPosition = getRightEditablePosition$1(_this.maskOptions, filledLength);
+          var newSelection = {
+            start: cursorPosition,
+            end: cursorPosition
+          };
+
+          if (isFunction$1(beforeMaskedValueChange)) {
+            var modifiedValue = beforeMaskedValueChange({
+              value: newValue,
+              selection: newSelection
+            }, {
+              value: _this.value,
+              selection: null
+            }, null, _this.getBeforeMaskedValueChangeConfig());
+            newValue = modifiedValue.value;
+            newSelection = modifiedValue.selection;
+          }
+
+          var isInputValueChanged = newValue !== _this.getInputValue();
+
+          if (isInputValueChanged) {
+            _this.setInputValue(newValue);
+          }
+
+          if (isInputValueChanged && isFunction$1(_this.props.onChange)) {
+            _this.props.onChange(event);
+          }
+
+          _this.setSelection(newSelection.start, newSelection.end);
+        } else if (getFilledLength$1(_this.maskOptions, _this.value) < _this.maskOptions.mask.length) {
+          _this.setCursorToEnd();
+        }
+
+        _this.runSaveSelectionLoop();
+      }
+
+      if (isFunction$1(_this.props.onFocus)) {
+        _this.props.onFocus(event);
+      }
+    };
+
+    _this.onBlur = function (event) {
+      var beforeMaskedValueChange = _this.props.beforeMaskedValueChange;
+      var mask = _this.maskOptions.mask;
+
+      _this.stopSaveSelectionLoop();
+
+      _this.focused = false;
+
+      if (mask && !_this.props.alwaysShowMask && isEmpty$1(_this.maskOptions, _this.value)) {
+        var newValue = '';
+
+        if (isFunction$1(beforeMaskedValueChange)) {
+          var modifiedValue = beforeMaskedValueChange({
+            value: newValue,
+            selection: null
+          }, {
+            value: _this.value,
+            selection: _this.previousSelection
+          }, null, _this.getBeforeMaskedValueChangeConfig());
+          newValue = modifiedValue.value;
+        }
+
+        var isInputValueChanged = newValue !== _this.getInputValue();
+
+        if (isInputValueChanged) {
+          _this.setInputValue(newValue);
+        }
+
+        if (isInputValueChanged && isFunction$1(_this.props.onChange)) {
+          _this.props.onChange(event);
+        }
+      }
+
+      if (isFunction$1(_this.props.onBlur)) {
+        _this.props.onBlur(event);
+      }
+    };
+
+    _this.onMouseDown = function (event) {
+      // tiny unintentional mouse movements can break cursor
+      // position on focus, so we have to restore it in that case
+      //
+      // https://github.com/sanniassin/react-input-mask/issues/108
+      if (!_this.focused && document.addEventListener) {
+        _this.mouseDownX = event.clientX;
+        _this.mouseDownY = event.clientY;
+        _this.mouseDownTime = new Date().getTime();
+
+        var mouseUpHandler = function mouseUpHandler(mouseUpEvent) {
+          document.removeEventListener('mouseup', mouseUpHandler);
+
+          if (!_this.focused) {
+            return;
+          }
+
+          var deltaX = Math.abs(mouseUpEvent.clientX - _this.mouseDownX);
+          var deltaY = Math.abs(mouseUpEvent.clientY - _this.mouseDownY);
+          var axisDelta = Math.max(deltaX, deltaY);
+
+          var timeDelta = new Date().getTime() - _this.mouseDownTime;
+
+          if (axisDelta <= 10 && timeDelta <= 200 || axisDelta <= 5 && timeDelta <= 300) {
+            _this.setCursorToEnd();
+          }
+        };
+
+        document.addEventListener('mouseup', mouseUpHandler);
+      }
+
+      if (isFunction$1(_this.props.onMouseDown)) {
+        _this.props.onMouseDown(event);
+      }
+    };
+
+    _this.onPaste = function (event) {
+      if (isFunction$1(_this.props.onPaste)) {
+        _this.props.onPaste(event);
+      } // event.clipboardData might not work in Android browser
+      // cleaning input to get raw text inside onChange handler
+
+
+      if (!event.defaultPrevented) {
+        _this.beforePasteState = {
+          value: _this.getInputValue(),
+          selection: _this.getSelection()
+        };
+
+        _this.setInputValue('');
+      }
+    };
+
+    _this.handleRef = function (ref) {
+      if (_this.props.children == null && isFunction$1(_this.props.inputRef)) {
+        _this.props.inputRef(ref);
+      }
+    };
+
+    var _mask = props.mask,
+        _maskChar = props.maskChar,
+        _formatChars = props.formatChars,
+        _alwaysShowMask = props.alwaysShowMask,
+        _beforeMaskedValueChange = props.beforeMaskedValueChange;
+    var defaultValue = props.defaultValue,
+        _value = props.value;
+    _this.maskOptions = parseMask$1(_mask, _maskChar, _formatChars);
+
+    if (defaultValue == null) {
+      defaultValue = '';
+    }
+
+    if (_value == null) {
+      _value = defaultValue;
+    }
+
+    var _newValue = getStringValue$1(_value);
+
+    if (_this.maskOptions.mask && (_alwaysShowMask || _newValue)) {
+      _newValue = formatValue$1(_this.maskOptions, _newValue);
+
+      if (isFunction$1(_beforeMaskedValueChange)) {
+        var oldValue = props.value;
+
+        if (props.value == null) {
+          oldValue = defaultValue;
+        }
+
+        oldValue = getStringValue$1(oldValue);
+
+        var modifiedValue = _beforeMaskedValueChange({
+          value: _newValue,
+          selection: null
+        }, {
+          value: oldValue,
+          selection: null
+        }, null, _this.getBeforeMaskedValueChangeConfig());
+
+        _newValue = modifiedValue.value;
+      }
+    }
+
+    _this.value = _newValue;
+    return _this;
+  }
+
+  var _proto = InputElement.prototype;
+
+  _proto.componentDidMount = function componentDidMount() {
+    this.mounted = true; // workaround for react-test-renderer
+    // https://github.com/sanniassin/react-input-mask/issues/147
+
+    if (!this.getInputDOMNode()) {
+      return;
+    }
+
+    this.isWindowsPhoneBrowser = isWindowsPhoneBrowser$1();
+
+    if (this.maskOptions.mask && this.getInputValue() !== this.value) {
+      this.setInputValue(this.value);
+    }
+  };
+
+  _proto.componentDidUpdate = function componentDidUpdate() {
+    var previousSelection = this.previousSelection;
+    var _this$props = this.props,
+        beforeMaskedValueChange = _this$props.beforeMaskedValueChange,
+        alwaysShowMask = _this$props.alwaysShowMask,
+        mask = _this$props.mask,
+        maskChar = _this$props.maskChar,
+        formatChars = _this$props.formatChars;
+    var previousMaskOptions = this.maskOptions;
+    var showEmpty = alwaysShowMask || this.isFocused();
+    var hasValue = this.props.value != null;
+    var newValue = hasValue ? getStringValue$1(this.props.value) : this.value;
+    var cursorPosition = previousSelection ? previousSelection.start : null;
+    this.maskOptions = parseMask$1(mask, maskChar, formatChars);
+
+    if (!this.maskOptions.mask) {
+      if (previousMaskOptions.mask) {
+        this.stopSaveSelectionLoop(); // render depends on this.maskOptions and this.value,
+        // call forceUpdate to keep it in sync
+
+        this.forceUpdate();
+      }
+
+      return;
+    } else if (!previousMaskOptions.mask && this.isFocused()) {
+      this.runSaveSelectionLoop();
+    }
+
+    var isMaskChanged = this.maskOptions.mask && this.maskOptions.mask !== previousMaskOptions.mask;
+
+    if (!previousMaskOptions.mask && !hasValue) {
+      newValue = this.getInputValue();
+    }
+
+    if (isMaskChanged || this.maskOptions.mask && (newValue || showEmpty)) {
+      newValue = formatValue$1(this.maskOptions, newValue);
+    }
+
+    if (isMaskChanged) {
+      var filledLength = getFilledLength$1(this.maskOptions, newValue);
+
+      if (cursorPosition === null || filledLength < cursorPosition) {
+        if (isFilled$1(this.maskOptions, newValue)) {
+          cursorPosition = filledLength;
+        } else {
+          cursorPosition = getRightEditablePosition$1(this.maskOptions, filledLength);
+        }
+      }
+    }
+
+    if (this.maskOptions.mask && isEmpty$1(this.maskOptions, newValue) && !showEmpty && (!hasValue || !this.props.value)) {
+      newValue = '';
+    }
+
+    var newSelection = {
+      start: cursorPosition,
+      end: cursorPosition
+    };
+
+    if (isFunction$1(beforeMaskedValueChange)) {
+      var modifiedValue = beforeMaskedValueChange({
+        value: newValue,
+        selection: newSelection
+      }, {
+        value: this.value,
+        selection: this.previousSelection
+      }, null, this.getBeforeMaskedValueChangeConfig());
+      newValue = modifiedValue.value;
+      newSelection = modifiedValue.selection;
+    }
+
+    this.value = newValue;
+    var isValueChanged = this.getInputValue() !== this.value; // render depends on this.maskOptions and this.value,
+    // call forceUpdate to keep it in sync
+
+    if (isValueChanged) {
+      this.setInputValue(this.value);
+      this.forceUpdate();
+    } else if (isMaskChanged) {
+      this.forceUpdate();
+    }
+
+    var isSelectionChanged = false;
+
+    if (newSelection.start != null && newSelection.end != null) {
+      isSelectionChanged = !previousSelection || previousSelection.start !== newSelection.start || previousSelection.end !== newSelection.end;
+    }
+
+    if (isSelectionChanged || isValueChanged) {
+      this.setSelection(newSelection.start, newSelection.end);
+    }
+  };
+
+  _proto.componentWillUnmount = function componentWillUnmount() {
+    this.mounted = false;
+
+    if (this.selectionDeferId !== null) {
+      cancelDefer$1(this.selectionDeferId);
+    }
+
+    this.stopSaveSelectionLoop();
+  };
+
+  _proto.render = function render() {
+    var _this$props2 = this.props,
+        mask = _this$props2.mask,
+        maskChar = _this$props2.maskChar,
+        formatChars = _this$props2.formatChars,
+        inputRef = _this$props2.inputRef,
+        children = _this$props2.children,
+        restProps = _objectWithoutPropertiesLoose$2(_this$props2, ["mask", "alwaysShowMask", "maskChar", "formatChars", "inputRef", "beforeMaskedValueChange", "children"]);
+
+    var inputElement;
+    process.env.NODE_ENV !== "production" ? warning$1( // parse mask to test against actual mask prop as this.maskOptions
+    // will be updated later in componentDidUpdate
+    !restProps.maxLength || !parseMask$1(mask, maskChar, formatChars).mask, 'react-input-mask: maxLength property shouldn\'t be passed to the masked input. It breaks masking and unnecessary because length is limited by the mask length.') : void 0;
+
+    if (children) {
+      !isFunction$1(children) ? process.env.NODE_ENV !== "production" ? invariant$2(false, 'react-input-mask: children must be a function') : invariant$2(false) : void 0;
+      var controlledProps = ['onChange', 'onPaste', 'onMouseDown', 'onFocus', 'onBlur', 'value', 'disabled', 'readOnly'];
+
+      var childrenProps = _extends$1({}, restProps);
+
+      controlledProps.forEach(function (propId) {
+        return delete childrenProps[propId];
+      });
+      inputElement = children(childrenProps);
+      var conflictProps = controlledProps.filter(function (propId) {
+        return inputElement.props[propId] != null && inputElement.props[propId] !== restProps[propId];
+      });
+      !!conflictProps.length ? process.env.NODE_ENV !== "production" ? invariant$2(false, "react-input-mask: the following props should be passed to the react-input-mask's component and should not be altered in children's function: " + conflictProps.join(', ')) : invariant$2(false) : void 0;
+      process.env.NODE_ENV !== "production" ? warning$1(!inputRef, 'react-input-mask: inputRef is ignored when children is passed, attach ref to the children instead') : void 0;
+    } else {
+      inputElement = React$1.createElement("input", _extends$1({
+        ref: this.handleRef
+      }, restProps));
+    }
+
+    var changedProps = {
+      onFocus: this.onFocus,
+      onBlur: this.onBlur
+    };
+
+    if (this.maskOptions.mask) {
+      if (!restProps.disabled && !restProps.readOnly) {
+        changedProps.onChange = this.onChange;
+        changedProps.onPaste = this.onPaste;
+        changedProps.onMouseDown = this.onMouseDown;
+      }
+
+      if (restProps.value != null) {
+        changedProps.value = this.value;
+      }
+    }
+
+    inputElement = React$1.cloneElement(inputElement, changedProps);
+    return inputElement;
+  };
+
+  return InputElement;
+}(React$1.Component);
+
+var reactInputMask_development = InputElement$1;
+
+var reactInputMask = createCommonjsModule(function (module) {
+if (process.env.NODE_ENV === 'production') {
+  module.exports = reactInputMask_production_min;
+} else {
+  module.exports = reactInputMask_development;
+}
+});
+
+let _$d = t => t,
+    _t$d;
+const Container$8 = styled.div(_t$d || (_t$d = _$d`
+  font-family: MontSerrat !important;
+  display: flex;
+  flex-direction: column;
+
+  input {
+    outline: none;
+    padding: 7px 15px;
+    border-radius: 20px;
+    border: 1px solid
+      ${0};
+    color: ${0};
+    cursor: pointer;
+
+    background-color: ${0};
+
+    font-weight: bold;
+
+    &::placeholder {
+      color: ${0};
+    }
+  }
+
+  span {
+    font-size: 14px;
+    color: ${0};
+    margin-left: 15px;
+    margin-bottom: 3px;
+  }
+
+  .react-datepicker-popper[data-placement^='bottom']
+    .react-datepicker__triangle,
+  .react-datepicker-popper[data-placement^='top'] .react-datepicker__triangle,
+  .react-datepicker__year-read-view--down-arrow,
+  .react-datepicker__month-read-view--down-arrow,
+  .react-datepicker__month-year-read-view--down-arrow {
+    margin-left: -8px !important;
+    position: absolute !important;
+  }
+  .react-datepicker-popper[data-placement^='bottom']
+    .react-datepicker__triangle,
+  .react-datepicker-popper[data-placement^='top'] .react-datepicker__triangle,
+  .react-datepicker__year-read-view--down-arrow,
+  .react-datepicker__month-read-view--down-arrow,
+  .react-datepicker__month-year-read-view--down-arrow,
+  .react-datepicker-popper[data-placement^='bottom']
+    .react-datepicker__triangle::before,
+  .react-datepicker-popper[data-placement^='top']
+    .react-datepicker__triangle::before,
+  .react-datepicker__year-read-view--down-arrow::before,
+  .react-datepicker__month-read-view--down-arrow::before,
+  .react-datepicker__month-year-read-view--down-arrow::before {
+    box-sizing: content-box !important;
+    position: absolute !important;
+    border: 8px solid transparent !important;
+    height: 0 !important;
+    width: 1px !important;
+  }
+
+  .react-datepicker-popper[data-placement^='bottom']
+    .react-datepicker__triangle::before,
+  .react-datepicker-popper[data-placement^='top']
+    .react-datepicker__triangle::before,
+  .react-datepicker__year-read-view--down-arrow::before,
+  .react-datepicker__month-read-view--down-arrow::before,
+  .react-datepicker__month-year-read-view--down-arrow::before {
+    content: '' !important;
+    z-index: -1 !important;
+    border-width: 8px !important;
+    left: -8px !important;
+    border-bottom-color: #291f1f !important;
+  }
+
+  .react-datepicker-popper[data-placement^='bottom']
+    .react-datepicker__triangle {
+    top: 0 !important;
+    margin-top: -8px !important;
+  }
+
+  .react-datepicker-popper[data-placement^='bottom']
+    .react-datepicker__triangle,
+  .react-datepicker-popper[data-placement^='bottom']
+    .react-datepicker__triangle::before {
+    border-top: none !important;
+    border-bottom-color: #ffffff !important;
+  }
+
+  .react-datepicker-popper[data-placement^='bottom']
+    .react-datepicker__triangle::before {
+    top: -1px !important;
+    border-bottom-color: #aeaeae !important;
+  }
+
+  .react-datepicker-popper[data-placement^='top'] .react-datepicker__triangle,
+  .react-datepicker__year-read-view--down-arrow,
+  .react-datepicker__month-read-view--down-arrow,
+  .react-datepicker__month-year-read-view--down-arrow {
+    bottom: 0 !important;
+    margin-bottom: -8px !important;
+  }
+
+  .react-datepicker-popper[data-placement^='top'] .react-datepicker__triangle,
+  .react-datepicker__year-read-view--down-arrow,
+  .react-datepicker__month-read-view--down-arrow,
+  .react-datepicker__month-year-read-view--down-arrow,
+  .react-datepicker-popper[data-placement^='top']
+    .react-datepicker__triangle::before,
+  .react-datepicker__year-read-view--down-arrow::before,
+  .react-datepicker__month-read-view--down-arrow::before,
+  .react-datepicker__month-year-read-view--down-arrow::before {
+    border-bottom: none !important;
+    border-top-color: #fff !important;
+  }
+
+  .react-datepicker-popper[data-placement^='top']
+    .react-datepicker__triangle::before,
+  .react-datepicker__year-read-view--down-arrow::before,
+  .react-datepicker__month-read-view--down-arrow::before,
+  .react-datepicker__month-year-read-view--down-arrow::before {
+    bottom: -1px !important;
+    border-top-color: #aeaeae !important;
+  }
+
+  .react-datepicker-wrapper {
+    display: inline-block;
+    padding: 0;
+    border: 0;
+  }
+
+  .react-datepicker {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+    font-size: 0.8rem !important;
+    background-color: #fff !important;
+    color: #000 !important;
+    border: 1px solid #aeaeae !important;
+    border-radius: 20px !important;
+    display: inline-block !important;
+    position: relative !important;
+  }
+
+  .react-datepicker--time-only .react-datepicker__triangle {
+    left: 35px !important;
+  }
+
+  .react-datepicker--time-only .react-datepicker__time-container {
+    border-left: 0 !important;
+  }
+
+  .react-datepicker--time-only .react-datepicker__time,
+  .react-datepicker--time-only .react-datepicker__time-box {
+    border-bottom-left-radius: 20px !important;
+    border-bottom-right-radius: 20px !important;
+  }
+
+  .react-datepicker__triangle {
+    position: absolute !important;
+    left: 50px !important;
+  }
+
+  .react-datepicker-popper {
+    z-index: 1 !important;
+  }
+
+  .react-datepicker-popper[data-placement^='bottom'] {
+    margin-top: 10px !important;
+  }
+
+  .react-datepicker-popper[data-placement='bottom-end']
+    .react-datepicker__triangle,
+  .react-datepicker-popper[data-placement='top-end']
+    .react-datepicker__triangle {
+    left: auto !important;
+    right: 50px !important;
+  }
+
+  .react-datepicker-popper[data-placement^='top'] {
+    margin-bottom: 10px !important;
+  }
+
+  .react-datepicker-popper[data-placement^='right'] {
+    margin-left: 8px !important;
+  }
+
+  .react-datepicker-popper[data-placement^='right']
+    .react-datepicker__triangle {
+    left: auto !important;
+    right: 42px !important;
+  }
+
+  .react-datepicker-popper[data-placement^='left'] {
+    margin-right: 8px !important;
+  }
+
+  .react-datepicker-popper[data-placement^='left'] .react-datepicker__triangle {
+    left: 42px !important;
+    right: auto !important;
+  }
+
+  .react-datepicker__header {
+    text-align: center !important;
+    background-color: #ffffff !important;
+    border-bottom: 1px solid #aeaeae !important;
+    border-top-left-radius: 20px !important;
+    padding-top: 18px !important;
+    position: relative !important;
+    padding-bottom: 10px !important;
+  }
+
+  .react-datepicker__header--time {
+    padding-bottom: 8px !important;
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+  }
+
+  .react-datepicker__header--time:not(.react-datepicker__header--time--only) {
+    border-top-left-radius: 0 !important;
+  }
+
+  .react-datepicker__header:not(.react-datepicker__header--has-time-select) {
+    border-top-right-radius: 20px !important;
+  }
+
+  .react-datepicker__year-dropdown-container--select,
+  .react-datepicker__month-dropdown-container--select,
+  .react-datepicker__month-year-dropdown-container--select,
+  .react-datepicker__year-dropdown-container--scroll,
+  .react-datepicker__month-dropdown-container--scroll,
+  .react-datepicker__month-year-dropdown-container--scroll {
+    display: inline-block !important;
+    margin: 0 2px !important;
+  }
+
+  .react-datepicker__current-month,
+  .react-datepicker-time__header,
+  .react-datepicker-year-header {
+    margin-top: 0 !important;
+    color: #707070 !important;
+    font-weight: bold !important;
+    font-size: 0.944rem !important;
+  }
+
+  .react-datepicker-time__header {
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+  }
+
+  .react-datepicker__navigation {
+    background: none !important;
+    line-height: 1.7rem !important;
+    text-align: center !important;
+    cursor: pointer !important;
+    position: absolute !important;
+    top: 20px !important;
+    width: 0 !important;
+    padding: 0 !important;
+    border: 0.5rem solid transparent !important;
+    z-index: 1 !important;
+    height: 15px !important;
+    width: 20px !important;
+    text-indent: -999em !important;
+    overflow: hidden !important;
+    outline: none !important;
+  }
+
+  .react-datepicker__navigation--previous {
+    left: 10px !important;
+    border-right-color: #9b4dee !important;
+  }
+
+  .react-datepicker__navigation--previous:hover {
+    border-right-color: rgba(155, 77, 238, 0.2) !important;
+  }
+
+  .react-datepicker__navigation--previous--disabled,
+  .react-datepicker__navigation--previous--disabled:hover {
+    border-right-color: rgba(155, 77, 238, 0.2) !important;
+    cursor: default !important;
+  }
+
+  .react-datepicker__navigation--next {
+    right: 10px !important;
+    border-left-color: #9b4dee !important;
+  }
+
+  .react-datepicker__navigation--next--with-time:not(.react-datepicker__navigation--next--with-today-button) {
+    right: 95px !important;
+  }
+
+  .react-datepicker__navigation--next:hover {
+    border-left-color: rgba(155, 77, 238, 0.2) !important;
+  }
+
+  .react-datepicker__navigation--next--disabled,
+  .react-datepicker__navigation--next--disabled:hover {
+    border-left-color: rgba(155, 77, 238, 0.2) !important;
+    cursor: default !important;
+  }
+
+  .react-datepicker__navigation--years {
+    position: relative !important;
+    top: 0 !important;
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .react-datepicker__navigation--years-previous {
+    top: 4px !important;
+    border-top-color: #ccc !important;
+  }
+
+  .react-datepicker__navigation--years-previous:hover {
+    border-top-color: #b3b3b3 !important;
+  }
+
+  .react-datepicker__navigation--years-upcoming {
+    top: -4px !important;
+    border-bottom-color: #ccc !important;
+  }
+
+  .react-datepicker__navigation--years-upcoming:hover {
+    border-bottom-color: #b3b3b3 !important;
+  }
+
+  .react-datepicker__month-container {
+    float: left !important;
+  }
+
+  .react-datepicker__year {
+    margin: 0.4rem !important;
+    text-align: center !important;
+  }
+
+  .react-datepicker__year-wrapper {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    max-width: 180px !important;
+  }
+
+  .react-datepicker__year .react-datepicker__year-text {
+    display: inline-block !important;
+    width: 4rem !important;
+    margin: 2px !important;
+  }
+
+  .react-datepicker__month {
+    margin: 10px 0.4rem !important;
+    text-align: center !important;
+  }
+
+  .react-datepicker__month .react-datepicker__month-text,
+  .react-datepicker__month .react-datepicker__quarter-text {
+    display: inline-block !important;
+    width: 4rem !important;
+    margin: 2px !important;
+  }
+
+  .react-datepicker__input-time-container {
+    clear: both !important;
+    width: 100% !important;
+    float: left !important;
+    margin: 5px 0 10px 15px !important;
+    text-align: left !important;
+  }
+
+  .react-datepicker__input-time-container .react-datepicker-time__caption {
+    display: inline-block !important;
+    color: #707070 !important;
+  }
+
+  .react-datepicker__input-time-container
+    .react-datepicker-time__input-container {
+    display: inline-block !important;
+  }
+
+  .react-datepicker__input-time-container
+    .react-datepicker-time__input-container
+    .react-datepicker-time__input {
+    display: inline-block !important;
+    margin-left: 10px !important;
+  }
+
+  .react-datepicker__input-time-container
+    .react-datepicker-time__input-container
+    .react-datepicker-time__input
+    input {
+    width: 85px !important;
+    border-radius: 20px !important;
+    padding: 5px 10px !important;
+    outline: none !important;
+    border-style: solid !important;
+    border-width: 1px !important;
+    border-color: #707070 !important;
+  }
+
+  .react-datepicker__input-time-container
+    .react-datepicker-time__input-container
+    .react-datepicker-time__input
+    input[type='time']::-webkit-inner-spin-button,
+  .react-datepicker__input-time-container
+    .react-datepicker-time__input-container
+    .react-datepicker-time__input
+    input[type='time']::-webkit-outer-spin-button {
+    -webkit-appearance: none !important;
+    margin: 0 !important;
+  }
+
+  .react-datepicker__input-time-container
+    .react-datepicker-time__input-container
+    .react-datepicker-time__input
+    input[type='time'] {
+    -moz-appearance: textfield !important;
+  }
+
+  .react-datepicker__input-time-container
+    .react-datepicker-time__input-container
+    .react-datepicker-time__delimiter {
+    margin-left: 5px !important;
+    display: inline-block !important;
+  }
+
+  .react-datepicker__time-container {
+    float: right !important;
+    border-left: 1px solid #aeaeae !important;
+    width: 85px !important;
+  }
+
+  .react-datepicker__time-container--with-today-button {
+    display: inline !important;
+    border: 1px solid #aeaeae !important;
+    border-radius: 0.3rem !important;
+    position: absolute !important;
+    right: -72px !important;
+    top: 0 !important;
+  }
+
+  .react-datepicker__time-container .react-datepicker__time {
+    position: relative !important;
+    background: white !important;
+    border-bottom-right-radius: 20px !important;
+  }
+
+  .react-datepicker__time-container
+    .react-datepicker__time
+    .react-datepicker__time-box {
+    width: 85px !important;
+    overflow-x: hidden !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+    border-bottom-right-radius: 20px !important;
+  }
+
+  .react-datepicker__time-container
+    .react-datepicker__time
+    .react-datepicker__time-box
+    ul.react-datepicker__time-list {
+    list-style: none !important;
+    margin: 0 !important;
+    height: calc(195px + (1.7rem / 2)) !important;
+    overflow-y: scroll !important;
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+    width: 100% !important;
+    box-sizing: content-box !important;
+  }
+
+  .react-datepicker__time-container
+    .react-datepicker__time
+    .react-datepicker__time-box
+    ul.react-datepicker__time-list
+    li.react-datepicker__time-list-item {
+    height: 30px !important;
+    padding: 5px 10px !important;
+    white-space: nowrap !important;
+    color: #707070 !important;
+  }
+
+  .react-datepicker__time-container
+    .react-datepicker__time
+    .react-datepicker__time-box
+    ul.react-datepicker__time-list
+    li.react-datepicker__time-list-item:hover {
+    cursor: pointer !important;
+    background-color: #f0f0f0 !important;
+  }
+
+  .react-datepicker__time-container
+    .react-datepicker__time
+    .react-datepicker__time-box
+    ul.react-datepicker__time-list
+    li.react-datepicker__time-list-item--selected {
+    background-color: #9b4dee !important;
+    color: white !important;
+    font-weight: bold !important;
+  }
+
+  .react-datepicker__time-container
+    .react-datepicker__time
+    .react-datepicker__time-box
+    ul.react-datepicker__time-list
+    li.react-datepicker__time-list-item--selected:hover {
+    background-color: #9b4dee !important;
+  }
+
+  .react-datepicker__time-container
+    .react-datepicker__time
+    .react-datepicker__time-box
+    ul.react-datepicker__time-list
+    li.react-datepicker__time-list-item--disabled {
+    color: #ccc !important;
+  }
+
+  .react-datepicker__time-container
+    .react-datepicker__time
+    .react-datepicker__time-box
+    ul.react-datepicker__time-list
+    li.react-datepicker__time-list-item--disabled:hover {
+    cursor: default !important;
+    background-color: transparent !important;
+  }
+
+  .react-datepicker__week-number {
+    color: #ccc !important;
+    display: inline-block !important;
+    width: 1.7rem !important;
+    line-height: 1.7rem !important;
+    text-align: center !important;
+    margin: 0.166rem !important;
+  }
+
+  .react-datepicker__week-number.react-datepicker__week-number--clickable {
+    cursor: pointer !important;
+  }
+
+  .react-datepicker__week-number.react-datepicker__week-number--clickable:hover {
+    border-radius: 0.3rem !important;
+    background-color: #f0f0f0 !important;
+  }
+
+  .react-datepicker__day-names,
+  .react-datepicker__week {
+    white-space: nowrap !important;
+    margin-top: 10px !important;
+  }
+
+  .react-datepicker__day-name,
+  .react-datepicker__day,
+  .react-datepicker__time-name {
+    color: #707070 !important;
+    display: inline-block !important;
+    width: 1.7rem !important;
+    line-height: 1.7rem !important;
+    text-align: center !important;
+    margin: 0.166rem !important;
+    outline: none !important;
+  }
+
+  .react-datepicker__month--selected,
+  .react-datepicker__month--in-selecting-range,
+  .react-datepicker__month--in-range,
+  .react-datepicker__quarter--selected,
+  .react-datepicker__quarter--in-selecting-range,
+  .react-datepicker__quarter--in-range {
+    border-radius: 10px !important;
+    background-color: #9b4dee !important;
+    color: #fff !important;
+  }
+
+  .react-datepicker__month--selected:hover,
+  .react-datepicker__month--in-selecting-range:hover,
+  .react-datepicker__month--in-range:hover,
+  .react-datepicker__quarter--selected:hover,
+  .react-datepicker__quarter--in-selecting-range:hover,
+  .react-datepicker__quarter--in-range:hover {
+    background-color: rgba(155, 77, 238, 0.8) !important;
+  }
+
+  .react-datepicker__month--disabled,
+  .react-datepicker__quarter--disabled {
+    color: #ccc !important;
+    pointer-events: none !important;
+  }
+
+  .react-datepicker__month--disabled:hover,
+  .react-datepicker__quarter--disabled:hover {
+    cursor: default !important;
+    background-color: transparent !important;
+  }
+
+  .react-datepicker__day,
+  .react-datepicker__month-text,
+  .react-datepicker__quarter-text,
+  .react-datepicker__year-text {
+    cursor: pointer !important;
+  }
+
+  .react-datepicker__day:hover {
+    border-radius: 50% !important;
+    background-color: #f0f0f0 !important;
+  }
+  .react-datepicker__month-text:hover,
+  .react-datepicker__quarter-text:hover,
+  .react-datepicker__year-text:hover {
+    border-radius: 10px !important;
+    background-color: #f0f0f0 !important;
+  }
+
+  .react-datepicker__day--today,
+  .react-datepicker__month-text--today,
+  .react-datepicker__quarter-text--today,
+  .react-datepicker__year-text--today {
+    font-weight: bold !important;
+  }
+
+  .react-datepicker__day--highlighted,
+  .react-datepicker__month-text--highlighted,
+  .react-datepicker__quarter-text--highlighted,
+  .react-datepicker__year-text--highlighted {
+    border-radius: 0.3rem !important;
+    background-color: #3dcc4a !important;
+    color: #fff !important;
+  }
+
+  .react-datepicker__day--highlighted:hover,
+  .react-datepicker__month-text--highlighted:hover,
+  .react-datepicker__quarter-text--highlighted:hover,
+  .react-datepicker__year-text--highlighted:hover {
+    background-color: #32be3f !important;
+  }
+
+  .react-datepicker__day--highlighted-custom-1,
+  .react-datepicker__month-text--highlighted-custom-1,
+  .react-datepicker__quarter-text--highlighted-custom-1,
+  .react-datepicker__year-text--highlighted-custom-1 {
+    color: magenta !important;
+  }
+
+  .react-datepicker__day--highlighted-custom-2,
+  .react-datepicker__month-text--highlighted-custom-2,
+  .react-datepicker__quarter-text--highlighted-custom-2,
+  .react-datepicker__year-text--highlighted-custom-2 {
+    color: green !important;
+  }
+
+  .react-datepicker__day--selected,
+  .react-datepicker__day--in-selecting-range,
+  .react-datepicker__day--in-range {
+    border-radius: 50% !important;
+    background-color: #9b4dee !important;
+    color: #fff !important;
+    outline: none !important;
+  }
+  .react-datepicker__month-text--selected,
+  .react-datepicker__month-text--in-selecting-range,
+  .react-datepicker__month-text--in-range,
+  .react-datepicker__quarter-text--selected,
+  .react-datepicker__quarter-text--in-selecting-range,
+  .react-datepicker__quarter-text--in-range,
+  .react-datepicker__year-text--selected,
+  .react-datepicker__year-text--in-selecting-range,
+  .react-datepicker__year-text--in-range {
+    border-radius: 10px !important;
+    background-color: #9b4dee !important;
+    color: #fff !important;
+    outline: none !important;
+  }
+
+  .react-datepicker__day--selected:hover,
+  .react-datepicker__day--in-selecting-range:hover,
+  .react-datepicker__day--in-range:hover,
+  .react-datepicker__month-text--selected:hover,
+  .react-datepicker__month-text--in-selecting-range:hover,
+  .react-datepicker__month-text--in-range:hover,
+  .react-datepicker__quarter-text--selected:hover,
+  .react-datepicker__quarter-text--in-selecting-range:hover,
+  .react-datepicker__quarter-text--in-range:hover,
+  .react-datepicker__year-text--selected:hover,
+  .react-datepicker__year-text--in-selecting-range:hover,
+  .react-datepicker__year-text--in-range:hover {
+    background-color: rgba(155, 77, 238, 0.8) !important;
+    outline: none !important;
+  }
+
+  .react-datepicker__day--keyboard-selected {
+    border-radius: 50% !important;
+    background-color: #9b4dee !important;
+    color: #fff !important;
+    outline: none !important;
+  }
+  .react-datepicker__month-text--keyboard-selected,
+  .react-datepicker__quarter-text--keyboard-selected,
+  .react-datepicker__year-text--keyboard-selected {
+    border-radius: 10px !important;
+    background-color: #9b4dee !important;
+    color: #fff !important;
+    outline: none !important;
+  }
+
+  .react-datepicker__day--keyboard-selected:hover,
+  .react-datepicker__month-text--keyboard-selected:hover,
+  .react-datepicker__quarter-text--keyboard-selected:hover,
+  .react-datepicker__year-text--keyboard-selected:hover {
+    background-color: rgba(155, 77, 238, 0.8) !important;
+  }
+
+  .react-datepicker__day--in-selecting-range,
+  .react-datepicker__month-text--in-selecting-range,
+  .react-datepicker__quarter-text--in-selecting-range,
+  .react-datepicker__year-text--in-selecting-range {
+    background-color: rgba(155, 77, 238, 0.5) !important;
+    outline: none !important;
+  }
+
+  .react-datepicker__month--selecting-range .react-datepicker__day--in-range,
+  .react-datepicker__month--selecting-range
+    .react-datepicker__month-text--in-range,
+  .react-datepicker__month--selecting-range
+    .react-datepicker__quarter-text--in-range,
+  .react-datepicker__month--selecting-range
+    .react-datepicker__year-text--in-range {
+    background-color: #f0f0f0 !important;
+    color: #000 !important;
+    outline: none !important;
+  }
+
+  .react-datepicker__day--disabled,
+  .react-datepicker__month-text--disabled,
+  .react-datepicker__quarter-text--disabled,
+  .react-datepicker__year-text--disabled {
+    cursor: default !important;
+    color: #ccc !important;
+  }
+
+  .react-datepicker__day--disabled:hover,
+  .react-datepicker__month-text--disabled:hover,
+  .react-datepicker__quarter-text--disabled:hover,
+  .react-datepicker__year-text--disabled:hover {
+    background-color: transparent !important;
+  }
+
+  .react-datepicker__month-text.react-datepicker__month--selected:hover,
+  .react-datepicker__month-text.react-datepicker__month--in-range:hover,
+  .react-datepicker__month-text.react-datepicker__quarter--selected:hover,
+  .react-datepicker__month-text.react-datepicker__quarter--in-range:hover,
+  .react-datepicker__quarter-text.react-datepicker__month--selected:hover,
+  .react-datepicker__quarter-text.react-datepicker__month--in-range:hover,
+  .react-datepicker__quarter-text.react-datepicker__quarter--selected:hover,
+  .react-datepicker__quarter-text.react-datepicker__quarter--in-range:hover {
+    background-color: #9b4dee !important;
+  }
+
+  .react-datepicker__month-text:hover,
+  .react-datepicker__quarter-text:hover {
+    background-color: #f0f0f0 !important;
+  }
+
+  .react-datepicker__input-container {
+    position: relative !important;
+    display: inline-block !important;
+    width: 100% !important;
+  }
+
+  .react-datepicker__year-read-view,
+  .react-datepicker__month-read-view,
+  .react-datepicker__month-year-read-view {
+    border: 1px solid transparent !important;
+    border-radius: 0.3rem !important;
+  }
+
+  .react-datepicker__year-read-view:hover,
+  .react-datepicker__month-read-view:hover,
+  .react-datepicker__month-year-read-view:hover {
+    cursor: pointer !important;
+  }
+
+  .react-datepicker__year-read-view:hover,
+  .react-datepicker__year-read-view--down-arrow,
+  .react-datepicker__year-read-view:hover,
+  .react-datepicker__month-read-view--down-arrow,
+  .react-datepicker__month-read-view:hover,
+  .react-datepicker__year-read-view--down-arrow,
+  .react-datepicker__month-read-view:hover,
+  .react-datepicker__month-read-view--down-arrow,
+  .react-datepicker__month-year-read-view:hover,
+  .react-datepicker__year-read-view--down-arrow,
+  .react-datepicker__month-year-read-view:hover,
+  .react-datepicker__month-read-view--down-arrow {
+    border-top-color: #b3b3b3 !important;
+  }
+
+  .react-datepicker__year-read-view--down-arrow,
+  .react-datepicker__month-read-view--down-arrow,
+  .react-datepicker__month-year-read-view--down-arrow {
+    border-top-color: #ccc !important;
+    float: right !important;
+    margin-left: 20px !important;
+    top: 5px !important;
+    position: relative !important;
+    border-width: 0.45rem !important;
+  }
+
+  .react-datepicker__year-dropdown,
+  .react-datepicker__month-dropdown,
+  .react-datepicker__month-year-dropdown {
+    background-color: #f0f0f0 !important;
+    position: absolute !important;
+    width: 50% !important;
+    left: 25% !important;
+    top: 30px !important;
+    z-index: 1 !important;
+    text-align: center !important;
+    border-radius: 0.3rem !important;
+    border: 1px solid #aeaeae !important;
+  }
+
+  .react-datepicker__year-dropdown:hover,
+  .react-datepicker__month-dropdown:hover,
+  .react-datepicker__month-year-dropdown:hover {
+    cursor: pointer !important;
+  }
+
+  .react-datepicker__year-dropdown--scrollable,
+  .react-datepicker__month-dropdown--scrollable,
+  .react-datepicker__month-year-dropdown--scrollable {
+    height: 150px !important;
+    overflow-y: scroll !important;
+  }
+
+  .react-datepicker__year-option,
+  .react-datepicker__month-option,
+  .react-datepicker__month-year-option {
+    line-height: 20px !important;
+    width: 100% !important;
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .react-datepicker__year-option:first-of-type,
+  .react-datepicker__month-option:first-of-type,
+  .react-datepicker__month-year-option:first-of-type {
+    border-top-left-radius: 0.3rem !important;
+    border-top-right-radius: 0.3rem !important;
+  }
+
+  .react-datepicker__year-option:last-of-type,
+  .react-datepicker__month-option:last-of-type,
+  .react-datepicker__month-year-option:last-of-type {
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    user-select: none !important;
+    border-bottom-left-radius: 0.3rem !important;
+    border-bottom-right-radius: 0.3rem !important;
+  }
+
+  .react-datepicker__year-option:hover,
+  .react-datepicker__month-option:hover,
+  .react-datepicker__month-year-option:hover {
+    background-color: #ccc !important;
+  }
+
+  .react-datepicker__year-option:hover
+    .react-datepicker__navigation--years-upcoming,
+  .react-datepicker__month-option:hover
+    .react-datepicker__navigation--years-upcoming,
+  .react-datepicker__month-year-option:hover
+    .react-datepicker__navigation--years-upcoming {
+    border-bottom-color: #b3b3b3 !important;
+  }
+
+  .react-datepicker__year-option:hover
+    .react-datepicker__navigation--years-previous,
+  .react-datepicker__month-option:hover
+    .react-datepicker__navigation--years-previous,
+  .react-datepicker__month-year-option:hover
+    .react-datepicker__navigation--years-previous {
+    border-top-color: #b3b3b3 !important;
+  }
+
+  .react-datepicker__year-option--selected,
+  .react-datepicker__month-option--selected,
+  .react-datepicker__month-year-option--selected {
+    position: absolute !important;
+    left: 15px !important;
+  }
+
+  .react-datepicker__close-icon {
+    cursor: pointer !important;
+    background-color: transparent !important;
+    border: 0 !important;
+    outline: 0 !important;
+    padding: 0px 6px 0px 0px !important;
+    position: absolute !important;
+    top: 0 !important;
+    right: 0 !important;
+    height: 100% !important;
+    display: table-cell !important;
+    vertical-align: middle !important;
+  }
+
+  .react-datepicker__close-icon::after {
+    cursor: pointer !important;
+    background-color: #9b4dee !important;
+    color: #fff !important;
+    border-radius: 50% !important;
+    height: 16px !important;
+    width: 16px !important;
+    padding: 2px !important;
+    font-size: 12px !important;
+    line-height: 1 !important;
+    text-align: center !important;
+    display: table-cell !important;
+    vertical-align: middle !important;
+  }
+
+  .react-datepicker__today-button {
+    background: rgba(155, 77, 238, 0.1) !important;
+    border-top: 1px solid #aeaeae !important;
+    cursor: pointer !important;
+    text-align: center !important;
+    font-weight: bold !important;
+    padding: 5px 0 !important;
+    clear: left !important;
+    border-bottom-left-radius: 20px !important;
+    border-bottom-right-radius: 20px !important;
+  }
+
+  .react-datepicker__portal {
+    position: fixed !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background-color: rgba(0, 0, 0, 0.8) !important;
+    left: 0 !important;
+    top: 0 !important;
+    justify-content: center !important;
+    align-items: center !important;
+    display: flex !important;
+    z-index: 2147483647 !important;
+  }
+
+  .react-datepicker__portal .react-datepicker__day-name,
+  .react-datepicker__portal .react-datepicker__day,
+  .react-datepicker__portal .react-datepicker__time-name {
+    width: 3rem !important;
+    line-height: 3rem !important;
+  }
+
+  @media (max-width: 400px), (max-height: 550px) {
+    .react-datepicker__portal .react-datepicker__day-name,
+    .react-datepicker__portal .react-datepicker__day,
+    .react-datepicker__portal .react-datepicker__time-name {
+      width: 2rem !important;
+      line-height: 2rem !important;
+    }
+  }
+
+  .react-datepicker__portal .react-datepicker__current-month,
+  .react-datepicker__portal .react-datepicker-time__header {
+    font-size: 1.44rem !important;
+  }
+
+  .react-datepicker__portal .react-datepicker__navigation {
+    border: 0.81rem solid transparent !important;
+  }
+
+  .react-datepicker__portal .react-datepicker__navigation--previous {
+    border-right-color: #ccc !important;
+  }
+
+  .react-datepicker__portal .react-datepicker__navigation--previous:hover {
+    border-right-color: #b3b3b3 !important;
+  }
+
+  .react-datepicker__portal .react-datepicker__navigation--previous--disabled,
+  .react-datepicker__portal
+    .react-datepicker__navigation--previous--disabled:hover {
+    border-right-color: #e6e6e6 !important;
+    cursor: default !important;
+  }
+
+  .react-datepicker__portal .react-datepicker__navigation--next {
+    border-left-color: #ccc !important;
+  }
+
+  .react-datepicker__portal .react-datepicker__navigation--next:hover {
+    border-left-color: #b3b3b3 !important;
+  }
+
+  .react-datepicker__portal .react-datepicker__navigation--next--disabled,
+  .react-datepicker__portal
+    .react-datepicker__navigation--next--disabled:hover {
+    border-left-color: #e6e6e6 !important;
+    cursor: default !important;
+  }
+`), props => props.brand ? colors.brandLight : colors.gray10, props => props.brand ? colors.brand10 : colors.gray20, props => props.brand ? colors.brandLight : colors.white, props => props.brand ? colors.brandTransparent : colors.default10, props => {
+  if (props.labelColor) {
+    return props.labelColor;
+  }
+
+  return colors.brand10;
+});
+
+registerLocale('pt-BR', br);
+
+const Calendar = ({
+  labelColor,
+  label,
+  brand,
+  otherFormatDate,
+  ...rest
+}) => {
+  const CustomInput = React$2.forwardRef((props, ref) => React$2.createElement(reactInputMask, {
+    ref: ref,
+    mask: "99/99/9999",
+    onClick: props.onClick,
+    value: props.value,
+    readOnly: rest.readOnly,
+    onChange: props.onChange,
+    placeholder: rest.placeholderText
+  }));
+  return React$2.createElement(Container$8, {
+    brand: brand,
+    labelColor: labelColor
+  }, label && React$2.createElement("span", null, label), React$2.createElement("div", null, React$2.createElement(DatePicker, Object.assign({}, rest, {
+    locale: "pt-BR",
+    customInput: otherFormatDate ? undefined : React$2.createElement(CustomInput, {
+      onClick: rest.onCalendarOpen,
+      value: rest.value,
+      onChange: rest.onChange
+    }),
+    dateFormat: otherFormatDate || 'dd/MM/yyyy',
+    readOnly: false,
+    onChangeRaw: event => rest.readOnly ? event.preventDefault() : null
+  }))));
+};
+
+let _$e = t => t,
+    _t$e,
+    _t2$9,
+    _t3$8,
+    _t4$6;
+const Header$2 = styled.div(_t$e || (_t$e = _$e`
+  font-family: MontSerrat !important;
+  display: flex;
+  margin-bottom: 10px;
+`));
+const Title = styled.span(_t2$9 || (_t2$9 = _$e`
+  font-family: MontSerrat !important;
+  flex: 1;
+  text-align: left;
+  color: ${0};
+  font-weight: bold;
+`), colors.gray20);
+const Message = styled.span(_t3$8 || (_t3$8 = _$e`
+  flex: 1;
+  text-align: right;
+  color: ${0};
+`), colors.gray10);
+const Container$9 = styled.div(_t4$6 || (_t4$6 = _$e`
+  margin-bottom: ${0};
+
+  /*!
+ * # Semantic UI 2.4.1 - Table
+ * http://github.com/semantic-org/semantic-ui/
+ *
+ *
+ * Released under the MIT license
+ * http://opensource.org/licenses/MIT
+ *
+ */
+
+  /*******************************
+             Table
+*******************************/
+
+  /* Prototype */
+  .ui.table {
+    width: 100%;
+    background: #ffffff;
+    margin: 1em 0em;
+    border: none !important;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-radius: 0.28571429rem;
+    text-align: left;
+    color: #707070;
+    border-collapse: separate;
+    border-spacing: 0px;
+  }
+  .ui.table:first-child {
+    margin-top: 0em;
+  }
+  .ui.table:last-child {
+    margin-bottom: 0em;
+  }
+
+  /*******************************
+               Parts
+  *******************************/
+
+  /* Table Content */
+  .ui.table th,
+  .ui.table td {
+    -webkit-transition: background 0.1s ease, color 0.1s ease;
+    transition: background 0.1s ease, color 0.1s ease;
+  }
+
+  /* Headers */
+  .ui.table thead {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  .ui.table thead th {
+    cursor: auto;
+    background: none !important;
+    text-align: inherit;
+    color: #9b4dee !important;
+    padding: 0.92857143em 0.78571429em;
+    vertical-align: inherit;
+    font-style: none;
+    font-weight: bold;
+    text-transform: none;
+    border-bottom: 1px solid rgba(34, 36, 38, 0.1);
+    border-left: none;
+  }
+  .ui.table thead tr > th:first-child {
+    border-left: none;
+  }
+  .ui.table thead tr:first-child > th:first-child {
+    border-radius: 0.28571429rem 0em 0em 0em;
+  }
+  .ui.table thead tr:first-child > th:last-child {
+    border-radius: 0em 0.28571429rem 0em 0em;
+  }
+  .ui.table thead tr:first-child > th:only-child {
+    border-radius: 0.28571429rem 0.28571429rem 0em 0em;
+  }
+
+  /* Footer */
+  .ui.table tfoot {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    margin-top: 20px;
+  }
+  .ui.table tfoot th {
+    cursor: auto;
+    border-top: 1px solid rgba(34, 36, 38, 0.15);
+    background: #f9fafb;
+    text-align: inherit;
+    color: rgba(0, 0, 0, 0.87);
+    padding: 0.78571429em 0.78571429em;
+    vertical-align: middle;
+    font-style: normal;
+    font-weight: normal;
+    text-transform: none;
+  }
+  .ui.table tfoot tr > th:first-child {
+    border-left: none;
+  }
+  .ui.table tfoot tr:first-child > th:first-child {
+    border-radius: 0em 0em 0em 0.28571429rem;
+  }
+  .ui.table tfoot tr:first-child > th:last-child {
+    border-radius: 0em 0em 0.28571429rem 0em;
+  }
+  .ui.table tfoot tr:first-child > th:only-child {
+    border-radius: 0em 0em 0.28571429rem 0.28571429rem;
+  }
+
+  /* Table Row */
+  .ui.table tr td {
+    border-top: 1px solid rgba(34, 36, 38, 0.1);
+  }
+  .ui.table tr:first-child td {
+    border-top: none;
+  }
+
+  /* Repeated tbody */
+  .ui.table tbody + tbody tr:first-child td {
+    border-top: 1px solid rgba(34, 36, 38, 0.1);
+  }
+
+  /* Table Cells */
+  .ui.table td {
+    padding: 0.78571429em 0.78571429em;
+    text-align: inherit;
+  }
+
+  /* Icons */
+  .ui.table > .icon {
+    vertical-align: baseline;
+  }
+  .ui.table > .icon:only-child {
+    margin: 0em;
+  }
+
+  /* Table Segment */
+  .ui.table.segment {
+    padding: 0em;
+  }
+  .ui.table.segment:after {
+    display: none;
+  }
+  .ui.table.segment.stacked:after {
+    display: block;
+  }
+
+  /* Responsive */
+  @media only screen and (max-width: 767px) {
+    .ui.table:not(.unstackable) {
+      width: 100%;
+    }
+    .ui.table:not(.unstackable) tbody,
+    .ui.table:not(.unstackable) tr,
+    .ui.table:not(.unstackable) tr > th,
+    .ui.table:not(.unstackable) tr > td {
+      width: auto !important;
+      display: block !important;
+    }
+    .ui.table:not(.unstackable) {
+      padding: 0em;
+    }
+    .ui.table:not(.unstackable) thead {
+      display: block;
+    }
+    .ui.table:not(.unstackable) tfoot {
+      display: block;
+    }
+    .ui.table:not(.unstackable) tr {
+      padding-top: 1em;
+      padding-bottom: 1em;
+      -webkit-box-shadow: 0px -1px 0px 0px rgba(0, 0, 0, 0.1) inset !important;
+      box-shadow: 0px -1px 0px 0px rgba(0, 0, 0, 0.1) inset !important;
+    }
+    .ui.table:not(.unstackable) tr > th,
+    .ui.table:not(.unstackable) tr > td {
+      background: none;
+      border: none !important;
+      padding: 0.25em 0.75em !important;
+      -webkit-box-shadow: none !important;
+      box-shadow: none !important;
+    }
+    .ui.table:not(.unstackable) th:first-child,
+    .ui.table:not(.unstackable) td:first-child {
+      font-weight: bold;
+    }
+
+    /* Definition Table */
+    .ui.definition.table:not(.unstackable) thead th:first-child {
+      -webkit-box-shadow: none !important;
+      box-shadow: none !important;
+    }
+  }
+
+  /*******************************
+              Coupling
+  *******************************/
+
+  /* UI Image */
+  .ui.table th .image,
+  .ui.table th .image img,
+  .ui.table td .image,
+  .ui.table td .image img {
+    max-width: none;
+  }
+
+  /*******************************
+               Types
+  *******************************/
+
+  /*--------------
+      Complex
+  ---------------*/
+
+  .ui.structured.table {
+    border-collapse: collapse;
+  }
+  .ui.structured.table thead th {
+    border-left: none;
+    border-right: none;
+  }
+  .ui.structured.sortable.table thead th {
+    border-left: 1px solid rgba(34, 36, 38, 0.15);
+    border-right: 1px solid rgba(34, 36, 38, 0.15);
+  }
+  .ui.structured.basic.table th {
+    border-left: none;
+    border-right: none;
+  }
+  .ui.structured.celled.table tr th,
+  .ui.structured.celled.table tr td {
+    border-left: 1px solid rgba(34, 36, 38, 0.1);
+    border-right: 1px solid rgba(34, 36, 38, 0.1);
+  }
+
+  /*--------------
+     Definition
+  ---------------*/
+
+  .ui.definition.table thead:not(.full-width) th:first-child {
+    pointer-events: none;
+    background: transparent;
+    font-weight: normal;
+    color: rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow: -1px -1px 0px 1px #ffffff;
+    box-shadow: -1px -1px 0px 1px #ffffff;
+  }
+  .ui.definition.table tfoot:not(.full-width) th:first-child {
+    pointer-events: none;
+    background: transparent;
+    font-weight: rgba(0, 0, 0, 0.4);
+    color: normal;
+    -webkit-box-shadow: 1px 1px 0px 1px #ffffff;
+    box-shadow: 1px 1px 0px 1px #ffffff;
+  }
+
+  /* Remove Border */
+  .ui.celled.definition.table thead:not(.full-width) th:first-child {
+    -webkit-box-shadow: 0px -1px 0px 1px #ffffff;
+    box-shadow: 0px -1px 0px 1px #ffffff;
+  }
+  .ui.celled.definition.table tfoot:not(.full-width) th:first-child {
+    -webkit-box-shadow: 0px 1px 0px 1px #ffffff;
+    box-shadow: 0px 1px 0px 1px #ffffff;
+  }
+
+  /* Highlight Defining Column */
+  .ui.definition.table tr td:first-child:not(.ignored),
+  .ui.definition.table tr td.definition {
+    background: none;
+    font-weight: bold;
+    color: ${0};
+    text-transform: '';
+    -webkit-box-shadow: '';
+    box-shadow: '';
+    text-align: '';
+    font-size: 1em;
+    padding-left: '';
+    padding-right: '';
+  }
+
+  /* Fix 2nd Column */
+  .ui.definition.table thead:not(.full-width) th:nth-child(2) {
+    border-left: 1px solid rgba(34, 36, 38, 0.15);
+  }
+  .ui.definition.table tfoot:not(.full-width) th:nth-child(2) {
+    border-left: 1px solid rgba(34, 36, 38, 0.15);
+  }
+  .ui.definition.table td:nth-child(2) {
+    border-left: 1px solid rgba(34, 36, 38, 0.15);
+  }
+
+  /*******************************
+               States
+  *******************************/
+
+  /*--------------
+      Positive
+  ---------------*/
+
+  .ui.table tr.positive,
+  .ui.table td.positive {
+    -webkit-box-shadow: 0px 0px 0px #a3c293 inset;
+    box-shadow: 0px 0px 0px #a3c293 inset;
+  }
+  .ui.table tr.positive,
+  .ui.table td.positive {
+    background: #fcfff5 !important;
+    color: #2c662d !important;
+  }
+
+  /*--------------
+       Negative
+  ---------------*/
+
+  .ui.table tr.negative,
+  .ui.table td.negative {
+    -webkit-box-shadow: 0px 0px 0px #e0b4b4 inset;
+    box-shadow: 0px 0px 0px #e0b4b4 inset;
+  }
+  .ui.table tr.negative,
+  .ui.table td.negative {
+    background: #fff6f6 !important;
+    color: #9f3a38 !important;
+  }
+
+  /*--------------
+        Error
+  ---------------*/
+
+  .ui.table tr.error,
+  .ui.table td.error {
+    -webkit-box-shadow: 0px 0px 0px #e0b4b4 inset;
+    box-shadow: 0px 0px 0px #e0b4b4 inset;
+  }
+  .ui.table tr.error,
+  .ui.table td.error {
+    background: #fff6f6 !important;
+    color: #9f3a38 !important;
+  }
+
+  /*--------------
+       Warning
+  ---------------*/
+
+  .ui.table tr.warning,
+  .ui.table td.warning {
+    -webkit-box-shadow: 0px 0px 0px #c9ba9b inset;
+    box-shadow: 0px 0px 0px #c9ba9b inset;
+  }
+  .ui.table tr.warning,
+  .ui.table td.warning {
+    background: #fffaf3 !important;
+    color: #573a08 !important;
+  }
+
+  /*--------------
+       Active
+  ---------------*/
+
+  .ui.table tr.active,
+  .ui.table td.active {
+    -webkit-box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.87) inset;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.87) inset;
+  }
+  .ui.table tr.active,
+  .ui.table td.active {
+    background: #e0e0e0 !important;
+    color: rgba(0, 0, 0, 0.87) !important;
+  }
+
+  /*--------------
+       Disabled
+  ---------------*/
+
+  .ui.table tr.disabled td,
+  .ui.table tr td.disabled,
+  .ui.table tr.disabled:hover,
+  .ui.table tr:hover td.disabled {
+    pointer-events: none;
+    color: rgba(40, 40, 40, 0.3);
+  }
+
+  /*******************************
+            Variations
+  *******************************/
+
+  /*--------------
+      Stackable
+  ---------------*/
+
+  @media only screen and (max-width: 991px) {
+    .ui[class*='tablet stackable'].table,
+    .ui[class*='tablet stackable'].table tbody,
+    .ui[class*='tablet stackable'].table tr,
+    .ui[class*='tablet stackable'].table tr > th,
+    .ui[class*='tablet stackable'].table tr > td {
+      width: 100% !important;
+      display: block !important;
+    }
+    .ui[class*='tablet stackable'].table {
+      padding: 0em;
+    }
+    .ui[class*='tablet stackable'].table thead {
+      display: block;
+    }
+    .ui[class*='tablet stackable'].table tfoot {
+      display: block;
+    }
+    .ui[class*='tablet stackable'].table tr {
+      padding-top: 1em;
+      padding-bottom: 1em;
+      -webkit-box-shadow: 0px -1px 0px 0px rgba(0, 0, 0, 0.1) inset !important;
+      box-shadow: 0px -1px 0px 0px rgba(0, 0, 0, 0.1) inset !important;
+    }
+    .ui[class*='tablet stackable'].table tr > th,
+    .ui[class*='tablet stackable'].table tr > td {
+      background: none;
+      border: none !important;
+      padding: 0.25em 0.75em;
+      -webkit-box-shadow: none !important;
+      box-shadow: none !important;
+    }
+
+    /* Definition Table */
+    .ui.definition[class*='tablet stackable'].table thead th:first-child {
+      -webkit-box-shadow: none !important;
+      box-shadow: none !important;
+    }
+  }
+
+  /*--------------
+   Text Alignment
+  ---------------*/
+
+  .ui.table[class*='left aligned'],
+  .ui.table [class*='left aligned'] {
+    text-align: left;
+  }
+  .ui.table[class*='center aligned'],
+  .ui.table [class*='center aligned'] {
+    text-align: center;
+  }
+  .ui.table[class*='right aligned'],
+  .ui.table [class*='right aligned'] {
+    text-align: right;
+  }
+
+  /*------------------
+   Vertical Alignment
+  ------------------*/
+
+  .ui.table[class*='top aligned'],
+  .ui.table [class*='top aligned'] {
+    vertical-align: top;
+  }
+  .ui.table[class*='middle aligned'],
+  .ui.table [class*='middle aligned'] {
+    vertical-align: middle;
+  }
+  .ui.table[class*='bottom aligned'],
+  .ui.table [class*='bottom aligned'] {
+    vertical-align: bottom;
+  }
+
+  /*--------------
+      Collapsing
+  ---------------*/
+
+  .ui.table th.collapsing,
+  .ui.table td.collapsing {
+    width: 1px;
+    white-space: nowrap;
+  }
+
+  /*--------------
+       Fixed
+  ---------------*/
+
+  .ui.fixed.table {
+    table-layout: fixed;
+  }
+  .ui.fixed.table th,
+  .ui.fixed.table td {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /*--------------
+     Selectable
+  ---------------*/
+
+  .ui.selectable.table tbody tr:hover,
+  .ui.table tbody tr td.selectable:hover {
+    background: rgba(0, 0, 0, 0.05) !important;
+    color: rgba(0, 0, 0, 0.95) !important;
+  }
+  .ui.selectable.inverted.table tbody tr:hover,
+  .ui.inverted.table tbody tr td.selectable:hover {
+    background: rgba(255, 255, 255, 0.08) !important;
+    color: #ffffff !important;
+  }
+
+  /* Selectable Cell Link */
+  .ui.table tbody tr td.selectable {
+    padding: 0em;
+  }
+  .ui.table tbody tr td.selectable > a:not(.ui) {
+    display: block;
+    color: inherit;
+    padding: 0.78571429em 0.78571429em;
+  }
+
+  /* Other States */
+  .ui.selectable.table tr.error:hover,
+  .ui.table tr td.selectable.error:hover,
+  .ui.selectable.table tr:hover td.error {
+    background: #ffe7e7 !important;
+    color: #943634 !important;
+  }
+  .ui.selectable.table tr.warning:hover,
+  .ui.table tr td.selectable.warning:hover,
+  .ui.selectable.table tr:hover td.warning {
+    background: #fff4e4 !important;
+    color: #493107 !important;
+  }
+  .ui.selectable.table tr.active:hover,
+  .ui.table tr td.selectable.active:hover,
+  .ui.selectable.table tr:hover td.active {
+    background: #e0e0e0 !important;
+    color: rgba(0, 0, 0, 0.87) !important;
+  }
+  .ui.selectable.table tr.positive:hover,
+  .ui.table tr td.selectable.positive:hover,
+  .ui.selectable.table tr:hover td.positive {
+    background: #f7ffe6 !important;
+    color: #275b28 !important;
+  }
+  .ui.selectable.table tr.negative:hover,
+  .ui.table tr td.selectable.negative:hover,
+  .ui.selectable.table tr:hover td.negative {
+    background: #ffe7e7 !important;
+    color: #943634 !important;
+  }
+
+  /*-------------------
+        Attached
+  --------------------*/
+
+  /* Middle */
+  .ui.attached.table {
+    top: 0px;
+    bottom: 0px;
+    border-radius: 0px;
+    margin: 0em -1px;
+    width: calc(100% - (-1px * 2));
+    max-width: calc(100% - (-1px * 2));
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: 1px solid #d4d4d5;
+  }
+  .ui.attached + .ui.attached.table:not(.top) {
+    border-top: none;
+  }
+
+  /* Top */
+  .ui[class*='top attached'].table {
+    bottom: 0px;
+    margin-bottom: 0em;
+    top: 0px;
+    margin-top: 1em;
+    border-radius: 0.28571429rem 0.28571429rem 0em 0em;
+  }
+  .ui.table[class*='top attached']:first-child {
+    margin-top: 0em;
+  }
+
+  /* Bottom */
+  .ui[class*='bottom attached'].table {
+    bottom: 0px;
+    margin-top: 0em;
+    top: 0px;
+    margin-bottom: 1em;
+    -webkit-box-shadow: none, none;
+    box-shadow: none, none;
+    border-radius: 0em 0em 0.28571429rem 0.28571429rem;
+  }
+  .ui[class*='bottom attached'].table:last-child {
+    margin-bottom: 0em;
+  }
+
+  /*--------------
+       Striped
+  ---------------*/
+
+  /* Table Striping */
+  .ui.striped.table > tr:nth-child(2n),
+  .ui.striped.table tbody tr:nth-child(2n) {
+    background-color: rgba(0, 0, 50, 0.02);
+  }
+
+  /* Stripes */
+  .ui.inverted.striped.table > tr:nth-child(2n),
+  .ui.inverted.striped.table tbody tr:nth-child(2n) {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+
+  /* Allow striped active hover */
+  .ui.striped.selectable.selectable.selectable.table tbody tr.active:hover {
+    background: #efefef !important;
+    color: rgba(0, 0, 0, 0.95) !important;
+  }
+
+  /*--------------
+     Single Line
+  ---------------*/
+
+  .ui.table[class*='single line'],
+  .ui.table [class*='single line'] {
+    white-space: nowrap;
+  }
+  .ui.table[class*='single line'],
+  .ui.table [class*='single line'] {
+    white-space: nowrap;
+  }
+
+  /*-------------------
+         Colors
+  --------------------*/
+
+  /* Red */
+  .ui.red.table {
+    border-top: 0.2em solid #db2828;
+  }
+  .ui.inverted.red.table {
+    background-color: #db2828 !important;
+    color: #ffffff !important;
+  }
+
+  /* Orange */
+  .ui.orange.table {
+    border-top: 0.2em solid #f2711c;
+  }
+  .ui.inverted.orange.table {
+    background-color: #f2711c !important;
+    color: #ffffff !important;
+  }
+
+  /* Yellow */
+  .ui.yellow.table {
+    border-top: 0.2em solid #fbbd08;
+  }
+  .ui.inverted.yellow.table {
+    background-color: #fbbd08 !important;
+    color: #ffffff !important;
+  }
+
+  /* Olive */
+  .ui.olive.table {
+    border-top: 0.2em solid #b5cc18;
+  }
+  .ui.inverted.olive.table {
+    background-color: #b5cc18 !important;
+    color: #ffffff !important;
+  }
+
+  /* Green */
+  .ui.green.table {
+    border-top: 0.2em solid #21ba45;
+  }
+  .ui.inverted.green.table {
+    background-color: #21ba45 !important;
+    color: #ffffff !important;
+  }
+
+  /* Teal */
+  .ui.teal.table {
+    border-top: 0.2em solid #00b5ad;
+  }
+  .ui.inverted.teal.table {
+    background-color: #00b5ad !important;
+    color: #ffffff !important;
+  }
+
+  /* Blue */
+  .ui.blue.table {
+    border-top: 0.2em solid #2185d0;
+  }
+  .ui.inverted.blue.table {
+    background-color: #2185d0 !important;
+    color: #ffffff !important;
+  }
+
+  /* Violet */
+  .ui.violet.table {
+    border-top: 0.2em solid #6435c9;
+  }
+  .ui.inverted.violet.table {
+    background-color: #6435c9 !important;
+    color: #ffffff !important;
+  }
+
+  /* Purple */
+  .ui.purple.table {
+    border-top: 0.2em solid #a333c8;
+  }
+  .ui.inverted.purple.table {
+    background-color: #a333c8 !important;
+    color: #ffffff !important;
+  }
+
+  /* Pink */
+  .ui.pink.table {
+    border-top: 0.2em solid #e03997;
+  }
+  .ui.inverted.pink.table {
+    background-color: #e03997 !important;
+    color: #ffffff !important;
+  }
+
+  /* Brown */
+  .ui.brown.table {
+    border-top: 0.2em solid #a5673f;
+  }
+  .ui.inverted.brown.table {
+    background-color: #a5673f !important;
+    color: #ffffff !important;
+  }
+
+  /* Grey */
+  .ui.grey.table {
+    border-top: 0.2em solid #767676;
+  }
+  .ui.inverted.grey.table {
+    background-color: #767676 !important;
+    color: #ffffff !important;
+  }
+
+  /* Black */
+  .ui.black.table {
+    border-top: 0.2em solid #1b1c1d;
+  }
+  .ui.inverted.black.table {
+    background-color: #1b1c1d !important;
+    color: #ffffff !important;
+  }
+
+  /*--------------
+    Column Count
+  ---------------*/
+
+  /* Grid Based */
+  .ui.one.column.table td {
+    width: 100%;
+  }
+  .ui.two.column.table td {
+    width: 50%;
+  }
+  .ui.three.column.table td {
+    width: 33.33333333%;
+  }
+  .ui.four.column.table td {
+    width: 25%;
+  }
+  .ui.five.column.table td {
+    width: 20%;
+  }
+  .ui.six.column.table td {
+    width: 16.66666667%;
+  }
+  .ui.seven.column.table td {
+    width: 14.28571429%;
+  }
+  .ui.eight.column.table td {
+    width: 12.5%;
+  }
+  .ui.nine.column.table td {
+    width: 11.11111111%;
+  }
+  .ui.ten.column.table td {
+    width: 10%;
+  }
+  .ui.eleven.column.table td {
+    width: 9.09090909%;
+  }
+  .ui.twelve.column.table td {
+    width: 8.33333333%;
+  }
+  .ui.thirteen.column.table td {
+    width: 7.69230769%;
+  }
+  .ui.fourteen.column.table td {
+    width: 7.14285714%;
+  }
+  .ui.fifteen.column.table td {
+    width: 6.66666667%;
+  }
+  .ui.sixteen.column.table td {
+    width: 6.25%;
+  }
+
+  /* Column Width */
+  .ui.table th.one.wide,
+  .ui.table td.one.wide {
+    width: 6.25%;
+  }
+  .ui.table th.two.wide,
+  .ui.table td.two.wide {
+    width: 12.5%;
+  }
+  .ui.table th.three.wide,
+  .ui.table td.three.wide {
+    width: 18.75%;
+  }
+  .ui.table th.four.wide,
+  .ui.table td.four.wide {
+    width: 25%;
+  }
+  .ui.table th.five.wide,
+  .ui.table td.five.wide {
+    width: 31.25%;
+  }
+  .ui.table th.six.wide,
+  .ui.table td.six.wide {
+    width: 37.5%;
+  }
+  .ui.table th.seven.wide,
+  .ui.table td.seven.wide {
+    width: 43.75%;
+  }
+  .ui.table th.eight.wide,
+  .ui.table td.eight.wide {
+    width: 50%;
+  }
+  .ui.table th.nine.wide,
+  .ui.table td.nine.wide {
+    width: 56.25%;
+  }
+  .ui.table th.ten.wide,
+  .ui.table td.ten.wide {
+    width: 62.5%;
+  }
+  .ui.table th.eleven.wide,
+  .ui.table td.eleven.wide {
+    width: 68.75%;
+  }
+  .ui.table th.twelve.wide,
+  .ui.table td.twelve.wide {
+    width: 75%;
+  }
+  .ui.table th.thirteen.wide,
+  .ui.table td.thirteen.wide {
+    width: 81.25%;
+  }
+  .ui.table th.fourteen.wide,
+  .ui.table td.fourteen.wide {
+    width: 87.5%;
+  }
+  .ui.table th.fifteen.wide,
+  .ui.table td.fifteen.wide {
+    width: 93.75%;
+  }
+  .ui.table th.sixteen.wide,
+  .ui.table td.sixteen.wide {
+    width: 100%;
+  }
+
+  /*--------------
+      Sortable
+  ---------------*/
+
+  .ui.sortable.table thead th {
+    cursor: pointer;
+    white-space: nowrap;
+    border-left: 1px solid rgba(34, 36, 38, 0.15);
+    color: rgba(0, 0, 0, 0.87);
+  }
+  .ui.sortable.table thead th:first-child {
+    border-left: none;
+  }
+  .ui.sortable.table thead th.sorted,
+  .ui.sortable.table thead th.sorted:hover {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  .ui.sortable.table thead th:after {
+    display: none;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    content: '';
+    height: 1em;
+    width: auto;
+    opacity: 0.8;
+    margin: 0em 0em 0em 0.5em;
+    font-family: 'Icons';
+  }
+  .ui.sortable.table thead th.ascending:after {
+    content: '\f0d8';
+  }
+  .ui.sortable.table thead th.descending:after {
+    content: '\f0d7';
+  }
+
+  /* Hover */
+  .ui.sortable.table th.disabled:hover {
+    cursor: auto;
+    color: rgba(40, 40, 40, 0.3);
+  }
+  .ui.sortable.table thead th:hover {
+    background: rgba(0, 0, 0, 0.05);
+    color: rgba(0, 0, 0, 0.8);
+  }
+
+  /* Sorted */
+  .ui.sortable.table thead th.sorted {
+    background: rgba(0, 0, 0, 0.05);
+    color: rgba(0, 0, 0, 0.95);
+  }
+  .ui.sortable.table thead th.sorted:after {
+    display: inline-block;
+  }
+
+  /* Sorted Hover */
+  .ui.sortable.table thead th.sorted:hover {
+    background: rgba(0, 0, 0, 0.05);
+    color: rgba(0, 0, 0, 0.95);
+  }
+
+  /* Inverted */
+  .ui.inverted.sortable.table thead th.sorted {
+    background: rgba(255, 255, 255, 0.15) -webkit-gradient(linear, left top, left
+          bottom, from(transparent), to(rgba(0, 0, 0, 0.05)));
+    background: rgba(255, 255, 255, 0.15) -webkit-linear-gradient(transparent, rgba(0, 0, 0, 0.05));
+    background: rgba(255, 255, 255, 0.15)
+      linear-gradient(transparent, rgba(0, 0, 0, 0.05));
+    color: #ffffff;
+  }
+  .ui.inverted.sortable.table thead th:hover {
+    background: rgba(255, 255, 255, 0.08) -webkit-gradient(linear, left top, left
+          bottom, from(transparent), to(rgba(0, 0, 0, 0.05)));
+    background: rgba(255, 255, 255, 0.08) -webkit-linear-gradient(transparent, rgba(0, 0, 0, 0.05));
+    background: rgba(255, 255, 255, 0.08)
+      linear-gradient(transparent, rgba(0, 0, 0, 0.05));
+    color: #ffffff;
+  }
+  .ui.inverted.sortable.table thead th {
+    border-left-color: transparent;
+    border-right-color: transparent;
+  }
+
+  /*--------------
+      Inverted
+  ---------------*/
+
+  /* Text Color */
+  .ui.inverted.table {
+    background: #333333;
+    color: rgba(255, 255, 255, 0.9);
+    border: none;
+  }
+  .ui.inverted.table th {
+    background-color: rgba(0, 0, 0, 0.15);
+    border-color: rgba(255, 255, 255, 0.1) !important;
+    color: rgba(255, 255, 255, 0.9) !important;
+  }
+  .ui.inverted.table tr td {
+    border-color: rgba(255, 255, 255, 0.1) !important;
+  }
+  .ui.inverted.table tr.disabled td,
+  .ui.inverted.table tr td.disabled,
+  .ui.inverted.table tr.disabled:hover td,
+  .ui.inverted.table tr:hover td.disabled {
+    pointer-events: none;
+    color: rgba(225, 225, 225, 0.3);
+  }
+
+  /* Definition */
+  .ui.inverted.definition.table tfoot:not(.full-width) th:first-child,
+  .ui.inverted.definition.table thead:not(.full-width) th:first-child {
+    background: #ffffff;
+  }
+  .ui.inverted.definition.table tr td:first-child {
+    background: rgba(255, 255, 255, 0.02);
+    color: #ffffff;
+  }
+
+  /*--------------
+     Collapsing
+  ---------------*/
+
+  .ui.collapsing.table {
+    width: auto;
+  }
+
+  /*--------------
+        Basic
+  ---------------*/
+
+  .ui.basic.table {
+    background: transparent;
+    border: 1px solid rgba(34, 36, 38, 0.15);
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  .ui.basic.table thead,
+  .ui.basic.table tfoot {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  .ui.basic.table th {
+    background: transparent;
+    border-left: none;
+  }
+  .ui.basic.table tbody tr {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  .ui.basic.table td {
+    background: transparent;
+  }
+  .ui.basic.striped.table tbody tr:nth-child(2n) {
+    background-color: rgba(0, 0, 0, 0.05) !important;
+  }
+
+  /* Very Basic */
+  .ui[class*='very basic'].table {
+    border: none;
+  }
+  .ui[class*='very basic'].table:not(.sortable):not(.striped) th,
+  .ui[class*='very basic'].table:not(.sortable):not(.striped) td {
+    padding: '';
+  }
+  .ui[class*='very basic'].table:not(.sortable):not(.striped) th:first-child,
+  .ui[class*='very basic'].table:not(.sortable):not(.striped) td:first-child {
+    padding-left: 0em;
+  }
+  .ui[class*='very basic'].table:not(.sortable):not(.striped) th:last-child,
+  .ui[class*='very basic'].table:not(.sortable):not(.striped) td:last-child {
+    padding-right: 0em;
+  }
+  .ui[class*='very basic'].table:not(.sortable):not(.striped)
+    thead
+    tr:first-child
+    th {
+    padding-top: 0em;
+  }
+
+  /*--------------
+       Celled
+  ---------------*/
+
+  .ui.celled.table tr th,
+  .ui.celled.table tr td {
+    border-left: 1px solid rgba(34, 36, 38, 0.1);
+  }
+  .ui.celled.table tr th:first-child,
+  .ui.celled.table tr td:first-child {
+    border-left: none;
+  }
+
+  /*--------------
+       Padded
+  ---------------*/
+
+  .ui.padded.table th {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+  .ui.padded.table th,
+  .ui.padded.table td {
+    padding: 1em 1em;
+  }
+
+  /* Very */
+  .ui[class*='very padded'].table th {
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+  }
+  .ui[class*='very padded'].table td {
+    padding: 1.5em 1.5em;
+  }
+
+  /*--------------
+       Compact
+  ---------------*/
+
+  .ui.compact.table th {
+    padding-left: 0.7em;
+    padding-right: 0.7em;
+  }
+  .ui.compact.table td {
+    padding: 0.5em 0.7em;
+  }
+
+  /* Very */
+  .ui[class*='very compact'].table th {
+    padding-left: 0.6em;
+    padding-right: 0.6em;
+  }
+  .ui[class*='very compact'].table td {
+    padding: 0.4em 0.6em;
+  }
+
+  /*--------------
+        Sizes
+  ---------------*/
+
+  /* Small */
+  .ui.small.table {
+    font-size: 0.9em;
+  }
+
+  /* Standard */
+  .ui.table {
+    font-size: 1em;
+  }
+
+  /* Large */
+  .ui.large.table {
+    font-size: 1.1em;
+  }
+
+  /*******************************
+           Site Overrides
+  *******************************/
+`), props => props.hasMore || props.hasPagination ? '20px' : '0', colors.brand10);
+
+const TableComponent = ({
+  children,
+  title,
+  titleStyle,
+  message,
+  messageStyle,
+  hasMore,
+  pagination,
+  ...rest
+}) => {
+  return React$2.createElement("div", null, title || message ? React$2.createElement(Header$2, null, React$2.createElement(Title, {
+    style: titleStyle
+  }, title), React$2.createElement(Message, {
+    style: messageStyle
+  }, message)) : null, React$2.createElement(Container$9, {
+    hasMore: !!hasMore,
+    hasPagination: !!pagination
+  }, React$2.createElement(Table$1, Object.assign({}, rest), children)), hasMore ? React$2.createElement(ButtonMain, {
+    secondary: true,
+    textFirst: "ver a",
+    textEnd: "lista completa",
+    onClick: () => hasMore()
+  }) : null, pagination ? React$2.createElement("div", null, React$2.createElement("br", null), pagination) : null);
+};
+
+const Table = TableComponent;
+Table.Row = TableRow;
+Table.Header = TableHeader;
+Table.HeaderCell = TableHeaderCell;
+Table.Body = TableBody;
+Table.Cell = TableCell;
+Table.Footer = TableFooter;
+
+let _$f = t => t,
+    _t$f;
+const Container$a = styled.div(_t$f || (_t$f = _$f`
+  font-family: MontSerrat !important;
+
+  /*--------------
+   Pagination
+---------------*/
+
+  .ui.pagination.menu {
+    margin: 0em;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    vertical-align: middle;
+  }
+  .ui.pagination.menu .item:last-child {
+    border-radius: 0em 0.28571429rem 0.28571429rem 0em;
+  }
+  .ui.compact.menu .item:last-child {
+    border-radius: 0em 0.28571429rem 0.28571429rem 0em;
+  }
+  .ui.pagination.menu .item:last-child:before {
+    display: none;
+  }
+  .ui.pagination.menu .item {
+    font-family: MontSerrat !important;
+    min-width: 3em;
+    text-align: center;
+  }
+  .ui.pagination.menu .icon.item i.icon {
+    vertical-align: top;
+  }
+
+  /* Active */
+  .ui.pagination.menu .active.item {
+    border-top: none;
+    padding-top: 0.92857143em;
+    background-color: rgba(0, 0, 0, 0.05);
+    color: rgba(0, 0, 0, 0.95);
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+`));
+
+const PaginationComponent = ({
+  page,
+  totalCount,
+  limit,
+  onPageChange,
+  mini
+}) => {
+  return React$2.createElement(Container$a, null, React$2.createElement(Pagination, {
+    totalPages: Math.ceil(totalCount / limit),
+    size: mini ? 'mini' : 'small',
+    ellipsisItem: {
+      content: React$2.createElement(Icon$3, {
+        name: "ellipsis horizontal"
+      }),
+      icon: true
+    },
+    firstItem: {
+      content: React$2.createElement(Icon$3, {
+        name: "angle double left"
+      }),
+      icon: true
+    },
+    lastItem: {
+      content: React$2.createElement(Icon$3, {
+        name: "angle double right"
+      }),
+      icon: true
+    },
+    prevItem: {
+      content: React$2.createElement(Icon$3, {
+        name: "angle left"
+      }),
+      icon: true
+    },
+    nextItem: {
+      content: React$2.createElement(Icon$3, {
+        name: "angle right"
+      }),
+      icon: true
+    },
+    onPageChange: (_ev, data) => onPageChange(data.activePage),
+    activePage: page
+  }));
+};
+
+export { Accordion, ButtonMain, Calendar, Card, Checkbox, DialogComponent as Dialog, Dropdown, DropdownForm, InputLine, InputLineForm, Loader, ModalComponent as Modal, MoreLess, PaginationComponent as Pagination, Radio, Selection, Table, TextArea, TextAreaForm };
 //# sourceMappingURL=index.modern.js.map

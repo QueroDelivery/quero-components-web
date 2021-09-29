@@ -1,5 +1,5 @@
-import React from "react";
-import { ReactDatePickerProps } from "react-datepicker";
+import React from 'react';
+import { ReactDatePickerProps } from 'react-datepicker';
 interface CalendarProps extends ReactDatePickerProps {
     label?: string;
     labelColor?: string;

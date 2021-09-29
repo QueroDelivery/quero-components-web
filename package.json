@@ -1,83 +1,116 @@
 {
-    "name": "@quero-delivery/quero-components-web",
-    "version": "1.0.15",
-    "description": "Biblioteca de componentes web do Quero Delivery",
-    "author": "QueroDelivery",
-    "license": "MIT",
-    "main": "dist/index.js",
-    "module": "dist/index.modern.js",
-    "source": "src/index.tsx",
-    "engines": {
-        "node": ">=10"
-    },
-    "sideEffects": [
-        "*.css"
-    ],
-    "scripts": {
-        "build": "microbundle-crl --format modern,cjs",
-        "start": "microbundle-crl watch --format modern,cjs",
-        "reinstall": "rm -rf node_modules && npm i",
-        "deploy": "git checkout prod && git merge master && rm -rf dist && npm run build && git add . && git commit -m 'deploy' && git push origin prod && np --branch prod && git checkout master && git merge prod && git push origin master",
-        "publish-docs": "git checkout docs && git merge master && rm -rf dist && rm -rf example/storybook-static && npm run build && cd example && npm run build-storybook && ../node_modules/.bin/gh-pages -d storybook-static && cd .. && git add . && git commit -m 'publish' && git push origin docs && git checkout master"
-    },
-    "peerDependencies": {
-        "react": ">16.0.0",
-        "react-dom": ">16.0.0"
-    },
-    "devDependencies": {
-        "@fortawesome/fontawesome-svg-core": "^1.2.35",
-        "@fortawesome/free-brands-svg-icons": "^5.15.3",
-        "@fortawesome/free-regular-svg-icons": "^5.15.3",
-        "@fortawesome/free-solid-svg-icons": "^5.15.3",
-        "@fortawesome/react-fontawesome": "^0.1.14",
-        "@types/node": "^15.0.0",
-        "@types/react": "^17.0.0",
-        "@types/react-datepicker": "^3.1.8",
-        "@types/react-dom": "^17.0.4",
-        "@types/react-input-mask": "^3.0.0",
-        "@types/styled-components": "^5.1.9",
-        "@typescript-eslint/eslint-plugin": "^4.23.0",
-        "@typescript-eslint/parser": "^4.23.0",
-        "babel-eslint": "^10.0.3",
-        "cross-env": "^7.0.3",
-        "eslint": "^6.8.0",
-        "eslint-config-prettier": "^6.7.0",
-        "eslint-config-standard": "^14.1.0",
-        "eslint-config-standard-react": "^9.2.0",
-        "eslint-plugin-import": "^2.18.2",
-        "eslint-plugin-node": "^11.0.0",
-        "eslint-plugin-prettier": "^3.1.1",
-        "eslint-plugin-promise": "^4.2.1",
-        "eslint-plugin-react": "^7.17.0",
-        "eslint-plugin-standard": "^4.0.1",
-        "gh-pages": "^2.2.0",
-        "microbundle-crl": "^0.13.10",
-        "node-sass": "^5.0.0",
-        "npm-run-all": "^4.1.5",
-        "prettier": "^2.3.0",
-        "react": "^17.0.2",
-        "react-dom": "^17.0.2",
-        "react-input-mask": "^2.0.4",
-        "react-is": "^17.0.2",
-        "react-number-format": "^4.5.5",
-        "react-scripts": "^4.0.3",
-        "typescript": "^4.1.2"
-    },
-    "files": [
-        "dist"
-    ],
-    "dependencies": {
-        "date-fns": "^2.20.0",
-        "react-datepicker": "^3.3.0",
-        "semantic-ui-css": "^2.4.1",
-        "semantic-ui-react": "^2.0.3",
-        "styled-components": "^5.3.0"
-    },
-    "np": {
-        "branch": "prod",
-        "contents": "./dist"
-    },
-    "publishConfig": {
-        "access": "public"
+  "name": "@quero-delivery/quero-components-web",
+  "version": "1.0.15",
+  "description": "Biblioteca de componentes web do Quero Delivery",
+  "author": "QueroDelivery",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist/index.modern.js",
+  "source": "src/index.tsx",
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "build": "microbundle-crl --no-compress --format modern,cjs",
+    "start": "microbundle-crl watch --no-compress --format modern,cjs",
+    "test": "run-s test:unit test:lint test:build",
+    "test:build": "run-s build",
+    "test:lint": "eslint .",
+    "test:unit": "cross-env CI=1 react-scripts test --env=jsdom",
+    "test:watch": "react-scripts test --env=jsdom",
+    "reinstall": "rm -rf node_modules && yarn",
+    "lint": "eslint src --ext ts,tsx",
+    "release": "semantic-release",
+    "prepare-publish": "rm -rf dist && yarn build",
+    "publish-docs": "rm -rf example/storybook-static && cd example && yarn build-storybook && ../node_modules/.bin/gh-pages -d storybook-static && cd .."
+  },
+  "peerDependencies": {
+    "react": ">16.0.0",
+    "react-dom": ">16.0.0"
+  },
+  "dependencies": {
+    "date-fns": "^2.20.0",
+    "react-datepicker": "^3.3.0",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^2.0.3",
+    "styled-components": "^5.3.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^12.0.1",
+    "@commitlint/config-conventional": "^12.0.1",
+    "@fortawesome/fontawesome-svg-core": "^1.2.35",
+    "@fortawesome/free-brands-svg-icons": "^5.15.3",
+    "@fortawesome/free-regular-svg-icons": "^5.15.3",
+    "@fortawesome/free-solid-svg-icons": "^5.15.3",
+    "@fortawesome/react-fontawesome": "^0.1.14",
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/commit-analyzer": "^8.0.1",
+    "@semantic-release/git": "^9.0.0",
+    "@semantic-release/npm": "^7.1.3",
+    "@semantic-release/release-notes-generator": "^9.0.3",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.5.0",
+    "@testing-library/user-event": "^7.2.1",
+    "@types/jest": "^25.1.4",
+    "@types/node": "^15.0.0",
+    "@types/react": "^17.0.0",
+    "@types/react-datepicker": "^3.1.8",
+    "@types/react-dom": "^17.0.4",
+    "@types/react-input-mask": "^3.0.0",
+    "@types/styled-components": "^5.1.9",
+    "@typescript-eslint/eslint-plugin": "^4.17.0",
+    "@typescript-eslint/parser": "^4.17.0",
+    "babel-eslint": "^10.0.3",
+    "commitizen": "^4.2.3",
+    "cross-env": "^7.0.2",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^7.22.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-config-react-app": "^6.0.0",
+    "eslint-import-resolver-typescript": "^2.4.0",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-react": "^7.22.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-webpack-plugin": "^2.5.2",
+    "gh-pages": "^2.2.0",
+    "husky": "^4.2.5",
+    "lint-staged": "^11.0.0",
+    "microbundle-crl": "^0.13.10",
+    "node-sass": "^5.0.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.3.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-input-mask": "^2.0.4",
+    "react-is": "^17.0.2",
+    "react-number-format": "^4.5.5",
+    "react-scripts": "^4.0.3",
+    "semantic-release": "^17.4.7",
+    "typescript": "^4.4.3"
+  },
+  "files": [
+    "dist"
+  ],
+  "lint-staged": {
+    "*.{js, jsx, ts,tsx}": "eslint --fix"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true"
     }
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  }
 }

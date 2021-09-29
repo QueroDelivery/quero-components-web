@@ -1,6 +1,6 @@
 import { create } from '@storybook/theming';
 import { colors } from '../../src/styles/colors'
-import LogoQd from '../assets/logo-qd.png'
+import LogoQd from '../src/assets/logo-qd.png'
 
 export default create({
     base: 'light',

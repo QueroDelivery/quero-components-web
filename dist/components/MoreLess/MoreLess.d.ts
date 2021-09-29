@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 interface MoreLessProps {
-    size?: "small" | "medium" | "big";
+    size?: 'small' | 'medium' | 'big';
     disabled?: boolean;
     value: number;
     limit?: number;

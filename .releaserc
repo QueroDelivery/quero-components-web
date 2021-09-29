@@ -1,0 +1,12 @@
+{
+  "plugins": [
+   "@semantic-release/commit-analyzer",
+   "@semantic-release/release-notes-generator",
+   ["@semantic-release/npm",{"npmPublish":false}],
+   "@semantic-release/changelog",
+   "@semantic-release/git"
+   ],
+  "branches": ["main"],
+  "type": "git",
+  "url": "git@github.com:QueroDelivery/quero-components-web.git"
+}

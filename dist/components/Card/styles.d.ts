@@ -1,4 +1,4 @@
-import { TTypes } from "./Card";
+import { TTypes } from './Card';
 interface CardProps {
     width?: number | string;
     colorText?: string;

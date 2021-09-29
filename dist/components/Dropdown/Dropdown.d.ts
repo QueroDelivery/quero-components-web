@@ -1,5 +1,5 @@
-import React from "react";
-import { DropdownProps } from "semantic-ui-react";
+import React from 'react';
+import { DropdownProps } from 'semantic-ui-react';
 interface OptionsProps {
     key: string | number;
     text: string;
@@ -8,7 +8,7 @@ interface OptionsProps {
 export interface Props extends DropdownProps {
     options?: OptionsProps[];
     brand?: boolean;
-    textAlign?: "center";
+    textAlign?: 'center';
     errorMessage?: string;
     label?: string;
     colorLabel?: string;

@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 export interface ModalProps {
     open: boolean;
     title?: string;
@@ -8,7 +8,7 @@ export interface ModalProps {
     closeOnDimerClick?: boolean;
     loading?: boolean;
     onBack?: Function;
-    size?: "mini" | "tiny" | "small" | "large" | "fullscreen";
+    size?: 'mini' | 'tiny' | 'small' | 'large' | 'fullscreen';
     noBorder?: boolean;
     closeIcon?: boolean;
 }

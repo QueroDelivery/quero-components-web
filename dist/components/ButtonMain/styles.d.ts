@@ -1,5 +1,5 @@
-import { IconDefinition } from "@fortawesome/free-solid-svg-icons";
-import { ButtonSizes } from "./ButtonMain";
+import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
+import { ButtonSizes } from './ButtonMain';
 interface ButtonProps {
     secondary?: boolean;
     backPurple?: boolean;

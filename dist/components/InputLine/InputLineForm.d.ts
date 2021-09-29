@@ -1,5 +1,5 @@
-import React from "react";
-import { InputProps } from "./InputLine";
+import React from 'react';
+import { InputProps } from './InputLine';
 export interface InputFormProps extends InputProps {
     required?: boolean;
     name: string;

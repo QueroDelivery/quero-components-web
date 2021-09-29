@@ -3,7 +3,7 @@ interface BackgroundProps {
 }
 interface ModalProps {
     width?: number | string;
-    size?: "mini" | "tiny" | "small" | "large" | "fullscreen";
+    size?: 'mini' | 'tiny' | 'small' | 'large' | 'fullscreen';
 }
 interface HeaderProps {
     iconBack?: boolean;

@@ -1,6 +1,6 @@
-import React from "react";
-import { Props } from "./Dropdown";
-interface DropdownFormProps extends Omit<Props, "onChange" | "value"> {
+import React from 'react';
+import { Props } from './Dropdown';
+interface DropdownFormProps extends Omit<Props, 'onChange' | 'value'> {
     required?: boolean;
     name: string;
     errors: any;
