@@ -90,6 +90,7 @@ const Accordion: React.FC<AccordionProps> = ({
       </Container>
       <Body open={open} width={width}>
         {children}
+        dev
       </Body>
     </React.Fragment>
   );
