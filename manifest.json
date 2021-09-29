@@ -1,6 +1,6 @@
 {
-  "short_name": "quero-components-web",
-  "name": "quero-components-web",
+  "short_name": "@quero-delivery/quero-components-web",
+  "name": "@quero-delivery/quero-components-web",
   "icons": [
     {
       "src": "favicon.ico",
