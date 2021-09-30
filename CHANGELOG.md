@@ -1,3 +1,10 @@
+## [1.0.17](https://github.com/QueroDelivery/quero-components-web/compare/v1.0.16...v1.0.17) (2021-09-30)
+
+
+### Bug Fixes
+
+* ajuste processo de ci ([18ba6ee](https://github.com/QueroDelivery/quero-components-web/commit/18ba6eec9eea944c16b3a83dde7b1b4a4af823c0))
+
 ## [1.0.16](https://github.com/QueroDelivery/quero-components-web/compare/v1.0.15...v1.0.16) (2021-09-30)
 
 
