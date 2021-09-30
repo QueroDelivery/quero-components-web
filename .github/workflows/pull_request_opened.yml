@@ -38,5 +38,8 @@ jobs:
       - name: eslint
         run: |
           yarn lint
+      - name: tests
+        run: |
+          yarn test:ci
       - name: commit message
         uses: wagoid/commitlint-github-action@v4
