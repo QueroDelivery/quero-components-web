@@ -35,7 +35,6 @@ jobs:
         run: |
           yarn --frozen-lockfile
       - name: Release
-        id: semantic
         run: |
           yarn release
         env:
@@ -47,16 +46,18 @@ jobs:
           git config user.email alanflpns@gmail.com
           yarn prepare-publish
       - name: Publish
-        if: steps.semantic.outputs.new_release_published == 'true'
+        continue-on-error: true
         run: |
           echo "//registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN" >> ~/.npmrc
           npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
       - name: Prepare publish docs
+        continue-on-error: true
         run: |
           yarn prepare-publish-docs
       - name: Publish docs
+        continue-on-error: true
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
