@@ -42,8 +42,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Prepare publish
         run: |
-          git config user.name alanflp
-          git config user.email alanflpns@gmail.com
           yarn prepare-publish
       - name: Publish
         continue-on-error: true
