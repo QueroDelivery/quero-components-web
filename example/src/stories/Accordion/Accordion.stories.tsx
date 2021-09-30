@@ -317,7 +317,7 @@ Secondary.parameters = {
       code: `<Accordion
       title="Título"
       open={false}
-      secondary={true}
+      secondary
       onChange={() => {}}
     />`,
     },
