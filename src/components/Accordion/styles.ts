@@ -91,12 +91,17 @@ export const Container = styled.div<AccordionProps>`
           border-top-right-radius: 20px;
         `
       : css`
-          border-radius: 30px;
+          border-radius: 20px;
         `}
 `;
 export const Body = styled.div<BodyProps>`
   font-family: MontSerrat !important;
-  width: ${props => (props.width ? `${props.width}%` : '100%')};
+  width: ${props => {
+    if (typeof props.width === 'string') {
+      return props.width;
+    }
+    return `${props.width}px`;
+  }};
   padding: 20px;
   border: 1px solid ${colors.card};
   border-top: 0;

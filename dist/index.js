@@ -2833,7 +2833,7 @@ var Button$1 = styled__default["default"].button(_templateObject$f || (_template
     return 'transparent';
   }
 
-  return colors.black;
+  return colors.brand30;
 }, function (props) {
   return props.size ? size$2(props.size) : '40px';
 }, function (props) {
@@ -4878,10 +4878,14 @@ var Container$4 = styled__default["default"].div(_templateObject$6 || (_template
 }, function (props) {
   return props.colorValue ? props.colorValue : "" + colors.gray20;
 }, function (props) {
-  return props.open ? styled.css(_templateObject2$3 || (_templateObject2$3 = _taggedTemplateLiteralLoose(["\n          border-top-left-radius: 20px;\n          border-top-right-radius: 20px;\n        "]))) : styled.css(_templateObject3$3 || (_templateObject3$3 = _taggedTemplateLiteralLoose(["\n          border-radius: 30px;\n        "])));
+  return props.open ? styled.css(_templateObject2$3 || (_templateObject2$3 = _taggedTemplateLiteralLoose(["\n          border-top-left-radius: 20px;\n          border-top-right-radius: 20px;\n        "]))) : styled.css(_templateObject3$3 || (_templateObject3$3 = _taggedTemplateLiteralLoose(["\n          border-radius: 20px;\n        "])));
 });
 var Body = styled__default["default"].div(_templateObject4$1 || (_templateObject4$1 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  width: ", ";\n  padding: 20px;\n  border: 1px solid ", ";\n  border-top: 0;\n  border-bottom-left-radius: 20px;\n  border-bottom-right-radius: 20px;\n  display: ", ";\n  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.16);\n"])), function (props) {
-  return props.width ? props.width + "%" : '100%';
+  if (typeof props.width === 'string') {
+    return props.width;
+  }
+
+  return props.width + "px";
 }, colors.card, function (props) {
   return props.open ? 'block' : 'none';
 });
@@ -4896,7 +4900,7 @@ var Accordion = function Accordion(_ref) {
       children = _ref.children,
       secondary = _ref.secondary,
       open = _ref.open,
-      onChange = _ref.onChange,
+      _onClick = _ref.onClick,
       width = _ref.width,
       icon = _ref.icon,
       customIcon = _ref.customIcon,
@@ -4904,14 +4908,15 @@ var Accordion = function Accordion(_ref) {
       fontSizeTitle = _ref.fontSizeTitle;
   return jsxRuntime.jsxs(React__default["default"].Fragment, {
     children: [jsxRuntime.jsxs(Container$4, Object.assign({
+      "data-testid": "accordion-component",
       colorTitle: colorTitle,
       colorSubtitle: colorSubtitle,
       colorValue: colorValue,
       secondary: secondary,
       subtitle: subtitle,
       open: open,
-      onClick: function onClick() {
-        return onChange();
+      onClick: function onClick(event) {
+        return _onClick(event);
       },
       width: width,
       icon: !!(icon || customIcon),
@@ -4921,6 +4926,7 @@ var Accordion = function Accordion(_ref) {
         className: "icon-title"
       }, {
         children: [customIcon || (icon ? jsxRuntime.jsx(FontAwesomeIcon, {
+          "data-testid": "accordion-icon",
           icon: icon,
           size: "lg",
           color: colorIcon || colors.brand10
@@ -4940,7 +4946,7 @@ var Accordion = function Accordion(_ref) {
       }), void 0), jsxRuntime.jsxs("div", Object.assign({
         className: "value-icon"
       }, {
-        children: [jsxRuntime.jsx("span", Object.assign({
+        children: [value && jsxRuntime.jsx("span", Object.assign({
           className: "value"
         }, {
           children: value

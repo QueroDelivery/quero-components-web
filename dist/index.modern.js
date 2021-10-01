@@ -2849,7 +2849,7 @@ const Button$1 = styled.button(_t$f || (_t$f = _$f`
     return 'transparent';
   }
 
-  return colors.black;
+  return colors.brand30;
 }, props => props.size ? size$2(props.size) : '40px', props => {
   if (props.width) {
     if (typeof props.width === 'string') {
@@ -6905,7 +6905,7 @@ const Container$4 = styled.div(_t$6 || (_t$6 = _$6`
           border-top-left-radius: 20px;
           border-top-right-radius: 20px;
         `)) : css$1(_t3$3 || (_t3$3 = _$6`
-          border-radius: 30px;
+          border-radius: 20px;
         `)));
 const Body = styled.div(_t4$1 || (_t4$1 = _$6`
   font-family: MontSerrat !important;
@@ -6917,7 +6917,13 @@ const Body = styled.div(_t4$1 || (_t4$1 = _$6`
   border-bottom-right-radius: 20px;
   display: ${0};
   box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.16);
-`), props => props.width ? `${props.width}%` : '100%', colors.card, props => props.open ? 'block' : 'none');
+`), props => {
+  if (typeof props.width === 'string') {
+    return props.width;
+  }
+
+  return `${props.width}px`;
+}, colors.card, props => props.open ? 'block' : 'none');
 
 const Accordion = ({
   title,
@@ -6929,7 +6935,7 @@ const Accordion = ({
   children,
   secondary,
   open,
-  onChange,
+  onClick,
   width,
   icon,
   customIcon,
@@ -6938,13 +6944,14 @@ const Accordion = ({
 }) => {
   return jsxs(React$2.Fragment, {
     children: [jsxs(Container$4, Object.assign({
+      "data-testid": "accordion-component",
       colorTitle: colorTitle,
       colorSubtitle: colorSubtitle,
       colorValue: colorValue,
       secondary: secondary,
       subtitle: subtitle,
       open: open,
-      onClick: () => onChange(),
+      onClick: event => onClick(event),
       width: width,
       icon: !!(icon || customIcon),
       fontSizeTitle: fontSizeTitle
@@ -6953,6 +6960,7 @@ const Accordion = ({
         className: "icon-title"
       }, {
         children: [customIcon || (icon ? jsx(FontAwesomeIcon, {
+          "data-testid": "accordion-icon",
           icon: icon,
           size: "lg",
           color: colorIcon || colors.brand10
@@ -6972,7 +6980,7 @@ const Accordion = ({
       }), void 0), jsxs("div", Object.assign({
         className: "value-icon"
       }, {
-        children: [jsx("span", Object.assign({
+        children: [value && jsx("span", Object.assign({
           className: "value"
         }, {
           children: value

@@ -9,7 +9,7 @@ import {
 import { Container, Body } from './styles';
 import { colors } from '../../styles/colors';
 
-interface AccordionProps {
+export interface AccordionProps {
   title: string;
   colorTitle?: string;
   subtitle?: string;
@@ -17,7 +17,8 @@ interface AccordionProps {
   value?: string;
   colorValue?: string;
   open: boolean;
-  onChange: () => void;
+  // eslint-disable-next-line no-unused-vars
+  onClick: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
   secondary?: boolean;
   width?: number | string;
   icon?: IconDefinition;
@@ -36,7 +37,7 @@ const Accordion: React.FC<AccordionProps> = ({
   children,
   secondary,
   open,
-  onChange,
+  onClick,
   width,
   icon,
   customIcon,
@@ -46,13 +47,14 @@ const Accordion: React.FC<AccordionProps> = ({
   return (
     <React.Fragment>
       <Container
+        data-testid="accordion-component"
         colorTitle={colorTitle}
         colorSubtitle={colorSubtitle}
         colorValue={colorValue}
         secondary={secondary}
         subtitle={subtitle}
         open={open}
-        onClick={() => onChange()}
+        onClick={event => onClick(event)}
         width={width}
         icon={!!(icon || customIcon)}
         fontSizeTitle={fontSizeTitle}
@@ -61,6 +63,7 @@ const Accordion: React.FC<AccordionProps> = ({
           {customIcon ||
             (icon ? (
               <FontAwesomeIcon
+                data-testid="accordion-icon"
                 icon={icon}
                 size="lg"
                 color={colorIcon || colors.brand10}
@@ -72,8 +75,9 @@ const Accordion: React.FC<AccordionProps> = ({
             {subtitle && <span className="subtitle">{subtitle}</span>}
           </div>
         </div>
+
         <div className="value-icon">
-          <span className="value">{value}</span>
+          {value && <span className="value">{value}</span>}
           {secondary ? (
             <FontAwesomeIcon
               icon={open ? faAngleUp : faAngleDown}
@@ -88,6 +92,7 @@ const Accordion: React.FC<AccordionProps> = ({
           )}
         </div>
       </Container>
+
       <Body open={open} width={width}>
         {children}
       </Body>

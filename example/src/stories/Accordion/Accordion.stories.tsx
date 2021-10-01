@@ -1,8 +1,9 @@
+import React from 'react';
 import { useState } from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 import { action } from '@storybook/addon-actions';
 import { Accordion } from '@quero-delivery/quero-components-web';
-import { AccordionProps } from './Interface';
+import { AccordionProps } from '../../../../src/components/Accordion/Accordion';
 import '@quero-delivery/quero-components-web/dist/index.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
@@ -71,7 +72,7 @@ export default {
         },
       },
     },
-    onChange: {
+    onClick: {
       action: 'clicked',
       description: 'Função para abrir ou fechar Accordion',
       table: {
@@ -156,7 +157,7 @@ export default {
 const Template: Story<AccordionProps> = args => {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <Accordion {...args} onChange={() => setIsOpen(!isOpen)} open={isOpen}>
+    <Accordion {...args} onClick={() => setIsOpen(!isOpen)} open={isOpen}>
       Escreve aqui
     </Accordion>
   );
@@ -166,7 +167,7 @@ export const Default = Template.bind({});
 Default.args = {
   title: 'Título',
   open: false,
-  onChange: action('abrir/fechar'),
+  onClick: action('abrir/fechar'),
 };
 
 Default.parameters = {
@@ -175,7 +176,7 @@ Default.parameters = {
       code: `<Accordion
       title="Título"
       open={false}
-      onChange={() => {}}
+      onClick={() => {}}
     />`,
     },
   },
@@ -187,7 +188,7 @@ Subtitle.args = {
   subtitle: 'Subtítulo',
   open: false,
   secondary: false,
-  onChange: action('abrir/fechar'),
+  onClick: action('abrir/fechar'),
 };
 
 Subtitle.parameters = {
@@ -197,7 +198,7 @@ Subtitle.parameters = {
       title="Título"
       subtitle="Subtítulo"
       open={false}
-      onChange={() => {}}
+      onClick={() => {}}
     />`,
     },
   },
@@ -209,7 +210,7 @@ Width.args = {
   open: false,
   secondary: false,
   width: '50%',
-  onChange: action('abrir/fechar'),
+  onClick: action('abrir/fechar'),
 };
 
 Width.parameters = {
@@ -219,7 +220,7 @@ Width.parameters = {
       title="Título"
       open={false}
       width="50%"
-      onChange={() => {}}
+      onClick={() => {}}
     />`,
     },
   },
@@ -231,7 +232,7 @@ Icon.args = {
   open: false,
   secondary: false,
   icon: faPhone,
-  onChange: action('abrir/fechar'),
+  onClick: action('abrir/fechar'),
 };
 
 Icon.parameters = {
@@ -241,7 +242,7 @@ Icon.parameters = {
       title="Titulo"
       open={false}
       icon={faPhone}
-      onChange={() => {}}
+      onClick={() => {}}
     />`,
     },
   },
@@ -253,7 +254,7 @@ Value.args = {
   value: 'R$10,00',
   open: false,
   secondary: false,
-  onChange: action('abrir/fechar'),
+  onClick: action('abrir/fechar'),
 };
 
 Value.parameters = {
@@ -263,7 +264,7 @@ Value.parameters = {
       title="Título"
       value="R$10,00"
       open={false}
-      onChange={() => {}}
+      onClick={() => {}}
     />`,
     },
   },
@@ -281,7 +282,7 @@ Colors.args = {
   colorSubtitle: 'green',
   colorTitle: 'red',
   colorValue: 'orange',
-  onChange: action('abrir/fechar'),
+  onClick: action('abrir/fechar'),
 };
 
 Colors.parameters = {
@@ -297,7 +298,7 @@ Colors.parameters = {
       colorSubtitle="green"
       colorTitle="red"
       colorValue="orange"
-      onChange={() => {}}
+      onClick={() => {}}
     />`,
     },
   },
@@ -308,7 +309,7 @@ Secondary.args = {
   title: 'Título',
   open: false,
   secondary: true,
-  onChange: action('abrir/fechar'),
+  onClick: action('abrir/fechar'),
 };
 
 Secondary.parameters = {
@@ -318,7 +319,7 @@ Secondary.parameters = {
       title="Título"
       open={false}
       secondary
-      onChange={() => {}}
+      onClick={() => {}}
     />`,
     },
   },
@@ -330,7 +331,7 @@ CustomIcon.args = {
   open: false,
   secondary: false,
   customIcon: <FontAwesomeIcon icon={faPhone} />,
-  onChange: action('abrir/fechar'),
+  onClick: action('abrir/fechar'),
 };
 
 CustomIcon.parameters = {
@@ -340,7 +341,7 @@ CustomIcon.parameters = {
       title="Título"
       open={false}
       customIcon={<FontAwesomeIcon icon={faPhone}/>}
-      onChange={() => {}}
+      onClick={() => {}}
     />`,
     },
   },
@@ -352,7 +353,7 @@ fontSizeTitle.args = {
   open: false,
   secondary: false,
   fontSizeTitle: 10,
-  onChange: action('abrir/fechar'),
+  onClick: action('abrir/fechar'),
 };
 
 fontSizeTitle.parameters = {
@@ -362,7 +363,7 @@ fontSizeTitle.parameters = {
       title="Título"
       open={false}
       fontSizeTitle={10}
-      onChange={() => {}}
+      onClick={() => {}}
     />`,
     },
   },
