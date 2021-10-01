@@ -41,5 +41,6 @@ jobs:
       - name: tests
         run: |
           yarn test:ci
+          yarn test:clear
       - name: commit message
         uses: wagoid/commitlint-github-action@v4

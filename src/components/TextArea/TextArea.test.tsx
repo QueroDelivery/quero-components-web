@@ -6,6 +6,7 @@ import TextArea from './TextArea';
 import { colors } from '../../styles/colors';
 
 describe('TextArea Component', () => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   let onChangeMock: jest.Mock<any, any>;
 
   beforeEach(() => {
