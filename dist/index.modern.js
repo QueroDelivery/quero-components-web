@@ -1,10 +1,44 @@
 import 'semantic-ui-css/semantic.min.css';
+import { jsx, jsxs } from 'react/jsx-runtime';
 import React$2, { useState, useEffect } from 'react';
 import styled, { css as css$1 } from 'styled-components';
 import { Dropdown as Dropdown$1, Table as Table$1, TableRow, TableHeader, TableHeaderCell, TableBody, TableCell, TableFooter, Pagination, Icon as Icon$3 } from 'semantic-ui-react';
 import DatePicker, { registerLocale } from 'react-datepicker';
 import reactDom from 'react-dom';
 import br from 'date-fns/locale/pt-BR';
+
+function _extends$2() {
+  _extends$2 = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  return _extends$2.apply(this, arguments);
+}
+
+function _objectWithoutPropertiesLoose$3(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  var sourceKeys = Object.keys(source);
+  var key, i;
+
+  for (i = 0; i < sourceKeys.length; i++) {
+    key = sourceKeys[i];
+    if (excluded.indexOf(key) >= 0) continue;
+    target[key] = source[key];
+  }
+
+  return target;
+}
 
 /*!
  * Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com
@@ -33,7 +67,7 @@ function _createClass(Constructor, protoProps, staticProps) {
   return Constructor;
 }
 
-function _defineProperty(obj, key, value) {
+function _defineProperty$1(obj, key, value) {
   if (key in obj) {
     Object.defineProperty(obj, key, {
       value: value,
@@ -60,7 +94,7 @@ function _objectSpread(target) {
     }
 
     ownKeys.forEach(function (key) {
-      _defineProperty(target, key, source[key]);
+      _defineProperty$1(target, key, source[key]);
     });
   }
 
@@ -129,19 +163,19 @@ var _ref = _WINDOW.navigator || {},
 var WINDOW = _WINDOW;
 var DOCUMENT = _DOCUMENT;
 var IS_DOM = !!DOCUMENT.documentElement && !!DOCUMENT.head && typeof DOCUMENT.addEventListener === 'function' && typeof DOCUMENT.createElement === 'function';
-var IS_IE = ~userAgent.indexOf('MSIE') || ~userAgent.indexOf('Trident/');
+~userAgent.indexOf('MSIE') || ~userAgent.indexOf('Trident/');
 
 var NAMESPACE_IDENTIFIER = '___FONT_AWESOME___';
 var DEFAULT_FAMILY_PREFIX = 'fa';
 var DEFAULT_REPLACEMENT_CLASS = 'svg-inline--fa';
 var DATA_FA_I2SVG = 'data-fa-i2svg';
-var PRODUCTION = function () {
+(function () {
   try {
     return process.env.NODE_ENV === 'production';
   } catch (e) {
     return false;
   }
-}();
+})();
 var DUOTONE_CLASSES = {
   GROUP: 'group',
   SWAP_OPACITY: 'swap-opacity',
@@ -206,12 +240,12 @@ var config = _objectSpread({}, _config);
 
 WINDOW.FontAwesomeConfig = config;
 
-var w = WINDOW || {};
-if (!w[NAMESPACE_IDENTIFIER]) w[NAMESPACE_IDENTIFIER] = {};
-if (!w[NAMESPACE_IDENTIFIER].styles) w[NAMESPACE_IDENTIFIER].styles = {};
-if (!w[NAMESPACE_IDENTIFIER].hooks) w[NAMESPACE_IDENTIFIER].hooks = {};
-if (!w[NAMESPACE_IDENTIFIER].shims) w[NAMESPACE_IDENTIFIER].shims = [];
-var namespace = w[NAMESPACE_IDENTIFIER];
+var w$1 = WINDOW || {};
+if (!w$1[NAMESPACE_IDENTIFIER]) w$1[NAMESPACE_IDENTIFIER] = {};
+if (!w$1[NAMESPACE_IDENTIFIER].styles) w$1[NAMESPACE_IDENTIFIER].styles = {};
+if (!w$1[NAMESPACE_IDENTIFIER].hooks) w$1[NAMESPACE_IDENTIFIER].hooks = {};
+if (!w$1[NAMESPACE_IDENTIFIER].shims) w$1[NAMESPACE_IDENTIFIER].shims = [];
+var namespace = w$1[NAMESPACE_IDENTIFIER];
 
 var functions = [];
 
@@ -229,7 +263,7 @@ if (IS_DOM) {
   loaded = (DOCUMENT.documentElement.doScroll ? /^loaded|^c/ : /^loaded|^i|^c/).test(DOCUMENT.readyState);
   if (!loaded) DOCUMENT.addEventListener('DOMContentLoaded', listener);
 }
-var asyncSetTimer = typeof setImmediate === 'undefined' ? setTimeout : setImmediate;
+typeof setImmediate === 'undefined' ? setTimeout : setImmediate;
 var meaninglessTransform = {
   size: 16,
   x: 0,
@@ -662,9 +696,6 @@ function defineIcons(prefix, icons) {
 
 var styles = namespace.styles,
     shims = namespace.shims;
-var _byUnicode = {};
-var _byLigature = {};
-var _byOldName = {};
 var build = function build() {
   var lookup = function lookup(reducer) {
     return reduce(styles, function (o, style, prefix) {
@@ -673,14 +704,14 @@ var build = function build() {
     }, {});
   };
 
-  _byUnicode = lookup(function (acc, icon, iconName) {
+  lookup(function (acc, icon, iconName) {
     if (icon[3]) {
       acc[icon[3]] = iconName;
     }
 
     return acc;
   });
-  _byLigature = lookup(function (acc, icon, iconName) {
+  lookup(function (acc, icon, iconName) {
     var ligatures = icon[2];
     acc[iconName] = iconName;
     ligatures.forEach(function (ligature) {
@@ -689,7 +720,7 @@ var build = function build() {
     return acc;
   });
   var hasRegular = 'far' in styles;
-  _byOldName = reduce(shims, function (acc, shim) {
+  reduce(shims, function (acc, shim) {
     var oldName = shim[0];
     var prefix = shim[1];
     var iconName = shim[2];
@@ -815,18 +846,18 @@ var ANIMATION_BASE = {
   repeatCount: 'indefinite',
   dur: '2s'
 };
-var RING = {
+({
   tag: 'path',
   attributes: _objectSpread({}, FILL, {
     d: 'M156.5,447.7l-12.6,29.5c-18.7-9.5-35.9-21.2-51.5-34.9l22.7-22.7C127.6,430.5,141.5,440,156.5,447.7z M40.6,272H8.5 c1.4,21.2,5.4,41.7,11.7,61.1L50,321.2C45.1,305.5,41.8,289,40.6,272z M40.6,240c1.4-18.8,5.2-37,11.1-54.1l-29.5-12.6 C14.7,194.3,10,216.7,8.5,240H40.6z M64.3,156.5c7.8-14.9,17.2-28.8,28.1-41.5L69.7,92.3c-13.7,15.6-25.5,32.8-34.9,51.5 L64.3,156.5z M397,419.6c-13.9,12-29.4,22.3-46.1,30.4l11.9,29.8c20.7-9.9,39.8-22.6,56.9-37.6L397,419.6z M115,92.4 c13.9-12,29.4-22.3,46.1-30.4l-11.9-29.8c-20.7,9.9-39.8,22.6-56.8,37.6L115,92.4z M447.7,355.5c-7.8,14.9-17.2,28.8-28.1,41.5 l22.7,22.7c13.7-15.6,25.5-32.9,34.9-51.5L447.7,355.5z M471.4,272c-1.4,18.8-5.2,37-11.1,54.1l29.5,12.6 c7.5-21.1,12.2-43.5,13.6-66.8H471.4z M321.2,462c-15.7,5-32.2,8.2-49.2,9.4v32.1c21.2-1.4,41.7-5.4,61.1-11.7L321.2,462z M240,471.4c-18.8-1.4-37-5.2-54.1-11.1l-12.6,29.5c21.1,7.5,43.5,12.2,66.8,13.6V471.4z M462,190.8c5,15.7,8.2,32.2,9.4,49.2h32.1 c-1.4-21.2-5.4-41.7-11.7-61.1L462,190.8z M92.4,397c-12-13.9-22.3-29.4-30.4-46.1l-29.8,11.9c9.9,20.7,22.6,39.8,37.6,56.9 L92.4,397z M272,40.6c18.8,1.4,36.9,5.2,54.1,11.1l12.6-29.5C317.7,14.7,295.3,10,272,8.5V40.6z M190.8,50 c15.7-5,32.2-8.2,49.2-9.4V8.5c-21.2,1.4-41.7,5.4-61.1,11.7L190.8,50z M442.3,92.3L419.6,115c12,13.9,22.3,29.4,30.5,46.1 l29.8-11.9C470,128.5,457.3,109.4,442.3,92.3z M397,92.4l22.7-22.7c-15.6-13.7-32.8-25.5-51.5-34.9l-12.6,29.5 C370.4,72.1,384.4,81.5,397,92.4z'
   })
-};
+});
 
 var OPACITY_ANIMATE = _objectSpread({}, ANIMATION_BASE, {
   attributeName: 'opacity'
 });
 
-var DOT = {
+({
   tag: 'circle',
   attributes: _objectSpread({}, FILL, {
     cx: '256',
@@ -845,8 +876,8 @@ var DOT = {
       values: '1;0;1;1;0;1;'
     })
   }]
-};
-var QUESTION = {
+});
+({
   tag: 'path',
   attributes: _objectSpread({}, FILL, {
     opacity: '1',
@@ -858,8 +889,8 @@ var QUESTION = {
       values: '1;0;0;0;0;1;'
     })
   }]
-};
-var EXCLAMATION = {
+});
+({
   tag: 'path',
   attributes: _objectSpread({}, FILL, {
     opacity: '0',
@@ -871,7 +902,7 @@ var EXCLAMATION = {
       values: '0;0;1;1;0;0;'
     })
   }]
-};
+});
 function asFoundIcon(icon) {
   var width = icon[0];
   var height = icon[1];
@@ -1117,8 +1148,9 @@ var icon = resolveIcons(function (iconDefinition) {
   });
 });
 
-function createCommonjsModule(fn, module) {
-	return module = { exports: {} }, fn(module, module.exports), module.exports;
+function createCommonjsModule(fn) {
+  var module = { exports: {} };
+	return fn(module, module.exports), module.exports;
 }
 
 /** @license React v16.13.1
@@ -1130,11 +1162,11 @@ function createCommonjsModule(fn, module) {
  * LICENSE file in the root directory of this source tree.
  */
 var b="function"===typeof Symbol&&Symbol.for,c=b?Symbol.for("react.element"):60103,d=b?Symbol.for("react.portal"):60106,e=b?Symbol.for("react.fragment"):60107,f=b?Symbol.for("react.strict_mode"):60108,g=b?Symbol.for("react.profiler"):60114,h=b?Symbol.for("react.provider"):60109,k=b?Symbol.for("react.context"):60110,l=b?Symbol.for("react.async_mode"):60111,m=b?Symbol.for("react.concurrent_mode"):60111,n=b?Symbol.for("react.forward_ref"):60112,p=b?Symbol.for("react.suspense"):60113,q=b?
-Symbol.for("react.suspense_list"):60120,r=b?Symbol.for("react.memo"):60115,t=b?Symbol.for("react.lazy"):60116,v=b?Symbol.for("react.block"):60121,w$1=b?Symbol.for("react.fundamental"):60117,x=b?Symbol.for("react.responder"):60118,y=b?Symbol.for("react.scope"):60119;
+Symbol.for("react.suspense_list"):60120,r=b?Symbol.for("react.memo"):60115,t=b?Symbol.for("react.lazy"):60116,v=b?Symbol.for("react.block"):60121,w=b?Symbol.for("react.fundamental"):60117,x=b?Symbol.for("react.responder"):60118,y=b?Symbol.for("react.scope"):60119;
 function z(a){if("object"===typeof a&&null!==a){var u=a.$$typeof;switch(u){case c:switch(a=a.type,a){case l:case m:case e:case g:case f:case p:return a;default:switch(a=a&&a.$$typeof,a){case k:case n:case t:case r:case h:return a;default:return u}}case d:return u}}}function A(a){return z(a)===m}var AsyncMode=l;var ConcurrentMode=m;var ContextConsumer=k;var ContextProvider=h;var Element=c;var ForwardRef=n;var Fragment=e;var Lazy=t;var Memo=r;var Portal=d;
 var Profiler=g;var StrictMode=f;var Suspense=p;var isAsyncMode=function(a){return A(a)||z(a)===l};var isConcurrentMode=A;var isContextConsumer=function(a){return z(a)===k};var isContextProvider=function(a){return z(a)===h};var isElement=function(a){return "object"===typeof a&&null!==a&&a.$$typeof===c};var isForwardRef=function(a){return z(a)===n};var isFragment=function(a){return z(a)===e};var isLazy=function(a){return z(a)===t};
 var isMemo=function(a){return z(a)===r};var isPortal=function(a){return z(a)===d};var isProfiler=function(a){return z(a)===g};var isStrictMode=function(a){return z(a)===f};var isSuspense=function(a){return z(a)===p};
-var isValidElementType=function(a){return "string"===typeof a||"function"===typeof a||a===e||a===m||a===g||a===f||a===p||a===q||"object"===typeof a&&null!==a&&(a.$$typeof===t||a.$$typeof===r||a.$$typeof===h||a.$$typeof===k||a.$$typeof===n||a.$$typeof===w$1||a.$$typeof===x||a.$$typeof===y||a.$$typeof===v)};var typeOf=z;
+var isValidElementType=function(a){return "string"===typeof a||"function"===typeof a||a===e||a===m||a===g||a===f||a===p||a===q||"object"===typeof a&&null!==a&&(a.$$typeof===t||a.$$typeof===r||a.$$typeof===h||a.$$typeof===k||a.$$typeof===n||a.$$typeof===w||a.$$typeof===x||a.$$typeof===y||a.$$typeof===v)};var typeOf=z;
 
 var reactIs_production_min = {
 	AsyncMode: AsyncMode,
@@ -1166,6 +1198,15 @@ var reactIs_production_min = {
 	isValidElementType: isValidElementType,
 	typeOf: typeOf
 };
+
+/** @license React v16.13.1
+ * react-is.development.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
 
 var reactIs_development = createCommonjsModule(function (module, exports) {
 
@@ -1445,18 +1486,25 @@ var objectAssign = shouldUseNative() ? Object.assign : function (target, source)
  * LICENSE file in the root directory of this source tree.
  */
 
-var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
+var ReactPropTypesSecret$1 = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
 
-var ReactPropTypesSecret_1 = ReactPropTypesSecret;
+var ReactPropTypesSecret_1 = ReactPropTypesSecret$1;
 
-var printWarning = function() {};
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+var printWarning$2 = function() {};
 
 if (process.env.NODE_ENV !== 'production') {
-  var ReactPropTypesSecret$1 = ReactPropTypesSecret_1;
+  var ReactPropTypesSecret = ReactPropTypesSecret_1;
   var loggedTypeFailures = {};
-  var has = Function.call.bind(Object.prototype.hasOwnProperty);
+  var has$1 = Function.call.bind(Object.prototype.hasOwnProperty);
 
-  printWarning = function(text) {
+  printWarning$2 = function(text) {
     var message = 'Warning: ' + text;
     if (typeof console !== 'undefined') {
       console.error(message);
@@ -1484,7 +1532,7 @@ if (process.env.NODE_ENV !== 'production') {
 function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
   if (process.env.NODE_ENV !== 'production') {
     for (var typeSpecName in typeSpecs) {
-      if (has(typeSpecs, typeSpecName)) {
+      if (has$1(typeSpecs, typeSpecName)) {
         var error;
         // Prop type validation may throw. In case they do, we don't want to
         // fail the render phase where it didn't fail before. So we log it.
@@ -1500,12 +1548,12 @@ function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
             err.name = 'Invariant Violation';
             throw err;
           }
-          error = typeSpecs[typeSpecName](values, typeSpecName, componentName, location, null, ReactPropTypesSecret$1);
+          error = typeSpecs[typeSpecName](values, typeSpecName, componentName, location, null, ReactPropTypesSecret);
         } catch (ex) {
           error = ex;
         }
         if (error && !(error instanceof Error)) {
-          printWarning(
+          printWarning$2(
             (componentName || 'React class') + ': type specification of ' +
             location + ' `' + typeSpecName + '` is invalid; the type checker ' +
             'function must return `null` or an `Error` but returned a ' + typeof error + '. ' +
@@ -1521,7 +1569,7 @@ function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
 
           var stack = getStack ? getStack() : '';
 
-          printWarning(
+          printWarning$2(
             'Failed ' + location + ' type: ' + error.message + (stack != null ? stack : '')
           );
         }
@@ -1543,7 +1591,20 @@ checkPropTypes.resetWarningCache = function() {
 
 var checkPropTypes_1 = checkPropTypes;
 
-var has$1 = Function.call.bind(Object.prototype.hasOwnProperty);
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+
+
+
+
+
+
+var has = Function.call.bind(Object.prototype.hasOwnProperty);
 var printWarning$1 = function() {};
 
 if (process.env.NODE_ENV !== 'production') {
@@ -1878,7 +1939,7 @@ var factoryWithTypeCheckers = function(isValidElement, throwOnDirectAccess) {
         return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected an object.'));
       }
       for (var key in propValue) {
-        if (has$1(propValue, key)) {
+        if (has(propValue, key)) {
           var error = typeChecker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret_1);
           if (error instanceof Error) {
             return error;
@@ -2120,6 +2181,15 @@ var factoryWithTypeCheckers = function(isValidElement, throwOnDirectAccess) {
   return ReactPropTypes;
 };
 
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+
+
 function emptyFunction() {}
 function emptyFunctionWithReset() {}
 emptyFunctionWithReset.resetWarningCache = emptyFunction;
@@ -2172,7 +2242,6 @@ var factoryWithThrowingShims = function() {
   return ReactPropTypes;
 };
 
-var propTypes = createCommonjsModule(function (module) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -2180,6 +2249,7 @@ var propTypes = createCommonjsModule(function (module) {
  * LICENSE file in the root directory of this source tree.
  */
 
+var propTypes = createCommonjsModule(function (module) {
 if (process.env.NODE_ENV !== 'production') {
   var ReactIs = reactIs;
 
@@ -2208,7 +2278,7 @@ function _typeof(obj) {
   return _typeof(obj);
 }
 
-function _defineProperty$1(obj, key, value) {
+function _defineProperty(obj, key, value) {
   if (key in obj) {
     Object.defineProperty(obj, key, {
       value: value,
@@ -2243,7 +2313,7 @@ function _objectSpread2(target) {
 
     if (i % 2) {
       ownKeys(Object(source), true).forEach(function (key) {
-        _defineProperty$1(target, key, source[key]);
+        _defineProperty(target, key, source[key]);
       });
     } else if (Object.getOwnPropertyDescriptors) {
       Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
@@ -2257,7 +2327,7 @@ function _objectSpread2(target) {
   return target;
 }
 
-function _objectWithoutPropertiesLoose(source, excluded) {
+function _objectWithoutPropertiesLoose$2(source, excluded) {
   if (source == null) return {};
   var target = {};
   var sourceKeys = Object.keys(source);
@@ -2275,7 +2345,7 @@ function _objectWithoutPropertiesLoose(source, excluded) {
 function _objectWithoutProperties(source, excluded) {
   if (source == null) return {};
 
-  var target = _objectWithoutPropertiesLoose(source, excluded);
+  var target = _objectWithoutPropertiesLoose$2(source, excluded);
 
   var key, i;
 
@@ -2337,7 +2407,7 @@ function classList(props) {
     'fa-li': listItem,
     'fa-flip-horizontal': flip === 'horizontal' || flip === 'both',
     'fa-flip-vertical': flip === 'vertical' || flip === 'both'
-  }, _defineProperty$1(_classes, "fa-".concat(size), typeof size !== 'undefined' && size !== null), _defineProperty$1(_classes, "fa-rotate-".concat(rotation), typeof rotation !== 'undefined' && rotation !== null && rotation !== 0), _defineProperty$1(_classes, "fa-pull-".concat(pull), typeof pull !== 'undefined' && pull !== null), _defineProperty$1(_classes, 'fa-swap-opacity', props.swapOpacity), _classes); // map over all the keys in the classes object
+  }, _defineProperty(_classes, "fa-".concat(size), typeof size !== 'undefined' && size !== null), _defineProperty(_classes, "fa-rotate-".concat(rotation), typeof rotation !== 'undefined' && rotation !== null && rotation !== 0), _defineProperty(_classes, "fa-pull-".concat(pull), typeof pull !== 'undefined' && pull !== null), _defineProperty(_classes, 'fa-swap-opacity', props.swapOpacity), _classes); // map over all the keys in the classes object
   // return an array of the keys where the value for the key is not null
 
   return Object.keys(classes).map(function (key) {
@@ -2437,14 +2507,14 @@ function convert(createElement, element) {
   return createElement.apply(void 0, [element.tag, _objectSpread2({}, mixins.attrs, {}, remaining)].concat(_toConsumableArray(children)));
 }
 
-var PRODUCTION$1 = false;
+var PRODUCTION = false;
 
 try {
-  PRODUCTION$1 = process.env.NODE_ENV === 'production';
+  PRODUCTION = process.env.NODE_ENV === 'production';
 } catch (e) {}
 
 function log () {
-  if (!PRODUCTION$1 && console && typeof console.error === 'function') {
+  if (!PRODUCTION && console && typeof console.error === 'function') {
     var _console;
 
     (_console = console).error.apply(_console, arguments);
@@ -2457,10 +2527,6 @@ function normalizeIconArgs(icon) {
   if (icon && _typeof(icon) === 'object' && icon.prefix && icon.iconName && icon.icon) {
     return icon;
   }
-
-  if (parse.icon) {
-    return parse.icon(icon);
-  } // if the icon is null, there's nothing to do
 
 
   if (icon === null) {
@@ -2498,7 +2564,7 @@ function objectWithKey(key, value) {
   // or it's not an array but it is truthy
   // then create the object with the key and the value
   // if not, return an empty array
-  return Array.isArray(value) && value.length > 0 || !Array.isArray(value) && value ? _defineProperty$1({}, key, value) : {};
+  return Array.isArray(value) && value.length > 0 || !Array.isArray(value) && value ? _defineProperty({}, key, value) : {};
 }
 
 function FontAwesomeIcon(_ref) {
@@ -2663,15 +2729,15 @@ const colors = {
   error: '#e0457b25'
 };
 
-let _ = t => t,
-    _t,
-    _t2,
-    _t3,
-    _t4,
-    _t5,
-    _t6,
-    _t7;
-const Sizes = {
+let _$f = t => t,
+    _t$f,
+    _t2$9,
+    _t3$8,
+    _t4$6,
+    _t5$4,
+    _t6$4,
+    _t7$4;
+const Sizes$6 = {
   mini: 'mini',
   tiny: 'tiny',
   small: 'small',
@@ -2682,30 +2748,30 @@ const Sizes = {
   massive: 'massive'
 };
 
-const size = size => {
+const size$2 = size => {
   switch (size) {
-    case Sizes.mini:
+    case Sizes$6.mini:
       return '25px';
 
-    case Sizes.tiny:
+    case Sizes$6.tiny:
       return '30px';
 
-    case Sizes.small:
+    case Sizes$6.small:
       return '35px';
 
-    case Sizes.medium:
+    case Sizes$6.medium:
       return '40px';
 
-    case Sizes.large:
+    case Sizes$6.large:
       return '45px';
 
-    case Sizes.big:
+    case Sizes$6.big:
       return '50px';
 
-    case Sizes.huge:
+    case Sizes$6.huge:
       return '55px';
 
-    case Sizes.massive:
+    case Sizes$6.massive:
       return '60px';
 
     default:
@@ -2715,28 +2781,28 @@ const size = size => {
 
 const textSize = size => {
   switch (size) {
-    case Sizes.mini:
+    case Sizes$6.mini:
       return '10px';
 
-    case Sizes.tiny:
+    case Sizes$6.tiny:
       return '11px';
 
-    case Sizes.small:
+    case Sizes$6.small:
       return '12px';
 
-    case Sizes.medium:
+    case Sizes$6.medium:
       return '14px';
 
-    case Sizes.large:
+    case Sizes$6.large:
       return '16px';
 
-    case Sizes.big:
+    case Sizes$6.big:
       return '18px';
 
-    case Sizes.huge:
+    case Sizes$6.huge:
       return '20px';
 
-    case Sizes.massive:
+    case Sizes$6.massive:
       return '22px';
 
     default:
@@ -2744,7 +2810,7 @@ const textSize = size => {
   }
 };
 
-const Button = styled.button(_t || (_t = _`
+const Button$1 = styled.button(_t$f || (_t$f = _$f`
   font-family: MontSerrat !important;
   position: ${0};
   background-color: ${0};
@@ -2783,8 +2849,8 @@ const Button = styled.button(_t || (_t = _`
     return 'transparent';
   }
 
-  return colors.brand30;
-}, props => props.size ? size(props.size) : '40px', props => {
+  return colors.black;
+}, props => props.size ? size$2(props.size) : '40px', props => {
   if (props.width) {
     if (typeof props.width === 'string') {
       return props.width;
@@ -2856,7 +2922,7 @@ const Button = styled.button(_t || (_t = _`
 
   return colors.brand30;
 });
-const TextFirst = styled.span(_t2 || (_t2 = _`
+const TextFirst = styled.span(_t2$9 || (_t2$9 = _$f`
   visibility: ${0};
   color: ${0};
   font-weight: ${0};
@@ -2879,7 +2945,7 @@ const TextFirst = styled.span(_t2 || (_t2 = _`
 
   return 'normal';
 }, props => props.size ? textSize(props.size) : '14px');
-const TextEnd = styled.span(_t3 || (_t3 = _`
+const TextEnd = styled.span(_t3$8 || (_t3$8 = _$f`
   visibility: ${0};
   color: ${0};
   font-weight: ${0};
@@ -2901,7 +2967,7 @@ const TextEnd = styled.span(_t3 || (_t3 = _`
 
   return 'bold';
 }, props => props.size ? textSize(props.size) : '14px');
-const Notification = styled.button(_t4 || (_t4 = _`
+const Notification = styled.button(_t4$6 || (_t4$6 = _$f`
   font-family: MontSerrat !important;
   background-color: ${0};
   height: 40px;
@@ -2927,12 +2993,12 @@ const Notification = styled.button(_t4 || (_t4 = _`
     font-weight: bold;
   }
 `), colors.brand10, colors.brand30, colors.brandTransparent2, colors.brand30);
-const Icon = styled.div(_t5 || (_t5 = _`
+const Icon$2 = styled.div(_t5$4 || (_t5$4 = _$f`
   visibility: ${0};
   margin-right: ${0};
   margin-left: ${0};
 `), props => props.loading ? 'hidden' : 'visible', props => props.iconPosition === 'left' ? '10px' : '', props => props.iconPosition === 'right' ? '10px' : '');
-const Amount = styled.div(_t6 || (_t6 = _`
+const Amount = styled.div(_t6$4 || (_t6$4 = _$f`
   font-family: MontSerrat !important;
   background-color: ${0};
   width: 20px;
@@ -2944,7 +3010,7 @@ const Amount = styled.div(_t6 || (_t6 = _`
   color: ${0};
   font-size: 10px;
 `), colors.brand30, colors.brand10);
-const LoadingContainer = styled.div(_t7 || (_t7 = _`
+const LoadingContainer = styled.div(_t7$4 || (_t7$4 = _$f`
   position: absolute;
   top: 0;
   left: 0;
@@ -2955,10 +3021,10 @@ const LoadingContainer = styled.div(_t7 || (_t7 = _`
   align-items: center;
 `));
 
-let _$1 = t => t,
-    _t$1,
-    _t2$1;
-const Sizes$1 = {
+let _$e = t => t,
+    _t$e,
+    _t2$8;
+const Sizes$5 = {
   mini: 'mini',
   tiny: 'tiny',
   small: 'small',
@@ -2971,28 +3037,28 @@ const Sizes$1 = {
 
 const widthLoader = size => {
   switch (size) {
-    case Sizes$1.mini:
+    case Sizes$5.mini:
       return '1em';
 
-    case Sizes$1.tiny:
+    case Sizes$5.tiny:
       return '1.5em';
 
-    case Sizes$1.small:
+    case Sizes$5.small:
       return '2em';
 
-    case Sizes$1.medium:
+    case Sizes$5.medium:
       return '2.5em';
 
-    case Sizes$1.large:
+    case Sizes$5.large:
       return '3em';
 
-    case Sizes$1.big:
+    case Sizes$5.big:
       return '3.5em';
 
-    case Sizes$1.huge:
+    case Sizes$5.huge:
       return '4em';
 
-    case Sizes$1.massive:
+    case Sizes$5.massive:
       return '4.5em';
 
     default:
@@ -3002,28 +3068,28 @@ const widthLoader = size => {
 
 const widthBorder = size => {
   switch (size) {
-    case Sizes$1.mini:
+    case Sizes$5.mini:
       return '2px';
 
-    case Sizes$1.tiny:
+    case Sizes$5.tiny:
       return '2.5px';
 
-    case Sizes$1.small:
+    case Sizes$5.small:
       return '3px';
 
-    case Sizes$1.medium:
+    case Sizes$5.medium:
       return '3.5px';
 
-    case Sizes$1.large:
+    case Sizes$5.large:
       return '4px';
 
-    case Sizes$1.big:
+    case Sizes$5.big:
       return '4.5px';
 
-    case Sizes$1.huge:
+    case Sizes$5.huge:
       return '5px';
 
-    case Sizes$1.massive:
+    case Sizes$5.massive:
       return '5.5px';
 
     default:
@@ -3031,12 +3097,12 @@ const widthBorder = size => {
   }
 };
 
-const Container = styled.div(_t$1 || (_t$1 = _$1`
+const Container$a = styled.div(_t$e || (_t$e = _$e`
   width: 100%;
   display: flex;
   justify-content: ${0};
 `), props => props.position === 'left' ? 'flex-start' : props.position === 'right' ? 'flex-end' : 'center');
-const Load = styled.div(_t2$1 || (_t2$1 = _$1`
+const Load = styled.div(_t2$8 || (_t2$8 = _$e`
   border-width: ${0};
   border-style: solid;
   border-color: ${0};
@@ -3098,82 +3164,107 @@ const Loader = ({
   style,
   position
 }) => {
-  return React$2.createElement(Container, {
+  return jsx(Container$a, Object.assign({
     position: position
-  }, React$2.createElement(Load, {
-    color: color,
-    size: size,
-    style: style,
-    className: className
-  }));
+  }, {
+    children: jsx(Load, {
+      color: color,
+      size: size,
+      style: style,
+      className: className
+    }, void 0)
+  }), void 0);
 };
 
-const ButtonMain = ({
-  textFirst,
-  textEnd,
-  firstStrong,
-  notStrong,
-  strong,
-  loading,
-  secondary,
-  backPurple,
-  children,
-  notification,
-  amount,
-  width,
-  icon,
-  customIcon,
-  iconPosition: _iconPosition = 'right',
-  colorIcon,
-  noBorder,
-  colorText,
-  colorBackground,
-  tertiary,
-  size,
-  rectangular,
-  typeContent,
-  hoverBackgroundColor,
-  hoverTextColor,
-  iconStyle,
-  ...rest
-}) => {
+const _excluded$b = ["textFirst", "textEnd", "firstStrong", "notStrong", "strong", "loading", "secondary", "backPurple", "children", "notification", "amount", "width", "icon", "customIcon", "iconPosition", "colorIcon", "noBorder", "colorText", "colorBackground", "tertiary", "size", "rectangular", "typeContent", "hoverBackgroundColor", "hoverTextColor", "iconStyle"];
+
+const ButtonMain = _ref => {
+  let {
+    textFirst,
+    textEnd,
+    firstStrong,
+    notStrong,
+    strong,
+    loading,
+    secondary,
+    backPurple,
+    children,
+    notification,
+    amount,
+    width,
+    icon,
+    customIcon,
+    iconPosition = 'right',
+    colorIcon,
+    noBorder,
+    colorText,
+    colorBackground,
+    tertiary,
+    size,
+    rectangular,
+    typeContent,
+    hoverBackgroundColor,
+    hoverTextColor,
+    iconStyle
+  } = _ref,
+      rest = _objectWithoutPropertiesLoose$3(_ref, _excluded$b);
+
   function renderButtonNotification() {
-    return React$2.createElement(Notification, Object.assign({}, rest), loading ? React$2.createElement(Loader, {
-      size: "tiny"
-    }) : children || React$2.createElement("div", {
-      style: {
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        height: '50%',
-        padding: 10
-      }
-    }, React$2.createElement("div", {
-      style: {
-        display: 'flex',
-        alignItems: 'center'
-      }
-    }, React$2.createElement(Icon, null, React$2.createElement(FontAwesomeIcon, {
-      icon: faBell,
-      size: "lg",
-      color: colors.brand30
-    })), React$2.createElement("span", null, "notifica\u00E7\u00F5es")), React$2.createElement(Amount, null, amount)));
+    return jsx(Notification, Object.assign({}, rest, {
+      children: loading ? jsx(Loader, {
+        size: "tiny"
+      }, void 0) : children || jsxs("div", Object.assign({
+        style: {
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          height: '50%',
+          padding: 10
+        }
+      }, {
+        children: [jsxs("div", Object.assign({
+          style: {
+            display: 'flex',
+            alignItems: 'center'
+          }
+        }, {
+          children: [jsx(Icon$2, {
+            children: jsx(FontAwesomeIcon, {
+              icon: faBell,
+              size: "lg",
+              color: colors.brand30
+            }, void 0)
+          }, void 0), jsx("span", {
+            children: "notifica\u00E7\u00F5es"
+          }, void 0)]
+        }), void 0), jsx(Amount, {
+          children: amount
+        }, void 0)]
+      }), void 0)
+    }), void 0);
   }
 
   function renderButtonTypes(type) {
     switch (type) {
       case 'icon':
-        return React$2.createElement("div", null, (icon || customIcon) && React$2.createElement(React$2.Fragment, null, customIcon ? React$2.createElement(Icon, {
-          loading: loading
-        }, customIcon) : React$2.createElement(Icon, {
-          loading: loading
-        }, React$2.createElement(FontAwesomeIcon, {
-          icon: icon,
-          color: colorIcon || colors.brand10,
-          size: "lg",
-          style: { ...iconStyle
-          }
-        }))));
+        return jsx("div", {
+          children: (icon || customIcon) && jsx(React$2.Fragment, {
+            children: customIcon ? jsx(Icon$2, Object.assign({
+              loading: loading
+            }, {
+              children: customIcon
+            }), void 0) : jsx(Icon$2, Object.assign({
+              loading: loading
+            }, {
+              children: jsx(FontAwesomeIcon, {
+                icon: icon,
+                color: colorIcon || colors.brand10,
+                size: "lg",
+                style: _extends$2({}, iconStyle)
+              }, void 0)
+            }), void 0)
+          }, void 0)
+        }, void 0);
 
       default:
         return null;
@@ -3181,7 +3272,7 @@ const ButtonMain = ({
   }
 
   function renderButton() {
-    return React$2.createElement(Button, Object.assign({}, rest, {
+    return jsxs(Button$1, Object.assign({}, rest, {
       secondary: secondary,
       backPurple: backPurple,
       width: width,
@@ -3195,49 +3286,69 @@ const ButtonMain = ({
       hoverBackgroundColor: hoverBackgroundColor,
       hoverTextColor: hoverTextColor,
       loading: loading
-    }), children || (typeContent ? renderButtonTypes(typeContent) : React$2.createElement(React$2.Fragment, null, (icon || customIcon) && _iconPosition === 'left' && React$2.createElement(React$2.Fragment, null, customIcon ? React$2.createElement(Icon, {
-      loading: loading,
-      iconPosition: _iconPosition
-    }, customIcon) : React$2.createElement(Icon, {
-      loading: loading,
-      iconPosition: _iconPosition
-    }, React$2.createElement(FontAwesomeIcon, {
-      icon: icon,
-      color: colorIcon || colors.brand10,
-      size: "lg",
-      style: { ...iconStyle
-      }
-    }))), React$2.createElement(TextFirst, {
-      firstStrong: firstStrong,
-      strong: strong,
-      notStrong: notStrong,
-      colorText: colorText,
-      tertiary: tertiary,
-      size: size,
-      loading: loading
-    }, textFirst), React$2.createElement(TextEnd, {
-      firstStrong: firstStrong,
-      strong: strong,
-      notStrong: notStrong,
-      colorText: colorText,
-      tertiary: tertiary,
-      size: size,
-      loading: loading
-    }, textEnd), (icon || customIcon) && _iconPosition === 'right' && React$2.createElement(React$2.Fragment, null, customIcon ? React$2.createElement(Icon, {
-      loading: loading,
-      iconPosition: _iconPosition
-    }, customIcon) : React$2.createElement(Icon, {
-      loading: loading,
-      iconPosition: _iconPosition
-    }, React$2.createElement(FontAwesomeIcon, {
-      icon: icon,
-      color: colorIcon || colors.brand10,
-      size: "lg",
-      style: { ...iconStyle
-      }
-    }))))), loading && React$2.createElement(LoadingContainer, null, React$2.createElement(Loader, {
-      size: "tiny"
-    })));
+    }, {
+      children: [children || (typeContent ? renderButtonTypes(typeContent) : jsxs(React$2.Fragment, {
+        children: [(icon || customIcon) && iconPosition === 'left' && jsx(React$2.Fragment, {
+          children: customIcon ? jsx(Icon$2, Object.assign({
+            loading: loading,
+            iconPosition: iconPosition
+          }, {
+            children: customIcon
+          }), void 0) : jsx(Icon$2, Object.assign({
+            loading: loading,
+            iconPosition: iconPosition
+          }, {
+            children: jsx(FontAwesomeIcon, {
+              icon: icon,
+              color: colorIcon || colors.brand10,
+              size: "lg",
+              style: _extends$2({}, iconStyle)
+            }, void 0)
+          }), void 0)
+        }, void 0), jsx(TextFirst, Object.assign({
+          firstStrong: firstStrong,
+          strong: strong,
+          notStrong: notStrong,
+          colorText: colorText,
+          tertiary: tertiary,
+          size: size,
+          loading: loading
+        }, {
+          children: textFirst
+        }), void 0), jsx(TextEnd, Object.assign({
+          firstStrong: firstStrong,
+          strong: strong,
+          notStrong: notStrong,
+          colorText: colorText,
+          tertiary: tertiary,
+          size: size,
+          loading: loading
+        }, {
+          children: textEnd
+        }), void 0), (icon || customIcon) && iconPosition === 'right' && jsx(React$2.Fragment, {
+          children: customIcon ? jsx(Icon$2, Object.assign({
+            loading: loading,
+            iconPosition: iconPosition
+          }, {
+            children: customIcon
+          }), void 0) : jsx(Icon$2, Object.assign({
+            loading: loading,
+            iconPosition: iconPosition
+          }, {
+            children: jsx(FontAwesomeIcon, {
+              icon: icon,
+              color: colorIcon || colors.brand10,
+              size: "lg",
+              style: _extends$2({}, iconStyle)
+            }, void 0)
+          }), void 0)
+        }, void 0)]
+      }, void 0)), loading && jsx(LoadingContainer, {
+        children: jsx(Loader, {
+          size: "tiny"
+        }, void 0)
+      }, void 0)]
+    }), void 0);
   }
 
   if (notification) {
@@ -3247,18 +3358,18 @@ const ButtonMain = ({
   return renderButton();
 };
 
-let _$2 = t => t,
-    _t$2,
-    _t2$2,
-    _t3$1,
-    _t4$1,
-    _t5$1,
-    _t6$1,
-    _t7$1,
-    _t8;
-const Background = styled.div(_t$2 || (_t$2 = _$2`
+let _$d = t => t,
+    _t$d,
+    _t2$7,
+    _t3$7,
+    _t4$5,
+    _t5$3,
+    _t6$3,
+    _t7$3,
+    _t8$1;
+const Background$1 = styled.div(_t$d || (_t$d = _$d`
   ${0}
-`), props => props.open ? css$1(_t2$2 || (_t2$2 = _$2`
+`), props => props.open ? css$1(_t2$7 || (_t2$7 = _$d`
           opacity: 1;
           visibility: visible;
           position: fixed;
@@ -3271,14 +3382,14 @@ const Background = styled.div(_t$2 || (_t$2 = _$2`
           overflow: auto;
           display: flex;
           z-index: 999;
-        `)) : css$1(_t3$1 || (_t3$1 = _$2`
+        `)) : css$1(_t3$7 || (_t3$7 = _$d`
           opacity: 1;
           visibility: hidden;
         `)));
-const Dialog = styled.div(_t4$1 || (_t4$1 = _$2`
+const Dialog = styled.div(_t4$5 || (_t4$5 = _$d`
   font-family: MontSerrat !important;
   ${0}
-`), props => props.open ? css$1(_t5$1 || (_t5$1 = _$2`
+`), props => props.open ? css$1(_t5$3 || (_t5$3 = _$d`
           transition: bottom 0.25s ease;
           width: 97%;
           background: ${0};
@@ -3347,11 +3458,11 @@ const Dialog = styled.div(_t4$1 || (_t4$1 = _$2`
   }
 
   return '100%';
-}, props.loading ? 'hidden' : 'auto', props.title ? `calc(100% - ${props.sizeHeader}px)` : '100%') : css$1(_t6$1 || (_t6$1 = _$2`
+}, props.loading ? 'hidden' : 'auto', props.title ? `calc(100% - ${props.sizeHeader}px)` : '100%') : css$1(_t6$3 || (_t6$3 = _$d`
           transition: bottom 0.25s ease;
           bottom: -100%;
         `)));
-const Header = styled.div(_t7$1 || (_t7$1 = _$2`
+const Header$2 = styled.div(_t7$3 || (_t7$3 = _$d`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -3368,7 +3479,7 @@ const Header = styled.div(_t7$1 || (_t7$1 = _$2`
     color: ${0};
   }
 `), props => props.noBorder ? 'none' : `1px solid ${colors.default20}`, props => props.iconBack ? '1.25rem 0' : '1.25rem 1.875rem', colors.brand10);
-const Icon$1 = styled.div(_t8 || (_t8 = _$2`
+const Icon$1 = styled.div(_t8$1 || (_t8$1 = _$d`
   padding: 1.25rem 1.875rem;
   cursor: pointer;
 `));
@@ -3390,59 +3501,77 @@ const DialogComponent = ({
       setSizeHeader(document.getElementById('headerDialog').clientHeight);
     }
   }, [document.getElementById('headerDialog')]);
-  return React$2.createElement(Background, {
+  return jsx(Background$1, Object.assign({
     open: open,
     onClick: event => {
       event.stopPropagation();
       onClose();
     }
-  }, React$2.createElement(Dialog, {
-    open: open,
-    onClick: event => event.stopPropagation(),
-    maxHeight: maxHeight,
-    sizeHeader: sizeHeader,
-    loading: loading,
-    title: title
-  }, title ? React$2.createElement(Header, {
-    iconBack: !!onBack,
-    noBorder: noBorder,
-    id: "headerDialog"
-  }, React$2.createElement("div", {
-    className: "name-icon-modal"
-  }, onBack ? React$2.createElement(Icon$1, {
-    onClick: () => onBack()
-  }, React$2.createElement(FontAwesomeIcon, {
-    icon: faAngleLeft,
-    size: "lg",
-    color: colors.brand10
-  })) : null, React$2.createElement("strong", null, title)), _closeIcon && React$2.createElement(Icon$1, {
-    onClick: event => {
-      event.stopPropagation();
-      onClose();
-    }
-  }, React$2.createElement(FontAwesomeIcon, {
-    icon: faTimes,
-    style: {
-      fontSize: '1.25rem'
-    },
-    color: colors.brand10
-  }))) : null, React$2.createElement("div", {
-    className: "box-dialog",
-    id: "sizeBody"
-  }, loading && React$2.createElement("div", {
-    className: "loading-dialog"
-  }, React$2.createElement(Loader, null)), children)));
+  }, {
+    children: jsxs(Dialog, Object.assign({
+      open: open,
+      onClick: event => event.stopPropagation(),
+      maxHeight: maxHeight,
+      sizeHeader: sizeHeader,
+      loading: loading,
+      title: title
+    }, {
+      children: [title ? jsxs(Header$2, Object.assign({
+        iconBack: !!onBack,
+        noBorder: noBorder,
+        id: "headerDialog"
+      }, {
+        children: [jsxs("div", Object.assign({
+          className: "name-icon-modal"
+        }, {
+          children: [onBack ? jsx(Icon$1, Object.assign({
+            onClick: () => onBack()
+          }, {
+            children: jsx(FontAwesomeIcon, {
+              icon: faAngleLeft,
+              size: "lg",
+              color: colors.brand10
+            }, void 0)
+          }), void 0) : null, jsx("strong", {
+            children: title
+          }, void 0)]
+        }), void 0), _closeIcon && jsx(Icon$1, Object.assign({
+          onClick: event => {
+            event.stopPropagation();
+            onClose();
+          }
+        }, {
+          children: jsx(FontAwesomeIcon, {
+            icon: faTimes,
+            style: {
+              fontSize: '1.25rem'
+            },
+            color: colors.brand10
+          }, void 0)
+        }), void 0)]
+      }), void 0) : null, jsxs("div", Object.assign({
+        className: "box-dialog",
+        id: "sizeBody"
+      }, {
+        children: [loading && jsx("div", Object.assign({
+          className: "loading-dialog"
+        }, {
+          children: jsx(Loader, {}, void 0)
+        }), void 0), children]
+      }), void 0)]
+    }), void 0)
+  }), void 0);
 };
 
-let _$3 = t => t,
-    _t$3,
-    _t2$3,
-    _t3$2,
-    _t4$2,
+let _$c = t => t,
+    _t$c,
+    _t2$6,
+    _t3$6,
+    _t4$4,
     _t5$2,
     _t6$2,
     _t7$2;
-const Container$1 = styled.div(_t$3 || (_t$3 = _$3`
+const Container$9 = styled.div(_t$c || (_t$c = _$c`
   font-family: MontSerrat !important;
   position: relative;
   opacity: ${0};
@@ -3566,7 +3695,7 @@ const Container$1 = styled.div(_t$3 || (_t$3 = _$3`
   }
 
   return '0px';
-}, colors.default10, props => props.date && !props.isFieldActive ? css$1(_t2$3 || (_t2$3 = _$3`
+}, colors.default10, props => props.date && !props.isFieldActive ? css$1(_t2$6 || (_t2$6 = _$c`
           input::-webkit-calendar-picker-indicator {
             display: none !important;
           }
@@ -3591,9 +3720,9 @@ const Container$1 = styled.div(_t$3 || (_t$3 = _$3`
   }
 
   return colors.gray10;
-}, props => props.isFieldActive ? css$1(_t3$2 || (_t3$2 = _$3`
+}, props => props.isFieldActive ? css$1(_t3$6 || (_t3$6 = _$c`
             color: ${0};
-          `), colors.brand10) : css$1(_t4$2 || (_t4$2 = _$3`
+          `), colors.brand10) : css$1(_t4$4 || (_t4$4 = _$c`
             color: ${0};
           `), colors.gray20), props => {
   if (props.icon && !props.action) {
@@ -3617,7 +3746,7 @@ const Container$1 = styled.div(_t$3 || (_t$3 = _$3`
   }
 
   return '15px';
-}, props => props.isFieldActive ? css$1(_t5$2 || (_t5$2 = _$3`
+}, props => props.isFieldActive ? css$1(_t5$2 || (_t5$2 = _$c`
             transform: translateY(-100%);
             font-size: 14px;
             color: ${0};
@@ -3631,7 +3760,7 @@ const Container$1 = styled.div(_t$3 || (_t$3 = _$3`
   }
 
   return colors.brand10;
-}) : css$1(_t6$2 || (_t6$2 = _$3`
+}) : css$1(_t6$2 || (_t6$2 = _$c`
             font-size: 16px;
             color: ${0};
           `), props => {
@@ -3645,7 +3774,7 @@ const Container$1 = styled.div(_t$3 || (_t$3 = _$3`
 
   return colors.gray20;
 }), props => props.iconPosition === 'right' && 'right: 0;', props => props.actionPosition && props.actionPosition === 'left' ? 'left: 0;' : 'right: 0;');
-const LabelError = styled.span(_t7$2 || (_t7$2 = _$3`
+const LabelError$1 = styled.span(_t7$2 || (_t7$2 = _$c`
   font-family: MontSerrat !important;
   font-size: 10px;
   margin-left: 0;
@@ -3658,21 +3787,25 @@ const LabelError = styled.span(_t7$2 || (_t7$2 = _$3`
   return colors.danger20;
 });
 
-const InputLine = ({
-  containerStyle,
-  label,
-  labelStyle,
-  errorMessage,
-  width,
-  textColor,
-  inputRef,
-  name,
-  icon,
-  iconPosition,
-  iconColor,
-  action,
-  ...rest
-}) => {
+const _excluded$a = ["containerStyle", "label", "labelStyle", "errorMessage", "width", "textColor", "inputRef", "name", "icon", "iconPosition", "iconColor", "action"];
+
+const InputLine = _ref => {
+  let {
+    containerStyle,
+    label,
+    labelStyle,
+    errorMessage,
+    width,
+    textColor,
+    inputRef,
+    name,
+    icon,
+    iconPosition,
+    iconColor,
+    action
+  } = _ref,
+      rest = _objectWithoutPropertiesLoose$3(_ref, _excluded$a);
+
   const [isFieldActive, setIsFieldActive] = useState(false);
   useEffect(() => {
     if (rest.value) {
@@ -3698,58 +3831,77 @@ const InputLine = ({
     }
   };
 
-  return React$2.createElement("div", {
+  return jsxs("div", Object.assign({
     style: {
       paddingBottom: errorMessage ? 0 : 20
     }
-  }, React$2.createElement(Container$1, {
-    isFieldActive: isFieldActive,
-    errorMessage: errorMessage,
-    containerStyle: containerStyle,
-    width: width,
-    disabled: rest.disabled ? rest.disabled : undefined,
-    style: containerStyle,
-    textColor: textColor,
-    icon: !!icon,
-    iconPosition: iconPosition,
-    action: action,
-    actionPosition: action === null || action === void 0 ? void 0 : action.position,
-    date: rest.type === 'date'
-  }, icon && React$2.createElement("div", {
-    className: "icon"
-  }, React$2.createElement(FontAwesomeIcon, {
-    icon: icon,
-    color: iconColor || colors.brand10
-  })), action && React$2.createElement("div", {
-    className: "icon-action",
-    onClick: action.onClick
-  }, React$2.createElement(FontAwesomeIcon, {
-    icon: action.icon,
-    color: action.iconColor || colors.brand10
-  })), React$2.createElement("input", Object.assign({}, rest, {
-    onFocus: handleFocus,
-    onBlur: handleBlur,
-    name: name,
-    placeholder: isFieldActive ? rest.placeholder : '',
-    ref: inputRef
-  })), React$2.createElement("label", null, React$2.createElement("span", {
-    style: labelStyle
-  }, label))), errorMessage ? React$2.createElement(LabelError, null, errorMessage) : null);
+  }, {
+    children: [jsxs(Container$9, Object.assign({
+      isFieldActive: isFieldActive,
+      errorMessage: errorMessage,
+      // labelStyle={labelStyle}
+      containerStyle: containerStyle,
+      width: width,
+      disabled: rest.disabled ? rest.disabled : undefined,
+      style: containerStyle,
+      textColor: textColor,
+      icon: !!icon,
+      iconPosition: iconPosition,
+      action: action,
+      actionPosition: action == null ? void 0 : action.position,
+      date: rest.type === 'date'
+    }, {
+      children: [icon && jsx("div", Object.assign({
+        className: "icon"
+      }, {
+        children: jsx(FontAwesomeIcon, {
+          icon: icon,
+          color: iconColor || colors.brand10
+        }, void 0)
+      }), void 0), action && jsx("div", Object.assign({
+        className: "icon-action",
+        onClick: action.onClick
+      }, {
+        children: jsx(FontAwesomeIcon, {
+          icon: action.icon,
+          color: action.iconColor || colors.brand10
+        }, void 0)
+      }), void 0), jsx("input", Object.assign({}, rest, {
+        onFocus: handleFocus,
+        onBlur: handleBlur,
+        name: name,
+        placeholder: isFieldActive ? rest.placeholder : '',
+        ref: inputRef
+      }), void 0), jsx("label", {
+        children: jsx("span", Object.assign({
+          style: labelStyle
+        }, {
+          children: label
+        }), void 0)
+      }, void 0)]
+    }), void 0), errorMessage ? jsx(LabelError$1, {
+      children: errorMessage
+    }, void 0) : null]
+  }), void 0);
 };
 
-const InputLineForm = ({
-  register,
-  errors,
-  validate,
-  name,
-  required,
-  values,
-  limit,
-  minimum,
-  msgErrorValidate,
-  ...rest
-}) => {
+const _excluded$9 = ["register", "errors", "validate", "name", "required", "values", "limit", "minimum", "msgErrorValidate"];
+
+const InputLineForm = _ref => {
   var _rest$action;
+
+  let {
+    register,
+    errors,
+    validate,
+    name,
+    required,
+    values,
+    limit,
+    minimum,
+    msgErrorValidate
+  } = _ref,
+      rest = _objectWithoutPropertiesLoose$3(_ref, _excluded$9);
 
   const [isFieldActive, setIsFieldActive] = useState(false);
   const [message, setMessage] = useState('');
@@ -3807,60 +3959,75 @@ const InputLineForm = ({
     return result;
   };
 
-  return React$2.createElement("div", {
+  return jsxs("div", Object.assign({
     style: {
       paddingBottom: message || errors ? 0 : 20
     }
-  }, React$2.createElement(Container$1, {
-    isFieldActive: isFieldActive,
-    requiredText: !!(errors && errors.type === 'required'),
-    errorMessage: errors,
-    containerStyle: rest.containerStyle,
-    width: rest.width,
-    disabled: rest.disabled,
-    style: rest.containerStyle,
-    textColor: rest.textColor,
-    icon: !!rest.icon,
-    iconPosition: rest.iconPosition,
-    action: rest.action,
-    actionPosition: (_rest$action = rest.action) === null || _rest$action === void 0 ? void 0 : _rest$action.position,
-    date: rest.type === 'date'
-  }, rest.icon && React$2.createElement("div", {
-    className: "icon"
-  }, React$2.createElement(FontAwesomeIcon, {
-    icon: rest.icon,
-    color: rest.iconColor || colors.brand10
-  })), rest.action && React$2.createElement("div", {
-    className: "icon-action",
-    onClick: rest.action.onClick
-  }, React$2.createElement(FontAwesomeIcon, {
-    icon: rest.action.icon,
-    color: rest.action.iconColor || colors.brand10
-  })), React$2.createElement("input", Object.assign({}, rest, {
-    onFocus: handleFocus,
-    onBlur: handleBlur,
-    name: name,
-    placeholder: isFieldActive ? rest.placeholder : '',
-    ref: register ? register({
-      required,
-      validate: validadeRegister
-    }) : null
-  })), React$2.createElement("label", null, React$2.createElement("span", {
-    style: rest.labelStyle
-  }, rest.label))), errors ? React$2.createElement(LabelError, null, errors.type === 'required' ? 'Obrigatório' : `${message}`) : null);
+  }, {
+    children: [jsxs(Container$9, Object.assign({
+      isFieldActive: isFieldActive,
+      requiredText: !!(errors && errors.type === 'required'),
+      errorMessage: errors,
+      // action={rest.action?.icon ? true : false}
+      containerStyle: rest.containerStyle,
+      width: rest.width,
+      disabled: rest.disabled,
+      style: rest.containerStyle,
+      textColor: rest.textColor,
+      icon: !!rest.icon,
+      iconPosition: rest.iconPosition,
+      action: rest.action,
+      actionPosition: (_rest$action = rest.action) == null ? void 0 : _rest$action.position,
+      date: rest.type === 'date'
+    }, {
+      children: [rest.icon && jsx("div", Object.assign({
+        className: "icon"
+      }, {
+        children: jsx(FontAwesomeIcon, {
+          icon: rest.icon,
+          color: rest.iconColor || colors.brand10
+        }, void 0)
+      }), void 0), rest.action && jsx("div", Object.assign({
+        className: "icon-action",
+        onClick: rest.action.onClick
+      }, {
+        children: jsx(FontAwesomeIcon, {
+          icon: rest.action.icon,
+          color: rest.action.iconColor || colors.brand10
+        }, void 0)
+      }), void 0), jsx("input", Object.assign({}, rest, {
+        onFocus: handleFocus,
+        onBlur: handleBlur,
+        name: name,
+        placeholder: isFieldActive ? rest.placeholder : '',
+        ref: register ? register({
+          required,
+          validate: validadeRegister
+        }) : null
+      }), void 0), jsx("label", {
+        children: jsx("span", Object.assign({
+          style: rest.labelStyle
+        }, {
+          children: rest.label
+        }), void 0)
+      }, void 0)]
+    }), void 0), errors ? jsx(LabelError$1, {
+      children: errors.type === 'required' ? 'Obrigatório' : `${message}`
+    }, void 0) : null]
+  }), void 0);
 };
 
-let _$4 = t => t,
-    _t$4,
-    _t2$4,
-    _t3$3,
+let _$b = t => t,
+    _t$b,
+    _t2$5,
+    _t3$5,
     _t4$3,
-    _t5$3,
-    _t6$3,
-    _t7$3,
-    _t8$1,
+    _t5$1,
+    _t6$1,
+    _t7$1,
+    _t8,
     _t9;
-const Sizes$2 = {
+const Sizes$4 = {
   mini: 'mini',
   tiny: 'tiny',
   small: 'small',
@@ -3870,19 +4037,19 @@ const Sizes$2 = {
 
 const sizeWidth = size => {
   switch (size) {
-    case Sizes$2.mini:
+    case Sizes$4.mini:
       return '35%';
 
-    case Sizes$2.tiny:
+    case Sizes$4.tiny:
       return '45%';
 
-    case Sizes$2.small:
+    case Sizes$4.small:
       return '55%';
 
-    case Sizes$2.large:
+    case Sizes$4.large:
       return '65%';
 
-    case Sizes$2.fullscreen:
+    case Sizes$4.fullscreen:
       return '95%';
 
     default:
@@ -3890,9 +4057,9 @@ const sizeWidth = size => {
   }
 };
 
-const Background$1 = styled.div(_t$4 || (_t$4 = _$4`
+const Background = styled.div(_t$b || (_t$b = _$b`
   ${0}
-`), props => props.open ? css$1(_t2$4 || (_t2$4 = _$4`
+`), props => props.open ? css$1(_t2$5 || (_t2$5 = _$b`
           opacity: 1;
           visibility: visible;
           position: fixed;
@@ -3906,11 +4073,11 @@ const Background$1 = styled.div(_t$4 || (_t$4 = _$4`
           padding: 40px 0;
           display: flex;
           z-index: 999;
-        `)) : css$1(_t3$3 || (_t3$3 = _$4`
+        `)) : css$1(_t3$5 || (_t3$5 = _$b`
           opacity: 1;
           visibility: hidden;
         `)));
-const Modal = styled.div(_t4$3 || (_t4$3 = _$4`
+const Modal = styled.div(_t4$3 || (_t4$3 = _$b`
   font-family: MontSerrat !important;
   transition: top 0.25s ease;
   top: 0;
@@ -3936,14 +4103,14 @@ const Modal = styled.div(_t4$3 || (_t4$3 = _$4`
 
   return '80%';
 }, colors.white);
-const Dialog$1 = styled.div(_t5$3 || (_t5$3 = _$4`
+styled.div(_t5$1 || (_t5$1 = _$b`
   transition: bottom 1s ease;
   width: 90%;
   background: ${0};
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
 `), colors.white);
-const Header$1 = styled.div(_t6$3 || (_t6$3 = _$4`
+const Header$1 = styled.div(_t6$1 || (_t6$1 = _$b`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -3960,11 +4127,11 @@ const Header$1 = styled.div(_t6$3 || (_t6$3 = _$4`
     color: ${0};
   }
 `), props => props.noBorder ? 'none' : `1px solid ${colors.default20}`, props => props.iconBack ? '20px 0' : '20px 30px', colors.brand10);
-const Icon$2 = styled.div(_t7$3 || (_t7$3 = _$4`
+const Icon = styled.div(_t7$1 || (_t7$1 = _$b`
   padding: 20px 30px;
   cursor: pointer;
 `));
-const Body = styled.div(_t8$1 || (_t8$1 = _$4`
+const Body$1 = styled.div(_t8 || (_t8 = _$b`
   padding: 20px 30px;
   height: 100%;
   position: relative;
@@ -3985,7 +4152,7 @@ const Body = styled.div(_t8$1 || (_t8$1 = _$4`
     position: absolute;
   }
 `));
-const Actions = styled.div(_t9 || (_t9 = _$4`
+const Actions = styled.div(_t9 || (_t9 = _$b`
   border-top: 1px solid ${0};
   margin: 0 30px;
   padding: 20px 0;
@@ -4024,7 +4191,7 @@ const ModalComponent = ({
     }
   }
 
-  return React$2.createElement(Background$1, {
+  return jsx(Background, Object.assign({
     open: open,
     onClick: event => {
       if (closeOnDimerClick) {
@@ -4032,53 +4199,77 @@ const ModalComponent = ({
         onClose();
       }
     }
-  }, React$2.createElement(Modal, {
-    size: size,
-    width: width,
-    onClick: event => event.stopPropagation()
-  }, React$2.createElement(Header$1, {
-    iconBack: !!onBack,
-    noBorder: noBorder
-  }, React$2.createElement("div", {
-    className: "name-icon-modal"
-  }, onBack ? React$2.createElement(Icon$2, {
-    onClick: () => onBack()
-  }, React$2.createElement(FontAwesomeIcon, {
-    icon: faAngleLeft,
-    size: "lg",
-    color: colors.brand10
-  })) : null, React$2.createElement("strong", null, title)), _closeIcon && React$2.createElement(Icon$2, {
-    onClick: event => {
-      event.stopPropagation();
-      onClose();
-    }
-  }, React$2.createElement(FontAwesomeIcon, {
-    icon: faTimes,
-    style: {
-      fontSize: 20
-    },
-    color: colors.brand10
-  }))), React$2.createElement(Body, null, loading && React$2.createElement("div", {
-    className: "loading-modal"
-  }, React$2.createElement(Loader, null)), children), actions && React$2.createElement(Actions, null, actions)));
+  }, {
+    children: jsxs(Modal, Object.assign({
+      size: size,
+      width: width,
+      onClick: event => event.stopPropagation()
+    }, {
+      children: [jsxs(Header$1, Object.assign({
+        iconBack: !!onBack,
+        noBorder: noBorder
+      }, {
+        children: [jsxs("div", Object.assign({
+          className: "name-icon-modal"
+        }, {
+          children: [onBack ? jsx(Icon, Object.assign({
+            onClick: () => onBack()
+          }, {
+            children: jsx(FontAwesomeIcon, {
+              icon: faAngleLeft,
+              size: "lg",
+              color: colors.brand10
+            }, void 0)
+          }), void 0) : null, jsx("strong", {
+            children: title
+          }, void 0)]
+        }), void 0), _closeIcon && jsx(Icon, Object.assign({
+          onClick: event => {
+            event.stopPropagation();
+            onClose();
+          }
+        }, {
+          children: jsx(FontAwesomeIcon, {
+            icon: faTimes,
+            style: {
+              fontSize: 20
+            },
+            color: colors.brand10
+          }, void 0)
+        }), void 0)]
+      }), void 0), jsxs(Body$1, {
+        children: [loading && jsx("div", Object.assign({
+          className: "loading-modal"
+        }, {
+          children: jsx(Loader, {}, void 0)
+        }), void 0), children]
+      }, void 0), actions && jsx(Actions, {
+        children: actions
+      }, void 0)]
+    }), void 0)
+  }), void 0);
 };
 
-let _$5 = t => t,
-    _t$5,
-    _t2$5,
+let _$a = t => t,
+    _t$a,
+    _t2$4,
     _t3$4,
-    _t4$4,
-    _t5$4,
-    _t6$4,
-    _t7$4;
-const Label = styled.span(_t$5 || (_t$5 = _$5`
+    _t4$2,
+    _t5,
+    _t6,
+    _t7;
+const Label = styled.span(_t$a || (_t$a = _$a`
   font-family: MontSerrat !important;
   font-size: 14px;
   color: ${0};
   margin-left: 15px;
 `), props => {
+  if (props.errorMessage && props.errorColor) {
+    return props.errorColor;
+  }
+
   if (props.errorMessage) {
-    return colors.brand20;
+    return colors.danger20;
   }
 
   if (props.labelColor) {
@@ -4087,7 +4278,7 @@ const Label = styled.span(_t$5 || (_t$5 = _$5`
 
   return colors.brand10;
 });
-const Container$2 = styled.div(_t2$5 || (_t2$5 = _$5`
+const Container$8 = styled.div(_t2$4 || (_t2$4 = _$a`
   font-family: MontSerrat !important;
   width: ${0};
   position: relative;
@@ -4184,12 +4375,12 @@ const Container$2 = styled.div(_t2$5 || (_t2$5 = _$5`
   }
 
   return colors.gray10;
-}, props => props.isFieldActive ? css$1(_t3$4 || (_t3$4 = _$5`
+}, props => props.isFieldActive ? css$1(_t3$4 || (_t3$4 = _$a`
             color: ${0};
-          `), colors.brand10) : css$1(_t4$4 || (_t4$4 = _$5`
+          `), colors.brand10) : css$1(_t4$2 || (_t4$2 = _$a`
             color: ${0};
           `), colors.gray20), colors.brand10, colors.brandTransparent2);
-const LabelError$1 = styled.span(_t5$4 || (_t5$4 = _$5`
+const LabelError = styled.span(_t5 || (_t5 = _$a`
   font-family: MontSerrat !important;
   font-size: 10px;
   margin-left: 0;
@@ -4200,65 +4391,86 @@ const LabelError$1 = styled.span(_t5$4 || (_t5$4 = _$5`
     return props.errorColor;
   }
 
-  return colors.brand20;
+  return colors.danger20;
 });
-const Footer = styled.div(_t6$4 || (_t6$4 = _$5`
+const Footer = styled.div(_t6 || (_t6 = _$a`
   font-family: MontSerrat !important;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   font-size: 10px;
 `));
-const LabelLengthInfo = styled.span(_t7$4 || (_t7$4 = _$5`
+const LabelLengthInfo = styled.span(_t7 || (_t7 = _$a`
   font-size: 10px;
   color: ${0};
 `), colors.gray10);
 
-const TextArea = ({
-  label,
-  labelClassName,
-  labelStyle,
-  labelColor,
-  containerStyle,
-  errorMessage,
-  errorColor,
-  textColor,
-  width,
-  height,
-  lengthInfo,
-  ...rest
-}) => {
-  return React$2.createElement("div", null, label && React$2.createElement(Label, {
-    style: labelStyle,
-    errorMessage: errorMessage,
-    labelColor: labelColor,
-    className: labelClassName
-  }, label), React$2.createElement(Container$2, {
-    errorMessage: errorMessage,
-    errorColor: errorColor,
-    containerStyle: containerStyle,
-    style: containerStyle,
-    disabled: rest.disabled,
-    textColor: textColor,
-    width: width,
-    height: height
-  }, React$2.createElement("textarea", Object.assign({}, rest))), React$2.createElement(Footer, null, React$2.createElement(LabelError$1, {
-    errorColor: errorColor
-  }, errorMessage), (lengthInfo || typeof lengthInfo == 'number') && rest.maxLength ? React$2.createElement(LabelLengthInfo, null, `${typeof lengthInfo == 'number' ? lengthInfo : typeof rest.value == 'string' ? rest.value.length : 0}/${rest.maxLength} caracteres`) : null));
+const _excluded$8 = ["label", "labelClassName", "labelStyle", "labelColor", "containerStyle", "errorMessage", "errorColor", "textColor", "width", "height", "lengthInfo"];
+
+const TextArea = _ref => {
+  let {
+    label,
+    labelClassName,
+    labelStyle,
+    labelColor,
+    containerStyle,
+    errorMessage,
+    errorColor,
+    textColor,
+    width,
+    height,
+    lengthInfo
+  } = _ref,
+      rest = _objectWithoutPropertiesLoose$3(_ref, _excluded$8);
+
+  return jsxs("div", {
+    children: [label && jsx(Label, Object.assign({
+      style: labelStyle,
+      errorMessage: errorMessage,
+      labelColor: labelColor,
+      className: labelClassName,
+      errorColor: errorColor
+    }, {
+      children: label
+    }), void 0), jsx(Container$8, Object.assign({
+      errorMessage: errorMessage,
+      errorColor: errorColor,
+      containerStyle: containerStyle,
+      style: containerStyle,
+      disabled: rest.disabled,
+      textColor: textColor,
+      width: width,
+      height: height
+    }, {
+      children: jsx("textarea", Object.assign({}, rest), void 0)
+    }), void 0), jsxs(Footer, {
+      children: [jsx(LabelError, Object.assign({
+        errorColor: errorColor
+      }, {
+        children: errorMessage
+      }), void 0), (lengthInfo || typeof lengthInfo == 'number') && rest.maxLength ? jsx(LabelLengthInfo, {
+        children: `${typeof lengthInfo == 'number' ? lengthInfo : typeof rest.value == 'string' ? rest.value.length : 0}/${rest.maxLength} caracteres`
+      }, void 0) : null]
+    }, void 0)]
+  }, void 0);
 };
 
-const TextAreaForm = ({
-  register,
-  errors,
-  validate,
-  name,
-  required,
-  limit,
-  minimum,
-  ...rest
-}) => {
+const _excluded$7 = ["register", "errors", "validate", "name", "required", "limit", "minimum"];
+
+const TextAreaForm = _ref => {
+  let {
+    register,
+    errors,
+    validate,
+    name,
+    required,
+    limit,
+    minimum
+  } = _ref,
+      rest = _objectWithoutPropertiesLoose$3(_ref, _excluded$7);
+
   const [message, setMessage] = useState('');
-  return React$2.createElement(TextArea, Object.assign({}, rest, {
+  return jsx(TextArea, Object.assign({}, rest, {
     name: name,
     errorMessage: errors ? errors.type === 'required' ? 'Obrigatório' : `${message}` : ''
   }, register({
@@ -4288,11 +4500,11 @@ const TextAreaForm = ({
       setMessage('');
       return true;
     } : null
-  })));
+  })), void 0);
 };
 
-let _$6 = t => t,
-    _t$6;
+let _$9 = t => t,
+    _t$9;
 const Sizes$3 = {
   mini: 'mini',
   tiny: 'tiny',
@@ -4335,7 +4547,7 @@ const size$1 = size => {
   }
 };
 
-const sizeChecked = size => {
+const sizeChecked$1 = size => {
   switch (size) {
     case Sizes$3.mini:
       return '8px';
@@ -4397,7 +4609,7 @@ const marginLeft = size => {
   }
 };
 
-const labelSize = size => {
+const labelSize$1 = size => {
   switch (size) {
     case Sizes$3.mini:
       return '10px';
@@ -4459,7 +4671,7 @@ const marginRight = size => {
   }
 };
 
-const Container$3 = styled.div(_t$6 || (_t$6 = _$6`
+const Container$7 = styled.div(_t$9 || (_t$9 = _$9`
   font-family: MontSerrat !important;
   display: flex;
   align-items: center;
@@ -4526,7 +4738,7 @@ const Container$3 = styled.div(_t$6 || (_t$6 = _$6`
   }
 `), props => {
   if (props.sizeBox) {
-    return labelSize(props.sizeBox);
+    return labelSize$1(props.sizeBox);
   }
 
   return '17px';
@@ -4568,35 +4780,47 @@ const Container$3 = styled.div(_t$6 || (_t$6 = _$6`
   return '8px';
 }, props => {
   if (props.sizeBox) {
-    return sizeChecked(props.sizeBox);
+    return sizeChecked$1(props.sizeBox);
   }
 
   return '13px';
 }, props => props.checked ? colors.white : colors.default20);
 
-const Checkbox = ({
-  label,
-  labelStyle,
-  sizeBox,
-  ...rest
-}) => {
-  return React$2.createElement(Container$3, {
+const _excluded$6 = ["label", "labelStyle", "sizeBox"];
+
+const Checkbox = _ref => {
+  let {
+    label,
+    labelStyle,
+    sizeBox
+  } = _ref,
+      rest = _objectWithoutPropertiesLoose$3(_ref, _excluded$6);
+
+  return jsxs(Container$7, Object.assign({
     onClick: () => !rest.disabled ? rest.onChange ? rest.onChange() : null : null,
     disabled: rest.disabled,
     sizeBox: sizeBox,
     checked: rest.checked
-  }, React$2.createElement("input", Object.assign({
-    type: "checkbox"
-  }, rest)), React$2.createElement("div", null, React$2.createElement("span", null, React$2.createElement(FontAwesomeIcon, {
-    icon: faCheck
-  })), React$2.createElement("label", {
-    style: labelStyle
-  }, label)));
+  }, {
+    children: [jsx("input", Object.assign({
+      type: "checkbox"
+    }, rest), void 0), jsxs("div", {
+      children: [jsx("span", {
+        children: jsx(FontAwesomeIcon, {
+          icon: faCheck
+        }, void 0)
+      }, void 0), jsx("label", Object.assign({
+        style: labelStyle
+      }, {
+        children: label
+      }), void 0)]
+    }, void 0)]
+  }), void 0);
 };
 
-let _$7 = t => t,
-    _t$7;
-const Sizes$4 = {
+let _$8 = t => t,
+    _t$8;
+const Sizes$2 = {
   mini: 'mini',
   tiny: 'tiny',
   small: 'small',
@@ -4607,30 +4831,30 @@ const Sizes$4 = {
   massive: 'massive'
 };
 
-const size$2 = size => {
+const size = size => {
   switch (size) {
-    case Sizes$4.mini:
+    case Sizes$2.mini:
       return '10px';
 
-    case Sizes$4.tiny:
+    case Sizes$2.tiny:
       return '12px';
 
-    case Sizes$4.small:
+    case Sizes$2.small:
       return '14px';
 
-    case Sizes$4.medium:
+    case Sizes$2.medium:
       return '17px';
 
-    case Sizes$4.large:
+    case Sizes$2.large:
       return '20px';
 
-    case Sizes$4.big:
+    case Sizes$2.big:
       return '23px';
 
-    case Sizes$4.huge:
+    case Sizes$2.huge:
       return '26px';
 
-    case Sizes$4.massive:
+    case Sizes$2.massive:
       return '30px';
 
     default:
@@ -4638,30 +4862,30 @@ const size$2 = size => {
   }
 };
 
-const sizeChecked$1 = size => {
+const sizeChecked = size => {
   switch (size) {
-    case Sizes$4.mini:
+    case Sizes$2.mini:
       return '2px';
 
-    case Sizes$4.tiny:
+    case Sizes$2.tiny:
       return '4px';
 
-    case Sizes$4.small:
+    case Sizes$2.small:
       return '6px';
 
-    case Sizes$4.medium:
+    case Sizes$2.medium:
       return '9px';
 
-    case Sizes$4.large:
+    case Sizes$2.large:
       return '12px';
 
-    case Sizes$4.big:
+    case Sizes$2.big:
       return '15px';
 
-    case Sizes$4.huge:
+    case Sizes$2.huge:
       return '18px';
 
-    case Sizes$4.massive:
+    case Sizes$2.massive:
       return '22px';
 
     default:
@@ -4669,30 +4893,30 @@ const sizeChecked$1 = size => {
   }
 };
 
-const labelSize$1 = size => {
+const labelSize = size => {
   switch (size) {
-    case Sizes$4.mini:
+    case Sizes$2.mini:
       return '10px';
 
-    case Sizes$4.tiny:
+    case Sizes$2.tiny:
       return '13px';
 
-    case Sizes$4.small:
+    case Sizes$2.small:
       return '14px';
 
-    case Sizes$4.medium:
+    case Sizes$2.medium:
       return '16px';
 
-    case Sizes$4.large:
+    case Sizes$2.large:
       return '18px';
 
-    case Sizes$4.big:
+    case Sizes$2.big:
       return '20px';
 
-    case Sizes$4.huge:
+    case Sizes$2.huge:
       return '22px';
 
-    case Sizes$4.massive:
+    case Sizes$2.massive:
       return '24px';
 
     default:
@@ -4702,28 +4926,28 @@ const labelSize$1 = size => {
 
 const paddingLeft = size => {
   switch (size) {
-    case Sizes$4.mini:
+    case Sizes$2.mini:
       return '15px';
 
-    case Sizes$4.tiny:
+    case Sizes$2.tiny:
       return '18px';
 
-    case Sizes$4.small:
+    case Sizes$2.small:
       return '20px';
 
-    case Sizes$4.medium:
+    case Sizes$2.medium:
       return '25px';
 
-    case Sizes$4.large:
+    case Sizes$2.large:
       return '28px';
 
-    case Sizes$4.big:
+    case Sizes$2.big:
       return '32px';
 
-    case Sizes$4.huge:
+    case Sizes$2.huge:
       return '35px';
 
-    case Sizes$4.massive:
+    case Sizes$2.massive:
       return '40px';
 
     default:
@@ -4733,28 +4957,28 @@ const paddingLeft = size => {
 
 const paddingTop = size => {
   switch (size) {
-    case Sizes$4.mini:
+    case Sizes$2.mini:
       return '0px';
 
-    case Sizes$4.tiny:
+    case Sizes$2.tiny:
       return '0px';
 
-    case Sizes$4.small:
+    case Sizes$2.small:
       return '0px';
 
-    case Sizes$4.medium:
+    case Sizes$2.medium:
       return '0px';
 
-    case Sizes$4.large:
+    case Sizes$2.large:
       return '2px';
 
-    case Sizes$4.big:
+    case Sizes$2.big:
       return '2px';
 
-    case Sizes$4.huge:
+    case Sizes$2.huge:
       return '3px';
 
-    case Sizes$4.massive:
+    case Sizes$2.massive:
       return '4px';
 
     default:
@@ -4764,28 +4988,28 @@ const paddingTop = size => {
 
 const topBoxBefore = size => {
   switch (size) {
-    case Sizes$4.mini:
+    case Sizes$2.mini:
       return '5px';
 
-    case Sizes$4.tiny:
+    case Sizes$2.tiny:
       return '4px';
 
-    case Sizes$4.small:
+    case Sizes$2.small:
       return '3px';
 
-    case Sizes$4.medium:
+    case Sizes$2.medium:
       return '1px';
 
-    case Sizes$4.large:
+    case Sizes$2.large:
       return '0px';
 
-    case Sizes$4.big:
+    case Sizes$2.big:
       return '0px';
 
-    case Sizes$4.huge:
+    case Sizes$2.huge:
       return '0px';
 
-    case Sizes$4.massive:
+    case Sizes$2.massive:
       return '0px';
 
     default:
@@ -4795,28 +5019,28 @@ const topBoxBefore = size => {
 
 const topBoxAfter = size => {
   switch (size) {
-    case Sizes$4.mini:
+    case Sizes$2.mini:
       return '9px';
 
-    case Sizes$4.tiny:
+    case Sizes$2.tiny:
       return '8px';
 
-    case Sizes$4.small:
+    case Sizes$2.small:
       return '7px';
 
-    case Sizes$4.medium:
+    case Sizes$2.medium:
       return '5px';
 
-    case Sizes$4.large:
+    case Sizes$2.large:
       return '4px';
 
-    case Sizes$4.big:
+    case Sizes$2.big:
       return '4px';
 
-    case Sizes$4.huge:
+    case Sizes$2.huge:
       return '4px';
 
-    case Sizes$4.massive:
+    case Sizes$2.massive:
       return '4px';
 
     default:
@@ -4824,7 +5048,7 @@ const topBoxAfter = size => {
   }
 };
 
-const Container$4 = styled.div(_t$7 || (_t$7 = _$7`
+const Container$6 = styled.div(_t$8 || (_t$8 = _$8`
   font-family: MontSerrat !important;
 
   > input {
@@ -4887,7 +5111,7 @@ const Container$4 = styled.div(_t$7 || (_t$7 = _$7`
   }
 `), props => {
   if (props.sizeBox) {
-    return labelSize$1(props.sizeBox);
+    return labelSize(props.sizeBox);
   }
 
   return '17px';
@@ -4911,13 +5135,13 @@ const Container$4 = styled.div(_t$7 || (_t$7 = _$7`
   return '1px';
 }, props => {
   if (props.sizeBox) {
-    return size$2(props.sizeBox);
+    return size(props.sizeBox);
   }
 
   return '17px';
 }, props => {
   if (props.sizeBox) {
-    return size$2(props.sizeBox);
+    return size(props.sizeBox);
   }
 
   return '17px';
@@ -4929,38 +5153,48 @@ const Container$4 = styled.div(_t$7 || (_t$7 = _$7`
   return '5px';
 }, props => {
   if (props.sizeBox) {
-    return sizeChecked$1(props.sizeBox);
+    return sizeChecked(props.sizeBox);
   }
 
   return '9px';
 }, props => {
   if (props.sizeBox) {
-    return sizeChecked$1(props.sizeBox);
+    return sizeChecked(props.sizeBox);
   }
 
   return '9px';
 }, colors.gray20, colors.gray20, colors.white);
 
-const Radio = ({
-  label,
-  labelStyle,
-  sizeBox,
-  ...rest
-}) => {
-  return React$2.createElement(Container$4, {
+const _excluded$5 = ["label", "labelStyle", "sizeBox"];
+
+const Radio = _ref => {
+  let {
+    label,
+    labelStyle,
+    sizeBox
+  } = _ref,
+      rest = _objectWithoutPropertiesLoose$3(_ref, _excluded$5);
+
+  return jsxs(Container$6, Object.assign({
     onClick: () => !rest.disabled ? rest.onChange ? rest.onChange() : null : null,
     disabled: rest.disabled,
     sizeBox: sizeBox
-  }, React$2.createElement("input", Object.assign({
-    type: "radio"
-  }, rest)), React$2.createElement("div", null, React$2.createElement("label", {
-    style: labelStyle
-  }, label)));
+  }, {
+    children: [jsx("input", Object.assign({
+      type: "radio"
+    }, rest), void 0), jsx("div", {
+      children: jsx("label", Object.assign({
+        style: labelStyle
+      }, {
+        children: label
+      }), void 0)
+    }, void 0)]
+  }), void 0);
 };
 
-let _$8 = t => t,
-    _t$8;
-const Container$5 = styled.div(_t$8 || (_t$8 = _$8`
+let _$7 = t => t,
+    _t$7;
+const Container$5 = styled.div(_t$7 || (_t$7 = _$7`
   font-family: MontSerrat !important;
   width: 100% !important;
   display: flex !important;
@@ -6500,41 +6734,55 @@ const Container$5 = styled.div(_t$8 || (_t$8 = _$8`
   }
 `), props => props.error ? '' : '20px', props => props.error ? colors.brand20 : props.colorLabel ? props.colorLabel : colors.brand10, props => props.textAlign && props.textAlign === 'center' ? 'center' : 'left', colors.gray20, props => props.line ? '0' : '0.28571429rem', props => props.line ? 'none' : '', props => props.line ? 'none' : '', props => props.line ? 'none' : '', props => props.brand ? colors.brand10 : colors.gray20, props => props.brand ? colors.brandLight : colors.white, props => props.brand ? colors.brand10 : colors.gray20, props => props.brand ? colors.brandLight : props.line ? colors.gray10 : 'rgba(34, 36, 38, 0.15)', props => props.line ? 0 : '0.28571429rem', props => props.line ? 'none' : '20px', props => props.line ? 'none' : '', props => props.line ? 'none' : '', props => props.line ? 'none' : '', props => props.brand ? colors.brandLight : colors.gray10, props => props.brand ? colors.brandTransparent : colors.gray10, props => props.error ? colors.brand20 : props.brand ? colors.brandLight : colors.gray10, props => props.error ? colors.brand20 : props.brand ? colors.brandLight : colors.gray10, props => props.error ? colors.brand20 : props.brand ? colors.brandLight : colors.gray10, props => props.brand ? colors.brandDark : colors.black, props => props.error ? colors.brand20 : props.brand ? colors.brandLight : colors.gray10, props => props.error ? colors.brand20 : props.brand ? colors.brandLight : colors.gray10, props => props.brand ? colors.brand10 : colors.gray20, props => props.textAlign && props.textAlign === 'center' ? 'center' : 'left', props => props.brand ? colors.brandDark : colors.black, props => props.brand ? colors.brandTransparent : colors.gray10, props => props.brand ? colors.brandLight : colors.gray20, props => props.brand ? colors.brand10 : colors.card, props => props.brand ? colors.brandDark : colors.black, props => props.brand ? colors.brandDark : colors.black, colors.brand10, props => props.brand ? colors.brand10 : colors.default20, props => props.brand ? colors.brand10 : colors.default20, props => props.brand ? colors.brandDark : colors.black, props => props.line ? colors.white : colors.error, colors.brand20, colors.brand20, colors.brand20, colors.brand20, colors.brand20, colors.error, colors.error, colors.brand10, colors.brandTransparent2, colors.brand20);
 
-const Dropdown = ({
-  options,
-  brand,
-  textAlign,
-  errorMessage,
-  label,
-  colorLabel,
-  line,
-  ...rest
-}) => {
-  return React$2.createElement(Container$5, {
+const _excluded$4 = ["options", "brand", "textAlign", "errorMessage", "label", "colorLabel", "line"];
+
+const Dropdown = _ref => {
+  let {
+    options,
+    brand,
+    textAlign,
+    errorMessage,
+    label,
+    colorLabel,
+    line
+  } = _ref,
+      rest = _objectWithoutPropertiesLoose$3(_ref, _excluded$4);
+
+  return jsxs(Container$5, Object.assign({
     brand: brand,
     textAlign: textAlign,
     error: errorMessage,
     colorLabel: colorLabel,
     line: line
-  }, label && React$2.createElement("label", null, label), React$2.createElement(Dropdown$1, Object.assign({}, rest, {
-    selection: true,
-    noResultsMessage: "Nenhum resultado encontrado",
-    error: !!errorMessage,
-    options: options
-  })), errorMessage && React$2.createElement("small", null, errorMessage));
+  }, {
+    children: [label && jsx("label", {
+      children: label
+    }, void 0), jsx(Dropdown$1, Object.assign({}, rest, {
+      selection: true,
+      noResultsMessage: "Nenhum resultado encontrado",
+      error: !!errorMessage,
+      options: options
+    }), void 0), errorMessage && jsx("small", {
+      children: errorMessage
+    }, void 0)]
+  }), void 0);
 };
 
-const DropdownForm = ({
-  value,
-  clearError,
-  errors,
-  name,
-  register,
-  required,
-  setValue,
-  validate,
-  ...rest
-}) => {
+const _excluded$3 = ["value", "clearError", "errors", "name", "register", "required", "setValue", "validate"];
+
+const DropdownForm = _ref => {
+  let {
+    value,
+    clearError,
+    errors,
+    name,
+    register,
+    required,
+    setValue,
+    validate
+  } = _ref,
+      rest = _objectWithoutPropertiesLoose$3(_ref, _excluded$3);
+
   const [valueDefault, setValueDefault] = useState();
   const [message, setMessage] = useState('');
   useEffect(() => {
@@ -6565,7 +6813,7 @@ const DropdownForm = ({
       });
     }
   }, [register]);
-  return React$2.createElement(Dropdown, Object.assign({}, rest, {
+  return jsx(Dropdown, Object.assign({}, rest, {
     value: valueDefault,
     onChange: (_ev, data) => {
       setValueDefault(data.value);
@@ -6577,15 +6825,15 @@ const DropdownForm = ({
     },
     line: rest.line,
     errorMessage: errors ? errors.type === 'required' ? 'Obrigatório' : `${message}` : ''
-  }));
+  }), void 0);
 };
 
-let _$9 = t => t,
-    _t$9,
-    _t2$6,
-    _t3$5,
-    _t4$5;
-const Container$6 = styled.div(_t$9 || (_t$9 = _$9`
+let _$6 = t => t,
+    _t$6,
+    _t2$3,
+    _t3$3,
+    _t4$1;
+const Container$4 = styled.div(_t$6 || (_t$6 = _$6`
   font-family: MontSerrat !important;
   display: flex;
   width: ${0};
@@ -6653,13 +6901,13 @@ const Container$6 = styled.div(_t$9 || (_t$9 = _$9`
   }
 
   return props.subtitle ? '14px' : '16px';
-}, props => props.colorTitle ? props.colorTitle : `${colors.gray20}`, props => props.colorSubtitle ? props.colorSubtitle : `${colors.gray10}`, props => props.colorValue ? props.colorValue : `${colors.gray20}`, props => props.open ? css$1(_t2$6 || (_t2$6 = _$9`
+}, props => props.colorTitle ? props.colorTitle : `${colors.gray20}`, props => props.colorSubtitle ? props.colorSubtitle : `${colors.gray10}`, props => props.colorValue ? props.colorValue : `${colors.gray20}`, props => props.open ? css$1(_t2$3 || (_t2$3 = _$6`
           border-top-left-radius: 20px;
           border-top-right-radius: 20px;
-        `)) : css$1(_t3$5 || (_t3$5 = _$9`
+        `)) : css$1(_t3$3 || (_t3$3 = _$6`
           border-radius: 30px;
         `)));
-const Body$1 = styled.div(_t4$5 || (_t4$5 = _$9`
+const Body = styled.div(_t4$1 || (_t4$1 = _$6`
   font-family: MontSerrat !important;
   width: ${0};
   padding: 20px;
@@ -6688,60 +6936,78 @@ const Accordion = ({
   colorIcon,
   fontSizeTitle
 }) => {
-  return React$2.createElement(React$2.Fragment, null, React$2.createElement(Container$6, {
-    colorTitle: colorTitle,
-    colorSubtitle: colorSubtitle,
-    colorValue: colorValue,
-    secondary: secondary,
-    subtitle: subtitle,
-    open: open,
-    onClick: () => onChange(),
-    width: width,
-    icon: !!(icon || customIcon),
-    fontSizeTitle: fontSizeTitle
-  }, React$2.createElement("div", {
-    className: "icon-title"
-  }, customIcon || (icon ? React$2.createElement(FontAwesomeIcon, {
-    icon: icon,
-    size: "lg",
-    color: colorIcon || colors.brand10
-  }) : null), React$2.createElement("div", {
-    className: "title-subtitle"
-  }, React$2.createElement("span", {
-    className: "title"
-  }, title), subtitle && React$2.createElement("span", {
-    className: "subtitle"
-  }, subtitle))), React$2.createElement("div", {
-    className: "value-icon"
-  }, React$2.createElement("span", {
-    className: "value"
-  }, value), secondary ? React$2.createElement(FontAwesomeIcon, {
-    icon: open ? faAngleUp : faAngleDown,
-    style: {
-      fontSize: 20
-    }
-  }) : React$2.createElement(FontAwesomeIcon, {
-    icon: open ? faAngleUp : faAngleDown,
-    style: {
-      fontSize: 20
-    },
-    color: colors.brand10
-  }))), React$2.createElement(Body$1, {
-    open: open,
-    width: width
-  }, children));
+  return jsxs(React$2.Fragment, {
+    children: [jsxs(Container$4, Object.assign({
+      colorTitle: colorTitle,
+      colorSubtitle: colorSubtitle,
+      colorValue: colorValue,
+      secondary: secondary,
+      subtitle: subtitle,
+      open: open,
+      onClick: () => onChange(),
+      width: width,
+      icon: !!(icon || customIcon),
+      fontSizeTitle: fontSizeTitle
+    }, {
+      children: [jsxs("div", Object.assign({
+        className: "icon-title"
+      }, {
+        children: [customIcon || (icon ? jsx(FontAwesomeIcon, {
+          icon: icon,
+          size: "lg",
+          color: colorIcon || colors.brand10
+        }, void 0) : null), jsxs("div", Object.assign({
+          className: "title-subtitle"
+        }, {
+          children: [jsx("span", Object.assign({
+            className: "title"
+          }, {
+            children: title
+          }), void 0), subtitle && jsx("span", Object.assign({
+            className: "subtitle"
+          }, {
+            children: subtitle
+          }), void 0)]
+        }), void 0)]
+      }), void 0), jsxs("div", Object.assign({
+        className: "value-icon"
+      }, {
+        children: [jsx("span", Object.assign({
+          className: "value"
+        }, {
+          children: value
+        }), void 0), secondary ? jsx(FontAwesomeIcon, {
+          icon: open ? faAngleUp : faAngleDown,
+          style: {
+            fontSize: 20
+          }
+        }, void 0) : jsx(FontAwesomeIcon, {
+          icon: open ? faAngleUp : faAngleDown,
+          style: {
+            fontSize: 20
+          },
+          color: colors.brand10
+        }, void 0)]
+      }), void 0)]
+    }), void 0), jsx(Body, Object.assign({
+      open: open,
+      width: width
+    }, {
+      children: children
+    }), void 0)]
+  }, void 0);
 };
 
-let _$a = t => t,
-    _t$a,
-    _t2$7,
-    _t3$6;
+let _$5 = t => t,
+    _t$5,
+    _t2$2,
+    _t3$2;
 const toggleWidth = 50;
 const toggleHeight = 30;
 const toggleGutter = 5;
 const toggleRadius = toggleHeight / 2;
 const toggleControlSsize = toggleHeight - toggleGutter * 2;
-const Sizes$5 = {
+const Sizes$1 = {
   mini: 'mini',
   tiny: 'tiny',
   small: 'small',
@@ -6754,28 +7020,28 @@ const Sizes$5 = {
 
 const widthSwitch = size => {
   switch (size) {
-    case Sizes$5.mini:
+    case Sizes$1.mini:
       return 30;
 
-    case Sizes$5.tiny:
+    case Sizes$1.tiny:
       return 35;
 
-    case Sizes$5.small:
+    case Sizes$1.small:
       return 40;
 
-    case Sizes$5.medium:
+    case Sizes$1.medium:
       return 50;
 
-    case Sizes$5.large:
+    case Sizes$1.large:
       return 60;
 
-    case Sizes$5.big:
+    case Sizes$1.big:
       return 70;
 
-    case Sizes$5.huge:
+    case Sizes$1.huge:
       return 80;
 
-    case Sizes$5.massive:
+    case Sizes$1.massive:
       return 90;
 
     default:
@@ -6785,28 +7051,28 @@ const widthSwitch = size => {
 
 const heightSwitch = size => {
   switch (size) {
-    case Sizes$5.mini:
+    case Sizes$1.mini:
       return 20;
 
-    case Sizes$5.tiny:
+    case Sizes$1.tiny:
       return 22.5;
 
-    case Sizes$5.small:
+    case Sizes$1.small:
       return 25;
 
-    case Sizes$5.medium:
+    case Sizes$1.medium:
       return 30;
 
-    case Sizes$5.large:
+    case Sizes$1.large:
       return 35;
 
-    case Sizes$5.big:
+    case Sizes$1.big:
       return 40;
 
-    case Sizes$5.huge:
+    case Sizes$1.huge:
       return 45;
 
-    case Sizes$5.massive:
+    case Sizes$1.massive:
       return 50;
 
     default:
@@ -6816,28 +7082,28 @@ const heightSwitch = size => {
 
 const sizeGutter = size => {
   switch (size) {
-    case Sizes$5.mini:
+    case Sizes$1.mini:
       return 5;
 
-    case Sizes$5.tiny:
+    case Sizes$1.tiny:
       return 5;
 
-    case Sizes$5.small:
+    case Sizes$1.small:
       return 5;
 
-    case Sizes$5.medium:
+    case Sizes$1.medium:
       return 5;
 
-    case Sizes$5.large:
+    case Sizes$1.large:
       return 5;
 
-    case Sizes$5.big:
+    case Sizes$1.big:
       return 5;
 
-    case Sizes$5.huge:
+    case Sizes$1.huge:
       return 5;
 
-    case Sizes$5.massive:
+    case Sizes$1.massive:
       return 5;
 
     default:
@@ -6847,28 +7113,28 @@ const sizeGutter = size => {
 
 const widthToggle = size => {
   switch (size) {
-    case Sizes$5.mini:
+    case Sizes$1.mini:
       return '40px !important';
 
-    case Sizes$5.tiny:
+    case Sizes$1.tiny:
       return '50px !important';
 
-    case Sizes$5.small:
+    case Sizes$1.small:
       return '60px !important';
 
-    case Sizes$5.medium:
+    case Sizes$1.medium:
       return '65px !important';
 
-    case Sizes$5.large:
+    case Sizes$1.large:
       return '70px !important';
 
-    case Sizes$5.big:
+    case Sizes$1.big:
       return '80px !important';
 
-    case Sizes$5.huge:
+    case Sizes$1.huge:
       return '90px !important';
 
-    case Sizes$5.massive:
+    case Sizes$1.massive:
       return '100px !important';
 
     default:
@@ -6878,28 +7144,28 @@ const widthToggle = size => {
 
 const fontToggle = size => {
   switch (size) {
-    case Sizes$5.mini:
+    case Sizes$1.mini:
       return '8px !important';
 
-    case Sizes$5.tiny:
+    case Sizes$1.tiny:
       return '9px !important';
 
-    case Sizes$5.small:
+    case Sizes$1.small:
       return '10px !important';
 
-    case Sizes$5.medium:
+    case Sizes$1.medium:
       return '11px !important';
 
-    case Sizes$5.large:
+    case Sizes$1.large:
       return '12px !important';
 
-    case Sizes$5.big:
+    case Sizes$1.big:
       return '13px !important';
 
-    case Sizes$5.huge:
+    case Sizes$1.huge:
       return '14px !important';
 
-    case Sizes$5.massive:
+    case Sizes$1.massive:
       return '15px !important';
 
     default:
@@ -6909,28 +7175,28 @@ const fontToggle = size => {
 
 const fontActiveInactive = size => {
   switch (size) {
-    case Sizes$5.mini:
+    case Sizes$1.mini:
       return '7px !important';
 
-    case Sizes$5.tiny:
+    case Sizes$1.tiny:
       return '8px !important';
 
-    case Sizes$5.small:
+    case Sizes$1.small:
       return '9px !important';
 
-    case Sizes$5.medium:
+    case Sizes$1.medium:
       return '10px !important';
 
-    case Sizes$5.large:
+    case Sizes$1.large:
       return '11px !important';
 
-    case Sizes$5.big:
+    case Sizes$1.big:
       return '12px !important';
 
-    case Sizes$5.huge:
+    case Sizes$1.huge:
       return '13px !important';
 
-    case Sizes$5.massive:
+    case Sizes$1.massive:
       return '14px !important';
 
     default:
@@ -6938,7 +7204,7 @@ const fontActiveInactive = size => {
   }
 };
 
-const Switch = styled.label(_t$a || (_t$a = _$a`
+const Switch = styled.label(_t$5 || (_t$5 = _$5`
   font-family: MontSerrat !important;
   display: flex !important;
   flex-direction: row !important;
@@ -6987,7 +7253,7 @@ const Switch = styled.label(_t$a || (_t$a = _$a`
     }
   }
 `), props => props.size ? `${widthSwitch(props.size)}px` : `${toggleWidth}px`, props => props.disabled ? 'normal !important' : 'pointer !important', props => props.disabled ? `${colors.brandTransparent} !important` : `${colors.brandDark} !important`, props => props.size ? `${widthSwitch(props.size) - (heightSwitch(props.size) - sizeGutter(props.size) * 2) - sizeGutter(props.size)}px !important` : `${toggleWidth - toggleControlSsize - toggleGutter}px !important`, props => props.size ? `${heightSwitch(props.size)}px !important` : `${toggleHeight}px !important`, props => props.size ? `${widthSwitch(props.size)}px !important` : `${toggleWidth}px !important`, props => props.size ? `${heightSwitch(props.size) / 2}px !important` : `${toggleRadius}px !important`, colors.card, props => props.size ? `${heightSwitch(props.size) - sizeGutter(props.size) * 2}px !important` : `${toggleControlSsize}px !important`, props => props.size ? `${heightSwitch(props.size) - sizeGutter(props.size) * 2}px !important` : `${toggleControlSsize}px !important`, colors.default10);
-const Toggle = styled.div(_t2$7 || (_t2$7 = _$a`
+const Toggle = styled.div(_t2$2 || (_t2$2 = _$5`
   font-family: MontSerrat !important;
   display: flex !important;
   flex-direction: row !important;
@@ -7032,7 +7298,7 @@ const Toggle = styled.div(_t2$7 || (_t2$7 = _$a`
     }
   }
 `), props => props.disabled ? '0.5 !important' : '1 !important', props => props.size ? widthToggle(props.size) : '65px !important', colors.card, props => props.size ? fontToggle(props.size) : '11px !important', props => props.disabled ? 'default !important' : !props.checked ? 'default !important' : 'pointer !important', props => !props.checked ? `${colors.brand10} !important` : `${colors.white} !important`, props => !props.checked ? `${colors.white} !important` : `${colors.gray20} !important`, props => props.disabled ? 'default !important' : props.checked ? 'default !important' : 'pointer !important', props => props.checked ? `${colors.brand10} !important` : `${colors.white} !important`, props => props.checked ? `${colors.white} !important` : `${colors.gray20} !important`);
-const ActiveInactive = styled.div(_t3$6 || (_t3$6 = _$a`
+const ActiveInactive = styled.div(_t3$2 || (_t3$2 = _$5`
   font-family: MontSerrat !important;
   display: flex !important;
   flex-direction: row !important;
@@ -7093,47 +7359,69 @@ const Selection = ({
   selectionRef
 }) => {
   function renderSwitch() {
-    return React$2.createElement(Switch, {
+    return jsxs(Switch, Object.assign({
       size: size,
       ref: selectionRef,
       disabled: disabled
-    }, React$2.createElement("input", {
-      type: "checkbox",
-      checked: checked
-    }), React$2.createElement("span", {
-      className: "control",
-      onClick: () => !disabled ? onChange ? onChange() : null : null
-    }));
+    }, {
+      children: [jsx("input", {
+        type: "checkbox",
+        checked: checked
+      }, void 0), jsx("span", {
+        className: "control",
+        onClick: () => !disabled ? onChange ? onChange() : null : null
+      }, void 0)]
+    }), void 0);
   }
 
   function renderToggle() {
-    return React$2.createElement(Toggle, {
+    return jsxs(Toggle, Object.assign({
       checked: checked,
       ref: selectionRef,
       size: size,
       disabled: disabled
-    }, React$2.createElement("div", {
-      className: "btn left",
-      onClick: () => !disabled ? checked ? onChange ? onChange() : null : null : null
-    }, React$2.createElement("span", null, "n\u00E3o")), React$2.createElement("div", {
-      className: "btn right",
-      onClick: () => !disabled ? !checked ? onChange ? onChange() : null : null : null
-    }, React$2.createElement("span", null, "sim")));
+    }, {
+      children: [jsx("div", Object.assign({
+        className: "btn left",
+        onClick: () => !disabled ? checked ? onChange ? onChange() : null : null : null
+      }, {
+        children: jsx("span", {
+          children: "n\u00E3o"
+        }, void 0)
+      }), void 0), jsx("div", Object.assign({
+        className: "btn right",
+        onClick: () => !disabled ? !checked ? onChange ? onChange() : null : null : null
+      }, {
+        children: jsx("span", {
+          children: "sim"
+        }, void 0)
+      }), void 0)]
+    }), void 0);
   }
 
   function renderActiveInactive() {
-    return React$2.createElement(ActiveInactive, {
+    return jsxs(ActiveInactive, Object.assign({
       checked: checked,
       ref: selectionRef,
       size: size,
       disabled: disabled
-    }, React$2.createElement("div", {
-      className: "btn left",
-      onClick: () => !disabled ? checked ? onChange ? onChange() : null : null : null
-    }, React$2.createElement("span", null, checked ? 'desativar' : 'inativo')), React$2.createElement("div", {
-      className: "btn right",
-      onClick: () => !disabled ? !checked ? onChange ? onChange() : null : null : null
-    }, React$2.createElement("span", null, checked ? 'ativo' : 'ativar')));
+    }, {
+      children: [jsx("div", Object.assign({
+        className: "btn left",
+        onClick: () => !disabled ? checked ? onChange ? onChange() : null : null : null
+      }, {
+        children: jsx("span", {
+          children: checked ? 'desativar' : 'inativo'
+        }, void 0)
+      }), void 0), jsx("div", Object.assign({
+        className: "btn right",
+        onClick: () => !disabled ? !checked ? onChange ? onChange() : null : null : null
+      }, {
+        children: jsx("span", {
+          children: checked ? 'ativo' : 'ativar'
+        }, void 0)
+      }), void 0)]
+    }), void 0);
   }
 
   switch (type) {
@@ -7147,13 +7435,13 @@ const Selection = ({
       return renderActiveInactive();
 
     default:
-      return React$2.createElement("div", null);
+      return jsx("div", {}, void 0);
   }
 };
 
-let _$b = t => t,
-    _t$b;
-const Sizes$6 = {
+let _$4 = t => t,
+    _t$4;
+const Sizes = {
   small: 'small',
   medium: 'medium',
   big: 'big'
@@ -7161,13 +7449,13 @@ const Sizes$6 = {
 
 const widthBtnMoreLess = size => {
   switch (size) {
-    case Sizes$6.small:
+    case Sizes.small:
       return '20px';
 
-    case Sizes$6.medium:
+    case Sizes.medium:
       return '30px';
 
-    case Sizes$6.big:
+    case Sizes.big:
       return '40px';
 
     default:
@@ -7177,13 +7465,13 @@ const widthBtnMoreLess = size => {
 
 const heightBtnMoreLess = size => {
   switch (size) {
-    case Sizes$6.small:
+    case Sizes.small:
       return '20px';
 
-    case Sizes$6.medium:
+    case Sizes.medium:
       return '30px';
 
-    case Sizes$6.big:
+    case Sizes.big:
       return '40px';
 
     default:
@@ -7192,7 +7480,7 @@ const heightBtnMoreLess = size => {
 };
 
 const widthValueMoreLess = (size, value) => {
-  if (size === Sizes$6.small) {
+  if (size === Sizes.small) {
     if (value < 100) {
       return '15px';
     }
@@ -7208,7 +7496,7 @@ const widthValueMoreLess = (size, value) => {
     return '30px';
   }
 
-  if (size === Sizes$6.medium) {
+  if (size === Sizes.medium) {
     if (value < 100) {
       return '20px';
     }
@@ -7224,7 +7512,7 @@ const widthValueMoreLess = (size, value) => {
     return '50px';
   }
 
-  if (size === Sizes$6.big) {
+  if (size === Sizes.big) {
     if (value < 100) {
       return '30px';
     }
@@ -7245,13 +7533,13 @@ const widthValueMoreLess = (size, value) => {
 
 const fontMoreLess = size => {
   switch (size) {
-    case Sizes$6.small:
+    case Sizes.small:
       return '10px';
 
-    case Sizes$6.medium:
+    case Sizes.medium:
       return '15px';
 
-    case Sizes$6.big:
+    case Sizes.big:
       return '22px';
 
     default:
@@ -7259,7 +7547,7 @@ const fontMoreLess = size => {
   }
 };
 
-const Container$7 = styled.div(_t$b || (_t$b = _$b`
+const Container$3 = styled.div(_t$4 || (_t$4 = _$4`
   font-family: MontSerrat !important;
   display: flex;
   flex-direction: row;
@@ -7345,7 +7633,7 @@ const MoreLess = ({
       setNoMore(false);
     }
   }, [limit, value]);
-  return React$2.createElement(Container$7, {
+  return jsxs(Container$3, Object.assign({
     limit: limit,
     minimum: minimum,
     value: value,
@@ -7353,29 +7641,35 @@ const MoreLess = ({
     disabled: disabled,
     noLess: noLess,
     noMore: noMore
-  }, React$2.createElement("div", {
-    className: "btn left",
-    onClick: () => !disabled ? less ? noLess ? null : less() : null : null
-  }, React$2.createElement(FontAwesomeIcon, {
-    icon: faMinus
-  })), React$2.createElement("input", {
-    value: value || value === 0 ? value.toString() : '',
-    type: "number",
-    onChange: event => onChange ? onChange(Number(event.target.value)) : null,
-    disabled: disabled || !onChange
-  }), React$2.createElement("div", {
-    className: "btn right",
-    onClick: () => !disabled ? noMore ? null : more ? more() : null : null
-  }, React$2.createElement(FontAwesomeIcon, {
-    icon: faPlus
-  })));
+  }, {
+    children: [jsx("div", Object.assign({
+      className: "btn left",
+      onClick: () => !disabled ? less ? noLess ? null : less() : null : null
+    }, {
+      children: jsx(FontAwesomeIcon, {
+        icon: faMinus
+      }, void 0)
+    }), void 0), jsx("input", {
+      value: value || value === 0 ? value.toString() : '',
+      type: "number",
+      onChange: event => onChange ? onChange(Number(event.target.value)) : null,
+      disabled: disabled || !onChange
+    }, void 0), jsx("div", Object.assign({
+      className: "btn right",
+      onClick: () => !disabled ? noMore ? null : more ? more() : null : null
+    }, {
+      children: jsx(FontAwesomeIcon, {
+        icon: faPlus
+      }, void 0)
+    }), void 0)]
+  }), void 0);
 };
 
-let _$c = t => t,
-    _t$c,
-    _t2$8,
-    _t3$7;
-const Shadow = styled.div(_t$c || (_t$c = _$c`
+let _$3 = t => t,
+    _t$3,
+    _t2$1,
+    _t3$1;
+const Shadow = styled.div(_t$3 || (_t$3 = _$3`
   font-family: MontSerrat !important;
   box-shadow: ${0};
 
@@ -7419,7 +7713,7 @@ const Shadow = styled.div(_t$c || (_t$c = _$c`
 }, props => {
   var _props$style;
 
-  return props.type == 'border' || (_props$style = props.style) !== null && _props$style !== void 0 && _props$style.borderRadius ? `1px solid  ${colors.default20}` : '';
+  return props.type == 'border' || (_props$style = props.style) != null && _props$style.borderRadius ? `1px solid  ${colors.default20}` : '';
 }, colors.white, props => {
   if (props.width) {
     if (typeof props.width === 'string') {
@@ -7431,7 +7725,7 @@ const Shadow = styled.div(_t$c || (_t$c = _$c`
 
   return '100%';
 });
-const Button$1 = styled.a(_t2$8 || (_t2$8 = _$c`
+const Button = styled.a(_t2$1 || (_t2$1 = _$3`
   font-family: MontSerrat !important;
   background-color: ${0};
   padding: 0.75rem 1.5625rem;
@@ -7462,7 +7756,7 @@ const Button$1 = styled.a(_t2$8 || (_t2$8 = _$c`
 
   return '100%';
 }, colors.default10, props => props.colorText ? props.colorText : colors.brandDark);
-const Complement = styled.div(_t3$7 || (_t3$7 = _$c`
+const Complement = styled.div(_t3$1 || (_t3$1 = _$3`
   font-family: MontSerrat !important;
 
   color: ${0};
@@ -7478,54 +7772,70 @@ const Complement = styled.div(_t3$7 || (_t3$7 = _$c`
   border-bottom-right-radius: 1.875rem;
 `), colors.gray20, colors.default10, colors.default20);
 
-const Card = ({
-  children,
-  width,
-  type: _type = 'shadow',
-  style,
-  icon,
-  sizeIcon,
-  colorIcon,
-  text,
-  colorText,
-  onClick,
-  loading,
-  className,
-  id,
-  complement,
-  complementStyle,
-  complementClassName,
-  ...rest
-}) => {
+const _excluded$2 = ["children", "width", "type", "style", "icon", "sizeIcon", "colorIcon", "text", "colorText", "onClick", "loading", "className", "id", "complement", "complementStyle", "complementClassName"];
+
+const Card = _ref => {
+  let {
+    children,
+    width,
+    type = 'shadow',
+    style,
+    icon,
+    sizeIcon,
+    colorIcon,
+    text,
+    colorText,
+    onClick,
+    loading,
+    className,
+    id,
+    complement,
+    complementStyle,
+    complementClassName
+  } = _ref,
+      rest = _objectWithoutPropertiesLoose$3(_ref, _excluded$2);
+
   function renderShadow() {
     if (complement) {
-      return React$2.createElement("div", null, React$2.createElement(Shadow, {
-        className: className,
-        width: width,
-        style: style,
-        type: _type,
-        id: id
-      }, loading && React$2.createElement("div", {
-        className: "loading-card"
-      }, React$2.createElement(Loader, null)), children), React$2.createElement(Complement, {
-        className: complementClassName,
-        style: complementStyle
-      }, complement));
+      return jsxs("div", {
+        children: [jsxs(Shadow, Object.assign({
+          className: className,
+          width: width,
+          style: style,
+          type: type,
+          id: id
+        }, {
+          children: [loading && jsx("div", Object.assign({
+            className: "loading-card"
+          }, {
+            children: jsx(Loader, {}, void 0)
+          }), void 0), children]
+        }), void 0), jsx(Complement, Object.assign({
+          className: complementClassName,
+          style: complementStyle
+        }, {
+          children: complement
+        }), void 0)]
+      }, void 0);
     }
 
-    return React$2.createElement(Shadow, {
+    return jsxs(Shadow, Object.assign({
       className: className,
       width: width,
       style: style,
-      type: _type,
+      type: type,
       id: id
-    }, loading && React$2.createElement("div", {
-      className: "loading-card"
-    }, React$2.createElement(Loader, null)), children);
+    }, {
+      children: [loading && jsx("div", Object.assign({
+        className: "loading-card"
+      }, {
+        children: jsx(Loader, {}, void 0)
+      }), void 0), children]
+    }), void 0);
   }
 
   function renderButton() {
-    return React$2.createElement(Button$1, {
+    return jsxs(Button, Object.assign({
       style: style,
       colorText: colorText,
       onClick: onClick,
@@ -7533,14 +7843,20 @@ const Card = ({
       width: width,
       className: className,
       id: id
-    }, icon && React$2.createElement(React$2.Fragment, null, React$2.createElement(FontAwesomeIcon, {
-      icon: icon,
-      color: colorIcon || colors.brandDark,
-      size: sizeIcon || 'lg'
-    })), React$2.createElement("span", null, text));
+    }, {
+      children: [icon && jsx(React$2.Fragment, {
+        children: jsx(FontAwesomeIcon, {
+          icon: icon,
+          color: colorIcon || colors.brandDark,
+          size: sizeIcon || 'lg'
+        }, void 0)
+      }, void 0), jsx("span", {
+        children: text
+      }, void 0)]
+    }), void 0);
   }
 
-  switch (_type) {
+  switch (type) {
     case 'shadow'  :
       return renderShadow();
 
@@ -7552,7 +7868,7 @@ const Card = ({
   }
 };
 
-function _interopDefault(e){return e&&"object"==typeof e&&"default"in e?e["default"]:e}var React=_interopDefault(React$2);function _defaults2(e,t){for(var n=Object.getOwnPropertyNames(t),a=0;a<n.length;a++){var i=n[a],r=Object.getOwnPropertyDescriptor(t,i);r&&r.configurable&&e[i]===undefined&&Object.defineProperty(e,i,r);}return e}function _extends(){return (_extends=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var a in n)Object.prototype.hasOwnProperty.call(n,a)&&(e[a]=n[a]);}return e}).apply(this,arguments)}function _inheritsLoose(e,t){e.prototype=Object.create(t.prototype),_defaults2(e.prototype.constructor=e,t);}function _objectWithoutPropertiesLoose$1(e,t){if(null==e)return {};var n,a,i={},r=Object.keys(e);for(a=0;a<r.length;a++)n=r[a],0<=t.indexOf(n)||(i[n]=e[n]);return i}function _assertThisInitialized(e){if(void 0===e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return e}var invariant=function(e,t,n,a,i,r,o,s){if(!e){var l;if(t===undefined)l=new Error("Minified exception occurred; use the non-minified dev environment for the full error message and additional helpful warnings.");else {var u=[n,a,i,r,o,s],c=0;(l=new Error(t.replace(/%s/g,function(){return u[c++]}))).name="Invariant Violation";}throw l.framesToPop=1,l}},invariant_1=invariant;function setInputSelection(e,t,n){if("selectionStart"in e&&"selectionEnd"in e)e.selectionStart=t,e.selectionEnd=n;else {var a=e.createTextRange();a.collapse(!0),a.moveStart("character",t),a.moveEnd("character",n-t),a.select();}}function getInputSelection(e){var t=0,n=0;if("selectionStart"in e&&"selectionEnd"in e)t=e.selectionStart,n=e.selectionEnd;else {var a=document.selection.createRange();a.parentElement()===e&&(t=-a.moveStart("character",-e.value.length),n=-a.moveEnd("character",-e.value.length));}return {start:t,end:n,length:n-t}}var defaultFormatChars={9:"[0-9]",a:"[A-Za-z]","*":"[A-Za-z0-9]"},defaultMaskChar="_";function parseMask(e,t,n){var a="",i="",r=null,o=[];if(t===undefined&&(t=defaultMaskChar),null==n&&(n=defaultFormatChars),!e||"string"!=typeof e)return {maskChar:t,formatChars:n,mask:null,prefix:null,lastEditablePosition:null,permanents:[]};var s=!1;return e.split("").forEach(function(e){s=!s&&"\\"===e||(s||!n[e]?(o.push(a.length),a.length===o.length-1&&(i+=e)):r=a.length+1,a+=e,!1);}),{maskChar:t,formatChars:n,prefix:i,mask:a,lastEditablePosition:r,permanents:o}}function isPermanentCharacter(e,t){return -1!==e.permanents.indexOf(t)}function isAllowedCharacter(e,t,n){var a=e.mask,i=e.formatChars;if(!n)return !1;if(isPermanentCharacter(e,t))return a[t]===n;var r=i[a[t]];return new RegExp(r).test(n)}function isEmpty(n,e){return e.split("").every(function(e,t){return isPermanentCharacter(n,t)||!isAllowedCharacter(n,t,e)})}function getFilledLength(e,t){var n=e.maskChar,a=e.prefix;if(!n){for(;t.length>a.length&&isPermanentCharacter(e,t.length-1);)t=t.slice(0,t.length-1);return t.length}for(var i=a.length,r=t.length;r>=a.length;r--){var o=t[r];if(!isPermanentCharacter(e,r)&&isAllowedCharacter(e,r,o)){i=r+1;break}}return i}function isFilled(e,t){return getFilledLength(e,t)===e.mask.length}function formatValue(e,t){var n=e.maskChar,a=e.mask,i=e.prefix;if(!n){for((t=insertString(e,"",t,0)).length<i.length&&(t=i);t.length<a.length&&isPermanentCharacter(e,t.length);)t+=a[t.length];return t}if(t)return insertString(e,formatValue(e,""),t,0);for(var r=0;r<a.length;r++)isPermanentCharacter(e,r)?t+=a[r]:t+=n;return t}function clearRange(n,e,a,t){var i=a+t,r=n.maskChar,o=n.mask,s=n.prefix,l=e.split("");if(r)return l.map(function(e,t){return t<a||i<=t?e:isPermanentCharacter(n,t)?o[t]:r}).join("");for(var u=i;u<l.length;u++)isPermanentCharacter(n,u)&&(l[u]="");return a=Math.max(s.length,a),l.splice(a,i-a),e=l.join(""),formatValue(n,e)}function insertString(r,o,e,s){var l=r.mask,u=r.maskChar,c=r.prefix,t=e.split(""),h=isFilled(r,o);return !u&&s>o.length&&(o+=l.slice(o.length,s)),t.every(function(e){for(;i=e,isPermanentCharacter(r,a=s)&&i!==l[a];){if(s>=o.length&&(o+=l[s]),t=e,n=s,u&&isPermanentCharacter(r,n)&&t===u)return !0;if(++s>=l.length)return !1}var t,n,a,i;return !isAllowedCharacter(r,s,e)&&e!==u||(s<o.length?o=u||h||s<c.length?o.slice(0,s)+e+o.slice(s+1):(o=o.slice(0,s)+e+o.slice(s),formatValue(r,o)):u||(o+=e),++s<l.length)}),o}function getInsertStringLength(a,e,t,i){var r=a.mask,o=a.maskChar,n=t.split(""),s=i;return n.every(function(e){for(;n=e,isPermanentCharacter(a,t=i)&&n!==r[t];)if(++i>=r.length)return !1;var t,n;return (isAllowedCharacter(a,i,e)||e===o)&&i++,i<r.length}),i-s}function getLeftEditablePosition(e,t){for(var n=t;0<=n;--n)if(!isPermanentCharacter(e,n))return n;return null}function getRightEditablePosition(e,t){for(var n=e.mask,a=t;a<n.length;++a)if(!isPermanentCharacter(e,a))return a;return null}function getStringValue(e){return e||0===e?e+"":""}function processChange(e,t,n,a,i){var r=e.mask,o=e.prefix,s=e.lastEditablePosition,l=t,u="",c=0,h=0,f=Math.min(i.start,n.start);if(n.end>i.start?h=(c=getInsertStringLength(e,a,u=l.slice(i.start,n.end),f))?i.length:0:l.length<a.length&&(h=a.length-l.length),l=a,h){if(1===h&&!i.length)f=i.start===n.start?getRightEditablePosition(e,n.start):getLeftEditablePosition(e,n.start);l=clearRange(e,l,f,h);}return l=insertString(e,l,u,f),(f+=c)>=r.length?f=r.length:f<o.length&&!c?f=o.length:f>=o.length&&f<s&&c&&(f=getRightEditablePosition(e,f)),u||(u=null),{value:l=formatValue(e,l),enteredString:u,selection:{start:f,end:f}}}function isWindowsPhoneBrowser(){var e=new RegExp("windows","i"),t=new RegExp("phone","i"),n=navigator.userAgent;return e.test(n)&&t.test(n)}function isFunction(e){return "function"==typeof e}function getRequestAnimationFrame(){return window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame}function getCancelAnimationFrame(){return window.cancelAnimationFrame||window.webkitCancelRequestAnimationFrame||window.webkitCancelAnimationFrame||window.mozCancelAnimationFrame}function defer(e){return (!!getCancelAnimationFrame()?getRequestAnimationFrame():function(){return setTimeout(e,1e3/60)})(e)}function cancelDefer(e){(getCancelAnimationFrame()||clearTimeout)(e);}var InputElement=function(c){function e(e){var f=c.call(this,e)||this;f.focused=!1,f.mounted=!1,f.previousSelection=null,f.selectionDeferId=null,f.saveSelectionLoopDeferId=null,f.saveSelectionLoop=function(){f.previousSelection=f.getSelection(),f.saveSelectionLoopDeferId=defer(f.saveSelectionLoop);},f.runSaveSelectionLoop=function(){null===f.saveSelectionLoopDeferId&&f.saveSelectionLoop();},f.stopSaveSelectionLoop=function(){null!==f.saveSelectionLoopDeferId&&(cancelDefer(f.saveSelectionLoopDeferId),f.saveSelectionLoopDeferId=null,f.previousSelection=null);},f.getInputDOMNode=function(){if(!f.mounted)return null;var e=reactDom.findDOMNode(_assertThisInitialized(_assertThisInitialized(f))),t="undefined"!=typeof window&&e instanceof window.Element;if(e&&!t)return null;if("INPUT"!==e.nodeName&&(e=e.querySelector("input")),!e)throw new Error("react-input-mask: inputComponent doesn't contain input node");return e},f.getInputValue=function(){var e=f.getInputDOMNode();return e?e.value:null},f.setInputValue=function(e){var t=f.getInputDOMNode();t&&(f.value=e,t.value=e);},f.setCursorToEnd=function(){var e=getFilledLength(f.maskOptions,f.value),t=getRightEditablePosition(f.maskOptions,e);null!==t&&f.setCursorPosition(t);},f.setSelection=function(e,t,n){void 0===n&&(n={});var a=f.getInputDOMNode(),i=f.isFocused();a&&i&&(n.deferred||setInputSelection(a,e,t),null!==f.selectionDeferId&&cancelDefer(f.selectionDeferId),f.selectionDeferId=defer(function(){f.selectionDeferId=null,setInputSelection(a,e,t);}),f.previousSelection={start:e,end:t,length:Math.abs(t-e)});},f.getSelection=function(){return getInputSelection(f.getInputDOMNode())},f.getCursorPosition=function(){return f.getSelection().start},f.setCursorPosition=function(e){f.setSelection(e,e);},f.isFocused=function(){return f.focused},f.getBeforeMaskedValueChangeConfig=function(){var e=f.maskOptions,t=e.mask,n=e.maskChar,a=e.permanents,i=e.formatChars;return {mask:t,maskChar:n,permanents:a,alwaysShowMask:!!f.props.alwaysShowMask,formatChars:i}},f.isInputAutofilled=function(e,t,n,a){var i=f.getInputDOMNode();try{if(i.matches(":-webkit-autofill"))return !0}catch(r){}return !f.focused||a.end<n.length&&t.end===e.length},f.onChange=function(e){var t=_assertThisInitialized(_assertThisInitialized(f)).beforePasteState,n=_assertThisInitialized(_assertThisInitialized(f)).previousSelection,a=f.props.beforeMaskedValueChange,i=f.getInputValue(),r=f.value,o=f.getSelection();f.isInputAutofilled(i,o,r,n)&&(r=formatValue(f.maskOptions,""),n={start:0,end:0,length:0}),t&&(n=t.selection,r=t.value,o={start:n.start+i.length,end:n.start+i.length,length:0},i=r.slice(0,n.start)+i+r.slice(n.end),f.beforePasteState=null);var s=processChange(f.maskOptions,i,o,r,n),l=s.enteredString,u=s.selection,c=s.value;if(isFunction(a)){var h=a({value:c,selection:u},{value:r,selection:n},l,f.getBeforeMaskedValueChangeConfig());c=h.value,u=h.selection;}f.setInputValue(c),isFunction(f.props.onChange)&&f.props.onChange(e),f.isWindowsPhoneBrowser?f.setSelection(u.start,u.end,{deferred:!0}):f.setSelection(u.start,u.end);},f.onFocus=function(e){var t=f.props.beforeMaskedValueChange,n=f.maskOptions,a=n.mask,i=n.prefix;if(f.focused=!0,f.mounted=!0,a){if(f.value)getFilledLength(f.maskOptions,f.value)<f.maskOptions.mask.length&&f.setCursorToEnd();else {var r=formatValue(f.maskOptions,i),o=formatValue(f.maskOptions,r),s=getFilledLength(f.maskOptions,o),l=getRightEditablePosition(f.maskOptions,s),u={start:l,end:l};if(isFunction(t)){var c=t({value:o,selection:u},{value:f.value,selection:null},null,f.getBeforeMaskedValueChangeConfig());o=c.value,u=c.selection;}var h=o!==f.getInputValue();h&&f.setInputValue(o),h&&isFunction(f.props.onChange)&&f.props.onChange(e),f.setSelection(u.start,u.end);}f.runSaveSelectionLoop();}isFunction(f.props.onFocus)&&f.props.onFocus(e);},f.onBlur=function(e){var t=f.props.beforeMaskedValueChange,n=f.maskOptions.mask;if(f.stopSaveSelectionLoop(),f.focused=!1,n&&!f.props.alwaysShowMask&&isEmpty(f.maskOptions,f.value)){var a="";if(isFunction(t))a=t({value:a,selection:null},{value:f.value,selection:f.previousSelection},null,f.getBeforeMaskedValueChangeConfig()).value;var i=a!==f.getInputValue();i&&f.setInputValue(a),i&&isFunction(f.props.onChange)&&f.props.onChange(e);}isFunction(f.props.onBlur)&&f.props.onBlur(e);},f.onMouseDown=function(e){if(!f.focused&&document.addEventListener){f.mouseDownX=e.clientX,f.mouseDownY=e.clientY,f.mouseDownTime=(new Date).getTime();var r=function r(e){if(document.removeEventListener("mouseup",r),f.focused){var t=Math.abs(e.clientX-f.mouseDownX),n=Math.abs(e.clientY-f.mouseDownY),a=Math.max(t,n),i=(new Date).getTime()-f.mouseDownTime;(a<=10&&i<=200||a<=5&&i<=300)&&f.setCursorToEnd();}};document.addEventListener("mouseup",r);}isFunction(f.props.onMouseDown)&&f.props.onMouseDown(e);},f.onPaste=function(e){isFunction(f.props.onPaste)&&f.props.onPaste(e),e.defaultPrevented||(f.beforePasteState={value:f.getInputValue(),selection:f.getSelection()},f.setInputValue(""));},f.handleRef=function(e){null==f.props.children&&isFunction(f.props.inputRef)&&f.props.inputRef(e);};var t=e.mask,n=e.maskChar,a=e.formatChars,i=e.alwaysShowMask,r=e.beforeMaskedValueChange,o=e.defaultValue,s=e.value;f.maskOptions=parseMask(t,n,a),null==o&&(o=""),null==s&&(s=o);var l=getStringValue(s);if(f.maskOptions.mask&&(i||l)&&(l=formatValue(f.maskOptions,l),isFunction(r))){var u=e.value;null==e.value&&(u=o),l=r({value:l,selection:null},{value:u=getStringValue(u),selection:null},null,f.getBeforeMaskedValueChangeConfig()).value;}return f.value=l,f}_inheritsLoose(e,c);var t=e.prototype;return t.componentDidMount=function(){this.mounted=!0,this.getInputDOMNode()&&(this.isWindowsPhoneBrowser=isWindowsPhoneBrowser(),this.maskOptions.mask&&this.getInputValue()!==this.value&&this.setInputValue(this.value));},t.componentDidUpdate=function(){var e=this.previousSelection,t=this.props,n=t.beforeMaskedValueChange,a=t.alwaysShowMask,i=t.mask,r=t.maskChar,o=t.formatChars,s=this.maskOptions,l=a||this.isFocused(),u=null!=this.props.value,c=u?getStringValue(this.props.value):this.value,h=e?e.start:null;if(this.maskOptions=parseMask(i,r,o),this.maskOptions.mask){!s.mask&&this.isFocused()&&this.runSaveSelectionLoop();var f=this.maskOptions.mask&&this.maskOptions.mask!==s.mask;if(s.mask||u||(c=this.getInputValue()),(f||this.maskOptions.mask&&(c||l))&&(c=formatValue(this.maskOptions,c)),f){var p=getFilledLength(this.maskOptions,c);(null===h||p<h)&&(h=isFilled(this.maskOptions,c)?p:getRightEditablePosition(this.maskOptions,p));}!this.maskOptions.mask||!isEmpty(this.maskOptions,c)||l||u&&this.props.value||(c="");var d={start:h,end:h};if(isFunction(n)){var m=n({value:c,selection:d},{value:this.value,selection:this.previousSelection},null,this.getBeforeMaskedValueChangeConfig());c=m.value,d=m.selection;}this.value=c;var g=this.getInputValue()!==this.value;g?(this.setInputValue(this.value),this.forceUpdate()):f&&this.forceUpdate();var v=!1;null!=d.start&&null!=d.end&&(v=!e||e.start!==d.start||e.end!==d.end),(v||g)&&this.setSelection(d.start,d.end);}else s.mask&&(this.stopSaveSelectionLoop(),this.forceUpdate());},t.componentWillUnmount=function(){this.mounted=!1,null!==this.selectionDeferId&&cancelDefer(this.selectionDeferId),this.stopSaveSelectionLoop();},t.render=function(){var t,e=this.props,n=(e.children),a=_objectWithoutPropertiesLoose$1(e,["mask","alwaysShowMask","maskChar","formatChars","inputRef","beforeMaskedValueChange","children"]);if(n){isFunction(n)||invariant_1(!1);var i=["onChange","onPaste","onMouseDown","onFocus","onBlur","value","disabled","readOnly"],r=_extends({},a);i.forEach(function(e){return delete r[e]}),t=n(r),i.filter(function(e){return null!=t.props[e]&&t.props[e]!==a[e]}).length&&invariant_1(!1);}else t=React.createElement("input",_extends({ref:this.handleRef},a));var o={onFocus:this.onFocus,onBlur:this.onBlur};return this.maskOptions.mask&&(a.disabled||a.readOnly||(o.onChange=this.onChange,o.onPaste=this.onPaste,o.onMouseDown=this.onMouseDown),null!=a.value&&(o.value=this.value)),t=React.cloneElement(t,o)},e}(React.Component);var reactInputMask_production_min=InputElement;
+function _interopDefault$1(e){return e&&"object"==typeof e&&"default"in e?e["default"]:e}var React$1=_interopDefault$1(React$2);function _defaults2$1(e,t){for(var n=Object.getOwnPropertyNames(t),a=0;a<n.length;a++){var i=n[a],r=Object.getOwnPropertyDescriptor(t,i);r&&r.configurable&&e[i]===undefined&&Object.defineProperty(e,i,r);}return e}function _extends$1(){return (_extends$1=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var a in n)Object.prototype.hasOwnProperty.call(n,a)&&(e[a]=n[a]);}return e}).apply(this,arguments)}function _inheritsLoose$1(e,t){e.prototype=Object.create(t.prototype),_defaults2$1(e.prototype.constructor=e,t);}function _objectWithoutPropertiesLoose$1(e,t){if(null==e)return {};var n,a,i={},r=Object.keys(e);for(a=0;a<r.length;a++)n=r[a],0<=t.indexOf(n)||(i[n]=e[n]);return i}function _assertThisInitialized$1(e){if(void 0===e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return e}var invariant$2=function(e,t,n,a,i,r,o,s){if(!e){var l;if(t===undefined)l=new Error("Minified exception occurred; use the non-minified dev environment for the full error message and additional helpful warnings.");else {var u=[n,a,i,r,o,s],c=0;(l=new Error(t.replace(/%s/g,function(){return u[c++]}))).name="Invariant Violation";}throw l.framesToPop=1,l}},invariant_1=invariant$2;function setInputSelection$1(e,t,n){if("selectionStart"in e&&"selectionEnd"in e)e.selectionStart=t,e.selectionEnd=n;else {var a=e.createTextRange();a.collapse(!0),a.moveStart("character",t),a.moveEnd("character",n-t),a.select();}}function getInputSelection$1(e){var t=0,n=0;if("selectionStart"in e&&"selectionEnd"in e)t=e.selectionStart,n=e.selectionEnd;else {var a=document.selection.createRange();a.parentElement()===e&&(t=-a.moveStart("character",-e.value.length),n=-a.moveEnd("character",-e.value.length));}return {start:t,end:n,length:n-t}}var defaultFormatChars$1={9:"[0-9]",a:"[A-Za-z]","*":"[A-Za-z0-9]"},defaultMaskChar$1="_";function parseMask$1(e,t,n){var a="",i="",r=null,o=[];if(t===undefined&&(t=defaultMaskChar$1),null==n&&(n=defaultFormatChars$1),!e||"string"!=typeof e)return {maskChar:t,formatChars:n,mask:null,prefix:null,lastEditablePosition:null,permanents:[]};var s=!1;return e.split("").forEach(function(e){s=!s&&"\\"===e||(s||!n[e]?(o.push(a.length),a.length===o.length-1&&(i+=e)):r=a.length+1,a+=e,!1);}),{maskChar:t,formatChars:n,prefix:i,mask:a,lastEditablePosition:r,permanents:o}}function isPermanentCharacter$1(e,t){return -1!==e.permanents.indexOf(t)}function isAllowedCharacter$1(e,t,n){var a=e.mask,i=e.formatChars;if(!n)return !1;if(isPermanentCharacter$1(e,t))return a[t]===n;var r=i[a[t]];return new RegExp(r).test(n)}function isEmpty$1(n,e){return e.split("").every(function(e,t){return isPermanentCharacter$1(n,t)||!isAllowedCharacter$1(n,t,e)})}function getFilledLength$1(e,t){var n=e.maskChar,a=e.prefix;if(!n){for(;t.length>a.length&&isPermanentCharacter$1(e,t.length-1);)t=t.slice(0,t.length-1);return t.length}for(var i=a.length,r=t.length;r>=a.length;r--){var o=t[r];if(!isPermanentCharacter$1(e,r)&&isAllowedCharacter$1(e,r,o)){i=r+1;break}}return i}function isFilled$1(e,t){return getFilledLength$1(e,t)===e.mask.length}function formatValue$1(e,t){var n=e.maskChar,a=e.mask,i=e.prefix;if(!n){for((t=insertString$1(e,"",t,0)).length<i.length&&(t=i);t.length<a.length&&isPermanentCharacter$1(e,t.length);)t+=a[t.length];return t}if(t)return insertString$1(e,formatValue$1(e,""),t,0);for(var r=0;r<a.length;r++)isPermanentCharacter$1(e,r)?t+=a[r]:t+=n;return t}function clearRange$1(n,e,a,t){var i=a+t,r=n.maskChar,o=n.mask,s=n.prefix,l=e.split("");if(r)return l.map(function(e,t){return t<a||i<=t?e:isPermanentCharacter$1(n,t)?o[t]:r}).join("");for(var u=i;u<l.length;u++)isPermanentCharacter$1(n,u)&&(l[u]="");return a=Math.max(s.length,a),l.splice(a,i-a),e=l.join(""),formatValue$1(n,e)}function insertString$1(r,o,e,s){var l=r.mask,u=r.maskChar,c=r.prefix,t=e.split(""),h=isFilled$1(r,o);return !u&&s>o.length&&(o+=l.slice(o.length,s)),t.every(function(e){for(;i=e,isPermanentCharacter$1(r,a=s)&&i!==l[a];){if(s>=o.length&&(o+=l[s]),t=e,n=s,u&&isPermanentCharacter$1(r,n)&&t===u)return !0;if(++s>=l.length)return !1}var t,n,a,i;return !isAllowedCharacter$1(r,s,e)&&e!==u||(s<o.length?o=u||h||s<c.length?o.slice(0,s)+e+o.slice(s+1):(o=o.slice(0,s)+e+o.slice(s),formatValue$1(r,o)):u||(o+=e),++s<l.length)}),o}function getInsertStringLength$1(a,e,t,i){var r=a.mask,o=a.maskChar,n=t.split(""),s=i;return n.every(function(e){for(;n=e,isPermanentCharacter$1(a,t=i)&&n!==r[t];)if(++i>=r.length)return !1;var t,n;return (isAllowedCharacter$1(a,i,e)||e===o)&&i++,i<r.length}),i-s}function getLeftEditablePosition$1(e,t){for(var n=t;0<=n;--n)if(!isPermanentCharacter$1(e,n))return n;return null}function getRightEditablePosition$1(e,t){for(var n=e.mask,a=t;a<n.length;++a)if(!isPermanentCharacter$1(e,a))return a;return null}function getStringValue$1(e){return e||0===e?e+"":""}function processChange$1(e,t,n,a,i){var r=e.mask,o=e.prefix,s=e.lastEditablePosition,l=t,u="",c=0,h=0,f=Math.min(i.start,n.start);if(n.end>i.start?h=(c=getInsertStringLength$1(e,a,u=l.slice(i.start,n.end),f))?i.length:0:l.length<a.length&&(h=a.length-l.length),l=a,h){if(1===h&&!i.length)f=i.start===n.start?getRightEditablePosition$1(e,n.start):getLeftEditablePosition$1(e,n.start);l=clearRange$1(e,l,f,h);}return l=insertString$1(e,l,u,f),(f+=c)>=r.length?f=r.length:f<o.length&&!c?f=o.length:f>=o.length&&f<s&&c&&(f=getRightEditablePosition$1(e,f)),u||(u=null),{value:l=formatValue$1(e,l),enteredString:u,selection:{start:f,end:f}}}function isWindowsPhoneBrowser$1(){var e=new RegExp("windows","i"),t=new RegExp("phone","i"),n=navigator.userAgent;return e.test(n)&&t.test(n)}function isFunction$1(e){return "function"==typeof e}function getRequestAnimationFrame$1(){return window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame}function getCancelAnimationFrame$1(){return window.cancelAnimationFrame||window.webkitCancelRequestAnimationFrame||window.webkitCancelAnimationFrame||window.mozCancelAnimationFrame}function defer$1(e){return (!!getCancelAnimationFrame$1()?getRequestAnimationFrame$1():function(){return setTimeout(e,1e3/60)})(e)}function cancelDefer$1(e){(getCancelAnimationFrame$1()||clearTimeout)(e);}var InputElement$1=function(c){function e(e){var f=c.call(this,e)||this;f.focused=!1,f.mounted=!1,f.previousSelection=null,f.selectionDeferId=null,f.saveSelectionLoopDeferId=null,f.saveSelectionLoop=function(){f.previousSelection=f.getSelection(),f.saveSelectionLoopDeferId=defer$1(f.saveSelectionLoop);},f.runSaveSelectionLoop=function(){null===f.saveSelectionLoopDeferId&&f.saveSelectionLoop();},f.stopSaveSelectionLoop=function(){null!==f.saveSelectionLoopDeferId&&(cancelDefer$1(f.saveSelectionLoopDeferId),f.saveSelectionLoopDeferId=null,f.previousSelection=null);},f.getInputDOMNode=function(){if(!f.mounted)return null;var e=reactDom.findDOMNode(_assertThisInitialized$1(_assertThisInitialized$1(f))),t="undefined"!=typeof window&&e instanceof window.Element;if(e&&!t)return null;if("INPUT"!==e.nodeName&&(e=e.querySelector("input")),!e)throw new Error("react-input-mask: inputComponent doesn't contain input node");return e},f.getInputValue=function(){var e=f.getInputDOMNode();return e?e.value:null},f.setInputValue=function(e){var t=f.getInputDOMNode();t&&(f.value=e,t.value=e);},f.setCursorToEnd=function(){var e=getFilledLength$1(f.maskOptions,f.value),t=getRightEditablePosition$1(f.maskOptions,e);null!==t&&f.setCursorPosition(t);},f.setSelection=function(e,t,n){void 0===n&&(n={});var a=f.getInputDOMNode(),i=f.isFocused();a&&i&&(n.deferred||setInputSelection$1(a,e,t),null!==f.selectionDeferId&&cancelDefer$1(f.selectionDeferId),f.selectionDeferId=defer$1(function(){f.selectionDeferId=null,setInputSelection$1(a,e,t);}),f.previousSelection={start:e,end:t,length:Math.abs(t-e)});},f.getSelection=function(){return getInputSelection$1(f.getInputDOMNode())},f.getCursorPosition=function(){return f.getSelection().start},f.setCursorPosition=function(e){f.setSelection(e,e);},f.isFocused=function(){return f.focused},f.getBeforeMaskedValueChangeConfig=function(){var e=f.maskOptions,t=e.mask,n=e.maskChar,a=e.permanents,i=e.formatChars;return {mask:t,maskChar:n,permanents:a,alwaysShowMask:!!f.props.alwaysShowMask,formatChars:i}},f.isInputAutofilled=function(e,t,n,a){var i=f.getInputDOMNode();try{if(i.matches(":-webkit-autofill"))return !0}catch(r){}return !f.focused||a.end<n.length&&t.end===e.length},f.onChange=function(e){var t=_assertThisInitialized$1(_assertThisInitialized$1(f)).beforePasteState,n=_assertThisInitialized$1(_assertThisInitialized$1(f)).previousSelection,a=f.props.beforeMaskedValueChange,i=f.getInputValue(),r=f.value,o=f.getSelection();f.isInputAutofilled(i,o,r,n)&&(r=formatValue$1(f.maskOptions,""),n={start:0,end:0,length:0}),t&&(n=t.selection,r=t.value,o={start:n.start+i.length,end:n.start+i.length,length:0},i=r.slice(0,n.start)+i+r.slice(n.end),f.beforePasteState=null);var s=processChange$1(f.maskOptions,i,o,r,n),l=s.enteredString,u=s.selection,c=s.value;if(isFunction$1(a)){var h=a({value:c,selection:u},{value:r,selection:n},l,f.getBeforeMaskedValueChangeConfig());c=h.value,u=h.selection;}f.setInputValue(c),isFunction$1(f.props.onChange)&&f.props.onChange(e),f.isWindowsPhoneBrowser?f.setSelection(u.start,u.end,{deferred:!0}):f.setSelection(u.start,u.end);},f.onFocus=function(e){var t=f.props.beforeMaskedValueChange,n=f.maskOptions,a=n.mask,i=n.prefix;if(f.focused=!0,f.mounted=!0,a){if(f.value)getFilledLength$1(f.maskOptions,f.value)<f.maskOptions.mask.length&&f.setCursorToEnd();else {var r=formatValue$1(f.maskOptions,i),o=formatValue$1(f.maskOptions,r),s=getFilledLength$1(f.maskOptions,o),l=getRightEditablePosition$1(f.maskOptions,s),u={start:l,end:l};if(isFunction$1(t)){var c=t({value:o,selection:u},{value:f.value,selection:null},null,f.getBeforeMaskedValueChangeConfig());o=c.value,u=c.selection;}var h=o!==f.getInputValue();h&&f.setInputValue(o),h&&isFunction$1(f.props.onChange)&&f.props.onChange(e),f.setSelection(u.start,u.end);}f.runSaveSelectionLoop();}isFunction$1(f.props.onFocus)&&f.props.onFocus(e);},f.onBlur=function(e){var t=f.props.beforeMaskedValueChange,n=f.maskOptions.mask;if(f.stopSaveSelectionLoop(),f.focused=!1,n&&!f.props.alwaysShowMask&&isEmpty$1(f.maskOptions,f.value)){var a="";if(isFunction$1(t))a=t({value:a,selection:null},{value:f.value,selection:f.previousSelection},null,f.getBeforeMaskedValueChangeConfig()).value;var i=a!==f.getInputValue();i&&f.setInputValue(a),i&&isFunction$1(f.props.onChange)&&f.props.onChange(e);}isFunction$1(f.props.onBlur)&&f.props.onBlur(e);},f.onMouseDown=function(e){if(!f.focused&&document.addEventListener){f.mouseDownX=e.clientX,f.mouseDownY=e.clientY,f.mouseDownTime=(new Date).getTime();var r=function r(e){if(document.removeEventListener("mouseup",r),f.focused){var t=Math.abs(e.clientX-f.mouseDownX),n=Math.abs(e.clientY-f.mouseDownY),a=Math.max(t,n),i=(new Date).getTime()-f.mouseDownTime;(a<=10&&i<=200||a<=5&&i<=300)&&f.setCursorToEnd();}};document.addEventListener("mouseup",r);}isFunction$1(f.props.onMouseDown)&&f.props.onMouseDown(e);},f.onPaste=function(e){isFunction$1(f.props.onPaste)&&f.props.onPaste(e),e.defaultPrevented||(f.beforePasteState={value:f.getInputValue(),selection:f.getSelection()},f.setInputValue(""));},f.handleRef=function(e){null==f.props.children&&isFunction$1(f.props.inputRef)&&f.props.inputRef(e);};var t=e.mask,n=e.maskChar,a=e.formatChars,i=e.alwaysShowMask,r=e.beforeMaskedValueChange,o=e.defaultValue,s=e.value;f.maskOptions=parseMask$1(t,n,a),null==o&&(o=""),null==s&&(s=o);var l=getStringValue$1(s);if(f.maskOptions.mask&&(i||l)&&(l=formatValue$1(f.maskOptions,l),isFunction$1(r))){var u=e.value;null==e.value&&(u=o),l=r({value:l,selection:null},{value:u=getStringValue$1(u),selection:null},null,f.getBeforeMaskedValueChangeConfig()).value;}return f.value=l,f}_inheritsLoose$1(e,c);var t=e.prototype;return t.componentDidMount=function(){this.mounted=!0,this.getInputDOMNode()&&(this.isWindowsPhoneBrowser=isWindowsPhoneBrowser$1(),this.maskOptions.mask&&this.getInputValue()!==this.value&&this.setInputValue(this.value));},t.componentDidUpdate=function(){var e=this.previousSelection,t=this.props,n=t.beforeMaskedValueChange,a=t.alwaysShowMask,i=t.mask,r=t.maskChar,o=t.formatChars,s=this.maskOptions,l=a||this.isFocused(),u=null!=this.props.value,c=u?getStringValue$1(this.props.value):this.value,h=e?e.start:null;if(this.maskOptions=parseMask$1(i,r,o),this.maskOptions.mask){!s.mask&&this.isFocused()&&this.runSaveSelectionLoop();var f=this.maskOptions.mask&&this.maskOptions.mask!==s.mask;if(s.mask||u||(c=this.getInputValue()),(f||this.maskOptions.mask&&(c||l))&&(c=formatValue$1(this.maskOptions,c)),f){var p=getFilledLength$1(this.maskOptions,c);(null===h||p<h)&&(h=isFilled$1(this.maskOptions,c)?p:getRightEditablePosition$1(this.maskOptions,p));}!this.maskOptions.mask||!isEmpty$1(this.maskOptions,c)||l||u&&this.props.value||(c="");var d={start:h,end:h};if(isFunction$1(n)){var m=n({value:c,selection:d},{value:this.value,selection:this.previousSelection},null,this.getBeforeMaskedValueChangeConfig());c=m.value,d=m.selection;}this.value=c;var g=this.getInputValue()!==this.value;g?(this.setInputValue(this.value),this.forceUpdate()):f&&this.forceUpdate();var v=!1;null!=d.start&&null!=d.end&&(v=!e||e.start!==d.start||e.end!==d.end),(v||g)&&this.setSelection(d.start,d.end);}else s.mask&&(this.stopSaveSelectionLoop(),this.forceUpdate());},t.componentWillUnmount=function(){this.mounted=!1,null!==this.selectionDeferId&&cancelDefer$1(this.selectionDeferId),this.stopSaveSelectionLoop();},t.render=function(){var t,e=this.props,n=(e.children),a=_objectWithoutPropertiesLoose$1(e,["mask","alwaysShowMask","maskChar","formatChars","inputRef","beforeMaskedValueChange","children"]);if(n){isFunction$1(n)||invariant_1(!1);var i=["onChange","onPaste","onMouseDown","onFocus","onBlur","value","disabled","readOnly"],r=_extends$1({},a);i.forEach(function(e){return delete r[e]}),t=n(r),i.filter(function(e){return null!=t.props[e]&&t.props[e]!==a[e]}).length&&invariant_1(!1);}else t=React$1.createElement("input",_extends$1({ref:this.handleRef},a));var o={onFocus:this.onFocus,onBlur:this.onBlur};return this.maskOptions.mask&&(a.disabled||a.readOnly||(o.onChange=this.onChange,o.onPaste=this.onPaste,o.onMouseDown=this.onMouseDown),null!=a.value&&(o.value=this.value)),t=React$1.cloneElement(t,o)},e}(React$1.Component);var reactInputMask_production_min=InputElement$1;
 
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -7618,10 +7934,10 @@ var browser = invariant$1;
 
 var __DEV__ = process.env.NODE_ENV !== 'production';
 
-var warning = function() {};
+var warning$1 = function() {};
 
 if (__DEV__) {
-  var printWarning$2 = function printWarning(format, args) {
+  var printWarning = function printWarning(format, args) {
     var len = arguments.length;
     args = new Array(len > 1 ? len - 1 : 0);
     for (var key = 1; key < len; key++) {
@@ -7643,7 +7959,7 @@ if (__DEV__) {
     } catch (x) {}
   };
 
-  warning = function(condition, format, args) {
+  warning$1 = function(condition, format, args) {
     var len = arguments.length;
     args = new Array(len > 2 ? len - 2 : 0);
     for (var key = 2; key < len; key++) {
@@ -7656,24 +7972,24 @@ if (__DEV__) {
       );
     }
     if (!condition) {
-      printWarning$2.apply(null, [format].concat(args));
+      printWarning.apply(null, [format].concat(args));
     }
   };
 }
 
-var warning_1 = warning;
+var warning_1 = warning$1;
 
-function _interopDefault$1 (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
+function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
-var React$1 = _interopDefault$1(React$2);
+var React = _interopDefault(React$2);
 
-var invariant$2 = _interopDefault$1(browser);
-var warning$1 = _interopDefault$1(warning_1);
+var invariant = _interopDefault(browser);
+var warning = _interopDefault(warning_1);
 
-function _defaults2$1(obj, defaults) { var keys = Object.getOwnPropertyNames(defaults); for (var i = 0; i < keys.length; i++) { var key = keys[i]; var value = Object.getOwnPropertyDescriptor(defaults, key); if (value && value.configurable && obj[key] === undefined) { Object.defineProperty(obj, key, value); } } return obj; }
+function _defaults2(obj, defaults) { var keys = Object.getOwnPropertyNames(defaults); for (var i = 0; i < keys.length; i++) { var key = keys[i]; var value = Object.getOwnPropertyDescriptor(defaults, key); if (value && value.configurable && obj[key] === undefined) { Object.defineProperty(obj, key, value); } } return obj; }
 
-function _extends$1() {
-  _extends$1 = Object.assign || function (target) {
+function _extends() {
+  _extends = Object.assign || function (target) {
     for (var i = 1; i < arguments.length; i++) {
       var source = arguments[i];
 
@@ -7687,17 +8003,17 @@ function _extends$1() {
     return target;
   };
 
-  return _extends$1.apply(this, arguments);
+  return _extends.apply(this, arguments);
 }
 
-function _inheritsLoose$1(subClass, superClass) {
+function _inheritsLoose(subClass, superClass) {
   subClass.prototype = Object.create(superClass.prototype);
   subClass.prototype.constructor = subClass;
 
-  _defaults2$1(subClass, superClass);
+  _defaults2(subClass, superClass);
 }
 
-function _objectWithoutPropertiesLoose$2(source, excluded) {
+function _objectWithoutPropertiesLoose(source, excluded) {
   if (source == null) return {};
   var target = {};
   var sourceKeys = Object.keys(source);
@@ -7712,7 +8028,7 @@ function _objectWithoutPropertiesLoose$2(source, excluded) {
   return target;
 }
 
-function _assertThisInitialized$1(self) {
+function _assertThisInitialized(self) {
   if (self === void 0) {
     throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
   }
@@ -7720,7 +8036,7 @@ function _assertThisInitialized$1(self) {
   return self;
 }
 
-function setInputSelection$1(input, start, end) {
+function setInputSelection(input, start, end) {
   if ('selectionStart' in input && 'selectionEnd' in input) {
     input.selectionStart = start;
     input.selectionEnd = end;
@@ -7732,7 +8048,7 @@ function setInputSelection$1(input, start, end) {
     range.select();
   }
 }
-function getInputSelection$1(input) {
+function getInputSelection(input) {
   var start = 0;
   var end = 0;
 
@@ -7755,25 +8071,25 @@ function getInputSelection$1(input) {
   };
 }
 
-var defaultFormatChars$1 = {
+var defaultFormatChars = {
   '9': '[0-9]',
   'a': '[A-Za-z]',
   '*': '[A-Za-z0-9]'
 };
-var defaultMaskChar$1 = '_';
+var defaultMaskChar = '_';
 
-function parseMask$1 (mask, maskChar, formatChars) {
+function parseMask (mask, maskChar, formatChars) {
   var parsedMaskString = '';
   var prefix = '';
   var lastEditablePosition = null;
   var permanents = [];
 
   if (maskChar === undefined) {
-    maskChar = defaultMaskChar$1;
+    maskChar = defaultMaskChar;
   }
 
   if (formatChars == null) {
-    formatChars = defaultFormatChars$1;
+    formatChars = defaultFormatChars;
   }
 
   if (!mask || typeof mask !== 'string') {
@@ -7817,10 +8133,10 @@ function parseMask$1 (mask, maskChar, formatChars) {
 }
 
 /* eslint no-use-before-define: ["error", { functions: false }] */
-function isPermanentCharacter$1(maskOptions, pos) {
+function isPermanentCharacter(maskOptions, pos) {
   return maskOptions.permanents.indexOf(pos) !== -1;
 }
-function isAllowedCharacter$1(maskOptions, pos, character) {
+function isAllowedCharacter(maskOptions, pos, character) {
   var mask = maskOptions.mask,
       formatChars = maskOptions.formatChars;
 
@@ -7828,7 +8144,7 @@ function isAllowedCharacter$1(maskOptions, pos, character) {
     return false;
   }
 
-  if (isPermanentCharacter$1(maskOptions, pos)) {
+  if (isPermanentCharacter(maskOptions, pos)) {
     return mask[pos] === character;
   }
 
@@ -7836,17 +8152,17 @@ function isAllowedCharacter$1(maskOptions, pos, character) {
   var charRule = formatChars[ruleChar];
   return new RegExp(charRule).test(character);
 }
-function isEmpty$1(maskOptions, value) {
+function isEmpty(maskOptions, value) {
   return value.split('').every(function (character, i) {
-    return isPermanentCharacter$1(maskOptions, i) || !isAllowedCharacter$1(maskOptions, i, character);
+    return isPermanentCharacter(maskOptions, i) || !isAllowedCharacter(maskOptions, i, character);
   });
 }
-function getFilledLength$1(maskOptions, value) {
+function getFilledLength(maskOptions, value) {
   var maskChar = maskOptions.maskChar,
       prefix = maskOptions.prefix;
 
   if (!maskChar) {
-    while (value.length > prefix.length && isPermanentCharacter$1(maskOptions, value.length - 1)) {
+    while (value.length > prefix.length && isPermanentCharacter(maskOptions, value.length - 1)) {
       value = value.slice(0, value.length - 1);
     }
 
@@ -7857,7 +8173,7 @@ function getFilledLength$1(maskOptions, value) {
 
   for (var i = value.length; i >= prefix.length; i--) {
     var character = value[i];
-    var isEnteredCharacter = !isPermanentCharacter$1(maskOptions, i) && isAllowedCharacter$1(maskOptions, i, character);
+    var isEnteredCharacter = !isPermanentCharacter(maskOptions, i) && isAllowedCharacter(maskOptions, i, character);
 
     if (isEnteredCharacter) {
       filledLength = i + 1;
@@ -7867,22 +8183,22 @@ function getFilledLength$1(maskOptions, value) {
 
   return filledLength;
 }
-function isFilled$1(maskOptions, value) {
-  return getFilledLength$1(maskOptions, value) === maskOptions.mask.length;
+function isFilled(maskOptions, value) {
+  return getFilledLength(maskOptions, value) === maskOptions.mask.length;
 }
-function formatValue$1(maskOptions, value) {
+function formatValue(maskOptions, value) {
   var maskChar = maskOptions.maskChar,
       mask = maskOptions.mask,
       prefix = maskOptions.prefix;
 
   if (!maskChar) {
-    value = insertString$1(maskOptions, '', value, 0);
+    value = insertString(maskOptions, '', value, 0);
 
     if (value.length < prefix.length) {
       value = prefix;
     }
 
-    while (value.length < mask.length && isPermanentCharacter$1(maskOptions, value.length)) {
+    while (value.length < mask.length && isPermanentCharacter(maskOptions, value.length)) {
       value += mask[value.length];
     }
 
@@ -7890,12 +8206,12 @@ function formatValue$1(maskOptions, value) {
   }
 
   if (value) {
-    var emptyValue = formatValue$1(maskOptions, '');
-    return insertString$1(maskOptions, emptyValue, value, 0);
+    var emptyValue = formatValue(maskOptions, '');
+    return insertString(maskOptions, emptyValue, value, 0);
   }
 
   for (var i = 0; i < mask.length; i++) {
-    if (isPermanentCharacter$1(maskOptions, i)) {
+    if (isPermanentCharacter(maskOptions, i)) {
       value += mask[i];
     } else {
       value += maskChar;
@@ -7904,7 +8220,7 @@ function formatValue$1(maskOptions, value) {
 
   return value;
 }
-function clearRange$1(maskOptions, value, start, len) {
+function clearRange(maskOptions, value, start, len) {
   var end = start + len;
   var maskChar = maskOptions.maskChar,
       mask = maskOptions.mask,
@@ -7914,7 +8230,7 @@ function clearRange$1(maskOptions, value, start, len) {
   if (!maskChar) {
     // remove any permanent chars after clear range, they will be added back by formatValue
     for (var i = end; i < arrayValue.length; i++) {
-      if (isPermanentCharacter$1(maskOptions, i)) {
+      if (isPermanentCharacter(maskOptions, i)) {
         arrayValue[i] = '';
       }
     }
@@ -7922,7 +8238,7 @@ function clearRange$1(maskOptions, value, start, len) {
     start = Math.max(prefix.length, start);
     arrayValue.splice(start, end - start);
     value = arrayValue.join('');
-    return formatValue$1(maskOptions, value);
+    return formatValue(maskOptions, value);
   }
 
   return arrayValue.map(function (character, i) {
@@ -7930,26 +8246,26 @@ function clearRange$1(maskOptions, value, start, len) {
       return character;
     }
 
-    if (isPermanentCharacter$1(maskOptions, i)) {
+    if (isPermanentCharacter(maskOptions, i)) {
       return mask[i];
     }
 
     return maskChar;
   }).join('');
 }
-function insertString$1(maskOptions, value, insertStr, insertPosition) {
+function insertString(maskOptions, value, insertStr, insertPosition) {
   var mask = maskOptions.mask,
       maskChar = maskOptions.maskChar,
       prefix = maskOptions.prefix;
   var arrayInsertStr = insertStr.split('');
-  var isInputFilled = isFilled$1(maskOptions, value);
+  var isInputFilled = isFilled(maskOptions, value);
 
   var isUsablePosition = function isUsablePosition(pos, character) {
-    return !isPermanentCharacter$1(maskOptions, pos) || character === mask[pos];
+    return !isPermanentCharacter(maskOptions, pos) || character === mask[pos];
   };
 
   var isUsableCharacter = function isUsableCharacter(character, pos) {
-    return !maskChar || !isPermanentCharacter$1(maskOptions, pos) || character !== maskChar;
+    return !maskChar || !isPermanentCharacter(maskOptions, pos) || character !== maskChar;
   };
 
   if (!maskChar && insertPosition > value.length) {
@@ -7973,7 +8289,7 @@ function insertString$1(maskOptions, value, insertStr, insertPosition) {
       }
     }
 
-    var isAllowed = isAllowedCharacter$1(maskOptions, insertPosition, insertCharacter) || insertCharacter === maskChar;
+    var isAllowed = isAllowedCharacter(maskOptions, insertPosition, insertCharacter) || insertCharacter === maskChar;
 
     if (!isAllowed) {
       return true;
@@ -7984,7 +8300,7 @@ function insertString$1(maskOptions, value, insertStr, insertPosition) {
         value = value.slice(0, insertPosition) + insertCharacter + value.slice(insertPosition + 1);
       } else {
         value = value.slice(0, insertPosition) + insertCharacter + value.slice(insertPosition);
-        value = formatValue$1(maskOptions, value);
+        value = formatValue(maskOptions, value);
       }
     } else if (!maskChar) {
       value += insertCharacter;
@@ -7996,14 +8312,14 @@ function insertString$1(maskOptions, value, insertStr, insertPosition) {
   });
   return value;
 }
-function getInsertStringLength$1(maskOptions, value, insertStr, insertPosition) {
+function getInsertStringLength(maskOptions, value, insertStr, insertPosition) {
   var mask = maskOptions.mask,
       maskChar = maskOptions.maskChar;
   var arrayInsertStr = insertStr.split('');
   var initialInsertPosition = insertPosition;
 
   var isUsablePosition = function isUsablePosition(pos, character) {
-    return !isPermanentCharacter$1(maskOptions, pos) || character === mask[pos];
+    return !isPermanentCharacter(maskOptions, pos) || character === mask[pos];
   };
 
   arrayInsertStr.every(function (insertCharacter) {
@@ -8015,7 +8331,7 @@ function getInsertStringLength$1(maskOptions, value, insertStr, insertPosition) 
       }
     }
 
-    var isAllowed = isAllowedCharacter$1(maskOptions, insertPosition, insertCharacter) || insertCharacter === maskChar;
+    var isAllowed = isAllowedCharacter(maskOptions, insertPosition, insertCharacter) || insertCharacter === maskChar;
 
     if (isAllowed) {
       insertPosition++;
@@ -8026,31 +8342,31 @@ function getInsertStringLength$1(maskOptions, value, insertStr, insertPosition) 
   });
   return insertPosition - initialInsertPosition;
 }
-function getLeftEditablePosition$1(maskOptions, pos) {
+function getLeftEditablePosition(maskOptions, pos) {
   for (var i = pos; i >= 0; --i) {
-    if (!isPermanentCharacter$1(maskOptions, i)) {
+    if (!isPermanentCharacter(maskOptions, i)) {
       return i;
     }
   }
 
   return null;
 }
-function getRightEditablePosition$1(maskOptions, pos) {
+function getRightEditablePosition(maskOptions, pos) {
   var mask = maskOptions.mask;
 
   for (var i = pos; i < mask.length; ++i) {
-    if (!isPermanentCharacter$1(maskOptions, i)) {
+    if (!isPermanentCharacter(maskOptions, i)) {
       return i;
     }
   }
 
   return null;
 }
-function getStringValue$1(value) {
+function getStringValue(value) {
   return !value && value !== 0 ? '' : value + '';
 }
 
-function processChange$1(maskOptions, value, selection, previousValue, previousSelection) {
+function processChange(maskOptions, value, selection, previousValue, previousSelection) {
   var mask = maskOptions.mask,
       prefix = maskOptions.prefix,
       lastEditablePosition = maskOptions.lastEditablePosition;
@@ -8062,7 +8378,7 @@ function processChange$1(maskOptions, value, selection, previousValue, previousS
 
   if (selection.end > previousSelection.start) {
     enteredString = newValue.slice(previousSelection.start, selection.end);
-    formattedEnteredStringLength = getInsertStringLength$1(maskOptions, previousValue, enteredString, cursorPosition);
+    formattedEnteredStringLength = getInsertStringLength(maskOptions, previousValue, enteredString, cursorPosition);
 
     if (!formattedEnteredStringLength) {
       removedLength = 0;
@@ -8078,13 +8394,13 @@ function processChange$1(maskOptions, value, selection, previousValue, previousS
   if (removedLength) {
     if (removedLength === 1 && !previousSelection.length) {
       var deleteFromRight = previousSelection.start === selection.start;
-      cursorPosition = deleteFromRight ? getRightEditablePosition$1(maskOptions, selection.start) : getLeftEditablePosition$1(maskOptions, selection.start);
+      cursorPosition = deleteFromRight ? getRightEditablePosition(maskOptions, selection.start) : getLeftEditablePosition(maskOptions, selection.start);
     }
 
-    newValue = clearRange$1(maskOptions, newValue, cursorPosition, removedLength);
+    newValue = clearRange(maskOptions, newValue, cursorPosition, removedLength);
   }
 
-  newValue = insertString$1(maskOptions, newValue, enteredString, cursorPosition);
+  newValue = insertString(maskOptions, newValue, enteredString, cursorPosition);
   cursorPosition = cursorPosition + formattedEnteredStringLength;
 
   if (cursorPosition >= mask.length) {
@@ -8092,10 +8408,10 @@ function processChange$1(maskOptions, value, selection, previousValue, previousS
   } else if (cursorPosition < prefix.length && !formattedEnteredStringLength) {
     cursorPosition = prefix.length;
   } else if (cursorPosition >= prefix.length && cursorPosition < lastEditablePosition && formattedEnteredStringLength) {
-    cursorPosition = getRightEditablePosition$1(maskOptions, cursorPosition);
+    cursorPosition = getRightEditablePosition(maskOptions, cursorPosition);
   }
 
-  newValue = formatValue$1(maskOptions, newValue);
+  newValue = formatValue(maskOptions, newValue);
 
   if (!enteredString) {
     enteredString = null;
@@ -8111,31 +8427,31 @@ function processChange$1(maskOptions, value, selection, previousValue, previousS
   };
 }
 
-function isWindowsPhoneBrowser$1() {
+function isWindowsPhoneBrowser() {
   var windows = new RegExp('windows', 'i');
   var phone = new RegExp('phone', 'i');
   var ua = navigator.userAgent;
   return windows.test(ua) && phone.test(ua);
 }
 
-function isFunction$1(value) {
+function isFunction(value) {
   return typeof value === 'function';
 }
 
-function getRequestAnimationFrame$1() {
+function getRequestAnimationFrame() {
   return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame;
 }
 
-function getCancelAnimationFrame$1() {
+function getCancelAnimationFrame() {
   return window.cancelAnimationFrame || window.webkitCancelRequestAnimationFrame || window.webkitCancelAnimationFrame || window.mozCancelAnimationFrame;
 }
 
-function defer$1(fn) {
-  var hasCancelAnimationFrame = !!getCancelAnimationFrame$1();
+function defer(fn) {
+  var hasCancelAnimationFrame = !!getCancelAnimationFrame();
   var deferFn;
 
   if (hasCancelAnimationFrame) {
-    deferFn = getRequestAnimationFrame$1();
+    deferFn = getRequestAnimationFrame();
   } else {
     deferFn = function deferFn() {
       return setTimeout(fn, 1000 / 60);
@@ -8144,15 +8460,15 @@ function defer$1(fn) {
 
   return deferFn(fn);
 }
-function cancelDefer$1(deferId) {
-  var cancelFn = getCancelAnimationFrame$1() || clearTimeout;
+function cancelDefer(deferId) {
+  var cancelFn = getCancelAnimationFrame() || clearTimeout;
   cancelFn(deferId);
 }
 
-var InputElement$1 =
+var InputElement =
 /*#__PURE__*/
 function (_React$Component) {
-  _inheritsLoose$1(InputElement, _React$Component);
+  _inheritsLoose(InputElement, _React$Component);
 
   function InputElement(props) {
     var _this;
@@ -8166,7 +8482,7 @@ function (_React$Component) {
 
     _this.saveSelectionLoop = function () {
       _this.previousSelection = _this.getSelection();
-      _this.saveSelectionLoopDeferId = defer$1(_this.saveSelectionLoop);
+      _this.saveSelectionLoopDeferId = defer(_this.saveSelectionLoop);
     };
 
     _this.runSaveSelectionLoop = function () {
@@ -8177,7 +8493,7 @@ function (_React$Component) {
 
     _this.stopSaveSelectionLoop = function () {
       if (_this.saveSelectionLoopDeferId !== null) {
-        cancelDefer$1(_this.saveSelectionLoopDeferId);
+        cancelDefer(_this.saveSelectionLoopDeferId);
         _this.saveSelectionLoopDeferId = null;
         _this.previousSelection = null;
       }
@@ -8188,7 +8504,7 @@ function (_React$Component) {
         return null;
       }
 
-      var input = reactDom.findDOMNode(_assertThisInitialized$1(_assertThisInitialized$1(_this)));
+      var input = reactDom.findDOMNode(_assertThisInitialized(_assertThisInitialized(_this)));
       var isDOMNode = typeof window !== 'undefined' && input instanceof window.Element; // workaround for react-test-renderer
       // https://github.com/sanniassin/react-input-mask/issues/147
 
@@ -8229,8 +8545,8 @@ function (_React$Component) {
     };
 
     _this.setCursorToEnd = function () {
-      var filledLength = getFilledLength$1(_this.maskOptions, _this.value);
-      var pos = getRightEditablePosition$1(_this.maskOptions, filledLength);
+      var filledLength = getFilledLength(_this.maskOptions, _this.value);
+      var pos = getRightEditablePosition(_this.maskOptions, filledLength);
 
       if (pos !== null) {
         _this.setCursorPosition(pos);
@@ -8256,18 +8572,18 @@ function (_React$Component) {
           deferred = _options.deferred;
 
       if (!deferred) {
-        setInputSelection$1(input, start, end);
+        setInputSelection(input, start, end);
       }
 
       if (_this.selectionDeferId !== null) {
-        cancelDefer$1(_this.selectionDeferId);
+        cancelDefer(_this.selectionDeferId);
       } // deferred selection update is required for pre-Lollipop Android browser,
       // but for consistent behavior we do it for all browsers
 
 
-      _this.selectionDeferId = defer$1(function () {
+      _this.selectionDeferId = defer(function () {
         _this.selectionDeferId = null;
-        setInputSelection$1(input, start, end);
+        setInputSelection(input, start, end);
       });
       _this.previousSelection = {
         start: start,
@@ -8279,7 +8595,7 @@ function (_React$Component) {
     _this.getSelection = function () {
       var input = _this.getInputDOMNode();
 
-      return getInputSelection$1(input);
+      return getInputSelection(input);
     };
 
     _this.getCursorPosition = function () {
@@ -8335,10 +8651,10 @@ function (_React$Component) {
     };
 
     _this.onChange = function (event) {
-      var _assertThisInitialize = _assertThisInitialized$1(_assertThisInitialized$1(_this)),
+      var _assertThisInitialize = _assertThisInitialized(_assertThisInitialized(_this)),
           beforePasteState = _assertThisInitialize.beforePasteState;
 
-      var _assertThisInitialize2 = _assertThisInitialized$1(_assertThisInitialized$1(_this)),
+      var _assertThisInitialize2 = _assertThisInitialized(_assertThisInitialized(_this)),
           previousSelection = _assertThisInitialize2.previousSelection;
 
       var beforeMaskedValueChange = _this.props.beforeMaskedValueChange;
@@ -8352,7 +8668,7 @@ function (_React$Component) {
 
 
       if (_this.isInputAutofilled(value, selection, previousValue, previousSelection)) {
-        previousValue = formatValue$1(_this.maskOptions, '');
+        previousValue = formatValue(_this.maskOptions, '');
         previousSelection = {
           start: 0,
           end: 0,
@@ -8374,12 +8690,12 @@ function (_React$Component) {
         _this.beforePasteState = null;
       }
 
-      var changedState = processChange$1(_this.maskOptions, value, selection, previousValue, previousSelection);
+      var changedState = processChange(_this.maskOptions, value, selection, previousValue, previousSelection);
       var enteredString = changedState.enteredString;
       var newSelection = changedState.selection;
       var newValue = changedState.value;
 
-      if (isFunction$1(beforeMaskedValueChange)) {
+      if (isFunction(beforeMaskedValueChange)) {
         var modifiedValue = beforeMaskedValueChange({
           value: newValue,
           selection: newSelection
@@ -8393,7 +8709,7 @@ function (_React$Component) {
 
       _this.setInputValue(newValue);
 
-      if (isFunction$1(_this.props.onChange)) {
+      if (isFunction(_this.props.onChange)) {
         _this.props.onChange(event);
       }
 
@@ -8417,16 +8733,16 @@ function (_React$Component) {
 
       if (mask) {
         if (!_this.value) {
-          var emptyValue = formatValue$1(_this.maskOptions, prefix);
-          var newValue = formatValue$1(_this.maskOptions, emptyValue);
-          var filledLength = getFilledLength$1(_this.maskOptions, newValue);
-          var cursorPosition = getRightEditablePosition$1(_this.maskOptions, filledLength);
+          var emptyValue = formatValue(_this.maskOptions, prefix);
+          var newValue = formatValue(_this.maskOptions, emptyValue);
+          var filledLength = getFilledLength(_this.maskOptions, newValue);
+          var cursorPosition = getRightEditablePosition(_this.maskOptions, filledLength);
           var newSelection = {
             start: cursorPosition,
             end: cursorPosition
           };
 
-          if (isFunction$1(beforeMaskedValueChange)) {
+          if (isFunction(beforeMaskedValueChange)) {
             var modifiedValue = beforeMaskedValueChange({
               value: newValue,
               selection: newSelection
@@ -8444,19 +8760,19 @@ function (_React$Component) {
             _this.setInputValue(newValue);
           }
 
-          if (isInputValueChanged && isFunction$1(_this.props.onChange)) {
+          if (isInputValueChanged && isFunction(_this.props.onChange)) {
             _this.props.onChange(event);
           }
 
           _this.setSelection(newSelection.start, newSelection.end);
-        } else if (getFilledLength$1(_this.maskOptions, _this.value) < _this.maskOptions.mask.length) {
+        } else if (getFilledLength(_this.maskOptions, _this.value) < _this.maskOptions.mask.length) {
           _this.setCursorToEnd();
         }
 
         _this.runSaveSelectionLoop();
       }
 
-      if (isFunction$1(_this.props.onFocus)) {
+      if (isFunction(_this.props.onFocus)) {
         _this.props.onFocus(event);
       }
     };
@@ -8469,10 +8785,10 @@ function (_React$Component) {
 
       _this.focused = false;
 
-      if (mask && !_this.props.alwaysShowMask && isEmpty$1(_this.maskOptions, _this.value)) {
+      if (mask && !_this.props.alwaysShowMask && isEmpty(_this.maskOptions, _this.value)) {
         var newValue = '';
 
-        if (isFunction$1(beforeMaskedValueChange)) {
+        if (isFunction(beforeMaskedValueChange)) {
           var modifiedValue = beforeMaskedValueChange({
             value: newValue,
             selection: null
@@ -8489,12 +8805,12 @@ function (_React$Component) {
           _this.setInputValue(newValue);
         }
 
-        if (isInputValueChanged && isFunction$1(_this.props.onChange)) {
+        if (isInputValueChanged && isFunction(_this.props.onChange)) {
           _this.props.onChange(event);
         }
       }
 
-      if (isFunction$1(_this.props.onBlur)) {
+      if (isFunction(_this.props.onBlur)) {
         _this.props.onBlur(event);
       }
     };
@@ -8530,13 +8846,13 @@ function (_React$Component) {
         document.addEventListener('mouseup', mouseUpHandler);
       }
 
-      if (isFunction$1(_this.props.onMouseDown)) {
+      if (isFunction(_this.props.onMouseDown)) {
         _this.props.onMouseDown(event);
       }
     };
 
     _this.onPaste = function (event) {
-      if (isFunction$1(_this.props.onPaste)) {
+      if (isFunction(_this.props.onPaste)) {
         _this.props.onPaste(event);
       } // event.clipboardData might not work in Android browser
       // cleaning input to get raw text inside onChange handler
@@ -8553,7 +8869,7 @@ function (_React$Component) {
     };
 
     _this.handleRef = function (ref) {
-      if (_this.props.children == null && isFunction$1(_this.props.inputRef)) {
+      if (_this.props.children == null && isFunction(_this.props.inputRef)) {
         _this.props.inputRef(ref);
       }
     };
@@ -8565,7 +8881,7 @@ function (_React$Component) {
         _beforeMaskedValueChange = props.beforeMaskedValueChange;
     var defaultValue = props.defaultValue,
         _value = props.value;
-    _this.maskOptions = parseMask$1(_mask, _maskChar, _formatChars);
+    _this.maskOptions = parseMask(_mask, _maskChar, _formatChars);
 
     if (defaultValue == null) {
       defaultValue = '';
@@ -8575,19 +8891,19 @@ function (_React$Component) {
       _value = defaultValue;
     }
 
-    var _newValue = getStringValue$1(_value);
+    var _newValue = getStringValue(_value);
 
     if (_this.maskOptions.mask && (_alwaysShowMask || _newValue)) {
-      _newValue = formatValue$1(_this.maskOptions, _newValue);
+      _newValue = formatValue(_this.maskOptions, _newValue);
 
-      if (isFunction$1(_beforeMaskedValueChange)) {
+      if (isFunction(_beforeMaskedValueChange)) {
         var oldValue = props.value;
 
         if (props.value == null) {
           oldValue = defaultValue;
         }
 
-        oldValue = getStringValue$1(oldValue);
+        oldValue = getStringValue(oldValue);
 
         var modifiedValue = _beforeMaskedValueChange({
           value: _newValue,
@@ -8615,7 +8931,7 @@ function (_React$Component) {
       return;
     }
 
-    this.isWindowsPhoneBrowser = isWindowsPhoneBrowser$1();
+    this.isWindowsPhoneBrowser = isWindowsPhoneBrowser();
 
     if (this.maskOptions.mask && this.getInputValue() !== this.value) {
       this.setInputValue(this.value);
@@ -8633,9 +8949,9 @@ function (_React$Component) {
     var previousMaskOptions = this.maskOptions;
     var showEmpty = alwaysShowMask || this.isFocused();
     var hasValue = this.props.value != null;
-    var newValue = hasValue ? getStringValue$1(this.props.value) : this.value;
+    var newValue = hasValue ? getStringValue(this.props.value) : this.value;
     var cursorPosition = previousSelection ? previousSelection.start : null;
-    this.maskOptions = parseMask$1(mask, maskChar, formatChars);
+    this.maskOptions = parseMask(mask, maskChar, formatChars);
 
     if (!this.maskOptions.mask) {
       if (previousMaskOptions.mask) {
@@ -8657,22 +8973,22 @@ function (_React$Component) {
     }
 
     if (isMaskChanged || this.maskOptions.mask && (newValue || showEmpty)) {
-      newValue = formatValue$1(this.maskOptions, newValue);
+      newValue = formatValue(this.maskOptions, newValue);
     }
 
     if (isMaskChanged) {
-      var filledLength = getFilledLength$1(this.maskOptions, newValue);
+      var filledLength = getFilledLength(this.maskOptions, newValue);
 
       if (cursorPosition === null || filledLength < cursorPosition) {
-        if (isFilled$1(this.maskOptions, newValue)) {
+        if (isFilled(this.maskOptions, newValue)) {
           cursorPosition = filledLength;
         } else {
-          cursorPosition = getRightEditablePosition$1(this.maskOptions, filledLength);
+          cursorPosition = getRightEditablePosition(this.maskOptions, filledLength);
         }
       }
     }
 
-    if (this.maskOptions.mask && isEmpty$1(this.maskOptions, newValue) && !showEmpty && (!hasValue || !this.props.value)) {
+    if (this.maskOptions.mask && isEmpty(this.maskOptions, newValue) && !showEmpty && (!hasValue || !this.props.value)) {
       newValue = '';
     }
 
@@ -8681,7 +8997,7 @@ function (_React$Component) {
       end: cursorPosition
     };
 
-    if (isFunction$1(beforeMaskedValueChange)) {
+    if (isFunction(beforeMaskedValueChange)) {
       var modifiedValue = beforeMaskedValueChange({
         value: newValue,
         selection: newSelection
@@ -8719,7 +9035,7 @@ function (_React$Component) {
     this.mounted = false;
 
     if (this.selectionDeferId !== null) {
-      cancelDefer$1(this.selectionDeferId);
+      cancelDefer(this.selectionDeferId);
     }
 
     this.stopSaveSelectionLoop();
@@ -8732,18 +9048,18 @@ function (_React$Component) {
         formatChars = _this$props2.formatChars,
         inputRef = _this$props2.inputRef,
         children = _this$props2.children,
-        restProps = _objectWithoutPropertiesLoose$2(_this$props2, ["mask", "alwaysShowMask", "maskChar", "formatChars", "inputRef", "beforeMaskedValueChange", "children"]);
+        restProps = _objectWithoutPropertiesLoose(_this$props2, ["mask", "alwaysShowMask", "maskChar", "formatChars", "inputRef", "beforeMaskedValueChange", "children"]);
 
     var inputElement;
-    process.env.NODE_ENV !== "production" ? warning$1( // parse mask to test against actual mask prop as this.maskOptions
+    process.env.NODE_ENV !== "production" ? warning( // parse mask to test against actual mask prop as this.maskOptions
     // will be updated later in componentDidUpdate
-    !restProps.maxLength || !parseMask$1(mask, maskChar, formatChars).mask, 'react-input-mask: maxLength property shouldn\'t be passed to the masked input. It breaks masking and unnecessary because length is limited by the mask length.') : void 0;
+    !restProps.maxLength || !parseMask(mask, maskChar, formatChars).mask, 'react-input-mask: maxLength property shouldn\'t be passed to the masked input. It breaks masking and unnecessary because length is limited by the mask length.') : void 0;
 
     if (children) {
-      !isFunction$1(children) ? process.env.NODE_ENV !== "production" ? invariant$2(false, 'react-input-mask: children must be a function') : invariant$2(false) : void 0;
+      !isFunction(children) ? process.env.NODE_ENV !== "production" ? invariant(false, 'react-input-mask: children must be a function') : invariant(false) : void 0;
       var controlledProps = ['onChange', 'onPaste', 'onMouseDown', 'onFocus', 'onBlur', 'value', 'disabled', 'readOnly'];
 
-      var childrenProps = _extends$1({}, restProps);
+      var childrenProps = _extends({}, restProps);
 
       controlledProps.forEach(function (propId) {
         return delete childrenProps[propId];
@@ -8752,10 +9068,10 @@ function (_React$Component) {
       var conflictProps = controlledProps.filter(function (propId) {
         return inputElement.props[propId] != null && inputElement.props[propId] !== restProps[propId];
       });
-      !!conflictProps.length ? process.env.NODE_ENV !== "production" ? invariant$2(false, "react-input-mask: the following props should be passed to the react-input-mask's component and should not be altered in children's function: " + conflictProps.join(', ')) : invariant$2(false) : void 0;
-      process.env.NODE_ENV !== "production" ? warning$1(!inputRef, 'react-input-mask: inputRef is ignored when children is passed, attach ref to the children instead') : void 0;
+      !!conflictProps.length ? process.env.NODE_ENV !== "production" ? invariant(false, "react-input-mask: the following props should be passed to the react-input-mask's component and should not be altered in children's function: " + conflictProps.join(', ')) : invariant(false) : void 0;
+      process.env.NODE_ENV !== "production" ? warning(!inputRef, 'react-input-mask: inputRef is ignored when children is passed, attach ref to the children instead') : void 0;
     } else {
-      inputElement = React$1.createElement("input", _extends$1({
+      inputElement = React.createElement("input", _extends({
         ref: this.handleRef
       }, restProps));
     }
@@ -8777,14 +9093,14 @@ function (_React$Component) {
       }
     }
 
-    inputElement = React$1.cloneElement(inputElement, changedProps);
+    inputElement = React.cloneElement(inputElement, changedProps);
     return inputElement;
   };
 
   return InputElement;
-}(React$1.Component);
+}(React.Component);
 
-var reactInputMask_development = InputElement$1;
+var reactInputMask_development = InputElement;
 
 var reactInputMask = createCommonjsModule(function (module) {
 if (process.env.NODE_ENV === 'production') {
@@ -8794,9 +9110,9 @@ if (process.env.NODE_ENV === 'production') {
 }
 });
 
-let _$d = t => t,
-    _t$d;
-const Container$8 = styled.div(_t$d || (_t$d = _$d`
+let _$2 = t => t,
+    _t$2;
+const Container$2 = styled.div(_t$2 || (_t$2 = _$2`
   font-family: MontSerrat !important;
   display: flex;
   flex-direction: column;
@@ -9800,16 +10116,20 @@ const Container$8 = styled.div(_t$d || (_t$d = _$d`
   return colors.brand10;
 });
 
+const _excluded$1 = ["labelColor", "label", "brand", "otherFormatDate"];
 registerLocale('pt-BR', br);
 
-const Calendar = ({
-  labelColor,
-  label,
-  brand,
-  otherFormatDate,
-  ...rest
-}) => {
-  const CustomInput = React$2.forwardRef((props, ref) => React$2.createElement(reactInputMask, {
+const Calendar = _ref => {
+  let {
+    labelColor,
+    label,
+    brand,
+    otherFormatDate
+  } = _ref,
+      rest = _objectWithoutPropertiesLoose$3(_ref, _excluded$1);
+
+  // eslint-disable-next-line react/display-name
+  const CustomInput = React$2.forwardRef((props, ref) => jsx(reactInputMask, {
     ref: ref,
     mask: "99/99/9999",
     onClick: props.onClick,
@@ -9817,46 +10137,52 @@ const Calendar = ({
     readOnly: rest.readOnly,
     onChange: props.onChange,
     placeholder: rest.placeholderText
-  }));
-  return React$2.createElement(Container$8, {
+  }, void 0));
+  return jsxs(Container$2, Object.assign({
     brand: brand,
     labelColor: labelColor
-  }, label && React$2.createElement("span", null, label), React$2.createElement("div", null, React$2.createElement(DatePicker, Object.assign({}, rest, {
-    locale: "pt-BR",
-    customInput: otherFormatDate ? undefined : React$2.createElement(CustomInput, {
-      onClick: rest.onCalendarOpen,
-      value: rest.value,
-      onChange: rest.onChange
-    }),
-    dateFormat: otherFormatDate || 'dd/MM/yyyy',
-    readOnly: false,
-    onChangeRaw: event => rest.readOnly ? event.preventDefault() : null
-  }))));
+  }, {
+    children: [label && jsx("span", {
+      children: label
+    }, void 0), jsx("div", {
+      children: jsx(DatePicker, Object.assign({}, rest, {
+        locale: "pt-BR",
+        customInput: otherFormatDate ? undefined : jsx(CustomInput, {
+          onClick: rest.onCalendarOpen,
+          value: rest.value,
+          onChange: rest.onChange
+        }, void 0),
+        dateFormat: otherFormatDate || 'dd/MM/yyyy',
+        readOnly: false,
+        onChangeRaw: event => rest.readOnly ? event.preventDefault() : null
+      }), void 0)
+    }, void 0)]
+  }), void 0);
 };
 
-let _$e = t => t,
-    _t$e,
-    _t2$9,
-    _t3$8,
-    _t4$6;
-const Header$2 = styled.div(_t$e || (_t$e = _$e`
+let _$1 = t => t,
+    _t$1,
+    _t2,
+    _t3,
+    _t4;
+const Header = styled.div(_t$1 || (_t$1 = _$1`
   font-family: MontSerrat !important;
   display: flex;
   margin-bottom: 10px;
 `));
-const Title = styled.span(_t2$9 || (_t2$9 = _$e`
+const Title = styled.span(_t2 || (_t2 = _$1`
   font-family: MontSerrat !important;
   flex: 1;
   text-align: left;
   color: ${0};
   font-weight: bold;
 `), colors.gray20);
-const Message = styled.span(_t3$8 || (_t3$8 = _$e`
+const Message = styled.span(_t3 || (_t3 = _$1`
   flex: 1;
   text-align: right;
   color: ${0};
 `), colors.gray10);
-const Container$9 = styled.div(_t4$6 || (_t4$6 = _$e`
+const Container$1 = styled.div(_t4 || (_t4 = _$1`
   margin-bottom: ${0};
 
   /*!
@@ -10987,29 +11313,47 @@ const Container$9 = styled.div(_t4$6 || (_t4$6 = _$e`
   *******************************/
 `), props => props.hasMore || props.hasPagination ? '20px' : '0', colors.brand10);
 
-const TableComponent = ({
-  children,
-  title,
-  titleStyle,
-  message,
-  messageStyle,
-  hasMore,
-  pagination,
-  ...rest
-}) => {
-  return React$2.createElement("div", null, title || message ? React$2.createElement(Header$2, null, React$2.createElement(Title, {
-    style: titleStyle
-  }, title), React$2.createElement(Message, {
-    style: messageStyle
-  }, message)) : null, React$2.createElement(Container$9, {
-    hasMore: !!hasMore,
-    hasPagination: !!pagination
-  }, React$2.createElement(Table$1, Object.assign({}, rest), children)), hasMore ? React$2.createElement(ButtonMain, {
-    secondary: true,
-    textFirst: "ver a",
-    textEnd: "lista completa",
-    onClick: () => hasMore()
-  }) : null, pagination ? React$2.createElement("div", null, React$2.createElement("br", null), pagination) : null);
+const _excluded = ["children", "title", "titleStyle", "message", "messageStyle", "hasMore", "pagination"];
+
+const TableComponent = _ref => {
+  let {
+    children,
+    title,
+    titleStyle,
+    message,
+    messageStyle,
+    hasMore,
+    pagination
+  } = _ref,
+      rest = _objectWithoutPropertiesLoose$3(_ref, _excluded);
+
+  return jsxs("div", {
+    children: [title || message ? jsxs(Header, {
+      children: [jsx(Title, Object.assign({
+        style: titleStyle
+      }, {
+        children: title
+      }), void 0), jsx(Message, Object.assign({
+        style: messageStyle
+      }, {
+        children: message
+      }), void 0)]
+    }, void 0) : null, jsx(Container$1, Object.assign({
+      hasMore: !!hasMore,
+      hasPagination: !!pagination
+    }, {
+      children: jsx(Table$1, Object.assign({}, rest, {
+        children: children
+      }), void 0)
+    }), void 0), hasMore ? jsx(ButtonMain, {
+      secondary: true,
+      textFirst: "ver a",
+      textEnd: "lista completa",
+      onClick: () => hasMore()
+    }, void 0) : null, pagination ? jsxs("div", {
+      children: [jsx("br", {}, void 0), pagination]
+    }, void 0) : null]
+  }, void 0);
 };
 
 const Table = TableComponent;
@@ -11020,9 +11364,9 @@ Table.Body = TableBody;
 Table.Cell = TableCell;
 Table.Footer = TableFooter;
 
-let _$f = t => t,
-    _t$f;
-const Container$a = styled.div(_t$f || (_t$f = _$f`
+let _ = t => t,
+    _t;
+const Container = styled.div(_t || (_t = _`
   font-family: MontSerrat !important;
 
   /*--------------
@@ -11072,42 +11416,44 @@ const PaginationComponent = ({
   onPageChange,
   mini
 }) => {
-  return React$2.createElement(Container$a, null, React$2.createElement(Pagination, {
-    totalPages: Math.ceil(totalCount / limit),
-    size: mini ? 'mini' : 'small',
-    ellipsisItem: {
-      content: React$2.createElement(Icon$3, {
-        name: "ellipsis horizontal"
-      }),
-      icon: true
-    },
-    firstItem: {
-      content: React$2.createElement(Icon$3, {
-        name: "angle double left"
-      }),
-      icon: true
-    },
-    lastItem: {
-      content: React$2.createElement(Icon$3, {
-        name: "angle double right"
-      }),
-      icon: true
-    },
-    prevItem: {
-      content: React$2.createElement(Icon$3, {
-        name: "angle left"
-      }),
-      icon: true
-    },
-    nextItem: {
-      content: React$2.createElement(Icon$3, {
-        name: "angle right"
-      }),
-      icon: true
-    },
-    onPageChange: (_ev, data) => onPageChange(data.activePage),
-    activePage: page
-  }));
+  return jsx(Container, {
+    children: jsx(Pagination, {
+      totalPages: Math.ceil(totalCount / limit),
+      size: mini ? 'mini' : 'small',
+      ellipsisItem: {
+        content: jsx(Icon$3, {
+          name: "ellipsis horizontal"
+        }, void 0),
+        icon: true
+      },
+      firstItem: {
+        content: jsx(Icon$3, {
+          name: "angle double left"
+        }, void 0),
+        icon: true
+      },
+      lastItem: {
+        content: jsx(Icon$3, {
+          name: "angle double right"
+        }, void 0),
+        icon: true
+      },
+      prevItem: {
+        content: jsx(Icon$3, {
+          name: "angle left"
+        }, void 0),
+        icon: true
+      },
+      nextItem: {
+        content: jsx(Icon$3, {
+          name: "angle right"
+        }, void 0),
+        icon: true
+      },
+      onPageChange: (_ev, data) => onPageChange(data.activePage),
+      activePage: page
+    }, void 0)
+  }, void 0);
 };
 
 export { Accordion, ButtonMain, Calendar, Card, Checkbox, DialogComponent as Dialog, Dropdown, DropdownForm, InputLine, InputLineForm, Loader, ModalComponent as Modal, MoreLess, PaginationComponent as Pagination, Radio, Selection, Table, TextArea, TextAreaForm };

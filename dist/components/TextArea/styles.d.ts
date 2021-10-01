@@ -15,6 +15,7 @@ interface LabelErrorProps {
 interface LabelProps {
     labelColor?: string;
     errorMessage?: string;
+    errorColor?: string;
 }
 export declare const Label: import("styled-components").StyledComponent<"span", any, LabelProps, never>;
 export declare const Container: import("styled-components").StyledComponent<"div", any, ContainerProps, never>;
