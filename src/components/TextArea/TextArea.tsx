@@ -13,55 +13,62 @@ export interface TextAreaProps
   extends TextareaHTMLAttributes<HTMLTextAreaElement> {
   label?: string;
   labelColor?: string;
+  labelStyle?: React.CSSProperties;
+  labelClassName?: string;
+
+  containerStyle?: React.CSSProperties;
   textColor?: string;
   errorMessage?: string;
   errorColor?: string;
-  containerStyle?: React.CSSProperties;
-  labelStyle?: React.CSSProperties;
+  lengthInfo?: boolean | number;
   width?: number | string;
   height?: number | string;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  textAreaRef?: any;
-  lengthInfo?: boolean | number;
 }
 
-
 const TextArea: React.FC<TextAreaProps> = ({
-  containerStyle,
   label,
-  labelColor,
+  labelClassName,
   labelStyle,
+  labelColor,
+
+  containerStyle,
   errorMessage,
   errorColor,
+  textColor,
   width,
   height,
-  textColor,
-  textAreaRef,
+
   lengthInfo,
   ...rest
 }) => {
   return (
-    <div style={{ paddingBottom: errorMessage ? 0 : 20 }}>
+    <div>
       {label && (
-        <Label errorMessage={errorMessage} labelColor={labelColor}>
+        <Label
+          style={labelStyle}
+          errorMessage={errorMessage}
+          labelColor={labelColor}
+          className={labelClassName}
+          errorColor={errorColor}
+        >
           {label}
         </Label>
       )}
       <Container
         errorMessage={errorMessage}
         errorColor={errorColor}
-        labelStyle={labelStyle}
         containerStyle={containerStyle}
-        width={width}
         style={containerStyle}
         disabled={rest.disabled}
         textColor={textColor}
+        width={width}
         height={height}
       >
-        <textarea {...rest} placeholder={rest.placeholder} ref={textAreaRef} />
+        <textarea {...rest} />
       </Container>
       <Footer>
         <LabelError errorColor={errorColor}>{errorMessage}</LabelError>
+
         {(lengthInfo || typeof lengthInfo == 'number') && rest.maxLength ? (
           <LabelLengthInfo>{`${
             typeof lengthInfo == 'number'
@@ -70,9 +77,7 @@ const TextArea: React.FC<TextAreaProps> = ({
               ? rest.value.length
               : 0
           }/${rest.maxLength} caracteres`}</LabelLengthInfo>
-        ) : (
-          ''
-        )}
+        ) : null}
       </Footer>
     </div>
   );

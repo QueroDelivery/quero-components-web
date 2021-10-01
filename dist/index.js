@@ -3845,47 +3845,41 @@ var LabelError$1 = styled__default.span(_templateObject5$4 || (_templateObject5$
   return colors.brand20;
 });
 var Footer = styled__default.div(_templateObject6$4 || (_templateObject6$4 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: space-between;\n  font-size: 10px;\n"])));
-var LabelLengthInfo = styled__default.div(_templateObject7$4 || (_templateObject7$4 = _taggedTemplateLiteralLoose(["\n  font-size: 10px;\n  color: ", ";\n"])), colors.gray10);
+var LabelLengthInfo = styled__default.span(_templateObject7$4 || (_templateObject7$4 = _taggedTemplateLiteralLoose(["\n  font-size: 10px;\n  color: ", ";\n"])), colors.gray10);
 
-var _excluded$3 = ["containerStyle", "label", "labelColor", "labelStyle", "errorMessage", "errorColor", "width", "height", "textColor", "textAreaRef", "lengthInfo"];
+var _excluded$3 = ["label", "labelClassName", "labelStyle", "labelColor", "containerStyle", "errorMessage", "errorColor", "textColor", "width", "height", "lengthInfo"];
 
 var TextArea = function TextArea(_ref) {
-  var containerStyle = _ref.containerStyle,
-      label = _ref.label,
-      labelColor = _ref.labelColor,
+  var label = _ref.label,
+      labelClassName = _ref.labelClassName,
       labelStyle = _ref.labelStyle,
+      labelColor = _ref.labelColor,
+      containerStyle = _ref.containerStyle,
       errorMessage = _ref.errorMessage,
       errorColor = _ref.errorColor,
+      textColor = _ref.textColor,
       width = _ref.width,
       height = _ref.height,
-      textColor = _ref.textColor,
-      textAreaRef = _ref.textAreaRef,
       lengthInfo = _ref.lengthInfo,
       rest = _objectWithoutPropertiesLoose(_ref, _excluded$3);
 
-  return React$2__default.createElement("div", {
-    style: {
-      paddingBottom: errorMessage ? 0 : 20
-    }
-  }, label && React$2__default.createElement(Label, {
+  return React$2__default.createElement("div", null, label && React$2__default.createElement(Label, {
+    style: labelStyle,
     errorMessage: errorMessage,
-    labelColor: labelColor
+    labelColor: labelColor,
+    className: labelClassName
   }, label), React$2__default.createElement(Container$2, {
     errorMessage: errorMessage,
     errorColor: errorColor,
-    labelStyle: labelStyle,
     containerStyle: containerStyle,
-    width: width,
     style: containerStyle,
     disabled: rest.disabled,
     textColor: textColor,
+    width: width,
     height: height
-  }, React$2__default.createElement("textarea", Object.assign({}, rest, {
-    placeholder: rest.placeholder,
-    ref: textAreaRef
-  }))), React$2__default.createElement(Footer, null, React$2__default.createElement(LabelError$1, {
+  }, React$2__default.createElement("textarea", Object.assign({}, rest))), React$2__default.createElement(Footer, null, React$2__default.createElement(LabelError$1, {
     errorColor: errorColor
-  }, errorMessage), (lengthInfo || typeof lengthInfo == 'number') && rest.maxLength ? React$2__default.createElement(LabelLengthInfo, null, (typeof lengthInfo == 'number' ? lengthInfo : typeof rest.value == 'string' ? rest.value.length : 0) + "/" + rest.maxLength + " caracteres") : ''));
+  }, errorMessage), (lengthInfo || typeof lengthInfo == 'number') && rest.maxLength ? React$2__default.createElement(LabelLengthInfo, null, (typeof lengthInfo == 'number' ? lengthInfo : typeof rest.value == 'string' ? rest.value.length : 0) + "/" + rest.maxLength + " caracteres") : null));
 };
 
 var _excluded$4 = ["register", "errors", "validate", "name", "required", "limit", "minimum"];
@@ -3906,36 +3900,35 @@ var TextAreaForm = function TextAreaForm(_ref) {
 
   return React$2__default.createElement(TextArea, Object.assign({}, rest, {
     name: name,
-    errorMessage: errors ? errors.type === 'required' ? 'Obrigatório' : "" + message : '',
-    textAreaRef: register ? register({
-      required: required,
-      validate: validate && required ? function (value) {
-        if (validate(value)) {
-          setMessage(validate(value));
-          return false;
-        }
+    errorMessage: errors ? errors.type === 'required' ? 'Obrigatório' : "" + message : ''
+  }, register({
+    required: required,
+    validate: validate && required ? function (value) {
+      if (validate(value)) {
+        setMessage(validate(value));
+        return false;
+      }
 
-        setMessage('');
-        return true;
-      } : limit && required ? function (value) {
-        if (value.length > limit) {
-          setMessage(limit + " caracteres permitidos.");
-          return false;
-        }
+      setMessage('');
+      return true;
+    } : limit && required ? function (value) {
+      if (value.length > limit) {
+        setMessage(limit + " caracteres permitidos.");
+        return false;
+      }
 
-        setMessage('');
-        return true;
-      } : minimum && required ? function (value) {
-        if (value.length < minimum) {
-          setMessage(name + " deve ter " + minimum + " ou mais caracteres.");
-          return false;
-        }
+      setMessage('');
+      return true;
+    } : minimum && required ? function (value) {
+      if (value.length < minimum) {
+        setMessage(name + " deve ter " + minimum + " ou mais caracteres.");
+        return false;
+      }
 
-        setMessage('');
-        return true;
-      } : null
-    }) : null
-  }));
+      setMessage('');
+      return true;
+    } : null
+  })));
 };
 
 var _templateObject$6;

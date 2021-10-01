@@ -4209,48 +4209,42 @@ const Footer = styled.div(_t6$4 || (_t6$4 = _$5`
   justify-content: space-between;
   font-size: 10px;
 `));
-const LabelLengthInfo = styled.div(_t7$4 || (_t7$4 = _$5`
+const LabelLengthInfo = styled.span(_t7$4 || (_t7$4 = _$5`
   font-size: 10px;
   color: ${0};
 `), colors.gray10);
 
 const TextArea = ({
-  containerStyle,
   label,
-  labelColor,
+  labelClassName,
   labelStyle,
+  labelColor,
+  containerStyle,
   errorMessage,
   errorColor,
+  textColor,
   width,
   height,
-  textColor,
-  textAreaRef,
   lengthInfo,
   ...rest
 }) => {
-  return React$2.createElement("div", {
-    style: {
-      paddingBottom: errorMessage ? 0 : 20
-    }
-  }, label && React$2.createElement(Label, {
+  return React$2.createElement("div", null, label && React$2.createElement(Label, {
+    style: labelStyle,
     errorMessage: errorMessage,
-    labelColor: labelColor
+    labelColor: labelColor,
+    className: labelClassName
   }, label), React$2.createElement(Container$2, {
     errorMessage: errorMessage,
     errorColor: errorColor,
-    labelStyle: labelStyle,
     containerStyle: containerStyle,
-    width: width,
     style: containerStyle,
     disabled: rest.disabled,
     textColor: textColor,
+    width: width,
     height: height
-  }, React$2.createElement("textarea", Object.assign({}, rest, {
-    placeholder: rest.placeholder,
-    ref: textAreaRef
-  }))), React$2.createElement(Footer, null, React$2.createElement(LabelError$1, {
+  }, React$2.createElement("textarea", Object.assign({}, rest))), React$2.createElement(Footer, null, React$2.createElement(LabelError$1, {
     errorColor: errorColor
-  }, errorMessage), (lengthInfo || typeof lengthInfo == 'number') && rest.maxLength ? React$2.createElement(LabelLengthInfo, null, `${typeof lengthInfo == 'number' ? lengthInfo : typeof rest.value == 'string' ? rest.value.length : 0}/${rest.maxLength} caracteres`) : ''));
+  }, errorMessage), (lengthInfo || typeof lengthInfo == 'number') && rest.maxLength ? React$2.createElement(LabelLengthInfo, null, `${typeof lengthInfo == 'number' ? lengthInfo : typeof rest.value == 'string' ? rest.value.length : 0}/${rest.maxLength} caracteres`) : null));
 };
 
 const TextAreaForm = ({
@@ -4266,36 +4260,35 @@ const TextAreaForm = ({
   const [message, setMessage] = useState('');
   return React$2.createElement(TextArea, Object.assign({}, rest, {
     name: name,
-    errorMessage: errors ? errors.type === 'required' ? 'Obrigatório' : `${message}` : '',
-    textAreaRef: register ? register({
-      required,
-      validate: validate && required ? value => {
-        if (validate(value)) {
-          setMessage(validate(value));
-          return false;
-        }
+    errorMessage: errors ? errors.type === 'required' ? 'Obrigatório' : `${message}` : ''
+  }, register({
+    required,
+    validate: validate && required ? value => {
+      if (validate(value)) {
+        setMessage(validate(value));
+        return false;
+      }
 
-        setMessage('');
-        return true;
-      } : limit && required ? value => {
-        if (value.length > limit) {
-          setMessage(`${limit} caracteres permitidos.`);
-          return false;
-        }
+      setMessage('');
+      return true;
+    } : limit && required ? value => {
+      if (value.length > limit) {
+        setMessage(`${limit} caracteres permitidos.`);
+        return false;
+      }
 
-        setMessage('');
-        return true;
-      } : minimum && required ? value => {
-        if (value.length < minimum) {
-          setMessage(`${name} deve ter ${minimum} ou mais caracteres.`);
-          return false;
-        }
+      setMessage('');
+      return true;
+    } : minimum && required ? value => {
+      if (value.length < minimum) {
+        setMessage(`${name} deve ter ${minimum} ou mais caracteres.`);
+        return false;
+      }
 
-        setMessage('');
-        return true;
-      } : null
-    }) : null
-  }));
+      setMessage('');
+      return true;
+    } : null
+  })));
 };
 
 let _$6 = t => t,

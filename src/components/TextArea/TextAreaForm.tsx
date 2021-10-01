@@ -38,44 +38,38 @@ const TextAreaForm: React.FC<TextAreaFormProps> = ({
             : `${message}`
           : ''
       }
-      textAreaRef={
-        register
-          ? register({
-              required,
-              validate:
-                validate && required
-                  ? (value: any) => {
-                      if (validate(value)) {
-                        setMessage(validate(value));
-                        return false;
-                      }
-                      setMessage('');
-                      return true;
-                    }
-                  : limit && required
-                  ? (value: any) => {
-                      if (value.length > limit) {
-                        setMessage(`${limit} caracteres permitidos.`);
-                        return false;
-                      }
-                      setMessage('');
-                      return true;
-                    }
-                  : minimum && required
-                  ? (value: any) => {
-                      if (value.length < minimum) {
-                        setMessage(
-                          `${name} deve ter ${minimum} ou mais caracteres.`,
-                        );
-                        return false;
-                      }
-                      setMessage('');
-                      return true;
-                    }
-                  : null,
-            })
-          : null
-      }
+      {...register({
+        required,
+        validate:
+          validate && required
+            ? (value: any) => {
+                if (validate(value)) {
+                  setMessage(validate(value));
+                  return false;
+                }
+                setMessage('');
+                return true;
+              }
+            : limit && required
+            ? (value: any) => {
+                if (value.length > limit) {
+                  setMessage(`${limit} caracteres permitidos.`);
+                  return false;
+                }
+                setMessage('');
+                return true;
+              }
+            : minimum && required
+            ? (value: any) => {
+                if (value.length < minimum) {
+                  setMessage(`${name} deve ter ${minimum} ou mais caracteres.`);
+                  return false;
+                }
+                setMessage('');
+                return true;
+              }
+            : null,
+      })}
     />
   );
 };
