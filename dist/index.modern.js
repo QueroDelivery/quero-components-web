@@ -1,5 +1,5 @@
 import 'semantic-ui-css/semantic.min.css';
-import { jsx, jsxs } from 'react/jsx-runtime';
+import { jsx, jsxs, Fragment as Fragment$1 } from 'react/jsx-runtime';
 import React$2, { useState, useEffect } from 'react';
 import styled, { css as css$1 } from 'styled-components';
 import { Dropdown as Dropdown$1, Table as Table$1, TableRow, TableHeader, TableHeaderCell, TableBody, TableCell, TableFooter, Pagination, Icon as Icon$3 } from 'semantic-ui-react';
@@ -2734,9 +2734,9 @@ let _$f = t => t,
     _t2$9,
     _t3$8,
     _t4$6,
-    _t5$4,
-    _t6$4,
-    _t7$4;
+    _t5$5,
+    _t6$5,
+    _t7$5;
 const Sizes$6 = {
   mini: 'mini',
   tiny: 'tiny',
@@ -2993,12 +2993,12 @@ const Notification = styled.button(_t4$6 || (_t4$6 = _$f`
     font-weight: bold;
   }
 `), colors.brand10, colors.brand30, colors.brandTransparent2, colors.brand30);
-const Icon$2 = styled.div(_t5$4 || (_t5$4 = _$f`
+const Icon$2 = styled.div(_t5$5 || (_t5$5 = _$f`
   visibility: ${0};
   margin-right: ${0};
   margin-left: ${0};
 `), props => props.loading ? 'hidden' : 'visible', props => props.iconPosition === 'left' ? '10px' : '', props => props.iconPosition === 'right' ? '10px' : '');
-const Amount = styled.div(_t6$4 || (_t6$4 = _$f`
+const Amount = styled.div(_t6$5 || (_t6$5 = _$f`
   font-family: MontSerrat !important;
   background-color: ${0};
   width: 20px;
@@ -3010,7 +3010,7 @@ const Amount = styled.div(_t6$4 || (_t6$4 = _$f`
   color: ${0};
   font-size: 10px;
 `), colors.brand30, colors.brand10);
-const LoadingContainer = styled.div(_t7$4 || (_t7$4 = _$f`
+const LoadingContainer = styled.div(_t7$5 || (_t7$5 = _$f`
   position: absolute;
   top: 0;
   left: 0;
@@ -3363,9 +3363,9 @@ let _$d = t => t,
     _t2$7,
     _t3$7,
     _t4$5,
-    _t5$3,
-    _t6$3,
-    _t7$3,
+    _t5$4,
+    _t6$4,
+    _t7$4,
     _t8$1;
 const Background$1 = styled.div(_t$d || (_t$d = _$d`
   ${0}
@@ -3389,7 +3389,7 @@ const Background$1 = styled.div(_t$d || (_t$d = _$d`
 const Dialog = styled.div(_t4$5 || (_t4$5 = _$d`
   font-family: MontSerrat !important;
   ${0}
-`), props => props.open ? css$1(_t5$3 || (_t5$3 = _$d`
+`), props => props.open ? css$1(_t5$4 || (_t5$4 = _$d`
           transition: bottom 0.25s ease;
           width: 97%;
           background: ${0};
@@ -3458,11 +3458,11 @@ const Dialog = styled.div(_t4$5 || (_t4$5 = _$d`
   }
 
   return '100%';
-}, props.loading ? 'hidden' : 'auto', props.title ? `calc(100% - ${props.sizeHeader}px)` : '100%') : css$1(_t6$3 || (_t6$3 = _$d`
+}, props.loading ? 'hidden' : 'auto', props.title ? `calc(100% - ${props.sizeHeader}px)` : '100%') : css$1(_t6$4 || (_t6$4 = _$d`
           transition: bottom 0.25s ease;
           bottom: -100%;
         `)));
-const Header$2 = styled.div(_t7$3 || (_t7$3 = _$d`
+const Header$2 = styled.div(_t7$4 || (_t7$4 = _$d`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -3568,9 +3568,9 @@ let _$c = t => t,
     _t2$6,
     _t3$6,
     _t4$4,
-    _t5$2,
-    _t6$2,
-    _t7$2;
+    _t5$3,
+    _t6$3,
+    _t7$3;
 const Container$9 = styled.div(_t$c || (_t$c = _$c`
   font-family: MontSerrat !important;
   position: relative;
@@ -3746,7 +3746,7 @@ const Container$9 = styled.div(_t$c || (_t$c = _$c`
   }
 
   return '15px';
-}, props => props.isFieldActive ? css$1(_t5$2 || (_t5$2 = _$c`
+}, props => props.isFieldActive ? css$1(_t5$3 || (_t5$3 = _$c`
             transform: translateY(-100%);
             font-size: 14px;
             color: ${0};
@@ -3760,7 +3760,7 @@ const Container$9 = styled.div(_t$c || (_t$c = _$c`
   }
 
   return colors.brand10;
-}) : css$1(_t6$2 || (_t6$2 = _$c`
+}) : css$1(_t6$3 || (_t6$3 = _$c`
             font-size: 16px;
             color: ${0};
           `), props => {
@@ -3774,7 +3774,7 @@ const Container$9 = styled.div(_t$c || (_t$c = _$c`
 
   return colors.gray20;
 }), props => props.iconPosition === 'right' && 'right: 0;', props => props.actionPosition && props.actionPosition === 'left' ? 'left: 0;' : 'right: 0;');
-const LabelError$1 = styled.span(_t7$2 || (_t7$2 = _$c`
+const LabelError$1 = styled.span(_t7$3 || (_t7$3 = _$c`
   font-family: MontSerrat !important;
   font-size: 10px;
   margin-left: 0;
@@ -4022,9 +4022,9 @@ let _$b = t => t,
     _t2$5,
     _t3$5,
     _t4$3,
-    _t5$1,
-    _t6$1,
-    _t7$1,
+    _t5$2,
+    _t6$2,
+    _t7$2,
     _t8,
     _t9;
 const Sizes$4 = {
@@ -4103,14 +4103,14 @@ const Modal = styled.div(_t4$3 || (_t4$3 = _$b`
 
   return '80%';
 }, colors.white);
-styled.div(_t5$1 || (_t5$1 = _$b`
+styled.div(_t5$2 || (_t5$2 = _$b`
   transition: bottom 1s ease;
   width: 90%;
   background: ${0};
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
 `), colors.white);
-const Header$1 = styled.div(_t6$1 || (_t6$1 = _$b`
+const Header$1 = styled.div(_t6$2 || (_t6$2 = _$b`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -4127,7 +4127,7 @@ const Header$1 = styled.div(_t6$1 || (_t6$1 = _$b`
     color: ${0};
   }
 `), props => props.noBorder ? 'none' : `1px solid ${colors.default20}`, props => props.iconBack ? '20px 0' : '20px 30px', colors.brand10);
-const Icon = styled.div(_t7$1 || (_t7$1 = _$b`
+const Icon = styled.div(_t7$2 || (_t7$2 = _$b`
   padding: 20px 30px;
   cursor: pointer;
 `));
@@ -4255,9 +4255,9 @@ let _$a = t => t,
     _t2$4,
     _t3$4,
     _t4$2,
-    _t5,
-    _t6,
-    _t7;
+    _t5$1,
+    _t6$1,
+    _t7$1;
 const Label = styled.span(_t$a || (_t$a = _$a`
   font-family: MontSerrat !important;
   font-size: 14px;
@@ -4380,7 +4380,7 @@ const Container$8 = styled.div(_t2$4 || (_t2$4 = _$a`
           `), colors.brand10) : css$1(_t4$2 || (_t4$2 = _$a`
             color: ${0};
           `), colors.gray20), colors.brand10, colors.brandTransparent2);
-const LabelError = styled.span(_t5 || (_t5 = _$a`
+const LabelError = styled.span(_t5$1 || (_t5$1 = _$a`
   font-family: MontSerrat !important;
   font-size: 10px;
   margin-left: 0;
@@ -4393,14 +4393,14 @@ const LabelError = styled.span(_t5 || (_t5 = _$a`
 
   return colors.danger20;
 });
-const Footer = styled.div(_t6 || (_t6 = _$a`
+const Footer = styled.div(_t6$1 || (_t6$1 = _$a`
   font-family: MontSerrat !important;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   font-size: 10px;
 `));
-const LabelLengthInfo = styled.span(_t7 || (_t7 = _$a`
+const LabelLengthInfo = styled.span(_t7$1 || (_t7$1 = _$a`
   font-size: 10px;
   color: ${0};
 `), colors.gray10);
@@ -6832,7 +6832,10 @@ let _$6 = t => t,
     _t$6,
     _t2$3,
     _t3$3,
-    _t4$1;
+    _t4$1,
+    _t5,
+    _t6,
+    _t7;
 const Container$4 = styled.div(_t$6 || (_t$6 = _$6`
   font-family: MontSerrat !important;
   display: flex;
@@ -6840,7 +6843,7 @@ const Container$4 = styled.div(_t$6 || (_t$6 = _$6`
   justify-content: space-between;
   background-color: ${0};
   border: 1px solid ${0};
-  padding: 15px 20px;
+  padding: 0.9375rem 1.25rem;
   align-items: center;
   cursor: pointer;
   box-shadow: 0px 3px 2px 0px rgba(0, 0, 0, 0.16);
@@ -6855,17 +6858,6 @@ const Container$4 = styled.div(_t$6 || (_t$6 = _$6`
     flex-direction: column;
     flex: 1;
     margin-left: ${0};
-
-    .title {
-      font-size: ${0};
-
-      color: ${0};
-    }
-
-    .subtitle {
-      color: ${0};
-      font-size: 12px;
-    }
   }
 
   .value-icon {
@@ -6873,11 +6865,6 @@ const Container$4 = styled.div(_t$6 || (_t$6 = _$6`
     align-items: center;
     flex: 1;
     justify-content: flex-end;
-
-    .value {
-      margin-right: 20px;
-      color: ${0};
-    }
   }
 
   ${0}
@@ -6891,26 +6878,28 @@ const Container$4 = styled.div(_t$6 || (_t$6 = _$6`
   }
 
   return '100%';
-}, props => props.secondary ? colors.card : colors.white, colors.card, props => props.icon ? '15px' : '0', props => {
-  if (props.fontSizeTitle) {
-    if (typeof props.fontSizeTitle === 'string') {
-      return props.fontSizeTitle;
-    }
-
-    return `${props.fontSizeTitle}px`;
-  }
-
-  return props.subtitle ? '14px' : '16px';
-}, props => props.colorTitle ? props.colorTitle : `${colors.gray20}`, props => props.colorSubtitle ? props.colorSubtitle : `${colors.gray10}`, props => props.colorValue ? props.colorValue : `${colors.gray20}`, props => props.open ? css$1(_t2$3 || (_t2$3 = _$6`
+}, props => props.secondary ? colors.card : colors.white, colors.card, props => props.icon ? '15px' : '0', props => props.open ? css$1(_t2$3 || (_t2$3 = _$6`
           border-top-left-radius: 20px;
           border-top-right-radius: 20px;
         `)) : css$1(_t3$3 || (_t3$3 = _$6`
           border-radius: 20px;
         `)));
-const Body = styled.div(_t4$1 || (_t4$1 = _$6`
+const Title$1 = styled.span(_t4$1 || (_t4$1 = _$6`
+  font-size: ${0};
+  color: ${0};
+`), props => props.subtitle ? '0.875rem' : '1rem', colors.gray20);
+const Subtitle = styled.span(_t5 || (_t5 = _$6`
+  color: ${0};
+  font-size: 0.75rem;
+`), colors.gray10);
+const Value = styled.span(_t6 || (_t6 = _$6`
+  margin-right: 1.25rem;
+  color: ${0};
+`), colors.gray20);
+const Body = styled.div(_t7 || (_t7 = _$6`
   font-family: MontSerrat !important;
   width: ${0};
-  padding: 20px;
+  padding: 1.25rem;
   border: 1px solid ${0};
   border-top: 0;
   border-bottom-left-radius: 20px;
@@ -6926,53 +6915,63 @@ const Body = styled.div(_t4$1 || (_t4$1 = _$6`
 }, colors.card, props => props.open ? 'block' : 'none');
 
 const Accordion = ({
+  className,
+  style,
   title,
-  colorTitle,
+  titleClassName,
+  titleStyle,
   subtitle,
-  colorSubtitle,
+  subtitleClassName,
+  subtitleStyle,
   value,
-  colorValue,
+  valueClassName,
+  valueStyle,
   children,
   secondary,
   open,
   onClick,
   width,
   icon,
+  iconClassName,
+  iconStyle,
   customIcon,
-  colorIcon,
-  fontSizeTitle
+  bodyClassName,
+  bodyStyle
 }) => {
-  return jsxs(React$2.Fragment, {
+  return jsxs(Fragment$1, {
     children: [jsxs(Container$4, Object.assign({
       "data-testid": "accordion-component",
-      colorTitle: colorTitle,
-      colorSubtitle: colorSubtitle,
-      colorValue: colorValue,
+      className: className,
+      style: style,
       secondary: secondary,
       subtitle: subtitle,
       open: open,
       onClick: event => onClick(event),
       width: width,
-      icon: !!(icon || customIcon),
-      fontSizeTitle: fontSizeTitle
+      icon: !!(icon || customIcon)
     }, {
       children: [jsxs("div", Object.assign({
         className: "icon-title"
       }, {
         children: [customIcon || (icon ? jsx(FontAwesomeIcon, {
           "data-testid": "accordion-icon",
+          className: iconClassName,
+          style: iconStyle,
           icon: icon,
           size: "lg",
-          color: colorIcon || colors.brand10
+          color: colors.brand10
         }, void 0) : null), jsxs("div", Object.assign({
           className: "title-subtitle"
         }, {
-          children: [jsx("span", Object.assign({
-            className: "title"
+          children: [jsx(Title$1, Object.assign({
+            className: titleClassName,
+            style: titleStyle,
+            subtitle: subtitle
           }, {
             children: title
-          }), void 0), subtitle && jsx("span", Object.assign({
-            className: "subtitle"
+          }), void 0), subtitle && jsx(Subtitle, Object.assign({
+            className: subtitleClassName,
+            style: subtitleStyle
           }, {
             children: subtitle
           }), void 0)]
@@ -6980,8 +6979,9 @@ const Accordion = ({
       }), void 0), jsxs("div", Object.assign({
         className: "value-icon"
       }, {
-        children: [value && jsx("span", Object.assign({
-          className: "value"
+        children: [value && jsx(Value, Object.assign({
+          className: valueClassName,
+          style: valueStyle
         }, {
           children: value
         }), void 0), secondary ? jsx(FontAwesomeIcon, {
@@ -6998,6 +6998,8 @@ const Accordion = ({
         }, void 0)]
       }), void 0)]
     }), void 0), jsx(Body, Object.assign({
+      className: bodyClassName,
+      style: bodyStyle,
       open: open,
       width: width
     }, {

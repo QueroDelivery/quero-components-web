@@ -6,78 +6,106 @@ import {
   IconDefinition,
 } from '@fortawesome/free-solid-svg-icons';
 
-import { Container, Body } from './styles';
+import { Container, Body, Title, Subtitle, Value } from './styles';
 import { colors } from '../../styles/colors';
 
 export interface AccordionProps {
+  className?: string;
+  style?: React.CSSProperties;
   title: string;
-  colorTitle?: string;
+  titleClassName?: string;
+  titleStyle?: React.CSSProperties;
   subtitle?: string;
-  colorSubtitle?: string;
+  subtitleClassName?: string;
+  subtitleStyle?: React.CSSProperties;
   value?: string;
-  colorValue?: string;
+  valueClassName?: string;
+  valueStyle?: React.CSSProperties;
   open: boolean;
   // eslint-disable-next-line no-unused-vars
   onClick: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
   secondary?: boolean;
   width?: number | string;
   icon?: IconDefinition;
+  iconClassName?: string;
+  iconStyle?: React.CSSProperties;
   customIcon?: React.ReactNode;
-  colorIcon?: string;
-  fontSizeTitle?: number | string;
+  bodyClassName?: string;
+  bodyStyle?: React.CSSProperties;
 }
 
 const Accordion: React.FC<AccordionProps> = ({
+  className,
+  style,
   title,
-  colorTitle,
+  titleClassName,
+  titleStyle,
   subtitle,
-  colorSubtitle,
+  subtitleClassName,
+  subtitleStyle,
   value,
-  colorValue,
+  valueClassName,
+  valueStyle,
   children,
   secondary,
   open,
   onClick,
   width,
   icon,
+  iconClassName,
+  iconStyle,
   customIcon,
-  colorIcon,
-  fontSizeTitle,
+  bodyClassName,
+  bodyStyle,
 }) => {
   return (
-    <React.Fragment>
+    <>
       <Container
         data-testid="accordion-component"
-        colorTitle={colorTitle}
-        colorSubtitle={colorSubtitle}
-        colorValue={colorValue}
+        className={className}
+        style={style}
         secondary={secondary}
         subtitle={subtitle}
         open={open}
         onClick={event => onClick(event)}
         width={width}
         icon={!!(icon || customIcon)}
-        fontSizeTitle={fontSizeTitle}
       >
         <div className="icon-title">
           {customIcon ||
             (icon ? (
               <FontAwesomeIcon
                 data-testid="accordion-icon"
+                className={iconClassName}
+                style={iconStyle}
                 icon={icon}
                 size="lg"
-                color={colorIcon || colors.brand10}
+                color={colors.brand10}
               />
             ) : null)}
 
           <div className="title-subtitle">
-            <span className="title">{title}</span>
-            {subtitle && <span className="subtitle">{subtitle}</span>}
+            <Title
+              className={titleClassName}
+              style={titleStyle}
+              subtitle={subtitle}
+            >
+              {title}
+            </Title>
+            {subtitle && (
+              <Subtitle className={subtitleClassName} style={subtitleStyle}>
+                {subtitle}
+              </Subtitle>
+            )}
           </div>
         </div>
 
         <div className="value-icon">
-          {value && <span className="value">{value}</span>}
+          {value && (
+            <Value className={valueClassName} style={valueStyle}>
+              {value}
+            </Value>
+          )}
           {secondary ? (
             <FontAwesomeIcon
               icon={open ? faAngleUp : faAngleDown}
@@ -93,10 +121,15 @@ const Accordion: React.FC<AccordionProps> = ({
         </div>
       </Container>
 
-      <Body open={open} width={width}>
+      <Body
+        className={bodyClassName}
+        style={bodyStyle}
+        open={open}
+        width={width}
+      >
         {children}
       </Body>
-    </React.Fragment>
+    </>
   );
 };
 

@@ -81,42 +81,6 @@ export default {
         },
       },
     },
-    colorTitle: {
-      control: 'color',
-      description: 'Cor do título',
-      table: {
-        type: {
-          summary: 'string',
-        },
-      },
-    },
-    colorSubtitle: {
-      control: 'color',
-      description: 'Cor do subtítulo',
-      table: {
-        type: {
-          summary: 'string',
-        },
-      },
-    },
-    colorIcon: {
-      control: 'color',
-      description: 'Cor do ícone',
-      table: {
-        type: {
-          summary: 'string',
-        },
-      },
-    },
-    colorValue: {
-      control: 'color',
-      description: 'Cor do valor',
-      table: {
-        type: {
-          summary: 'string',
-        },
-      },
-    },
     secondary: {
       control: 'boolean',
       description: 'Deseja o estilo secundário do Accordion?',
@@ -135,19 +99,6 @@ export default {
         },
         type: {
           summary: 'ReactNode',
-        },
-      },
-    },
-    fontSizeTitle: {
-      control: 'number',
-      description: 'Tamanho do título',
-      table: {
-        defaultValue: {
-          summary: 'Opções',
-          detail: 'String | Number (definido como px)',
-        },
-        type: {
-          summary: 'number | string',
         },
       },
     },
@@ -270,40 +221,6 @@ Value.parameters = {
   },
 };
 
-export const Colors = Template.bind({});
-Colors.args = {
-  title: 'Título',
-  subtitle: 'Subtítulo',
-  value: 'R$10,00',
-  open: false,
-  secondary: false,
-  icon: faPhone,
-  colorIcon: 'blue',
-  colorSubtitle: 'green',
-  colorTitle: 'red',
-  colorValue: 'orange',
-  onClick: action('abrir/fechar'),
-};
-
-Colors.parameters = {
-  docs: {
-    source: {
-      code: `<Accordion
-      title="Título"
-      subtitle="Subtítulo"
-      value="R$10,00"
-      open={false}
-      icon={faPhone}
-      colorIcon="blue"
-      colorSubtitle="green"
-      colorTitle="red"
-      colorValue="orange"
-      onClick={() => {}}
-    />`,
-    },
-  },
-};
-
 export const Secondary = Template.bind({});
 Secondary.args = {
   title: 'Título',
@@ -341,28 +258,6 @@ CustomIcon.parameters = {
       title="Título"
       open={false}
       customIcon={<FontAwesomeIcon icon={faPhone}/>}
-      onClick={() => {}}
-    />`,
-    },
-  },
-};
-
-export const fontSizeTitle = Template.bind({});
-fontSizeTitle.args = {
-  title: 'Título',
-  open: false,
-  secondary: false,
-  fontSizeTitle: 10,
-  onClick: action('abrir/fechar'),
-};
-
-fontSizeTitle.parameters = {
-  docs: {
-    source: {
-      code: `<Accordion
-      title="Título"
-      open={false}
-      fontSizeTitle={10}
       onClick={() => {}}
     />`,
     },
