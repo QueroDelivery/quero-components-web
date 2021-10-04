@@ -25,7 +25,7 @@ export interface TextAreaProps
   height?: number | string;
 }
 
-const TextArea: React.FC<TextAreaProps> = ({
+function TextArea({
   label,
   labelClassName,
   labelStyle,
@@ -40,7 +40,7 @@ const TextArea: React.FC<TextAreaProps> = ({
 
   lengthInfo,
   ...rest
-}) => {
+}: TextAreaProps) {
   return (
     <div>
       {label && (
@@ -81,6 +81,6 @@ const TextArea: React.FC<TextAreaProps> = ({
       </Footer>
     </div>
   );
-};
+}
 
 export default TextArea;

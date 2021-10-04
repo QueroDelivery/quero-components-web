@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable react/prop-types */
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 import TextArea, { TextAreaProps } from './TextArea';
 
@@ -15,7 +15,7 @@ export interface TextAreaFormProps extends TextAreaProps {
   minimum?: number;
 }
 
-const TextAreaForm: React.FC<TextAreaFormProps> = ({
+function TextAreaForm({
   register,
   errors,
   validate,
@@ -24,7 +24,7 @@ const TextAreaForm: React.FC<TextAreaFormProps> = ({
   limit,
   minimum,
   ...rest
-}) => {
+}: TextAreaFormProps) {
   const [message, setMessage] = useState('');
 
   return (
@@ -72,6 +72,6 @@ const TextAreaForm: React.FC<TextAreaFormProps> = ({
       })}
     />
   );
-};
+}
 
 export default TextAreaForm;

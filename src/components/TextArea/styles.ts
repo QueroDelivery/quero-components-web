@@ -1,5 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
+import { getMeasurement } from '../../helpers/FnUtil';
 import { colors } from '../../styles/colors';
 
 interface ContainerProps {
@@ -46,7 +47,7 @@ export const Label = styled.span<LabelProps>`
 
 export const Container = styled.div<ContainerProps>`
   font-family: MontSerrat !important;
-  width: ${props => (props.width ? props.width : '100%')};
+  width: ${props => getMeasurement(props.width)};
   position: relative;
 
   opacity: ${props => (props.disabled ? '50%' : '100%')};
@@ -55,28 +56,10 @@ export const Container = styled.div<ContainerProps>`
     font-family: MontSerrat !important;
     color: ${props => (props.textColor ? props.textColor : colors.gray20)};
     resize: none;
-    width: ${props => {
-      if (props.width) {
-        if (typeof props.width === 'string') {
-          return props.width;
-        }
-        return `${props.width}px`;
-      }
-
-      return '100%';
-    }};
+    width: ${props => getMeasurement(props.width)};
 
     border-radius: 20px;
-    height: ${props => {
-      if (props.height) {
-        if (typeof props.height === 'string') {
-          return props.height;
-        }
-        return `${props.height}px`;
-      }
-
-      return '100%';
-    }};
+    height: ${props => getMeasurement(props.height)};
 
     margin: 0px;
     outline: none;

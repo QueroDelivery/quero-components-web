@@ -12,5 +12,5 @@ export interface TextAreaProps extends TextareaHTMLAttributes<HTMLTextAreaElemen
     width?: number | string;
     height?: number | string;
 }
-declare const TextArea: React.FC<TextAreaProps>;
+declare function TextArea({ label, labelClassName, labelStyle, labelColor, containerStyle, errorMessage, errorColor, textColor, width, height, lengthInfo, ...rest }: TextAreaProps): JSX.Element;
 export default TextArea;

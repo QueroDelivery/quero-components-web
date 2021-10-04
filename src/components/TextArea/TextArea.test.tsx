@@ -1,4 +1,3 @@
-import React from 'react';
 import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom/extend-expect';
@@ -109,6 +108,7 @@ describe('TextArea Component', () => {
     const text = 'Teste length';
     const errorText = 'Obrigatório';
     const errorColor = colors.danger10;
+    const defaultErrorColor = colors.danger20;
 
     // when
 
@@ -127,9 +127,9 @@ describe('TextArea Component', () => {
     const labelContainer = wrapper.getByText(labelText);
     const errorContainer = wrapper.getByText(errorText);
 
-    expect(textbox).toHaveStyle(`border-color: ${colors.danger20}`);
-    expect(labelContainer).toHaveStyle(`color: ${colors.danger20}`);
-    expect(errorContainer).toHaveStyle(`color: ${colors.danger20}`);
+    expect(textbox).toHaveStyle(`border-color: ${defaultErrorColor}`);
+    expect(labelContainer).toHaveStyle(`color: ${defaultErrorColor}`);
+    expect(errorContainer).toHaveStyle(`color: ${defaultErrorColor}`);
 
     wrapper.rerender(
       <TextArea
@@ -144,5 +144,27 @@ describe('TextArea Component', () => {
     expect(textbox).toHaveStyle(`border-color: ${errorColor}`);
     expect(labelContainer).toHaveStyle(`color: ${errorColor}`);
     expect(errorContainer).toHaveStyle(`color: ${errorColor}`);
+  });
+
+  it('Propriedade label color altera a cor da label', () => {
+    // given
+
+    const labelText = 'Test';
+    const labelColor = colors.brandDark;
+
+    // when
+    const wrapper = render(
+      <TextArea
+        onChange={onChangeMock}
+        label={labelText}
+        labelColor={labelColor}
+      />,
+    );
+
+    // then
+
+    const labelContainer = wrapper.getByText(labelText);
+
+    expect(labelContainer).toHaveStyle(`color: ${labelColor}`);
   });
 });
