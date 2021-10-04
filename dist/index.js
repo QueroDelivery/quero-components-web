@@ -2746,7 +2746,7 @@ var colors = {
   error: '#e0457b25'
 };
 
-var _templateObject$f, _templateObject2$9, _templateObject3$8, _templateObject4$6, _templateObject5$4, _templateObject6$4, _templateObject7$4;
+var _templateObject$f, _templateObject2$9, _templateObject3$8, _templateObject4$6, _templateObject5$5, _templateObject6$5, _templateObject7$5;
 var Sizes$6 = {
   mini: 'mini',
   tiny: 'tiny',
@@ -2951,15 +2951,15 @@ var TextEnd = styled__default["default"].span(_templateObject3$8 || (_templateOb
   return props.size ? textSize(props.size) : '14px';
 });
 var Notification = styled__default["default"].button(_templateObject4$6 || (_templateObject4$6 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  background-color: ", ";\n  height: 40px;\n  width: 100%;\n  border-radius: 30px;\n  cursor: pointer;\n  border: 1px solid ", ";\n  outline: none;\n\n  &:disabled {\n    opacity: 0.5;\n    cursor: not-allowed;\n    pointer-events: none;\n  }\n\n  &:hover {\n    background-color: ", ";\n  }\n\n  span {\n    color: ", ";\n    margin-left: 20px;\n    font-weight: bold;\n  }\n"])), colors.brand10, colors.brand30, colors.brandTransparent2, colors.brand30);
-var Icon$2 = styled__default["default"].div(_templateObject5$4 || (_templateObject5$4 = _taggedTemplateLiteralLoose(["\n  visibility: ", ";\n  margin-right: ", ";\n  margin-left: ", ";\n"])), function (props) {
+var Icon$2 = styled__default["default"].div(_templateObject5$5 || (_templateObject5$5 = _taggedTemplateLiteralLoose(["\n  visibility: ", ";\n  margin-right: ", ";\n  margin-left: ", ";\n"])), function (props) {
   return props.loading ? 'hidden' : 'visible';
 }, function (props) {
   return props.iconPosition === 'left' ? '10px' : '';
 }, function (props) {
   return props.iconPosition === 'right' ? '10px' : '';
 });
-var Amount = styled__default["default"].div(_templateObject6$4 || (_templateObject6$4 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  background-color: ", ";\n  width: 20px;\n  height: 20px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  border-radius: 50%;\n  color: ", ";\n  font-size: 10px;\n"])), colors.brand30, colors.brand10);
-var LoadingContainer = styled__default["default"].div(_templateObject7$4 || (_templateObject7$4 = _taggedTemplateLiteralLoose(["\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n"])));
+var Amount = styled__default["default"].div(_templateObject6$5 || (_templateObject6$5 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  background-color: ", ";\n  width: 20px;\n  height: 20px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  border-radius: 50%;\n  color: ", ";\n  font-size: 10px;\n"])), colors.brand30, colors.brand10);
+var LoadingContainer = styled__default["default"].div(_templateObject7$5 || (_templateObject7$5 = _taggedTemplateLiteralLoose(["\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n"])));
 
 var _templateObject$e, _templateObject2$8;
 var Sizes$5 = {
@@ -3271,12 +3271,12 @@ var ButtonMain = function ButtonMain(_ref) {
   return renderButton();
 };
 
-var _templateObject$d, _templateObject2$7, _templateObject3$7, _templateObject4$5, _templateObject5$3, _templateObject6$3, _templateObject7$3, _templateObject8$1;
+var _templateObject$d, _templateObject2$7, _templateObject3$7, _templateObject4$5, _templateObject5$4, _templateObject6$4, _templateObject7$4, _templateObject8$1;
 var Background$1 = styled__default["default"].div(_templateObject$d || (_templateObject$d = _taggedTemplateLiteralLoose(["\n  ", "\n"])), function (props) {
   return props.open ? styled.css(_templateObject2$7 || (_templateObject2$7 = _taggedTemplateLiteralLoose(["\n          opacity: 1;\n          visibility: visible;\n          position: fixed;\n          top: 0;\n          right: 0;\n          bottom: 0;\n          left: 0;\n          background: rgba(0, 0, 0, 0.5);\n          transition: opacity 0.25s ease;\n          overflow: auto;\n          display: flex;\n          z-index: 999;\n        "]))) : styled.css(_templateObject3$7 || (_templateObject3$7 = _taggedTemplateLiteralLoose(["\n          opacity: 1;\n          visibility: hidden;\n        "])));
 });
 var Dialog = styled__default["default"].div(_templateObject4$5 || (_templateObject4$5 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  ", "\n"])), function (props) {
-  return props.open ? styled.css(_templateObject5$3 || (_templateObject5$3 = _taggedTemplateLiteralLoose(["\n          transition: bottom 0.25s ease;\n          width: 97%;\n          background: ", ";\n          border-top-left-radius: 30px;\n          border-top-right-radius: 30px;\n          margin-top: auto;\n          margin-left: auto;\n          margin-right: auto;\n          position: relative;\n          /* overflow: auto; */\n\n          overflow: ", ";\n          padding-bottom: ", ";\n          height: ", ";\n          max-height: ", ";\n\n          .box-dialog {\n            position: relative;\n            padding: 20px 20px 0;\n            overflow: ", ";\n\n            height: ", ";\n            /* max-height: 100%; */\n          }\n\n          .loading-dialog {\n            display: flex;\n            justify-content: center;\n            align-items: center;\n            background-color: rgba(255, 255, 255, 0.8);\n            width: 100%;\n            height: 100%;\n            top: 0;\n            left: 0;\n            right: 0;\n            bottom: 0;\n            border-radius: 30px;\n            z-index: 2;\n            position: absolute;\n          }\n        "])), colors.white, function () {
+  return props.open ? styled.css(_templateObject5$4 || (_templateObject5$4 = _taggedTemplateLiteralLoose(["\n          transition: bottom 0.25s ease;\n          width: 97%;\n          background: ", ";\n          border-top-left-radius: 30px;\n          border-top-right-radius: 30px;\n          margin-top: auto;\n          margin-left: auto;\n          margin-right: auto;\n          position: relative;\n          /* overflow: auto; */\n\n          overflow: ", ";\n          padding-bottom: ", ";\n          height: ", ";\n          max-height: ", ";\n\n          .box-dialog {\n            position: relative;\n            padding: 20px 20px 0;\n            overflow: ", ";\n\n            height: ", ";\n            /* max-height: 100%; */\n          }\n\n          .loading-dialog {\n            display: flex;\n            justify-content: center;\n            align-items: center;\n            background-color: rgba(255, 255, 255, 0.8);\n            width: 100%;\n            height: 100%;\n            top: 0;\n            left: 0;\n            right: 0;\n            bottom: 0;\n            border-radius: 30px;\n            z-index: 2;\n            position: absolute;\n          }\n        "])), colors.white, function () {
     if (props.maxHeight || props.loading) {
       return 'none';
     }
@@ -3304,9 +3304,9 @@ var Dialog = styled__default["default"].div(_templateObject4$5 || (_templateObje
     }
 
     return '100%';
-  }, props.loading ? 'hidden' : 'auto', props.title ? "calc(100% - " + props.sizeHeader + "px)" : '100%') : styled.css(_templateObject6$3 || (_templateObject6$3 = _taggedTemplateLiteralLoose(["\n          transition: bottom 0.25s ease;\n          bottom: -100%;\n        "])));
+  }, props.loading ? 'hidden' : 'auto', props.title ? "calc(100% - " + props.sizeHeader + "px)" : '100%') : styled.css(_templateObject6$4 || (_templateObject6$4 = _taggedTemplateLiteralLoose(["\n          transition: bottom 0.25s ease;\n          bottom: -100%;\n        "])));
 });
-var Header$2 = styled__default["default"].div(_templateObject7$3 || (_templateObject7$3 = _taggedTemplateLiteralLoose(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  border-bottom: ", ";\n  font-size: 1.25rem;\n\n  .name-icon-modal {\n    display: flex;\n    align-items: center;\n  }\n\n  & strong {\n    padding: ", ";\n    color: ", ";\n  }\n"])), function (props) {
+var Header$2 = styled__default["default"].div(_templateObject7$4 || (_templateObject7$4 = _taggedTemplateLiteralLoose(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  border-bottom: ", ";\n  font-size: 1.25rem;\n\n  .name-icon-modal {\n    display: flex;\n    align-items: center;\n  }\n\n  & strong {\n    padding: ", ";\n    color: ", ";\n  }\n"])), function (props) {
   return props.noBorder ? 'none' : "1px solid " + colors.default20;
 }, function (props) {
   return props.iconBack ? '1.25rem 0' : '1.25rem 1.875rem';
@@ -3400,7 +3400,7 @@ var DialogComponent = function DialogComponent(_ref) {
   }), void 0);
 };
 
-var _templateObject$c, _templateObject2$6, _templateObject3$6, _templateObject4$4, _templateObject5$2, _templateObject6$2, _templateObject7$2;
+var _templateObject$c, _templateObject2$6, _templateObject3$6, _templateObject4$4, _templateObject5$3, _templateObject6$3, _templateObject7$3;
 var Container$9 = styled__default["default"].div(_templateObject$c || (_templateObject$c = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  position: relative;\n  opacity: ", ";\n  width: ", ";\n\n  input {\n    font-family: MontSerrat !important;\n    color: ", ";\n    width: 100%;\n    height: 100%;\n    padding-top: 20px;\n    padding-left: ", ";\n    padding-bottom: 5px;\n    padding-right: ", ";\n    border: none;\n    outline: none;\n    background-color: transparent;\n\n    &::placeholder {\n      color: ", ";\n    }\n  }\n\n  ", "\n\n  input:disabled {\n    background-color: transparent;\n  }\n\n  label {\n    font-family: MontSerrat !important;\n    position: absolute;\n    bottom: 0px;\n    top: 0px;\n    left: 0px;\n    width: 100%;\n    right: 100%;\n    pointer-events: none;\n    border-bottom-width: 1px;\n    border-bottom-style: solid;\n    border-bottom-color: ", ";\n\n    ", "\n  }\n\n  span {\n    font-family: MontSerrat !important;\n    position: absolute;\n    bottom: 5px;\n    left: ", ";\n    transition: all 0.3s ease;\n\n    ", "\n  }\n\n  .icon {\n    position: absolute;\n    bottom: 0;\n    padding: 5px 10px;\n    ", "\n  }\n\n  .icon-action {\n    position: absolute;\n    bottom: 0;\n    padding: 5px 10px;\n    ", "\n    cursor: pointer;\n  }\n"])), function (props) {
   return props.disabled ? '50%' : '100%';
 }, function (props) {
@@ -3496,7 +3496,7 @@ var Container$9 = styled__default["default"].div(_templateObject$c || (_template
 
   return '15px';
 }, function (props) {
-  return props.isFieldActive ? styled.css(_templateObject5$2 || (_templateObject5$2 = _taggedTemplateLiteralLoose(["\n            transform: translateY(-100%);\n            font-size: 14px;\n            color: ", ";\n          "])), function (props) {
+  return props.isFieldActive ? styled.css(_templateObject5$3 || (_templateObject5$3 = _taggedTemplateLiteralLoose(["\n            transform: translateY(-100%);\n            font-size: 14px;\n            color: ", ";\n          "])), function (props) {
     if ((props.requiredText || props.errorMessage) && props.errorColor) {
       return props.errorColor;
     }
@@ -3506,7 +3506,7 @@ var Container$9 = styled__default["default"].div(_templateObject$c || (_template
     }
 
     return colors.brand10;
-  }) : styled.css(_templateObject6$2 || (_templateObject6$2 = _taggedTemplateLiteralLoose(["\n            font-size: 16px;\n            color: ", ";\n          "])), function (props) {
+  }) : styled.css(_templateObject6$3 || (_templateObject6$3 = _taggedTemplateLiteralLoose(["\n            font-size: 16px;\n            color: ", ";\n          "])), function (props) {
     if ((props.requiredText || props.errorMessage) && props.errorColor) {
       return props.errorColor;
     }
@@ -3522,7 +3522,7 @@ var Container$9 = styled__default["default"].div(_templateObject$c || (_template
 }, function (props) {
   return props.actionPosition && props.actionPosition === 'left' ? 'left: 0;' : 'right: 0;';
 });
-var LabelError$1 = styled__default["default"].span(_templateObject7$2 || (_templateObject7$2 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  font-size: 10px;\n  margin-left: 0;\n  color: ", ";\n"])), function (props) {
+var LabelError$1 = styled__default["default"].span(_templateObject7$3 || (_templateObject7$3 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  font-size: 10px;\n  margin-left: 0;\n  color: ", ";\n"])), function (props) {
   if (props.errorColor) {
     return props.errorColor;
   }
@@ -3765,7 +3765,7 @@ var InputLineForm = function InputLineForm(_ref) {
   }), void 0);
 };
 
-var _templateObject$b, _templateObject2$5, _templateObject3$5, _templateObject4$3, _templateObject5$1, _templateObject6$1, _templateObject7$1, _templateObject8, _templateObject9;
+var _templateObject$b, _templateObject2$5, _templateObject3$5, _templateObject4$3, _templateObject5$2, _templateObject6$2, _templateObject7$2, _templateObject8, _templateObject9;
 var Sizes$4 = {
   mini: 'mini',
   tiny: 'tiny',
@@ -3814,13 +3814,13 @@ var Modal = styled__default["default"].div(_templateObject4$3 || (_templateObjec
 
   return '80%';
 }, colors.white);
-styled__default["default"].div(_templateObject5$1 || (_templateObject5$1 = _taggedTemplateLiteralLoose(["\n  transition: bottom 1s ease;\n  width: 90%;\n  background: ", ";\n  border-top-left-radius: 30px;\n  border-top-right-radius: 30px;\n"])), colors.white);
-var Header$1 = styled__default["default"].div(_templateObject6$1 || (_templateObject6$1 = _taggedTemplateLiteralLoose(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  border-bottom: ", ";\n  font-size: 20px;\n\n  .name-icon-modal {\n    display: flex;\n    align-items: center;\n  }\n\n  & strong {\n    padding: ", ";\n    color: ", ";\n  }\n"])), function (props) {
+styled__default["default"].div(_templateObject5$2 || (_templateObject5$2 = _taggedTemplateLiteralLoose(["\n  transition: bottom 1s ease;\n  width: 90%;\n  background: ", ";\n  border-top-left-radius: 30px;\n  border-top-right-radius: 30px;\n"])), colors.white);
+var Header$1 = styled__default["default"].div(_templateObject6$2 || (_templateObject6$2 = _taggedTemplateLiteralLoose(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  border-bottom: ", ";\n  font-size: 20px;\n\n  .name-icon-modal {\n    display: flex;\n    align-items: center;\n  }\n\n  & strong {\n    padding: ", ";\n    color: ", ";\n  }\n"])), function (props) {
   return props.noBorder ? 'none' : "1px solid " + colors.default20;
 }, function (props) {
   return props.iconBack ? '20px 0' : '20px 30px';
 }, colors.brand10);
-var Icon = styled__default["default"].div(_templateObject7$1 || (_templateObject7$1 = _taggedTemplateLiteralLoose(["\n  padding: 20px 30px;\n  cursor: pointer;\n"])));
+var Icon = styled__default["default"].div(_templateObject7$2 || (_templateObject7$2 = _taggedTemplateLiteralLoose(["\n  padding: 20px 30px;\n  cursor: pointer;\n"])));
 var Body$1 = styled__default["default"].div(_templateObject8 || (_templateObject8 = _taggedTemplateLiteralLoose(["\n  padding: 20px 30px;\n  height: 100%;\n  position: relative;\n\n  .loading-modal {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    background-color: rgba(255, 255, 255, 0.8);\n    width: 100%;\n    height: 100%;\n    top: 0;\n    left: 0;\n    right: 0;\n    bottom: 0;\n    border-radius: 30px;\n    z-index: 2;\n    position: absolute;\n  }\n"])));
 var Actions = styled__default["default"].div(_templateObject9 || (_templateObject9 = _taggedTemplateLiteralLoose(["\n  border-top: 1px solid ", ";\n  margin: 0 30px;\n  padding: 20px 0;\n  display: flex;\n  flex-direction: row-reverse;\n"])), colors.default20);
 
@@ -3936,7 +3936,7 @@ var getMeasurement = function getMeasurement(size, defaultValue) {
   return defaultValue || '100%';
 };
 
-var _templateObject$a, _templateObject2$4, _templateObject3$4, _templateObject4$2, _templateObject5, _templateObject6, _templateObject7;
+var _templateObject$a, _templateObject2$4, _templateObject3$4, _templateObject4$2, _templateObject5$1, _templateObject6$1, _templateObject7$1;
 var Label = styled__default["default"].span(_templateObject$a || (_templateObject$a = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  font-size: 14px;\n  color: ", ";\n  margin-left: 15px;\n"])), function (props) {
   if (props.errorMessage && props.errorColor) {
     return props.errorColor;
@@ -3985,15 +3985,15 @@ var Container$8 = styled__default["default"].div(_templateObject2$4 || (_templat
 }, function (props) {
   return props.isFieldActive ? styled.css(_templateObject3$4 || (_templateObject3$4 = _taggedTemplateLiteralLoose(["\n            color: ", ";\n          "])), colors.brand10) : styled.css(_templateObject4$2 || (_templateObject4$2 = _taggedTemplateLiteralLoose(["\n            color: ", ";\n          "])), colors.gray20);
 }, colors.brand10, colors.brandTransparent2);
-var LabelError = styled__default["default"].span(_templateObject5 || (_templateObject5 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  font-size: 10px;\n  margin-left: 0;\n  margin-top: -2px;\n  color: ", ";\n"])), function (props) {
+var LabelError = styled__default["default"].span(_templateObject5$1 || (_templateObject5$1 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  font-size: 10px;\n  margin-left: 0;\n  margin-top: -2px;\n  color: ", ";\n"])), function (props) {
   if (props.errorColor) {
     return props.errorColor;
   }
 
   return colors.danger20;
 });
-var Footer = styled__default["default"].div(_templateObject6 || (_templateObject6 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: space-between;\n  font-size: 10px;\n"])));
-var LabelLengthInfo = styled__default["default"].span(_templateObject7 || (_templateObject7 = _taggedTemplateLiteralLoose(["\n  font-size: 10px;\n  color: ", ";\n"])), colors.gray10);
+var Footer = styled__default["default"].div(_templateObject6$1 || (_templateObject6$1 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: space-between;\n  font-size: 10px;\n"])));
+var LabelLengthInfo = styled__default["default"].span(_templateObject7$1 || (_templateObject7$1 = _taggedTemplateLiteralLoose(["\n  font-size: 10px;\n  color: ", ";\n"])), colors.gray10);
 
 var _excluded$8 = ["label", "labelClassName", "labelStyle", "labelColor", "containerStyle", "errorMessage", "errorColor", "textColor", "width", "height", "lengthInfo"];
 
@@ -4842,8 +4842,8 @@ var DropdownForm = function DropdownForm(_ref) {
   }), void 0);
 };
 
-var _templateObject$6, _templateObject2$3, _templateObject3$3, _templateObject4$1;
-var Container$4 = styled__default["default"].div(_templateObject$6 || (_templateObject$6 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  display: flex;\n  width: ", ";\n  justify-content: space-between;\n  background-color: ", ";\n  border: 1px solid ", ";\n  padding: 15px 20px;\n  align-items: center;\n  cursor: pointer;\n  box-shadow: 0px 3px 2px 0px rgba(0, 0, 0, 0.16);\n\n  .icon-title {\n    display: flex;\n    align-items: center;\n  }\n\n  .title-subtitle {\n    display: flex;\n    flex-direction: column;\n    flex: 1;\n    margin-left: ", ";\n\n    .title {\n      font-size: ", ";\n\n      color: ", ";\n    }\n\n    .subtitle {\n      color: ", ";\n      font-size: 12px;\n    }\n  }\n\n  .value-icon {\n    display: flex;\n    align-items: center;\n    flex: 1;\n    justify-content: flex-end;\n\n    .value {\n      margin-right: 20px;\n      color: ", ";\n    }\n  }\n\n  ", "\n"])), function (props) {
+var _templateObject$6, _templateObject2$3, _templateObject3$3, _templateObject4$1, _templateObject5, _templateObject6, _templateObject7;
+var Container$4 = styled__default["default"].div(_templateObject$6 || (_templateObject$6 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  display: flex;\n  width: ", ";\n  justify-content: space-between;\n  background-color: ", ";\n  border: 1px solid ", ";\n  padding: 0.9375rem 1.25rem;\n  align-items: center;\n  cursor: pointer;\n  box-shadow: 0px 3px 2px 0px rgba(0, 0, 0, 0.16);\n\n  .icon-title {\n    display: flex;\n    align-items: center;\n  }\n\n  .title-subtitle {\n    display: flex;\n    flex-direction: column;\n    flex: 1;\n    margin-left: ", ";\n  }\n\n  .value-icon {\n    display: flex;\n    align-items: center;\n    flex: 1;\n    justify-content: flex-end;\n  }\n\n  ", "\n"])), function (props) {
   if (props.width) {
     if (typeof props.width === 'string') {
       return props.width;
@@ -4858,77 +4858,82 @@ var Container$4 = styled__default["default"].div(_templateObject$6 || (_template
 }, colors.card, function (props) {
   return props.icon ? '15px' : '0';
 }, function (props) {
-  if (props.fontSizeTitle) {
-    if (typeof props.fontSizeTitle === 'string') {
-      return props.fontSizeTitle;
-    }
-
-    return props.fontSizeTitle + "px";
+  return props.open ? styled.css(_templateObject2$3 || (_templateObject2$3 = _taggedTemplateLiteralLoose(["\n          border-top-left-radius: 20px;\n          border-top-right-radius: 20px;\n        "]))) : styled.css(_templateObject3$3 || (_templateObject3$3 = _taggedTemplateLiteralLoose(["\n          border-radius: 20px;\n        "])));
+});
+var Title$1 = styled__default["default"].span(_templateObject4$1 || (_templateObject4$1 = _taggedTemplateLiteralLoose(["\n  font-size: ", ";\n  color: ", ";\n"])), function (props) {
+  return props.subtitle ? '0.875rem' : '1rem';
+}, colors.gray20);
+var Subtitle = styled__default["default"].span(_templateObject5 || (_templateObject5 = _taggedTemplateLiteralLoose(["\n  color: ", ";\n  font-size: 0.75rem;\n"])), colors.gray10);
+var Value = styled__default["default"].span(_templateObject6 || (_templateObject6 = _taggedTemplateLiteralLoose(["\n  margin-right: 1.25rem;\n  color: ", ";\n"])), colors.gray20);
+var Body = styled__default["default"].div(_templateObject7 || (_templateObject7 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  width: ", ";\n  padding: 1.25rem;\n  border: 1px solid ", ";\n  border-top: 0;\n  border-bottom-left-radius: 20px;\n  border-bottom-right-radius: 20px;\n  display: ", ";\n  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.16);\n"])), function (props) {
+  if (typeof props.width === 'string') {
+    return props.width;
   }
 
-  return props.subtitle ? '14px' : '16px';
-}, function (props) {
-  return props.colorTitle ? props.colorTitle : "" + colors.gray20;
-}, function (props) {
-  return props.colorSubtitle ? props.colorSubtitle : "" + colors.gray10;
-}, function (props) {
-  return props.colorValue ? props.colorValue : "" + colors.gray20;
-}, function (props) {
-  return props.open ? styled.css(_templateObject2$3 || (_templateObject2$3 = _taggedTemplateLiteralLoose(["\n          border-top-left-radius: 20px;\n          border-top-right-radius: 20px;\n        "]))) : styled.css(_templateObject3$3 || (_templateObject3$3 = _taggedTemplateLiteralLoose(["\n          border-radius: 30px;\n        "])));
-});
-var Body = styled__default["default"].div(_templateObject4$1 || (_templateObject4$1 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  width: ", ";\n  padding: 20px;\n  border: 1px solid ", ";\n  border-top: 0;\n  border-bottom-left-radius: 20px;\n  border-bottom-right-radius: 20px;\n  display: ", ";\n  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.16);\n"])), function (props) {
-  return props.width ? props.width + "%" : '100%';
+  return props.width + "px";
 }, colors.card, function (props) {
   return props.open ? 'block' : 'none';
 });
 
 var Accordion = function Accordion(_ref) {
-  var title = _ref.title,
-      colorTitle = _ref.colorTitle,
+  var className = _ref.className,
+      style = _ref.style,
+      title = _ref.title,
+      titleClassName = _ref.titleClassName,
+      titleStyle = _ref.titleStyle,
       subtitle = _ref.subtitle,
-      colorSubtitle = _ref.colorSubtitle,
+      subtitleClassName = _ref.subtitleClassName,
+      subtitleStyle = _ref.subtitleStyle,
       value = _ref.value,
-      colorValue = _ref.colorValue,
+      valueClassName = _ref.valueClassName,
+      valueStyle = _ref.valueStyle,
       children = _ref.children,
       secondary = _ref.secondary,
       open = _ref.open,
-      onChange = _ref.onChange,
+      _onClick = _ref.onClick,
       width = _ref.width,
       icon = _ref.icon,
+      iconClassName = _ref.iconClassName,
+      iconStyle = _ref.iconStyle,
       customIcon = _ref.customIcon,
-      colorIcon = _ref.colorIcon,
-      fontSizeTitle = _ref.fontSizeTitle;
-  return jsxRuntime.jsxs(React__default["default"].Fragment, {
+      bodyClassName = _ref.bodyClassName,
+      bodyStyle = _ref.bodyStyle;
+  return jsxRuntime.jsxs(jsxRuntime.Fragment, {
     children: [jsxRuntime.jsxs(Container$4, Object.assign({
-      colorTitle: colorTitle,
-      colorSubtitle: colorSubtitle,
-      colorValue: colorValue,
+      "data-testid": "accordion-component",
+      className: className,
+      style: style,
       secondary: secondary,
       subtitle: subtitle,
       open: open,
-      onClick: function onClick() {
-        return onChange();
+      onClick: function onClick(event) {
+        return _onClick(event);
       },
       width: width,
-      icon: !!(icon || customIcon),
-      fontSizeTitle: fontSizeTitle
+      icon: !!(icon || customIcon)
     }, {
       children: [jsxRuntime.jsxs("div", Object.assign({
         className: "icon-title"
       }, {
         children: [customIcon || (icon ? jsxRuntime.jsx(FontAwesomeIcon, {
+          "data-testid": "accordion-icon",
+          className: iconClassName,
+          style: iconStyle,
           icon: icon,
           size: "lg",
-          color: colorIcon || colors.brand10
+          color: colors.brand10
         }, void 0) : null), jsxRuntime.jsxs("div", Object.assign({
           className: "title-subtitle"
         }, {
-          children: [jsxRuntime.jsx("span", Object.assign({
-            className: "title"
+          children: [jsxRuntime.jsx(Title$1, Object.assign({
+            className: titleClassName,
+            style: titleStyle,
+            subtitle: subtitle
           }, {
             children: title
-          }), void 0), subtitle && jsxRuntime.jsx("span", Object.assign({
-            className: "subtitle"
+          }), void 0), subtitle && jsxRuntime.jsx(Subtitle, Object.assign({
+            className: subtitleClassName,
+            style: subtitleStyle
           }, {
             children: subtitle
           }), void 0)]
@@ -4936,8 +4941,9 @@ var Accordion = function Accordion(_ref) {
       }), void 0), jsxRuntime.jsxs("div", Object.assign({
         className: "value-icon"
       }, {
-        children: [jsxRuntime.jsx("span", Object.assign({
-          className: "value"
+        children: [value && jsxRuntime.jsx(Value, Object.assign({
+          className: valueClassName,
+          style: valueStyle
         }, {
           children: value
         }), void 0), secondary ? jsxRuntime.jsx(FontAwesomeIcon, {
@@ -4954,6 +4960,8 @@ var Accordion = function Accordion(_ref) {
         }, void 0)]
       }), void 0)]
     }), void 0), jsxRuntime.jsx(Body, Object.assign({
+      className: bodyClassName,
+      style: bodyStyle,
       open: open,
       width: width
     }, {
