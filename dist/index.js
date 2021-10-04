@@ -2833,7 +2833,7 @@ var Button$1 = styled__default["default"].button(_templateObject$f || (_template
     return 'transparent';
   }
 
-  return colors.black;
+  return colors.brand30;
 }, function (props) {
   return props.size ? size$2(props.size) : '40px';
 }, function (props) {
@@ -3924,6 +3924,18 @@ var ModalComponent = function ModalComponent(_ref) {
   }), void 0);
 };
 
+var getMeasurement = function getMeasurement(size, defaultValue) {
+  if (size) {
+    if (typeof size === 'string') {
+      return size;
+    }
+
+    return size + "px";
+  }
+
+  return defaultValue || '100%';
+};
+
 var _templateObject$a, _templateObject2$4, _templateObject3$4, _templateObject4$2, _templateObject5, _templateObject6, _templateObject7;
 var Label = styled__default["default"].span(_templateObject$a || (_templateObject$a = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  font-size: 14px;\n  color: ", ";\n  margin-left: 15px;\n"])), function (props) {
   if (props.errorMessage && props.errorColor) {
@@ -3941,31 +3953,15 @@ var Label = styled__default["default"].span(_templateObject$a || (_templateObjec
   return colors.brand10;
 });
 var Container$8 = styled__default["default"].div(_templateObject2$4 || (_templateObject2$4 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  width: ", ";\n  position: relative;\n\n  opacity: ", ";\n\n  textarea {\n    font-family: MontSerrat !important;\n    color: ", ";\n    resize: none;\n    width: ", ";\n\n    border-radius: 20px;\n    height: ", ";\n\n    margin: 0px;\n    outline: none;\n    padding: 20px;\n    border-color: ", ";\n\n    &::placeholder {\n      color: ", ";\n    }\n\n    -moz-appearance: none;\n    -webkit-appearance: none;\n  }\n\n  label {\n    position: absolute;\n    bottom: 0px;\n    top: 0px;\n    left: 0px;\n    width: 100%;\n    right: 100%;\n    pointer-events: none;\n    border-bottom-width: 1px;\n    border-bottom-style: solid;\n    border-bottom-color: ", ";\n\n    ", "\n  }\n\n  textarea::-webkit-scrollbar {\n    width: 7px;\n    border-radius: 50px;\n  }\n\n  textarea::-webkit-scrollbar-thumb {\n    background-color: ", ";\n    border-radius: 50px;\n  }\n\n  textarea::-webkit-scrollbar-thumb:hover {\n    background-color: ", ";\n  }\n"])), function (props) {
-  return props.width ? props.width : '100%';
+  return getMeasurement(props.width);
 }, function (props) {
   return props.disabled ? '50%' : '100%';
 }, function (props) {
   return props.textColor ? props.textColor : colors.gray20;
 }, function (props) {
-  if (props.width) {
-    if (typeof props.width === 'string') {
-      return props.width;
-    }
-
-    return props.width + "px";
-  }
-
-  return '100%';
+  return getMeasurement(props.width);
 }, function (props) {
-  if (props.height) {
-    if (typeof props.height === 'string') {
-      return props.height;
-    }
-
-    return props.height + "px";
-  }
-
-  return '100%';
+  return getMeasurement(props.height);
 }, function (props) {
   if (props.errorMessage && props.errorColor) {
     return props.errorColor;
@@ -4001,7 +3997,7 @@ var LabelLengthInfo = styled__default["default"].span(_templateObject7 || (_temp
 
 var _excluded$8 = ["label", "labelClassName", "labelStyle", "labelColor", "containerStyle", "errorMessage", "errorColor", "textColor", "width", "height", "lengthInfo"];
 
-var TextArea = function TextArea(_ref) {
+function TextArea(_ref) {
   var label = _ref.label,
       labelClassName = _ref.labelClassName,
       labelStyle = _ref.labelStyle,
@@ -4045,11 +4041,11 @@ var TextArea = function TextArea(_ref) {
       }, void 0) : null]
     }, void 0)]
   }, void 0);
-};
+}
 
 var _excluded$7 = ["register", "errors", "validate", "name", "required", "limit", "minimum"];
 
-var TextAreaForm = function TextAreaForm(_ref) {
+function TextAreaForm(_ref) {
   var register = _ref.register,
       errors = _ref.errors,
       validate = _ref.validate,
@@ -4094,7 +4090,7 @@ var TextAreaForm = function TextAreaForm(_ref) {
       return true;
     } : null
   })), void 0);
-};
+}
 
 var _templateObject$9;
 var Sizes$3 = {
@@ -6993,26 +6989,31 @@ var Container$1 = styled__default["default"].div(_templateObject4 || (_templateO
   return props.hasMore || props.hasPagination ? '20px' : '0';
 }, colors.brand10);
 
-var _excluded = ["children", "title", "titleStyle", "message", "messageStyle", "hasMore", "pagination"];
+var _excluded = ["children", "title", "titleStyle", "titleClassName", "message", "messageStyle", "messageClassName", "hasMore", "hasMoreText", "pagination"];
 
-var TableComponent = function TableComponent(_ref) {
+function TableComponent(_ref) {
   var children = _ref.children,
       title = _ref.title,
       titleStyle = _ref.titleStyle,
+      titleClassName = _ref.titleClassName,
       message = _ref.message,
       messageStyle = _ref.messageStyle,
+      messageClassName = _ref.messageClassName,
       hasMore = _ref.hasMore,
+      hasMoreText = _ref.hasMoreText,
       pagination = _ref.pagination,
       rest = _objectWithoutPropertiesLoose$3(_ref, _excluded);
 
   return jsxRuntime.jsxs("div", {
     children: [title || message ? jsxRuntime.jsxs(Header, {
       children: [jsxRuntime.jsx(Title, Object.assign({
-        style: titleStyle
+        style: titleStyle,
+        className: titleClassName
       }, {
         children: title
       }), void 0), jsxRuntime.jsx(Message, Object.assign({
-        style: messageStyle
+        style: messageStyle,
+        className: messageClassName
       }, {
         children: message
       }), void 0)]
@@ -7024,17 +7025,17 @@ var TableComponent = function TableComponent(_ref) {
         children: children
       }), void 0)
     }), void 0), hasMore ? jsxRuntime.jsx(ButtonMain, {
+      "data-testid": "hasmore-button",
       secondary: true,
-      textFirst: "ver a",
-      textEnd: "lista completa",
-      onClick: function onClick() {
-        return hasMore();
-      }
+      textFirst: hasMoreText || 'ver a',
+      textEnd: !hasMoreText ? '' : 'lista completa',
+      notStrong: !!hasMoreText,
+      onClick: hasMore
     }, void 0) : null, pagination ? jsxRuntime.jsxs("div", {
       children: [jsxRuntime.jsx("br", {}, void 0), pagination]
     }, void 0) : null]
   }, void 0);
-};
+}
 
 var Table = TableComponent;
 Table.Row = semanticUiReact.TableRow;

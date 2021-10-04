@@ -2849,7 +2849,7 @@ const Button$1 = styled.button(_t$f || (_t$f = _$f`
     return 'transparent';
   }
 
-  return colors.black;
+  return colors.brand30;
 }, props => props.size ? size$2(props.size) : '40px', props => {
   if (props.width) {
     if (typeof props.width === 'string') {
@@ -4250,6 +4250,18 @@ const ModalComponent = ({
   }), void 0);
 };
 
+const getMeasurement = (size, defaultValue) => {
+  if (size) {
+    if (typeof size === 'string') {
+      return size;
+    }
+
+    return `${size}px`;
+  }
+
+  return defaultValue || '100%';
+};
+
 let _$a = t => t,
     _t$a,
     _t2$4,
@@ -4335,27 +4347,7 @@ const Container$8 = styled.div(_t2$4 || (_t2$4 = _$a`
   textarea::-webkit-scrollbar-thumb:hover {
     background-color: ${0};
   }
-`), props => props.width ? props.width : '100%', props => props.disabled ? '50%' : '100%', props => props.textColor ? props.textColor : colors.gray20, props => {
-  if (props.width) {
-    if (typeof props.width === 'string') {
-      return props.width;
-    }
-
-    return `${props.width}px`;
-  }
-
-  return '100%';
-}, props => {
-  if (props.height) {
-    if (typeof props.height === 'string') {
-      return props.height;
-    }
-
-    return `${props.height}px`;
-  }
-
-  return '100%';
-}, props => {
+`), props => getMeasurement(props.width), props => props.disabled ? '50%' : '100%', props => props.textColor ? props.textColor : colors.gray20, props => getMeasurement(props.width), props => getMeasurement(props.height), props => {
   if (props.errorMessage && props.errorColor) {
     return props.errorColor;
   }
@@ -4407,7 +4399,7 @@ const LabelLengthInfo = styled.span(_t7 || (_t7 = _$a`
 
 const _excluded$8 = ["label", "labelClassName", "labelStyle", "labelColor", "containerStyle", "errorMessage", "errorColor", "textColor", "width", "height", "lengthInfo"];
 
-const TextArea = _ref => {
+function TextArea(_ref) {
   let {
     label,
     labelClassName,
@@ -4453,11 +4445,11 @@ const TextArea = _ref => {
       }, void 0) : null]
     }, void 0)]
   }, void 0);
-};
+}
 
 const _excluded$7 = ["register", "errors", "validate", "name", "required", "limit", "minimum"];
 
-const TextAreaForm = _ref => {
+function TextAreaForm(_ref) {
   let {
     register,
     errors,
@@ -4501,7 +4493,7 @@ const TextAreaForm = _ref => {
       return true;
     } : null
   })), void 0);
-};
+}
 
 let _$9 = t => t,
     _t$9;
@@ -11313,16 +11305,19 @@ const Container$1 = styled.div(_t4 || (_t4 = _$1`
   *******************************/
 `), props => props.hasMore || props.hasPagination ? '20px' : '0', colors.brand10);
 
-const _excluded = ["children", "title", "titleStyle", "message", "messageStyle", "hasMore", "pagination"];
+const _excluded = ["children", "title", "titleStyle", "titleClassName", "message", "messageStyle", "messageClassName", "hasMore", "hasMoreText", "pagination"];
 
-const TableComponent = _ref => {
+function TableComponent(_ref) {
   let {
     children,
     title,
     titleStyle,
+    titleClassName,
     message,
     messageStyle,
+    messageClassName,
     hasMore,
+    hasMoreText,
     pagination
   } = _ref,
       rest = _objectWithoutPropertiesLoose$3(_ref, _excluded);
@@ -11330,11 +11325,13 @@ const TableComponent = _ref => {
   return jsxs("div", {
     children: [title || message ? jsxs(Header, {
       children: [jsx(Title, Object.assign({
-        style: titleStyle
+        style: titleStyle,
+        className: titleClassName
       }, {
         children: title
       }), void 0), jsx(Message, Object.assign({
-        style: messageStyle
+        style: messageStyle,
+        className: messageClassName
       }, {
         children: message
       }), void 0)]
@@ -11346,15 +11343,17 @@ const TableComponent = _ref => {
         children: children
       }), void 0)
     }), void 0), hasMore ? jsx(ButtonMain, {
+      "data-testid": "hasmore-button",
       secondary: true,
-      textFirst: "ver a",
-      textEnd: "lista completa",
-      onClick: () => hasMore()
+      textFirst: hasMoreText || 'ver a',
+      textEnd: !hasMoreText ? '' : 'lista completa',
+      notStrong: !!hasMoreText,
+      onClick: hasMore
     }, void 0) : null, pagination ? jsxs("div", {
       children: [jsx("br", {}, void 0), pagination]
     }, void 0) : null]
   }, void 0);
-};
+}
 
 const Table = TableComponent;
 Table.Row = TableRow;
