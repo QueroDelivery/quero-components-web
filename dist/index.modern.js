@@ -7,24 +7,6 @@ import DatePicker, { registerLocale } from 'react-datepicker';
 import reactDom from 'react-dom';
 import br from 'date-fns/locale/pt-BR';
 
-function _extends$2() {
-  _extends$2 = Object.assign || function (target) {
-    for (var i = 1; i < arguments.length; i++) {
-      var source = arguments[i];
-
-      for (var key in source) {
-        if (Object.prototype.hasOwnProperty.call(source, key)) {
-          target[key] = source[key];
-        }
-      }
-    }
-
-    return target;
-  };
-
-  return _extends$2.apply(this, arguments);
-}
-
 function _objectWithoutPropertiesLoose$3(source, excluded) {
   if (source == null) return {};
   var target = {};
@@ -2729,6 +2711,18 @@ const colors = {
   error: '#e0457b25'
 };
 
+const getMeasurement = (size, defaultValue) => {
+  if (size) {
+    if (typeof size === 'string') {
+      return size;
+    }
+
+    return `${size}px`;
+  }
+
+  return defaultValue || '100%';
+};
+
 let _$f = t => t,
     _t$f,
     _t2$9,
@@ -2751,28 +2745,28 @@ const Sizes$6 = {
 const size$2 = size => {
   switch (size) {
     case Sizes$6.mini:
-      return '25px';
+      return '1.5625rem';
 
     case Sizes$6.tiny:
-      return '30px';
+      return '1.875rem';
 
     case Sizes$6.small:
-      return '35px';
+      return '2.1875rem';
 
     case Sizes$6.medium:
-      return '40px';
+      return '2.5rem';
 
     case Sizes$6.large:
-      return '45px';
+      return '2.8125rem';
 
     case Sizes$6.big:
-      return '50px';
+      return '3.125rem';
 
     case Sizes$6.huge:
-      return '55px';
+      return '3.4375rem';
 
     case Sizes$6.massive:
-      return '60px';
+      return '3.75rem';
 
     default:
       return size;
@@ -2782,28 +2776,28 @@ const size$2 = size => {
 const textSize = size => {
   switch (size) {
     case Sizes$6.mini:
-      return '10px';
+      return '0.625rem';
 
     case Sizes$6.tiny:
-      return '11px';
+      return '0.75rem';
 
     case Sizes$6.small:
-      return '12px';
+      return '0.875rem';
 
     case Sizes$6.medium:
-      return '14px';
+      return '1rem';
 
     case Sizes$6.large:
-      return '16px';
+      return '1.125rem';
 
     case Sizes$6.big:
-      return '18px';
+      return '1.25rem';
 
     case Sizes$6.huge:
-      return '20px';
+      return '1.375rem';
 
     case Sizes$6.massive:
-      return '22px';
+      return '1.5rem';
 
     default:
       return size;
@@ -2812,10 +2806,13 @@ const textSize = size => {
 
 const Button$1 = styled.button(_t$f || (_t$f = _$f`
   font-family: MontSerrat !important;
+  font-size: ${0};
   position: ${0};
+  line-height: 0;
   background-color: ${0};
+  color: ${0};
   height: ${0};
-  padding: 0 20px;
+  padding: 0 1.25rem;
   width: ${0};
   border-radius: ${0};
   cursor: pointer;
@@ -2833,14 +2830,9 @@ const Button$1 = styled.button(_t$f || (_t$f = _$f`
 
   &:hover {
     background-color: ${0};
-
-    span {
-      color: ${0};
-    }
+    color: ${0};
   }
-`), props => props.loading ? 'relative' : 'initial', props => {
-  if (props.colorBackground) return props.colorBackground;
-
+`), props => props.size ? textSize(props.size) : '1rem', props => props.isLoading ? 'relative' : 'initial', props => {
   if (props.secondary || props.tertiary) {
     return colors.white;
   }
@@ -2850,17 +2842,17 @@ const Button$1 = styled.button(_t$f || (_t$f = _$f`
   }
 
   return colors.brand30;
-}, props => props.size ? size$2(props.size) : '40px', props => {
-  if (props.width) {
-    if (typeof props.width === 'string') {
-      return props.width;
-    }
-
-    return `${props.width}px`;
+}, props => {
+  if (props.tertiary) {
+    return colors.gray20;
   }
 
-  return 'none';
-}, props => {
+  if (props.isLoading) {
+    return 'transparent';
+  }
+
+  return colors.brand10;
+}, props => props.size ? size$2(props.size) : '2.5rem', props => getMeasurement(props.width, 'none'), props => {
   if (props.rectangular) return '10px';
   return '30px';
 }, props => {
@@ -2874,10 +2866,6 @@ const Button$1 = styled.button(_t$f || (_t$f = _$f`
 
   return 'none';
 }, props => {
-  if (props.hoverBackgroundColor) {
-    return props.hoverBackgroundColor;
-  }
-
   if (props.secondary) {
     return colors.brandTransparent;
   }
@@ -2896,11 +2884,7 @@ const Button$1 = styled.button(_t$f || (_t$f = _$f`
 
   return colors.brand10;
 }, props => {
-  if (props.hoverTextColor) {
-    return props.hoverTextColor;
-  }
-
-  if (props.secondary) {
+  if (props.secondary || props.noBorder) {
     return colors.brand10;
   }
 
@@ -2908,65 +2892,37 @@ const Button$1 = styled.button(_t$f || (_t$f = _$f`
     return colors.white;
   }
 
-  if (props.noBorder) {
-    if (props.colorText) {
-      return props.colorText;
-    }
-
-    return colors.brand10;
-  }
-
   if (props.tertiary) {
     return colors.gray20;
+  }
+
+  if (props.isLoading) {
+    return 'transparent';
   }
 
   return colors.brand30;
 });
 const TextFirst = styled.span(_t2$9 || (_t2$9 = _$f`
-  visibility: ${0};
-  color: ${0};
   font-weight: ${0};
   font-size: ${0};
-  margin-right: 3.5px;
-`), props => props.loading ? 'hidden' : 'visible', props => {
-  if (props.colorText) {
-    return props.colorText;
-  }
-
-  if (props.tertiary) {
-    return colors.gray20;
-  }
-
-  return colors.brand10;
-}, props => {
+  margin-right: ${0};
+`), props => {
   if (props.firstStrong || props.strong) {
     return 'bold';
   }
 
   return 'normal';
-}, props => props.size ? textSize(props.size) : '14px');
+}, props => props.size ? textSize(props.size) : '1rem', props => props.hasTextEnd ? '3.5px' : '');
 const TextEnd = styled.span(_t3$8 || (_t3$8 = _$f`
-  visibility: ${0};
-  color: ${0};
   font-weight: ${0};
   font-size: ${0};
-`), props => props.loading ? 'hidden' : 'visible', props => {
-  if (props.colorText) {
-    return props.colorText;
-  }
-
-  if (props.tertiary) {
-    return colors.gray20;
-  }
-
-  return colors.brand10;
-}, props => {
+`), props => {
   if (props.firstStrong || props.notStrong) {
     return 'normal';
   }
 
   return 'bold';
-}, props => props.size ? textSize(props.size) : '14px');
+}, props => props.size ? textSize(props.size) : '1rem');
 const Notification = styled.button(_t4$6 || (_t4$6 = _$f`
   font-family: MontSerrat !important;
   background-color: ${0};
@@ -2994,10 +2950,9 @@ const Notification = styled.button(_t4$6 || (_t4$6 = _$f`
   }
 `), colors.brand10, colors.brand30, colors.brandTransparent2, colors.brand30);
 const Icon$2 = styled.div(_t5$5 || (_t5$5 = _$f`
-  visibility: ${0};
   margin-right: ${0};
   margin-left: ${0};
-`), props => props.loading ? 'hidden' : 'visible', props => props.iconPosition === 'left' ? '10px' : '', props => props.iconPosition === 'right' ? '10px' : '');
+`), props => props.iconPosition === 'left' && props.hasText ? '10px' : '', props => props.iconPosition === 'right' && props.hasText ? '10px' : '');
 const Amount = styled.div(_t6$5 || (_t6$5 = _$f`
   font-family: MontSerrat !important;
   background-color: ${0};
@@ -3008,7 +2963,7 @@ const Amount = styled.div(_t6$5 || (_t6$5 = _$f`
   align-items: center;
   border-radius: 50%;
   color: ${0};
-  font-size: 10px;
+  font-size: 0.625rem;
 `), colors.brand30, colors.brand10);
 const LoadingContainer = styled.div(_t7$5 || (_t7$5 = _$f`
   position: absolute;
@@ -3176,12 +3131,16 @@ const Loader = ({
   }), void 0);
 };
 
-const _excluded$b = ["textFirst", "textEnd", "firstStrong", "notStrong", "strong", "loading", "secondary", "backPurple", "children", "notification", "amount", "width", "icon", "customIcon", "iconPosition", "colorIcon", "noBorder", "colorText", "colorBackground", "tertiary", "size", "rectangular", "typeContent", "hoverBackgroundColor", "hoverTextColor", "iconStyle"];
+const _excluded$b = ["textFirst", "textFirstClassName", "textFirstStyle", "textEnd", "textEndClassName", "textEndStyle", "firstStrong", "notStrong", "strong", "loading", "secondary", "backPurple", "children", "notification", "amount", "width", "icon", "iconClassName", "iconStyle", "containerIconClassName", "containerIconStyle", "customIcon", "iconPosition", "noBorder", "tertiary", "size", "rectangular"];
 
 const ButtonMain = _ref => {
   let {
     textFirst,
+    textFirstClassName,
+    textFirstStyle,
     textEnd,
+    textEndClassName,
+    textEndStyle,
     firstStrong,
     notStrong,
     strong,
@@ -3193,19 +3152,16 @@ const ButtonMain = _ref => {
     amount,
     width,
     icon,
+    iconClassName,
+    iconStyle,
+    containerIconClassName,
+    containerIconStyle,
     customIcon,
     iconPosition = 'right',
-    colorIcon,
     noBorder,
-    colorText,
-    colorBackground,
     tertiary,
     size,
-    rectangular,
-    typeContent,
-    hoverBackgroundColor,
-    hoverTextColor,
-    iconStyle
+    rectangular
   } = _ref,
       rest = _objectWithoutPropertiesLoose$3(_ref, _excluded$b);
 
@@ -3213,7 +3169,7 @@ const ButtonMain = _ref => {
     return jsx(Notification, Object.assign({}, rest, {
       children: loading ? jsx(Loader, {
         size: "tiny"
-      }, void 0) : children || jsxs("div", Object.assign({
+      }, void 0) : jsxs("div", Object.assign({
         style: {
           display: 'flex',
           justifyContent: 'space-between',
@@ -3228,13 +3184,18 @@ const ButtonMain = _ref => {
             alignItems: 'center'
           }
         }, {
-          children: [jsx(Icon$2, {
+          children: [jsx(Icon$2 // loading={loading}
+          , Object.assign({
+            // loading={loading}
+            iconPosition: iconPosition,
+            hasText: !!textFirst || !!textEnd || !!children
+          }, {
             children: jsx(FontAwesomeIcon, {
               icon: faBell,
               size: "lg",
               color: colors.brand30
             }, void 0)
-          }, void 0), jsx("span", {
+          }), void 0), jsx("span", {
             children: "notifica\u00E7\u00F5es"
           }, void 0)]
         }), void 0), jsx(Amount, {
@@ -3244,31 +3205,27 @@ const ButtonMain = _ref => {
     }), void 0);
   }
 
-  function renderButtonTypes(type) {
-    switch (type) {
-      case 'icon':
-        return jsx("div", {
-          children: (icon || customIcon) && jsx(React$2.Fragment, {
-            children: customIcon ? jsx(Icon$2, Object.assign({
-              loading: loading
-            }, {
-              children: customIcon
-            }), void 0) : jsx(Icon$2, Object.assign({
-              loading: loading
-            }, {
-              children: jsx(FontAwesomeIcon, {
-                icon: icon,
-                color: colorIcon || colors.brand10,
-                size: "lg",
-                style: _extends$2({}, iconStyle)
-              }, void 0)
-            }), void 0)
-          }, void 0)
-        }, void 0);
-
-      default:
-        return null;
-    }
+  function renderIcon() {
+    if (customIcon) return jsx(Icon$2, Object.assign({
+      className: containerIconClassName,
+      style: containerIconStyle,
+      iconPosition: iconPosition,
+      hasText: !!textFirst || !!textEnd || !!children
+    }, {
+      children: customIcon
+    }), void 0);
+    return jsx(Icon$2, Object.assign({
+      className: containerIconClassName,
+      style: containerIconStyle,
+      iconPosition: iconPosition,
+      hasText: !!textFirst || !!textEnd || !!children
+    }, {
+      children: jsx(FontAwesomeIcon, {
+        icon: icon,
+        className: iconClassName,
+        style: iconStyle
+      }, void 0)
+    }), void 0);
   }
 
   function renderButton() {
@@ -3278,72 +3235,35 @@ const ButtonMain = _ref => {
       width: width,
       icon: icon,
       noBorder: noBorder,
-      colorText: colorText,
-      colorBackground: colorBackground,
       tertiary: tertiary,
       size: size,
       rectangular: rectangular,
-      hoverBackgroundColor: hoverBackgroundColor,
-      hoverTextColor: hoverTextColor,
-      loading: loading
+      isLoading: !!loading
     }, {
-      children: [children || (typeContent ? renderButtonTypes(typeContent) : jsxs(React$2.Fragment, {
-        children: [(icon || customIcon) && iconPosition === 'left' && jsx(React$2.Fragment, {
-          children: customIcon ? jsx(Icon$2, Object.assign({
-            loading: loading,
-            iconPosition: iconPosition
-          }, {
-            children: customIcon
-          }), void 0) : jsx(Icon$2, Object.assign({
-            loading: loading,
-            iconPosition: iconPosition
-          }, {
-            children: jsx(FontAwesomeIcon, {
-              icon: icon,
-              color: colorIcon || colors.brand10,
-              size: "lg",
-              style: _extends$2({}, iconStyle)
-            }, void 0)
-          }), void 0)
-        }, void 0), jsx(TextFirst, Object.assign({
+      children: [(icon || customIcon) && iconPosition === 'left' && renderIcon(), children || jsxs(Fragment$1, {
+        children: [jsx(TextFirst, Object.assign({
+          className: textFirstClassName,
+          style: textFirstStyle,
+          hasTextEnd: !!textEnd,
           firstStrong: firstStrong,
           strong: strong,
           notStrong: notStrong,
-          colorText: colorText,
           tertiary: tertiary,
-          size: size,
-          loading: loading
+          size: size
         }, {
           children: textFirst
         }), void 0), jsx(TextEnd, Object.assign({
+          className: textEndClassName,
+          style: textEndStyle,
           firstStrong: firstStrong,
           strong: strong,
           notStrong: notStrong,
-          colorText: colorText,
           tertiary: tertiary,
-          size: size,
-          loading: loading
+          size: size
         }, {
           children: textEnd
-        }), void 0), (icon || customIcon) && iconPosition === 'right' && jsx(React$2.Fragment, {
-          children: customIcon ? jsx(Icon$2, Object.assign({
-            loading: loading,
-            iconPosition: iconPosition
-          }, {
-            children: customIcon
-          }), void 0) : jsx(Icon$2, Object.assign({
-            loading: loading,
-            iconPosition: iconPosition
-          }, {
-            children: jsx(FontAwesomeIcon, {
-              icon: icon,
-              color: colorIcon || colors.brand10,
-              size: "lg",
-              style: _extends$2({}, iconStyle)
-            }, void 0)
-          }), void 0)
-        }, void 0)]
-      }, void 0)), loading && jsx(LoadingContainer, {
+        }), void 0)]
+      }, void 0), (icon || customIcon) && iconPosition === 'right' && renderIcon(), loading && jsx(LoadingContainer, {
         children: jsx(Loader, {
           size: "tiny"
         }, void 0)
@@ -4248,18 +4168,6 @@ const ModalComponent = ({
       }, void 0)]
     }), void 0)
   }), void 0);
-};
-
-const getMeasurement = (size, defaultValue) => {
-  if (size) {
-    if (typeof size === 'string') {
-      return size;
-    }
-
-    return `${size}px`;
-  }
-
-  return defaultValue || '100%';
 };
 
 let _$a = t => t,

@@ -1,9 +1,10 @@
+import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 import { action } from '@storybook/addon-actions';
 import { ButtonMain } from '@quero-delivery/quero-components-web';
-import { ButtonProps } from './Interface';
+import { ButtonProps } from '../../../../src/components/ButtonMain/ButtonMain';
 import '@quero-delivery/quero-components-web/dist/index.css';
-import { faPhone, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faPhone } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default {
@@ -39,17 +40,17 @@ export default {
     size: {
       control: {
         type: 'inline-radio',
-        options: [
-          'mini',
-          'tiny',
-          'small',
-          'medium',
-          'large',
-          'big',
-          'huge',
-          'massive',
-        ],
       },
+      options: [
+        'mini',
+        'tiny',
+        'small',
+        'medium',
+        'large',
+        'big',
+        'huge',
+        'massive',
+      ],
       description: 'Alterar o tamanho do botão',
       table: {
         type: {
@@ -154,40 +155,6 @@ export default {
         },
       },
     },
-    notification: {
-      control: 'boolean',
-      description: 'Deseja altera o botão para o estilo de notificações?',
-      table: {
-        defaultValue: {
-          summary: 'Precisa passar a propriedade amount com a quantidade',
-        },
-        type: {
-          summary: 'boolean',
-        },
-      },
-    },
-    amount: {
-      control: 'number',
-      description:
-        'Quantidade de mensagens quando o botão esta com estilo de notificações',
-      table: {
-        type: {
-          summary: 'number',
-        },
-      },
-    },
-    typeContent: {
-      control: {
-        type: 'inline-radio',
-        options: ['icon'],
-      },
-      description: 'Tipo do conteúdo do botão',
-      table: {
-        type: {
-          summary: 'icon',
-        },
-      },
-    },
     icon: {
       description: 'Inserir ícone no botão',
       table: {
@@ -213,8 +180,8 @@ export default {
     iconPosition: {
       control: {
         type: 'inline-radio',
-        options: ['left', 'right'],
       },
+      options: ['left', 'right'],
       description: 'Definir a posição do ícone',
       table: {
         type: {
@@ -222,64 +189,34 @@ export default {
         },
       },
     },
-    colorIcon: {
-      control: 'color',
-      description: 'Cor do ícone',
+    notification: {
+      control: 'boolean',
+      description: 'Deseja altera o botão para o estilo de notificações?',
       table: {
+        defaultValue: {
+          summary: 'Precisa passar a propriedade amount com a quantidade',
+        },
         type: {
-          summary: 'string',
+          summary: 'boolean',
         },
       },
     },
-    colorText: {
-      control: 'color',
-      description: 'Cor do texto',
+    amount: {
+      control: 'number',
+      description:
+        'Quantidade de mensagens quando o botão esta com estilo de notificações',
       table: {
         type: {
-          summary: 'string',
-        },
-      },
-    },
-    colorBackground: {
-      control: 'color',
-      description: 'Cor do background',
-      table: {
-        type: {
-          summary: 'string',
-        },
-      },
-    },
-    hoverBackgroundColor: {
-      control: 'color',
-      description: 'Cor do background hover',
-      table: {
-        type: {
-          summary: 'string',
-        },
-      },
-    },
-    hoverTextColor: {
-      control: 'color',
-      description: 'Cor do texto hover',
-      table: {
-        type: {
-          summary: 'string',
-        },
-      },
-    },
-    onClick: {
-      action: 'clicked',
-      description: 'Função para capturar evento de clique',
-      table: {
-        type: {
-          summary: 'function',
+          summary: 'number',
         },
       },
     },
   },
 } as Meta;
 
-const Template: Story<ButtonProps> = args => <ButtonMain {...args} />;
+const Template: Story<ButtonProps> = args => (
+  <ButtonMain {...args}>testeee</ButtonMain>
+);
 
 export const Default = Template.bind({});
 Default.args = {
@@ -295,6 +232,170 @@ Default.parameters = {
       textFirst="Clique"
       textEnd="aqui"
       onClick={() => {}}
+    >`,
+    },
+  },
+};
+
+export const FirstStrong = Template.bind({});
+FirstStrong.args = {
+  textFirst: 'Clique',
+  textEnd: 'aqui',
+  onClick: action('click'),
+  firstStrong: true,
+};
+
+FirstStrong.parameters = {
+  docs: {
+    source: {
+      code: `<ButtonMain
+      textFirst="Clique"
+      textEnd="aqui"
+      onClick={() => {}}
+      firstStrong
+    />`,
+    },
+  },
+};
+
+export const NotStrong = Template.bind({});
+NotStrong.args = {
+  textFirst: 'Clique',
+  textEnd: 'aqui',
+  onClick: action('click'),
+  notStrong: true,
+};
+
+NotStrong.parameters = {
+  docs: {
+    source: {
+      code: `<ButtonMain
+      textFirst="Clique"
+      textEnd="aqui"
+      onClick={() => {}}
+      notStrong
+    />`,
+    },
+  },
+};
+
+export const Strong = Template.bind({});
+Strong.args = {
+  textFirst: 'Clique',
+  textEnd: 'aqui',
+  onClick: action('click'),
+  strong: true,
+};
+
+Strong.parameters = {
+  docs: {
+    source: {
+      code: `<ButtonMain
+      textFirst="Clique"
+      textEnd="aqui"
+      onClick={() => {}}
+      strong
+    />`,
+    },
+  },
+};
+
+export const Secondary = Template.bind({});
+Secondary.args = {
+  textFirst: 'Clique',
+  textEnd: 'aqui',
+  onClick: action('click'),
+  secondary: true,
+};
+
+Secondary.parameters = {
+  docs: {
+    source: {
+      code: `<ButtonMain
+      textFirst="Clique"
+      textEnd="aqui"
+      onClick={() => {}}
+      secondary
+    />`,
+    },
+  },
+};
+
+export const Tertiary = Template.bind({});
+Tertiary.args = {
+  textFirst: 'Clique',
+  textEnd: 'aqui',
+  onClick: action('click'),
+  tertiary: true,
+};
+
+Tertiary.parameters = {
+  docs: {
+    source: {
+      code: `<ButtonMain
+      textFirst="Clique"
+      textEnd="aqui"
+      onClick={() => {}}
+      tertiary
+    />`,
+    },
+  },
+};
+
+export const Rectangular = Template.bind({});
+Rectangular.args = {
+  textFirst: 'Clique',
+  textEnd: 'aqui',
+  secondary: true,
+  rectangular: true,
+};
+
+Rectangular.parameters = {
+  docs: {
+    source: {
+      code: `<ButtonMain
+      textFirst="Clique"
+      textEnd="aqui"
+      secondary
+      rectangular
+    />`,
+    },
+  },
+};
+
+export const NoBorder = Template.bind({});
+NoBorder.args = {
+  textFirst: 'Clique',
+  textEnd: 'aqui',
+  noBorder: true,
+};
+
+NoBorder.parameters = {
+  docs: {
+    source: {
+      code: `<ButtonMain
+      textFirst="Clique"
+      textEnd="aqui"
+      noBorder
+    />`,
+    },
+  },
+};
+
+export const BackPurple = Template.bind({});
+BackPurple.args = {
+  textFirst: 'Clique',
+  textEnd: 'aqui',
+  backPurple: true,
+};
+
+BackPurple.parameters = {
+  docs: {
+    source: {
+      code: `<ButtonMain
+      textFirst="Clique"
+      textEnd="aqui"
+      backPurple
     />`,
     },
   },
@@ -338,65 +439,71 @@ Width.parameters = {
   },
 };
 
-export const FirstStrong = Template.bind({});
-FirstStrong.args = {
+export const Icon = Template.bind({});
+Icon.args = {
   textFirst: 'Clique',
   textEnd: 'aqui',
-  onClick: action('click'),
-  firstStrong: true,
+  icon: faPhone,
 };
 
-FirstStrong.parameters = {
+Icon.parameters = {
   docs: {
     source: {
-      code: `<ButtonMain
-      textFirst="Clique"
-      textEnd="aqui"
-      onClick={() => {}}
-      firstStrong={true}
-    />`,
+      code: `
+import { faPhone } from '@fortawesome/free-solid-svg-icons';
+
+<ButtonMain
+  textFirst="Clique"
+  textEnd="aqui"
+  icon={faPhone}
+/>`,
     },
   },
 };
 
-export const NotStrong = Template.bind({});
-NotStrong.args = {
+export const CustomIcon = Template.bind({});
+CustomIcon.args = {
   textFirst: 'Clique',
   textEnd: 'aqui',
-  onClick: action('click'),
-  notStrong: true,
+  customIcon: <FontAwesomeIcon icon={faPhone} />,
 };
 
-NotStrong.parameters = {
+CustomIcon.parameters = {
   docs: {
     source: {
-      code: `<ButtonMain
-      textFirst="Clique"
-      textEnd="aqui"
-      onClick={() => {}}
-      notStrong={true}
-    />`,
+      code: `
+import { faPhone } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+<ButtonMain
+  textFirst="Clique"
+  textEnd="aqui"
+  customIcon={<FontAwesomeIcon icon={faPhone}/>}
+/>`,
     },
   },
 };
 
-export const Strong = Template.bind({});
-Strong.args = {
+export const IconPosition = Template.bind({});
+IconPosition.args = {
   textFirst: 'Clique',
   textEnd: 'aqui',
-  onClick: action('click'),
-  strong: true,
+  icon: faPhone,
+  iconPosition: 'left',
 };
 
-Strong.parameters = {
+IconPosition.parameters = {
   docs: {
     source: {
-      code: `<ButtonMain
-      textFirst="Clique"
-      textEnd="aqui"
-      onClick={() => {}}
-      Strong={true}
-    />`,
+      code: `
+import { faPhone } from '@fortawesome/free-solid-svg-icons';
+
+<ButtonMain
+  textFirst="Clique"
+  textEnd="aqui"
+  icon={faPhone}
+  iconPosition="left"
+/>`,
     },
   },
 };
@@ -406,6 +513,7 @@ Loading.args = {
   textFirst: 'Clique',
   textEnd: 'aqui',
   loading: true,
+  disabled: true,
 };
 
 Loading.parameters = {
@@ -414,87 +522,7 @@ Loading.parameters = {
       code: `<ButtonMain
       textFirst="Clique"
       textEnd="aqui"
-      loading={true}
-    />`,
-    },
-  },
-};
-
-export const Secondary = Template.bind({});
-Secondary.args = {
-  textFirst: 'Clique',
-  textEnd: 'aqui',
-  onClick: action('click'),
-  secondary: true,
-};
-
-Secondary.parameters = {
-  docs: {
-    source: {
-      code: `<ButtonMain
-      textFirst="Clique"
-      textEnd="aqui"
-      onClick={() => {}}
-      secondary={true}
-    />`,
-    },
-  },
-};
-
-export const NoBorder = Template.bind({});
-NoBorder.args = {
-  textFirst: 'Clique',
-  textEnd: 'aqui',
-  noBorder: true,
-};
-
-NoBorder.parameters = {
-  docs: {
-    source: {
-      code: `<ButtonMain
-      textFirst="Clique"
-      textEnd="aqui"
-      noBorder={true}
-    />`,
-    },
-  },
-};
-
-export const BackPurple = Template.bind({});
-BackPurple.args = {
-  textFirst: 'Clique',
-  textEnd: 'aqui',
-  backPurple: true,
-};
-
-BackPurple.parameters = {
-  docs: {
-    source: {
-      code: `<ButtonMain
-      textFirst="Clique"
-      textEnd="aqui"
-      backPurple={true}
-    />`,
-    },
-  },
-};
-
-export const Tertiary = Template.bind({});
-Tertiary.args = {
-  textFirst: 'Clique',
-  textEnd: 'aqui',
-  onClick: action('click'),
-  tertiary: true,
-};
-
-Tertiary.parameters = {
-  docs: {
-    source: {
-      code: `<ButtonMain
-      textFirst="Clique"
-      textEnd="aqui"
-      onClick={() => {}}
-      tertiary={true}
+      loading
     />`,
     },
   },
@@ -514,199 +542,8 @@ Notification.parameters = {
       code: `<ButtonMain
       textFirst="Clique"
       textEnd="aqui"
-      notification={true}
+      notification
       amount={2}
-    />`,
-    },
-  },
-};
-
-export const Rectangular = Template.bind({});
-Rectangular.args = {
-  textFirst: 'Clique',
-  textEnd: 'aqui',
-  secondary: true,
-  tertiary: false,
-  rectangular: true,
-};
-
-Rectangular.parameters = {
-  docs: {
-    source: {
-      code: `<ButtonMain
-      textFirst="Clique"
-      textEnd="aqui"
-      secondary={true}
-      tertiary={false}
-      rectangular={true}
-    />`,
-    },
-  },
-};
-
-export const TypeContent = Template.bind({});
-TypeContent.args = {
-  typeContent: 'icon',
-  colorBackground: 'red',
-  colorIcon: 'black',
-  icon: faTimes,
-  rectangular: true,
-  width: '10%',
-};
-
-TypeContent.parameters = {
-  docs: {
-    source: {
-      code: `<ButtonMain
-      typeContent="icon"
-      colorBackground="red"
-      colorIcon="black"
-      icon={faTimes}
-      rectangular={true}
-      width="10%"
-    />`,
-    },
-  },
-};
-
-export const Icon = Template.bind({});
-Icon.args = {
-  textFirst: 'Clique',
-  textEnd: 'aqui',
-  icon: faPhone,
-};
-
-Icon.parameters = {
-  docs: {
-    source: {
-      code: `<ButtonMain
-      textFirst="Clique"
-      textEnd="aqui"
-      icon={faPhone}
-    />`,
-    },
-  },
-};
-
-export const CustomIcon = Template.bind({});
-CustomIcon.args = {
-  textFirst: 'Clique',
-  textEnd: 'aqui',
-  customIcon: <FontAwesomeIcon icon={faPhone} />,
-};
-
-CustomIcon.parameters = {
-  docs: {
-    source: {
-      code: `<ButtonMain
-      textFirst="Clique"
-      textEnd="aqui"
-      customIcon={<FontAwesomeIcon icon={faPhone}/>}
-    />`,
-    },
-  },
-};
-
-export const IconPosition = Template.bind({});
-IconPosition.args = {
-  textFirst: 'Clique',
-  textEnd: 'aqui',
-  icon: faPhone,
-  iconPosition: 'left',
-};
-
-IconPosition.parameters = {
-  docs: {
-    source: {
-      code: `<ButtonMain
-      textFirst="Clique"
-      textEnd="aqui"
-      icon={faPhone}
-      iconPosition="left"
-    />`,
-    },
-  },
-};
-
-export const ColorIcon = Template.bind({});
-ColorIcon.args = {
-  textFirst: 'Clique',
-  textEnd: 'aqui',
-  colorIcon: 'black',
-  icon: faPhone,
-};
-
-ColorIcon.parameters = {
-  docs: {
-    source: {
-      code: `<ButtonMain
-      textFirst="Clique"
-      textEnd="aqui"
-      colorIcon="black"
-      icon={faPhone}
-    />`,
-    },
-  },
-};
-
-export const ColorText = Template.bind({});
-ColorText.args = {
-  textFirst: 'Clique',
-  textEnd: 'aqui',
-  colorText: 'black',
-};
-
-ColorText.parameters = {
-  docs: {
-    source: {
-      code: `<ButtonMain
-      textFirst="Clique"
-      textEnd="aqui"
-      colorText="black"
-    />`,
-    },
-  },
-};
-
-export const ColorBackground = Template.bind({});
-ColorBackground.args = {
-  textFirst: 'Clique',
-  textEnd: 'aqui',
-  colorText: 'white',
-  colorBackground: 'black',
-};
-
-ColorBackground.parameters = {
-  docs: {
-    source: {
-      code: `<ButtonMain
-      textFirst="Clique"
-      textEnd="aqui"
-      colorText="white"
-      colorBackground="black"
-    />`,
-    },
-  },
-};
-
-export const HoverColor = Template.bind({});
-HoverColor.args = {
-  textFirst: 'Clique',
-  textEnd: 'aqui',
-  secondary: true,
-  hoverBackgroundColor: 'black',
-  hoverTextColor: 'white',
-};
-
-HoverColor.parameters = {
-  docs: {
-    source: {
-      code: `<ButtonMain
-      textFirst="Clique"
-      textEnd="aqui"
-      secondary={true}
-      hoverBackgroundColor="black"
-      hoverTextColor="white"
     />`,
     },
   },

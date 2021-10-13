@@ -14,7 +14,7 @@ interface ButtonProps {
     tertiary?: boolean;
     size?: ButtonSizes;
     rectangular?: boolean;
-    loading?: boolean;
+    isLoading?: boolean;
 }
 interface TextFirstProps {
     firstStrong?: boolean;
@@ -23,7 +23,7 @@ interface TextFirstProps {
     colorText?: string;
     tertiary?: boolean;
     size?: ButtonSizes;
-    loading?: boolean;
+    hasTextEnd?: boolean;
 }
 interface TextEndProps {
     firstStrong?: boolean;
@@ -32,10 +32,9 @@ interface TextEndProps {
     colorText?: string;
     tertiary?: boolean;
     size?: ButtonSizes;
-    loading?: boolean;
 }
 interface IconProps {
-    loading?: boolean;
+    hasText: boolean;
     iconPosition?: 'left' | 'right';
 }
 export declare const Button: import("styled-components").StyledComponent<"button", any, ButtonProps, never>;

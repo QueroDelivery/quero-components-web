@@ -1,11 +1,14 @@
 import React, { ButtonHTMLAttributes } from 'react';
 import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
-declare type ButtonTypes = 'icon';
 declare type IconPositions = 'left' | 'right';
 export declare type ButtonSizes = 'mini' | 'tiny' | 'small' | 'medium' | 'large' | 'big' | 'huge' | 'massive';
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     textFirst?: string;
+    textFirstClassName?: string;
+    textFirstStyle?: React.CSSProperties;
     textEnd?: string;
+    textEndClassName?: string;
+    textEndStyle?: React.CSSProperties;
     firstStrong?: boolean;
     notStrong?: boolean;
     strong?: boolean;
@@ -16,19 +19,16 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     backPurple?: boolean;
     width?: number | string;
     icon?: IconDefinition;
+    iconClassName?: 'string';
+    iconStyle?: React.CSSProperties;
+    containerIconClassName?: string;
+    containerIconStyle?: React.CSSProperties;
     customIcon?: React.ReactNode;
-    colorIcon?: string;
     iconPosition?: IconPositions;
     noBorder?: boolean;
-    colorText?: string;
-    colorBackground?: string;
     tertiary?: boolean;
     size?: ButtonSizes;
     rectangular?: boolean;
-    typeContent?: ButtonTypes;
-    hoverBackgroundColor?: string;
-    hoverTextColor?: string;
-    iconStyle?: React.CSSProperties;
 }
 declare const ButtonMain: React.FC<ButtonProps>;
 export default ButtonMain;

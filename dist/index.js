@@ -15,24 +15,6 @@ var DatePicker__default = /*#__PURE__*/_interopDefaultLegacy(DatePicker);
 var reactDom__default = /*#__PURE__*/_interopDefaultLegacy(reactDom);
 var br__default = /*#__PURE__*/_interopDefaultLegacy(br);
 
-function _extends$2() {
-  _extends$2 = Object.assign || function (target) {
-    for (var i = 1; i < arguments.length; i++) {
-      var source = arguments[i];
-
-      for (var key in source) {
-        if (Object.prototype.hasOwnProperty.call(source, key)) {
-          target[key] = source[key];
-        }
-      }
-    }
-
-    return target;
-  };
-
-  return _extends$2.apply(this, arguments);
-}
-
 function _objectWithoutPropertiesLoose$3(source, excluded) {
   if (source == null) return {};
   var target = {};
@@ -2746,6 +2728,18 @@ var colors = {
   error: '#e0457b25'
 };
 
+var getMeasurement = function getMeasurement(size, defaultValue) {
+  if (size) {
+    if (typeof size === 'string') {
+      return size;
+    }
+
+    return size + "px";
+  }
+
+  return defaultValue || '100%';
+};
+
 var _templateObject$f, _templateObject2$9, _templateObject3$8, _templateObject4$6, _templateObject5$5, _templateObject6$5, _templateObject7$5;
 var Sizes$6 = {
   mini: 'mini',
@@ -2761,28 +2755,28 @@ var Sizes$6 = {
 var size$2 = function size(_size) {
   switch (_size) {
     case Sizes$6.mini:
-      return '25px';
+      return '1.5625rem';
 
     case Sizes$6.tiny:
-      return '30px';
+      return '1.875rem';
 
     case Sizes$6.small:
-      return '35px';
+      return '2.1875rem';
 
     case Sizes$6.medium:
-      return '40px';
+      return '2.5rem';
 
     case Sizes$6.large:
-      return '45px';
+      return '2.8125rem';
 
     case Sizes$6.big:
-      return '50px';
+      return '3.125rem';
 
     case Sizes$6.huge:
-      return '55px';
+      return '3.4375rem';
 
     case Sizes$6.massive:
-      return '60px';
+      return '3.75rem';
 
     default:
       return _size;
@@ -2792,39 +2786,39 @@ var size$2 = function size(_size) {
 var textSize = function textSize(size) {
   switch (size) {
     case Sizes$6.mini:
-      return '10px';
+      return '0.625rem';
 
     case Sizes$6.tiny:
-      return '11px';
+      return '0.75rem';
 
     case Sizes$6.small:
-      return '12px';
+      return '0.875rem';
 
     case Sizes$6.medium:
-      return '14px';
+      return '1rem';
 
     case Sizes$6.large:
-      return '16px';
+      return '1.125rem';
 
     case Sizes$6.big:
-      return '18px';
+      return '1.25rem';
 
     case Sizes$6.huge:
-      return '20px';
+      return '1.375rem';
 
     case Sizes$6.massive:
-      return '22px';
+      return '1.5rem';
 
     default:
       return size;
   }
 };
 
-var Button$1 = styled__default["default"].button(_templateObject$f || (_templateObject$f = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  position: ", ";\n  background-color: ", ";\n  height: ", ";\n  padding: 0 20px;\n  width: ", ";\n  border-radius: ", ";\n  cursor: pointer;\n  border: ", ";\n  outline: none;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n\n  &:disabled {\n    opacity: 0.5;\n    cursor: not-allowed;\n    pointer-events: none;\n  }\n\n  &:hover {\n    background-color: ", ";\n\n    span {\n      color: ", ";\n    }\n  }\n"])), function (props) {
-  return props.loading ? 'relative' : 'initial';
+var Button$1 = styled__default["default"].button(_templateObject$f || (_templateObject$f = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  font-size: ", ";\n  position: ", ";\n  line-height: 0;\n  background-color: ", ";\n  color: ", ";\n  height: ", ";\n  padding: 0 1.25rem;\n  width: ", ";\n  border-radius: ", ";\n  cursor: pointer;\n  border: ", ";\n  outline: none;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n\n  &:disabled {\n    opacity: 0.5;\n    cursor: not-allowed;\n    pointer-events: none;\n  }\n\n  &:hover {\n    background-color: ", ";\n    color: ", ";\n  }\n"])), function (props) {
+  return props.size ? textSize(props.size) : '1rem';
 }, function (props) {
-  if (props.colorBackground) return props.colorBackground;
-
+  return props.isLoading ? 'relative' : 'initial';
+}, function (props) {
   if (props.secondary || props.tertiary) {
     return colors.white;
   }
@@ -2835,17 +2829,19 @@ var Button$1 = styled__default["default"].button(_templateObject$f || (_template
 
   return colors.brand30;
 }, function (props) {
-  return props.size ? size$2(props.size) : '40px';
-}, function (props) {
-  if (props.width) {
-    if (typeof props.width === 'string') {
-      return props.width;
-    }
-
-    return props.width + "px";
+  if (props.tertiary) {
+    return colors.gray20;
   }
 
-  return 'none';
+  if (props.isLoading) {
+    return 'transparent';
+  }
+
+  return colors.brand10;
+}, function (props) {
+  return props.size ? size$2(props.size) : '2.5rem';
+}, function (props) {
+  return getMeasurement(props.width, 'none');
 }, function (props) {
   if (props.rectangular) return '10px';
   return '30px';
@@ -2860,10 +2856,6 @@ var Button$1 = styled__default["default"].button(_templateObject$f || (_template
 
   return 'none';
 }, function (props) {
-  if (props.hoverBackgroundColor) {
-    return props.hoverBackgroundColor;
-  }
-
   if (props.secondary) {
     return colors.brandTransparent;
   }
@@ -2882,11 +2874,7 @@ var Button$1 = styled__default["default"].button(_templateObject$f || (_template
 
   return colors.brand10;
 }, function (props) {
-  if (props.hoverTextColor) {
-    return props.hoverTextColor;
-  }
-
-  if (props.secondary) {
+  if (props.secondary || props.noBorder) {
     return colors.brand10;
   }
 
@@ -2894,71 +2882,43 @@ var Button$1 = styled__default["default"].button(_templateObject$f || (_template
     return colors.white;
   }
 
-  if (props.noBorder) {
-    if (props.colorText) {
-      return props.colorText;
-    }
-
-    return colors.brand10;
-  }
-
   if (props.tertiary) {
     return colors.gray20;
+  }
+
+  if (props.isLoading) {
+    return 'transparent';
   }
 
   return colors.brand30;
 });
-var TextFirst = styled__default["default"].span(_templateObject2$9 || (_templateObject2$9 = _taggedTemplateLiteralLoose(["\n  visibility: ", ";\n  color: ", ";\n  font-weight: ", ";\n  font-size: ", ";\n  margin-right: 3.5px;\n"])), function (props) {
-  return props.loading ? 'hidden' : 'visible';
-}, function (props) {
-  if (props.colorText) {
-    return props.colorText;
-  }
-
-  if (props.tertiary) {
-    return colors.gray20;
-  }
-
-  return colors.brand10;
-}, function (props) {
+var TextFirst = styled__default["default"].span(_templateObject2$9 || (_templateObject2$9 = _taggedTemplateLiteralLoose(["\n  font-weight: ", ";\n  font-size: ", ";\n  margin-right: ", ";\n"])), function (props) {
   if (props.firstStrong || props.strong) {
     return 'bold';
   }
 
   return 'normal';
 }, function (props) {
-  return props.size ? textSize(props.size) : '14px';
+  return props.size ? textSize(props.size) : '1rem';
+}, function (props) {
+  return props.hasTextEnd ? '3.5px' : '';
 });
-var TextEnd = styled__default["default"].span(_templateObject3$8 || (_templateObject3$8 = _taggedTemplateLiteralLoose(["\n  visibility: ", ";\n  color: ", ";\n  font-weight: ", ";\n  font-size: ", ";\n"])), function (props) {
-  return props.loading ? 'hidden' : 'visible';
-}, function (props) {
-  if (props.colorText) {
-    return props.colorText;
-  }
-
-  if (props.tertiary) {
-    return colors.gray20;
-  }
-
-  return colors.brand10;
-}, function (props) {
+var TextEnd = styled__default["default"].span(_templateObject3$8 || (_templateObject3$8 = _taggedTemplateLiteralLoose(["\n  font-weight: ", ";\n  font-size: ", ";\n"])), function (props) {
   if (props.firstStrong || props.notStrong) {
     return 'normal';
   }
 
   return 'bold';
 }, function (props) {
-  return props.size ? textSize(props.size) : '14px';
+  return props.size ? textSize(props.size) : '1rem';
 });
 var Notification = styled__default["default"].button(_templateObject4$6 || (_templateObject4$6 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  background-color: ", ";\n  height: 40px;\n  width: 100%;\n  border-radius: 30px;\n  cursor: pointer;\n  border: 1px solid ", ";\n  outline: none;\n\n  &:disabled {\n    opacity: 0.5;\n    cursor: not-allowed;\n    pointer-events: none;\n  }\n\n  &:hover {\n    background-color: ", ";\n  }\n\n  span {\n    color: ", ";\n    margin-left: 20px;\n    font-weight: bold;\n  }\n"])), colors.brand10, colors.brand30, colors.brandTransparent2, colors.brand30);
-var Icon$2 = styled__default["default"].div(_templateObject5$5 || (_templateObject5$5 = _taggedTemplateLiteralLoose(["\n  visibility: ", ";\n  margin-right: ", ";\n  margin-left: ", ";\n"])), function (props) {
-  return props.loading ? 'hidden' : 'visible';
+var Icon$2 = styled__default["default"].div(_templateObject5$5 || (_templateObject5$5 = _taggedTemplateLiteralLoose(["\n  margin-right: ", ";\n  margin-left: ", ";\n"])), function (props) {
+  return props.iconPosition === 'left' && props.hasText ? '10px' : '';
 }, function (props) {
-  return props.iconPosition === 'left' ? '10px' : '';
-}, function (props) {
-  return props.iconPosition === 'right' ? '10px' : '';
+  return props.iconPosition === 'right' && props.hasText ? '10px' : '';
 });
-var Amount = styled__default["default"].div(_templateObject6$5 || (_templateObject6$5 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  background-color: ", ";\n  width: 20px;\n  height: 20px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  border-radius: 50%;\n  color: ", ";\n  font-size: 10px;\n"])), colors.brand30, colors.brand10);
+var Amount = styled__default["default"].div(_templateObject6$5 || (_templateObject6$5 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  background-color: ", ";\n  width: 20px;\n  height: 20px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  border-radius: 50%;\n  color: ", ";\n  font-size: 0.625rem;\n"])), colors.brand30, colors.brand10);
 var LoadingContainer = styled__default["default"].div(_templateObject7$5 || (_templateObject7$5 = _taggedTemplateLiteralLoose(["\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n"])));
 
 var _templateObject$e, _templateObject2$8;
@@ -3090,11 +3050,15 @@ var Loader = function Loader(_ref) {
   }), void 0);
 };
 
-var _excluded$b = ["textFirst", "textEnd", "firstStrong", "notStrong", "strong", "loading", "secondary", "backPurple", "children", "notification", "amount", "width", "icon", "customIcon", "iconPosition", "colorIcon", "noBorder", "colorText", "colorBackground", "tertiary", "size", "rectangular", "typeContent", "hoverBackgroundColor", "hoverTextColor", "iconStyle"];
+var _excluded$b = ["textFirst", "textFirstClassName", "textFirstStyle", "textEnd", "textEndClassName", "textEndStyle", "firstStrong", "notStrong", "strong", "loading", "secondary", "backPurple", "children", "notification", "amount", "width", "icon", "iconClassName", "iconStyle", "containerIconClassName", "containerIconStyle", "customIcon", "iconPosition", "noBorder", "tertiary", "size", "rectangular"];
 
 var ButtonMain = function ButtonMain(_ref) {
   var textFirst = _ref.textFirst,
+      textFirstClassName = _ref.textFirstClassName,
+      textFirstStyle = _ref.textFirstStyle,
       textEnd = _ref.textEnd,
+      textEndClassName = _ref.textEndClassName,
+      textEndStyle = _ref.textEndStyle,
       firstStrong = _ref.firstStrong,
       notStrong = _ref.notStrong,
       strong = _ref.strong,
@@ -3106,27 +3070,24 @@ var ButtonMain = function ButtonMain(_ref) {
       amount = _ref.amount,
       width = _ref.width,
       icon = _ref.icon,
+      iconClassName = _ref.iconClassName,
+      iconStyle = _ref.iconStyle,
+      containerIconClassName = _ref.containerIconClassName,
+      containerIconStyle = _ref.containerIconStyle,
       customIcon = _ref.customIcon,
       _ref$iconPosition = _ref.iconPosition,
       iconPosition = _ref$iconPosition === void 0 ? 'right' : _ref$iconPosition,
-      colorIcon = _ref.colorIcon,
       noBorder = _ref.noBorder,
-      colorText = _ref.colorText,
-      colorBackground = _ref.colorBackground,
       tertiary = _ref.tertiary,
       size = _ref.size,
       rectangular = _ref.rectangular,
-      typeContent = _ref.typeContent,
-      hoverBackgroundColor = _ref.hoverBackgroundColor,
-      hoverTextColor = _ref.hoverTextColor,
-      iconStyle = _ref.iconStyle,
       rest = _objectWithoutPropertiesLoose$3(_ref, _excluded$b);
 
   function renderButtonNotification() {
     return jsxRuntime.jsx(Notification, Object.assign({}, rest, {
       children: loading ? jsxRuntime.jsx(Loader, {
         size: "tiny"
-      }, void 0) : children || jsxRuntime.jsxs("div", Object.assign({
+      }, void 0) : jsxRuntime.jsxs("div", Object.assign({
         style: {
           display: 'flex',
           justifyContent: 'space-between',
@@ -3141,13 +3102,18 @@ var ButtonMain = function ButtonMain(_ref) {
             alignItems: 'center'
           }
         }, {
-          children: [jsxRuntime.jsx(Icon$2, {
+          children: [jsxRuntime.jsx(Icon$2 // loading={loading}
+          , Object.assign({
+            // loading={loading}
+            iconPosition: iconPosition,
+            hasText: !!textFirst || !!textEnd || !!children
+          }, {
             children: jsxRuntime.jsx(FontAwesomeIcon, {
               icon: faBell,
               size: "lg",
               color: colors.brand30
             }, void 0)
-          }, void 0), jsxRuntime.jsx("span", {
+          }), void 0), jsxRuntime.jsx("span", {
             children: "notifica\xE7\xF5es"
           }, void 0)]
         }), void 0), jsxRuntime.jsx(Amount, {
@@ -3157,31 +3123,27 @@ var ButtonMain = function ButtonMain(_ref) {
     }), void 0);
   }
 
-  function renderButtonTypes(type) {
-    switch (type) {
-      case 'icon':
-        return jsxRuntime.jsx("div", {
-          children: (icon || customIcon) && jsxRuntime.jsx(React__default["default"].Fragment, {
-            children: customIcon ? jsxRuntime.jsx(Icon$2, Object.assign({
-              loading: loading
-            }, {
-              children: customIcon
-            }), void 0) : jsxRuntime.jsx(Icon$2, Object.assign({
-              loading: loading
-            }, {
-              children: jsxRuntime.jsx(FontAwesomeIcon, {
-                icon: icon,
-                color: colorIcon || colors.brand10,
-                size: "lg",
-                style: _extends$2({}, iconStyle)
-              }, void 0)
-            }), void 0)
-          }, void 0)
-        }, void 0);
-
-      default:
-        return null;
-    }
+  function renderIcon() {
+    if (customIcon) return jsxRuntime.jsx(Icon$2, Object.assign({
+      className: containerIconClassName,
+      style: containerIconStyle,
+      iconPosition: iconPosition,
+      hasText: !!textFirst || !!textEnd || !!children
+    }, {
+      children: customIcon
+    }), void 0);
+    return jsxRuntime.jsx(Icon$2, Object.assign({
+      className: containerIconClassName,
+      style: containerIconStyle,
+      iconPosition: iconPosition,
+      hasText: !!textFirst || !!textEnd || !!children
+    }, {
+      children: jsxRuntime.jsx(FontAwesomeIcon, {
+        icon: icon,
+        className: iconClassName,
+        style: iconStyle
+      }, void 0)
+    }), void 0);
   }
 
   function renderButton() {
@@ -3191,72 +3153,35 @@ var ButtonMain = function ButtonMain(_ref) {
       width: width,
       icon: icon,
       noBorder: noBorder,
-      colorText: colorText,
-      colorBackground: colorBackground,
       tertiary: tertiary,
       size: size,
       rectangular: rectangular,
-      hoverBackgroundColor: hoverBackgroundColor,
-      hoverTextColor: hoverTextColor,
-      loading: loading
+      isLoading: !!loading
     }, {
-      children: [children || (typeContent ? renderButtonTypes(typeContent) : jsxRuntime.jsxs(React__default["default"].Fragment, {
-        children: [(icon || customIcon) && iconPosition === 'left' && jsxRuntime.jsx(React__default["default"].Fragment, {
-          children: customIcon ? jsxRuntime.jsx(Icon$2, Object.assign({
-            loading: loading,
-            iconPosition: iconPosition
-          }, {
-            children: customIcon
-          }), void 0) : jsxRuntime.jsx(Icon$2, Object.assign({
-            loading: loading,
-            iconPosition: iconPosition
-          }, {
-            children: jsxRuntime.jsx(FontAwesomeIcon, {
-              icon: icon,
-              color: colorIcon || colors.brand10,
-              size: "lg",
-              style: _extends$2({}, iconStyle)
-            }, void 0)
-          }), void 0)
-        }, void 0), jsxRuntime.jsx(TextFirst, Object.assign({
+      children: [(icon || customIcon) && iconPosition === 'left' && renderIcon(), children || jsxRuntime.jsxs(jsxRuntime.Fragment, {
+        children: [jsxRuntime.jsx(TextFirst, Object.assign({
+          className: textFirstClassName,
+          style: textFirstStyle,
+          hasTextEnd: !!textEnd,
           firstStrong: firstStrong,
           strong: strong,
           notStrong: notStrong,
-          colorText: colorText,
           tertiary: tertiary,
-          size: size,
-          loading: loading
+          size: size
         }, {
           children: textFirst
         }), void 0), jsxRuntime.jsx(TextEnd, Object.assign({
+          className: textEndClassName,
+          style: textEndStyle,
           firstStrong: firstStrong,
           strong: strong,
           notStrong: notStrong,
-          colorText: colorText,
           tertiary: tertiary,
-          size: size,
-          loading: loading
+          size: size
         }, {
           children: textEnd
-        }), void 0), (icon || customIcon) && iconPosition === 'right' && jsxRuntime.jsx(React__default["default"].Fragment, {
-          children: customIcon ? jsxRuntime.jsx(Icon$2, Object.assign({
-            loading: loading,
-            iconPosition: iconPosition
-          }, {
-            children: customIcon
-          }), void 0) : jsxRuntime.jsx(Icon$2, Object.assign({
-            loading: loading,
-            iconPosition: iconPosition
-          }, {
-            children: jsxRuntime.jsx(FontAwesomeIcon, {
-              icon: icon,
-              color: colorIcon || colors.brand10,
-              size: "lg",
-              style: _extends$2({}, iconStyle)
-            }, void 0)
-          }), void 0)
-        }, void 0)]
-      }, void 0)), loading && jsxRuntime.jsx(LoadingContainer, {
+        }), void 0)]
+      }, void 0), (icon || customIcon) && iconPosition === 'right' && renderIcon(), loading && jsxRuntime.jsx(LoadingContainer, {
         children: jsxRuntime.jsx(Loader, {
           size: "tiny"
         }, void 0)
@@ -3922,18 +3847,6 @@ var ModalComponent = function ModalComponent(_ref) {
       }, void 0)]
     }), void 0)
   }), void 0);
-};
-
-var getMeasurement = function getMeasurement(size, defaultValue) {
-  if (size) {
-    if (typeof size === 'string') {
-      return size;
-    }
-
-    return size + "px";
-  }
-
-  return defaultValue || '100%';
 };
 
 var _templateObject$a, _templateObject2$4, _templateObject3$4, _templateObject4$2, _templateObject5$1, _templateObject6$1, _templateObject7$1;
