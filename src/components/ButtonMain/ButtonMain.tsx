@@ -14,7 +14,6 @@ import {
 import Loader from '../Loader/Loader';
 import { colors } from '../../styles/colors';
 
-type ButtonTypes = 'icon';
 type IconPositions = 'left' | 'right';
 export type ButtonSizes =
   | 'mini'
@@ -27,7 +26,11 @@ export type ButtonSizes =
   | 'massive';
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   textFirst?: string;
+  textFirstClassName?: string;
+  textFirstStyle?: React.CSSProperties;
   textEnd?: string;
+  textEndClassName?: string;
+  textEndStyle?: React.CSSProperties;
   firstStrong?: boolean;
   notStrong?: boolean;
   strong?: boolean;
@@ -38,24 +41,25 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   backPurple?: boolean;
   width?: number | string;
   icon?: IconDefinition;
+  iconClassName?: 'string';
+  iconStyle?: React.CSSProperties;
+  containerIconClassName?: string;
+  containerIconStyle?: React.CSSProperties;
   customIcon?: React.ReactNode;
-  colorIcon?: string;
   iconPosition?: IconPositions;
   noBorder?: boolean;
-  colorText?: string;
-  colorBackground?: string;
   tertiary?: boolean;
   size?: ButtonSizes;
   rectangular?: boolean;
-  typeContent?: ButtonTypes;
-  hoverBackgroundColor?: string;
-  hoverTextColor?: string;
-  iconStyle?: React.CSSProperties;
 }
 
 const ButtonMain: React.FC<ButtonProps> = ({
   textFirst,
+  textFirstClassName,
+  textFirstStyle,
   textEnd,
+  textEndClassName,
+  textEndStyle,
   firstStrong,
   notStrong,
   strong,
@@ -67,19 +71,16 @@ const ButtonMain: React.FC<ButtonProps> = ({
   amount,
   width,
   icon,
+  iconClassName,
+  iconStyle,
+  containerIconClassName,
+  containerIconStyle,
   customIcon,
   iconPosition = 'right',
-  colorIcon,
   noBorder,
-  colorText,
-  colorBackground,
   tertiary,
   size,
   rectangular,
-  typeContent,
-  hoverBackgroundColor,
-  hoverTextColor,
-  iconStyle,
   ...rest
 }) => {
   function renderButtonNotification() {
@@ -88,60 +89,63 @@ const ButtonMain: React.FC<ButtonProps> = ({
         {loading ? (
           <Loader size="tiny" />
         ) : (
-          children || (
-            <div
-              style={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'center',
-                height: '50%',
-                padding: 10,
-              }}
-            >
-              <div style={{ display: 'flex', alignItems: 'center' }}>
-                <Icon>
-                  <FontAwesomeIcon
-                    icon={faBell}
-                    size="lg"
-                    color={colors.brand30}
-                  />
-                </Icon>
-                <span>notificações</span>
-              </div>
-              <Amount>{amount}</Amount>
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              height: '50%',
+              padding: 10,
+            }}
+          >
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+              <Icon
+                // loading={loading}
+                iconPosition={iconPosition}
+                hasText={!!textFirst || !!textEnd || !!children}
+              >
+                <FontAwesomeIcon
+                  icon={faBell}
+                  size="lg"
+                  color={colors.brand30}
+                />
+              </Icon>
+              <span>notificações</span>
             </div>
-          )
+            <Amount>{amount}</Amount>
+          </div>
         )}
       </Notification>
     );
   }
 
-  function renderButtonTypes(type: ButtonTypes) {
-    switch (type) {
-      case 'icon':
-        return (
-          <div>
-            {(icon || customIcon) && (
-              <React.Fragment>
-                {customIcon ? (
-                  <Icon loading={loading}>{customIcon}</Icon>
-                ) : (
-                  <Icon loading={loading}>
-                    <FontAwesomeIcon
-                      icon={icon as IconDefinition}
-                      color={colorIcon || colors.brand10}
-                      size="lg"
-                      style={{ ...iconStyle }}
-                    />
-                  </Icon>
-                )}
-              </React.Fragment>
-            )}
-          </div>
-        );
-      default:
-        return null;
-    }
+  function renderIcon() {
+    if (customIcon)
+      return (
+        <Icon
+          className={containerIconClassName}
+          style={containerIconStyle}
+          iconPosition={iconPosition}
+          hasText={!!textFirst || !!textEnd || !!children}
+        >
+          {customIcon}
+        </Icon>
+      );
+
+    return (
+      <Icon
+        className={containerIconClassName}
+        style={containerIconStyle}
+        iconPosition={iconPosition}
+        hasText={!!textFirst || !!textEnd || !!children}
+      >
+        <FontAwesomeIcon
+          icon={icon!}
+          className={iconClassName}
+          style={iconStyle}
+        />
+      </Icon>
+    );
   }
 
   function renderButton() {
@@ -153,80 +157,42 @@ const ButtonMain: React.FC<ButtonProps> = ({
         width={width}
         icon={icon}
         noBorder={noBorder}
-        colorText={colorText}
-        colorBackground={colorBackground}
         tertiary={tertiary}
         size={size}
         rectangular={rectangular}
-        hoverBackgroundColor={hoverBackgroundColor}
-        hoverTextColor={hoverTextColor}
-        loading={loading}
+        isLoading={!!loading}
       >
-        {children ||
-          (typeContent ? (
-            renderButtonTypes(typeContent)
-          ) : (
-            <React.Fragment>
-              {(icon || customIcon) && iconPosition === 'left' && (
-                <React.Fragment>
-                  {customIcon ? (
-                    <Icon loading={loading} iconPosition={iconPosition}>
-                      {customIcon}
-                    </Icon>
-                  ) : (
-                    <Icon loading={loading} iconPosition={iconPosition}>
-                      <FontAwesomeIcon
-                        icon={icon!}
-                        color={colorIcon || colors.brand10}
-                        size="lg"
-                        style={{ ...iconStyle }}
-                      />
-                    </Icon>
-                  )}
-                </React.Fragment>
-              )}
-              <TextFirst
-                firstStrong={firstStrong}
-                strong={strong}
-                notStrong={notStrong}
-                colorText={colorText}
-                tertiary={tertiary}
-                size={size}
-                loading={loading}
-              >
-                {textFirst}
-              </TextFirst>
-              <TextEnd
-                firstStrong={firstStrong}
-                strong={strong}
-                notStrong={notStrong}
-                colorText={colorText}
-                tertiary={tertiary}
-                size={size}
-                loading={loading}
-              >
-                {textEnd}
-              </TextEnd>
-              {(icon || customIcon) && iconPosition === 'right' && (
-                <React.Fragment>
-                  {customIcon ? (
-                    <Icon loading={loading} iconPosition={iconPosition}>
-                      {customIcon}
-                    </Icon>
-                  ) : (
-                    <Icon loading={loading} iconPosition={iconPosition}>
-                      <FontAwesomeIcon
-                        icon={icon!}
-                        color={colorIcon || colors.brand10}
-                        size="lg"
-                        style={{ ...iconStyle }}
-                      />
-                    </Icon>
-                  )}
-                </React.Fragment>
-              )}
-            </React.Fragment>
-          ))}
+        {(icon || customIcon) && iconPosition === 'left' && renderIcon()}
+
+        {children || (
+          <>
+            <TextFirst
+              className={textFirstClassName}
+              style={textFirstStyle}
+              hasTextEnd={!!textEnd}
+              firstStrong={firstStrong}
+              strong={strong}
+              notStrong={notStrong}
+              tertiary={tertiary}
+              size={size}
+            >
+              {textFirst}
+            </TextFirst>
+            <TextEnd
+              className={textEndClassName}
+              style={textEndStyle}
+              firstStrong={firstStrong}
+              strong={strong}
+              notStrong={notStrong}
+              tertiary={tertiary}
+              size={size}
+            >
+              {textEnd}
+            </TextEnd>
+          </>
+        )}
+
+        {(icon || customIcon) && iconPosition === 'right' && renderIcon()}
 
         {loading && (
           <LoadingContainer>

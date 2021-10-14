@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
 import { colors } from '../../styles/colors';
 import { ButtonSizes } from './ButtonMain';
+import { getMeasurement } from '../../helpers/FnUtil';
 
 interface ButtonProps {
   secondary?: boolean;
@@ -17,7 +18,7 @@ interface ButtonProps {
   tertiary?: boolean;
   size?: ButtonSizes;
   rectangular?: boolean;
-  loading?: boolean;
+  isLoading?: boolean;
 }
 
 interface TextFirstProps {
@@ -27,7 +28,7 @@ interface TextFirstProps {
   colorText?: string;
   tertiary?: boolean;
   size?: ButtonSizes;
-  loading?: boolean;
+  hasTextEnd?: boolean;
 }
 
 interface TextEndProps {
@@ -37,11 +38,10 @@ interface TextEndProps {
   colorText?: string;
   tertiary?: boolean;
   size?: ButtonSizes;
-  loading?: boolean;
 }
 
 interface IconProps {
-  loading?: boolean;
+  hasText: boolean;
   iconPosition?: 'left' | 'right';
 }
 
@@ -59,21 +59,21 @@ const Sizes = {
 const size = (size: string | number) => {
   switch (size) {
     case Sizes.mini:
-      return '25px';
+      return '1.5625rem';
     case Sizes.tiny:
-      return '30px';
+      return '1.875rem';
     case Sizes.small:
-      return '35px';
+      return '2.1875rem';
     case Sizes.medium:
-      return '40px';
+      return '2.5rem';
     case Sizes.large:
-      return '45px';
+      return '2.8125rem';
     case Sizes.big:
-      return '50px';
+      return '3.125rem';
     case Sizes.huge:
-      return '55px';
+      return '3.4375rem';
     case Sizes.massive:
-      return '60px';
+      return '3.75rem';
     default:
       return size;
   }
@@ -82,21 +82,21 @@ const size = (size: string | number) => {
 const textSize = (size: string | number) => {
   switch (size) {
     case Sizes.mini:
-      return '10px';
+      return '0.625rem';
     case Sizes.tiny:
-      return '11px';
+      return '0.75rem';
     case Sizes.small:
-      return '12px';
+      return '0.875rem';
     case Sizes.medium:
-      return '14px';
+      return '1rem';
     case Sizes.large:
-      return '16px';
+      return '1.125rem';
     case Sizes.big:
-      return '18px';
+      return '1.25rem';
     case Sizes.huge:
-      return '20px';
+      return '1.375rem';
     case Sizes.massive:
-      return '22px';
+      return '1.5rem';
     default:
       return size;
   }
@@ -104,9 +104,10 @@ const textSize = (size: string | number) => {
 
 export const Button = styled.button<ButtonProps>`
   font-family: MontSerrat !important;
-  position: ${props => (props.loading ? 'relative' : 'initial')};
+  font-size: ${props => (props.size ? textSize(props.size) : '1rem')};
+  position: ${props => (props.isLoading ? 'relative' : 'initial')};
+  line-height: 0;
   background-color: ${props => {
-    if (props.colorBackground) return props.colorBackground;
     if (props.secondary || props.tertiary) {
       return colors.white;
     }
@@ -117,18 +118,20 @@ export const Button = styled.button<ButtonProps>`
 
     return colors.brand30;
   }};
-  height: ${props => (props.size ? size(props.size) : '40px')};
-  padding: 0 20px;
-  width: ${props => {
-    if (props.width) {
-      if (typeof props.width === 'string') {
-        return props.width;
-      }
-      return `${props.width}px`;
+  color: ${props => {
+    if (props.tertiary) {
+      return colors.gray20;
     }
 
-    return 'none';
+    if (props.isLoading) {
+      return 'transparent';
+    }
+
+    return colors.brand10;
   }};
+  height: ${props => (props.size ? size(props.size) : '2.5rem')};
+  padding: 0 1.25rem;
+  width: ${props => getMeasurement(props.width, 'none')};
   border-radius: ${props => {
     if (props.rectangular) return '10px';
 
@@ -159,9 +162,6 @@ export const Button = styled.button<ButtonProps>`
 
   &:hover {
     background-color: ${props => {
-      if (props.hoverBackgroundColor) {
-        return props.hoverBackgroundColor;
-      }
       if (props.secondary) {
         return colors.brandTransparent;
       }
@@ -180,51 +180,29 @@ export const Button = styled.button<ButtonProps>`
 
       return colors.brand10;
     }};
+    color: ${props => {
+      if (props.secondary || props.noBorder) {
+        return colors.brand10;
+      }
 
-    span {
-      color: ${props => {
-        if (props.hoverTextColor) {
-          return props.hoverTextColor;
-        }
+      if (props.backPurple) {
+        return colors.white;
+      }
 
-        if (props.secondary) {
-          return colors.brand10;
-        }
+      if (props.tertiary) {
+        return colors.gray20;
+      }
 
-        if (props.backPurple) {
-          return colors.white;
-        }
+      if (props.isLoading) {
+        return 'transparent';
+      }
 
-        if (props.noBorder) {
-          if (props.colorText) {
-            return props.colorText;
-          }
-          return colors.brand10;
-        }
-
-        if (props.tertiary) {
-          return colors.gray20;
-        }
-
-        return colors.brand30;
-      }};
-    }
+      return colors.brand30;
+    }};
   }
 `;
 
 export const TextFirst = styled.span<TextFirstProps>`
-  visibility: ${props => (props.loading ? 'hidden' : 'visible')};
-  color: ${props => {
-    if (props.colorText) {
-      return props.colorText;
-    }
-
-    if (props.tertiary) {
-      return colors.gray20;
-    }
-
-    return colors.brand10;
-  }};
   font-weight: ${props => {
     if (props.firstStrong || props.strong) {
       return 'bold';
@@ -232,22 +210,11 @@ export const TextFirst = styled.span<TextFirstProps>`
 
     return 'normal';
   }};
-  font-size: ${props => (props.size ? textSize(props.size) : '14px')};
-  margin-right: 3.5px;
+  font-size: ${props => (props.size ? textSize(props.size) : '1rem')};
+  margin-right: ${props => (props.hasTextEnd ? '3.5px' : '')};
 `;
+
 export const TextEnd = styled.span<TextEndProps>`
-  visibility: ${props => (props.loading ? 'hidden' : 'visible')};
-  color: ${props => {
-    if (props.colorText) {
-      return props.colorText;
-    }
-
-    if (props.tertiary) {
-      return colors.gray20;
-    }
-
-    return colors.brand10;
-  }};
   font-weight: ${props => {
     if (props.firstStrong || props.notStrong) {
       return 'normal';
@@ -255,7 +222,7 @@ export const TextEnd = styled.span<TextEndProps>`
 
     return 'bold';
   }};
-  font-size: ${props => (props.size ? textSize(props.size) : '14px')};
+  font-size: ${props => (props.size ? textSize(props.size) : '1rem')};
 `;
 
 export const Notification = styled.button`
@@ -286,9 +253,10 @@ export const Notification = styled.button`
 `;
 
 export const Icon = styled.div<IconProps>`
-  visibility: ${props => (props.loading ? 'hidden' : 'visible')};
-  margin-right: ${props => (props.iconPosition === 'left' ? '10px' : '')};
-  margin-left: ${props => (props.iconPosition === 'right' ? '10px' : '')};
+  margin-right: ${props =>
+    props.iconPosition === 'left' && props.hasText ? '10px' : ''};
+  margin-left: ${props =>
+    props.iconPosition === 'right' && props.hasText ? '10px' : ''};
 `;
 
 export const Amount = styled.div`
@@ -301,7 +269,7 @@ export const Amount = styled.div`
   align-items: center;
   border-radius: 50%;
   color: ${colors.brand10};
-  font-size: 10px;
+  font-size: 0.625rem;
 `;
 
 export const LoadingContainer = styled.div`
