@@ -41,7 +41,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   backPurple?: boolean;
   width?: number | string;
   icon?: IconDefinition;
-  iconClassName?: 'string';
+  iconClassName?: string;
   iconStyle?: React.CSSProperties;
   containerIconClassName?: string;
   containerIconStyle?: React.CSSProperties;
@@ -143,6 +143,7 @@ const ButtonMain: React.FC<ButtonProps> = ({
           icon={icon!}
           className={iconClassName}
           style={iconStyle}
+          data-testid="button-icon"
         />
       </Icon>
     );
@@ -195,7 +196,7 @@ const ButtonMain: React.FC<ButtonProps> = ({
         {(icon || customIcon) && iconPosition === 'right' && renderIcon()}
 
         {loading && (
-          <LoadingContainer>
+          <LoadingContainer data-testid="button-loading">
             <Loader size="tiny" />
           </LoadingContainer>
         )}

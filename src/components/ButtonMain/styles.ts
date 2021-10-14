@@ -11,7 +11,6 @@ interface ButtonProps {
   width?: number | string;
   icon?: IconDefinition;
   noBorder?: boolean;
-  colorText?: string;
   colorBackground?: string;
   hoverBackgroundColor?: string;
   hoverTextColor?: string;
@@ -25,7 +24,6 @@ interface TextFirstProps {
   firstStrong?: boolean;
   notStrong?: boolean;
   strong?: boolean;
-  colorText?: string;
   tertiary?: boolean;
   size?: ButtonSizes;
   hasTextEnd?: boolean;
@@ -35,7 +33,6 @@ interface TextEndProps {
   firstStrong?: boolean;
   notStrong?: boolean;
   strong?: boolean;
-  colorText?: string;
   tertiary?: boolean;
   size?: ButtonSizes;
 }

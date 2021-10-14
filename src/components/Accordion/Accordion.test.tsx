@@ -45,7 +45,7 @@ describe('Accordion Component', () => {
     );
 
     // Then
-    const accordion = wrapper.getByTestId('accordion-component');
+    const accordion = wrapper.getByRole('button');
     userEvent.click(accordion);
     expect(onChangeMock).toBeCalled();
   });
@@ -145,7 +145,7 @@ describe('Accordion Component', () => {
     );
 
     // Then
-    const accordion = wrapper.getByTestId('accordion-component');
+    const accordion = wrapper.getByRole('button');
     expect(accordion).toHaveStyle(`background-color: ${colors.card}`);
   });
 });

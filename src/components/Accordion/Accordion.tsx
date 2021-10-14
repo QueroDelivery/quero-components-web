@@ -61,7 +61,7 @@ const Accordion: React.FC<AccordionProps> = ({
   return (
     <>
       <Container
-        data-testid="accordion-component"
+        role="button"
         className={className}
         style={style}
         secondary={secondary}
