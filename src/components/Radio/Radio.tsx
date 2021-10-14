@@ -6,6 +6,9 @@ export interface InputProps
   extends Omit<InputHTMLAttributes<HTMLInputElement>, 'type'> {
   label?: string;
   labelStyle?: React.CSSProperties;
+  labelClassName?: string;
+  containerStyle?: React.CSSProperties;
+  containerClassName?: string;
   onChange: () => void;
   sizeBox?:
     | 'mini'
@@ -18,26 +21,33 @@ export interface InputProps
     | 'massive';
 }
 
-const Radio: React.FC<InputProps> = ({
+function Radio({
   label,
   labelStyle,
   sizeBox,
+  containerClassName,
+  containerStyle,
+  labelClassName,
   ...rest
-}) => {
+}: InputProps) {
   return (
     <Container
-      onClick={() =>
-        !rest.disabled ? (rest.onChange ? rest.onChange() : null) : null
-      }
+      onClick={!rest.disabled && rest.onChange ? rest.onChange : undefined}
       disabled={rest.disabled}
       sizeBox={sizeBox}
+      className={containerClassName}
+      style={containerStyle}
+      role="radio"
     >
-      <input type="radio" {...rest} />
+      <input data-testid="input-radio" type="radio" {...rest} />
+
       <div>
-        <label style={labelStyle}>{label}</label>
+        <label className={labelClassName} style={labelStyle}>
+          {label}
+        </label>
       </div>
     </Container>
   );
-};
+}
 
 export default Radio;

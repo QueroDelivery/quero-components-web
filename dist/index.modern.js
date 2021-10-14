@@ -4743,28 +4743,28 @@ const Sizes$2 = {
 const size = size => {
   switch (size) {
     case Sizes$2.mini:
-      return '10px';
+      return '0.625rem';
 
     case Sizes$2.tiny:
-      return '12px';
+      return '0.75rem';
 
     case Sizes$2.small:
-      return '14px';
+      return '0.875rem';
 
     case Sizes$2.medium:
-      return '17px';
+      return '1.0625rem';
 
     case Sizes$2.large:
-      return '20px';
+      return '1.25rem';
 
     case Sizes$2.big:
-      return '23px';
+      return '1.4375rem';
 
     case Sizes$2.huge:
-      return '26px';
+      return '1.625rem';
 
     case Sizes$2.massive:
-      return '30px';
+      return '1.875rem';
 
     default:
       return size;
@@ -4774,28 +4774,28 @@ const size = size => {
 const sizeChecked = size => {
   switch (size) {
     case Sizes$2.mini:
-      return '2px';
+      return '0.125rem';
 
     case Sizes$2.tiny:
-      return '4px';
+      return '0.25rem';
 
     case Sizes$2.small:
-      return '6px';
+      return '0.375rem';
 
     case Sizes$2.medium:
-      return '9px';
+      return '0.5625rem';
 
     case Sizes$2.large:
-      return '12px';
+      return '0.75rem';
 
     case Sizes$2.big:
-      return '15px';
+      return '0.9375rem';
 
     case Sizes$2.huge:
-      return '18px';
+      return '1.125rem';
 
     case Sizes$2.massive:
-      return '22px';
+      return '1.375rem';
 
     default:
       return size;
@@ -4805,28 +4805,28 @@ const sizeChecked = size => {
 const labelSize = size => {
   switch (size) {
     case Sizes$2.mini:
-      return '10px';
+      return '0.625rem';
 
     case Sizes$2.tiny:
-      return '13px';
+      return '0.8125rem';
 
     case Sizes$2.small:
-      return '14px';
+      return '0.875rem';
 
     case Sizes$2.medium:
-      return '16px';
+      return '1rem';
 
     case Sizes$2.large:
-      return '18px';
+      return '1.125rem';
 
     case Sizes$2.big:
-      return '20px';
+      return '1.25rem';
 
     case Sizes$2.huge:
-      return '22px';
+      return '1.375rem';
 
     case Sizes$2.massive:
-      return '24px';
+      return '1.5rem';
 
     default:
       return size;
@@ -4836,28 +4836,28 @@ const labelSize = size => {
 const paddingLeft = size => {
   switch (size) {
     case Sizes$2.mini:
-      return '15px';
+      return '0.9375rem';
 
     case Sizes$2.tiny:
-      return '18px';
+      return '1.125rem';
 
     case Sizes$2.small:
-      return '20px';
+      return '1.25rem';
 
     case Sizes$2.medium:
-      return '25px';
+      return '1.5625rem';
 
     case Sizes$2.large:
-      return '28px';
+      return '1.75rem';
 
     case Sizes$2.big:
-      return '32px';
+      return '2rem';
 
     case Sizes$2.huge:
-      return '35px';
+      return '2.1875rem';
 
     case Sizes$2.massive:
-      return '40px';
+      return '2.5rem';
 
     default:
       return size;
@@ -4867,28 +4867,28 @@ const paddingLeft = size => {
 const paddingTop = size => {
   switch (size) {
     case Sizes$2.mini:
-      return '0px';
+      return '0rem';
 
     case Sizes$2.tiny:
-      return '0px';
+      return '0rem';
 
     case Sizes$2.small:
-      return '0px';
+      return '0rem';
 
     case Sizes$2.medium:
-      return '0px';
+      return '0rem';
 
     case Sizes$2.large:
-      return '2px';
+      return '0.125rem';
 
     case Sizes$2.big:
-      return '2px';
+      return '0.125rem';
 
     case Sizes$2.huge:
-      return '3px';
+      return '0.1875rem';
 
     case Sizes$2.massive:
-      return '4px';
+      return '0.25rem';
 
     default:
       return size;
@@ -4898,28 +4898,28 @@ const paddingTop = size => {
 const topBoxBefore = size => {
   switch (size) {
     case Sizes$2.mini:
-      return '5px';
+      return '0.3125rem';
 
     case Sizes$2.tiny:
-      return '4px';
+      return '0.25rem';
 
     case Sizes$2.small:
-      return '3px';
+      return '0.1875rem';
 
     case Sizes$2.medium:
-      return '1px';
+      return '0.0625rem';
 
     case Sizes$2.large:
-      return '0px';
+      return '0rem';
 
     case Sizes$2.big:
-      return '0px';
+      return '0rem';
 
     case Sizes$2.huge:
-      return '0px';
+      return '0rem';
 
     case Sizes$2.massive:
-      return '0px';
+      return '0rem';
 
     default:
       return size;
@@ -4929,28 +4929,28 @@ const topBoxBefore = size => {
 const topBoxAfter = size => {
   switch (size) {
     case Sizes$2.mini:
-      return '9px';
+      return '0.5625rem';
 
     case Sizes$2.tiny:
-      return '8px';
+      return '0.5rem';
 
     case Sizes$2.small:
-      return '7px';
+      return '0.4375rem';
 
     case Sizes$2.medium:
-      return '5px';
+      return '0.3125rem';
 
     case Sizes$2.large:
-      return '4px';
+      return '0.25rem';
 
     case Sizes$2.big:
-      return '4px';
+      return '0.25rem';
 
     case Sizes$2.huge:
-      return '4px';
+      return '0.25rem';
 
     case Sizes$2.massive:
-      return '4px';
+      return '0.25rem';
 
     default:
       return size;
@@ -4960,22 +4960,26 @@ const topBoxAfter = size => {
 const Container$6 = styled.div(_t$8 || (_t$8 = _$8`
   font-family: MontSerrat !important;
 
+  &,
+  label,
+  input {
+    cursor: ${0};
+  }
+
   > input {
     display: none;
   }
 
   label {
     font-size: ${0};
-    color: ${0};
-    cursor: ${0};
     opacity: ${0};
+    color: ${0};
     padding-top: ${0};
   }
 
   > input + div {
     position: relative;
     padding-left: ${0};
-    cursor: ${0};
     opacity: ${0};
     display: flex;
     align-items: center;
@@ -5018,25 +5022,25 @@ const Container$6 = styled.div(_t$8 || (_t$8 = _$8`
       transform: scale(1);
     }
   }
-`), props => {
+`), props => props.disabled ? 'default' : 'pointer', props => {
   if (props.sizeBox) {
     return labelSize(props.sizeBox);
   }
 
-  return '17px';
-}, colors.gray20, props => props.disabled ? 'default' : 'pointer', props => props.disabled ? 0.5 : 1, props => {
+  return '1.0625rem';
+}, props => props.disabled ? 0.5 : 1, colors.gray20, props => {
   if (props.sizeBox) {
     return paddingTop(props.sizeBox);
   }
 
-  return '0px';
+  return '0rem';
 }, props => {
   if (props.sizeBox) {
     return paddingLeft(props.sizeBox);
   }
 
-  return '25px';
-}, props => props.disabled ? 'default' : 'pointer', props => props.disabled ? 0.5 : 1, props => {
+  return '1.5625rem';
+}, props => props.disabled ? 0.5 : 1, props => {
   if (props.sizeBox) {
     return topBoxBefore(props.sizeBox);
   }
@@ -5074,32 +5078,40 @@ const Container$6 = styled.div(_t$8 || (_t$8 = _$8`
   return '9px';
 }, colors.gray20, colors.gray20, colors.white);
 
-const _excluded$5 = ["label", "labelStyle", "sizeBox"];
+const _excluded$5 = ["label", "labelStyle", "sizeBox", "containerClassName", "containerStyle", "labelClassName"];
 
-const Radio = _ref => {
+function Radio(_ref) {
   let {
     label,
     labelStyle,
-    sizeBox
+    sizeBox,
+    containerClassName,
+    containerStyle,
+    labelClassName
   } = _ref,
       rest = _objectWithoutPropertiesLoose$3(_ref, _excluded$5);
 
   return jsxs(Container$6, Object.assign({
-    onClick: () => !rest.disabled ? rest.onChange ? rest.onChange() : null : null,
+    onClick: !rest.disabled && rest.onChange ? rest.onChange : undefined,
     disabled: rest.disabled,
-    sizeBox: sizeBox
+    sizeBox: sizeBox,
+    className: containerClassName,
+    style: containerStyle,
+    role: "radio"
   }, {
     children: [jsx("input", Object.assign({
+      "data-testid": "input-radio",
       type: "radio"
     }, rest), void 0), jsx("div", {
       children: jsx("label", Object.assign({
+        className: labelClassName,
         style: labelStyle
       }, {
         children: label
       }), void 0)
     }, void 0)]
   }), void 0);
-};
+}
 
 let _$7 = t => t,
     _t$7;
