@@ -4397,7 +4397,7 @@ const LabelLengthInfo = styled.span(_t7$1 || (_t7$1 = _$a`
   color: ${0};
 `), colors.gray10);
 
-const _excluded$8 = ["label", "labelClassName", "labelStyle", "labelColor", "containerStyle", "errorMessage", "errorColor", "textColor", "width", "height", "lengthInfo"];
+const _excluded$8 = ["label", "labelClassName", "labelStyle", "labelColor", "errorClassName", "errorStyle", "errorMessage", "errorColor", "containerStyle", "textColor", "width", "height", "lengthInfo", "lengthInfoClassName", "lengthInfoStyle"];
 
 function TextArea(_ref) {
   let {
@@ -4405,13 +4405,17 @@ function TextArea(_ref) {
     labelClassName,
     labelStyle,
     labelColor,
-    containerStyle,
+    errorClassName,
+    errorStyle,
     errorMessage,
     errorColor,
+    containerStyle,
     textColor,
     width,
     height,
-    lengthInfo
+    lengthInfo,
+    lengthInfoClassName,
+    lengthInfoStyle
   } = _ref,
       rest = _objectWithoutPropertiesLoose$3(_ref, _excluded$8);
 
@@ -4437,12 +4441,17 @@ function TextArea(_ref) {
       children: jsx("textarea", Object.assign({}, rest), void 0)
     }), void 0), jsxs(Footer, {
       children: [jsx(LabelError, Object.assign({
+        className: errorClassName,
+        style: errorStyle,
         errorColor: errorColor
       }, {
         children: errorMessage
-      }), void 0), (lengthInfo || typeof lengthInfo == 'number') && rest.maxLength ? jsx(LabelLengthInfo, {
+      }), void 0), (lengthInfo || typeof lengthInfo == 'number') && rest.maxLength ? jsx(LabelLengthInfo, Object.assign({
+        className: lengthInfoClassName,
+        style: lengthInfoStyle
+      }, {
         children: `${typeof lengthInfo == 'number' ? lengthInfo : typeof rest.value == 'string' ? rest.value.length : 0}/${rest.maxLength} caracteres`
-      }, void 0) : null]
+      }), void 0) : null]
     }, void 0)]
   }, void 0);
 }
@@ -7119,94 +7128,94 @@ const widthToggle = size => {
       return '40px !important';
 
     case Sizes$1.tiny:
-      return '50px !important';
+      return '3.125rem !important';
 
     case Sizes$1.small:
-      return '60px !important';
+      return '3.75rem !important';
 
     case Sizes$1.medium:
-      return '65px !important';
+      return '4.0625rem !important';
 
     case Sizes$1.large:
-      return '70px !important';
+      return '4.375rem !important';
 
     case Sizes$1.big:
-      return '80px !important';
+      return '5rem !important';
 
     case Sizes$1.huge:
-      return '90px !important';
+      return '5.625rem !important';
 
     case Sizes$1.massive:
-      return '100px !important';
+      return '6.25rem !important';
 
     default:
-      return '65px !important';
+      return '4.0625rem !important';
   }
 };
 
 const fontToggle = size => {
   switch (size) {
     case Sizes$1.mini:
-      return '8px !important';
+      return '0.5rem !important';
 
     case Sizes$1.tiny:
-      return '9px !important';
+      return '0.5625rem !important';
 
     case Sizes$1.small:
-      return '10px !important';
+      return '0.625rem !important';
 
     case Sizes$1.medium:
-      return '11px !important';
+      return '0.6875rem !important';
 
     case Sizes$1.large:
-      return '12px !important';
+      return '0.75rem !important';
 
     case Sizes$1.big:
-      return '13px !important';
+      return '0.8125rem !important';
 
     case Sizes$1.huge:
-      return '14px !important';
+      return '0.875rem !important';
 
     case Sizes$1.massive:
-      return '15px !important';
+      return '0.9375rem !important';
 
     default:
-      return '11px !important';
+      return '0.6875rem !important';
   }
 };
 
 const fontActiveInactive = size => {
   switch (size) {
     case Sizes$1.mini:
-      return '7px !important';
+      return '0.4375rem !important';
 
     case Sizes$1.tiny:
-      return '8px !important';
+      return '0.5rem !important';
 
     case Sizes$1.small:
-      return '9px !important';
+      return '0.5625rem !important';
 
     case Sizes$1.medium:
-      return '10px !important';
+      return '0.625rem !important';
 
     case Sizes$1.large:
-      return '11px !important';
+      return '0.6875rem !important';
 
     case Sizes$1.big:
-      return '12px !important';
+      return '0.75rem !important';
 
     case Sizes$1.huge:
-      return '13px !important';
+      return '0.8125rem !important';
 
     case Sizes$1.massive:
-      return '14px !important';
+      return '0.875rem !important';
 
     default:
-      return '10px !important';
+      return '0.625rem !important';
   }
 };
 
-const Switch = styled.label(_t$5 || (_t$5 = _$5`
+const Switch = styled.button(_t$5 || (_t$5 = _$5`
   font-family: MontSerrat !important;
   display: flex !important;
   flex-direction: row !important;
@@ -7214,24 +7223,15 @@ const Switch = styled.label(_t$5 || (_t$5 = _$5`
   /* padding-left: ${0}; */
   /* margin-bottom: 12px; */
   cursor: ${0};
-  font-size: 22px !important;
+  font-size: 1.375rem !important;
   user-select: none !important;
 
-  input {
+  div {
     position: absolute !important;
     opacity: 0 !important;
-    cursor: pointer !important;
     height: 0 !important;
     width: 0 !important;
     display: none !important;
-  }
-
-  input:checked ~ .control {
-    background-color: ${0};
-
-    &:after {
-      left: ${0};
-    }
   }
 
   .control {
@@ -7254,20 +7254,30 @@ const Switch = styled.label(_t$5 || (_t$5 = _$5`
       border: 1px solid ${0} !important;
     }
   }
-`), props => props.size ? `${widthSwitch(props.size)}px` : `${toggleWidth}px`, props => props.disabled ? 'normal !important' : 'pointer !important', props => props.disabled ? `${colors.brandTransparent} !important` : `${colors.brandDark} !important`, props => props.size ? `${widthSwitch(props.size) - (heightSwitch(props.size) - sizeGutter(props.size) * 2) - sizeGutter(props.size)}px !important` : `${toggleWidth - toggleControlSsize - toggleGutter}px !important`, props => props.size ? `${heightSwitch(props.size)}px !important` : `${toggleHeight}px !important`, props => props.size ? `${widthSwitch(props.size)}px !important` : `${toggleWidth}px !important`, props => props.size ? `${heightSwitch(props.size) / 2}px !important` : `${toggleRadius}px !important`, colors.card, props => props.size ? `${heightSwitch(props.size) - sizeGutter(props.size) * 2}px !important` : `${toggleControlSsize}px !important`, props => props.size ? `${heightSwitch(props.size) - sizeGutter(props.size) * 2}px !important` : `${toggleControlSsize}px !important`, colors.default10);
-const Toggle = styled.div(_t2$2 || (_t2$2 = _$5`
+
+  div.checked ~ .control {
+    background-color: ${0};
+
+    &:after {
+      left: ${0};
+    }
+  }
+`), props => props.size ? `${widthSwitch(props.size)}px` : `${toggleWidth}px`, props => props.disabled ? 'not-allowed !important' : 'pointer !important', props => props.size ? `${heightSwitch(props.size)}px !important` : `${toggleHeight}px !important`, props => props.size ? `${widthSwitch(props.size)}px !important` : `${toggleWidth}px !important`, props => props.size ? `${heightSwitch(props.size) / 2}px !important` : `${toggleRadius}px !important`, colors.card, props => props.size ? `${heightSwitch(props.size) - sizeGutter(props.size) * 2}px !important` : `${toggleControlSsize}px !important`, props => props.size ? `${heightSwitch(props.size) - sizeGutter(props.size) * 2}px !important` : `${toggleControlSsize}px !important`, colors.default10, props => props.disabled ? `${colors.brandTransparent} !important` : `${colors.brandDark} !important`, props => props.size ? `${widthSwitch(props.size) - (heightSwitch(props.size) - sizeGutter(props.size) * 2) - sizeGutter(props.size)}px !important` : `${toggleWidth - toggleControlSsize - toggleGutter}px !important`);
+const Toggle = styled.button(_t2$2 || (_t2$2 = _$5`
   font-family: MontSerrat !important;
   display: flex !important;
   flex-direction: row !important;
+  opacity: ${0};
+
+  cursor: ${0};
 
   .btn {
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    opacity: ${0};
     width: ${0};
     border: 1px solid ${0} !important;
-    padding: 4px 0 !important;
+    padding: 0.5rem 0 !important;
 
     span {
       font-size: ${0};
@@ -7275,7 +7285,47 @@ const Toggle = styled.div(_t2$2 || (_t2$2 = _$5`
   }
 
   .left {
-    cursor: ${0};
+    background-color: ${0};
+    border-top-left-radius: 20px !important;
+    border-bottom-left-radius: 20px !important;
+    border-right: 0 !important;
+    transition: 400ms !important;
+
+    color: ${0};
+  }
+
+  .right {
+    background-color: ${0};
+    border-top-right-radius: 20px !important;
+    border-bottom-right-radius: 20px !important;
+    border-left: 0 !important;
+    transition: 400ms !important;
+
+    color: ${0};
+  }
+`), props => props.disabled ? '0.5 !important' : '1 !important', props => props.disabled ? 'not-allowed !important' : 'pointer !important', props => props.size ? widthToggle(props.size) : '4rem !important', colors.card, props => props.size ? fontToggle(props.size) : '0.6875rem !important', props => !props.checked ? `${colors.brand10} !important` : `${colors.white} !important`, props => !props.checked ? `${colors.white} !important` : `${colors.gray20} !important`, props => props.checked ? `${colors.brand10} !important` : `${colors.white} !important`, props => props.checked ? `${colors.white} !important` : `${colors.gray20} !important`);
+const ActiveInactive = styled.button(_t3$2 || (_t3$2 = _$5`
+  font-family: MontSerrat !important;
+  display: flex !important;
+  flex-direction: row !important;
+  opacity: ${0};
+
+  cursor: ${0};
+
+  .btn {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: ${0};
+    border: 1px solid ${0} !important;
+    padding: 0.5rem 0 !important;
+
+    span {
+      font-size: ${0};
+    }
+  }
+
+  .left {
     background-color: ${0};
     border-top-left-radius: 20px !important;
     border-bottom-left-radius: 20px !important;
@@ -7288,7 +7338,6 @@ const Toggle = styled.div(_t2$2 || (_t2$2 = _$5`
   }
 
   .right {
-    cursor: ${0};
     background-color: ${0};
     border-top-right-radius: 20px !important;
     border-bottom-right-radius: 20px !important;
@@ -7299,52 +7348,7 @@ const Toggle = styled.div(_t2$2 || (_t2$2 = _$5`
       color: ${0};
     }
   }
-`), props => props.disabled ? '0.5 !important' : '1 !important', props => props.size ? widthToggle(props.size) : '65px !important', colors.card, props => props.size ? fontToggle(props.size) : '11px !important', props => props.disabled ? 'default !important' : !props.checked ? 'default !important' : 'pointer !important', props => !props.checked ? `${colors.brand10} !important` : `${colors.white} !important`, props => !props.checked ? `${colors.white} !important` : `${colors.gray20} !important`, props => props.disabled ? 'default !important' : props.checked ? 'default !important' : 'pointer !important', props => props.checked ? `${colors.brand10} !important` : `${colors.white} !important`, props => props.checked ? `${colors.white} !important` : `${colors.gray20} !important`);
-const ActiveInactive = styled.div(_t3$2 || (_t3$2 = _$5`
-  font-family: MontSerrat !important;
-  display: flex !important;
-  flex-direction: row !important;
-
-  .btn {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    opacity: ${0};
-    width: ${0};
-    border: 1px solid ${0} !important;
-    padding: 4px 0 !important;
-
-    span {
-      font-size: ${0};
-    }
-  }
-
-  .left {
-    cursor: ${0};
-    background-color: ${0};
-    border-top-left-radius: 20px !important;
-    border-bottom-left-radius: 20px !important;
-    border-right: 0 !important;
-    transition: 400ms !important;
-
-    span {
-      color: ${0};
-    }
-  }
-
-  .right {
-    cursor: ${0};
-    background-color: ${0};
-    border-top-right-radius: 20px !important;
-    border-bottom-right-radius: 20px !important;
-    border-left: 0 !important;
-    transition: 400ms !important;
-
-    span {
-      color: ${0};
-    }
-  }
-`), props => props.disabled ? '0.5 !important' : '1 !important', props => props.size ? widthToggle(props.size) : '70px !important', colors.card, props => props.size ? fontActiveInactive(props.size) : '10px !important', props => props.disabled ? 'default !important' : !props.checked ? 'default !important' : 'pointer !important', props => !props.checked ? `${colors.brand20} !important` : `${colors.white} !important`, props => !props.checked ? `${colors.white} !important` : `${colors.gray20} !important`, props => props.disabled ? 'default !important' : props.checked ? 'default !important' : 'pointer !important', props => props.checked ? `${colors.brandGreen} !important` : `${colors.white} !important`, props => props.checked ? `${colors.white} !important` : `${colors.gray20} !important`);
+`), props => props.disabled ? '0.5 !important' : '1 !important', props => props.disabled ? 'not-allowed !important' : 'pointer !important', props => props.size ? widthToggle(props.size) : '4.375rem !important', colors.card, props => props.size ? fontActiveInactive(props.size) : '0.625rem !important', props => !props.checked ? `${colors.brand20} !important` : `${colors.white} !important`, props => !props.checked ? `${colors.white} !important` : `${colors.gray20} !important`, props => props.checked ? `${colors.brandGreen} !important` : `${colors.white} !important`, props => props.checked ? `${colors.white} !important` : `${colors.gray20} !important`);
 
 const TYPES = {
   switch: 'switch',
@@ -7352,47 +7356,59 @@ const TYPES = {
   activeInactive: 'activeInactive'
 };
 
-const Selection = ({
+function Selection({
   type,
-  checked,
+  checked = false,
+  onClick,
   onChange,
   size,
   disabled,
-  selectionRef
-}) => {
+  ref,
+  className,
+  style
+}) {
+  const eventFunction = onClick || onChange;
+
   function renderSwitch() {
     return jsxs(Switch, Object.assign({
+      className: className,
+      style: style,
       size: size,
-      ref: selectionRef,
-      disabled: disabled
+      ref: ref,
+      disabled: disabled,
+      role: "switch",
+      onClick: eventFunction
     }, {
-      children: [jsx("input", {
-        type: "checkbox",
-        checked: checked
+      children: [jsx("div", {
+        className: `${checked ? 'checked' : ''}`
       }, void 0), jsx("span", {
-        className: "control",
-        onClick: () => !disabled ? onChange ? onChange() : null : null
+        "data-testid": "control",
+        className: "control"
       }, void 0)]
     }), void 0);
   }
 
   function renderToggle() {
     return jsxs(Toggle, Object.assign({
+      className: className,
+      style: style,
       checked: checked,
-      ref: selectionRef,
+      ref: ref,
       size: size,
-      disabled: disabled
+      disabled: disabled,
+      role: "switch",
+      onClick: eventFunction
     }, {
       children: [jsx("div", Object.assign({
-        className: "btn left",
-        onClick: () => !disabled ? checked ? onChange ? onChange() : null : null : null
+        "data-testid": "btn-left",
+        className: "btn left"
       }, {
         children: jsx("span", {
           children: "n\u00E3o"
         }, void 0)
       }), void 0), jsx("div", Object.assign({
-        className: "btn right",
-        onClick: () => !disabled ? !checked ? onChange ? onChange() : null : null : null
+        "data-testid": "btn-right",
+        className: "btn right"
       }, {
         children: jsx("span", {
           children: "sim"
@@ -7403,21 +7419,23 @@ const Selection = ({
 
   function renderActiveInactive() {
     return jsxs(ActiveInactive, Object.assign({
+      className: className,
+      style: style,
       checked: checked,
-      ref: selectionRef,
+      ref: ref,
       size: size,
-      disabled: disabled
+      disabled: disabled,
+      role: "switch",
+      onClick: eventFunction
     }, {
       children: [jsx("div", Object.assign({
-        className: "btn left",
-        onClick: () => !disabled ? checked ? onChange ? onChange() : null : null : null
+        className: "btn left"
       }, {
         children: jsx("span", {
           children: checked ? 'desativar' : 'inativo'
         }, void 0)
       }), void 0), jsx("div", Object.assign({
-        className: "btn right",
-        onClick: () => !disabled ? !checked ? onChange ? onChange() : null : null : null
+        className: "btn right"
       }, {
         children: jsx("span", {
           children: checked ? 'ativo' : 'ativar'
@@ -7437,9 +7455,9 @@ const Selection = ({
       return renderActiveInactive();
 
     default:
-      return jsx("div", {}, void 0);
+      return null;
   }
-};
+}
 
 let _$4 = t => t,
     _t$4;

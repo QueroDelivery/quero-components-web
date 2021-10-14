@@ -16,11 +16,18 @@ export interface TextAreaProps
   labelStyle?: React.CSSProperties;
   labelClassName?: string;
 
-  containerStyle?: React.CSSProperties;
-  textColor?: string;
+  errorClassName?: string;
+  errorStyle?: React.CSSProperties;
   errorMessage?: string;
   errorColor?: string;
+
+  textColor?: string;
+  containerStyle?: React.CSSProperties;
+
   lengthInfo?: boolean | number;
+  lengthInfoClassName?: string;
+  lengthInfoStyle?: React.CSSProperties;
+
   width?: number | string;
   height?: number | string;
 }
@@ -31,14 +38,19 @@ function TextArea({
   labelStyle,
   labelColor,
 
-  containerStyle,
+  errorClassName,
+  errorStyle,
   errorMessage,
   errorColor,
+
+  containerStyle,
   textColor,
   width,
   height,
 
   lengthInfo,
+  lengthInfoClassName,
+  lengthInfoStyle,
   ...rest
 }: TextAreaProps) {
   return (
@@ -67,10 +79,19 @@ function TextArea({
         <textarea {...rest} />
       </Container>
       <Footer>
-        <LabelError errorColor={errorColor}>{errorMessage}</LabelError>
+        <LabelError
+          className={errorClassName}
+          style={errorStyle}
+          errorColor={errorColor}
+        >
+          {errorMessage}
+        </LabelError>
 
         {(lengthInfo || typeof lengthInfo == 'number') && rest.maxLength ? (
-          <LabelLengthInfo>{`${
+          <LabelLengthInfo
+            className={lengthInfoClassName}
+            style={lengthInfoStyle}
+          >{`${
             typeof lengthInfo == 'number'
               ? lengthInfo
               : typeof rest.value == 'string'

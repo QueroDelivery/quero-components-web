@@ -3995,20 +3995,24 @@ var LabelError = styled__default["default"].span(_templateObject5$1 || (_templat
 var Footer = styled__default["default"].div(_templateObject6$1 || (_templateObject6$1 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: space-between;\n  font-size: 10px;\n"])));
 var LabelLengthInfo = styled__default["default"].span(_templateObject7$1 || (_templateObject7$1 = _taggedTemplateLiteralLoose(["\n  font-size: 10px;\n  color: ", ";\n"])), colors.gray10);
 
-var _excluded$8 = ["label", "labelClassName", "labelStyle", "labelColor", "containerStyle", "errorMessage", "errorColor", "textColor", "width", "height", "lengthInfo"];
+var _excluded$8 = ["label", "labelClassName", "labelStyle", "labelColor", "errorClassName", "errorStyle", "errorMessage", "errorColor", "containerStyle", "textColor", "width", "height", "lengthInfo", "lengthInfoClassName", "lengthInfoStyle"];
 
 function TextArea(_ref) {
   var label = _ref.label,
       labelClassName = _ref.labelClassName,
       labelStyle = _ref.labelStyle,
       labelColor = _ref.labelColor,
-      containerStyle = _ref.containerStyle,
+      errorClassName = _ref.errorClassName,
+      errorStyle = _ref.errorStyle,
       errorMessage = _ref.errorMessage,
       errorColor = _ref.errorColor,
+      containerStyle = _ref.containerStyle,
       textColor = _ref.textColor,
       width = _ref.width,
       height = _ref.height,
       lengthInfo = _ref.lengthInfo,
+      lengthInfoClassName = _ref.lengthInfoClassName,
+      lengthInfoStyle = _ref.lengthInfoStyle,
       rest = _objectWithoutPropertiesLoose$3(_ref, _excluded$8);
 
   return jsxRuntime.jsxs("div", {
@@ -4033,12 +4037,17 @@ function TextArea(_ref) {
       children: jsxRuntime.jsx("textarea", Object.assign({}, rest), void 0)
     }), void 0), jsxRuntime.jsxs(Footer, {
       children: [jsxRuntime.jsx(LabelError, Object.assign({
+        className: errorClassName,
+        style: errorStyle,
         errorColor: errorColor
       }, {
         children: errorMessage
-      }), void 0), (lengthInfo || typeof lengthInfo == 'number') && rest.maxLength ? jsxRuntime.jsx(LabelLengthInfo, {
+      }), void 0), (lengthInfo || typeof lengthInfo == 'number') && rest.maxLength ? jsxRuntime.jsx(LabelLengthInfo, Object.assign({
+        className: lengthInfoClassName,
+        style: lengthInfoStyle
+      }, {
         children: (typeof lengthInfo == 'number' ? lengthInfo : typeof rest.value == 'string' ? rest.value.length : 0) + "/" + rest.maxLength + " caracteres"
-      }, void 0) : null]
+      }), void 0) : null]
     }, void 0)]
   }, void 0);
 }
@@ -5086,101 +5095,97 @@ var widthToggle = function widthToggle(size) {
       return '40px !important';
 
     case Sizes$1.tiny:
-      return '50px !important';
+      return '3.125rem !important';
 
     case Sizes$1.small:
-      return '60px !important';
+      return '3.75rem !important';
 
     case Sizes$1.medium:
-      return '65px !important';
+      return '4.0625rem !important';
 
     case Sizes$1.large:
-      return '70px !important';
+      return '4.375rem !important';
 
     case Sizes$1.big:
-      return '80px !important';
+      return '5rem !important';
 
     case Sizes$1.huge:
-      return '90px !important';
+      return '5.625rem !important';
 
     case Sizes$1.massive:
-      return '100px !important';
+      return '6.25rem !important';
 
     default:
-      return '65px !important';
+      return '4.0625rem !important';
   }
 };
 
 var fontToggle = function fontToggle(size) {
   switch (size) {
     case Sizes$1.mini:
-      return '8px !important';
+      return '0.5rem !important';
 
     case Sizes$1.tiny:
-      return '9px !important';
+      return '0.5625rem !important';
 
     case Sizes$1.small:
-      return '10px !important';
+      return '0.625rem !important';
 
     case Sizes$1.medium:
-      return '11px !important';
+      return '0.6875rem !important';
 
     case Sizes$1.large:
-      return '12px !important';
+      return '0.75rem !important';
 
     case Sizes$1.big:
-      return '13px !important';
+      return '0.8125rem !important';
 
     case Sizes$1.huge:
-      return '14px !important';
+      return '0.875rem !important';
 
     case Sizes$1.massive:
-      return '15px !important';
+      return '0.9375rem !important';
 
     default:
-      return '11px !important';
+      return '0.6875rem !important';
   }
 };
 
 var fontActiveInactive = function fontActiveInactive(size) {
   switch (size) {
     case Sizes$1.mini:
-      return '7px !important';
+      return '0.4375rem !important';
 
     case Sizes$1.tiny:
-      return '8px !important';
+      return '0.5rem !important';
 
     case Sizes$1.small:
-      return '9px !important';
+      return '0.5625rem !important';
 
     case Sizes$1.medium:
-      return '10px !important';
+      return '0.625rem !important';
 
     case Sizes$1.large:
-      return '11px !important';
+      return '0.6875rem !important';
 
     case Sizes$1.big:
-      return '12px !important';
+      return '0.75rem !important';
 
     case Sizes$1.huge:
-      return '13px !important';
+      return '0.8125rem !important';
 
     case Sizes$1.massive:
-      return '14px !important';
+      return '0.875rem !important';
 
     default:
-      return '10px !important';
+      return '0.625rem !important';
   }
 };
 
-var Switch = styled__default["default"].label(_templateObject$5 || (_templateObject$5 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  display: flex !important;\n  flex-direction: row !important;\n  position: relative !important;\n  /* padding-left: ", "; */\n  /* margin-bottom: 12px; */\n  cursor: ", ";\n  font-size: 22px !important;\n  user-select: none !important;\n\n  input {\n    position: absolute !important;\n    opacity: 0 !important;\n    cursor: pointer !important;\n    height: 0 !important;\n    width: 0 !important;\n    display: none !important;\n  }\n\n  input:checked ~ .control {\n    background-color: ", ";\n\n    &:after {\n      left: ", ";\n    }\n  }\n\n  .control {\n    height: ", ";\n    width: ", ";\n    border-radius: ", ";\n    background-color: ", " !important;\n    transition: background-color 0.15s ease-in !important;\n\n    &:after {\n      content: '' !important;\n      position: absolute !important;\n      left: 5px !important;\n      top: 5px !important;\n      height: ", ";\n      width: ", ";\n      border-radius: 50px !important;\n      background-color: white !important;\n      transition: left 0.15s ease-in !important;\n      border: 1px solid ", " !important;\n    }\n  }\n"])), function (props) {
+var Switch = styled__default["default"].button(_templateObject$5 || (_templateObject$5 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  display: flex !important;\n  flex-direction: row !important;\n  position: relative !important;\n  /* padding-left: ", "; */\n  /* margin-bottom: 12px; */\n  cursor: ", ";\n  font-size: 1.375rem !important;\n  user-select: none !important;\n\n  div {\n    position: absolute !important;\n    opacity: 0 !important;\n    height: 0 !important;\n    width: 0 !important;\n    display: none !important;\n  }\n\n  .control {\n    height: ", ";\n    width: ", ";\n    border-radius: ", ";\n    background-color: ", " !important;\n    transition: background-color 0.15s ease-in !important;\n\n    &:after {\n      content: '' !important;\n      position: absolute !important;\n      left: 5px !important;\n      top: 5px !important;\n      height: ", ";\n      width: ", ";\n      border-radius: 50px !important;\n      background-color: white !important;\n      transition: left 0.15s ease-in !important;\n      border: 1px solid ", " !important;\n    }\n  }\n\n  div.checked ~ .control {\n    background-color: ", ";\n\n    &:after {\n      left: ", ";\n    }\n  }\n"])), function (props) {
   return props.size ? widthSwitch(props.size) + "px" : toggleWidth + "px";
 }, function (props) {
-  return props.disabled ? 'normal !important' : 'pointer !important';
-}, function (props) {
-  return props.disabled ? colors.brandTransparent + " !important" : colors.brandDark + " !important";
-}, function (props) {
-  return props.size ? widthSwitch(props.size) - (heightSwitch(props.size) - sizeGutter(props.size) * 2) - sizeGutter(props.size) + "px !important" : toggleWidth - toggleControlSsize - toggleGutter + "px !important";
+  return props.disabled ? 'not-allowed !important' : 'pointer !important';
 }, function (props) {
   return props.size ? heightSwitch(props.size) + "px !important" : toggleHeight + "px !important";
 }, function (props) {
@@ -5191,40 +5196,40 @@ var Switch = styled__default["default"].label(_templateObject$5 || (_templateObj
   return props.size ? heightSwitch(props.size) - sizeGutter(props.size) * 2 + "px !important" : toggleControlSsize + "px !important";
 }, function (props) {
   return props.size ? heightSwitch(props.size) - sizeGutter(props.size) * 2 + "px !important" : toggleControlSsize + "px !important";
-}, colors.default10);
-var Toggle = styled__default["default"].div(_templateObject2$2 || (_templateObject2$2 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  display: flex !important;\n  flex-direction: row !important;\n\n  .btn {\n    display: flex !important;\n    align-items: center !important;\n    justify-content: center !important;\n    opacity: ", ";\n    width: ", ";\n    border: 1px solid ", " !important;\n    padding: 4px 0 !important;\n\n    span {\n      font-size: ", ";\n    }\n  }\n\n  .left {\n    cursor: ", ";\n    background-color: ", ";\n    border-top-left-radius: 20px !important;\n    border-bottom-left-radius: 20px !important;\n    border-right: 0 !important;\n    transition: 400ms !important;\n\n    span {\n      color: ", ";\n    }\n  }\n\n  .right {\n    cursor: ", ";\n    background-color: ", ";\n    border-top-right-radius: 20px !important;\n    border-bottom-right-radius: 20px !important;\n    border-left: 0 !important;\n    transition: 400ms !important;\n\n    span {\n      color: ", ";\n    }\n  }\n"])), function (props) {
+}, colors.default10, function (props) {
+  return props.disabled ? colors.brandTransparent + " !important" : colors.brandDark + " !important";
+}, function (props) {
+  return props.size ? widthSwitch(props.size) - (heightSwitch(props.size) - sizeGutter(props.size) * 2) - sizeGutter(props.size) + "px !important" : toggleWidth - toggleControlSsize - toggleGutter + "px !important";
+});
+var Toggle = styled__default["default"].button(_templateObject2$2 || (_templateObject2$2 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  display: flex !important;\n  flex-direction: row !important;\n  opacity: ", ";\n\n  cursor: ", ";\n\n  .btn {\n    display: flex !important;\n    align-items: center !important;\n    justify-content: center !important;\n    width: ", ";\n    border: 1px solid ", " !important;\n    padding: 0.5rem 0 !important;\n\n    span {\n      font-size: ", ";\n    }\n  }\n\n  .left {\n    background-color: ", ";\n    border-top-left-radius: 20px !important;\n    border-bottom-left-radius: 20px !important;\n    border-right: 0 !important;\n    transition: 400ms !important;\n\n    color: ", ";\n  }\n\n  .right {\n    background-color: ", ";\n    border-top-right-radius: 20px !important;\n    border-bottom-right-radius: 20px !important;\n    border-left: 0 !important;\n    transition: 400ms !important;\n\n    color: ", ";\n  }\n"])), function (props) {
   return props.disabled ? '0.5 !important' : '1 !important';
 }, function (props) {
-  return props.size ? widthToggle(props.size) : '65px !important';
-}, colors.card, function (props) {
-  return props.size ? fontToggle(props.size) : '11px !important';
+  return props.disabled ? 'not-allowed !important' : 'pointer !important';
 }, function (props) {
-  return props.disabled ? 'default !important' : !props.checked ? 'default !important' : 'pointer !important';
+  return props.size ? widthToggle(props.size) : '4rem !important';
+}, colors.card, function (props) {
+  return props.size ? fontToggle(props.size) : '0.6875rem !important';
 }, function (props) {
   return !props.checked ? colors.brand10 + " !important" : colors.white + " !important";
 }, function (props) {
   return !props.checked ? colors.white + " !important" : colors.gray20 + " !important";
 }, function (props) {
-  return props.disabled ? 'default !important' : props.checked ? 'default !important' : 'pointer !important';
-}, function (props) {
   return props.checked ? colors.brand10 + " !important" : colors.white + " !important";
 }, function (props) {
   return props.checked ? colors.white + " !important" : colors.gray20 + " !important";
 });
-var ActiveInactive = styled__default["default"].div(_templateObject3$2 || (_templateObject3$2 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  display: flex !important;\n  flex-direction: row !important;\n\n  .btn {\n    display: flex !important;\n    align-items: center !important;\n    justify-content: center !important;\n    opacity: ", ";\n    width: ", ";\n    border: 1px solid ", " !important;\n    padding: 4px 0 !important;\n\n    span {\n      font-size: ", ";\n    }\n  }\n\n  .left {\n    cursor: ", ";\n    background-color: ", ";\n    border-top-left-radius: 20px !important;\n    border-bottom-left-radius: 20px !important;\n    border-right: 0 !important;\n    transition: 400ms !important;\n\n    span {\n      color: ", ";\n    }\n  }\n\n  .right {\n    cursor: ", ";\n    background-color: ", ";\n    border-top-right-radius: 20px !important;\n    border-bottom-right-radius: 20px !important;\n    border-left: 0 !important;\n    transition: 400ms !important;\n\n    span {\n      color: ", ";\n    }\n  }\n"])), function (props) {
+var ActiveInactive = styled__default["default"].button(_templateObject3$2 || (_templateObject3$2 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  display: flex !important;\n  flex-direction: row !important;\n  opacity: ", ";\n\n  cursor: ", ";\n\n  .btn {\n    display: flex !important;\n    align-items: center !important;\n    justify-content: center !important;\n    width: ", ";\n    border: 1px solid ", " !important;\n    padding: 0.5rem 0 !important;\n\n    span {\n      font-size: ", ";\n    }\n  }\n\n  .left {\n    background-color: ", ";\n    border-top-left-radius: 20px !important;\n    border-bottom-left-radius: 20px !important;\n    border-right: 0 !important;\n    transition: 400ms !important;\n\n    span {\n      color: ", ";\n    }\n  }\n\n  .right {\n    background-color: ", ";\n    border-top-right-radius: 20px !important;\n    border-bottom-right-radius: 20px !important;\n    border-left: 0 !important;\n    transition: 400ms !important;\n\n    span {\n      color: ", ";\n    }\n  }\n"])), function (props) {
   return props.disabled ? '0.5 !important' : '1 !important';
 }, function (props) {
-  return props.size ? widthToggle(props.size) : '70px !important';
-}, colors.card, function (props) {
-  return props.size ? fontActiveInactive(props.size) : '10px !important';
+  return props.disabled ? 'not-allowed !important' : 'pointer !important';
 }, function (props) {
-  return props.disabled ? 'default !important' : !props.checked ? 'default !important' : 'pointer !important';
+  return props.size ? widthToggle(props.size) : '4.375rem !important';
+}, colors.card, function (props) {
+  return props.size ? fontActiveInactive(props.size) : '0.625rem !important';
 }, function (props) {
   return !props.checked ? colors.brand20 + " !important" : colors.white + " !important";
 }, function (props) {
   return !props.checked ? colors.white + " !important" : colors.gray20 + " !important";
-}, function (props) {
-  return props.disabled ? 'default !important' : props.checked ? 'default !important' : 'pointer !important';
 }, function (props) {
   return props.checked ? colors.brandGreen + " !important" : colors.white + " !important";
 }, function (props) {
@@ -5237,53 +5242,59 @@ var TYPES = {
   activeInactive: 'activeInactive'
 };
 
-var Selection = function Selection(_ref) {
+function Selection(_ref) {
   var type = _ref.type,
-      checked = _ref.checked,
+      _ref$checked = _ref.checked,
+      checked = _ref$checked === void 0 ? false : _ref$checked,
+      onClick = _ref.onClick,
       onChange = _ref.onChange,
       size = _ref.size,
       disabled = _ref.disabled,
-      selectionRef = _ref.selectionRef;
+      ref = _ref.ref,
+      className = _ref.className,
+      style = _ref.style;
+  var eventFunction = onClick || onChange;
 
   function renderSwitch() {
     return jsxRuntime.jsxs(Switch, Object.assign({
+      className: className,
+      style: style,
       size: size,
-      ref: selectionRef,
-      disabled: disabled
+      ref: ref,
+      disabled: disabled,
+      role: "switch",
+      onClick: eventFunction
     }, {
-      children: [jsxRuntime.jsx("input", {
-        type: "checkbox",
-        checked: checked
+      children: [jsxRuntime.jsx("div", {
+        className: "" + (checked ? 'checked' : '')
       }, void 0), jsxRuntime.jsx("span", {
-        className: "control",
-        onClick: function onClick() {
-          return !disabled ? onChange ? onChange() : null : null;
-        }
+        "data-testid": "control",
+        className: "control"
       }, void 0)]
     }), void 0);
   }
 
   function renderToggle() {
     return jsxRuntime.jsxs(Toggle, Object.assign({
+      className: className,
+      style: style,
       checked: checked,
-      ref: selectionRef,
+      ref: ref,
       size: size,
-      disabled: disabled
+      disabled: disabled,
+      role: "switch",
+      onClick: eventFunction
     }, {
       children: [jsxRuntime.jsx("div", Object.assign({
-        className: "btn left",
-        onClick: function onClick() {
-          return !disabled ? checked ? onChange ? onChange() : null : null : null;
-        }
+        "data-testid": "btn-left",
+        className: "btn left"
       }, {
         children: jsxRuntime.jsx("span", {
           children: "n\xE3o"
         }, void 0)
       }), void 0), jsxRuntime.jsx("div", Object.assign({
-        className: "btn right",
-        onClick: function onClick() {
-          return !disabled ? !checked ? onChange ? onChange() : null : null : null;
-        }
+        "data-testid": "btn-right",
+        className: "btn right"
       }, {
         children: jsxRuntime.jsx("span", {
           children: "sim"
@@ -5294,25 +5305,23 @@ var Selection = function Selection(_ref) {
 
   function renderActiveInactive() {
     return jsxRuntime.jsxs(ActiveInactive, Object.assign({
+      className: className,
+      style: style,
       checked: checked,
-      ref: selectionRef,
+      ref: ref,
       size: size,
-      disabled: disabled
+      disabled: disabled,
+      role: "switch",
+      onClick: eventFunction
     }, {
       children: [jsxRuntime.jsx("div", Object.assign({
-        className: "btn left",
-        onClick: function onClick() {
-          return !disabled ? checked ? onChange ? onChange() : null : null : null;
-        }
+        className: "btn left"
       }, {
         children: jsxRuntime.jsx("span", {
           children: checked ? 'desativar' : 'inativo'
         }, void 0)
       }), void 0), jsxRuntime.jsx("div", Object.assign({
-        className: "btn right",
-        onClick: function onClick() {
-          return !disabled ? !checked ? onChange ? onChange() : null : null : null;
-        }
+        className: "btn right"
       }, {
         children: jsxRuntime.jsx("span", {
           children: checked ? 'ativo' : 'ativar'
@@ -5332,9 +5341,9 @@ var Selection = function Selection(_ref) {
       return renderActiveInactive();
 
     default:
-      return jsxRuntime.jsx("div", {}, void 0);
+      return null;
   }
-};
+}
 
 var _templateObject$4;
 var Sizes = {
