@@ -1,6 +1,7 @@
+import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 import { TextAreaForm } from '@quero-delivery/quero-components-web';
-import { TextAreaFormProps } from './Interface';
+import { TextAreaFormProps } from '../../../../src/components/TextArea/TextAreaForm';
 
 import '@quero-delivery/quero-components-web/dist/index.css';
 
@@ -56,7 +57,7 @@ export default {
       },
     },
     validate: {
-      control: 'text',
+      control: 'function',
       description: 'Função que valida o TextArea',
       table: {
         type: {
@@ -74,7 +75,7 @@ export default {
       },
     },
     register: {
-      control: 'text',
+      control: 'function',
       description: 'Faz o registro no formulário',
       table: {
         type: {
@@ -115,7 +116,7 @@ Default.args = {
   required: false,
   validate: () => {},
   errors: '',
-  register: null,
+  register: () => {},
   minimum: 1,
   limit: 100,
 };

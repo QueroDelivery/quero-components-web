@@ -1,8 +1,9 @@
+import React from 'react';
 import { useState } from 'react';
 import { Meta, Story } from '@storybook/react/types-6-0';
 import { Table, Pagination, Card } from '@quero-delivery/quero-components-web';
 import '@quero-delivery/quero-components-web/dist/index.css';
-import { ITableComponent } from './Interface';
+import { TableComponentProps } from '../../../../src/components/Table/Table';
 
 export default {
   title: 'Components/Table',
@@ -74,9 +75,9 @@ export default {
   },
 } as Meta;
 
-export const Primary: Story<ITableComponent> = args => {
+export const Primary: Story<TableComponentProps> = args => {
   console.log(args);
-  const hasMore = args.hasMore ? () => {} : undefined;
+  const hasMore = args.defaultProps?.hasMore ? () => {} : undefined;
   const [page, setPage] = useState(1);
   return (
     <Card type="shadow">
