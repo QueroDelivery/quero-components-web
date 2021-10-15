@@ -69,7 +69,7 @@ export function Pagination({
   }
 
   return (
-    <ContainerPagination>
+    <ContainerPagination role="group">
       {doubleJumpArrow && (
         <Button
           disabled={currentPage == 1 || disabled}
