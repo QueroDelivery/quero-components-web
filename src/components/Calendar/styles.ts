@@ -1,9 +1,10 @@
 import styled from 'styled-components';
+import { getFontSize, sizesTypes } from '../../helpers/FnUtil';
 import { colors } from '../../styles/colors';
 
 interface CalendarProps {
-  labelColor?: string;
   brand?: boolean;
+  size?: sizesTypes;
 }
 
 export const Container = styled.div<CalendarProps>`
@@ -19,11 +20,11 @@ export const Container = styled.div<CalendarProps>`
       ${props => (props.brand ? colors.brandLight : colors.gray10)};
     color: ${props => (props.brand ? colors.brand10 : colors.gray20)};
     cursor: pointer;
-
+    font-weight: 500;
     background-color: ${props =>
       props.brand ? colors.brandLight : colors.white};
-
-    font-weight: bold;
+    font-size: ${props =>
+      props.size ? getFontSize(props.size, '1rem') : '1rem'};
 
     &::placeholder {
       color: ${props =>
@@ -32,16 +33,19 @@ export const Container = styled.div<CalendarProps>`
   }
 
   span {
-    font-size: 14px;
-    color: ${props => {
-      if (props.labelColor) {
-        return props.labelColor;
-      }
-
-      return colors.brand10;
-    }};
+    font-size: ${props =>
+      props.size ? getFontSize(props.size, '1rem') : '1rem'};
+    color: ${colors.brand10};
     margin-left: 15px;
     margin-bottom: 3px;
+  }
+
+  .calendar-icon {
+    position: relative;
+    margin-left: -25px;
+    font-size: ${props =>
+      props.size ? getFontSize(props.size, '1rem') : '1rem'};
+    color: ${props => (props.brand ? colors.brand10 : colors.gray20)};
   }
 
   .react-datepicker-popper[data-placement^='bottom']

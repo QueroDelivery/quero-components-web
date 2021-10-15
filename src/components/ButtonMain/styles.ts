@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
 import { colors } from '../../styles/colors';
-import { ButtonSizes } from './ButtonMain';
-import { getMeasurement } from '../../helpers/FnUtil';
+import { getFontSize, getMeasurement, sizesTypes } from '../../helpers/FnUtil';
 
 interface ButtonProps {
   secondary?: boolean;
@@ -11,12 +10,11 @@ interface ButtonProps {
   width?: number | string;
   icon?: IconDefinition;
   noBorder?: boolean;
-  colorText?: string;
   colorBackground?: string;
   hoverBackgroundColor?: string;
   hoverTextColor?: string;
   tertiary?: boolean;
-  size?: ButtonSizes;
+  size?: sizesTypes;
   rectangular?: boolean;
   isLoading?: boolean;
 }
@@ -25,9 +23,8 @@ interface TextFirstProps {
   firstStrong?: boolean;
   notStrong?: boolean;
   strong?: boolean;
-  colorText?: string;
   tertiary?: boolean;
-  size?: ButtonSizes;
+  size?: sizesTypes;
   hasTextEnd?: boolean;
 }
 
@@ -35,9 +32,8 @@ interface TextEndProps {
   firstStrong?: boolean;
   notStrong?: boolean;
   strong?: boolean;
-  colorText?: string;
   tertiary?: boolean;
-  size?: ButtonSizes;
+  size?: sizesTypes;
 }
 
 interface IconProps {
@@ -45,66 +41,10 @@ interface IconProps {
   iconPosition?: 'left' | 'right';
 }
 
-const Sizes = {
-  mini: 'mini',
-  tiny: 'tiny',
-  small: 'small',
-  medium: 'medium',
-  large: 'large',
-  big: 'big',
-  huge: 'huge',
-  massive: 'massive',
-};
-
-const size = (size: string | number) => {
-  switch (size) {
-    case Sizes.mini:
-      return '1.5625rem';
-    case Sizes.tiny:
-      return '1.875rem';
-    case Sizes.small:
-      return '2.1875rem';
-    case Sizes.medium:
-      return '2.5rem';
-    case Sizes.large:
-      return '2.8125rem';
-    case Sizes.big:
-      return '3.125rem';
-    case Sizes.huge:
-      return '3.4375rem';
-    case Sizes.massive:
-      return '3.75rem';
-    default:
-      return size;
-  }
-};
-
-const textSize = (size: string | number) => {
-  switch (size) {
-    case Sizes.mini:
-      return '0.625rem';
-    case Sizes.tiny:
-      return '0.75rem';
-    case Sizes.small:
-      return '0.875rem';
-    case Sizes.medium:
-      return '1rem';
-    case Sizes.large:
-      return '1.125rem';
-    case Sizes.big:
-      return '1.25rem';
-    case Sizes.huge:
-      return '1.375rem';
-    case Sizes.massive:
-      return '1.5rem';
-    default:
-      return size;
-  }
-};
-
 export const Button = styled.button<ButtonProps>`
   font-family: MontSerrat !important;
-  font-size: ${props => (props.size ? textSize(props.size) : '1rem')};
+  font-size: ${props =>
+    props.size ? getFontSize(props.size, '1rem') : '1rem'};
   position: ${props => (props.isLoading ? 'relative' : 'initial')};
   line-height: 0;
   background-color: ${props => {
@@ -129,8 +69,7 @@ export const Button = styled.button<ButtonProps>`
 
     return colors.brand10;
   }};
-  height: ${props => (props.size ? size(props.size) : '2.5rem')};
-  padding: 0 1.25rem;
+  padding: 0.65em 1.25em;
   width: ${props => getMeasurement(props.width, 'none')};
   border-radius: ${props => {
     if (props.rectangular) return '10px';
@@ -210,7 +149,8 @@ export const TextFirst = styled.span<TextFirstProps>`
 
     return 'normal';
   }};
-  font-size: ${props => (props.size ? textSize(props.size) : '1rem')};
+  font-size: ${props =>
+    props.size ? getFontSize(props.size, '1rem') : '1rem'};
   margin-right: ${props => (props.hasTextEnd ? '3.5px' : '')};
 `;
 
@@ -222,7 +162,8 @@ export const TextEnd = styled.span<TextEndProps>`
 
     return 'bold';
   }};
-  font-size: ${props => (props.size ? textSize(props.size) : '1rem')};
+  font-size: ${props =>
+    props.size ? getFontSize(props.size, '1rem') : '1rem'};
 `;
 
 export const Notification = styled.button`

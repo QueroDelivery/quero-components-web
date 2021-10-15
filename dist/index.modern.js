@@ -2726,6 +2726,13 @@ const colors = {
   error: '#e0457b25'
 };
 
+const Sizes$6 = {
+  xs: 'xs',
+  sm: 'sm',
+  md: 'md',
+  lg: 'lg',
+  xl: 'xl'
+};
 const getMeasurement = (size, defaultValue) => {
   if (size) {
     if (typeof size === 'string') {
@@ -2737,6 +2744,10 @@ const getMeasurement = (size, defaultValue) => {
 
   return defaultValue || '100%';
 };
+const getFontSize = (defaultSize, sizeBase) => {
+  switch (defaultSize) {
+    case Sizes$6.xs:
+      return `calc(${getMeasurement(sizeBase)} - 0.25rem)`;
 
 let _$f = t => t,
     _t$f,
@@ -2757,65 +2768,17 @@ const Sizes$6 = {
   massive: 'massive'
 };
 
-const size$2 = size => {
-  switch (size) {
-    case Sizes$6.mini:
-      return '1.5625rem';
+    case Sizes$6.md:
+      return getMeasurement(sizeBase);
 
-    case Sizes$6.tiny:
-      return '1.875rem';
+    case Sizes$6.lg:
+      return `calc(${getMeasurement(sizeBase)} + 0.125rem)`;
 
-    case Sizes$6.small:
-      return '2.1875rem';
-
-    case Sizes$6.medium:
-      return '2.5rem';
-
-    case Sizes$6.large:
-      return '2.8125rem';
-
-    case Sizes$6.big:
-      return '3.125rem';
-
-    case Sizes$6.huge:
-      return '3.4375rem';
-
-    case Sizes$6.massive:
-      return '3.75rem';
+    case Sizes$6.xl:
+      return `calc(${getMeasurement(sizeBase)} + 0.25rem)`;
 
     default:
-      return size;
-  }
-};
-
-const textSize = size => {
-  switch (size) {
-    case Sizes$6.mini:
-      return '0.625rem';
-
-    case Sizes$6.tiny:
-      return '0.75rem';
-
-    case Sizes$6.small:
-      return '0.875rem';
-
-    case Sizes$6.medium:
-      return '1rem';
-
-    case Sizes$6.large:
-      return '1.125rem';
-
-    case Sizes$6.big:
-      return '1.25rem';
-
-    case Sizes$6.huge:
-      return '1.375rem';
-
-    case Sizes$6.massive:
-      return '1.5rem';
-
-    default:
-      return size;
+      return getMeasurement(sizeBase);
   }
 };
 
@@ -2826,8 +2789,7 @@ const Button$2 = styled.button(_t$f || (_t$f = _$f`
   line-height: 0;
   background-color: ${0};
   color: ${0};
-  height: ${0};
-  padding: 0 1.25rem;
+  padding: 0.65em 1.25em;
   width: ${0};
   border-radius: ${0};
   cursor: pointer;
@@ -2847,7 +2809,7 @@ const Button$2 = styled.button(_t$f || (_t$f = _$f`
     background-color: ${0};
     color: ${0};
   }
-`), props => props.size ? textSize(props.size) : '1rem', props => props.isLoading ? 'relative' : 'initial', props => {
+`), props => props.size ? getFontSize(props.size, '1rem') : '1rem', props => props.isLoading ? 'relative' : 'initial', props => {
   if (props.secondary || props.tertiary) {
     return colors.white;
   }
@@ -2867,7 +2829,7 @@ const Button$2 = styled.button(_t$f || (_t$f = _$f`
   }
 
   return colors.brand10;
-}, props => props.size ? size$2(props.size) : '2.5rem', props => getMeasurement(props.width, 'none'), props => {
+}, props => getMeasurement(props.width, 'none'), props => {
   if (props.rectangular) return '10px';
   return '30px';
 }, props => {
@@ -2937,7 +2899,7 @@ const TextEnd = styled.span(_t3$9 || (_t3$9 = _$f`
   }
 
   return 'bold';
-}, props => props.size ? textSize(props.size) : '1rem');
+}, props => props.size ? getFontSize(props.size, '1rem') : '1rem');
 const Notification = styled.button(_t4$6 || (_t4$6 = _$f`
   font-family: MontSerrat !important;
   background-color: ${0};
@@ -3238,7 +3200,8 @@ const ButtonMain = _ref => {
       children: jsx(FontAwesomeIcon, {
         icon: icon,
         className: iconClassName,
-        style: iconStyle
+        style: iconStyle,
+        "data-testid": "button-icon"
       }, void 0)
     }), void 0);
   }
@@ -3278,11 +3241,13 @@ const ButtonMain = _ref => {
         }, {
           children: textEnd
         }), void 0)]
-      }, void 0), (icon || customIcon) && iconPosition === 'right' && renderIcon(), loading && jsx(LoadingContainer, {
+      }, void 0), (icon || customIcon) && iconPosition === 'right' && renderIcon(), loading && jsx(LoadingContainer, Object.assign({
+        "data-testid": "button-loading"
+      }, {
         children: jsx(Loader, {
           size: "tiny"
         }, void 0)
-      }, void 0)]
+      }), void 0)]
     }), void 0);
   }
 
@@ -9080,10 +9045,9 @@ const Container$1 = styled.div(_t$2 || (_t$2 = _$2`
       ${0};
     color: ${0};
     cursor: pointer;
-
+    font-weight: 500;
     background-color: ${0};
-
-    font-weight: bold;
+    font-size: ${0};
 
     &::placeholder {
       color: ${0};
@@ -9091,10 +9055,17 @@ const Container$1 = styled.div(_t$2 || (_t$2 = _$2`
   }
 
   span {
-    font-size: 14px;
+    font-size: ${0};
     color: ${0};
     margin-left: 15px;
     margin-bottom: 3px;
+  }
+
+  .calendar-icon {
+    position: relative;
+    margin-left: -25px;
+    font-size: ${0};
+    color: ${0};
   }
 
   .react-datepicker-popper[data-placement^='bottom']
@@ -10063,23 +10034,19 @@ const Container$1 = styled.div(_t$2 || (_t$2 = _$2`
     border-left-color: #e6e6e6 !important;
     cursor: default !important;
   }
-`), props => props.brand ? colors.brandLight : colors.gray10, props => props.brand ? colors.brand10 : colors.gray20, props => props.brand ? colors.brandLight : colors.white, props => props.brand ? colors.brandTransparent : colors.default10, props => {
-  if (props.labelColor) {
-    return props.labelColor;
-  }
+`), props => props.brand ? colors.brandLight : colors.gray10, props => props.brand ? colors.brand10 : colors.gray20, props => props.brand ? colors.brandLight : colors.white, props => props.size ? getFontSize(props.size, '1rem') : '1rem', props => props.brand ? colors.brandTransparent : colors.default10, props => props.size ? getFontSize(props.size, '1rem') : '1rem', colors.brand10, props => props.size ? getFontSize(props.size, '1rem') : '1rem', props => props.brand ? colors.brand10 : colors.gray20);
 
-  return colors.brand10;
-});
-
-const _excluded$1 = ["labelColor", "label", "brand", "otherFormatDate"];
+const _excluded$1 = ["label", "labelClassName", "labelStyle", "brand", "otherFormatDate", "size"];
 registerLocale('pt-BR', br);
 
 const Calendar = _ref => {
   let {
-    labelColor,
     label,
+    labelClassName,
+    labelStyle,
     brand,
-    otherFormatDate
+    otherFormatDate,
+    size
   } = _ref,
       rest = _objectWithoutPropertiesLoose$3(_ref, _excluded$1);
 
@@ -10095,12 +10062,15 @@ const Calendar = _ref => {
   }, void 0));
   return jsxs(Container$1, Object.assign({
     brand: brand,
-    labelColor: labelColor
+    size: size
   }, {
-    children: [label && jsx("span", {
+    children: [label && jsx("span", Object.assign({
+      className: labelClassName,
+      style: labelStyle
+    }, {
       children: label
-    }, void 0), jsx("div", {
-      children: jsx(DatePicker, Object.assign({}, rest, {
+    }), void 0), jsxs("div", {
+      children: [jsx(DatePicker, Object.assign({}, rest, {
         locale: "pt-BR",
         customInput: otherFormatDate ? undefined : jsx(CustomInput, {
           onClick: rest.onCalendarOpen,
@@ -10110,7 +10080,10 @@ const Calendar = _ref => {
         dateFormat: otherFormatDate || 'dd/MM/yyyy',
         readOnly: false,
         onChangeRaw: event => rest.readOnly ? event.preventDefault() : null
-      }), void 0)
+      }), void 0), jsx(FontAwesomeIcon, {
+        icon: faAngleDown,
+        className: "calendar-icon"
+      }, void 0)]
     }, void 0)]
   }), void 0);
 };

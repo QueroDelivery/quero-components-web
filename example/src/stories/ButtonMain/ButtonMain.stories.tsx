@@ -1,8 +1,7 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 import { action } from '@storybook/addon-actions';
-import { ButtonMain } from '@quero-delivery/quero-components-web';
-import { ButtonProps } from '../../../../src/components/ButtonMain/ButtonMain';
+import { ButtonMain, ButtonProps } from '@quero-delivery/quero-components-web';
 import '@quero-delivery/quero-components-web/dist/index.css';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -41,21 +40,11 @@ export default {
       control: {
         type: 'inline-radio',
       },
-      options: [
-        'mini',
-        'tiny',
-        'small',
-        'medium',
-        'large',
-        'big',
-        'huge',
-        'massive',
-      ],
+      options: ['xs', 'sm', 'md', 'lg', 'xl'],
       description: 'Alterar o tamanho do botão',
       table: {
         type: {
-          summary:
-            'mini | tiny | small | medium | large | big | huge | massive',
+          summary: 'xs | sm | md | lg | lx',
         },
       },
     },
@@ -405,7 +394,7 @@ export const Size = Template.bind({});
 Size.args = {
   textFirst: 'Clique',
   textEnd: 'aqui',
-  size: 'mini',
+  size: 'sm',
 };
 
 Size.parameters = {

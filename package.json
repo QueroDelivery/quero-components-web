@@ -15,7 +15,7 @@
     "start": "microbundle watch --no-compress --format modern,cjs",
     "test": "react-scripts test --env=jsdom",
     "test:clear": "jest --clearCache && rimraf coverage",
-    "test:ci": "cross-env CI=1 react-scripts test --env=jsdom --coverage",
+    "test:ci": "cross-env CI=1 react-scripts test --env=jsdom --coverage --colors",
     "reinstall": "rm -rf node_modules && yarn",
     "lint": "eslint src --ext ts,tsx",
     "release": "semantic-release",

@@ -13,17 +13,9 @@ import {
 } from './styles';
 import Loader from '../Loader/Loader';
 import { colors } from '../../styles/colors';
+import { sizesTypes } from '../../helpers/FnUtil';
 
 type IconPositions = 'left' | 'right';
-export type ButtonSizes =
-  | 'mini'
-  | 'tiny'
-  | 'small'
-  | 'medium'
-  | 'large'
-  | 'big'
-  | 'huge'
-  | 'massive';
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   textFirst?: string;
   textFirstClassName?: string;
@@ -41,7 +33,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   backPurple?: boolean;
   width?: number | string;
   icon?: IconDefinition;
-  iconClassName?: 'string';
+  iconClassName?: string;
   iconStyle?: React.CSSProperties;
   containerIconClassName?: string;
   containerIconStyle?: React.CSSProperties;
@@ -49,7 +41,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   iconPosition?: IconPositions;
   noBorder?: boolean;
   tertiary?: boolean;
-  size?: ButtonSizes;
+  size?: sizesTypes;
   rectangular?: boolean;
 }
 
@@ -143,6 +135,7 @@ const ButtonMain: React.FC<ButtonProps> = ({
           icon={icon!}
           className={iconClassName}
           style={iconStyle}
+          data-testid="button-icon"
         />
       </Icon>
     );
@@ -195,7 +188,7 @@ const ButtonMain: React.FC<ButtonProps> = ({
         {(icon || customIcon) && iconPosition === 'right' && renderIcon()}
 
         {loading && (
-          <LoadingContainer>
+          <LoadingContainer data-testid="button-loading">
             <Loader size="tiny" />
           </LoadingContainer>
         )}

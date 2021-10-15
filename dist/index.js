@@ -2743,6 +2743,13 @@ var colors = {
   error: '#e0457b25'
 };
 
+var Sizes$6 = {
+  xs: 'xs',
+  sm: 'sm',
+  md: 'md',
+  lg: 'lg',
+  xl: 'xl'
+};
 var getMeasurement = function getMeasurement(size, defaultValue) {
   if (size) {
     if (typeof size === 'string') {
@@ -2754,6 +2761,10 @@ var getMeasurement = function getMeasurement(size, defaultValue) {
 
   return defaultValue || '100%';
 };
+var getFontSize = function getFontSize(defaultSize, sizeBase) {
+  switch (defaultSize) {
+    case Sizes$6.xs:
+      return "calc(" + getMeasurement(sizeBase) + " - 0.25rem)";
 
 var _templateObject$f, _templateObject2$a, _templateObject3$9, _templateObject4$6, _templateObject5$5, _templateObject6$5, _templateObject7$5;
 var Sizes$6 = {
@@ -2767,34 +2778,17 @@ var Sizes$6 = {
   massive: 'massive'
 };
 
-var size$2 = function size(_size) {
-  switch (_size) {
-    case Sizes$6.mini:
-      return '1.5625rem';
+    case Sizes$6.md:
+      return getMeasurement(sizeBase);
 
-    case Sizes$6.tiny:
-      return '1.875rem';
+    case Sizes$6.lg:
+      return "calc(" + getMeasurement(sizeBase) + " + 0.125rem)";
 
-    case Sizes$6.small:
-      return '2.1875rem';
-
-    case Sizes$6.medium:
-      return '2.5rem';
-
-    case Sizes$6.large:
-      return '2.8125rem';
-
-    case Sizes$6.big:
-      return '3.125rem';
-
-    case Sizes$6.huge:
-      return '3.4375rem';
-
-    case Sizes$6.massive:
-      return '3.75rem';
+    case Sizes$6.xl:
+      return "calc(" + getMeasurement(sizeBase) + " + 0.25rem)";
 
     default:
-      return _size;
+      return getMeasurement(sizeBase);
   }
 };
 
@@ -2854,8 +2848,6 @@ var Button$2 = styled__default["default"].button(_templateObject$f || (_template
 
   return colors.brand10;
 }, function (props) {
-  return props.size ? size$2(props.size) : '2.5rem';
-}, function (props) {
   return getMeasurement(props.width, 'none');
 }, function (props) {
   if (props.rectangular) return '10px';
@@ -2914,7 +2906,7 @@ var TextFirst = styled__default["default"].span(_templateObject2$a || (_template
 
   return 'normal';
 }, function (props) {
-  return props.size ? textSize(props.size) : '1rem';
+  return props.size ? getFontSize(props.size, '1rem') : '1rem';
 }, function (props) {
   return props.hasTextEnd ? '3.5px' : '';
 });
@@ -2925,7 +2917,7 @@ var TextEnd = styled__default["default"].span(_templateObject3$9 || (_templateOb
 
   return 'bold';
 }, function (props) {
-  return props.size ? textSize(props.size) : '1rem';
+  return props.size ? getFontSize(props.size, '1rem') : '1rem';
 });
 var Notification = styled__default["default"].button(_templateObject4$6 || (_templateObject4$6 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  background-color: ", ";\n  height: 40px;\n  width: 100%;\n  border-radius: 30px;\n  cursor: pointer;\n  border: 1px solid ", ";\n  outline: none;\n\n  &:disabled {\n    opacity: 0.5;\n    cursor: not-allowed;\n    pointer-events: none;\n  }\n\n  &:hover {\n    background-color: ", ";\n  }\n\n  span {\n    color: ", ";\n    margin-left: 20px;\n    font-weight: bold;\n  }\n"])), colors.brand10, colors.brand30, colors.brandTransparent2, colors.brand30);
 var Icon$2 = styled__default["default"].div(_templateObject5$5 || (_templateObject5$5 = _taggedTemplateLiteralLoose(["\n  margin-right: ", ";\n  margin-left: ", ";\n"])), function (props) {
@@ -3156,7 +3148,8 @@ var ButtonMain = function ButtonMain(_ref) {
       children: jsxRuntime.jsx(FontAwesomeIcon, {
         icon: icon,
         className: iconClassName,
-        style: iconStyle
+        style: iconStyle,
+        "data-testid": "button-icon"
       }, void 0)
     }), void 0);
   }
@@ -3196,11 +3189,13 @@ var ButtonMain = function ButtonMain(_ref) {
         }, {
           children: textEnd
         }), void 0)]
-      }, void 0), (icon || customIcon) && iconPosition === 'right' && renderIcon(), loading && jsxRuntime.jsx(LoadingContainer, {
+      }, void 0), (icon || customIcon) && iconPosition === 'right' && renderIcon(), loading && jsxRuntime.jsx(LoadingContainer, Object.assign({
+        "data-testid": "button-loading"
+      }, {
         children: jsxRuntime.jsx(Loader, {
           size: "tiny"
         }, void 0)
-      }, void 0)]
+      }), void 0)]
     }), void 0);
   }
 
@@ -6875,23 +6870,27 @@ var Container$1 = styled__default["default"].div(_templateObject$2 || (_template
 }, function (props) {
   return props.brand ? colors.brandLight : colors.white;
 }, function (props) {
+  return props.size ? getFontSize(props.size, '1rem') : '1rem';
+}, function (props) {
   return props.brand ? colors.brandTransparent : colors.default10;
 }, function (props) {
-  if (props.labelColor) {
-    return props.labelColor;
-  }
-
-  return colors.brand10;
+  return props.size ? getFontSize(props.size, '1rem') : '1rem';
+}, colors.brand10, function (props) {
+  return props.size ? getFontSize(props.size, '1rem') : '1rem';
+}, function (props) {
+  return props.brand ? colors.brand10 : colors.gray20;
 });
 
-var _excluded$1 = ["labelColor", "label", "brand", "otherFormatDate"];
+var _excluded$1 = ["label", "labelClassName", "labelStyle", "brand", "otherFormatDate", "size"];
 DatePicker.registerLocale('pt-BR', br__default["default"]);
 
 var Calendar = function Calendar(_ref) {
-  var labelColor = _ref.labelColor,
-      label = _ref.label,
+  var label = _ref.label,
+      labelClassName = _ref.labelClassName,
+      labelStyle = _ref.labelStyle,
       brand = _ref.brand,
       otherFormatDate = _ref.otherFormatDate,
+      size = _ref.size,
       rest = _objectWithoutPropertiesLoose$3(_ref, _excluded$1);
 
   // eslint-disable-next-line react/display-name
@@ -6908,12 +6907,15 @@ var Calendar = function Calendar(_ref) {
   });
   return jsxRuntime.jsxs(Container$1, Object.assign({
     brand: brand,
-    labelColor: labelColor
+    size: size
   }, {
-    children: [label && jsxRuntime.jsx("span", {
+    children: [label && jsxRuntime.jsx("span", Object.assign({
+      className: labelClassName,
+      style: labelStyle
+    }, {
       children: label
-    }, void 0), jsxRuntime.jsx("div", {
-      children: jsxRuntime.jsx(DatePicker__default["default"], Object.assign({}, rest, {
+    }), void 0), jsxRuntime.jsxs("div", {
+      children: [jsxRuntime.jsx(DatePicker__default["default"], Object.assign({}, rest, {
         locale: "pt-BR",
         customInput: otherFormatDate ? undefined : jsxRuntime.jsx(CustomInput, {
           onClick: rest.onCalendarOpen,
@@ -6925,7 +6927,10 @@ var Calendar = function Calendar(_ref) {
         onChangeRaw: function onChangeRaw(event) {
           return rest.readOnly ? event.preventDefault() : null;
         }
-      }), void 0)
+      }), void 0), jsxRuntime.jsx(FontAwesomeIcon, {
+        icon: faAngleDown,
+        className: "calendar-icon"
+      }, void 0)]
     }, void 0)]
   }), void 0);
 };

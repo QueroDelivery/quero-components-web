@@ -1,6 +1,6 @@
 import 'semantic-ui-css/semantic.min.css';
 import './default.scss';
-import ButtonMain from './components/ButtonMain/ButtonMain';
+import ButtonMain, { ButtonProps } from './components/ButtonMain/ButtonMain';
 import Dialog from './components/Dialog/Dialog';
 import InputLine from './components/InputLine/InputLine';
 import InputLineForm from './components/InputLine/InputLineForm';
