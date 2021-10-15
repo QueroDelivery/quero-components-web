@@ -17,7 +17,7 @@ import Accordion, { AccordionProps } from './components/Accordion/Accordion';
 import Selection from './components/Selection/Selection';
 import MoreLess from './components/MoreLess/MoreLess';
 import Card from './components/Card/Card';
-import Calendar from './components/Calendar/Calendar';
+import Calendar, { CalendarProps } from './components/Calendar/Calendar';
 import Table from './components/Table/Table';
 import Pagination from './components/Pagination/Pagination';
 
@@ -43,4 +43,4 @@ export {
   Pagination,
 };
 
-export type { ButtonProps, AccordionProps };
+export type { ButtonProps, AccordionProps, CalendarProps };

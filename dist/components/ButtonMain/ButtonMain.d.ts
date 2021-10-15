@@ -1,7 +1,7 @@
 import React, { ButtonHTMLAttributes } from 'react';
 import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
+import { sizesTypes } from '../../helpers/FnUtil';
 declare type IconPositions = 'left' | 'right';
-export declare type ButtonSizes = 'mini' | 'tiny' | 'small' | 'medium' | 'large' | 'big' | 'huge' | 'massive';
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     textFirst?: string;
     textFirstClassName?: string;
@@ -19,7 +19,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     backPurple?: boolean;
     width?: number | string;
     icon?: IconDefinition;
-    iconClassName?: 'string';
+    iconClassName?: string;
     iconStyle?: React.CSSProperties;
     containerIconClassName?: string;
     containerIconStyle?: React.CSSProperties;
@@ -27,7 +27,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     iconPosition?: IconPositions;
     noBorder?: boolean;
     tertiary?: boolean;
-    size?: ButtonSizes;
+    size?: sizesTypes;
     rectangular?: boolean;
 }
 declare const ButtonMain: React.FC<ButtonProps>;

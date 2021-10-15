@@ -2,8 +2,10 @@ import React from 'react';
 import { useState } from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 import { action } from '@storybook/addon-actions';
-import { Accordion } from '@quero-delivery/quero-components-web';
-import { AccordionProps } from '../../../../src/components/Accordion/Accordion';
+import {
+  Accordion,
+  AccordionProps,
+} from '@quero-delivery/quero-components-web';
 import '@quero-delivery/quero-components-web/dist/index.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';

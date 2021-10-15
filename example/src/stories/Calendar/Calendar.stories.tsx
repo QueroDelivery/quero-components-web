@@ -1,8 +1,7 @@
+import React from 'react';
 import { useState } from 'react';
-// also exported from '@storybook/react' if you can deal with breaking changes in 6.1
 import { Story, Meta } from '@storybook/react/types-6-0';
-import { Calendar } from '@quero-delivery/quero-components-web';
-import { CalendarProps } from './Interface';
+import { Calendar, CalendarProps } from '@quero-delivery/quero-components-web';
 import { addDays } from 'date-fns';
 import '@quero-delivery/quero-components-web/dist/index.css';
 
@@ -21,15 +20,6 @@ export default {
       control: 'text',
       defaultValue: 'Label do calendário',
       description: 'Label do calendário',
-      table: {
-        type: {
-          summary: 'string',
-        },
-      },
-    },
-    labelColor: {
-      control: 'text',
-      description: 'Cor da label',
       table: {
         type: {
           summary: 'string',
@@ -78,6 +68,18 @@ export default {
       table: {
         type: {
           summary: 'date',
+        },
+      },
+    },
+    size: {
+      control: {
+        type: 'inline-radio',
+      },
+      options: ['xs', 'sm', 'md', 'lg', 'xl'],
+      description: 'Alterar o tamanho do botão',
+      table: {
+        type: {
+          summary: 'xs | sm | md | lg | lx',
         },
       },
     },
@@ -141,29 +143,6 @@ Label.parameters = {
   },
 };
 
-export const LabelColor = Template.bind({});
-LabelColor.args = {
-  startDate: new Date(),
-  endDate: addDays(new Date(), 5),
-  selected: new Date(),
-  label: 'Label do calendário',
-  labelColor: 'blue',
-};
-
-LabelColor.parameters = {
-  docs: {
-    source: {
-      code: `<Calendar
-      startDate={new Date()}
-      endDate={addDays(new Date(), 5)}
-      selected={new Date()}
-      label="Label do calendário"
-      labelColor="blue"
-      />`,
-    },
-  },
-};
-
 export const Brand = Template.bind({});
 Brand.args = {
   startDate: new Date(),
@@ -179,7 +158,7 @@ Brand.parameters = {
       startDate={new Date()}
       endDate={addDays(new Date(), 5)}
       selected={new Date()}
-      brand={true}
+      brand
       />`,
     },
   },
@@ -191,6 +170,27 @@ OtherFormat.args = {
   endDate: addDays(new Date(), 5),
   selected: new Date(),
   otherFormatDate: 'dd/MM/yyyy hh:mm',
+};
+
+OtherFormat.parameters = {
+  docs: {
+    source: {
+      code: `<Calendar
+      startDate={new Date()}
+      endDate={addDays(new Date(), 5)}
+      selected={new Date()}
+      otherFormatDate="dd/MM/yyyy hh:mm"
+      />`,
+    },
+  },
+};
+
+export const Size = Template.bind({});
+Size.args = {
+  startDate: new Date(),
+  endDate: addDays(new Date(), 5),
+  selected: new Date(),
+  size: 'sm',
 };
 
 OtherFormat.parameters = {
