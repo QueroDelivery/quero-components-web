@@ -13,17 +13,9 @@ import {
 } from './styles';
 import Loader from '../Loader/Loader';
 import { colors } from '../../styles/colors';
+import { sizesTypes } from '../../helpers/FnUtil';
 
 type IconPositions = 'left' | 'right';
-export type ButtonSizes =
-  | 'mini'
-  | 'tiny'
-  | 'small'
-  | 'medium'
-  | 'large'
-  | 'big'
-  | 'huge'
-  | 'massive';
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   textFirst?: string;
   textFirstClassName?: string;
@@ -49,7 +41,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   iconPosition?: IconPositions;
   noBorder?: boolean;
   tertiary?: boolean;
-  size?: ButtonSizes;
+  size?: sizesTypes;
   rectangular?: boolean;
 }
 

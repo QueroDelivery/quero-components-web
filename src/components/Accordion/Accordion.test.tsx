@@ -1,5 +1,5 @@
 import '@testing-library/jest-dom/extend-expect';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { mocked } from 'ts-jest/utils';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
 import userEvent from '@testing-library/user-event';
@@ -24,28 +24,28 @@ describe('Accordion Component', () => {
     // Given
 
     // When
-    const wrapper = render(
+    render(
       <Accordion open title={title} onClick={onChangeMock}>
         {textBody}
       </Accordion>,
     );
 
     // Then
-    expect(wrapper.getByText(textBody)).toBeInTheDocument();
+    expect(screen.getByText(textBody)).toBeInTheDocument();
   });
 
   it('Verificar se o onClick está funcionando', () => {
     // Given
 
     // When
-    const wrapper = render(
+    render(
       <Accordion open title={title} onClick={onChangeMock}>
         {textBody}
       </Accordion>,
     );
 
     // Then
-    const accordion = wrapper.getByRole('button');
+    const accordion = screen.getByRole('button');
     userEvent.click(accordion);
     expect(onChangeMock).toBeCalled();
   });
@@ -54,18 +54,18 @@ describe('Accordion Component', () => {
     // Given
 
     // When
-    const wrapper = render(
+    const { rerender } = render(
       <Accordion open title={title} onClick={onChangeMock}>
         {textBody}
       </Accordion>,
     );
 
     // Then
-    const body = wrapper.getByText(textBody);
+    const body = screen.getByText(textBody);
 
     expect(body).toHaveAttribute('open');
 
-    wrapper.rerender(
+    rerender(
       <Accordion open={false} title={title} onClick={onChangeMock}>
         {textBody}
       </Accordion>,
@@ -79,14 +79,14 @@ describe('Accordion Component', () => {
     const subtitle = 'Subtitulo';
 
     // When
-    const wrapper = render(
+    render(
       <Accordion open title={title} subtitle={subtitle} onClick={onChangeMock}>
         {textBody}
       </Accordion>,
     );
 
     // Then
-    expect(wrapper.getByText(subtitle)).toBeInTheDocument();
+    expect(screen.getByText(subtitle)).toBeInTheDocument();
   });
 
   it('Verificar se está mostrando o value', () => {
@@ -94,14 +94,14 @@ describe('Accordion Component', () => {
     const value = 'R$10,00';
 
     // When
-    const wrapper = render(
+    render(
       <Accordion open title={title} value={value} onClick={onChangeMock}>
         {textBody}
       </Accordion>,
     );
 
     // Then
-    expect(wrapper.getByText(value)).toBeInTheDocument();
+    expect(screen.getByText(value)).toBeInTheDocument();
   });
 
   it('Verificar se está mostrando o ícone', async () => {
@@ -109,14 +109,14 @@ describe('Accordion Component', () => {
     const icon = mocked(faPhone);
 
     // When
-    const wrapper = render(
+    render(
       <Accordion open title={title} icon={icon} onClick={onChangeMock}>
         {textBody}
       </Accordion>,
     );
 
     // Then
-    expect(await wrapper.getByTestId('accordion-icon')).toBeInTheDocument();
+    expect(await screen.getByTestId('accordion-icon')).toBeInTheDocument();
   });
 
   it('Verificar se está mostrando o customIcon', () => {
@@ -124,28 +124,28 @@ describe('Accordion Component', () => {
     const icon = <div>Icon</div>;
 
     // When
-    const wrapper = render(
+    render(
       <Accordion open title={title} customIcon={icon} onClick={onChangeMock}>
         {textBody}
       </Accordion>,
     );
 
     // Then
-    expect(wrapper.getByText('Icon')).toBeInTheDocument();
+    expect(screen.getByText('Icon')).toBeInTheDocument();
   });
 
   it('Verificar se está mudando para o estilo secundary', () => {
     // Given
 
     // When
-    const wrapper = render(
+    render(
       <Accordion open title={title} secondary onClick={onChangeMock}>
         {textBody}
       </Accordion>,
     );
 
     // Then
-    const accordion = wrapper.getByRole('button');
+    const accordion = screen.getByRole('button');
     expect(accordion).toHaveStyle(`background-color: ${colors.card}`);
   });
 });

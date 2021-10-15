@@ -1,7 +1,8 @@
 import '@testing-library/jest-dom/extend-expect';
-import { render } from '@testing-library/react';
+import { render, waitFor, screen } from '@testing-library/react';
 import { mocked } from 'ts-jest/utils';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
+import userEvent from '@testing-library/user-event';
 import { colors } from '../../styles/colors';
 import ButtonMain from './ButtonMain';
 
@@ -18,20 +19,20 @@ describe('Button Main Component', () => {
     // Given
 
     // When
-    const wrapper = render(<ButtonMain>{text}</ButtonMain>);
+    render(<ButtonMain>{text}</ButtonMain>);
 
     // Then
-    expect(wrapper.getByText(text)).toBeInTheDocument();
+    expect(screen.getByText(text)).toBeInTheDocument();
   });
 
   it('Estilo secondary está funcionando', () => {
     // Given
 
     // When
-    const wrapper = render(<ButtonMain secondary>{text}</ButtonMain>);
+    render(<ButtonMain secondary>{text}</ButtonMain>);
 
     // Then
-    const button = wrapper.getByRole('button');
+    const button = screen.getByRole('button');
     expect(button).toHaveStyle(`background-color: ${colors.white}`);
     expect(button).toHaveStyle(`border-color: ${colors.brand10}`);
     expect(button).toHaveStyle(`color: ${colors.brand10}`);
@@ -41,10 +42,10 @@ describe('Button Main Component', () => {
     // Given
 
     // When
-    const wrapper = render(<ButtonMain tertiary>{text}</ButtonMain>);
+    render(<ButtonMain tertiary>{text}</ButtonMain>);
 
     // Then
-    const button = wrapper.getByRole('button');
+    const button = screen.getByRole('button');
     expect(button).toHaveStyle(`background-color: ${colors.white}`);
     expect(button).toHaveStyle(`border-color: ${colors.gray10}`);
     expect(button).toHaveStyle(`color: ${colors.gray20}`);
@@ -54,10 +55,10 @@ describe('Button Main Component', () => {
     // Given
 
     // When
-    const wrapper = render(<ButtonMain noBorder>{text}</ButtonMain>);
+    render(<ButtonMain noBorder>{text}</ButtonMain>);
 
     // Then
-    const button = wrapper.getByRole('button');
+    const button = screen.getByRole('button');
     expect(button).toHaveStyle(`background-color: transparent`);
     expect(button).toHaveStyle(`border: none`);
   });
@@ -66,10 +67,10 @@ describe('Button Main Component', () => {
     // Given
 
     // When
-    const wrapper = render(<ButtonMain rectangular>{text}</ButtonMain>);
+    render(<ButtonMain rectangular>{text}</ButtonMain>);
 
     // Then
-    const button = wrapper.getByRole('button');
+    const button = screen.getByRole('button');
     expect(button).toHaveStyle(`border-radius: 10px`);
   });
 
@@ -77,13 +78,13 @@ describe('Button Main Component', () => {
     // Given
 
     // When
-    const wrapper = render(<ButtonMain loading>{text}</ButtonMain>);
+    render(<ButtonMain loading>{text}</ButtonMain>);
 
     // Then
-    const button = wrapper.getByRole('button');
+    const button = screen.getByRole('button');
     expect(button).toHaveStyle(`position: relative`);
     expect(button).toHaveStyle(`color: transparent`);
-    expect(wrapper.getByTestId('button-loading')).toBeInTheDocument();
+    expect(screen.getByTestId('button-loading')).toBeInTheDocument();
   });
 
   it('Ícone está sendo exibido', async () => {
@@ -91,10 +92,10 @@ describe('Button Main Component', () => {
     const icon = mocked(faPhone);
 
     // When
-    const wrapper = render(<ButtonMain icon={icon}>{text}</ButtonMain>);
+    render(<ButtonMain icon={icon}>{text}</ButtonMain>);
 
     // Then
-    expect(await wrapper.getByTestId('button-icon')).toBeInTheDocument();
+    expect(await screen.getByTestId('button-icon')).toBeInTheDocument();
   });
 
   it('CustomIcon está sendo exibido', () => {
@@ -102,10 +103,10 @@ describe('Button Main Component', () => {
     const icon = <div>Icon</div>;
 
     // When
-    const wrapper = render(<ButtonMain customIcon={icon}>{text}</ButtonMain>);
+    render(<ButtonMain customIcon={icon}>{text}</ButtonMain>);
 
     // Then
-    expect(wrapper.getByText('Icon')).toBeInTheDocument();
+    expect(screen.getByText('Icon')).toBeInTheDocument();
   });
 
   it('Posição do ícone está funcionando', () => {
@@ -113,22 +114,22 @@ describe('Button Main Component', () => {
     const icon = mocked(faPhone);
 
     // When
-    const wrapper = render(<ButtonMain icon={icon}>{text}</ButtonMain>);
+    const { rerender } = render(<ButtonMain icon={icon}>{text}</ButtonMain>);
 
-    // console.log(wrapper.getByRole('button').firstChild);
+    // console.log(screen.getByRole('button').firstChild);
 
     // Then
-    const button = wrapper.getByRole('button');
+    const button = screen.getByRole('button');
 
     expect(button.firstChild).toHaveTextContent(text);
 
-    wrapper.rerender(
+    rerender(
       <ButtonMain iconPosition="left" icon={icon}>
         {text}
       </ButtonMain>,
     );
 
-    const iconButton = wrapper.getByTestId('button-icon');
+    const iconButton = screen.getByTestId('button-icon');
     expect(button.firstChild?.firstChild).toEqual(iconButton);
   });
 
@@ -136,10 +137,10 @@ describe('Button Main Component', () => {
     // Given
     const textFirst = 'Clique';
     // When
-    const wrapper = render(<ButtonMain textFirst={textFirst} />);
+    render(<ButtonMain textFirst={textFirst} />);
 
     // Then
-    const button = wrapper.getByText(textFirst);
+    const button = screen.getByText(textFirst);
     expect(button).toBeInTheDocument();
   });
 
@@ -147,10 +148,10 @@ describe('Button Main Component', () => {
     // Given
     const textEnd = 'Aqui';
     // When
-    const wrapper = render(<ButtonMain textEnd={textEnd} />);
+    render(<ButtonMain textEnd={textEnd} />);
 
     // Then
-    const button = wrapper.getByText(textEnd);
+    const button = screen.getByText(textEnd);
     expect(button).toBeInTheDocument();
   });
 
@@ -160,12 +161,10 @@ describe('Button Main Component', () => {
     const textEnd = 'Aqui';
 
     // When
-    const wrapper = render(
-      <ButtonMain textFirst={textFirst} textEnd={textEnd} firstStrong />,
-    );
+    render(<ButtonMain textFirst={textFirst} textEnd={textEnd} firstStrong />);
 
     // Then
-    const button = wrapper.getByRole('button');
+    const button = screen.getByRole('button');
     expect(button.children[0]).toHaveStyle(`font-weight: bold`);
     expect(button.children[1]).toHaveStyle(`font-weight: normal`);
   });
@@ -176,12 +175,10 @@ describe('Button Main Component', () => {
     const textEnd = 'Aqui';
 
     // When
-    const wrapper = render(
-      <ButtonMain textFirst={textFirst} textEnd={textEnd} strong />,
-    );
+    render(<ButtonMain textFirst={textFirst} textEnd={textEnd} strong />);
 
     // Then
-    const button = wrapper.getByRole('button');
+    const button = screen.getByRole('button');
     expect(button.children[0]).toHaveStyle(`font-weight: bold`);
     expect(button.children[1]).toHaveStyle(`font-weight: bold`);
   });
@@ -192,22 +189,33 @@ describe('Button Main Component', () => {
     const textEnd = 'Aqui';
 
     // When
-    const wrapper = render(
-      <ButtonMain textFirst={textFirst} textEnd={textEnd} notStrong />,
-    );
+    render(<ButtonMain textFirst={textFirst} textEnd={textEnd} notStrong />);
 
     // Then
-    const button = wrapper.getByRole('button');
+    const button = screen.getByRole('button');
     expect(button.children[0]).toHaveStyle(`font-weight: normal`);
     expect(button.children[1]).toHaveStyle(`font-weight: normal`);
   });
 
   it('Estilo de notificação está funcionando', () => {
     // When
-    const wrapper = render(<ButtonMain notification amount={2} />);
+    render(<ButtonMain notification amount={2} />);
 
     // Then
-    expect(wrapper.getByText('notificações')).toBeInTheDocument();
-    expect(wrapper.getByText('2')).toBeInTheDocument();
+    expect(screen.getByText('notificações')).toBeInTheDocument();
+    expect(screen.getByText('2')).toBeInTheDocument();
+  });
+  it('Estilo backPurple está funcionando', () => {
+    // Given
+
+    // When
+    render(<ButtonMain backPurple>{text}</ButtonMain>);
+
+    // Then
+    const button = screen.getByRole('button');
+    userEvent.hover(button);
+    waitFor(() =>
+      expect(button).toHaveStyle(`background-color: ${colors.brand20}`),
+    );
   });
 });

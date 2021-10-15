@@ -1,7 +1,7 @@
 import 'semantic-ui-css/semantic.min.css';
 import './default.scss';
 
-import ButtonMain from './components/ButtonMain/ButtonMain';
+import ButtonMain, { ButtonProps } from './components/ButtonMain/ButtonMain';
 import Dialog from './components/Dialog/Dialog';
 import InputLine from './components/InputLine/InputLine';
 import InputLineForm from './components/InputLine/InputLineForm';
@@ -13,7 +13,7 @@ import Checkbox from './components/Checkbox/Checkbox';
 import Radio from './components/Radio/Radio';
 import Dropdown from './components/Dropdown/Dropdown';
 import DropdownForm from './components/Dropdown/DropdownForm';
-import Accordion from './components/Accordion/Accordion';
+import Accordion, { AccordionProps } from './components/Accordion/Accordion';
 import Selection from './components/Selection/Selection';
 import MoreLess from './components/MoreLess/MoreLess';
 import Card from './components/Card/Card';
@@ -42,3 +42,5 @@ export {
   Table,
   Pagination,
 };
+
+export type { ButtonProps, AccordionProps };
