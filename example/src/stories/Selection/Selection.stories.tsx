@@ -1,7 +1,10 @@
+import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 import { action } from '@storybook/addon-actions';
-import { Selection } from '@quero-delivery/quero-components-web';
-import { SelectionProps } from './Interface';
+import {
+  Selection,
+  SelectionProps,
+} from '@quero-delivery/quero-components-web';
 import '@quero-delivery/quero-components-web/dist/index.css';
 
 export default {

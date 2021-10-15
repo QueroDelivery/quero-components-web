@@ -1,10 +1,11 @@
-import React from 'react';
-interface PaginacaoProps {
-    page: number;
+/// <reference types="react" />
+export interface PaginationProps {
     totalCount: number;
-    limit: number;
-    onPageChange: (data: any) => void;
-    mini?: string;
+    currentPage?: number;
+    limitPerPage?: number;
+    onPageChange?: (page: number) => void;
+    doubleJumpArrow?: boolean;
+    disabled?: boolean;
 }
-declare const PaginationComponent: React.FC<PaginacaoProps>;
-export default PaginationComponent;
+export declare function Pagination({ totalCount, currentPage, limitPerPage, onPageChange, doubleJumpArrow, disabled, }: PaginationProps): JSX.Element;
+export default Pagination;

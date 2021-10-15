@@ -1,8 +1,8 @@
 import 'semantic-ui-css/semantic.min.css';
 import { jsx, jsxs, Fragment as Fragment$1 } from 'react/jsx-runtime';
-import React$2, { useState, useEffect } from 'react';
+import React$2, { useState, useEffect, useMemo } from 'react';
 import styled, { css as css$1 } from 'styled-components';
-import { Dropdown as Dropdown$1, Table as Table$1, TableRow, TableHeader, TableHeaderCell, TableBody, TableCell, TableFooter, Pagination, Icon as Icon$3 } from 'semantic-ui-react';
+import { Dropdown as Dropdown$1, Table as Table$1, TableRow, TableHeader, TableHeaderCell, TableBody, TableCell, TableFooter } from 'semantic-ui-react';
 import DatePicker, { registerLocale } from 'react-datepicker';
 import reactDom from 'react-dom';
 import br from 'date-fns/locale/pt-BR';
@@ -2631,6 +2631,16 @@ var convertCurry = convert.bind(null, React$2.createElement);
  * Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
  */
+var faAngleDoubleLeft = {
+  prefix: 'fas',
+  iconName: 'angle-double-left',
+  icon: [448, 512, [], "f100", "M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"]
+};
+var faAngleDoubleRight = {
+  prefix: 'fas',
+  iconName: 'angle-double-right',
+  icon: [448, 512, [], "f101", "M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"]
+};
 var faAngleDown = {
   prefix: 'fas',
   iconName: 'angle-down',
@@ -2640,6 +2650,11 @@ var faAngleLeft = {
   prefix: 'fas',
   iconName: 'angle-left',
   icon: [256, 512, [], "f104", "M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"]
+};
+var faAngleRight = {
+  prefix: 'fas',
+  iconName: 'angle-right',
+  icon: [256, 512, [], "f105", "M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"]
 };
 var faAngleUp = {
   prefix: 'fas',
@@ -2725,8 +2740,8 @@ const getMeasurement = (size, defaultValue) => {
 
 let _$f = t => t,
     _t$f,
-    _t2$9,
-    _t3$8,
+    _t2$a,
+    _t3$9,
     _t4$6,
     _t5$5,
     _t6$5,
@@ -2804,7 +2819,7 @@ const textSize = size => {
   }
 };
 
-const Button$1 = styled.button(_t$f || (_t$f = _$f`
+const Button$2 = styled.button(_t$f || (_t$f = _$f`
   font-family: MontSerrat !important;
   font-size: ${0};
   position: ${0};
@@ -2902,7 +2917,7 @@ const Button$1 = styled.button(_t$f || (_t$f = _$f`
 
   return colors.brand30;
 });
-const TextFirst = styled.span(_t2$9 || (_t2$9 = _$f`
+const TextFirst = styled.span(_t2$a || (_t2$a = _$f`
   font-weight: ${0};
   font-size: ${0};
   margin-right: ${0};
@@ -2913,7 +2928,7 @@ const TextFirst = styled.span(_t2$9 || (_t2$9 = _$f`
 
   return 'normal';
 }, props => props.size ? textSize(props.size) : '1rem', props => props.hasTextEnd ? '3.5px' : '');
-const TextEnd = styled.span(_t3$8 || (_t3$8 = _$f`
+const TextEnd = styled.span(_t3$9 || (_t3$9 = _$f`
   font-weight: ${0};
   font-size: ${0};
 `), props => {
@@ -2978,7 +2993,7 @@ const LoadingContainer = styled.div(_t7$5 || (_t7$5 = _$f`
 
 let _$e = t => t,
     _t$e,
-    _t2$8;
+    _t2$9;
 const Sizes$5 = {
   mini: 'mini',
   tiny: 'tiny',
@@ -3052,12 +3067,12 @@ const widthBorder = size => {
   }
 };
 
-const Container$a = styled.div(_t$e || (_t$e = _$e`
+const Container$9 = styled.div(_t$e || (_t$e = _$e`
   width: 100%;
   display: flex;
   justify-content: ${0};
 `), props => props.position === 'left' ? 'flex-start' : props.position === 'right' ? 'flex-end' : 'center');
-const Load = styled.div(_t2$8 || (_t2$8 = _$e`
+const Load = styled.div(_t2$9 || (_t2$9 = _$e`
   border-width: ${0};
   border-style: solid;
   border-color: ${0};
@@ -3119,7 +3134,7 @@ const Loader = ({
   style,
   position
 }) => {
-  return jsx(Container$a, Object.assign({
+  return jsx(Container$9, Object.assign({
     position: position
   }, {
     children: jsx(Load, {
@@ -3229,7 +3244,7 @@ const ButtonMain = _ref => {
   }
 
   function renderButton() {
-    return jsxs(Button$1, Object.assign({}, rest, {
+    return jsxs(Button$2, Object.assign({}, rest, {
       secondary: secondary,
       backPurple: backPurple,
       width: width,
@@ -3280,8 +3295,8 @@ const ButtonMain = _ref => {
 
 let _$d = t => t,
     _t$d,
-    _t2$7,
-    _t3$7,
+    _t2$8,
+    _t3$8,
     _t4$5,
     _t5$4,
     _t6$4,
@@ -3289,7 +3304,7 @@ let _$d = t => t,
     _t8$1;
 const Background$1 = styled.div(_t$d || (_t$d = _$d`
   ${0}
-`), props => props.open ? css$1(_t2$7 || (_t2$7 = _$d`
+`), props => props.open ? css$1(_t2$8 || (_t2$8 = _$d`
           opacity: 1;
           visibility: visible;
           position: fixed;
@@ -3302,7 +3317,7 @@ const Background$1 = styled.div(_t$d || (_t$d = _$d`
           overflow: auto;
           display: flex;
           z-index: 999;
-        `)) : css$1(_t3$7 || (_t3$7 = _$d`
+        `)) : css$1(_t3$8 || (_t3$8 = _$d`
           opacity: 1;
           visibility: hidden;
         `)));
@@ -3485,13 +3500,13 @@ const DialogComponent = ({
 
 let _$c = t => t,
     _t$c,
-    _t2$6,
-    _t3$6,
+    _t2$7,
+    _t3$7,
     _t4$4,
     _t5$3,
     _t6$3,
     _t7$3;
-const Container$9 = styled.div(_t$c || (_t$c = _$c`
+const Container$8 = styled.div(_t$c || (_t$c = _$c`
   font-family: MontSerrat !important;
   position: relative;
   opacity: ${0};
@@ -3615,7 +3630,7 @@ const Container$9 = styled.div(_t$c || (_t$c = _$c`
   }
 
   return '0px';
-}, colors.default10, props => props.date && !props.isFieldActive ? css$1(_t2$6 || (_t2$6 = _$c`
+}, colors.default10, props => props.date && !props.isFieldActive ? css$1(_t2$7 || (_t2$7 = _$c`
           input::-webkit-calendar-picker-indicator {
             display: none !important;
           }
@@ -3640,7 +3655,7 @@ const Container$9 = styled.div(_t$c || (_t$c = _$c`
   }
 
   return colors.gray10;
-}, props => props.isFieldActive ? css$1(_t3$6 || (_t3$6 = _$c`
+}, props => props.isFieldActive ? css$1(_t3$7 || (_t3$7 = _$c`
             color: ${0};
           `), colors.brand10) : css$1(_t4$4 || (_t4$4 = _$c`
             color: ${0};
@@ -3756,7 +3771,7 @@ const InputLine = _ref => {
       paddingBottom: errorMessage ? 0 : 20
     }
   }, {
-    children: [jsxs(Container$9, Object.assign({
+    children: [jsxs(Container$8, Object.assign({
       isFieldActive: isFieldActive,
       errorMessage: errorMessage,
       // labelStyle={labelStyle}
@@ -3884,7 +3899,7 @@ const InputLineForm = _ref => {
       paddingBottom: message || errors ? 0 : 20
     }
   }, {
-    children: [jsxs(Container$9, Object.assign({
+    children: [jsxs(Container$8, Object.assign({
       isFieldActive: isFieldActive,
       requiredText: !!(errors && errors.type === 'required'),
       errorMessage: errors,
@@ -3939,8 +3954,8 @@ const InputLineForm = _ref => {
 
 let _$b = t => t,
     _t$b,
-    _t2$5,
-    _t3$5,
+    _t2$6,
+    _t3$6,
     _t4$3,
     _t5$2,
     _t6$2,
@@ -3979,7 +3994,7 @@ const sizeWidth = size => {
 
 const Background = styled.div(_t$b || (_t$b = _$b`
   ${0}
-`), props => props.open ? css$1(_t2$5 || (_t2$5 = _$b`
+`), props => props.open ? css$1(_t2$6 || (_t2$6 = _$b`
           opacity: 1;
           visibility: visible;
           position: fixed;
@@ -3993,7 +4008,7 @@ const Background = styled.div(_t$b || (_t$b = _$b`
           padding: 40px 0;
           display: flex;
           z-index: 999;
-        `)) : css$1(_t3$5 || (_t3$5 = _$b`
+        `)) : css$1(_t3$6 || (_t3$6 = _$b`
           opacity: 1;
           visibility: hidden;
         `)));
@@ -4172,8 +4187,8 @@ const ModalComponent = ({
 
 let _$a = t => t,
     _t$a,
-    _t2$4,
-    _t3$4,
+    _t2$5,
+    _t3$5,
     _t4$2,
     _t5$1,
     _t6$1,
@@ -4198,7 +4213,7 @@ const Label = styled.span(_t$a || (_t$a = _$a`
 
   return colors.brand10;
 });
-const Container$8 = styled.div(_t2$4 || (_t2$4 = _$a`
+const Container$7 = styled.div(_t2$5 || (_t2$5 = _$a`
   font-family: MontSerrat !important;
   width: ${0};
   position: relative;
@@ -4275,7 +4290,7 @@ const Container$8 = styled.div(_t2$4 || (_t2$4 = _$a`
   }
 
   return colors.gray10;
-}, props => props.isFieldActive ? css$1(_t3$4 || (_t3$4 = _$a`
+}, props => props.isFieldActive ? css$1(_t3$5 || (_t3$5 = _$a`
             color: ${0};
           `), colors.brand10) : css$1(_t4$2 || (_t4$2 = _$a`
             color: ${0};
@@ -4336,7 +4351,7 @@ function TextArea(_ref) {
       errorColor: errorColor
     }, {
       children: label
-    }), void 0), jsx(Container$8, Object.assign({
+    }), void 0), jsx(Container$7, Object.assign({
       errorMessage: errorMessage,
       errorColor: errorColor,
       containerStyle: containerStyle,
@@ -4580,7 +4595,7 @@ const marginRight = size => {
   }
 };
 
-const Container$7 = styled.div(_t$9 || (_t$9 = _$9`
+const Container$6 = styled.div(_t$9 || (_t$9 = _$9`
   font-family: MontSerrat !important;
   display: flex;
   align-items: center;
@@ -4705,7 +4720,7 @@ const Checkbox = _ref => {
   } = _ref,
       rest = _objectWithoutPropertiesLoose$3(_ref, _excluded$6);
 
-  return jsxs(Container$7, Object.assign({
+  return jsxs(Container$6, Object.assign({
     onClick: () => !rest.disabled ? rest.onChange ? rest.onChange() : null : null,
     disabled: rest.disabled,
     sizeBox: sizeBox,
@@ -4957,7 +4972,7 @@ const topBoxAfter = size => {
   }
 };
 
-const Container$6 = styled.div(_t$8 || (_t$8 = _$8`
+const Container$5 = styled.div(_t$8 || (_t$8 = _$8`
   font-family: MontSerrat !important;
 
   &,
@@ -5091,7 +5106,7 @@ function Radio(_ref) {
   } = _ref,
       rest = _objectWithoutPropertiesLoose$3(_ref, _excluded$5);
 
-  return jsxs(Container$6, Object.assign({
+  return jsxs(Container$5, Object.assign({
     onClick: !rest.disabled && rest.onChange ? rest.onChange : undefined,
     disabled: rest.disabled,
     sizeBox: sizeBox,
@@ -5115,7 +5130,7 @@ function Radio(_ref) {
 
 let _$7 = t => t,
     _t$7;
-const Container$5 = styled.div(_t$7 || (_t$7 = _$7`
+const Container$4 = styled.div(_t$7 || (_t$7 = _$7`
   font-family: MontSerrat !important;
   width: 100% !important;
   display: flex !important;
@@ -6669,7 +6684,7 @@ const Dropdown = _ref => {
   } = _ref,
       rest = _objectWithoutPropertiesLoose$3(_ref, _excluded$4);
 
-  return jsxs(Container$5, Object.assign({
+  return jsxs(Container$4, Object.assign({
     brand: brand,
     textAlign: textAlign,
     error: errorMessage,
@@ -6751,13 +6766,13 @@ const DropdownForm = _ref => {
 
 let _$6 = t => t,
     _t$6,
-    _t2$3,
-    _t3$3,
+    _t2$4,
+    _t3$4,
     _t4$1,
     _t5,
     _t6,
     _t7;
-const Container$4 = styled.div(_t$6 || (_t$6 = _$6`
+const Container$3 = styled.div(_t$6 || (_t$6 = _$6`
   font-family: MontSerrat !important;
   display: flex;
   width: ${0};
@@ -6799,10 +6814,10 @@ const Container$4 = styled.div(_t$6 || (_t$6 = _$6`
   }
 
   return '100%';
-}, props => props.secondary ? colors.card : colors.white, colors.card, props => props.icon ? '15px' : '0', props => props.open ? css$1(_t2$3 || (_t2$3 = _$6`
+}, props => props.secondary ? colors.card : colors.white, colors.card, props => props.icon ? '15px' : '0', props => props.open ? css$1(_t2$4 || (_t2$4 = _$6`
           border-top-left-radius: 20px;
           border-top-right-radius: 20px;
-        `)) : css$1(_t3$3 || (_t3$3 = _$6`
+        `)) : css$1(_t3$4 || (_t3$4 = _$6`
           border-radius: 20px;
         `)));
 const Title$1 = styled.span(_t4$1 || (_t4$1 = _$6`
@@ -6860,7 +6875,7 @@ const Accordion = ({
   bodyStyle
 }) => {
   return jsxs(Fragment$1, {
-    children: [jsxs(Container$4, Object.assign({
+    children: [jsxs(Container$3, Object.assign({
       "data-testid": "accordion-component",
       className: className,
       style: style,
@@ -6931,8 +6946,8 @@ const Accordion = ({
 
 let _$5 = t => t,
     _t$5,
-    _t2$2,
-    _t3$2;
+    _t2$3,
+    _t3$3;
 const toggleWidth = 50;
 const toggleHeight = 30;
 const toggleGutter = 5;
@@ -7183,7 +7198,7 @@ const Switch = styled.button(_t$5 || (_t$5 = _$5`
     }
   }
 `), props => props.size ? `${widthSwitch(props.size)}px` : `${toggleWidth}px`, props => props.disabled ? 'not-allowed !important' : 'pointer !important', props => props.size ? `${heightSwitch(props.size)}px !important` : `${toggleHeight}px !important`, props => props.size ? `${widthSwitch(props.size)}px !important` : `${toggleWidth}px !important`, props => props.size ? `${heightSwitch(props.size) / 2}px !important` : `${toggleRadius}px !important`, colors.card, props => props.size ? `${heightSwitch(props.size) - sizeGutter(props.size) * 2}px !important` : `${toggleControlSsize}px !important`, props => props.size ? `${heightSwitch(props.size) - sizeGutter(props.size) * 2}px !important` : `${toggleControlSsize}px !important`, colors.default10, props => props.disabled ? `${colors.brandTransparent} !important` : `${colors.brandDark} !important`, props => props.size ? `${widthSwitch(props.size) - (heightSwitch(props.size) - sizeGutter(props.size) * 2) - sizeGutter(props.size)}px !important` : `${toggleWidth - toggleControlSsize - toggleGutter}px !important`);
-const Toggle = styled.button(_t2$2 || (_t2$2 = _$5`
+const Toggle = styled.button(_t2$3 || (_t2$3 = _$5`
   font-family: MontSerrat !important;
   display: flex !important;
   flex-direction: row !important;
@@ -7224,7 +7239,7 @@ const Toggle = styled.button(_t2$2 || (_t2$2 = _$5`
     color: ${0};
   }
 `), props => props.disabled ? '0.5 !important' : '1 !important', props => props.disabled ? 'not-allowed !important' : 'pointer !important', props => props.size ? widthToggle(props.size) : '4rem !important', colors.card, props => props.size ? fontToggle(props.size) : '0.6875rem !important', props => !props.checked ? `${colors.brand10} !important` : `${colors.white} !important`, props => !props.checked ? `${colors.white} !important` : `${colors.gray20} !important`, props => props.checked ? `${colors.brand10} !important` : `${colors.white} !important`, props => props.checked ? `${colors.white} !important` : `${colors.gray20} !important`);
-const ActiveInactive = styled.button(_t3$2 || (_t3$2 = _$5`
+const ActiveInactive = styled.button(_t3$3 || (_t3$3 = _$5`
   font-family: MontSerrat !important;
   display: flex !important;
   flex-direction: row !important;
@@ -7487,7 +7502,7 @@ const fontMoreLess = size => {
   }
 };
 
-const Container$3 = styled.div(_t$4 || (_t$4 = _$4`
+const Container$2 = styled.div(_t$4 || (_t$4 = _$4`
   font-family: MontSerrat !important;
   display: flex;
   flex-direction: row;
@@ -7573,7 +7588,7 @@ const MoreLess = ({
       setNoMore(false);
     }
   }, [limit, value]);
-  return jsxs(Container$3, Object.assign({
+  return jsxs(Container$2, Object.assign({
     limit: limit,
     minimum: minimum,
     value: value,
@@ -7607,8 +7622,8 @@ const MoreLess = ({
 
 let _$3 = t => t,
     _t$3,
-    _t2$1,
-    _t3$1;
+    _t2$2,
+    _t3$2;
 const Shadow = styled.div(_t$3 || (_t$3 = _$3`
   font-family: MontSerrat !important;
   box-shadow: ${0};
@@ -7665,7 +7680,7 @@ const Shadow = styled.div(_t$3 || (_t$3 = _$3`
 
   return '100%';
 });
-const Button = styled.a(_t2$1 || (_t2$1 = _$3`
+const Button$1 = styled.a(_t2$2 || (_t2$2 = _$3`
   font-family: MontSerrat !important;
   background-color: ${0};
   padding: 0.75rem 1.5625rem;
@@ -7696,7 +7711,7 @@ const Button = styled.a(_t2$1 || (_t2$1 = _$3`
 
   return '100%';
 }, colors.default10, props => props.colorText ? props.colorText : colors.brandDark);
-const Complement = styled.div(_t3$1 || (_t3$1 = _$3`
+const Complement = styled.div(_t3$2 || (_t3$2 = _$3`
   font-family: MontSerrat !important;
 
   color: ${0};
@@ -7775,7 +7790,7 @@ const Card = _ref => {
   }
 
   function renderButton() {
-    return jsxs(Button, Object.assign({
+    return jsxs(Button$1, Object.assign({
       style: style,
       colorText: colorText,
       onClick: onClick,
@@ -9052,7 +9067,7 @@ if (process.env.NODE_ENV === 'production') {
 
 let _$2 = t => t,
     _t$2;
-const Container$2 = styled.div(_t$2 || (_t$2 = _$2`
+const Container$1 = styled.div(_t$2 || (_t$2 = _$2`
   font-family: MontSerrat !important;
   display: flex;
   flex-direction: column;
@@ -10078,7 +10093,7 @@ const Calendar = _ref => {
     onChange: props.onChange,
     placeholder: rest.placeholderText
   }, void 0));
-  return jsxs(Container$2, Object.assign({
+  return jsxs(Container$1, Object.assign({
     brand: brand,
     labelColor: labelColor
   }, {
@@ -10102,27 +10117,27 @@ const Calendar = _ref => {
 
 let _$1 = t => t,
     _t$1,
-    _t2,
-    _t3,
+    _t2$1,
+    _t3$1,
     _t4;
 const Header = styled.div(_t$1 || (_t$1 = _$1`
   font-family: MontSerrat !important;
   display: flex;
   margin-bottom: 10px;
 `));
-const Title = styled.span(_t2 || (_t2 = _$1`
+const Title = styled.span(_t2$1 || (_t2$1 = _$1`
   font-family: MontSerrat !important;
   flex: 1;
   text-align: left;
   color: ${0};
   font-weight: bold;
 `), colors.gray20);
-const Message = styled.span(_t3 || (_t3 = _$1`
+const Message = styled.span(_t3$1 || (_t3$1 = _$1`
   flex: 1;
   text-align: right;
   color: ${0};
 `), colors.gray10);
-const Container$1 = styled.div(_t4 || (_t4 = _$1`
+const Container = styled.div(_t4 || (_t4 = _$1`
   margin-bottom: ${0};
 
   /*!
@@ -11283,7 +11298,7 @@ function TableComponent(_ref) {
       }, {
         children: message
       }), void 0)]
-    }, void 0) : null, jsx(Container$1, Object.assign({
+    }, void 0) : null, jsx(Container, Object.assign({
       hasMore: !!hasMore,
       hasPagination: !!pagination
     }, {
@@ -11312,96 +11327,207 @@ Table.Cell = TableCell;
 Table.Footer = TableFooter;
 
 let _ = t => t,
-    _t;
-const Container = styled.div(_t || (_t = _`
-  font-family: MontSerrat !important;
+    _t,
+    _t2,
+    _t3;
+const ContainerPagination = styled.div(_t || (_t = _`
+  display: flex;
 
-  /*--------------
-   Pagination
----------------*/
+  justify-content: center;
+  align-items: center;
 
-  .ui.pagination.menu {
-    margin: 0em;
-    display: -webkit-inline-box;
-    display: -ms-inline-flexbox;
-    display: inline-flex;
-    vertical-align: middle;
-  }
-  .ui.pagination.menu .item:last-child {
-    border-radius: 0em 0.28571429rem 0.28571429rem 0em;
-  }
-  .ui.compact.menu .item:last-child {
-    border-radius: 0em 0.28571429rem 0.28571429rem 0em;
-  }
-  .ui.pagination.menu .item:last-child:before {
-    display: none;
-  }
-  .ui.pagination.menu .item {
-    font-family: MontSerrat !important;
-    min-width: 3em;
-    text-align: center;
-  }
-  .ui.pagination.menu .icon.item i.icon {
-    vertical-align: top;
-  }
-
-  /* Active */
-  .ui.pagination.menu .active.item {
-    border-top: none;
-    padding-top: 0.92857143em;
-    background-color: rgba(0, 0, 0, 0.05);
-    color: rgba(0, 0, 0, 0.95);
-    -webkit-box-shadow: none;
-    box-shadow: none;
+  button + button {
+    margin-left: 0.5rem;
   }
 `));
+const Button = styled.button(_t2 || (_t2 = _`
+  color: ${0};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: ${0};
+  border: 1px solid ${0};
+  font-size: 1.125rem;
+  font-weight: 500;
 
-const PaginationComponent = ({
-  page,
+  width: 3rem;
+  height: 3rem;
+  border-radius: 10px;
+
+  &:not(:disabled):hover {
+    background-color: ${0};
+    transition: background-color 0.4s;
+  }
+
+  &:disabled {
+    border: none;
+    cursor: default;
+    opacity: 0.75;
+  }
+
+  ${0}
+`), colors.brand10, colors.white, colors.hover, colors.hover, props => props.active ? css$1(_t3 || (_t3 = _`
+          background-color: ${0};
+          color: ${0};
+        `), colors.brand10, colors.white) : ''); // font-family: MontSerrat !important;
+// /*--------------
+//  Pagination
+// ---------------*/
+// .ui.pagination.menu {
+//   margin: 0em;
+//   display: -webkit-inline-box;
+//   display: -ms-inline-flexbox;
+//   display: inline-flex;
+//   vertical-align: middle;
+// }
+// .ui.pagination.menu .item:last-child {
+//   border-radius: 0em 0.28571429rem 0.28571429rem 0em;
+// }
+// .ui.compact.menu .item:last-child {
+//   border-radius: 0em 0.28571429rem 0.28571429rem 0em;
+// }
+// .ui.pagination.menu .item:last-child:before {
+//   display: none;
+// }
+// .ui.pagination.menu .item {
+//   font-family: MontSerrat !important;
+//   min-width: 3em;
+//   text-align: center;
+// }
+// .ui.pagination.menu .icon.item i.icon {
+//   vertical-align: top;
+// }
+// /* Active */
+// .ui.pagination.menu .active.item {
+//   border-top: none;
+//   padding-top: 0.92857143em;
+//   background-color: rgba(0, 0, 0, 0.05);
+//   color: rgba(0, 0, 0, 0.95);
+//   -webkit-box-shadow: none;
+//   box-shadow: none;
+// }
+
+const brothersCount = 2;
+
+function generatePagesArray(from, to) {
+  return [...new Array(to - from)].map((_, index) => {
+    return from + index + 1;
+  }).filter(page => page > 0);
+}
+
+function Pagination({
   totalCount,
-  limit,
+  currentPage = 1,
+  limitPerPage = 30,
   onPageChange,
-  mini
-}) => {
-  return jsx(Container, {
-    children: jsx(Pagination, {
-      totalPages: Math.ceil(totalCount / limit),
-      size: mini ? 'mini' : 'small',
-      ellipsisItem: {
-        content: jsx(Icon$3, {
-          name: "ellipsis horizontal"
-        }, void 0),
-        icon: true
-      },
-      firstItem: {
-        content: jsx(Icon$3, {
-          name: "angle double left"
-        }, void 0),
-        icon: true
-      },
-      lastItem: {
-        content: jsx(Icon$3, {
-          name: "angle double right"
-        }, void 0),
-        icon: true
-      },
-      prevItem: {
-        content: jsx(Icon$3, {
-          name: "angle left"
-        }, void 0),
-        icon: true
-      },
-      nextItem: {
-        content: jsx(Icon$3, {
-          name: "angle right"
-        }, void 0),
-        icon: true
-      },
-      onPageChange: (_ev, data) => onPageChange(data.activePage),
-      activePage: page
-    }, void 0)
-  }, void 0);
-};
+  doubleJumpArrow = false,
+  disabled = false
+}) {
+  const totalPages = Math.ceil(totalCount / limitPerPage);
+  const previousPages = useMemo(() => {
+    if (currentPage > 1) {
+      return generatePagesArray(currentPage - (brothersCount + 1), currentPage - 1);
+    }
 
-export { Accordion, ButtonMain, Calendar, Card, Checkbox, DialogComponent as Dialog, Dropdown, DropdownForm, InputLine, InputLineForm, Loader, ModalComponent as Modal, MoreLess, PaginationComponent as Pagination, Radio, Selection, Table, TextArea, TextAreaForm };
+    return [];
+  }, [currentPage]);
+  const nextPages = useMemo(() => {
+    if (currentPage < totalPages) {
+      return generatePagesArray(currentPage, Math.min(totalPages, currentPage + brothersCount));
+    }
+
+    return [];
+  }, [currentPage]);
+
+  function handlePageChange(event) {
+    const newPage = Number(event.currentTarget.value);
+    return onPageChange && onPageChange(newPage);
+  }
+
+  return jsxs(ContainerPagination, {
+    children: [doubleJumpArrow && jsx(Button, Object.assign({
+      disabled: currentPage == 1 || disabled,
+      value: 1,
+      onClick: handlePageChange,
+      active: currentPage == 1
+    }, {
+      children: jsx(FontAwesomeIcon, {
+        icon: faAngleDoubleLeft
+      }, void 0)
+    }), void 0), jsx(Button, Object.assign({
+      onClick: handlePageChange,
+      value: currentPage - 1,
+      disabled: currentPage == 1 || disabled,
+      active: currentPage == 1
+    }, {
+      children: jsx(FontAwesomeIcon, {
+        icon: faAngleLeft
+      }, void 0)
+    }), void 0), currentPage >= brothersCount + 2 && jsxs(Fragment$1, {
+      children: [jsx(Button, Object.assign({
+        onClick: handlePageChange,
+        value: 1,
+        disabled: disabled
+      }, {
+        children: 1
+      }), void 0), currentPage > brothersCount + 2 && jsx(Button, Object.assign({
+        disabled: disabled
+      }, {
+        children: "..."
+      }), void 0)]
+    }, void 0), previousPages.map(value => jsx(Button, Object.assign({
+      onClick: handlePageChange,
+      value: value,
+      disabled: disabled
+    }, {
+      children: value
+    }), value)), jsx(Button, Object.assign({
+      onClick: handlePageChange,
+      disabled: true,
+      value: currentPage,
+      active: true
+    }, {
+      children: currentPage
+    }), void 0), nextPages.map(value => jsx(Button, Object.assign({
+      onClick: handlePageChange,
+      disabled: disabled,
+      value: value
+    }, {
+      children: value
+    }), value)), totalPages >= currentPage + brothersCount + 1 && jsxs(Fragment$1, {
+      children: [totalPages > currentPage + brothersCount + 1 && jsx(Button, Object.assign({
+        disabled: disabled
+      }, {
+        children: "..."
+      }), void 0), jsx(Button, Object.assign({
+        onClick: handlePageChange,
+        disabled: disabled,
+        value: totalPages
+      }, {
+        children: totalPages
+      }), void 0)]
+    }, void 0), jsx(Button, Object.assign({
+      onClick: handlePageChange,
+      value: currentPage + 1,
+      disabled: currentPage == totalPages || disabled,
+      active: currentPage == totalPages
+    }, {
+      children: jsx(FontAwesomeIcon, {
+        icon: faAngleRight
+      }, void 0)
+    }), void 0), doubleJumpArrow && jsx(Button, Object.assign({
+      disabled: currentPage == totalPages || disabled,
+      active: currentPage == totalPages,
+      value: totalPages,
+      onClick: handlePageChange
+    }, {
+      children: jsx(FontAwesomeIcon, {
+        icon: faAngleDoubleRight
+      }, void 0)
+    }), void 0)]
+  }, void 0);
+}
+
+export { Accordion, ButtonMain, Calendar, Card, Checkbox, DialogComponent as Dialog, Dropdown, DropdownForm, InputLine, InputLineForm, Loader, ModalComponent as Modal, MoreLess, Pagination, Radio, Selection, Table, TextArea, TextAreaForm };
 //# sourceMappingURL=index.modern.js.map

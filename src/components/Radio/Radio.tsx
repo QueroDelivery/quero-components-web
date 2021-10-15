@@ -2,7 +2,7 @@ import React, { InputHTMLAttributes } from 'react';
 
 import { Container } from './styles';
 
-export interface InputProps
+export interface RadioProps
   extends Omit<InputHTMLAttributes<HTMLInputElement>, 'type'> {
   label?: string;
   labelStyle?: React.CSSProperties;
@@ -29,7 +29,7 @@ function Radio({
   containerStyle,
   labelClassName,
   ...rest
-}: InputProps) {
+}: RadioProps) {
   return (
     <Container
       onClick={!rest.disabled && rest.onChange ? rest.onChange : undefined}

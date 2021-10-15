@@ -1,5 +1,5 @@
 import React, { InputHTMLAttributes } from 'react';
-export interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'type'> {
+export interface RadioProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'type'> {
     label?: string;
     labelStyle?: React.CSSProperties;
     labelClassName?: string;
@@ -8,5 +8,5 @@ export interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 
     onChange: () => void;
     sizeBox?: 'mini' | 'tiny' | 'small' | 'medium' | 'large' | 'big' | 'huge' | 'massive';
 }
-declare function Radio({ label, labelStyle, sizeBox, containerClassName, containerStyle, labelClassName, ...rest }: InputProps): JSX.Element;
+declare function Radio({ label, labelStyle, sizeBox, containerClassName, containerStyle, labelClassName, ...rest }: RadioProps): JSX.Element;
 export default Radio;

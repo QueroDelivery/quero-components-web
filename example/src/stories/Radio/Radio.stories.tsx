@@ -2,8 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 import { action } from '@storybook/addon-actions';
-import { Radio } from '@quero-delivery/quero-components-web';
-import { InputProps } from '../../../../src/components/Radio/Radio';
+import { Radio, RadioProps } from '@quero-delivery/quero-components-web';
 import '@quero-delivery/quero-components-web/dist/index.css';
 
 export default {
@@ -69,7 +68,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<InputProps> = args => {
+const Template: Story<RadioProps> = args => {
   const [checked, setChecked] = useState(false);
   return (
     <Radio {...args} onChange={() => setChecked(!checked)} checked={checked} />

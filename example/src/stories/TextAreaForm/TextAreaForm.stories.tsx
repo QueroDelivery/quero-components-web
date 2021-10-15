@@ -1,7 +1,9 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import { TextAreaForm } from '@quero-delivery/quero-components-web';
-import { TextAreaFormProps } from '../../../../src/components/TextArea/TextAreaForm';
+import {
+  TextAreaForm,
+  TextAreaFormProps,
+} from '@quero-delivery/quero-components-web';
 
 import '@quero-delivery/quero-components-web/dist/index.css';
 

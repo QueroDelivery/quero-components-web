@@ -1,8 +1,7 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 import { action } from '@storybook/addon-actions';
-import { TextArea } from '@quero-delivery/quero-components-web';
-import { TextAreaProps } from '../../../../src/components/TextArea/TextArea';
+import { TextArea, TextAreaProps } from '@quero-delivery/quero-components-web';
 import '@quero-delivery/quero-components-web/dist/index.css';
 
 export default {
