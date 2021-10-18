@@ -1,6 +1,6 @@
 import 'semantic-ui-css/semantic.min.css';
 import { jsx, jsxs, Fragment as Fragment$1 } from 'react/jsx-runtime';
-import React$2, { useState, useEffect, useMemo } from 'react';
+import React$2, { useState, useEffect } from 'react';
 import styled, { css as css$1 } from 'styled-components';
 import { Dropdown as Dropdown$1, Table as Table$1, TableRow, TableHeader, TableHeaderCell, TableBody, TableCell, TableFooter } from 'semantic-ui-react';
 import DatePicker, { registerLocale } from 'react-datepicker';
@@ -2749,24 +2749,8 @@ const getFontSize = (defaultSize, sizeBase) => {
     case Sizes$6.xs:
       return `calc(${getMeasurement(sizeBase)} - 0.25rem)`;
 
-let _$f = t => t,
-    _t$f,
-    _t2$a,
-    _t3$9,
-    _t4$6,
-    _t5$5,
-    _t6$5,
-    _t7$5;
-const Sizes$6 = {
-  mini: 'mini',
-  tiny: 'tiny',
-  small: 'small',
-  medium: 'medium',
-  large: 'large',
-  big: 'big',
-  huge: 'huge',
-  massive: 'massive'
-};
+    case Sizes$6.sm:
+      return `calc(${getMeasurement(sizeBase)} - 0.125rem)`;
 
     case Sizes$6.md:
       return getMeasurement(sizeBase);
@@ -2782,6 +2766,14 @@ const Sizes$6 = {
   }
 };
 
+let _$f = t => t,
+    _t$f,
+    _t2$a,
+    _t3$9,
+    _t4$7,
+    _t5$5,
+    _t6$5,
+    _t7$5;
 const Button$2 = styled.button(_t$f || (_t$f = _$f`
   font-family: MontSerrat !important;
   font-size: ${0};
@@ -2889,7 +2881,7 @@ const TextFirst = styled.span(_t2$a || (_t2$a = _$f`
   }
 
   return 'normal';
-}, props => props.size ? textSize(props.size) : '1rem', props => props.hasTextEnd ? '3.5px' : '');
+}, props => props.size ? getFontSize(props.size, '1rem') : '1rem', props => props.hasTextEnd ? '3.5px' : '');
 const TextEnd = styled.span(_t3$9 || (_t3$9 = _$f`
   font-weight: ${0};
   font-size: ${0};
@@ -2900,7 +2892,7 @@ const TextEnd = styled.span(_t3$9 || (_t3$9 = _$f`
 
   return 'bold';
 }, props => props.size ? getFontSize(props.size, '1rem') : '1rem');
-const Notification = styled.button(_t4$6 || (_t4$6 = _$f`
+const Notification = styled.button(_t4$7 || (_t4$7 = _$f`
   font-family: MontSerrat !important;
   background-color: ${0};
   height: 40px;
@@ -3262,7 +3254,7 @@ let _$d = t => t,
     _t$d,
     _t2$8,
     _t3$8,
-    _t4$5,
+    _t4$6,
     _t5$4,
     _t6$4,
     _t7$4,
@@ -3286,7 +3278,7 @@ const Background$1 = styled.div(_t$d || (_t$d = _$d`
           opacity: 1;
           visibility: hidden;
         `)));
-const Dialog = styled.div(_t4$5 || (_t4$5 = _$d`
+const Dialog = styled.div(_t4$6 || (_t4$6 = _$d`
   font-family: MontSerrat !important;
   ${0}
 `), props => props.open ? css$1(_t5$4 || (_t5$4 = _$d`
@@ -3467,7 +3459,7 @@ let _$c = t => t,
     _t$c,
     _t2$7,
     _t3$7,
-    _t4$4,
+    _t4$5,
     _t5$3,
     _t6$3,
     _t7$3;
@@ -3622,7 +3614,7 @@ const Container$8 = styled.div(_t$c || (_t$c = _$c`
   return colors.gray10;
 }, props => props.isFieldActive ? css$1(_t3$7 || (_t3$7 = _$c`
             color: ${0};
-          `), colors.brand10) : css$1(_t4$4 || (_t4$4 = _$c`
+          `), colors.brand10) : css$1(_t4$5 || (_t4$5 = _$c`
             color: ${0};
           `), colors.gray20), props => {
   if (props.icon && !props.action) {
@@ -3921,7 +3913,7 @@ let _$b = t => t,
     _t$b,
     _t2$6,
     _t3$6,
-    _t4$3,
+    _t4$4,
     _t5$2,
     _t6$2,
     _t7$2,
@@ -3977,7 +3969,7 @@ const Background = styled.div(_t$b || (_t$b = _$b`
           opacity: 1;
           visibility: hidden;
         `)));
-const Modal = styled.div(_t4$3 || (_t4$3 = _$b`
+const Modal = styled.div(_t4$4 || (_t4$4 = _$b`
   font-family: MontSerrat !important;
   transition: top 0.25s ease;
   top: 0;
@@ -4154,7 +4146,7 @@ let _$a = t => t,
     _t$a,
     _t2$5,
     _t3$5,
-    _t4$2,
+    _t4$3,
     _t5$1,
     _t6$1,
     _t7$1;
@@ -4257,7 +4249,7 @@ const Container$7 = styled.div(_t2$5 || (_t2$5 = _$a`
   return colors.gray10;
 }, props => props.isFieldActive ? css$1(_t3$5 || (_t3$5 = _$a`
             color: ${0};
-          `), colors.brand10) : css$1(_t4$2 || (_t4$2 = _$a`
+          `), colors.brand10) : css$1(_t4$3 || (_t4$3 = _$a`
             color: ${0};
           `), colors.gray20), colors.brand10, colors.brandTransparent2);
 const LabelError = styled.span(_t5$1 || (_t5$1 = _$a`
@@ -6732,187 +6724,7 @@ const DropdownForm = _ref => {
 let _$6 = t => t,
     _t$6,
     _t2$4,
-    _t3$4,
-    _t4$1,
-    _t5,
-    _t6,
-    _t7;
-const Container$3 = styled.div(_t$6 || (_t$6 = _$6`
-  font-family: MontSerrat !important;
-  display: flex;
-  width: ${0};
-  justify-content: space-between;
-  background-color: ${0};
-  border: 1px solid ${0};
-  padding: 0.9375rem 1.25rem;
-  align-items: center;
-  cursor: pointer;
-  box-shadow: 0px 3px 2px 0px rgba(0, 0, 0, 0.16);
-
-  .icon-title {
-    display: flex;
-    align-items: center;
-  }
-
-  .title-subtitle {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    margin-left: ${0};
-  }
-
-  .value-icon {
-    display: flex;
-    align-items: center;
-    flex: 1;
-    justify-content: flex-end;
-  }
-
-  ${0}
-`), props => {
-  if (props.width) {
-    if (typeof props.width === 'string') {
-      return props.width;
-    }
-
-    return `${props.width}px`;
-  }
-
-  return '100%';
-}, props => props.secondary ? colors.card : colors.white, colors.card, props => props.icon ? '15px' : '0', props => props.open ? css$1(_t2$4 || (_t2$4 = _$6`
-          border-top-left-radius: 20px;
-          border-top-right-radius: 20px;
-        `)) : css$1(_t3$4 || (_t3$4 = _$6`
-          border-radius: 20px;
-        `)));
-const Title$1 = styled.span(_t4$1 || (_t4$1 = _$6`
-  font-size: ${0};
-  color: ${0};
-`), props => props.subtitle ? '0.875rem' : '1rem', colors.gray20);
-const Subtitle = styled.span(_t5 || (_t5 = _$6`
-  color: ${0};
-  font-size: 0.75rem;
-`), colors.gray10);
-const Value = styled.span(_t6 || (_t6 = _$6`
-  margin-right: 1.25rem;
-  color: ${0};
-`), colors.gray20);
-const Body = styled.div(_t7 || (_t7 = _$6`
-  font-family: MontSerrat !important;
-  width: ${0};
-  padding: 1.25rem;
-  border: 1px solid ${0};
-  border-top: 0;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-  display: ${0};
-  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.16);
-`), props => {
-  if (typeof props.width === 'string') {
-    return props.width;
-  }
-
-  return `${props.width}px`;
-}, colors.card, props => props.open ? 'block' : 'none');
-
-const Accordion = ({
-  className,
-  style,
-  title,
-  titleClassName,
-  titleStyle,
-  subtitle,
-  subtitleClassName,
-  subtitleStyle,
-  value,
-  valueClassName,
-  valueStyle,
-  children,
-  secondary,
-  open,
-  onClick,
-  width,
-  icon,
-  iconClassName,
-  iconStyle,
-  customIcon,
-  bodyClassName,
-  bodyStyle
-}) => {
-  return jsxs(Fragment$1, {
-    children: [jsxs(Container$3, Object.assign({
-      "data-testid": "accordion-component",
-      className: className,
-      style: style,
-      secondary: secondary,
-      subtitle: subtitle,
-      open: open,
-      onClick: event => onClick(event),
-      width: width,
-      icon: !!(icon || customIcon)
-    }, {
-      children: [jsxs("div", Object.assign({
-        className: "icon-title"
-      }, {
-        children: [customIcon || (icon ? jsx(FontAwesomeIcon, {
-          "data-testid": "accordion-icon",
-          className: iconClassName,
-          style: iconStyle,
-          icon: icon,
-          size: "lg",
-          color: colors.brand10
-        }, void 0) : null), jsxs("div", Object.assign({
-          className: "title-subtitle"
-        }, {
-          children: [jsx(Title$1, Object.assign({
-            className: titleClassName,
-            style: titleStyle,
-            subtitle: subtitle
-          }, {
-            children: title
-          }), void 0), subtitle && jsx(Subtitle, Object.assign({
-            className: subtitleClassName,
-            style: subtitleStyle
-          }, {
-            children: subtitle
-          }), void 0)]
-        }), void 0)]
-      }), void 0), jsxs("div", Object.assign({
-        className: "value-icon"
-      }, {
-        children: [value && jsx(Value, Object.assign({
-          className: valueClassName,
-          style: valueStyle
-        }, {
-          children: value
-        }), void 0), secondary ? jsx(FontAwesomeIcon, {
-          icon: open ? faAngleUp : faAngleDown,
-          style: {
-            fontSize: 20
-          }
-        }, void 0) : jsx(FontAwesomeIcon, {
-          icon: open ? faAngleUp : faAngleDown,
-          style: {
-            fontSize: 20
-          },
-          color: colors.brand10
-        }, void 0)]
-      }), void 0)]
-    }), void 0), jsx(Body, Object.assign({
-      className: bodyClassName,
-      style: bodyStyle,
-      open: open,
-      width: width
-    }, {
-      children: children
-    }), void 0)]
-  }, void 0);
-};
-
-let _$5 = t => t,
-    _t$5,
-    _t2$3,
-    _t3$3;
+    _t3$4;
 const toggleWidth = 50;
 const toggleHeight = 30;
 const toggleGutter = 5;
@@ -7115,7 +6927,7 @@ const fontActiveInactive = size => {
   }
 };
 
-const Switch = styled.button(_t$5 || (_t$5 = _$5`
+const Switch = styled.button(_t$6 || (_t$6 = _$6`
   font-family: MontSerrat !important;
   display: flex !important;
   flex-direction: row !important;
@@ -7163,7 +6975,7 @@ const Switch = styled.button(_t$5 || (_t$5 = _$5`
     }
   }
 `), props => props.size ? `${widthSwitch(props.size)}px` : `${toggleWidth}px`, props => props.disabled ? 'not-allowed !important' : 'pointer !important', props => props.size ? `${heightSwitch(props.size)}px !important` : `${toggleHeight}px !important`, props => props.size ? `${widthSwitch(props.size)}px !important` : `${toggleWidth}px !important`, props => props.size ? `${heightSwitch(props.size) / 2}px !important` : `${toggleRadius}px !important`, colors.card, props => props.size ? `${heightSwitch(props.size) - sizeGutter(props.size) * 2}px !important` : `${toggleControlSsize}px !important`, props => props.size ? `${heightSwitch(props.size) - sizeGutter(props.size) * 2}px !important` : `${toggleControlSsize}px !important`, colors.default10, props => props.disabled ? `${colors.brandTransparent} !important` : `${colors.brandDark} !important`, props => props.size ? `${widthSwitch(props.size) - (heightSwitch(props.size) - sizeGutter(props.size) * 2) - sizeGutter(props.size)}px !important` : `${toggleWidth - toggleControlSsize - toggleGutter}px !important`);
-const Toggle = styled.button(_t2$3 || (_t2$3 = _$5`
+const Toggle = styled.button(_t2$4 || (_t2$4 = _$6`
   font-family: MontSerrat !important;
   display: flex !important;
   flex-direction: row !important;
@@ -7204,7 +7016,7 @@ const Toggle = styled.button(_t2$3 || (_t2$3 = _$5`
     color: ${0};
   }
 `), props => props.disabled ? '0.5 !important' : '1 !important', props => props.disabled ? 'not-allowed !important' : 'pointer !important', props => props.size ? widthToggle(props.size) : '4rem !important', colors.card, props => props.size ? fontToggle(props.size) : '0.6875rem !important', props => !props.checked ? `${colors.brand10} !important` : `${colors.white} !important`, props => !props.checked ? `${colors.white} !important` : `${colors.gray20} !important`, props => props.checked ? `${colors.brand10} !important` : `${colors.white} !important`, props => props.checked ? `${colors.white} !important` : `${colors.gray20} !important`);
-const ActiveInactive = styled.button(_t3$3 || (_t3$3 = _$5`
+const ActiveInactive = styled.button(_t3$4 || (_t3$4 = _$6`
   font-family: MontSerrat !important;
   display: flex !important;
   flex-direction: row !important;
@@ -7359,8 +7171,8 @@ function Selection({
   }
 }
 
-let _$4 = t => t,
-    _t$4;
+let _$5 = t => t,
+    _t$5;
 const Sizes = {
   small: 'small',
   medium: 'medium',
@@ -7467,7 +7279,7 @@ const fontMoreLess = size => {
   }
 };
 
-const Container$2 = styled.div(_t$4 || (_t$4 = _$4`
+const Container$3 = styled.div(_t$5 || (_t$5 = _$5`
   font-family: MontSerrat !important;
   display: flex;
   flex-direction: row;
@@ -7553,7 +7365,7 @@ const MoreLess = ({
       setNoMore(false);
     }
   }, [limit, value]);
-  return jsxs(Container$2, Object.assign({
+  return jsxs(Container$3, Object.assign({
     limit: limit,
     minimum: minimum,
     value: value,
@@ -7585,11 +7397,11 @@ const MoreLess = ({
   }), void 0);
 };
 
-let _$3 = t => t,
-    _t$3,
-    _t2$2,
-    _t3$2;
-const Shadow = styled.div(_t$3 || (_t$3 = _$3`
+let _$4 = t => t,
+    _t$4,
+    _t2$3,
+    _t3$3;
+const Shadow = styled.div(_t$4 || (_t$4 = _$4`
   font-family: MontSerrat !important;
   box-shadow: ${0};
 
@@ -7645,7 +7457,7 @@ const Shadow = styled.div(_t$3 || (_t$3 = _$3`
 
   return '100%';
 });
-const Button$1 = styled.a(_t2$2 || (_t2$2 = _$3`
+const Button$1 = styled.a(_t2$3 || (_t2$3 = _$4`
   font-family: MontSerrat !important;
   background-color: ${0};
   padding: 0.75rem 1.5625rem;
@@ -7676,7 +7488,7 @@ const Button$1 = styled.a(_t2$2 || (_t2$2 = _$3`
 
   return '100%';
 }, colors.default10, props => props.colorText ? props.colorText : colors.brandDark);
-const Complement = styled.div(_t3$2 || (_t3$2 = _$3`
+const Complement = styled.div(_t3$3 || (_t3$3 = _$4`
   font-family: MontSerrat !important;
 
   color: ${0};
@@ -7786,6 +7598,1565 @@ const Card = _ref => {
     default:
       return renderShadow();
   }
+};
+
+let _$3 = t => t,
+    _t$3,
+    _t2$2,
+    _t3$2,
+    _t4$2;
+const Header = styled.div(_t$3 || (_t$3 = _$3`
+  font-family: MontSerrat !important;
+  display: flex;
+  margin-bottom: 10px;
+`));
+const Title$1 = styled.span(_t2$2 || (_t2$2 = _$3`
+  font-family: MontSerrat !important;
+  flex: 1;
+  text-align: left;
+  color: ${0};
+  font-weight: bold;
+`), colors.gray20);
+const Message = styled.span(_t3$2 || (_t3$2 = _$3`
+  flex: 1;
+  text-align: right;
+  color: ${0};
+`), colors.gray10);
+const Container$2 = styled.div(_t4$2 || (_t4$2 = _$3`
+  margin-bottom: ${0};
+
+  /*!
+ * # Semantic UI 2.4.1 - Table
+ * http://github.com/semantic-org/semantic-ui/
+ *
+ *
+ * Released under the MIT license
+ * http://opensource.org/licenses/MIT
+ *
+ */
+
+  /*******************************
+             Table
+*******************************/
+
+  /* Prototype */
+  .ui.table {
+    width: 100%;
+    background: #ffffff;
+    margin: 1em 0em;
+    border: none !important;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-radius: 0.28571429rem;
+    text-align: left;
+    color: #707070;
+    border-collapse: separate;
+    border-spacing: 0px;
+  }
+  .ui.table:first-child {
+    margin-top: 0em;
+  }
+  .ui.table:last-child {
+    margin-bottom: 0em;
+  }
+
+  /*******************************
+               Parts
+  *******************************/
+
+  /* Table Content */
+  .ui.table th,
+  .ui.table td {
+    -webkit-transition: background 0.1s ease, color 0.1s ease;
+    transition: background 0.1s ease, color 0.1s ease;
+  }
+
+  /* Headers */
+  .ui.table thead {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  .ui.table thead th {
+    cursor: auto;
+    background: none !important;
+    text-align: inherit;
+    color: #9b4dee !important;
+    padding: 0.92857143em 0.78571429em;
+    vertical-align: inherit;
+    font-style: none;
+    font-weight: bold;
+    text-transform: none;
+    border-bottom: 1px solid rgba(34, 36, 38, 0.1);
+    border-left: none;
+  }
+  .ui.table thead tr > th:first-child {
+    border-left: none;
+  }
+  .ui.table thead tr:first-child > th:first-child {
+    border-radius: 0.28571429rem 0em 0em 0em;
+  }
+  .ui.table thead tr:first-child > th:last-child {
+    border-radius: 0em 0.28571429rem 0em 0em;
+  }
+  .ui.table thead tr:first-child > th:only-child {
+    border-radius: 0.28571429rem 0.28571429rem 0em 0em;
+  }
+
+  /* Footer */
+  .ui.table tfoot {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    margin-top: 20px;
+  }
+  .ui.table tfoot th {
+    cursor: auto;
+    border-top: 1px solid rgba(34, 36, 38, 0.15);
+    background: #f9fafb;
+    text-align: inherit;
+    color: rgba(0, 0, 0, 0.87);
+    padding: 0.78571429em 0.78571429em;
+    vertical-align: middle;
+    font-style: normal;
+    font-weight: normal;
+    text-transform: none;
+  }
+  .ui.table tfoot tr > th:first-child {
+    border-left: none;
+  }
+  .ui.table tfoot tr:first-child > th:first-child {
+    border-radius: 0em 0em 0em 0.28571429rem;
+  }
+  .ui.table tfoot tr:first-child > th:last-child {
+    border-radius: 0em 0em 0.28571429rem 0em;
+  }
+  .ui.table tfoot tr:first-child > th:only-child {
+    border-radius: 0em 0em 0.28571429rem 0.28571429rem;
+  }
+
+  /* Table Row */
+  .ui.table tr td {
+    border-top: 1px solid rgba(34, 36, 38, 0.1);
+  }
+  .ui.table tr:first-child td {
+    border-top: none;
+  }
+
+  /* Repeated tbody */
+  .ui.table tbody + tbody tr:first-child td {
+    border-top: 1px solid rgba(34, 36, 38, 0.1);
+  }
+
+  /* Table Cells */
+  .ui.table td {
+    padding: 0.78571429em 0.78571429em;
+    text-align: inherit;
+  }
+
+  /* Icons */
+  .ui.table > .icon {
+    vertical-align: baseline;
+  }
+  .ui.table > .icon:only-child {
+    margin: 0em;
+  }
+
+  /* Table Segment */
+  .ui.table.segment {
+    padding: 0em;
+  }
+  .ui.table.segment:after {
+    display: none;
+  }
+  .ui.table.segment.stacked:after {
+    display: block;
+  }
+
+  /* Responsive */
+  @media only screen and (max-width: 767px) {
+    .ui.table:not(.unstackable) {
+      width: 100%;
+    }
+    .ui.table:not(.unstackable) tbody,
+    .ui.table:not(.unstackable) tr,
+    .ui.table:not(.unstackable) tr > th,
+    .ui.table:not(.unstackable) tr > td {
+      width: auto !important;
+      display: block !important;
+    }
+    .ui.table:not(.unstackable) {
+      padding: 0em;
+    }
+    .ui.table:not(.unstackable) thead {
+      display: block;
+    }
+    .ui.table:not(.unstackable) tfoot {
+      display: block;
+    }
+    .ui.table:not(.unstackable) tr {
+      padding-top: 1em;
+      padding-bottom: 1em;
+      -webkit-box-shadow: 0px -1px 0px 0px rgba(0, 0, 0, 0.1) inset !important;
+      box-shadow: 0px -1px 0px 0px rgba(0, 0, 0, 0.1) inset !important;
+    }
+    .ui.table:not(.unstackable) tr > th,
+    .ui.table:not(.unstackable) tr > td {
+      background: none;
+      border: none !important;
+      padding: 0.25em 0.75em !important;
+      -webkit-box-shadow: none !important;
+      box-shadow: none !important;
+    }
+    .ui.table:not(.unstackable) th:first-child,
+    .ui.table:not(.unstackable) td:first-child {
+      font-weight: bold;
+    }
+
+    /* Definition Table */
+    .ui.definition.table:not(.unstackable) thead th:first-child {
+      -webkit-box-shadow: none !important;
+      box-shadow: none !important;
+    }
+  }
+
+  /*******************************
+              Coupling
+  *******************************/
+
+  /* UI Image */
+  .ui.table th .image,
+  .ui.table th .image img,
+  .ui.table td .image,
+  .ui.table td .image img {
+    max-width: none;
+  }
+
+  /*******************************
+               Types
+  *******************************/
+
+  /*--------------
+      Complex
+  ---------------*/
+
+  .ui.structured.table {
+    border-collapse: collapse;
+  }
+  .ui.structured.table thead th {
+    border-left: none;
+    border-right: none;
+  }
+  .ui.structured.sortable.table thead th {
+    border-left: 1px solid rgba(34, 36, 38, 0.15);
+    border-right: 1px solid rgba(34, 36, 38, 0.15);
+  }
+  .ui.structured.basic.table th {
+    border-left: none;
+    border-right: none;
+  }
+  .ui.structured.celled.table tr th,
+  .ui.structured.celled.table tr td {
+    border-left: 1px solid rgba(34, 36, 38, 0.1);
+    border-right: 1px solid rgba(34, 36, 38, 0.1);
+  }
+
+  /*--------------
+     Definition
+  ---------------*/
+
+  .ui.definition.table thead:not(.full-width) th:first-child {
+    pointer-events: none;
+    background: transparent;
+    font-weight: normal;
+    color: rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow: -1px -1px 0px 1px #ffffff;
+    box-shadow: -1px -1px 0px 1px #ffffff;
+  }
+  .ui.definition.table tfoot:not(.full-width) th:first-child {
+    pointer-events: none;
+    background: transparent;
+    font-weight: rgba(0, 0, 0, 0.4);
+    color: normal;
+    -webkit-box-shadow: 1px 1px 0px 1px #ffffff;
+    box-shadow: 1px 1px 0px 1px #ffffff;
+  }
+
+  /* Remove Border */
+  .ui.celled.definition.table thead:not(.full-width) th:first-child {
+    -webkit-box-shadow: 0px -1px 0px 1px #ffffff;
+    box-shadow: 0px -1px 0px 1px #ffffff;
+  }
+  .ui.celled.definition.table tfoot:not(.full-width) th:first-child {
+    -webkit-box-shadow: 0px 1px 0px 1px #ffffff;
+    box-shadow: 0px 1px 0px 1px #ffffff;
+  }
+
+  /* Highlight Defining Column */
+  .ui.definition.table tr td:first-child:not(.ignored),
+  .ui.definition.table tr td.definition {
+    background: none;
+    font-weight: bold;
+    color: ${0};
+    text-transform: '';
+    -webkit-box-shadow: '';
+    box-shadow: '';
+    text-align: '';
+    font-size: 1em;
+    padding-left: '';
+    padding-right: '';
+  }
+
+  /* Fix 2nd Column */
+  .ui.definition.table thead:not(.full-width) th:nth-child(2) {
+    border-left: 1px solid rgba(34, 36, 38, 0.15);
+  }
+  .ui.definition.table tfoot:not(.full-width) th:nth-child(2) {
+    border-left: 1px solid rgba(34, 36, 38, 0.15);
+  }
+  .ui.definition.table td:nth-child(2) {
+    border-left: 1px solid rgba(34, 36, 38, 0.15);
+  }
+
+  /*******************************
+               States
+  *******************************/
+
+  /*--------------
+      Positive
+  ---------------*/
+
+  .ui.table tr.positive,
+  .ui.table td.positive {
+    -webkit-box-shadow: 0px 0px 0px #a3c293 inset;
+    box-shadow: 0px 0px 0px #a3c293 inset;
+  }
+  .ui.table tr.positive,
+  .ui.table td.positive {
+    background: #fcfff5 !important;
+    color: #2c662d !important;
+  }
+
+  /*--------------
+       Negative
+  ---------------*/
+
+  .ui.table tr.negative,
+  .ui.table td.negative {
+    -webkit-box-shadow: 0px 0px 0px #e0b4b4 inset;
+    box-shadow: 0px 0px 0px #e0b4b4 inset;
+  }
+  .ui.table tr.negative,
+  .ui.table td.negative {
+    background: #fff6f6 !important;
+    color: #9f3a38 !important;
+  }
+
+  /*--------------
+        Error
+  ---------------*/
+
+  .ui.table tr.error,
+  .ui.table td.error {
+    -webkit-box-shadow: 0px 0px 0px #e0b4b4 inset;
+    box-shadow: 0px 0px 0px #e0b4b4 inset;
+  }
+  .ui.table tr.error,
+  .ui.table td.error {
+    background: #fff6f6 !important;
+    color: #9f3a38 !important;
+  }
+
+  /*--------------
+       Warning
+  ---------------*/
+
+  .ui.table tr.warning,
+  .ui.table td.warning {
+    -webkit-box-shadow: 0px 0px 0px #c9ba9b inset;
+    box-shadow: 0px 0px 0px #c9ba9b inset;
+  }
+  .ui.table tr.warning,
+  .ui.table td.warning {
+    background: #fffaf3 !important;
+    color: #573a08 !important;
+  }
+
+  /*--------------
+       Active
+  ---------------*/
+
+  .ui.table tr.active,
+  .ui.table td.active {
+    -webkit-box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.87) inset;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.87) inset;
+  }
+  .ui.table tr.active,
+  .ui.table td.active {
+    background: #e0e0e0 !important;
+    color: rgba(0, 0, 0, 0.87) !important;
+  }
+
+  /*--------------
+       Disabled
+  ---------------*/
+
+  .ui.table tr.disabled td,
+  .ui.table tr td.disabled,
+  .ui.table tr.disabled:hover,
+  .ui.table tr:hover td.disabled {
+    pointer-events: none;
+    color: rgba(40, 40, 40, 0.3);
+  }
+
+  /*******************************
+            Variations
+  *******************************/
+
+  /*--------------
+      Stackable
+  ---------------*/
+
+  @media only screen and (max-width: 991px) {
+    .ui[class*='tablet stackable'].table,
+    .ui[class*='tablet stackable'].table tbody,
+    .ui[class*='tablet stackable'].table tr,
+    .ui[class*='tablet stackable'].table tr > th,
+    .ui[class*='tablet stackable'].table tr > td {
+      width: 100% !important;
+      display: block !important;
+    }
+    .ui[class*='tablet stackable'].table {
+      padding: 0em;
+    }
+    .ui[class*='tablet stackable'].table thead {
+      display: block;
+    }
+    .ui[class*='tablet stackable'].table tfoot {
+      display: block;
+    }
+    .ui[class*='tablet stackable'].table tr {
+      padding-top: 1em;
+      padding-bottom: 1em;
+      -webkit-box-shadow: 0px -1px 0px 0px rgba(0, 0, 0, 0.1) inset !important;
+      box-shadow: 0px -1px 0px 0px rgba(0, 0, 0, 0.1) inset !important;
+    }
+    .ui[class*='tablet stackable'].table tr > th,
+    .ui[class*='tablet stackable'].table tr > td {
+      background: none;
+      border: none !important;
+      padding: 0.25em 0.75em;
+      -webkit-box-shadow: none !important;
+      box-shadow: none !important;
+    }
+
+    /* Definition Table */
+    .ui.definition[class*='tablet stackable'].table thead th:first-child {
+      -webkit-box-shadow: none !important;
+      box-shadow: none !important;
+    }
+  }
+
+  /*--------------
+   Text Alignment
+  ---------------*/
+
+  .ui.table[class*='left aligned'],
+  .ui.table [class*='left aligned'] {
+    text-align: left;
+  }
+  .ui.table[class*='center aligned'],
+  .ui.table [class*='center aligned'] {
+    text-align: center;
+  }
+  .ui.table[class*='right aligned'],
+  .ui.table [class*='right aligned'] {
+    text-align: right;
+  }
+
+  /*------------------
+   Vertical Alignment
+  ------------------*/
+
+  .ui.table[class*='top aligned'],
+  .ui.table [class*='top aligned'] {
+    vertical-align: top;
+  }
+  .ui.table[class*='middle aligned'],
+  .ui.table [class*='middle aligned'] {
+    vertical-align: middle;
+  }
+  .ui.table[class*='bottom aligned'],
+  .ui.table [class*='bottom aligned'] {
+    vertical-align: bottom;
+  }
+
+  /*--------------
+      Collapsing
+  ---------------*/
+
+  .ui.table th.collapsing,
+  .ui.table td.collapsing {
+    width: 1px;
+    white-space: nowrap;
+  }
+
+  /*--------------
+       Fixed
+  ---------------*/
+
+  .ui.fixed.table {
+    table-layout: fixed;
+  }
+  .ui.fixed.table th,
+  .ui.fixed.table td {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /*--------------
+     Selectable
+  ---------------*/
+
+  .ui.selectable.table tbody tr:hover,
+  .ui.table tbody tr td.selectable:hover {
+    background: rgba(0, 0, 0, 0.05) !important;
+    color: rgba(0, 0, 0, 0.95) !important;
+  }
+  .ui.selectable.inverted.table tbody tr:hover,
+  .ui.inverted.table tbody tr td.selectable:hover {
+    background: rgba(255, 255, 255, 0.08) !important;
+    color: #ffffff !important;
+  }
+
+  /* Selectable Cell Link */
+  .ui.table tbody tr td.selectable {
+    padding: 0em;
+  }
+  .ui.table tbody tr td.selectable > a:not(.ui) {
+    display: block;
+    color: inherit;
+    padding: 0.78571429em 0.78571429em;
+  }
+
+  /* Other States */
+  .ui.selectable.table tr.error:hover,
+  .ui.table tr td.selectable.error:hover,
+  .ui.selectable.table tr:hover td.error {
+    background: #ffe7e7 !important;
+    color: #943634 !important;
+  }
+  .ui.selectable.table tr.warning:hover,
+  .ui.table tr td.selectable.warning:hover,
+  .ui.selectable.table tr:hover td.warning {
+    background: #fff4e4 !important;
+    color: #493107 !important;
+  }
+  .ui.selectable.table tr.active:hover,
+  .ui.table tr td.selectable.active:hover,
+  .ui.selectable.table tr:hover td.active {
+    background: #e0e0e0 !important;
+    color: rgba(0, 0, 0, 0.87) !important;
+  }
+  .ui.selectable.table tr.positive:hover,
+  .ui.table tr td.selectable.positive:hover,
+  .ui.selectable.table tr:hover td.positive {
+    background: #f7ffe6 !important;
+    color: #275b28 !important;
+  }
+  .ui.selectable.table tr.negative:hover,
+  .ui.table tr td.selectable.negative:hover,
+  .ui.selectable.table tr:hover td.negative {
+    background: #ffe7e7 !important;
+    color: #943634 !important;
+  }
+
+  /*-------------------
+        Attached
+  --------------------*/
+
+  /* Middle */
+  .ui.attached.table {
+    top: 0px;
+    bottom: 0px;
+    border-radius: 0px;
+    margin: 0em -1px;
+    width: calc(100% - (-1px * 2));
+    max-width: calc(100% - (-1px * 2));
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: 1px solid #d4d4d5;
+  }
+  .ui.attached + .ui.attached.table:not(.top) {
+    border-top: none;
+  }
+
+  /* Top */
+  .ui[class*='top attached'].table {
+    bottom: 0px;
+    margin-bottom: 0em;
+    top: 0px;
+    margin-top: 1em;
+    border-radius: 0.28571429rem 0.28571429rem 0em 0em;
+  }
+  .ui.table[class*='top attached']:first-child {
+    margin-top: 0em;
+  }
+
+  /* Bottom */
+  .ui[class*='bottom attached'].table {
+    bottom: 0px;
+    margin-top: 0em;
+    top: 0px;
+    margin-bottom: 1em;
+    -webkit-box-shadow: none, none;
+    box-shadow: none, none;
+    border-radius: 0em 0em 0.28571429rem 0.28571429rem;
+  }
+  .ui[class*='bottom attached'].table:last-child {
+    margin-bottom: 0em;
+  }
+
+  /*--------------
+       Striped
+  ---------------*/
+
+  /* Table Striping */
+  .ui.striped.table > tr:nth-child(2n),
+  .ui.striped.table tbody tr:nth-child(2n) {
+    background-color: rgba(0, 0, 50, 0.02);
+  }
+
+  /* Stripes */
+  .ui.inverted.striped.table > tr:nth-child(2n),
+  .ui.inverted.striped.table tbody tr:nth-child(2n) {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+
+  /* Allow striped active hover */
+  .ui.striped.selectable.selectable.selectable.table tbody tr.active:hover {
+    background: #efefef !important;
+    color: rgba(0, 0, 0, 0.95) !important;
+  }
+
+  /*--------------
+     Single Line
+  ---------------*/
+
+  .ui.table[class*='single line'],
+  .ui.table [class*='single line'] {
+    white-space: nowrap;
+  }
+  .ui.table[class*='single line'],
+  .ui.table [class*='single line'] {
+    white-space: nowrap;
+  }
+
+  /*-------------------
+         Colors
+  --------------------*/
+
+  /* Red */
+  .ui.red.table {
+    border-top: 0.2em solid #db2828;
+  }
+  .ui.inverted.red.table {
+    background-color: #db2828 !important;
+    color: #ffffff !important;
+  }
+
+  /* Orange */
+  .ui.orange.table {
+    border-top: 0.2em solid #f2711c;
+  }
+  .ui.inverted.orange.table {
+    background-color: #f2711c !important;
+    color: #ffffff !important;
+  }
+
+  /* Yellow */
+  .ui.yellow.table {
+    border-top: 0.2em solid #fbbd08;
+  }
+  .ui.inverted.yellow.table {
+    background-color: #fbbd08 !important;
+    color: #ffffff !important;
+  }
+
+  /* Olive */
+  .ui.olive.table {
+    border-top: 0.2em solid #b5cc18;
+  }
+  .ui.inverted.olive.table {
+    background-color: #b5cc18 !important;
+    color: #ffffff !important;
+  }
+
+  /* Green */
+  .ui.green.table {
+    border-top: 0.2em solid #21ba45;
+  }
+  .ui.inverted.green.table {
+    background-color: #21ba45 !important;
+    color: #ffffff !important;
+  }
+
+  /* Teal */
+  .ui.teal.table {
+    border-top: 0.2em solid #00b5ad;
+  }
+  .ui.inverted.teal.table {
+    background-color: #00b5ad !important;
+    color: #ffffff !important;
+  }
+
+  /* Blue */
+  .ui.blue.table {
+    border-top: 0.2em solid #2185d0;
+  }
+  .ui.inverted.blue.table {
+    background-color: #2185d0 !important;
+    color: #ffffff !important;
+  }
+
+  /* Violet */
+  .ui.violet.table {
+    border-top: 0.2em solid #6435c9;
+  }
+  .ui.inverted.violet.table {
+    background-color: #6435c9 !important;
+    color: #ffffff !important;
+  }
+
+  /* Purple */
+  .ui.purple.table {
+    border-top: 0.2em solid #a333c8;
+  }
+  .ui.inverted.purple.table {
+    background-color: #a333c8 !important;
+    color: #ffffff !important;
+  }
+
+  /* Pink */
+  .ui.pink.table {
+    border-top: 0.2em solid #e03997;
+  }
+  .ui.inverted.pink.table {
+    background-color: #e03997 !important;
+    color: #ffffff !important;
+  }
+
+  /* Brown */
+  .ui.brown.table {
+    border-top: 0.2em solid #a5673f;
+  }
+  .ui.inverted.brown.table {
+    background-color: #a5673f !important;
+    color: #ffffff !important;
+  }
+
+  /* Grey */
+  .ui.grey.table {
+    border-top: 0.2em solid #767676;
+  }
+  .ui.inverted.grey.table {
+    background-color: #767676 !important;
+    color: #ffffff !important;
+  }
+
+  /* Black */
+  .ui.black.table {
+    border-top: 0.2em solid #1b1c1d;
+  }
+  .ui.inverted.black.table {
+    background-color: #1b1c1d !important;
+    color: #ffffff !important;
+  }
+
+  /*--------------
+    Column Count
+  ---------------*/
+
+  /* Grid Based */
+  .ui.one.column.table td {
+    width: 100%;
+  }
+  .ui.two.column.table td {
+    width: 50%;
+  }
+  .ui.three.column.table td {
+    width: 33.33333333%;
+  }
+  .ui.four.column.table td {
+    width: 25%;
+  }
+  .ui.five.column.table td {
+    width: 20%;
+  }
+  .ui.six.column.table td {
+    width: 16.66666667%;
+  }
+  .ui.seven.column.table td {
+    width: 14.28571429%;
+  }
+  .ui.eight.column.table td {
+    width: 12.5%;
+  }
+  .ui.nine.column.table td {
+    width: 11.11111111%;
+  }
+  .ui.ten.column.table td {
+    width: 10%;
+  }
+  .ui.eleven.column.table td {
+    width: 9.09090909%;
+  }
+  .ui.twelve.column.table td {
+    width: 8.33333333%;
+  }
+  .ui.thirteen.column.table td {
+    width: 7.69230769%;
+  }
+  .ui.fourteen.column.table td {
+    width: 7.14285714%;
+  }
+  .ui.fifteen.column.table td {
+    width: 6.66666667%;
+  }
+  .ui.sixteen.column.table td {
+    width: 6.25%;
+  }
+
+  /* Column Width */
+  .ui.table th.one.wide,
+  .ui.table td.one.wide {
+    width: 6.25%;
+  }
+  .ui.table th.two.wide,
+  .ui.table td.two.wide {
+    width: 12.5%;
+  }
+  .ui.table th.three.wide,
+  .ui.table td.three.wide {
+    width: 18.75%;
+  }
+  .ui.table th.four.wide,
+  .ui.table td.four.wide {
+    width: 25%;
+  }
+  .ui.table th.five.wide,
+  .ui.table td.five.wide {
+    width: 31.25%;
+  }
+  .ui.table th.six.wide,
+  .ui.table td.six.wide {
+    width: 37.5%;
+  }
+  .ui.table th.seven.wide,
+  .ui.table td.seven.wide {
+    width: 43.75%;
+  }
+  .ui.table th.eight.wide,
+  .ui.table td.eight.wide {
+    width: 50%;
+  }
+  .ui.table th.nine.wide,
+  .ui.table td.nine.wide {
+    width: 56.25%;
+  }
+  .ui.table th.ten.wide,
+  .ui.table td.ten.wide {
+    width: 62.5%;
+  }
+  .ui.table th.eleven.wide,
+  .ui.table td.eleven.wide {
+    width: 68.75%;
+  }
+  .ui.table th.twelve.wide,
+  .ui.table td.twelve.wide {
+    width: 75%;
+  }
+  .ui.table th.thirteen.wide,
+  .ui.table td.thirteen.wide {
+    width: 81.25%;
+  }
+  .ui.table th.fourteen.wide,
+  .ui.table td.fourteen.wide {
+    width: 87.5%;
+  }
+  .ui.table th.fifteen.wide,
+  .ui.table td.fifteen.wide {
+    width: 93.75%;
+  }
+  .ui.table th.sixteen.wide,
+  .ui.table td.sixteen.wide {
+    width: 100%;
+  }
+
+  /*--------------
+      Sortable
+  ---------------*/
+
+  .ui.sortable.table thead th {
+    cursor: pointer;
+    white-space: nowrap;
+    border-left: 1px solid rgba(34, 36, 38, 0.15);
+    color: rgba(0, 0, 0, 0.87);
+  }
+  .ui.sortable.table thead th:first-child {
+    border-left: none;
+  }
+  .ui.sortable.table thead th.sorted,
+  .ui.sortable.table thead th.sorted:hover {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  .ui.sortable.table thead th:after {
+    display: none;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    content: '';
+    height: 1em;
+    width: auto;
+    opacity: 0.8;
+    margin: 0em 0em 0em 0.5em;
+    font-family: 'Icons';
+  }
+  .ui.sortable.table thead th.ascending:after {
+    content: '\f0d8';
+  }
+  .ui.sortable.table thead th.descending:after {
+    content: '\f0d7';
+  }
+
+  /* Hover */
+  .ui.sortable.table th.disabled:hover {
+    cursor: auto;
+    color: rgba(40, 40, 40, 0.3);
+  }
+  .ui.sortable.table thead th:hover {
+    background: rgba(0, 0, 0, 0.05);
+    color: rgba(0, 0, 0, 0.8);
+  }
+
+  /* Sorted */
+  .ui.sortable.table thead th.sorted {
+    background: rgba(0, 0, 0, 0.05);
+    color: rgba(0, 0, 0, 0.95);
+  }
+  .ui.sortable.table thead th.sorted:after {
+    display: inline-block;
+  }
+
+  /* Sorted Hover */
+  .ui.sortable.table thead th.sorted:hover {
+    background: rgba(0, 0, 0, 0.05);
+    color: rgba(0, 0, 0, 0.95);
+  }
+
+  /* Inverted */
+  .ui.inverted.sortable.table thead th.sorted {
+    background: rgba(255, 255, 255, 0.15) -webkit-gradient(linear, left top, left
+          bottom, from(transparent), to(rgba(0, 0, 0, 0.05)));
+    background: rgba(255, 255, 255, 0.15) -webkit-linear-gradient(transparent, rgba(0, 0, 0, 0.05));
+    background: rgba(255, 255, 255, 0.15)
+      linear-gradient(transparent, rgba(0, 0, 0, 0.05));
+    color: #ffffff;
+  }
+  .ui.inverted.sortable.table thead th:hover {
+    background: rgba(255, 255, 255, 0.08) -webkit-gradient(linear, left top, left
+          bottom, from(transparent), to(rgba(0, 0, 0, 0.05)));
+    background: rgba(255, 255, 255, 0.08) -webkit-linear-gradient(transparent, rgba(0, 0, 0, 0.05));
+    background: rgba(255, 255, 255, 0.08)
+      linear-gradient(transparent, rgba(0, 0, 0, 0.05));
+    color: #ffffff;
+  }
+  .ui.inverted.sortable.table thead th {
+    border-left-color: transparent;
+    border-right-color: transparent;
+  }
+
+  /*--------------
+      Inverted
+  ---------------*/
+
+  /* Text Color */
+  .ui.inverted.table {
+    background: #333333;
+    color: rgba(255, 255, 255, 0.9);
+    border: none;
+  }
+  .ui.inverted.table th {
+    background-color: rgba(0, 0, 0, 0.15);
+    border-color: rgba(255, 255, 255, 0.1) !important;
+    color: rgba(255, 255, 255, 0.9) !important;
+  }
+  .ui.inverted.table tr td {
+    border-color: rgba(255, 255, 255, 0.1) !important;
+  }
+  .ui.inverted.table tr.disabled td,
+  .ui.inverted.table tr td.disabled,
+  .ui.inverted.table tr.disabled:hover td,
+  .ui.inverted.table tr:hover td.disabled {
+    pointer-events: none;
+    color: rgba(225, 225, 225, 0.3);
+  }
+
+  /* Definition */
+  .ui.inverted.definition.table tfoot:not(.full-width) th:first-child,
+  .ui.inverted.definition.table thead:not(.full-width) th:first-child {
+    background: #ffffff;
+  }
+  .ui.inverted.definition.table tr td:first-child {
+    background: rgba(255, 255, 255, 0.02);
+    color: #ffffff;
+  }
+
+  /*--------------
+     Collapsing
+  ---------------*/
+
+  .ui.collapsing.table {
+    width: auto;
+  }
+
+  /*--------------
+        Basic
+  ---------------*/
+
+  .ui.basic.table {
+    background: transparent;
+    border: 1px solid rgba(34, 36, 38, 0.15);
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  .ui.basic.table thead,
+  .ui.basic.table tfoot {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  .ui.basic.table th {
+    background: transparent;
+    border-left: none;
+  }
+  .ui.basic.table tbody tr {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  .ui.basic.table td {
+    background: transparent;
+  }
+  .ui.basic.striped.table tbody tr:nth-child(2n) {
+    background-color: rgba(0, 0, 0, 0.05) !important;
+  }
+
+  /* Very Basic */
+  .ui[class*='very basic'].table {
+    border: none;
+  }
+  .ui[class*='very basic'].table:not(.sortable):not(.striped) th,
+  .ui[class*='very basic'].table:not(.sortable):not(.striped) td {
+    padding: '';
+  }
+  .ui[class*='very basic'].table:not(.sortable):not(.striped) th:first-child,
+  .ui[class*='very basic'].table:not(.sortable):not(.striped) td:first-child {
+    padding-left: 0em;
+  }
+  .ui[class*='very basic'].table:not(.sortable):not(.striped) th:last-child,
+  .ui[class*='very basic'].table:not(.sortable):not(.striped) td:last-child {
+    padding-right: 0em;
+  }
+  .ui[class*='very basic'].table:not(.sortable):not(.striped)
+    thead
+    tr:first-child
+    th {
+    padding-top: 0em;
+  }
+
+  /*--------------
+       Celled
+  ---------------*/
+
+  .ui.celled.table tr th,
+  .ui.celled.table tr td {
+    border-left: 1px solid rgba(34, 36, 38, 0.1);
+  }
+  .ui.celled.table tr th:first-child,
+  .ui.celled.table tr td:first-child {
+    border-left: none;
+  }
+
+  /*--------------
+       Padded
+  ---------------*/
+
+  .ui.padded.table th {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+  .ui.padded.table th,
+  .ui.padded.table td {
+    padding: 1em 1em;
+  }
+
+  /* Very */
+  .ui[class*='very padded'].table th {
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+  }
+  .ui[class*='very padded'].table td {
+    padding: 1.5em 1.5em;
+  }
+
+  /*--------------
+       Compact
+  ---------------*/
+
+  .ui.compact.table th {
+    padding-left: 0.7em;
+    padding-right: 0.7em;
+  }
+  .ui.compact.table td {
+    padding: 0.5em 0.7em;
+  }
+
+  /* Very */
+  .ui[class*='very compact'].table th {
+    padding-left: 0.6em;
+    padding-right: 0.6em;
+  }
+  .ui[class*='very compact'].table td {
+    padding: 0.4em 0.6em;
+  }
+
+  /*--------------
+        Sizes
+  ---------------*/
+
+  /* Small */
+  .ui.small.table {
+    font-size: 0.9em;
+  }
+
+  /* Standard */
+  .ui.table {
+    font-size: 1em;
+  }
+
+  /* Large */
+  .ui.large.table {
+    font-size: 1.1em;
+  }
+
+  /*******************************
+           Site Overrides
+  *******************************/
+`), props => props.hasMore || props.hasPagination ? '20px' : '0', colors.brand10);
+
+const _excluded$1 = ["children", "title", "titleStyle", "titleClassName", "message", "messageStyle", "messageClassName", "hasMore", "hasMoreText", "pagination"];
+
+function TableComponent(_ref) {
+  let {
+    children,
+    title,
+    titleStyle,
+    titleClassName,
+    message,
+    messageStyle,
+    messageClassName,
+    hasMore,
+    hasMoreText,
+    pagination
+  } = _ref,
+      rest = _objectWithoutPropertiesLoose$3(_ref, _excluded$1);
+
+  return jsxs("div", {
+    children: [title || message ? jsxs(Header, {
+      children: [jsx(Title$1, Object.assign({
+        style: titleStyle,
+        className: titleClassName
+      }, {
+        children: title
+      }), void 0), jsx(Message, Object.assign({
+        style: messageStyle,
+        className: messageClassName
+      }, {
+        children: message
+      }), void 0)]
+    }, void 0) : null, jsx(Container$2, Object.assign({
+      hasMore: !!hasMore,
+      hasPagination: !!pagination
+    }, {
+      children: jsx(Table$1, Object.assign({}, rest, {
+        children: children
+      }), void 0)
+    }), void 0), hasMore ? jsx(ButtonMain, {
+      "data-testid": "hasmore-button",
+      secondary: true,
+      textFirst: hasMoreText || 'ver a',
+      textEnd: !hasMoreText ? '' : 'lista completa',
+      notStrong: !!hasMoreText,
+      onClick: hasMore
+    }, void 0) : null, pagination ? jsxs("div", {
+      children: [jsx("br", {}, void 0), pagination]
+    }, void 0) : null]
+  }, void 0);
+}
+
+const Table = TableComponent;
+Table.Row = TableRow;
+Table.Header = TableHeader;
+Table.HeaderCell = TableHeaderCell;
+Table.Body = TableBody;
+Table.Cell = TableCell;
+Table.Footer = TableFooter;
+
+let _$2 = t => t,
+    _t$2,
+    _t2$1,
+    _t3$1,
+    _t4$1;
+const ContainerPagination = styled.div(_t$2 || (_t$2 = _$2`
+  display: flex;
+  font-size: ${0};
+
+  justify-content: center;
+  align-items: center;
+
+  button + button {
+    margin-left: 0.5em;
+  }
+
+  button {
+    ${0}
+  }
+`), props => getFontSize(props.size, '1rem'), props => !props.disabledAll ? css$1(_t2$1 || (_t2$1 = _$2`
+            opacity: 1 !important;
+          `)) : '');
+const Button = styled.button(_t3$1 || (_t3$1 = _$2`
+  color: ${0};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: ${0};
+  border: 1px solid ${0};
+  font-size: 1.125em;
+  font-weight: 500;
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 0.625em;
+
+  &:not(:disabled):hover {
+    background-color: ${0};
+    transition: background-color 0.4s;
+  }
+
+  &:disabled {
+    border: none;
+    cursor: default;
+    opacity: 0.75;
+  }
+
+  ${0}
+`), colors.brand10, colors.white, colors.hover, colors.hover, props => props.active ? css$1(_t4$1 || (_t4$1 = _$2`
+          background-color: ${0};
+          color: ${0};
+        `), colors.brand10, colors.white) : '');
+
+const brothersCount = 2;
+
+function generatePagesArray(from, to) {
+  return [...new Array(to - from)].map((_, index) => {
+    return from + index + 1;
+  }).filter(page => page > 0);
+}
+
+function Pagination({
+  totalCount,
+  currentPage = 1,
+  limitPerPage = 30,
+  onPageChange,
+  doubleJumpArrow = false,
+  disabled = false,
+  size = 'md'
+}) {
+  const totalPages = Math.ceil(totalCount / limitPerPage);
+  const previousPages = currentPage > 1 ? generatePagesArray(currentPage - (brothersCount + 1), currentPage - 1) : [];
+  const nextPages = currentPage < totalPages ? generatePagesArray(currentPage, Math.min(totalPages, currentPage + brothersCount)) : [];
+
+  function handlePageChange(event) {
+    const newPage = Number(event.currentTarget.value);
+    return onPageChange && onPageChange(newPage);
+  }
+
+  if (totalPages == 0) return null;
+  return jsxs(ContainerPagination, Object.assign({
+    disabledAll: disabled,
+    size: size,
+    role: "group"
+  }, {
+    children: [doubleJumpArrow && jsx(Button, Object.assign({
+      disabled: currentPage == 1 || disabled,
+      value: 1,
+      onClick: handlePageChange,
+      active: currentPage == 1
+    }, {
+      children: jsx(FontAwesomeIcon, {
+        icon: faAngleDoubleLeft
+      }, void 0)
+    }), void 0), jsx(Button, Object.assign({
+      onClick: handlePageChange,
+      value: currentPage - 1,
+      disabled: currentPage == 1 || disabled,
+      active: currentPage == 1
+    }, {
+      children: jsx(FontAwesomeIcon, {
+        icon: faAngleLeft
+      }, void 0)
+    }), void 0), currentPage >= brothersCount + 2 && jsxs(Fragment$1, {
+      children: [jsx(Button, Object.assign({
+        onClick: handlePageChange,
+        value: 1,
+        disabled: disabled
+      }, {
+        children: 1
+      }), void 0), currentPage > brothersCount + 2 && jsx(Button, Object.assign({
+        disabled: disabled
+      }, {
+        children: "..."
+      }), void 0)]
+    }, void 0), previousPages.map(value => jsx(Button, Object.assign({
+      onClick: handlePageChange,
+      value: value,
+      disabled: disabled
+    }, {
+      children: value
+    }), value)), jsx(Button, Object.assign({
+      onClick: handlePageChange,
+      disabled: true,
+      value: currentPage,
+      active: true
+    }, {
+      children: currentPage
+    }), void 0), nextPages.map(value => jsx(Button, Object.assign({
+      onClick: handlePageChange,
+      disabled: disabled,
+      value: value
+    }, {
+      children: value
+    }), value)), totalPages >= currentPage + brothersCount + 1 && jsxs(Fragment$1, {
+      children: [totalPages > currentPage + brothersCount + 1 && jsx(Button, Object.assign({
+        disabled: disabled
+      }, {
+        children: "..."
+      }), void 0), jsx(Button, Object.assign({
+        onClick: handlePageChange,
+        disabled: disabled,
+        value: totalPages
+      }, {
+        children: totalPages
+      }), void 0)]
+    }, void 0), jsx(Button, Object.assign({
+      onClick: handlePageChange,
+      value: currentPage + 1,
+      disabled: currentPage == totalPages || disabled,
+      active: currentPage == totalPages
+    }, {
+      children: jsx(FontAwesomeIcon, {
+        icon: faAngleRight
+      }, void 0)
+    }), void 0), doubleJumpArrow && jsx(Button, Object.assign({
+      disabled: currentPage == totalPages || disabled,
+      active: currentPage == totalPages,
+      value: totalPages,
+      onClick: handlePageChange
+    }, {
+      children: jsx(FontAwesomeIcon, {
+        icon: faAngleDoubleRight
+      }, void 0)
+    }), void 0)]
+  }), void 0);
+}
+
+let _$1 = t => t,
+    _t$1,
+    _t2,
+    _t3,
+    _t4,
+    _t5,
+    _t6,
+    _t7;
+const Container$1 = styled.div(_t$1 || (_t$1 = _$1`
+  font-family: MontSerrat !important;
+  display: flex;
+  width: ${0};
+  justify-content: space-between;
+  background-color: ${0};
+  border: 1px solid ${0};
+  padding: 0.9375rem 1.25rem;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0px 3px 2px 0px rgba(0, 0, 0, 0.16);
+
+  .icon-title {
+    display: flex;
+    align-items: center;
+  }
+
+  .title-subtitle {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-left: ${0};
+  }
+
+  .value-icon {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    justify-content: flex-end;
+  }
+
+  ${0}
+`), props => {
+  if (props.width) {
+    if (typeof props.width === 'string') {
+      return props.width;
+    }
+
+    return `${props.width}px`;
+  }
+
+  return '100%';
+}, props => props.secondary ? colors.card : colors.white, colors.card, props => props.icon ? '15px' : '0', props => props.open ? css$1(_t2 || (_t2 = _$1`
+          border-top-left-radius: 20px;
+          border-top-right-radius: 20px;
+        `)) : css$1(_t3 || (_t3 = _$1`
+          border-radius: 20px;
+        `)));
+const Title = styled.span(_t4 || (_t4 = _$1`
+  font-size: ${0};
+  color: ${0};
+`), props => props.subtitle ? '0.875rem' : '1rem', colors.gray20);
+const Subtitle = styled.span(_t5 || (_t5 = _$1`
+  color: ${0};
+  font-size: 0.75rem;
+`), colors.gray10);
+const Value = styled.span(_t6 || (_t6 = _$1`
+  margin-right: 1.25rem;
+  color: ${0};
+`), colors.gray20);
+const Body = styled.div(_t7 || (_t7 = _$1`
+  font-family: MontSerrat !important;
+  width: ${0};
+  padding: 1.25rem;
+  border: 1px solid ${0};
+  border-top: 0;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  display: ${0};
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.16);
+`), props => {
+  if (typeof props.width === 'string') {
+    return props.width;
+  }
+
+  return `${props.width}px`;
+}, colors.card, props => props.open ? 'block' : 'none');
+
+const Accordion = ({
+  className,
+  style,
+  title,
+  titleClassName,
+  titleStyle,
+  subtitle,
+  subtitleClassName,
+  subtitleStyle,
+  value,
+  valueClassName,
+  valueStyle,
+  children,
+  secondary,
+  open,
+  onClick,
+  width,
+  icon,
+  iconClassName,
+  iconStyle,
+  customIcon,
+  bodyClassName,
+  bodyStyle
+}) => {
+  return jsxs(Fragment$1, {
+    children: [jsxs(Container$1, Object.assign({
+      role: "button",
+      className: className,
+      style: style,
+      secondary: secondary,
+      subtitle: subtitle,
+      open: open,
+      onClick: event => onClick(event),
+      width: width,
+      icon: !!(icon || customIcon)
+    }, {
+      children: [jsxs("div", Object.assign({
+        className: "icon-title"
+      }, {
+        children: [customIcon || (icon ? jsx(FontAwesomeIcon, {
+          "data-testid": "accordion-icon",
+          className: iconClassName,
+          style: iconStyle,
+          icon: icon,
+          size: "lg",
+          color: colors.brand10
+        }, void 0) : null), jsxs("div", Object.assign({
+          className: "title-subtitle"
+        }, {
+          children: [jsx(Title, Object.assign({
+            className: titleClassName,
+            style: titleStyle,
+            subtitle: subtitle
+          }, {
+            children: title
+          }), void 0), subtitle && jsx(Subtitle, Object.assign({
+            className: subtitleClassName,
+            style: subtitleStyle
+          }, {
+            children: subtitle
+          }), void 0)]
+        }), void 0)]
+      }), void 0), jsxs("div", Object.assign({
+        className: "value-icon"
+      }, {
+        children: [value && jsx(Value, Object.assign({
+          className: valueClassName,
+          style: valueStyle
+        }, {
+          children: value
+        }), void 0), secondary ? jsx(FontAwesomeIcon, {
+          icon: open ? faAngleUp : faAngleDown,
+          style: {
+            fontSize: 20
+          }
+        }, void 0) : jsx(FontAwesomeIcon, {
+          icon: open ? faAngleUp : faAngleDown,
+          style: {
+            fontSize: 20
+          },
+          color: colors.brand10
+        }, void 0)]
+      }), void 0)]
+    }), void 0), jsx(Body, Object.assign({
+      className: bodyClassName,
+      style: bodyStyle,
+      open: open,
+      width: width
+    }, {
+      children: children
+    }), void 0)]
+  }, void 0);
 };
 
 function _interopDefault$1(e){return e&&"object"==typeof e&&"default"in e?e["default"]:e}var React$1=_interopDefault$1(React$2);function _defaults2$1(e,t){for(var n=Object.getOwnPropertyNames(t),a=0;a<n.length;a++){var i=n[a],r=Object.getOwnPropertyDescriptor(t,i);r&&r.configurable&&e[i]===undefined&&Object.defineProperty(e,i,r);}return e}function _extends$1(){return (_extends$1=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var a in n)Object.prototype.hasOwnProperty.call(n,a)&&(e[a]=n[a]);}return e}).apply(this,arguments)}function _inheritsLoose$1(e,t){e.prototype=Object.create(t.prototype),_defaults2$1(e.prototype.constructor=e,t);}function _objectWithoutPropertiesLoose$1(e,t){if(null==e)return {};var n,a,i={},r=Object.keys(e);for(a=0;a<r.length;a++)n=r[a],0<=t.indexOf(n)||(i[n]=e[n]);return i}function _assertThisInitialized$1(e){if(void 0===e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return e}var invariant$2=function(e,t,n,a,i,r,o,s){if(!e){var l;if(t===undefined)l=new Error("Minified exception occurred; use the non-minified dev environment for the full error message and additional helpful warnings.");else {var u=[n,a,i,r,o,s],c=0;(l=new Error(t.replace(/%s/g,function(){return u[c++]}))).name="Invariant Violation";}throw l.framesToPop=1,l}},invariant_1=invariant$2;function setInputSelection$1(e,t,n){if("selectionStart"in e&&"selectionEnd"in e)e.selectionStart=t,e.selectionEnd=n;else {var a=e.createTextRange();a.collapse(!0),a.moveStart("character",t),a.moveEnd("character",n-t),a.select();}}function getInputSelection$1(e){var t=0,n=0;if("selectionStart"in e&&"selectionEnd"in e)t=e.selectionStart,n=e.selectionEnd;else {var a=document.selection.createRange();a.parentElement()===e&&(t=-a.moveStart("character",-e.value.length),n=-a.moveEnd("character",-e.value.length));}return {start:t,end:n,length:n-t}}var defaultFormatChars$1={9:"[0-9]",a:"[A-Za-z]","*":"[A-Za-z0-9]"},defaultMaskChar$1="_";function parseMask$1(e,t,n){var a="",i="",r=null,o=[];if(t===undefined&&(t=defaultMaskChar$1),null==n&&(n=defaultFormatChars$1),!e||"string"!=typeof e)return {maskChar:t,formatChars:n,mask:null,prefix:null,lastEditablePosition:null,permanents:[]};var s=!1;return e.split("").forEach(function(e){s=!s&&"\\"===e||(s||!n[e]?(o.push(a.length),a.length===o.length-1&&(i+=e)):r=a.length+1,a+=e,!1);}),{maskChar:t,formatChars:n,prefix:i,mask:a,lastEditablePosition:r,permanents:o}}function isPermanentCharacter$1(e,t){return -1!==e.permanents.indexOf(t)}function isAllowedCharacter$1(e,t,n){var a=e.mask,i=e.formatChars;if(!n)return !1;if(isPermanentCharacter$1(e,t))return a[t]===n;var r=i[a[t]];return new RegExp(r).test(n)}function isEmpty$1(n,e){return e.split("").every(function(e,t){return isPermanentCharacter$1(n,t)||!isAllowedCharacter$1(n,t,e)})}function getFilledLength$1(e,t){var n=e.maskChar,a=e.prefix;if(!n){for(;t.length>a.length&&isPermanentCharacter$1(e,t.length-1);)t=t.slice(0,t.length-1);return t.length}for(var i=a.length,r=t.length;r>=a.length;r--){var o=t[r];if(!isPermanentCharacter$1(e,r)&&isAllowedCharacter$1(e,r,o)){i=r+1;break}}return i}function isFilled$1(e,t){return getFilledLength$1(e,t)===e.mask.length}function formatValue$1(e,t){var n=e.maskChar,a=e.mask,i=e.prefix;if(!n){for((t=insertString$1(e,"",t,0)).length<i.length&&(t=i);t.length<a.length&&isPermanentCharacter$1(e,t.length);)t+=a[t.length];return t}if(t)return insertString$1(e,formatValue$1(e,""),t,0);for(var r=0;r<a.length;r++)isPermanentCharacter$1(e,r)?t+=a[r]:t+=n;return t}function clearRange$1(n,e,a,t){var i=a+t,r=n.maskChar,o=n.mask,s=n.prefix,l=e.split("");if(r)return l.map(function(e,t){return t<a||i<=t?e:isPermanentCharacter$1(n,t)?o[t]:r}).join("");for(var u=i;u<l.length;u++)isPermanentCharacter$1(n,u)&&(l[u]="");return a=Math.max(s.length,a),l.splice(a,i-a),e=l.join(""),formatValue$1(n,e)}function insertString$1(r,o,e,s){var l=r.mask,u=r.maskChar,c=r.prefix,t=e.split(""),h=isFilled$1(r,o);return !u&&s>o.length&&(o+=l.slice(o.length,s)),t.every(function(e){for(;i=e,isPermanentCharacter$1(r,a=s)&&i!==l[a];){if(s>=o.length&&(o+=l[s]),t=e,n=s,u&&isPermanentCharacter$1(r,n)&&t===u)return !0;if(++s>=l.length)return !1}var t,n,a,i;return !isAllowedCharacter$1(r,s,e)&&e!==u||(s<o.length?o=u||h||s<c.length?o.slice(0,s)+e+o.slice(s+1):(o=o.slice(0,s)+e+o.slice(s),formatValue$1(r,o)):u||(o+=e),++s<l.length)}),o}function getInsertStringLength$1(a,e,t,i){var r=a.mask,o=a.maskChar,n=t.split(""),s=i;return n.every(function(e){for(;n=e,isPermanentCharacter$1(a,t=i)&&n!==r[t];)if(++i>=r.length)return !1;var t,n;return (isAllowedCharacter$1(a,i,e)||e===o)&&i++,i<r.length}),i-s}function getLeftEditablePosition$1(e,t){for(var n=t;0<=n;--n)if(!isPermanentCharacter$1(e,n))return n;return null}function getRightEditablePosition$1(e,t){for(var n=e.mask,a=t;a<n.length;++a)if(!isPermanentCharacter$1(e,a))return a;return null}function getStringValue$1(e){return e||0===e?e+"":""}function processChange$1(e,t,n,a,i){var r=e.mask,o=e.prefix,s=e.lastEditablePosition,l=t,u="",c=0,h=0,f=Math.min(i.start,n.start);if(n.end>i.start?h=(c=getInsertStringLength$1(e,a,u=l.slice(i.start,n.end),f))?i.length:0:l.length<a.length&&(h=a.length-l.length),l=a,h){if(1===h&&!i.length)f=i.start===n.start?getRightEditablePosition$1(e,n.start):getLeftEditablePosition$1(e,n.start);l=clearRange$1(e,l,f,h);}return l=insertString$1(e,l,u,f),(f+=c)>=r.length?f=r.length:f<o.length&&!c?f=o.length:f>=o.length&&f<s&&c&&(f=getRightEditablePosition$1(e,f)),u||(u=null),{value:l=formatValue$1(e,l),enteredString:u,selection:{start:f,end:f}}}function isWindowsPhoneBrowser$1(){var e=new RegExp("windows","i"),t=new RegExp("phone","i"),n=navigator.userAgent;return e.test(n)&&t.test(n)}function isFunction$1(e){return "function"==typeof e}function getRequestAnimationFrame$1(){return window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame}function getCancelAnimationFrame$1(){return window.cancelAnimationFrame||window.webkitCancelRequestAnimationFrame||window.webkitCancelAnimationFrame||window.mozCancelAnimationFrame}function defer$1(e){return (!!getCancelAnimationFrame$1()?getRequestAnimationFrame$1():function(){return setTimeout(e,1e3/60)})(e)}function cancelDefer$1(e){(getCancelAnimationFrame$1()||clearTimeout)(e);}var InputElement$1=function(c){function e(e){var f=c.call(this,e)||this;f.focused=!1,f.mounted=!1,f.previousSelection=null,f.selectionDeferId=null,f.saveSelectionLoopDeferId=null,f.saveSelectionLoop=function(){f.previousSelection=f.getSelection(),f.saveSelectionLoopDeferId=defer$1(f.saveSelectionLoop);},f.runSaveSelectionLoop=function(){null===f.saveSelectionLoopDeferId&&f.saveSelectionLoop();},f.stopSaveSelectionLoop=function(){null!==f.saveSelectionLoopDeferId&&(cancelDefer$1(f.saveSelectionLoopDeferId),f.saveSelectionLoopDeferId=null,f.previousSelection=null);},f.getInputDOMNode=function(){if(!f.mounted)return null;var e=reactDom.findDOMNode(_assertThisInitialized$1(_assertThisInitialized$1(f))),t="undefined"!=typeof window&&e instanceof window.Element;if(e&&!t)return null;if("INPUT"!==e.nodeName&&(e=e.querySelector("input")),!e)throw new Error("react-input-mask: inputComponent doesn't contain input node");return e},f.getInputValue=function(){var e=f.getInputDOMNode();return e?e.value:null},f.setInputValue=function(e){var t=f.getInputDOMNode();t&&(f.value=e,t.value=e);},f.setCursorToEnd=function(){var e=getFilledLength$1(f.maskOptions,f.value),t=getRightEditablePosition$1(f.maskOptions,e);null!==t&&f.setCursorPosition(t);},f.setSelection=function(e,t,n){void 0===n&&(n={});var a=f.getInputDOMNode(),i=f.isFocused();a&&i&&(n.deferred||setInputSelection$1(a,e,t),null!==f.selectionDeferId&&cancelDefer$1(f.selectionDeferId),f.selectionDeferId=defer$1(function(){f.selectionDeferId=null,setInputSelection$1(a,e,t);}),f.previousSelection={start:e,end:t,length:Math.abs(t-e)});},f.getSelection=function(){return getInputSelection$1(f.getInputDOMNode())},f.getCursorPosition=function(){return f.getSelection().start},f.setCursorPosition=function(e){f.setSelection(e,e);},f.isFocused=function(){return f.focused},f.getBeforeMaskedValueChangeConfig=function(){var e=f.maskOptions,t=e.mask,n=e.maskChar,a=e.permanents,i=e.formatChars;return {mask:t,maskChar:n,permanents:a,alwaysShowMask:!!f.props.alwaysShowMask,formatChars:i}},f.isInputAutofilled=function(e,t,n,a){var i=f.getInputDOMNode();try{if(i.matches(":-webkit-autofill"))return !0}catch(r){}return !f.focused||a.end<n.length&&t.end===e.length},f.onChange=function(e){var t=_assertThisInitialized$1(_assertThisInitialized$1(f)).beforePasteState,n=_assertThisInitialized$1(_assertThisInitialized$1(f)).previousSelection,a=f.props.beforeMaskedValueChange,i=f.getInputValue(),r=f.value,o=f.getSelection();f.isInputAutofilled(i,o,r,n)&&(r=formatValue$1(f.maskOptions,""),n={start:0,end:0,length:0}),t&&(n=t.selection,r=t.value,o={start:n.start+i.length,end:n.start+i.length,length:0},i=r.slice(0,n.start)+i+r.slice(n.end),f.beforePasteState=null);var s=processChange$1(f.maskOptions,i,o,r,n),l=s.enteredString,u=s.selection,c=s.value;if(isFunction$1(a)){var h=a({value:c,selection:u},{value:r,selection:n},l,f.getBeforeMaskedValueChangeConfig());c=h.value,u=h.selection;}f.setInputValue(c),isFunction$1(f.props.onChange)&&f.props.onChange(e),f.isWindowsPhoneBrowser?f.setSelection(u.start,u.end,{deferred:!0}):f.setSelection(u.start,u.end);},f.onFocus=function(e){var t=f.props.beforeMaskedValueChange,n=f.maskOptions,a=n.mask,i=n.prefix;if(f.focused=!0,f.mounted=!0,a){if(f.value)getFilledLength$1(f.maskOptions,f.value)<f.maskOptions.mask.length&&f.setCursorToEnd();else {var r=formatValue$1(f.maskOptions,i),o=formatValue$1(f.maskOptions,r),s=getFilledLength$1(f.maskOptions,o),l=getRightEditablePosition$1(f.maskOptions,s),u={start:l,end:l};if(isFunction$1(t)){var c=t({value:o,selection:u},{value:f.value,selection:null},null,f.getBeforeMaskedValueChangeConfig());o=c.value,u=c.selection;}var h=o!==f.getInputValue();h&&f.setInputValue(o),h&&isFunction$1(f.props.onChange)&&f.props.onChange(e),f.setSelection(u.start,u.end);}f.runSaveSelectionLoop();}isFunction$1(f.props.onFocus)&&f.props.onFocus(e);},f.onBlur=function(e){var t=f.props.beforeMaskedValueChange,n=f.maskOptions.mask;if(f.stopSaveSelectionLoop(),f.focused=!1,n&&!f.props.alwaysShowMask&&isEmpty$1(f.maskOptions,f.value)){var a="";if(isFunction$1(t))a=t({value:a,selection:null},{value:f.value,selection:f.previousSelection},null,f.getBeforeMaskedValueChangeConfig()).value;var i=a!==f.getInputValue();i&&f.setInputValue(a),i&&isFunction$1(f.props.onChange)&&f.props.onChange(e);}isFunction$1(f.props.onBlur)&&f.props.onBlur(e);},f.onMouseDown=function(e){if(!f.focused&&document.addEventListener){f.mouseDownX=e.clientX,f.mouseDownY=e.clientY,f.mouseDownTime=(new Date).getTime();var r=function r(e){if(document.removeEventListener("mouseup",r),f.focused){var t=Math.abs(e.clientX-f.mouseDownX),n=Math.abs(e.clientY-f.mouseDownY),a=Math.max(t,n),i=(new Date).getTime()-f.mouseDownTime;(a<=10&&i<=200||a<=5&&i<=300)&&f.setCursorToEnd();}};document.addEventListener("mouseup",r);}isFunction$1(f.props.onMouseDown)&&f.props.onMouseDown(e);},f.onPaste=function(e){isFunction$1(f.props.onPaste)&&f.props.onPaste(e),e.defaultPrevented||(f.beforePasteState={value:f.getInputValue(),selection:f.getSelection()},f.setInputValue(""));},f.handleRef=function(e){null==f.props.children&&isFunction$1(f.props.inputRef)&&f.props.inputRef(e);};var t=e.mask,n=e.maskChar,a=e.formatChars,i=e.alwaysShowMask,r=e.beforeMaskedValueChange,o=e.defaultValue,s=e.value;f.maskOptions=parseMask$1(t,n,a),null==o&&(o=""),null==s&&(s=o);var l=getStringValue$1(s);if(f.maskOptions.mask&&(i||l)&&(l=formatValue$1(f.maskOptions,l),isFunction$1(r))){var u=e.value;null==e.value&&(u=o),l=r({value:l,selection:null},{value:u=getStringValue$1(u),selection:null},null,f.getBeforeMaskedValueChangeConfig()).value;}return f.value=l,f}_inheritsLoose$1(e,c);var t=e.prototype;return t.componentDidMount=function(){this.mounted=!0,this.getInputDOMNode()&&(this.isWindowsPhoneBrowser=isWindowsPhoneBrowser$1(),this.maskOptions.mask&&this.getInputValue()!==this.value&&this.setInputValue(this.value));},t.componentDidUpdate=function(){var e=this.previousSelection,t=this.props,n=t.beforeMaskedValueChange,a=t.alwaysShowMask,i=t.mask,r=t.maskChar,o=t.formatChars,s=this.maskOptions,l=a||this.isFocused(),u=null!=this.props.value,c=u?getStringValue$1(this.props.value):this.value,h=e?e.start:null;if(this.maskOptions=parseMask$1(i,r,o),this.maskOptions.mask){!s.mask&&this.isFocused()&&this.runSaveSelectionLoop();var f=this.maskOptions.mask&&this.maskOptions.mask!==s.mask;if(s.mask||u||(c=this.getInputValue()),(f||this.maskOptions.mask&&(c||l))&&(c=formatValue$1(this.maskOptions,c)),f){var p=getFilledLength$1(this.maskOptions,c);(null===h||p<h)&&(h=isFilled$1(this.maskOptions,c)?p:getRightEditablePosition$1(this.maskOptions,p));}!this.maskOptions.mask||!isEmpty$1(this.maskOptions,c)||l||u&&this.props.value||(c="");var d={start:h,end:h};if(isFunction$1(n)){var m=n({value:c,selection:d},{value:this.value,selection:this.previousSelection},null,this.getBeforeMaskedValueChangeConfig());c=m.value,d=m.selection;}this.value=c;var g=this.getInputValue()!==this.value;g?(this.setInputValue(this.value),this.forceUpdate()):f&&this.forceUpdate();var v=!1;null!=d.start&&null!=d.end&&(v=!e||e.start!==d.start||e.end!==d.end),(v||g)&&this.setSelection(d.start,d.end);}else s.mask&&(this.stopSaveSelectionLoop(),this.forceUpdate());},t.componentWillUnmount=function(){this.mounted=!1,null!==this.selectionDeferId&&cancelDefer$1(this.selectionDeferId),this.stopSaveSelectionLoop();},t.render=function(){var t,e=this.props,n=(e.children),a=_objectWithoutPropertiesLoose$1(e,["mask","alwaysShowMask","maskChar","formatChars","inputRef","beforeMaskedValueChange","children"]);if(n){isFunction$1(n)||invariant_1(!1);var i=["onChange","onPaste","onMouseDown","onFocus","onBlur","value","disabled","readOnly"],r=_extends$1({},a);i.forEach(function(e){return delete r[e]}),t=n(r),i.filter(function(e){return null!=t.props[e]&&t.props[e]!==a[e]}).length&&invariant_1(!1);}else t=React$1.createElement("input",_extends$1({ref:this.handleRef},a));var o={onFocus:this.onFocus,onBlur:this.onBlur};return this.maskOptions.mask&&(a.disabled||a.readOnly||(o.onChange=this.onChange,o.onPaste=this.onPaste,o.onMouseDown=this.onMouseDown),null!=a.value&&(o.value=this.value)),t=React$1.cloneElement(t,o)},e}(React$1.Component);var reactInputMask_production_min=InputElement$1;
@@ -9030,9 +10401,9 @@ if (process.env.NODE_ENV === 'production') {
 }
 });
 
-let _$2 = t => t,
-    _t$2;
-const Container$1 = styled.div(_t$2 || (_t$2 = _$2`
+let _ = t => t,
+    _t;
+const Container = styled.div(_t || (_t = _`
   font-family: MontSerrat !important;
   display: flex;
   flex-direction: column;
@@ -10036,7 +11407,7 @@ const Container$1 = styled.div(_t$2 || (_t$2 = _$2`
   }
 `), props => props.brand ? colors.brandLight : colors.gray10, props => props.brand ? colors.brand10 : colors.gray20, props => props.brand ? colors.brandLight : colors.white, props => props.size ? getFontSize(props.size, '1rem') : '1rem', props => props.brand ? colors.brandTransparent : colors.default10, props => props.size ? getFontSize(props.size, '1rem') : '1rem', colors.brand10, props => props.size ? getFontSize(props.size, '1rem') : '1rem', props => props.brand ? colors.brand10 : colors.gray20);
 
-const _excluded$1 = ["label", "labelClassName", "labelStyle", "brand", "otherFormatDate", "size"];
+const _excluded = ["label", "labelClassName", "labelStyle", "brand", "otherFormatDate", "size"];
 registerLocale('pt-BR', br);
 
 const Calendar = _ref => {
@@ -10048,7 +11419,7 @@ const Calendar = _ref => {
     otherFormatDate,
     size
   } = _ref,
-      rest = _objectWithoutPropertiesLoose$3(_ref, _excluded$1);
+      rest = _objectWithoutPropertiesLoose$3(_ref, _excluded);
 
   // eslint-disable-next-line react/display-name
   const CustomInput = React$2.forwardRef((props, ref) => jsx(reactInputMask, {
@@ -10060,7 +11431,7 @@ const Calendar = _ref => {
     onChange: props.onChange,
     placeholder: rest.placeholderText
   }, void 0));
-  return jsxs(Container$1, Object.assign({
+  return jsxs(Container, Object.assign({
     brand: brand,
     size: size
   }, {
@@ -10087,1420 +11458,6 @@ const Calendar = _ref => {
     }, void 0)]
   }), void 0);
 };
-
-let _$1 = t => t,
-    _t$1,
-    _t2$1,
-    _t3$1,
-    _t4;
-const Header = styled.div(_t$1 || (_t$1 = _$1`
-  font-family: MontSerrat !important;
-  display: flex;
-  margin-bottom: 10px;
-`));
-const Title = styled.span(_t2$1 || (_t2$1 = _$1`
-  font-family: MontSerrat !important;
-  flex: 1;
-  text-align: left;
-  color: ${0};
-  font-weight: bold;
-`), colors.gray20);
-const Message = styled.span(_t3$1 || (_t3$1 = _$1`
-  flex: 1;
-  text-align: right;
-  color: ${0};
-`), colors.gray10);
-const Container = styled.div(_t4 || (_t4 = _$1`
-  margin-bottom: ${0};
-
-  /*!
- * # Semantic UI 2.4.1 - Table
- * http://github.com/semantic-org/semantic-ui/
- *
- *
- * Released under the MIT license
- * http://opensource.org/licenses/MIT
- *
- */
-
-  /*******************************
-             Table
-*******************************/
-
-  /* Prototype */
-  .ui.table {
-    width: 100%;
-    background: #ffffff;
-    margin: 1em 0em;
-    border: none !important;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    border-radius: 0.28571429rem;
-    text-align: left;
-    color: #707070;
-    border-collapse: separate;
-    border-spacing: 0px;
-  }
-  .ui.table:first-child {
-    margin-top: 0em;
-  }
-  .ui.table:last-child {
-    margin-bottom: 0em;
-  }
-
-  /*******************************
-               Parts
-  *******************************/
-
-  /* Table Content */
-  .ui.table th,
-  .ui.table td {
-    -webkit-transition: background 0.1s ease, color 0.1s ease;
-    transition: background 0.1s ease, color 0.1s ease;
-  }
-
-  /* Headers */
-  .ui.table thead {
-    -webkit-box-shadow: none;
-    box-shadow: none;
-  }
-  .ui.table thead th {
-    cursor: auto;
-    background: none !important;
-    text-align: inherit;
-    color: #9b4dee !important;
-    padding: 0.92857143em 0.78571429em;
-    vertical-align: inherit;
-    font-style: none;
-    font-weight: bold;
-    text-transform: none;
-    border-bottom: 1px solid rgba(34, 36, 38, 0.1);
-    border-left: none;
-  }
-  .ui.table thead tr > th:first-child {
-    border-left: none;
-  }
-  .ui.table thead tr:first-child > th:first-child {
-    border-radius: 0.28571429rem 0em 0em 0em;
-  }
-  .ui.table thead tr:first-child > th:last-child {
-    border-radius: 0em 0.28571429rem 0em 0em;
-  }
-  .ui.table thead tr:first-child > th:only-child {
-    border-radius: 0.28571429rem 0.28571429rem 0em 0em;
-  }
-
-  /* Footer */
-  .ui.table tfoot {
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    margin-top: 20px;
-  }
-  .ui.table tfoot th {
-    cursor: auto;
-    border-top: 1px solid rgba(34, 36, 38, 0.15);
-    background: #f9fafb;
-    text-align: inherit;
-    color: rgba(0, 0, 0, 0.87);
-    padding: 0.78571429em 0.78571429em;
-    vertical-align: middle;
-    font-style: normal;
-    font-weight: normal;
-    text-transform: none;
-  }
-  .ui.table tfoot tr > th:first-child {
-    border-left: none;
-  }
-  .ui.table tfoot tr:first-child > th:first-child {
-    border-radius: 0em 0em 0em 0.28571429rem;
-  }
-  .ui.table tfoot tr:first-child > th:last-child {
-    border-radius: 0em 0em 0.28571429rem 0em;
-  }
-  .ui.table tfoot tr:first-child > th:only-child {
-    border-radius: 0em 0em 0.28571429rem 0.28571429rem;
-  }
-
-  /* Table Row */
-  .ui.table tr td {
-    border-top: 1px solid rgba(34, 36, 38, 0.1);
-  }
-  .ui.table tr:first-child td {
-    border-top: none;
-  }
-
-  /* Repeated tbody */
-  .ui.table tbody + tbody tr:first-child td {
-    border-top: 1px solid rgba(34, 36, 38, 0.1);
-  }
-
-  /* Table Cells */
-  .ui.table td {
-    padding: 0.78571429em 0.78571429em;
-    text-align: inherit;
-  }
-
-  /* Icons */
-  .ui.table > .icon {
-    vertical-align: baseline;
-  }
-  .ui.table > .icon:only-child {
-    margin: 0em;
-  }
-
-  /* Table Segment */
-  .ui.table.segment {
-    padding: 0em;
-  }
-  .ui.table.segment:after {
-    display: none;
-  }
-  .ui.table.segment.stacked:after {
-    display: block;
-  }
-
-  /* Responsive */
-  @media only screen and (max-width: 767px) {
-    .ui.table:not(.unstackable) {
-      width: 100%;
-    }
-    .ui.table:not(.unstackable) tbody,
-    .ui.table:not(.unstackable) tr,
-    .ui.table:not(.unstackable) tr > th,
-    .ui.table:not(.unstackable) tr > td {
-      width: auto !important;
-      display: block !important;
-    }
-    .ui.table:not(.unstackable) {
-      padding: 0em;
-    }
-    .ui.table:not(.unstackable) thead {
-      display: block;
-    }
-    .ui.table:not(.unstackable) tfoot {
-      display: block;
-    }
-    .ui.table:not(.unstackable) tr {
-      padding-top: 1em;
-      padding-bottom: 1em;
-      -webkit-box-shadow: 0px -1px 0px 0px rgba(0, 0, 0, 0.1) inset !important;
-      box-shadow: 0px -1px 0px 0px rgba(0, 0, 0, 0.1) inset !important;
-    }
-    .ui.table:not(.unstackable) tr > th,
-    .ui.table:not(.unstackable) tr > td {
-      background: none;
-      border: none !important;
-      padding: 0.25em 0.75em !important;
-      -webkit-box-shadow: none !important;
-      box-shadow: none !important;
-    }
-    .ui.table:not(.unstackable) th:first-child,
-    .ui.table:not(.unstackable) td:first-child {
-      font-weight: bold;
-    }
-
-    /* Definition Table */
-    .ui.definition.table:not(.unstackable) thead th:first-child {
-      -webkit-box-shadow: none !important;
-      box-shadow: none !important;
-    }
-  }
-
-  /*******************************
-              Coupling
-  *******************************/
-
-  /* UI Image */
-  .ui.table th .image,
-  .ui.table th .image img,
-  .ui.table td .image,
-  .ui.table td .image img {
-    max-width: none;
-  }
-
-  /*******************************
-               Types
-  *******************************/
-
-  /*--------------
-      Complex
-  ---------------*/
-
-  .ui.structured.table {
-    border-collapse: collapse;
-  }
-  .ui.structured.table thead th {
-    border-left: none;
-    border-right: none;
-  }
-  .ui.structured.sortable.table thead th {
-    border-left: 1px solid rgba(34, 36, 38, 0.15);
-    border-right: 1px solid rgba(34, 36, 38, 0.15);
-  }
-  .ui.structured.basic.table th {
-    border-left: none;
-    border-right: none;
-  }
-  .ui.structured.celled.table tr th,
-  .ui.structured.celled.table tr td {
-    border-left: 1px solid rgba(34, 36, 38, 0.1);
-    border-right: 1px solid rgba(34, 36, 38, 0.1);
-  }
-
-  /*--------------
-     Definition
-  ---------------*/
-
-  .ui.definition.table thead:not(.full-width) th:first-child {
-    pointer-events: none;
-    background: transparent;
-    font-weight: normal;
-    color: rgba(0, 0, 0, 0.4);
-    -webkit-box-shadow: -1px -1px 0px 1px #ffffff;
-    box-shadow: -1px -1px 0px 1px #ffffff;
-  }
-  .ui.definition.table tfoot:not(.full-width) th:first-child {
-    pointer-events: none;
-    background: transparent;
-    font-weight: rgba(0, 0, 0, 0.4);
-    color: normal;
-    -webkit-box-shadow: 1px 1px 0px 1px #ffffff;
-    box-shadow: 1px 1px 0px 1px #ffffff;
-  }
-
-  /* Remove Border */
-  .ui.celled.definition.table thead:not(.full-width) th:first-child {
-    -webkit-box-shadow: 0px -1px 0px 1px #ffffff;
-    box-shadow: 0px -1px 0px 1px #ffffff;
-  }
-  .ui.celled.definition.table tfoot:not(.full-width) th:first-child {
-    -webkit-box-shadow: 0px 1px 0px 1px #ffffff;
-    box-shadow: 0px 1px 0px 1px #ffffff;
-  }
-
-  /* Highlight Defining Column */
-  .ui.definition.table tr td:first-child:not(.ignored),
-  .ui.definition.table tr td.definition {
-    background: none;
-    font-weight: bold;
-    color: ${0};
-    text-transform: '';
-    -webkit-box-shadow: '';
-    box-shadow: '';
-    text-align: '';
-    font-size: 1em;
-    padding-left: '';
-    padding-right: '';
-  }
-
-  /* Fix 2nd Column */
-  .ui.definition.table thead:not(.full-width) th:nth-child(2) {
-    border-left: 1px solid rgba(34, 36, 38, 0.15);
-  }
-  .ui.definition.table tfoot:not(.full-width) th:nth-child(2) {
-    border-left: 1px solid rgba(34, 36, 38, 0.15);
-  }
-  .ui.definition.table td:nth-child(2) {
-    border-left: 1px solid rgba(34, 36, 38, 0.15);
-  }
-
-  /*******************************
-               States
-  *******************************/
-
-  /*--------------
-      Positive
-  ---------------*/
-
-  .ui.table tr.positive,
-  .ui.table td.positive {
-    -webkit-box-shadow: 0px 0px 0px #a3c293 inset;
-    box-shadow: 0px 0px 0px #a3c293 inset;
-  }
-  .ui.table tr.positive,
-  .ui.table td.positive {
-    background: #fcfff5 !important;
-    color: #2c662d !important;
-  }
-
-  /*--------------
-       Negative
-  ---------------*/
-
-  .ui.table tr.negative,
-  .ui.table td.negative {
-    -webkit-box-shadow: 0px 0px 0px #e0b4b4 inset;
-    box-shadow: 0px 0px 0px #e0b4b4 inset;
-  }
-  .ui.table tr.negative,
-  .ui.table td.negative {
-    background: #fff6f6 !important;
-    color: #9f3a38 !important;
-  }
-
-  /*--------------
-        Error
-  ---------------*/
-
-  .ui.table tr.error,
-  .ui.table td.error {
-    -webkit-box-shadow: 0px 0px 0px #e0b4b4 inset;
-    box-shadow: 0px 0px 0px #e0b4b4 inset;
-  }
-  .ui.table tr.error,
-  .ui.table td.error {
-    background: #fff6f6 !important;
-    color: #9f3a38 !important;
-  }
-
-  /*--------------
-       Warning
-  ---------------*/
-
-  .ui.table tr.warning,
-  .ui.table td.warning {
-    -webkit-box-shadow: 0px 0px 0px #c9ba9b inset;
-    box-shadow: 0px 0px 0px #c9ba9b inset;
-  }
-  .ui.table tr.warning,
-  .ui.table td.warning {
-    background: #fffaf3 !important;
-    color: #573a08 !important;
-  }
-
-  /*--------------
-       Active
-  ---------------*/
-
-  .ui.table tr.active,
-  .ui.table td.active {
-    -webkit-box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.87) inset;
-    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.87) inset;
-  }
-  .ui.table tr.active,
-  .ui.table td.active {
-    background: #e0e0e0 !important;
-    color: rgba(0, 0, 0, 0.87) !important;
-  }
-
-  /*--------------
-       Disabled
-  ---------------*/
-
-  .ui.table tr.disabled td,
-  .ui.table tr td.disabled,
-  .ui.table tr.disabled:hover,
-  .ui.table tr:hover td.disabled {
-    pointer-events: none;
-    color: rgba(40, 40, 40, 0.3);
-  }
-
-  /*******************************
-            Variations
-  *******************************/
-
-  /*--------------
-      Stackable
-  ---------------*/
-
-  @media only screen and (max-width: 991px) {
-    .ui[class*='tablet stackable'].table,
-    .ui[class*='tablet stackable'].table tbody,
-    .ui[class*='tablet stackable'].table tr,
-    .ui[class*='tablet stackable'].table tr > th,
-    .ui[class*='tablet stackable'].table tr > td {
-      width: 100% !important;
-      display: block !important;
-    }
-    .ui[class*='tablet stackable'].table {
-      padding: 0em;
-    }
-    .ui[class*='tablet stackable'].table thead {
-      display: block;
-    }
-    .ui[class*='tablet stackable'].table tfoot {
-      display: block;
-    }
-    .ui[class*='tablet stackable'].table tr {
-      padding-top: 1em;
-      padding-bottom: 1em;
-      -webkit-box-shadow: 0px -1px 0px 0px rgba(0, 0, 0, 0.1) inset !important;
-      box-shadow: 0px -1px 0px 0px rgba(0, 0, 0, 0.1) inset !important;
-    }
-    .ui[class*='tablet stackable'].table tr > th,
-    .ui[class*='tablet stackable'].table tr > td {
-      background: none;
-      border: none !important;
-      padding: 0.25em 0.75em;
-      -webkit-box-shadow: none !important;
-      box-shadow: none !important;
-    }
-
-    /* Definition Table */
-    .ui.definition[class*='tablet stackable'].table thead th:first-child {
-      -webkit-box-shadow: none !important;
-      box-shadow: none !important;
-    }
-  }
-
-  /*--------------
-   Text Alignment
-  ---------------*/
-
-  .ui.table[class*='left aligned'],
-  .ui.table [class*='left aligned'] {
-    text-align: left;
-  }
-  .ui.table[class*='center aligned'],
-  .ui.table [class*='center aligned'] {
-    text-align: center;
-  }
-  .ui.table[class*='right aligned'],
-  .ui.table [class*='right aligned'] {
-    text-align: right;
-  }
-
-  /*------------------
-   Vertical Alignment
-  ------------------*/
-
-  .ui.table[class*='top aligned'],
-  .ui.table [class*='top aligned'] {
-    vertical-align: top;
-  }
-  .ui.table[class*='middle aligned'],
-  .ui.table [class*='middle aligned'] {
-    vertical-align: middle;
-  }
-  .ui.table[class*='bottom aligned'],
-  .ui.table [class*='bottom aligned'] {
-    vertical-align: bottom;
-  }
-
-  /*--------------
-      Collapsing
-  ---------------*/
-
-  .ui.table th.collapsing,
-  .ui.table td.collapsing {
-    width: 1px;
-    white-space: nowrap;
-  }
-
-  /*--------------
-       Fixed
-  ---------------*/
-
-  .ui.fixed.table {
-    table-layout: fixed;
-  }
-  .ui.fixed.table th,
-  .ui.fixed.table td {
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-  /*--------------
-     Selectable
-  ---------------*/
-
-  .ui.selectable.table tbody tr:hover,
-  .ui.table tbody tr td.selectable:hover {
-    background: rgba(0, 0, 0, 0.05) !important;
-    color: rgba(0, 0, 0, 0.95) !important;
-  }
-  .ui.selectable.inverted.table tbody tr:hover,
-  .ui.inverted.table tbody tr td.selectable:hover {
-    background: rgba(255, 255, 255, 0.08) !important;
-    color: #ffffff !important;
-  }
-
-  /* Selectable Cell Link */
-  .ui.table tbody tr td.selectable {
-    padding: 0em;
-  }
-  .ui.table tbody tr td.selectable > a:not(.ui) {
-    display: block;
-    color: inherit;
-    padding: 0.78571429em 0.78571429em;
-  }
-
-  /* Other States */
-  .ui.selectable.table tr.error:hover,
-  .ui.table tr td.selectable.error:hover,
-  .ui.selectable.table tr:hover td.error {
-    background: #ffe7e7 !important;
-    color: #943634 !important;
-  }
-  .ui.selectable.table tr.warning:hover,
-  .ui.table tr td.selectable.warning:hover,
-  .ui.selectable.table tr:hover td.warning {
-    background: #fff4e4 !important;
-    color: #493107 !important;
-  }
-  .ui.selectable.table tr.active:hover,
-  .ui.table tr td.selectable.active:hover,
-  .ui.selectable.table tr:hover td.active {
-    background: #e0e0e0 !important;
-    color: rgba(0, 0, 0, 0.87) !important;
-  }
-  .ui.selectable.table tr.positive:hover,
-  .ui.table tr td.selectable.positive:hover,
-  .ui.selectable.table tr:hover td.positive {
-    background: #f7ffe6 !important;
-    color: #275b28 !important;
-  }
-  .ui.selectable.table tr.negative:hover,
-  .ui.table tr td.selectable.negative:hover,
-  .ui.selectable.table tr:hover td.negative {
-    background: #ffe7e7 !important;
-    color: #943634 !important;
-  }
-
-  /*-------------------
-        Attached
-  --------------------*/
-
-  /* Middle */
-  .ui.attached.table {
-    top: 0px;
-    bottom: 0px;
-    border-radius: 0px;
-    margin: 0em -1px;
-    width: calc(100% - (-1px * 2));
-    max-width: calc(100% - (-1px * 2));
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    border: 1px solid #d4d4d5;
-  }
-  .ui.attached + .ui.attached.table:not(.top) {
-    border-top: none;
-  }
-
-  /* Top */
-  .ui[class*='top attached'].table {
-    bottom: 0px;
-    margin-bottom: 0em;
-    top: 0px;
-    margin-top: 1em;
-    border-radius: 0.28571429rem 0.28571429rem 0em 0em;
-  }
-  .ui.table[class*='top attached']:first-child {
-    margin-top: 0em;
-  }
-
-  /* Bottom */
-  .ui[class*='bottom attached'].table {
-    bottom: 0px;
-    margin-top: 0em;
-    top: 0px;
-    margin-bottom: 1em;
-    -webkit-box-shadow: none, none;
-    box-shadow: none, none;
-    border-radius: 0em 0em 0.28571429rem 0.28571429rem;
-  }
-  .ui[class*='bottom attached'].table:last-child {
-    margin-bottom: 0em;
-  }
-
-  /*--------------
-       Striped
-  ---------------*/
-
-  /* Table Striping */
-  .ui.striped.table > tr:nth-child(2n),
-  .ui.striped.table tbody tr:nth-child(2n) {
-    background-color: rgba(0, 0, 50, 0.02);
-  }
-
-  /* Stripes */
-  .ui.inverted.striped.table > tr:nth-child(2n),
-  .ui.inverted.striped.table tbody tr:nth-child(2n) {
-    background-color: rgba(255, 255, 255, 0.05);
-  }
-
-  /* Allow striped active hover */
-  .ui.striped.selectable.selectable.selectable.table tbody tr.active:hover {
-    background: #efefef !important;
-    color: rgba(0, 0, 0, 0.95) !important;
-  }
-
-  /*--------------
-     Single Line
-  ---------------*/
-
-  .ui.table[class*='single line'],
-  .ui.table [class*='single line'] {
-    white-space: nowrap;
-  }
-  .ui.table[class*='single line'],
-  .ui.table [class*='single line'] {
-    white-space: nowrap;
-  }
-
-  /*-------------------
-         Colors
-  --------------------*/
-
-  /* Red */
-  .ui.red.table {
-    border-top: 0.2em solid #db2828;
-  }
-  .ui.inverted.red.table {
-    background-color: #db2828 !important;
-    color: #ffffff !important;
-  }
-
-  /* Orange */
-  .ui.orange.table {
-    border-top: 0.2em solid #f2711c;
-  }
-  .ui.inverted.orange.table {
-    background-color: #f2711c !important;
-    color: #ffffff !important;
-  }
-
-  /* Yellow */
-  .ui.yellow.table {
-    border-top: 0.2em solid #fbbd08;
-  }
-  .ui.inverted.yellow.table {
-    background-color: #fbbd08 !important;
-    color: #ffffff !important;
-  }
-
-  /* Olive */
-  .ui.olive.table {
-    border-top: 0.2em solid #b5cc18;
-  }
-  .ui.inverted.olive.table {
-    background-color: #b5cc18 !important;
-    color: #ffffff !important;
-  }
-
-  /* Green */
-  .ui.green.table {
-    border-top: 0.2em solid #21ba45;
-  }
-  .ui.inverted.green.table {
-    background-color: #21ba45 !important;
-    color: #ffffff !important;
-  }
-
-  /* Teal */
-  .ui.teal.table {
-    border-top: 0.2em solid #00b5ad;
-  }
-  .ui.inverted.teal.table {
-    background-color: #00b5ad !important;
-    color: #ffffff !important;
-  }
-
-  /* Blue */
-  .ui.blue.table {
-    border-top: 0.2em solid #2185d0;
-  }
-  .ui.inverted.blue.table {
-    background-color: #2185d0 !important;
-    color: #ffffff !important;
-  }
-
-  /* Violet */
-  .ui.violet.table {
-    border-top: 0.2em solid #6435c9;
-  }
-  .ui.inverted.violet.table {
-    background-color: #6435c9 !important;
-    color: #ffffff !important;
-  }
-
-  /* Purple */
-  .ui.purple.table {
-    border-top: 0.2em solid #a333c8;
-  }
-  .ui.inverted.purple.table {
-    background-color: #a333c8 !important;
-    color: #ffffff !important;
-  }
-
-  /* Pink */
-  .ui.pink.table {
-    border-top: 0.2em solid #e03997;
-  }
-  .ui.inverted.pink.table {
-    background-color: #e03997 !important;
-    color: #ffffff !important;
-  }
-
-  /* Brown */
-  .ui.brown.table {
-    border-top: 0.2em solid #a5673f;
-  }
-  .ui.inverted.brown.table {
-    background-color: #a5673f !important;
-    color: #ffffff !important;
-  }
-
-  /* Grey */
-  .ui.grey.table {
-    border-top: 0.2em solid #767676;
-  }
-  .ui.inverted.grey.table {
-    background-color: #767676 !important;
-    color: #ffffff !important;
-  }
-
-  /* Black */
-  .ui.black.table {
-    border-top: 0.2em solid #1b1c1d;
-  }
-  .ui.inverted.black.table {
-    background-color: #1b1c1d !important;
-    color: #ffffff !important;
-  }
-
-  /*--------------
-    Column Count
-  ---------------*/
-
-  /* Grid Based */
-  .ui.one.column.table td {
-    width: 100%;
-  }
-  .ui.two.column.table td {
-    width: 50%;
-  }
-  .ui.three.column.table td {
-    width: 33.33333333%;
-  }
-  .ui.four.column.table td {
-    width: 25%;
-  }
-  .ui.five.column.table td {
-    width: 20%;
-  }
-  .ui.six.column.table td {
-    width: 16.66666667%;
-  }
-  .ui.seven.column.table td {
-    width: 14.28571429%;
-  }
-  .ui.eight.column.table td {
-    width: 12.5%;
-  }
-  .ui.nine.column.table td {
-    width: 11.11111111%;
-  }
-  .ui.ten.column.table td {
-    width: 10%;
-  }
-  .ui.eleven.column.table td {
-    width: 9.09090909%;
-  }
-  .ui.twelve.column.table td {
-    width: 8.33333333%;
-  }
-  .ui.thirteen.column.table td {
-    width: 7.69230769%;
-  }
-  .ui.fourteen.column.table td {
-    width: 7.14285714%;
-  }
-  .ui.fifteen.column.table td {
-    width: 6.66666667%;
-  }
-  .ui.sixteen.column.table td {
-    width: 6.25%;
-  }
-
-  /* Column Width */
-  .ui.table th.one.wide,
-  .ui.table td.one.wide {
-    width: 6.25%;
-  }
-  .ui.table th.two.wide,
-  .ui.table td.two.wide {
-    width: 12.5%;
-  }
-  .ui.table th.three.wide,
-  .ui.table td.three.wide {
-    width: 18.75%;
-  }
-  .ui.table th.four.wide,
-  .ui.table td.four.wide {
-    width: 25%;
-  }
-  .ui.table th.five.wide,
-  .ui.table td.five.wide {
-    width: 31.25%;
-  }
-  .ui.table th.six.wide,
-  .ui.table td.six.wide {
-    width: 37.5%;
-  }
-  .ui.table th.seven.wide,
-  .ui.table td.seven.wide {
-    width: 43.75%;
-  }
-  .ui.table th.eight.wide,
-  .ui.table td.eight.wide {
-    width: 50%;
-  }
-  .ui.table th.nine.wide,
-  .ui.table td.nine.wide {
-    width: 56.25%;
-  }
-  .ui.table th.ten.wide,
-  .ui.table td.ten.wide {
-    width: 62.5%;
-  }
-  .ui.table th.eleven.wide,
-  .ui.table td.eleven.wide {
-    width: 68.75%;
-  }
-  .ui.table th.twelve.wide,
-  .ui.table td.twelve.wide {
-    width: 75%;
-  }
-  .ui.table th.thirteen.wide,
-  .ui.table td.thirteen.wide {
-    width: 81.25%;
-  }
-  .ui.table th.fourteen.wide,
-  .ui.table td.fourteen.wide {
-    width: 87.5%;
-  }
-  .ui.table th.fifteen.wide,
-  .ui.table td.fifteen.wide {
-    width: 93.75%;
-  }
-  .ui.table th.sixteen.wide,
-  .ui.table td.sixteen.wide {
-    width: 100%;
-  }
-
-  /*--------------
-      Sortable
-  ---------------*/
-
-  .ui.sortable.table thead th {
-    cursor: pointer;
-    white-space: nowrap;
-    border-left: 1px solid rgba(34, 36, 38, 0.15);
-    color: rgba(0, 0, 0, 0.87);
-  }
-  .ui.sortable.table thead th:first-child {
-    border-left: none;
-  }
-  .ui.sortable.table thead th.sorted,
-  .ui.sortable.table thead th.sorted:hover {
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-  }
-  .ui.sortable.table thead th:after {
-    display: none;
-    font-style: normal;
-    font-weight: normal;
-    text-decoration: inherit;
-    content: '';
-    height: 1em;
-    width: auto;
-    opacity: 0.8;
-    margin: 0em 0em 0em 0.5em;
-    font-family: 'Icons';
-  }
-  .ui.sortable.table thead th.ascending:after {
-    content: '\f0d8';
-  }
-  .ui.sortable.table thead th.descending:after {
-    content: '\f0d7';
-  }
-
-  /* Hover */
-  .ui.sortable.table th.disabled:hover {
-    cursor: auto;
-    color: rgba(40, 40, 40, 0.3);
-  }
-  .ui.sortable.table thead th:hover {
-    background: rgba(0, 0, 0, 0.05);
-    color: rgba(0, 0, 0, 0.8);
-  }
-
-  /* Sorted */
-  .ui.sortable.table thead th.sorted {
-    background: rgba(0, 0, 0, 0.05);
-    color: rgba(0, 0, 0, 0.95);
-  }
-  .ui.sortable.table thead th.sorted:after {
-    display: inline-block;
-  }
-
-  /* Sorted Hover */
-  .ui.sortable.table thead th.sorted:hover {
-    background: rgba(0, 0, 0, 0.05);
-    color: rgba(0, 0, 0, 0.95);
-  }
-
-  /* Inverted */
-  .ui.inverted.sortable.table thead th.sorted {
-    background: rgba(255, 255, 255, 0.15) -webkit-gradient(linear, left top, left
-          bottom, from(transparent), to(rgba(0, 0, 0, 0.05)));
-    background: rgba(255, 255, 255, 0.15) -webkit-linear-gradient(transparent, rgba(0, 0, 0, 0.05));
-    background: rgba(255, 255, 255, 0.15)
-      linear-gradient(transparent, rgba(0, 0, 0, 0.05));
-    color: #ffffff;
-  }
-  .ui.inverted.sortable.table thead th:hover {
-    background: rgba(255, 255, 255, 0.08) -webkit-gradient(linear, left top, left
-          bottom, from(transparent), to(rgba(0, 0, 0, 0.05)));
-    background: rgba(255, 255, 255, 0.08) -webkit-linear-gradient(transparent, rgba(0, 0, 0, 0.05));
-    background: rgba(255, 255, 255, 0.08)
-      linear-gradient(transparent, rgba(0, 0, 0, 0.05));
-    color: #ffffff;
-  }
-  .ui.inverted.sortable.table thead th {
-    border-left-color: transparent;
-    border-right-color: transparent;
-  }
-
-  /*--------------
-      Inverted
-  ---------------*/
-
-  /* Text Color */
-  .ui.inverted.table {
-    background: #333333;
-    color: rgba(255, 255, 255, 0.9);
-    border: none;
-  }
-  .ui.inverted.table th {
-    background-color: rgba(0, 0, 0, 0.15);
-    border-color: rgba(255, 255, 255, 0.1) !important;
-    color: rgba(255, 255, 255, 0.9) !important;
-  }
-  .ui.inverted.table tr td {
-    border-color: rgba(255, 255, 255, 0.1) !important;
-  }
-  .ui.inverted.table tr.disabled td,
-  .ui.inverted.table tr td.disabled,
-  .ui.inverted.table tr.disabled:hover td,
-  .ui.inverted.table tr:hover td.disabled {
-    pointer-events: none;
-    color: rgba(225, 225, 225, 0.3);
-  }
-
-  /* Definition */
-  .ui.inverted.definition.table tfoot:not(.full-width) th:first-child,
-  .ui.inverted.definition.table thead:not(.full-width) th:first-child {
-    background: #ffffff;
-  }
-  .ui.inverted.definition.table tr td:first-child {
-    background: rgba(255, 255, 255, 0.02);
-    color: #ffffff;
-  }
-
-  /*--------------
-     Collapsing
-  ---------------*/
-
-  .ui.collapsing.table {
-    width: auto;
-  }
-
-  /*--------------
-        Basic
-  ---------------*/
-
-  .ui.basic.table {
-    background: transparent;
-    border: 1px solid rgba(34, 36, 38, 0.15);
-    -webkit-box-shadow: none;
-    box-shadow: none;
-  }
-  .ui.basic.table thead,
-  .ui.basic.table tfoot {
-    -webkit-box-shadow: none;
-    box-shadow: none;
-  }
-  .ui.basic.table th {
-    background: transparent;
-    border-left: none;
-  }
-  .ui.basic.table tbody tr {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  }
-  .ui.basic.table td {
-    background: transparent;
-  }
-  .ui.basic.striped.table tbody tr:nth-child(2n) {
-    background-color: rgba(0, 0, 0, 0.05) !important;
-  }
-
-  /* Very Basic */
-  .ui[class*='very basic'].table {
-    border: none;
-  }
-  .ui[class*='very basic'].table:not(.sortable):not(.striped) th,
-  .ui[class*='very basic'].table:not(.sortable):not(.striped) td {
-    padding: '';
-  }
-  .ui[class*='very basic'].table:not(.sortable):not(.striped) th:first-child,
-  .ui[class*='very basic'].table:not(.sortable):not(.striped) td:first-child {
-    padding-left: 0em;
-  }
-  .ui[class*='very basic'].table:not(.sortable):not(.striped) th:last-child,
-  .ui[class*='very basic'].table:not(.sortable):not(.striped) td:last-child {
-    padding-right: 0em;
-  }
-  .ui[class*='very basic'].table:not(.sortable):not(.striped)
-    thead
-    tr:first-child
-    th {
-    padding-top: 0em;
-  }
-
-  /*--------------
-       Celled
-  ---------------*/
-
-  .ui.celled.table tr th,
-  .ui.celled.table tr td {
-    border-left: 1px solid rgba(34, 36, 38, 0.1);
-  }
-  .ui.celled.table tr th:first-child,
-  .ui.celled.table tr td:first-child {
-    border-left: none;
-  }
-
-  /*--------------
-       Padded
-  ---------------*/
-
-  .ui.padded.table th {
-    padding-left: 1em;
-    padding-right: 1em;
-  }
-  .ui.padded.table th,
-  .ui.padded.table td {
-    padding: 1em 1em;
-  }
-
-  /* Very */
-  .ui[class*='very padded'].table th {
-    padding-left: 1.5em;
-    padding-right: 1.5em;
-  }
-  .ui[class*='very padded'].table td {
-    padding: 1.5em 1.5em;
-  }
-
-  /*--------------
-       Compact
-  ---------------*/
-
-  .ui.compact.table th {
-    padding-left: 0.7em;
-    padding-right: 0.7em;
-  }
-  .ui.compact.table td {
-    padding: 0.5em 0.7em;
-  }
-
-  /* Very */
-  .ui[class*='very compact'].table th {
-    padding-left: 0.6em;
-    padding-right: 0.6em;
-  }
-  .ui[class*='very compact'].table td {
-    padding: 0.4em 0.6em;
-  }
-
-  /*--------------
-        Sizes
-  ---------------*/
-
-  /* Small */
-  .ui.small.table {
-    font-size: 0.9em;
-  }
-
-  /* Standard */
-  .ui.table {
-    font-size: 1em;
-  }
-
-  /* Large */
-  .ui.large.table {
-    font-size: 1.1em;
-  }
-
-  /*******************************
-           Site Overrides
-  *******************************/
-`), props => props.hasMore || props.hasPagination ? '20px' : '0', colors.brand10);
-
-const _excluded = ["children", "title", "titleStyle", "titleClassName", "message", "messageStyle", "messageClassName", "hasMore", "hasMoreText", "pagination"];
-
-function TableComponent(_ref) {
-  let {
-    children,
-    title,
-    titleStyle,
-    titleClassName,
-    message,
-    messageStyle,
-    messageClassName,
-    hasMore,
-    hasMoreText,
-    pagination
-  } = _ref,
-      rest = _objectWithoutPropertiesLoose$3(_ref, _excluded);
-
-  return jsxs("div", {
-    children: [title || message ? jsxs(Header, {
-      children: [jsx(Title, Object.assign({
-        style: titleStyle,
-        className: titleClassName
-      }, {
-        children: title
-      }), void 0), jsx(Message, Object.assign({
-        style: messageStyle,
-        className: messageClassName
-      }, {
-        children: message
-      }), void 0)]
-    }, void 0) : null, jsx(Container, Object.assign({
-      hasMore: !!hasMore,
-      hasPagination: !!pagination
-    }, {
-      children: jsx(Table$1, Object.assign({}, rest, {
-        children: children
-      }), void 0)
-    }), void 0), hasMore ? jsx(ButtonMain, {
-      "data-testid": "hasmore-button",
-      secondary: true,
-      textFirst: hasMoreText || 'ver a',
-      textEnd: !hasMoreText ? '' : 'lista completa',
-      notStrong: !!hasMoreText,
-      onClick: hasMore
-    }, void 0) : null, pagination ? jsxs("div", {
-      children: [jsx("br", {}, void 0), pagination]
-    }, void 0) : null]
-  }, void 0);
-}
-
-const Table = TableComponent;
-Table.Row = TableRow;
-Table.Header = TableHeader;
-Table.HeaderCell = TableHeaderCell;
-Table.Body = TableBody;
-Table.Cell = TableCell;
-Table.Footer = TableFooter;
-
-let _ = t => t,
-    _t,
-    _t2,
-    _t3;
-const ContainerPagination = styled.div(_t || (_t = _`
-  display: flex;
-
-  justify-content: center;
-  align-items: center;
-
-  button + button {
-    margin-left: 0.5rem;
-  }
-`));
-const Button = styled.button(_t2 || (_t2 = _`
-  color: ${0};
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  background-color: ${0};
-  border: 1px solid ${0};
-  font-size: 1.125rem;
-  font-weight: 500;
-
-  width: 3rem;
-  height: 3rem;
-  border-radius: 10px;
-
-  &:not(:disabled):hover {
-    background-color: ${0};
-    transition: background-color 0.4s;
-  }
-
-  &:disabled {
-    border: none;
-    cursor: default;
-    opacity: 0.75;
-  }
-
-  ${0}
-`), colors.brand10, colors.white, colors.hover, colors.hover, props => props.active ? css$1(_t3 || (_t3 = _`
-          background-color: ${0};
-          color: ${0};
-        `), colors.brand10, colors.white) : ''); // font-family: MontSerrat !important;
-// /*--------------
-//  Pagination
-// ---------------*/
-// .ui.pagination.menu {
-//   margin: 0em;
-//   display: -webkit-inline-box;
-//   display: -ms-inline-flexbox;
-//   display: inline-flex;
-//   vertical-align: middle;
-// }
-// .ui.pagination.menu .item:last-child {
-//   border-radius: 0em 0.28571429rem 0.28571429rem 0em;
-// }
-// .ui.compact.menu .item:last-child {
-//   border-radius: 0em 0.28571429rem 0.28571429rem 0em;
-// }
-// .ui.pagination.menu .item:last-child:before {
-//   display: none;
-// }
-// .ui.pagination.menu .item {
-//   font-family: MontSerrat !important;
-//   min-width: 3em;
-//   text-align: center;
-// }
-// .ui.pagination.menu .icon.item i.icon {
-//   vertical-align: top;
-// }
-// /* Active */
-// .ui.pagination.menu .active.item {
-//   border-top: none;
-//   padding-top: 0.92857143em;
-//   background-color: rgba(0, 0, 0, 0.05);
-//   color: rgba(0, 0, 0, 0.95);
-//   -webkit-box-shadow: none;
-//   box-shadow: none;
-// }
-
-const brothersCount = 2;
-
-function generatePagesArray(from, to) {
-  return [...new Array(to - from)].map((_, index) => {
-    return from + index + 1;
-  }).filter(page => page > 0);
-}
-
-function Pagination({
-  totalCount,
-  currentPage = 1,
-  limitPerPage = 30,
-  onPageChange,
-  doubleJumpArrow = false,
-  disabled = false
-}) {
-  const totalPages = Math.ceil(totalCount / limitPerPage);
-  const previousPages = useMemo(() => {
-    if (currentPage > 1) {
-      return generatePagesArray(currentPage - (brothersCount + 1), currentPage - 1);
-    }
-
-    return [];
-  }, [currentPage]);
-  const nextPages = useMemo(() => {
-    if (currentPage < totalPages) {
-      return generatePagesArray(currentPage, Math.min(totalPages, currentPage + brothersCount));
-    }
-
-    return [];
-  }, [currentPage]);
-
-  function handlePageChange(event) {
-    const newPage = Number(event.currentTarget.value);
-    return onPageChange && onPageChange(newPage);
-  }
-
-  return jsxs(ContainerPagination, {
-    children: [doubleJumpArrow && jsx(Button, Object.assign({
-      disabled: currentPage == 1 || disabled,
-      value: 1,
-      onClick: handlePageChange,
-      active: currentPage == 1
-    }, {
-      children: jsx(FontAwesomeIcon, {
-        icon: faAngleDoubleLeft
-      }, void 0)
-    }), void 0), jsx(Button, Object.assign({
-      onClick: handlePageChange,
-      value: currentPage - 1,
-      disabled: currentPage == 1 || disabled,
-      active: currentPage == 1
-    }, {
-      children: jsx(FontAwesomeIcon, {
-        icon: faAngleLeft
-      }, void 0)
-    }), void 0), currentPage >= brothersCount + 2 && jsxs(Fragment$1, {
-      children: [jsx(Button, Object.assign({
-        onClick: handlePageChange,
-        value: 1,
-        disabled: disabled
-      }, {
-        children: 1
-      }), void 0), currentPage > brothersCount + 2 && jsx(Button, Object.assign({
-        disabled: disabled
-      }, {
-        children: "..."
-      }), void 0)]
-    }, void 0), previousPages.map(value => jsx(Button, Object.assign({
-      onClick: handlePageChange,
-      value: value,
-      disabled: disabled
-    }, {
-      children: value
-    }), value)), jsx(Button, Object.assign({
-      onClick: handlePageChange,
-      disabled: true,
-      value: currentPage,
-      active: true
-    }, {
-      children: currentPage
-    }), void 0), nextPages.map(value => jsx(Button, Object.assign({
-      onClick: handlePageChange,
-      disabled: disabled,
-      value: value
-    }, {
-      children: value
-    }), value)), totalPages >= currentPage + brothersCount + 1 && jsxs(Fragment$1, {
-      children: [totalPages > currentPage + brothersCount + 1 && jsx(Button, Object.assign({
-        disabled: disabled
-      }, {
-        children: "..."
-      }), void 0), jsx(Button, Object.assign({
-        onClick: handlePageChange,
-        disabled: disabled,
-        value: totalPages
-      }, {
-        children: totalPages
-      }), void 0)]
-    }, void 0), jsx(Button, Object.assign({
-      onClick: handlePageChange,
-      value: currentPage + 1,
-      disabled: currentPage == totalPages || disabled,
-      active: currentPage == totalPages
-    }, {
-      children: jsx(FontAwesomeIcon, {
-        icon: faAngleRight
-      }, void 0)
-    }), void 0), doubleJumpArrow && jsx(Button, Object.assign({
-      disabled: currentPage == totalPages || disabled,
-      active: currentPage == totalPages,
-      value: totalPages,
-      onClick: handlePageChange
-    }, {
-      children: jsx(FontAwesomeIcon, {
-        icon: faAngleDoubleRight
-      }, void 0)
-    }), void 0)]
-  }, void 0);
-}
 
 export { Accordion, ButtonMain, Calendar, Card, Checkbox, DialogComponent as Dialog, Dropdown, DropdownForm, InputLine, InputLineForm, Loader, ModalComponent as Modal, MoreLess, Pagination, Radio, Selection, Table, TextArea, TextAreaForm };
 //# sourceMappingURL=index.modern.js.map

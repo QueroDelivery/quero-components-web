@@ -41,6 +41,19 @@ export default {
         },
       },
     },
+    size: {
+      control: {
+        type: 'inline-radio',
+      },
+      options: ['xs', 'sm', 'md', 'lg', 'xl'],
+      description: 'Alterar o tamanho da paginação',
+      defaultValue: 'md',
+      table: {
+        type: {
+          summary: 'xs | sm | md | lg | lx',
+        },
+      },
+    },
   },
 } as Meta;
 
@@ -64,7 +77,7 @@ Default.args = {
   totalCount: 180,
   doubleJumpArrow: true,
   onPageChange: () => {},
-  disabled: true,
+  disabled: false,
 };
 
 Default.parameters = {

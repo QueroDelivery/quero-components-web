@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import React from 'react';
 import {
   faAngleDoubleLeft,
   faAngleDoubleRight,
@@ -6,7 +7,7 @@ import {
   faAngleRight,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { useMemo } from 'react';
+import { sizesTypes } from '../../helpers/FnUtil';
 import { Button, ContainerPagination } from './styles';
 
 export interface PaginationProps {
@@ -16,6 +17,7 @@ export interface PaginationProps {
   onPageChange?: (page: number) => void;
   doubleJumpArrow?: boolean;
   disabled?: boolean;
+  size?: sizesTypes;
 }
 
 const brothersCount = 2;
@@ -28,37 +30,29 @@ function generatePagesArray(from: number, to: number) {
     .filter(page => page > 0);
 }
 
-export function Pagination({
+function Pagination({
   totalCount,
   currentPage = 1,
   limitPerPage = 30,
   onPageChange,
   doubleJumpArrow = false,
   disabled = false,
+  size = 'md',
 }: PaginationProps) {
   const totalPages = Math.ceil(totalCount / limitPerPage);
 
-  const previousPages = useMemo(() => {
-    if (currentPage > 1) {
-      return generatePagesArray(
-        currentPage - (brothersCount + 1),
-        currentPage - 1,
-      );
-    }
+  const previousPages =
+    currentPage > 1
+      ? generatePagesArray(currentPage - (brothersCount + 1), currentPage - 1)
+      : [];
 
-    return [];
-  }, [currentPage]);
-
-  const nextPages = useMemo(() => {
-    if (currentPage < totalPages) {
-      return generatePagesArray(
-        currentPage,
-        Math.min(totalPages, currentPage + brothersCount),
-      );
-    }
-
-    return [];
-  }, [currentPage]);
+  const nextPages =
+    currentPage < totalPages
+      ? generatePagesArray(
+          currentPage,
+          Math.min(totalPages, currentPage + brothersCount),
+        )
+      : [];
 
   function handlePageChange(
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
@@ -68,8 +62,10 @@ export function Pagination({
     return onPageChange && onPageChange(newPage);
   }
 
+  if (totalPages == 0) return null;
+
   return (
-    <ContainerPagination role="group">
+    <ContainerPagination disabledAll={disabled} size={size} role="group">
       {doubleJumpArrow && (
         <Button
           disabled={currentPage == 1 || disabled}
