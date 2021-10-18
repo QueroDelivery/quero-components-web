@@ -18,6 +18,8 @@ export interface PaginationProps {
   doubleJumpArrow?: boolean;
   disabled?: boolean;
   size?: sizesTypes;
+  className?: string;
+  style?: React.CSSProperties;
 }
 
 const brothersCount = 2;
@@ -38,6 +40,8 @@ function Pagination({
   doubleJumpArrow = false,
   disabled = false,
   size = 'md',
+  className,
+  style,
 }: PaginationProps) {
   const totalPages = Math.ceil(totalCount / limitPerPage);
 
@@ -65,7 +69,13 @@ function Pagination({
   if (totalPages == 0) return null;
 
   return (
-    <ContainerPagination disabledAll={disabled} size={size} role="group">
+    <ContainerPagination
+      className={className}
+      style={style}
+      disabledAll={disabled}
+      size={size}
+      role="group"
+    >
       {doubleJumpArrow && (
         <Button
           disabled={currentPage == 1 || disabled}

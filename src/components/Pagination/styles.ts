@@ -33,22 +33,22 @@ export const ContainerPagination = styled.div<IContainerProps>`
 `;
 
 export const Button = styled.button<IButtonProps>`
-  color: ${colors.brand10};
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  background-color: ${colors.white};
+  color: ${props => (props.active ? colors.white : colors.brand10)};
+  background-color: ${props => (props.active ? colors.brand10 : colors.white)};
   border: 1px solid ${colors.hover};
   font-size: 1.125em;
   font-weight: 500;
   width: 2.5em;
   height: 2.5em;
   border-radius: 0.625em;
+  transition: all 0.4s ease;
 
   &:not(:disabled):hover {
     background-color: ${colors.hover};
-    transition: background-color 0.4s;
   }
 
   &:disabled {
@@ -56,12 +56,4 @@ export const Button = styled.button<IButtonProps>`
     cursor: default;
     opacity: 0.75;
   }
-
-  ${props =>
-    props.active
-      ? css`
-          background-color: ${colors.brand10};
-          color: ${colors.white};
-        `
-      : ''}
 `;

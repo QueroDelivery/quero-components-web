@@ -2770,7 +2770,7 @@ let _$f = t => t,
     _t$f,
     _t2$a,
     _t3$9,
-    _t4$7,
+    _t4$6,
     _t5$5,
     _t6$5,
     _t7$5;
@@ -2892,7 +2892,7 @@ const TextEnd = styled.span(_t3$9 || (_t3$9 = _$f`
 
   return 'bold';
 }, props => props.size ? getFontSize(props.size, '1rem') : '1rem');
-const Notification = styled.button(_t4$7 || (_t4$7 = _$f`
+const Notification = styled.button(_t4$6 || (_t4$6 = _$f`
   font-family: MontSerrat !important;
   background-color: ${0};
   height: 40px;
@@ -3254,7 +3254,7 @@ let _$d = t => t,
     _t$d,
     _t2$8,
     _t3$8,
-    _t4$6,
+    _t4$5,
     _t5$4,
     _t6$4,
     _t7$4,
@@ -3278,7 +3278,7 @@ const Background$1 = styled.div(_t$d || (_t$d = _$d`
           opacity: 1;
           visibility: hidden;
         `)));
-const Dialog = styled.div(_t4$6 || (_t4$6 = _$d`
+const Dialog = styled.div(_t4$5 || (_t4$5 = _$d`
   font-family: MontSerrat !important;
   ${0}
 `), props => props.open ? css$1(_t5$4 || (_t5$4 = _$d`
@@ -3459,7 +3459,7 @@ let _$c = t => t,
     _t$c,
     _t2$7,
     _t3$7,
-    _t4$5,
+    _t4$4,
     _t5$3,
     _t6$3,
     _t7$3;
@@ -3614,7 +3614,7 @@ const Container$8 = styled.div(_t$c || (_t$c = _$c`
   return colors.gray10;
 }, props => props.isFieldActive ? css$1(_t3$7 || (_t3$7 = _$c`
             color: ${0};
-          `), colors.brand10) : css$1(_t4$5 || (_t4$5 = _$c`
+          `), colors.brand10) : css$1(_t4$4 || (_t4$4 = _$c`
             color: ${0};
           `), colors.gray20), props => {
   if (props.icon && !props.action) {
@@ -3913,7 +3913,7 @@ let _$b = t => t,
     _t$b,
     _t2$6,
     _t3$6,
-    _t4$4,
+    _t4$3,
     _t5$2,
     _t6$2,
     _t7$2,
@@ -3969,7 +3969,7 @@ const Background = styled.div(_t$b || (_t$b = _$b`
           opacity: 1;
           visibility: hidden;
         `)));
-const Modal = styled.div(_t4$4 || (_t4$4 = _$b`
+const Modal = styled.div(_t4$3 || (_t4$3 = _$b`
   font-family: MontSerrat !important;
   transition: top 0.25s ease;
   top: 0;
@@ -4146,7 +4146,7 @@ let _$a = t => t,
     _t$a,
     _t2$5,
     _t3$5,
-    _t4$3,
+    _t4$2,
     _t5$1,
     _t6$1,
     _t7$1;
@@ -4249,7 +4249,7 @@ const Container$7 = styled.div(_t2$5 || (_t2$5 = _$a`
   return colors.gray10;
 }, props => props.isFieldActive ? css$1(_t3$5 || (_t3$5 = _$a`
             color: ${0};
-          `), colors.brand10) : css$1(_t4$3 || (_t4$3 = _$a`
+          `), colors.brand10) : css$1(_t4$2 || (_t4$2 = _$a`
             color: ${0};
           `), colors.gray20), colors.brand10, colors.brandTransparent2);
 const LabelError = styled.span(_t5$1 || (_t5$1 = _$a`
@@ -7604,7 +7604,7 @@ let _$3 = t => t,
     _t$3,
     _t2$2,
     _t3$2,
-    _t4$2;
+    _t4$1;
 const Header = styled.div(_t$3 || (_t$3 = _$3`
   font-family: MontSerrat !important;
   display: flex;
@@ -7622,7 +7622,7 @@ const Message = styled.span(_t3$2 || (_t3$2 = _$3`
   text-align: right;
   color: ${0};
 `), colors.gray10);
-const Container$2 = styled.div(_t4$2 || (_t4$2 = _$3`
+const Container$2 = styled.div(_t4$1 || (_t4$1 = _$3`
   margin-bottom: ${0};
 
   /*!
@@ -8814,8 +8814,7 @@ Table.Footer = TableFooter;
 let _$2 = t => t,
     _t$2,
     _t2$1,
-    _t3$1,
-    _t4$1;
+    _t3$1;
 const ContainerPagination = styled.div(_t$2 || (_t$2 = _$2`
   display: flex;
   font-size: ${0};
@@ -8834,11 +8833,11 @@ const ContainerPagination = styled.div(_t$2 || (_t$2 = _$2`
             opacity: 1 !important;
           `)) : '');
 const Button = styled.button(_t3$1 || (_t3$1 = _$2`
-  color: ${0};
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+  color: ${0};
   background-color: ${0};
   border: 1px solid ${0};
   font-size: 1.125em;
@@ -8846,10 +8845,10 @@ const Button = styled.button(_t3$1 || (_t3$1 = _$2`
   width: 2.5em;
   height: 2.5em;
   border-radius: 0.625em;
+  transition: all 0.4s ease;
 
   &:not(:disabled):hover {
     background-color: ${0};
-    transition: background-color 0.4s;
   }
 
   &:disabled {
@@ -8857,12 +8856,7 @@ const Button = styled.button(_t3$1 || (_t3$1 = _$2`
     cursor: default;
     opacity: 0.75;
   }
-
-  ${0}
-`), colors.brand10, colors.white, colors.hover, colors.hover, props => props.active ? css$1(_t4$1 || (_t4$1 = _$2`
-          background-color: ${0};
-          color: ${0};
-        `), colors.brand10, colors.white) : '');
+`), props => props.active ? colors.white : colors.brand10, props => props.active ? colors.brand10 : colors.white, colors.hover, colors.hover);
 
 const brothersCount = 2;
 
@@ -8879,7 +8873,9 @@ function Pagination({
   onPageChange,
   doubleJumpArrow = false,
   disabled = false,
-  size = 'md'
+  size = 'md',
+  className,
+  style
 }) {
   const totalPages = Math.ceil(totalCount / limitPerPage);
   const previousPages = currentPage > 1 ? generatePagesArray(currentPage - (brothersCount + 1), currentPage - 1) : [];
@@ -8892,6 +8888,8 @@ function Pagination({
 
   if (totalPages == 0) return null;
   return jsxs(ContainerPagination, Object.assign({
+    className: className,
+    style: style,
     disabledAll: disabled,
     size: size,
     role: "group"

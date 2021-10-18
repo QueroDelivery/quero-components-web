@@ -1,4 +1,4 @@
-/// <reference types="react" />
+import React from 'react';
 import { sizesTypes } from '../../helpers/FnUtil';
 export interface PaginationProps {
     totalCount: number;
@@ -8,6 +8,8 @@ export interface PaginationProps {
     doubleJumpArrow?: boolean;
     disabled?: boolean;
     size?: sizesTypes;
+    className?: string;
+    style?: React.CSSProperties;
 }
-declare function Pagination({ totalCount, currentPage, limitPerPage, onPageChange, doubleJumpArrow, disabled, size, }: PaginationProps): JSX.Element | null;
+declare function Pagination({ totalCount, currentPage, limitPerPage, onPageChange, doubleJumpArrow, disabled, size, className, style, }: PaginationProps): JSX.Element | null;
 export default Pagination;
