@@ -12,7 +12,6 @@ export interface MoreLessProps {
   maximum?: number;
   minimum?: number;
   quantityToChange?: number;
-  // eslint-disable-next-line no-unused-vars
   onChange: (newValue: number) => void;
 }
 
@@ -61,18 +60,23 @@ function MoreLess({
       role="group"
     >
       <button
+        aria-label="minus"
         disabled={disabled || noLess}
         onClick={() => handleChangeValue(value - quantityToChange)}
       >
         <FontAwesomeIcon icon={faMinus} />
       </button>
       <input
-        value={value || value === 0 ? value.toString() : ''}
+        value={value}
         type="number"
-        onChange={event => onChange(Number(event.target.value))}
+        onChange={event => handleChangeValue(Number(event.target.value))}
         disabled={disabled}
+        max={maximum}
+        min={minimum}
+        readOnly={disabled}
       />
       <button
+        aria-label="plus"
         disabled={disabled || noMore}
         onClick={() => handleChangeValue(value + quantityToChange)}
       >

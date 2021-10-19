@@ -6007,7 +6007,7 @@ var fontMoreLess = function fontMoreLess(size) {
   }
 };
 
-var Container$3 = styled__default["default"].div(_templateObject$5 || (_templateObject$5 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  opacity: ", ";\n\n  button {\n    width: ", ";\n    font-size: ", ";\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    height: ", ";\n    color: ", ";\n    transition: color 0.2s ease-in-out;\n\n    &:not(:disabled):hover {\n      color: ", ";\n    }\n\n    &:disabled {\n      opacity: 0.2;\n      cursor: default;\n    }\n  }\n\n  input {\n    text-align: center;\n    width: ", ";\n    font-size: ", ";\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    color: ", ";\n    border: none;\n    outline: none;\n  }\n\n  input[type='number']::-webkit-inner-spin-button {\n    -webkit-appearance: none;\n  }\n  input[type='number'] {\n    -moz-appearance: textfield;\n    appearance: textfield;\n  }\n\n  input:disabled {\n    background-color: transparent;\n  }\n"])), function (props) {
+var Container$3 = styled__default["default"].div(_templateObject$5 || (_templateObject$5 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  opacity: ", ";\n\n  button {\n    width: ", ";\n    font-size: ", ";\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    height: ", ";\n    color: ", ";\n    transition: color 0.2s ease-in-out;\n\n    &:not(:disabled):hover {\n      color: ", ";\n    }\n\n    &:disabled {\n      opacity: 0.25;\n      cursor: default;\n    }\n  }\n\n  input {\n    text-align: center;\n    width: ", ";\n    font-size: ", ";\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    color: ", ";\n    border: none;\n    outline: none;\n  }\n\n  input[type='number']::-webkit-inner-spin-button {\n    -webkit-appearance: none;\n  }\n  input[type='number'] {\n    -moz-appearance: textfield;\n    appearance: textfield;\n  }\n\n  input:disabled {\n    background-color: transparent;\n  }\n"])), function (props) {
   return props.disabled ? '0.5' : '1';
 }, function (props) {
   return widthBtnMoreLess(props.size);
@@ -6016,7 +6016,7 @@ var Container$3 = styled__default["default"].div(_templateObject$5 || (_template
 }, function (props) {
   return heightBtnMoreLess(props.size);
 }, colors.gray20, colors.hover, function (props) {
-  return props.size ? widthValueMoreLess(props.size, props.value) : '15px';
+  return widthValueMoreLess(props.size, props.value);
 }, function (props) {
   return fontMoreLess(props.size);
 }, colors.gray20);
@@ -6029,7 +6029,7 @@ function MoreLess(_ref) {
       maximum = _ref.maximum,
       _ref$minimum = _ref.minimum,
       minimum = _ref$minimum === void 0 ? 0 : _ref$minimum,
-      _onChange = _ref.onChange,
+      onChange = _ref.onChange,
       _ref$quantityToChange = _ref.quantityToChange,
       quantityToChange = _ref$quantityToChange === void 0 ? 1 : _ref$quantityToChange;
   var noLess = React$2.useMemo(function () {
@@ -6049,12 +6049,11 @@ function MoreLess(_ref) {
 
   function handleChangeValue(newValue) {
     if (typeof maximum == 'number' && newValue > maximum) {
-      return _onChange(maximum);
+      return onChange(maximum);
     }
 
-    if (newValue < minimum) return _onChange(minimum);
-
-    _onChange(newValue);
+    if (newValue < minimum) return onChange(minimum);
+    onChange(newValue);
   }
 
   return jsxRuntime.jsxs(Container$3, Object.assign({
@@ -6066,6 +6065,7 @@ function MoreLess(_ref) {
     role: "group"
   }, {
     children: [jsxRuntime.jsx("button", Object.assign({
+      "aria-label": "minus",
       disabled: disabled || noLess,
       onClick: function onClick() {
         return handleChangeValue(value - quantityToChange);
@@ -6075,13 +6075,17 @@ function MoreLess(_ref) {
         icon: faMinus
       }, void 0)
     }), void 0), jsxRuntime.jsx("input", {
-      value: value || value === 0 ? value.toString() : '',
+      value: value,
       type: "number",
       onChange: function onChange(event) {
-        return _onChange(Number(event.target.value));
+        return handleChangeValue(Number(event.target.value));
       },
-      disabled: disabled
+      disabled: disabled,
+      max: maximum,
+      min: minimum,
+      readOnly: disabled
     }, void 0), jsxRuntime.jsx("button", Object.assign({
+      "aria-label": "plus",
       disabled: disabled || noMore,
       onClick: function onClick() {
         return handleChangeValue(value + quantityToChange);

@@ -8973,7 +8973,7 @@ const Container$3 = styled.div(_t$5 || (_t$5 = _$5`
     }
 
     &:disabled {
-      opacity: 0.2;
+      opacity: 0.25;
       cursor: default;
     }
   }
@@ -9001,7 +9001,7 @@ const Container$3 = styled.div(_t$5 || (_t$5 = _$5`
   input:disabled {
     background-color: transparent;
   }
-`), props => props.disabled ? '0.5' : '1', props => widthBtnMoreLess(props.size), props => fontMoreLess(props.size), props => heightBtnMoreLess(props.size), colors.gray20, colors.hover, props => props.size ? widthValueMoreLess(props.size, props.value) : '15px', props => fontMoreLess(props.size), colors.gray20);
+`), props => props.disabled ? '0.5' : '1', props => widthBtnMoreLess(props.size), props => fontMoreLess(props.size), props => heightBtnMoreLess(props.size), colors.gray20, colors.hover, props => widthValueMoreLess(props.size, props.value), props => fontMoreLess(props.size), colors.gray20);
 
 function MoreLess({
   size = 'md',
@@ -9045,6 +9045,7 @@ function MoreLess({
     role: "group"
   }, {
     children: [jsx("button", Object.assign({
+      "aria-label": "minus",
       disabled: disabled || noLess,
       onClick: () => handleChangeValue(value - quantityToChange)
     }, {
@@ -9052,11 +9053,15 @@ function MoreLess({
         icon: faMinus
       }, void 0)
     }), void 0), jsx("input", {
-      value: value || value === 0 ? value.toString() : '',
+      value: value,
       type: "number",
-      onChange: event => onChange(Number(event.target.value)),
-      disabled: disabled
+      onChange: event => handleChangeValue(Number(event.target.value)),
+      disabled: disabled,
+      max: maximum,
+      min: minimum,
+      readOnly: disabled
     }, void 0), jsx("button", Object.assign({
+      "aria-label": "plus",
       disabled: disabled || noMore,
       onClick: () => handleChangeValue(value + quantityToChange)
     }, {

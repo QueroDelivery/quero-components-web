@@ -171,15 +171,14 @@ export const Container = styled.div<MoreLessProps>`
     }
 
     &:disabled {
-      opacity: 0.2;
+      opacity: 0.25;
       cursor: default;
     }
   }
 
   input {
     text-align: center;
-    width: ${props =>
-      props.size ? widthValueMoreLess(props.size, props.value) : '15px'};
+    width: ${props => widthValueMoreLess(props.size, props.value)};
     font-size: ${props => fontMoreLess(props.size)};
     display: flex;
     align-items: center;
