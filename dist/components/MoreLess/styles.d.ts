@@ -1,11 +1,10 @@
+import { sizesTypes } from '../../helpers/FnUtil';
 interface MoreLessProps {
     disabled?: boolean;
-    limit?: number;
+    maximum?: number;
     minimum?: number;
     value: number;
-    size?: 'small' | 'medium' | 'big';
-    noLess?: boolean;
-    noMore?: boolean;
+    size: sizesTypes;
 }
 export declare const Container: import("styled-components").StyledComponent<"div", any, MoreLessProps, never>;
 export {};

@@ -2,10 +2,10 @@ require('semantic-ui-css/semantic.min.css');
 var jsxRuntime = require('react/jsx-runtime');
 var React$2 = require('react');
 var styled = require('styled-components');
-var semanticUiReact = require('semantic-ui-react');
 var DatePicker = require('react-datepicker');
 var reactDom = require('react-dom');
 var br = require('date-fns/locale/pt-BR');
+var semanticUiReact = require('semantic-ui-react');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
@@ -14,30 +14,6 @@ var styled__default = /*#__PURE__*/_interopDefaultLegacy(styled);
 var DatePicker__default = /*#__PURE__*/_interopDefaultLegacy(DatePicker);
 var reactDom__default = /*#__PURE__*/_interopDefaultLegacy(reactDom);
 var br__default = /*#__PURE__*/_interopDefaultLegacy(br);
-
-function _objectWithoutPropertiesLoose$3(source, excluded) {
-  if (source == null) return {};
-  var target = {};
-  var sourceKeys = Object.keys(source);
-  var key, i;
-
-  for (i = 0; i < sourceKeys.length; i++) {
-    key = sourceKeys[i];
-    if (excluded.indexOf(key) >= 0) continue;
-    target[key] = source[key];
-  }
-
-  return target;
-}
-
-function _taggedTemplateLiteralLoose(strings, raw) {
-  if (!raw) {
-    raw = strings.slice(0);
-  }
-
-  strings.raw = raw;
-  return strings;
-}
 
 /*!
  * Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com
@@ -2326,7 +2302,7 @@ function _objectSpread2(target) {
   return target;
 }
 
-function _objectWithoutPropertiesLoose$2(source, excluded) {
+function _objectWithoutPropertiesLoose$3(source, excluded) {
   if (source == null) return {};
   var target = {};
   var sourceKeys = Object.keys(source);
@@ -2344,7 +2320,7 @@ function _objectWithoutPropertiesLoose$2(source, excluded) {
 function _objectWithoutProperties(source, excluded) {
   if (source == null) return {};
 
-  var target = _objectWithoutPropertiesLoose$2(source, excluded);
+  var target = _objectWithoutPropertiesLoose$3(source, excluded);
 
   var key, i;
 
@@ -2704,6 +2680,30 @@ var faTimes = {
   icon: [352, 512, [], "f00d", "M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"]
 };
 
+function _objectWithoutPropertiesLoose$2(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  var sourceKeys = Object.keys(source);
+  var key, i;
+
+  for (i = 0; i < sourceKeys.length; i++) {
+    key = sourceKeys[i];
+    if (excluded.indexOf(key) >= 0) continue;
+    target[key] = source[key];
+  }
+
+  return target;
+}
+
+function _taggedTemplateLiteralLoose(strings, raw) {
+  if (!raw) {
+    raw = strings.slice(0);
+  }
+
+  strings.raw = raw;
+  return strings;
+}
+
 var colors = {
   brand10: '#9B4DEE',
   brand20: '#E0457B',
@@ -2743,7 +2743,135 @@ var colors = {
   error: '#e0457b25'
 };
 
-var Sizes$6 = {
+var _templateObject$f, _templateObject2$a, _templateObject3$9, _templateObject4$6, _templateObject5$5, _templateObject6$5, _templateObject7$5;
+var Container$9 = styled__default["default"].div(_templateObject$f || (_templateObject$f = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  display: flex;\n  width: ", ";\n  justify-content: space-between;\n  background-color: ", ";\n  border: 1px solid ", ";\n  padding: 0.9375rem 1.25rem;\n  align-items: center;\n  cursor: pointer;\n  box-shadow: 0px 3px 2px 0px rgba(0, 0, 0, 0.16);\n\n  .icon-title {\n    display: flex;\n    align-items: center;\n  }\n\n  .title-subtitle {\n    display: flex;\n    flex-direction: column;\n    flex: 1;\n    margin-left: ", ";\n  }\n\n  .value-icon {\n    display: flex;\n    align-items: center;\n    flex: 1;\n    justify-content: flex-end;\n  }\n\n  ", "\n"])), function (props) {
+  if (props.width) {
+    if (typeof props.width === 'string') {
+      return props.width;
+    }
+
+    return props.width + "px";
+  }
+
+  return '100%';
+}, function (props) {
+  return props.secondary ? colors.card : colors.white;
+}, colors.card, function (props) {
+  return props.icon ? '15px' : '0';
+}, function (props) {
+  return props.open ? styled.css(_templateObject2$a || (_templateObject2$a = _taggedTemplateLiteralLoose(["\n          border-top-left-radius: 20px;\n          border-top-right-radius: 20px;\n        "]))) : styled.css(_templateObject3$9 || (_templateObject3$9 = _taggedTemplateLiteralLoose(["\n          border-radius: 20px;\n        "])));
+});
+var Title$1 = styled__default["default"].span(_templateObject4$6 || (_templateObject4$6 = _taggedTemplateLiteralLoose(["\n  font-size: ", ";\n  color: ", ";\n"])), function (props) {
+  return props.subtitle ? '0.875rem' : '1rem';
+}, colors.gray20);
+var Subtitle = styled__default["default"].span(_templateObject5$5 || (_templateObject5$5 = _taggedTemplateLiteralLoose(["\n  color: ", ";\n  font-size: 0.75rem;\n"])), colors.gray10);
+var Value = styled__default["default"].span(_templateObject6$5 || (_templateObject6$5 = _taggedTemplateLiteralLoose(["\n  margin-right: 1.25rem;\n  color: ", ";\n"])), colors.gray20);
+var Body$1 = styled__default["default"].div(_templateObject7$5 || (_templateObject7$5 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  width: ", ";\n  padding: 1.25rem;\n  border: 1px solid ", ";\n  border-top: 0;\n  border-bottom-left-radius: 20px;\n  border-bottom-right-radius: 20px;\n  display: ", ";\n  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.16);\n"])), function (props) {
+  if (typeof props.width === 'string') {
+    return props.width;
+  }
+
+  return props.width + "px";
+}, colors.card, function (props) {
+  return props.open ? 'block' : 'none';
+});
+
+var Accordion = function Accordion(_ref) {
+  var className = _ref.className,
+      style = _ref.style,
+      title = _ref.title,
+      titleClassName = _ref.titleClassName,
+      titleStyle = _ref.titleStyle,
+      subtitle = _ref.subtitle,
+      subtitleClassName = _ref.subtitleClassName,
+      subtitleStyle = _ref.subtitleStyle,
+      value = _ref.value,
+      valueClassName = _ref.valueClassName,
+      valueStyle = _ref.valueStyle,
+      children = _ref.children,
+      secondary = _ref.secondary,
+      open = _ref.open,
+      _onClick = _ref.onClick,
+      width = _ref.width,
+      icon = _ref.icon,
+      iconClassName = _ref.iconClassName,
+      iconStyle = _ref.iconStyle,
+      customIcon = _ref.customIcon,
+      bodyClassName = _ref.bodyClassName,
+      bodyStyle = _ref.bodyStyle;
+  return jsxRuntime.jsxs(jsxRuntime.Fragment, {
+    children: [jsxRuntime.jsxs(Container$9, Object.assign({
+      role: "button",
+      className: className,
+      style: style,
+      secondary: secondary,
+      subtitle: subtitle,
+      open: open,
+      onClick: function onClick(event) {
+        return _onClick(event);
+      },
+      width: width,
+      icon: !!(icon || customIcon)
+    }, {
+      children: [jsxRuntime.jsxs("div", Object.assign({
+        className: "icon-title"
+      }, {
+        children: [customIcon || (icon ? jsxRuntime.jsx(FontAwesomeIcon, {
+          "data-testid": "accordion-icon",
+          className: iconClassName,
+          style: iconStyle,
+          icon: icon,
+          size: "lg",
+          color: colors.brand10
+        }, void 0) : null), jsxRuntime.jsxs("div", Object.assign({
+          className: "title-subtitle"
+        }, {
+          children: [jsxRuntime.jsx(Title$1, Object.assign({
+            className: titleClassName,
+            style: titleStyle,
+            subtitle: subtitle
+          }, {
+            children: title
+          }), void 0), subtitle && jsxRuntime.jsx(Subtitle, Object.assign({
+            className: subtitleClassName,
+            style: subtitleStyle
+          }, {
+            children: subtitle
+          }), void 0)]
+        }), void 0)]
+      }), void 0), jsxRuntime.jsxs("div", Object.assign({
+        className: "value-icon"
+      }, {
+        children: [value && jsxRuntime.jsx(Value, Object.assign({
+          className: valueClassName,
+          style: valueStyle
+        }, {
+          children: value
+        }), void 0), secondary ? jsxRuntime.jsx(FontAwesomeIcon, {
+          icon: open ? faAngleUp : faAngleDown,
+          style: {
+            fontSize: 20
+          }
+        }, void 0) : jsxRuntime.jsx(FontAwesomeIcon, {
+          icon: open ? faAngleUp : faAngleDown,
+          style: {
+            fontSize: 20
+          },
+          color: colors.brand10
+        }, void 0)]
+      }), void 0)]
+    }), void 0), jsxRuntime.jsx(Body$1, Object.assign({
+      className: bodyClassName,
+      style: bodyStyle,
+      open: open,
+      width: width
+    }, {
+      children: children
+    }), void 0)]
+  }, void 0);
+};
+
+var Sizes$5 = {
   xs: 'xs',
   sm: 'sm',
   md: 'md',
@@ -2763,19 +2891,19 @@ var getMeasurement = function getMeasurement(size, defaultValue) {
 };
 var getFontSize = function getFontSize(defaultSize, sizeBase) {
   switch (defaultSize) {
-    case Sizes$6.xs:
+    case Sizes$5.xs:
       return "calc(" + getMeasurement(sizeBase) + " - 0.25rem)";
 
-    case Sizes$6.sm:
+    case Sizes$5.sm:
       return "calc(" + getMeasurement(sizeBase) + " - 0.125rem)";
 
-    case Sizes$6.md:
+    case Sizes$5.md:
       return getMeasurement(sizeBase);
 
-    case Sizes$6.lg:
+    case Sizes$5.lg:
       return "calc(" + getMeasurement(sizeBase) + " + 0.125rem)";
 
-    case Sizes$6.xl:
+    case Sizes$5.xl:
       return "calc(" + getMeasurement(sizeBase) + " + 0.25rem)";
 
     default:
@@ -2783,8 +2911,8 @@ var getFontSize = function getFontSize(defaultSize, sizeBase) {
   }
 };
 
-var _templateObject$f, _templateObject2$a, _templateObject3$9, _templateObject4$6, _templateObject5$5, _templateObject6$5, _templateObject7$5;
-var Button$2 = styled__default["default"].button(_templateObject$f || (_templateObject$f = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  font-size: ", ";\n  position: ", ";\n  line-height: 0;\n  background-color: ", ";\n  color: ", ";\n  padding: 0.65em 1.25em;\n  width: ", ";\n  border-radius: ", ";\n  cursor: pointer;\n  border: ", ";\n  outline: none;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n\n  &:disabled {\n    opacity: 0.5;\n    cursor: not-allowed;\n    pointer-events: none;\n  }\n\n  &:hover {\n    background-color: ", ";\n    color: ", ";\n  }\n"])), function (props) {
+var _templateObject$e, _templateObject2$9, _templateObject3$8, _templateObject4$5, _templateObject5$4, _templateObject6$4, _templateObject7$4;
+var Button$2 = styled__default["default"].button(_templateObject$e || (_templateObject$e = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  font-size: ", ";\n  position: ", ";\n  line-height: 0;\n  background-color: ", ";\n  color: ", ";\n  padding: 0.65em 1.25em;\n  width: ", ";\n  border-radius: ", ";\n  cursor: pointer;\n  border: ", ";\n  outline: none;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n\n  &:disabled {\n    opacity: 0.5;\n    cursor: not-allowed;\n    pointer-events: none;\n  }\n\n  &:hover {\n    background-color: ", ";\n    color: ", ";\n  }\n"])), function (props) {
   return props.size ? getFontSize(props.size, '1rem') : '1rem';
 }, function (props) {
   return props.isLoading ? 'relative' : 'initial';
@@ -2860,7 +2988,7 @@ var Button$2 = styled__default["default"].button(_templateObject$f || (_template
 
   return colors.brand30;
 });
-var TextFirst = styled__default["default"].span(_templateObject2$a || (_templateObject2$a = _taggedTemplateLiteralLoose(["\n  font-weight: ", ";\n  font-size: ", ";\n  margin-right: ", ";\n"])), function (props) {
+var TextFirst = styled__default["default"].span(_templateObject2$9 || (_templateObject2$9 = _taggedTemplateLiteralLoose(["\n  font-weight: ", ";\n  font-size: ", ";\n  margin-right: ", ";\n"])), function (props) {
   if (props.firstStrong || props.strong) {
     return 'bold';
   }
@@ -2871,7 +2999,7 @@ var TextFirst = styled__default["default"].span(_templateObject2$a || (_template
 }, function (props) {
   return props.hasTextEnd ? '3.5px' : '';
 });
-var TextEnd = styled__default["default"].span(_templateObject3$9 || (_templateObject3$9 = _taggedTemplateLiteralLoose(["\n  font-weight: ", ";\n  font-size: ", ";\n"])), function (props) {
+var TextEnd = styled__default["default"].span(_templateObject3$8 || (_templateObject3$8 = _taggedTemplateLiteralLoose(["\n  font-weight: ", ";\n  font-size: ", ";\n"])), function (props) {
   if (props.firstStrong || props.notStrong) {
     return 'normal';
   }
@@ -2880,17 +3008,17 @@ var TextEnd = styled__default["default"].span(_templateObject3$9 || (_templateOb
 }, function (props) {
   return props.size ? getFontSize(props.size, '1rem') : '1rem';
 });
-var Notification = styled__default["default"].button(_templateObject4$6 || (_templateObject4$6 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  background-color: ", ";\n  height: 40px;\n  width: 100%;\n  border-radius: 30px;\n  cursor: pointer;\n  border: 1px solid ", ";\n  outline: none;\n\n  &:disabled {\n    opacity: 0.5;\n    cursor: not-allowed;\n    pointer-events: none;\n  }\n\n  &:hover {\n    background-color: ", ";\n  }\n\n  span {\n    color: ", ";\n    margin-left: 20px;\n    font-weight: bold;\n  }\n"])), colors.brand10, colors.brand30, colors.brandTransparent2, colors.brand30);
-var Icon$2 = styled__default["default"].div(_templateObject5$5 || (_templateObject5$5 = _taggedTemplateLiteralLoose(["\n  margin-right: ", ";\n  margin-left: ", ";\n"])), function (props) {
+var Notification = styled__default["default"].button(_templateObject4$5 || (_templateObject4$5 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  background-color: ", ";\n  height: 40px;\n  width: 100%;\n  border-radius: 30px;\n  cursor: pointer;\n  border: 1px solid ", ";\n  outline: none;\n\n  &:disabled {\n    opacity: 0.5;\n    cursor: not-allowed;\n    pointer-events: none;\n  }\n\n  &:hover {\n    background-color: ", ";\n  }\n\n  span {\n    color: ", ";\n    margin-left: 20px;\n    font-weight: bold;\n  }\n"])), colors.brand10, colors.brand30, colors.brandTransparent2, colors.brand30);
+var Icon$2 = styled__default["default"].div(_templateObject5$4 || (_templateObject5$4 = _taggedTemplateLiteralLoose(["\n  margin-right: ", ";\n  margin-left: ", ";\n"])), function (props) {
   return props.iconPosition === 'left' && props.hasText ? '10px' : '';
 }, function (props) {
   return props.iconPosition === 'right' && props.hasText ? '10px' : '';
 });
-var Amount = styled__default["default"].div(_templateObject6$5 || (_templateObject6$5 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  background-color: ", ";\n  width: 20px;\n  height: 20px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  border-radius: 50%;\n  color: ", ";\n  font-size: 0.625rem;\n"])), colors.brand30, colors.brand10);
-var LoadingContainer = styled__default["default"].div(_templateObject7$5 || (_templateObject7$5 = _taggedTemplateLiteralLoose(["\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n"])));
+var Amount = styled__default["default"].div(_templateObject6$4 || (_templateObject6$4 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  background-color: ", ";\n  width: 20px;\n  height: 20px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  border-radius: 50%;\n  color: ", ";\n  font-size: 0.625rem;\n"])), colors.brand30, colors.brand10);
+var LoadingContainer = styled__default["default"].div(_templateObject7$4 || (_templateObject7$4 = _taggedTemplateLiteralLoose(["\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n"])));
 
-var _templateObject$e, _templateObject2$9;
-var Sizes$5 = {
+var _templateObject$d, _templateObject2$8;
+var Sizes$4 = {
   mini: 'mini',
   tiny: 'tiny',
   small: 'small',
@@ -2903,28 +3031,28 @@ var Sizes$5 = {
 
 var widthLoader = function widthLoader(size) {
   switch (size) {
-    case Sizes$5.mini:
+    case Sizes$4.mini:
       return '1em';
 
-    case Sizes$5.tiny:
+    case Sizes$4.tiny:
       return '1.5em';
 
-    case Sizes$5.small:
+    case Sizes$4.small:
       return '2em';
 
-    case Sizes$5.medium:
+    case Sizes$4.medium:
       return '2.5em';
 
-    case Sizes$5.large:
+    case Sizes$4.large:
       return '3em';
 
-    case Sizes$5.big:
+    case Sizes$4.big:
       return '3.5em';
 
-    case Sizes$5.huge:
+    case Sizes$4.huge:
       return '4em';
 
-    case Sizes$5.massive:
+    case Sizes$4.massive:
       return '4.5em';
 
     default:
@@ -2934,28 +3062,28 @@ var widthLoader = function widthLoader(size) {
 
 var widthBorder = function widthBorder(size) {
   switch (size) {
-    case Sizes$5.mini:
+    case Sizes$4.mini:
       return '2px';
 
-    case Sizes$5.tiny:
+    case Sizes$4.tiny:
       return '2.5px';
 
-    case Sizes$5.small:
+    case Sizes$4.small:
       return '3px';
 
-    case Sizes$5.medium:
+    case Sizes$4.medium:
       return '3.5px';
 
-    case Sizes$5.large:
+    case Sizes$4.large:
       return '4px';
 
-    case Sizes$5.big:
+    case Sizes$4.big:
       return '4.5px';
 
-    case Sizes$5.huge:
+    case Sizes$4.huge:
       return '5px';
 
-    case Sizes$5.massive:
+    case Sizes$4.massive:
       return '5.5px';
 
     default:
@@ -2963,10 +3091,10 @@ var widthBorder = function widthBorder(size) {
   }
 };
 
-var Container$9 = styled__default["default"].div(_templateObject$e || (_templateObject$e = _taggedTemplateLiteralLoose(["\n  width: 100%;\n  display: flex;\n  justify-content: ", ";\n"])), function (props) {
+var Container$8 = styled__default["default"].div(_templateObject$d || (_templateObject$d = _taggedTemplateLiteralLoose(["\n  width: 100%;\n  display: flex;\n  justify-content: ", ";\n"])), function (props) {
   return props.position === 'left' ? 'flex-start' : props.position === 'right' ? 'flex-end' : 'center';
 });
-var Load = styled__default["default"].div(_templateObject2$9 || (_templateObject2$9 = _taggedTemplateLiteralLoose(["\n  border-width: ", ";\n  border-style: solid;\n  border-color: ", ";\n  border-top-width: ", ";\n  border-top-style: solid;\n  border-top-color: ", ";\n\n  border-radius: 50%;\n  width: ", ";\n  height: ", ";\n  animation: spin 0.6s linear infinite;\n\n  @keyframes spin {\n    0% {\n      transform: rotate(0deg);\n    }\n    100% {\n      transform: rotate(360deg);\n    }\n  }\n"])), function (props) {
+var Load = styled__default["default"].div(_templateObject2$8 || (_templateObject2$8 = _taggedTemplateLiteralLoose(["\n  border-width: ", ";\n  border-style: solid;\n  border-color: ", ";\n  border-top-width: ", ";\n  border-top-style: solid;\n  border-top-color: ", ";\n\n  border-radius: 50%;\n  width: ", ";\n  height: ", ";\n  animation: spin 0.6s linear infinite;\n\n  @keyframes spin {\n    0% {\n      transform: rotate(0deg);\n    }\n    100% {\n      transform: rotate(360deg);\n    }\n  }\n"])), function (props) {
   if (props.size) {
     return widthBorder(props.size);
   }
@@ -3006,7 +3134,7 @@ var Loader = function Loader(_ref) {
       className = _ref.className,
       style = _ref.style,
       position = _ref.position;
-  return jsxRuntime.jsx(Container$9, Object.assign({
+  return jsxRuntime.jsx(Container$8, Object.assign({
     position: position
   }, {
     children: jsxRuntime.jsx(Load, {
@@ -3049,7 +3177,7 @@ var ButtonMain = function ButtonMain(_ref) {
       tertiary = _ref.tertiary,
       size = _ref.size,
       rectangular = _ref.rectangular,
-      rest = _objectWithoutPropertiesLoose$3(_ref, _excluded$b);
+      rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$b);
 
   function renderButtonNotification() {
     return jsxRuntime.jsx(Notification, Object.assign({}, rest, {
@@ -3165,2625 +3293,6 @@ var ButtonMain = function ButtonMain(_ref) {
   }
 
   return renderButton();
-};
-
-var _templateObject$d, _templateObject2$8, _templateObject3$8, _templateObject4$5, _templateObject5$4, _templateObject6$4, _templateObject7$4, _templateObject8$1;
-var Background$1 = styled__default["default"].div(_templateObject$d || (_templateObject$d = _taggedTemplateLiteralLoose(["\n  ", "\n"])), function (props) {
-  return props.open ? styled.css(_templateObject2$8 || (_templateObject2$8 = _taggedTemplateLiteralLoose(["\n          opacity: 1;\n          visibility: visible;\n          position: fixed;\n          top: 0;\n          right: 0;\n          bottom: 0;\n          left: 0;\n          background: rgba(0, 0, 0, 0.5);\n          transition: opacity 0.25s ease;\n          overflow: auto;\n          display: flex;\n          z-index: 999;\n        "]))) : styled.css(_templateObject3$8 || (_templateObject3$8 = _taggedTemplateLiteralLoose(["\n          opacity: 1;\n          visibility: hidden;\n        "])));
-});
-var Dialog = styled__default["default"].div(_templateObject4$5 || (_templateObject4$5 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  ", "\n"])), function (props) {
-  return props.open ? styled.css(_templateObject5$4 || (_templateObject5$4 = _taggedTemplateLiteralLoose(["\n          transition: bottom 0.25s ease;\n          width: 97%;\n          background: ", ";\n          border-top-left-radius: 30px;\n          border-top-right-radius: 30px;\n          margin-top: auto;\n          margin-left: auto;\n          margin-right: auto;\n          position: relative;\n          /* overflow: auto; */\n\n          overflow: ", ";\n          padding-bottom: ", ";\n          height: ", ";\n          max-height: ", ";\n\n          .box-dialog {\n            position: relative;\n            padding: 20px 20px 0;\n            overflow: ", ";\n\n            height: ", ";\n            /* max-height: 100%; */\n          }\n\n          .loading-dialog {\n            display: flex;\n            justify-content: center;\n            align-items: center;\n            background-color: rgba(255, 255, 255, 0.8);\n            width: 100%;\n            height: 100%;\n            top: 0;\n            left: 0;\n            right: 0;\n            bottom: 0;\n            border-radius: 30px;\n            z-index: 2;\n            position: absolute;\n          }\n        "])), colors.white, function () {
-    if (props.maxHeight || props.loading) {
-      return 'none';
-    }
-
-    return 'auto';
-  }, function () {
-    if (props.maxHeight) {
-      return '0';
-    }
-
-    return '20px';
-  }, function () {
-    if (props.maxHeight) {
-      return '100%';
-    }
-
-    return 'auto';
-  }, function () {
-    if (props.maxHeight) {
-      if (typeof props.maxHeight === 'string') {
-        return props.maxHeight;
-      }
-
-      return props.maxHeight + "px";
-    }
-
-    return '100%';
-  }, props.loading ? 'hidden' : 'auto', props.title ? "calc(100% - " + props.sizeHeader + "px)" : '100%') : styled.css(_templateObject6$4 || (_templateObject6$4 = _taggedTemplateLiteralLoose(["\n          transition: bottom 0.25s ease;\n          bottom: -100%;\n        "])));
-});
-var Header$2 = styled__default["default"].div(_templateObject7$4 || (_templateObject7$4 = _taggedTemplateLiteralLoose(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  border-bottom: ", ";\n  font-size: 1.25rem;\n\n  .name-icon-modal {\n    display: flex;\n    align-items: center;\n  }\n\n  & strong {\n    padding: ", ";\n    color: ", ";\n  }\n"])), function (props) {
-  return props.noBorder ? 'none' : "1px solid " + colors.default20;
-}, function (props) {
-  return props.iconBack ? '1.25rem 0' : '1.25rem 1.875rem';
-}, colors.brand10);
-var Icon$1 = styled__default["default"].div(_templateObject8$1 || (_templateObject8$1 = _taggedTemplateLiteralLoose(["\n  padding: 1.25rem 1.875rem;\n  cursor: pointer;\n"])));
-
-var DialogComponent = function DialogComponent(_ref) {
-  var open = _ref.open,
-      children = _ref.children,
-      onClose = _ref.onClose,
-      loading = _ref.loading,
-      maxHeight = _ref.maxHeight,
-      title = _ref.title,
-      onBack = _ref.onBack,
-      noBorder = _ref.noBorder,
-      _ref$closeIcon = _ref.closeIcon,
-      closeIcon = _ref$closeIcon === void 0 ? false : _ref$closeIcon;
-
-  var _useState = React$2.useState(62),
-      sizeHeader = _useState[0],
-      setSizeHeader = _useState[1];
-
-  React$2.useEffect(function () {
-    if (document.getElementById('headerDialog')) {
-      setSizeHeader(document.getElementById('headerDialog').clientHeight);
-    }
-  }, [document.getElementById('headerDialog')]);
-  return jsxRuntime.jsx(Background$1, Object.assign({
-    open: open,
-    onClick: function onClick(event) {
-      event.stopPropagation();
-      onClose();
-    }
-  }, {
-    children: jsxRuntime.jsxs(Dialog, Object.assign({
-      open: open,
-      onClick: function onClick(event) {
-        return event.stopPropagation();
-      },
-      maxHeight: maxHeight,
-      sizeHeader: sizeHeader,
-      loading: loading,
-      title: title
-    }, {
-      children: [title ? jsxRuntime.jsxs(Header$2, Object.assign({
-        iconBack: !!onBack,
-        noBorder: noBorder,
-        id: "headerDialog"
-      }, {
-        children: [jsxRuntime.jsxs("div", Object.assign({
-          className: "name-icon-modal"
-        }, {
-          children: [onBack ? jsxRuntime.jsx(Icon$1, Object.assign({
-            onClick: function onClick() {
-              return onBack();
-            }
-          }, {
-            children: jsxRuntime.jsx(FontAwesomeIcon, {
-              icon: faAngleLeft,
-              size: "lg",
-              color: colors.brand10
-            }, void 0)
-          }), void 0) : null, jsxRuntime.jsx("strong", {
-            children: title
-          }, void 0)]
-        }), void 0), closeIcon && jsxRuntime.jsx(Icon$1, Object.assign({
-          onClick: function onClick(event) {
-            event.stopPropagation();
-            onClose();
-          }
-        }, {
-          children: jsxRuntime.jsx(FontAwesomeIcon, {
-            icon: faTimes,
-            style: {
-              fontSize: '1.25rem'
-            },
-            color: colors.brand10
-          }, void 0)
-        }), void 0)]
-      }), void 0) : null, jsxRuntime.jsxs("div", Object.assign({
-        className: "box-dialog",
-        id: "sizeBody"
-      }, {
-        children: [loading && jsxRuntime.jsx("div", Object.assign({
-          className: "loading-dialog"
-        }, {
-          children: jsxRuntime.jsx(Loader, {}, void 0)
-        }), void 0), children]
-      }), void 0)]
-    }), void 0)
-  }), void 0);
-};
-
-var _templateObject$c, _templateObject2$7, _templateObject3$7, _templateObject4$4, _templateObject5$3, _templateObject6$3, _templateObject7$3;
-var Container$8 = styled__default["default"].div(_templateObject$c || (_templateObject$c = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  position: relative;\n  opacity: ", ";\n  width: ", ";\n\n  input {\n    font-family: MontSerrat !important;\n    color: ", ";\n    width: 100%;\n    height: 100%;\n    padding-top: 20px;\n    padding-left: ", ";\n    padding-bottom: 5px;\n    padding-right: ", ";\n    border: none;\n    outline: none;\n    background-color: transparent;\n\n    &::placeholder {\n      color: ", ";\n    }\n  }\n\n  ", "\n\n  input:disabled {\n    background-color: transparent;\n  }\n\n  label {\n    font-family: MontSerrat !important;\n    position: absolute;\n    bottom: 0px;\n    top: 0px;\n    left: 0px;\n    width: 100%;\n    right: 100%;\n    pointer-events: none;\n    border-bottom-width: 1px;\n    border-bottom-style: solid;\n    border-bottom-color: ", ";\n\n    ", "\n  }\n\n  span {\n    font-family: MontSerrat !important;\n    position: absolute;\n    bottom: 5px;\n    left: ", ";\n    transition: all 0.3s ease;\n\n    ", "\n  }\n\n  .icon {\n    position: absolute;\n    bottom: 0;\n    padding: 5px 10px;\n    ", "\n  }\n\n  .icon-action {\n    position: absolute;\n    bottom: 0;\n    padding: 5px 10px;\n    ", "\n    cursor: pointer;\n  }\n"])), function (props) {
-  return props.disabled ? '50%' : '100%';
-}, function (props) {
-  if (props.width) {
-    if (typeof props.width === 'string') {
-      return props.width;
-    }
-
-    return props.width + "px";
-  }
-
-  return '100%';
-}, function (props) {
-  return props.textColor ? props.textColor : colors.gray20;
-}, function (props) {
-  if (props.icon && !props.action) {
-    if (props.iconPosition === 'right') {
-      return '15px';
-    }
-
-    return '40px';
-  }
-
-  if (props.action && !props.icon) {
-    if (props.actionPosition === 'left') {
-      return '40px';
-    }
-
-    return '15px';
-  }
-
-  if (props.action || props.icon) {
-    return '40px';
-  }
-
-  return '15px';
-}, function (props) {
-  if (props.icon && !props.action) {
-    if (props.iconPosition === 'right') {
-      return '40px';
-    }
-
-    return '0px';
-  }
-
-  if (props.action && !props.icon) {
-    if (props.actionPosition === 'left') {
-      return '0px';
-    }
-
-    return '40px';
-  }
-
-  if (props.action && props.icon) {
-    return '40px';
-  }
-
-  return '0px';
-}, colors.default10, function (props) {
-  return props.date && !props.isFieldActive ? styled.css(_templateObject2$7 || (_templateObject2$7 = _taggedTemplateLiteralLoose(["\n          input::-webkit-calendar-picker-indicator {\n            display: none !important;\n          }\n\n          input[type='date']::-webkit-input-placeholder {\n            display: none !important;\n            visibility: hidden !important;\n            -webkit-appearance: none;\n          }\n\n          input[type='date']::-webkit-datetime-edit-fields-wrapper,\n          input[type='date']::-webkit-datetime-edit-fields-wrapper {\n            visibility: hidden;\n          }\n        "]))) : null;
-}, function (props) {
-  if ((props.requiredText || props.errorMessage) && props.errorColor) {
-    return props.errorColor;
-  }
-
-  if (props.requiredText || props.errorMessage) {
-    return colors.danger20;
-  }
-
-  return colors.gray10;
-}, function (props) {
-  return props.isFieldActive ? styled.css(_templateObject3$7 || (_templateObject3$7 = _taggedTemplateLiteralLoose(["\n            color: ", ";\n          "])), colors.brand10) : styled.css(_templateObject4$4 || (_templateObject4$4 = _taggedTemplateLiteralLoose(["\n            color: ", ";\n          "])), colors.gray20);
-}, function (props) {
-  if (props.icon && !props.action) {
-    if (props.iconPosition === 'right') {
-      return '15px';
-    }
-
-    return '40px';
-  }
-
-  if (props.action && !props.icon) {
-    if (props.actionPosition === 'left') {
-      return '40px';
-    }
-
-    return '15px';
-  }
-
-  if (props.action || props.icon) {
-    return '40px';
-  }
-
-  return '15px';
-}, function (props) {
-  return props.isFieldActive ? styled.css(_templateObject5$3 || (_templateObject5$3 = _taggedTemplateLiteralLoose(["\n            transform: translateY(-100%);\n            font-size: 14px;\n            color: ", ";\n          "])), function (props) {
-    if ((props.requiredText || props.errorMessage) && props.errorColor) {
-      return props.errorColor;
-    }
-
-    if (props.requiredText || props.errorMessage) {
-      return colors.danger20;
-    }
-
-    return colors.brand10;
-  }) : styled.css(_templateObject6$3 || (_templateObject6$3 = _taggedTemplateLiteralLoose(["\n            font-size: 16px;\n            color: ", ";\n          "])), function (props) {
-    if ((props.requiredText || props.errorMessage) && props.errorColor) {
-      return props.errorColor;
-    }
-
-    if (props.requiredText || props.errorMessage) {
-      return colors.danger20;
-    }
-
-    return colors.gray20;
-  });
-}, function (props) {
-  return props.iconPosition === 'right' && 'right: 0;';
-}, function (props) {
-  return props.actionPosition && props.actionPosition === 'left' ? 'left: 0;' : 'right: 0;';
-});
-var LabelError$1 = styled__default["default"].span(_templateObject7$3 || (_templateObject7$3 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  font-size: 10px;\n  margin-left: 0;\n  color: ", ";\n"])), function (props) {
-  if (props.errorColor) {
-    return props.errorColor;
-  }
-
-  return colors.danger20;
-});
-
-var _excluded$a = ["containerStyle", "label", "labelStyle", "errorMessage", "width", "textColor", "inputRef", "name", "icon", "iconPosition", "iconColor", "action"];
-
-var InputLine = function InputLine(_ref) {
-  var containerStyle = _ref.containerStyle,
-      label = _ref.label,
-      labelStyle = _ref.labelStyle,
-      errorMessage = _ref.errorMessage,
-      width = _ref.width,
-      textColor = _ref.textColor,
-      inputRef = _ref.inputRef,
-      name = _ref.name,
-      icon = _ref.icon,
-      iconPosition = _ref.iconPosition,
-      iconColor = _ref.iconColor,
-      action = _ref.action,
-      rest = _objectWithoutPropertiesLoose$3(_ref, _excluded$a);
-
-  var _useState = React$2.useState(false),
-      isFieldActive = _useState[0],
-      setIsFieldActive = _useState[1];
-
-  React$2.useEffect(function () {
-    if (rest.value) {
-      if (!isFieldActive) {
-        setIsFieldActive(true);
-      }
-    }
-  }, [rest.value]);
-
-  var handleFocus = function handleFocus() {
-    if (!isFieldActive) {
-      setIsFieldActive(true);
-    }
-  };
-
-  var handleBlur = function handleBlur() {
-    if (isFieldActive && !rest.value) {
-      setIsFieldActive(false);
-    }
-
-    if (rest.onBlur) {
-      setImmediate(rest.onBlur);
-    }
-  };
-
-  return jsxRuntime.jsxs("div", Object.assign({
-    style: {
-      paddingBottom: errorMessage ? 0 : 20
-    }
-  }, {
-    children: [jsxRuntime.jsxs(Container$8, Object.assign({
-      isFieldActive: isFieldActive,
-      errorMessage: errorMessage,
-      // labelStyle={labelStyle}
-      containerStyle: containerStyle,
-      width: width,
-      disabled: rest.disabled ? rest.disabled : undefined,
-      style: containerStyle,
-      textColor: textColor,
-      icon: !!icon,
-      iconPosition: iconPosition,
-      action: action,
-      actionPosition: action == null ? void 0 : action.position,
-      date: rest.type === 'date'
-    }, {
-      children: [icon && jsxRuntime.jsx("div", Object.assign({
-        className: "icon"
-      }, {
-        children: jsxRuntime.jsx(FontAwesomeIcon, {
-          icon: icon,
-          color: iconColor || colors.brand10
-        }, void 0)
-      }), void 0), action && jsxRuntime.jsx("div", Object.assign({
-        className: "icon-action",
-        onClick: action.onClick
-      }, {
-        children: jsxRuntime.jsx(FontAwesomeIcon, {
-          icon: action.icon,
-          color: action.iconColor || colors.brand10
-        }, void 0)
-      }), void 0), jsxRuntime.jsx("input", Object.assign({}, rest, {
-        onFocus: handleFocus,
-        onBlur: handleBlur,
-        name: name,
-        placeholder: isFieldActive ? rest.placeholder : '',
-        ref: inputRef
-      }), void 0), jsxRuntime.jsx("label", {
-        children: jsxRuntime.jsx("span", Object.assign({
-          style: labelStyle
-        }, {
-          children: label
-        }), void 0)
-      }, void 0)]
-    }), void 0), errorMessage ? jsxRuntime.jsx(LabelError$1, {
-      children: errorMessage
-    }, void 0) : null]
-  }), void 0);
-};
-
-var _excluded$9 = ["register", "errors", "validate", "name", "required", "values", "limit", "minimum", "msgErrorValidate"];
-
-var InputLineForm = function InputLineForm(_ref) {
-  var _rest$action;
-
-  var register = _ref.register,
-      errors = _ref.errors,
-      validate = _ref.validate,
-      name = _ref.name,
-      required = _ref.required,
-      values = _ref.values,
-      limit = _ref.limit,
-      minimum = _ref.minimum,
-      msgErrorValidate = _ref.msgErrorValidate,
-      rest = _objectWithoutPropertiesLoose$3(_ref, _excluded$9);
-
-  var _useState = React$2.useState(false),
-      isFieldActive = _useState[0],
-      setIsFieldActive = _useState[1];
-
-  var _useState2 = React$2.useState(''),
-      message = _useState2[0],
-      setMessage = _useState2[1];
-
-  var value = values ? values(name) || rest.defaultValue : rest.value;
-  React$2.useEffect(function () {
-    if (value) {
-      if (!isFieldActive) {
-        setIsFieldActive(true);
-      }
-    }
-  }, [value]);
-
-  var handleFocus = function handleFocus() {
-    if (!isFieldActive) {
-      setIsFieldActive(true);
-    }
-  };
-
-  var handleBlur = function handleBlur() {
-    if (isFieldActive && !value) {
-      setIsFieldActive(false);
-    }
-
-    if (rest.onBlur) {
-      setImmediate(rest.onBlur);
-    }
-  };
-
-  var validadeRegister = function validadeRegister(valueRegister) {
-    var result = true;
-    var mensagem = '';
-
-    if (validate) {
-      if (validate(valueRegister)) {
-        mensagem = validate(valueRegister);
-        result = false;
-      }
-    }
-
-    if (limit) {
-      if (valueRegister.length > limit) {
-        mensagem = msgErrorValidate ? "" + msgErrorValidate : limit + " caracteres permitidos.";
-        result = false;
-      }
-    }
-
-    if (minimum) {
-      if (valueRegister.length < minimum) {
-        mensagem = msgErrorValidate ? "" + msgErrorValidate : (rest.label || name) + " deve ter " + minimum + " ou mais caracteres.";
-        result = false;
-      }
-    }
-
-    setMessage(mensagem);
-    return result;
-  };
-
-  return jsxRuntime.jsxs("div", Object.assign({
-    style: {
-      paddingBottom: message || errors ? 0 : 20
-    }
-  }, {
-    children: [jsxRuntime.jsxs(Container$8, Object.assign({
-      isFieldActive: isFieldActive,
-      requiredText: !!(errors && errors.type === 'required'),
-      errorMessage: errors,
-      // action={rest.action?.icon ? true : false}
-      containerStyle: rest.containerStyle,
-      width: rest.width,
-      disabled: rest.disabled,
-      style: rest.containerStyle,
-      textColor: rest.textColor,
-      icon: !!rest.icon,
-      iconPosition: rest.iconPosition,
-      action: rest.action,
-      actionPosition: (_rest$action = rest.action) == null ? void 0 : _rest$action.position,
-      date: rest.type === 'date'
-    }, {
-      children: [rest.icon && jsxRuntime.jsx("div", Object.assign({
-        className: "icon"
-      }, {
-        children: jsxRuntime.jsx(FontAwesomeIcon, {
-          icon: rest.icon,
-          color: rest.iconColor || colors.brand10
-        }, void 0)
-      }), void 0), rest.action && jsxRuntime.jsx("div", Object.assign({
-        className: "icon-action",
-        onClick: rest.action.onClick
-      }, {
-        children: jsxRuntime.jsx(FontAwesomeIcon, {
-          icon: rest.action.icon,
-          color: rest.action.iconColor || colors.brand10
-        }, void 0)
-      }), void 0), jsxRuntime.jsx("input", Object.assign({}, rest, {
-        onFocus: handleFocus,
-        onBlur: handleBlur,
-        name: name,
-        placeholder: isFieldActive ? rest.placeholder : '',
-        ref: register ? register({
-          required: required,
-          validate: validadeRegister
-        }) : null
-      }), void 0), jsxRuntime.jsx("label", {
-        children: jsxRuntime.jsx("span", Object.assign({
-          style: rest.labelStyle
-        }, {
-          children: rest.label
-        }), void 0)
-      }, void 0)]
-    }), void 0), errors ? jsxRuntime.jsx(LabelError$1, {
-      children: errors.type === 'required' ? 'Obrigatório' : "" + message
-    }, void 0) : null]
-  }), void 0);
-};
-
-var _templateObject$b, _templateObject2$6, _templateObject3$6, _templateObject4$3, _templateObject5$2, _templateObject6$2, _templateObject7$2, _templateObject8, _templateObject9;
-var Sizes$4 = {
-  mini: 'mini',
-  tiny: 'tiny',
-  small: 'small',
-  large: 'large',
-  fullscreen: 'fullscreen'
-};
-
-var sizeWidth = function sizeWidth(size) {
-  switch (size) {
-    case Sizes$4.mini:
-      return '35%';
-
-    case Sizes$4.tiny:
-      return '45%';
-
-    case Sizes$4.small:
-      return '55%';
-
-    case Sizes$4.large:
-      return '65%';
-
-    case Sizes$4.fullscreen:
-      return '95%';
-
-    default:
-      return size;
-  }
-};
-
-var Background = styled__default["default"].div(_templateObject$b || (_templateObject$b = _taggedTemplateLiteralLoose(["\n  ", "\n"])), function (props) {
-  return props.open ? styled.css(_templateObject2$6 || (_templateObject2$6 = _taggedTemplateLiteralLoose(["\n          opacity: 1;\n          visibility: visible;\n          position: fixed;\n          top: 0;\n          right: 0;\n          bottom: 0;\n          left: 0;\n          background: rgba(0, 0, 0, 0.5);\n          transition: opacity 0.25s ease;\n          overflow: auto;\n          padding: 40px 0;\n          display: flex;\n          z-index: 999;\n        "]))) : styled.css(_templateObject3$6 || (_templateObject3$6 = _taggedTemplateLiteralLoose(["\n          opacity: 1;\n          visibility: hidden;\n        "])));
-});
-var Modal = styled__default["default"].div(_templateObject4$3 || (_templateObject4$3 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  transition: top 0.25s ease;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  width: ", ";\n  margin: auto;\n  background: ", ";\n  border-radius: 30px;\n"])), function (props) {
-  if (props.width) {
-    if (typeof props.width === 'string') {
-      return props.width;
-    }
-
-    return props.width + "px";
-  }
-
-  if (props.size) {
-    return sizeWidth(props.size);
-  }
-
-  return '80%';
-}, colors.white);
-styled__default["default"].div(_templateObject5$2 || (_templateObject5$2 = _taggedTemplateLiteralLoose(["\n  transition: bottom 1s ease;\n  width: 90%;\n  background: ", ";\n  border-top-left-radius: 30px;\n  border-top-right-radius: 30px;\n"])), colors.white);
-var Header$1 = styled__default["default"].div(_templateObject6$2 || (_templateObject6$2 = _taggedTemplateLiteralLoose(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  border-bottom: ", ";\n  font-size: 20px;\n\n  .name-icon-modal {\n    display: flex;\n    align-items: center;\n  }\n\n  & strong {\n    padding: ", ";\n    color: ", ";\n  }\n"])), function (props) {
-  return props.noBorder ? 'none' : "1px solid " + colors.default20;
-}, function (props) {
-  return props.iconBack ? '20px 0' : '20px 30px';
-}, colors.brand10);
-var Icon = styled__default["default"].div(_templateObject7$2 || (_templateObject7$2 = _taggedTemplateLiteralLoose(["\n  padding: 20px 30px;\n  cursor: pointer;\n"])));
-var Body$1 = styled__default["default"].div(_templateObject8 || (_templateObject8 = _taggedTemplateLiteralLoose(["\n  padding: 20px 30px;\n  height: 100%;\n  position: relative;\n\n  .loading-modal {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    background-color: rgba(255, 255, 255, 0.8);\n    width: 100%;\n    height: 100%;\n    top: 0;\n    left: 0;\n    right: 0;\n    bottom: 0;\n    border-radius: 30px;\n    z-index: 2;\n    position: absolute;\n  }\n"])));
-var Actions = styled__default["default"].div(_templateObject9 || (_templateObject9 = _taggedTemplateLiteralLoose(["\n  border-top: 1px solid ", ";\n  margin: 0 30px;\n  padding: 20px 0;\n  display: flex;\n  flex-direction: row-reverse;\n"])), colors.default20);
-
-var ModalComponent = function ModalComponent(_ref) {
-  var open = _ref.open,
-      title = _ref.title,
-      children = _ref.children,
-      actions = _ref.actions,
-      width = _ref.width,
-      onClose = _ref.onClose,
-      closeOnDimerClick = _ref.closeOnDimerClick,
-      loading = _ref.loading,
-      onBack = _ref.onBack,
-      size = _ref.size,
-      noBorder = _ref.noBorder,
-      _ref$closeIcon = _ref.closeIcon,
-      closeIcon = _ref$closeIcon === void 0 ? true : _ref$closeIcon;
-  React$2.useEffect(function () {
-    if (open) {
-      window.addEventListener('keydown', function (event) {
-        return escModal(event);
-      });
-    } else {
-      window.removeEventListener('keydown', function (event) {
-        return escModal(event);
-      });
-    }
-
-    return window.removeEventListener('keydown', function (event) {
-      return escModal(event);
-    });
-  }, [open]);
-
-  function escModal(event) {
-    if (open && event.key == 'Escape' && closeOnDimerClick) {
-      event.stopPropagation();
-      onClose();
-    }
-  }
-
-  return jsxRuntime.jsx(Background, Object.assign({
-    open: open,
-    onClick: function onClick(event) {
-      if (closeOnDimerClick) {
-        event.stopPropagation();
-        onClose();
-      }
-    }
-  }, {
-    children: jsxRuntime.jsxs(Modal, Object.assign({
-      size: size,
-      width: width,
-      onClick: function onClick(event) {
-        return event.stopPropagation();
-      }
-    }, {
-      children: [jsxRuntime.jsxs(Header$1, Object.assign({
-        iconBack: !!onBack,
-        noBorder: noBorder
-      }, {
-        children: [jsxRuntime.jsxs("div", Object.assign({
-          className: "name-icon-modal"
-        }, {
-          children: [onBack ? jsxRuntime.jsx(Icon, Object.assign({
-            onClick: function onClick() {
-              return onBack();
-            }
-          }, {
-            children: jsxRuntime.jsx(FontAwesomeIcon, {
-              icon: faAngleLeft,
-              size: "lg",
-              color: colors.brand10
-            }, void 0)
-          }), void 0) : null, jsxRuntime.jsx("strong", {
-            children: title
-          }, void 0)]
-        }), void 0), closeIcon && jsxRuntime.jsx(Icon, Object.assign({
-          onClick: function onClick(event) {
-            event.stopPropagation();
-            onClose();
-          }
-        }, {
-          children: jsxRuntime.jsx(FontAwesomeIcon, {
-            icon: faTimes,
-            style: {
-              fontSize: 20
-            },
-            color: colors.brand10
-          }, void 0)
-        }), void 0)]
-      }), void 0), jsxRuntime.jsxs(Body$1, {
-        children: [loading && jsxRuntime.jsx("div", Object.assign({
-          className: "loading-modal"
-        }, {
-          children: jsxRuntime.jsx(Loader, {}, void 0)
-        }), void 0), children]
-      }, void 0), actions && jsxRuntime.jsx(Actions, {
-        children: actions
-      }, void 0)]
-    }), void 0)
-  }), void 0);
-};
-
-var _templateObject$a, _templateObject2$5, _templateObject3$5, _templateObject4$2, _templateObject5$1, _templateObject6$1, _templateObject7$1;
-var Label = styled__default["default"].span(_templateObject$a || (_templateObject$a = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  font-size: 14px;\n  color: ", ";\n  margin-left: 15px;\n"])), function (props) {
-  if (props.errorMessage && props.errorColor) {
-    return props.errorColor;
-  }
-
-  if (props.errorMessage) {
-    return colors.danger20;
-  }
-
-  if (props.labelColor) {
-    return props.labelColor;
-  }
-
-  return colors.brand10;
-});
-var Container$7 = styled__default["default"].div(_templateObject2$5 || (_templateObject2$5 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  width: ", ";\n  position: relative;\n\n  opacity: ", ";\n\n  textarea {\n    font-family: MontSerrat !important;\n    color: ", ";\n    resize: none;\n    width: ", ";\n\n    border-radius: 20px;\n    height: ", ";\n\n    margin: 0px;\n    outline: none;\n    padding: 20px;\n    border-color: ", ";\n\n    &::placeholder {\n      color: ", ";\n    }\n\n    -moz-appearance: none;\n    -webkit-appearance: none;\n  }\n\n  label {\n    position: absolute;\n    bottom: 0px;\n    top: 0px;\n    left: 0px;\n    width: 100%;\n    right: 100%;\n    pointer-events: none;\n    border-bottom-width: 1px;\n    border-bottom-style: solid;\n    border-bottom-color: ", ";\n\n    ", "\n  }\n\n  textarea::-webkit-scrollbar {\n    width: 7px;\n    border-radius: 50px;\n  }\n\n  textarea::-webkit-scrollbar-thumb {\n    background-color: ", ";\n    border-radius: 50px;\n  }\n\n  textarea::-webkit-scrollbar-thumb:hover {\n    background-color: ", ";\n  }\n"])), function (props) {
-  return getMeasurement(props.width);
-}, function (props) {
-  return props.disabled ? '50%' : '100%';
-}, function (props) {
-  return props.textColor ? props.textColor : colors.gray20;
-}, function (props) {
-  return getMeasurement(props.width);
-}, function (props) {
-  return getMeasurement(props.height);
-}, function (props) {
-  if (props.errorMessage && props.errorColor) {
-    return props.errorColor;
-  }
-
-  if (props.errorMessage) {
-    return colors.danger20;
-  }
-
-  return colors.gray10;
-}, colors.default10, function (props) {
-  if (props.errorMessage && props.errorColor) {
-    return props.errorColor;
-  }
-
-  if (props.errorMessage) {
-    return colors.danger20;
-  }
-
-  return colors.gray10;
-}, function (props) {
-  return props.isFieldActive ? styled.css(_templateObject3$5 || (_templateObject3$5 = _taggedTemplateLiteralLoose(["\n            color: ", ";\n          "])), colors.brand10) : styled.css(_templateObject4$2 || (_templateObject4$2 = _taggedTemplateLiteralLoose(["\n            color: ", ";\n          "])), colors.gray20);
-}, colors.brand10, colors.brandTransparent2);
-var LabelError = styled__default["default"].span(_templateObject5$1 || (_templateObject5$1 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  font-size: 10px;\n  margin-left: 0;\n  margin-top: -2px;\n  color: ", ";\n"])), function (props) {
-  if (props.errorColor) {
-    return props.errorColor;
-  }
-
-  return colors.danger20;
-});
-var Footer = styled__default["default"].div(_templateObject6$1 || (_templateObject6$1 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: space-between;\n  font-size: 10px;\n"])));
-var LabelLengthInfo = styled__default["default"].span(_templateObject7$1 || (_templateObject7$1 = _taggedTemplateLiteralLoose(["\n  font-size: 10px;\n  color: ", ";\n"])), colors.gray10);
-
-var _excluded$8 = ["label", "labelClassName", "labelStyle", "labelColor", "errorClassName", "errorStyle", "errorMessage", "errorColor", "containerStyle", "textColor", "width", "height", "lengthInfo", "lengthInfoClassName", "lengthInfoStyle"];
-
-function TextArea(_ref) {
-  var label = _ref.label,
-      labelClassName = _ref.labelClassName,
-      labelStyle = _ref.labelStyle,
-      labelColor = _ref.labelColor,
-      errorClassName = _ref.errorClassName,
-      errorStyle = _ref.errorStyle,
-      errorMessage = _ref.errorMessage,
-      errorColor = _ref.errorColor,
-      containerStyle = _ref.containerStyle,
-      textColor = _ref.textColor,
-      width = _ref.width,
-      height = _ref.height,
-      lengthInfo = _ref.lengthInfo,
-      lengthInfoClassName = _ref.lengthInfoClassName,
-      lengthInfoStyle = _ref.lengthInfoStyle,
-      rest = _objectWithoutPropertiesLoose$3(_ref, _excluded$8);
-
-  return jsxRuntime.jsxs("div", {
-    children: [label && jsxRuntime.jsx(Label, Object.assign({
-      style: labelStyle,
-      errorMessage: errorMessage,
-      labelColor: labelColor,
-      className: labelClassName,
-      errorColor: errorColor
-    }, {
-      children: label
-    }), void 0), jsxRuntime.jsx(Container$7, Object.assign({
-      errorMessage: errorMessage,
-      errorColor: errorColor,
-      containerStyle: containerStyle,
-      style: containerStyle,
-      disabled: rest.disabled,
-      textColor: textColor,
-      width: width,
-      height: height
-    }, {
-      children: jsxRuntime.jsx("textarea", Object.assign({}, rest), void 0)
-    }), void 0), jsxRuntime.jsxs(Footer, {
-      children: [jsxRuntime.jsx(LabelError, Object.assign({
-        className: errorClassName,
-        style: errorStyle,
-        errorColor: errorColor
-      }, {
-        children: errorMessage
-      }), void 0), (lengthInfo || typeof lengthInfo == 'number') && rest.maxLength ? jsxRuntime.jsx(LabelLengthInfo, Object.assign({
-        className: lengthInfoClassName,
-        style: lengthInfoStyle
-      }, {
-        children: (typeof lengthInfo == 'number' ? lengthInfo : typeof rest.value == 'string' ? rest.value.length : 0) + "/" + rest.maxLength + " caracteres"
-      }), void 0) : null]
-    }, void 0)]
-  }, void 0);
-}
-
-var _excluded$7 = ["register", "errors", "validate", "name", "required", "limit", "minimum"];
-
-function TextAreaForm(_ref) {
-  var register = _ref.register,
-      errors = _ref.errors,
-      validate = _ref.validate,
-      name = _ref.name,
-      required = _ref.required,
-      limit = _ref.limit,
-      minimum = _ref.minimum,
-      rest = _objectWithoutPropertiesLoose$3(_ref, _excluded$7);
-
-  var _useState = React$2.useState(''),
-      message = _useState[0],
-      setMessage = _useState[1];
-
-  return jsxRuntime.jsx(TextArea, Object.assign({}, rest, {
-    name: name,
-    errorMessage: errors ? errors.type === 'required' ? 'Obrigatório' : "" + message : ''
-  }, register({
-    required: required,
-    validate: validate && required ? function (value) {
-      if (validate(value)) {
-        setMessage(validate(value));
-        return false;
-      }
-
-      setMessage('');
-      return true;
-    } : limit && required ? function (value) {
-      if (value.length > limit) {
-        setMessage(limit + " caracteres permitidos.");
-        return false;
-      }
-
-      setMessage('');
-      return true;
-    } : minimum && required ? function (value) {
-      if (value.length < minimum) {
-        setMessage(name + " deve ter " + minimum + " ou mais caracteres.");
-        return false;
-      }
-
-      setMessage('');
-      return true;
-    } : null
-  })), void 0);
-}
-
-var _templateObject$9;
-var Sizes$3 = {
-  mini: 'mini',
-  tiny: 'tiny',
-  small: 'small',
-  medium: 'medium',
-  large: 'large',
-  big: 'big',
-  huge: 'huge',
-  massive: 'massive'
-};
-
-var size$1 = function size(_size) {
-  switch (_size) {
-    case Sizes$3.mini:
-      return '10px';
-
-    case Sizes$3.tiny:
-      return '12px';
-
-    case Sizes$3.small:
-      return '14px';
-
-    case Sizes$3.medium:
-      return '17px';
-
-    case Sizes$3.large:
-      return '20px';
-
-    case Sizes$3.big:
-      return '23px';
-
-    case Sizes$3.huge:
-      return '26px';
-
-    case Sizes$3.massive:
-      return '30px';
-
-    default:
-      return _size;
-  }
-};
-
-var sizeChecked$1 = function sizeChecked(size) {
-  switch (size) {
-    case Sizes$3.mini:
-      return '8px';
-
-    case Sizes$3.tiny:
-      return '10px';
-
-    case Sizes$3.small:
-      return '11px';
-
-    case Sizes$3.medium:
-      return '13px';
-
-    case Sizes$3.large:
-      return '16px';
-
-    case Sizes$3.big:
-      return '19px';
-
-    case Sizes$3.huge:
-      return '21px';
-
-    case Sizes$3.massive:
-      return '23px';
-
-    default:
-      return size;
-  }
-};
-
-var marginLeft = function marginLeft(size) {
-  switch (size) {
-    case Sizes$3.mini:
-      return '1px';
-
-    case Sizes$3.tiny:
-      return '1.2px';
-
-    case Sizes$3.small:
-      return '1.4px';
-
-    case Sizes$3.medium:
-      return '2px';
-
-    case Sizes$3.large:
-      return '2px';
-
-    case Sizes$3.big:
-      return '2px';
-
-    case Sizes$3.huge:
-      return '3px';
-
-    case Sizes$3.massive:
-      return '4px';
-
-    default:
-      return size;
-  }
-};
-
-var labelSize$1 = function labelSize(size) {
-  switch (size) {
-    case Sizes$3.mini:
-      return '10px';
-
-    case Sizes$3.tiny:
-      return '13px';
-
-    case Sizes$3.small:
-      return '14px';
-
-    case Sizes$3.medium:
-      return '16px';
-
-    case Sizes$3.large:
-      return '18px';
-
-    case Sizes$3.big:
-      return '20px';
-
-    case Sizes$3.huge:
-      return '22px';
-
-    case Sizes$3.massive:
-      return '24px';
-
-    default:
-      return size;
-  }
-};
-
-var marginRight = function marginRight(size) {
-  switch (size) {
-    case Sizes$3.mini:
-      return '5px';
-
-    case Sizes$3.tiny:
-      return '6px';
-
-    case Sizes$3.small:
-      return '7px';
-
-    case Sizes$3.medium:
-      return '8px';
-
-    case Sizes$3.large:
-      return '9px';
-
-    case Sizes$3.big:
-      return '10px';
-
-    case Sizes$3.huge:
-      return '11px';
-
-    case Sizes$3.massive:
-      return '12px';
-
-    default:
-      return size;
-  }
-};
-
-var Container$6 = styled__default["default"].div(_templateObject$9 || (_templateObject$9 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  display: flex;\n  align-items: center;\n\n  > input {\n    display: none;\n  }\n\n  label {\n    font-size: ", ";\n    color: ", ";\n    cursor: ", ";\n    opacity: ", ";\n  }\n\n  > input + div {\n    position: relative;\n    cursor: ", ";\n    opacity: ", ";\n    display: flex;\n    align-items: center;\n\n    &:before {\n      content: '';\n      position: absolute;\n      width: ", ";\n      height: ", ";\n      border: 1px solid ", ";\n      background: ", ";\n      border-radius: 5px;\n    }\n    &:after {\n      content: ' ';\n      position: absolute;\n      width: ", ";\n      height: ", ";\n      border: 1px solid ", ";\n      background: ", ";\n      border-radius: 5px;\n      color: ", ";\n      text-align: center;\n      font-size: 12px;\n    }\n  }\n  > input:not(:checked) + div {\n    &:after {\n      opacity: 0;\n      transform: scale(0);\n    }\n  }\n  > input:checked + div {\n    &:after {\n      opacity: 1;\n      transform: scale(1);\n    }\n  }\n\n  span {\n    margin-left: ", ";\n    margin-right: ", ";\n    font-size: ", ";\n    color: ", ";\n    z-index: 1;\n  }\n"])), function (props) {
-  if (props.sizeBox) {
-    return labelSize$1(props.sizeBox);
-  }
-
-  return '17px';
-}, colors.gray20, function (props) {
-  return props.disabled ? 'default' : 'pointer';
-}, function (props) {
-  return props.disabled ? 0.5 : 1;
-}, function (props) {
-  return props.disabled ? 'default' : 'pointer';
-}, function (props) {
-  return props.disabled ? 0.5 : 1;
-}, function (props) {
-  if (props.sizeBox) {
-    return size$1(props.sizeBox);
-  }
-
-  return '17px';
-}, function (props) {
-  if (props.sizeBox) {
-    return size$1(props.sizeBox);
-  }
-
-  return '17px';
-}, colors.default20, colors.default20, function (props) {
-  if (props.sizeBox) {
-    return size$1(props.sizeBox);
-  }
-
-  return '17px';
-}, function (props) {
-  if (props.sizeBox) {
-    return size$1(props.sizeBox);
-  }
-
-  return '17px';
-}, colors.brandDark, colors.brandDark, colors.white, function (props) {
-  if (props.sizeBox) {
-    return marginLeft(props.sizeBox);
-  }
-
-  return '2.5px';
-}, function (props) {
-  if (props.sizeBox) {
-    return marginRight(props.sizeBox);
-  }
-
-  return '8px';
-}, function (props) {
-  if (props.sizeBox) {
-    return sizeChecked$1(props.sizeBox);
-  }
-
-  return '13px';
-}, function (props) {
-  return props.checked ? colors.white : colors.default20;
-});
-
-var _excluded$6 = ["label", "labelStyle", "sizeBox"];
-
-var Checkbox = function Checkbox(_ref) {
-  var label = _ref.label,
-      labelStyle = _ref.labelStyle,
-      sizeBox = _ref.sizeBox,
-      rest = _objectWithoutPropertiesLoose$3(_ref, _excluded$6);
-
-  return jsxRuntime.jsxs(Container$6, Object.assign({
-    onClick: function onClick() {
-      return !rest.disabled ? rest.onChange ? rest.onChange() : null : null;
-    },
-    disabled: rest.disabled,
-    sizeBox: sizeBox,
-    checked: rest.checked
-  }, {
-    children: [jsxRuntime.jsx("input", Object.assign({
-      type: "checkbox"
-    }, rest), void 0), jsxRuntime.jsxs("div", {
-      children: [jsxRuntime.jsx("span", {
-        children: jsxRuntime.jsx(FontAwesomeIcon, {
-          icon: faCheck
-        }, void 0)
-      }, void 0), jsxRuntime.jsx("label", Object.assign({
-        style: labelStyle
-      }, {
-        children: label
-      }), void 0)]
-    }, void 0)]
-  }), void 0);
-};
-
-var _templateObject$8;
-var Sizes$2 = {
-  mini: 'mini',
-  tiny: 'tiny',
-  small: 'small',
-  medium: 'medium',
-  large: 'large',
-  big: 'big',
-  huge: 'huge',
-  massive: 'massive'
-};
-
-var size = function size(_size) {
-  switch (_size) {
-    case Sizes$2.mini:
-      return '0.625rem';
-
-    case Sizes$2.tiny:
-      return '0.75rem';
-
-    case Sizes$2.small:
-      return '0.875rem';
-
-    case Sizes$2.medium:
-      return '1.0625rem';
-
-    case Sizes$2.large:
-      return '1.25rem';
-
-    case Sizes$2.big:
-      return '1.4375rem';
-
-    case Sizes$2.huge:
-      return '1.625rem';
-
-    case Sizes$2.massive:
-      return '1.875rem';
-
-    default:
-      return _size;
-  }
-};
-
-var sizeChecked = function sizeChecked(size) {
-  switch (size) {
-    case Sizes$2.mini:
-      return '0.125rem';
-
-    case Sizes$2.tiny:
-      return '0.25rem';
-
-    case Sizes$2.small:
-      return '0.375rem';
-
-    case Sizes$2.medium:
-      return '0.5625rem';
-
-    case Sizes$2.large:
-      return '0.75rem';
-
-    case Sizes$2.big:
-      return '0.9375rem';
-
-    case Sizes$2.huge:
-      return '1.125rem';
-
-    case Sizes$2.massive:
-      return '1.375rem';
-
-    default:
-      return size;
-  }
-};
-
-var labelSize = function labelSize(size) {
-  switch (size) {
-    case Sizes$2.mini:
-      return '0.625rem';
-
-    case Sizes$2.tiny:
-      return '0.8125rem';
-
-    case Sizes$2.small:
-      return '0.875rem';
-
-    case Sizes$2.medium:
-      return '1rem';
-
-    case Sizes$2.large:
-      return '1.125rem';
-
-    case Sizes$2.big:
-      return '1.25rem';
-
-    case Sizes$2.huge:
-      return '1.375rem';
-
-    case Sizes$2.massive:
-      return '1.5rem';
-
-    default:
-      return size;
-  }
-};
-
-var paddingLeft = function paddingLeft(size) {
-  switch (size) {
-    case Sizes$2.mini:
-      return '0.9375rem';
-
-    case Sizes$2.tiny:
-      return '1.125rem';
-
-    case Sizes$2.small:
-      return '1.25rem';
-
-    case Sizes$2.medium:
-      return '1.5625rem';
-
-    case Sizes$2.large:
-      return '1.75rem';
-
-    case Sizes$2.big:
-      return '2rem';
-
-    case Sizes$2.huge:
-      return '2.1875rem';
-
-    case Sizes$2.massive:
-      return '2.5rem';
-
-    default:
-      return size;
-  }
-};
-
-var paddingTop = function paddingTop(size) {
-  switch (size) {
-    case Sizes$2.mini:
-      return '0rem';
-
-    case Sizes$2.tiny:
-      return '0rem';
-
-    case Sizes$2.small:
-      return '0rem';
-
-    case Sizes$2.medium:
-      return '0rem';
-
-    case Sizes$2.large:
-      return '0.125rem';
-
-    case Sizes$2.big:
-      return '0.125rem';
-
-    case Sizes$2.huge:
-      return '0.1875rem';
-
-    case Sizes$2.massive:
-      return '0.25rem';
-
-    default:
-      return size;
-  }
-};
-
-var topBoxBefore = function topBoxBefore(size) {
-  switch (size) {
-    case Sizes$2.mini:
-      return '0.3125rem';
-
-    case Sizes$2.tiny:
-      return '0.25rem';
-
-    case Sizes$2.small:
-      return '0.1875rem';
-
-    case Sizes$2.medium:
-      return '0.0625rem';
-
-    case Sizes$2.large:
-      return '0rem';
-
-    case Sizes$2.big:
-      return '0rem';
-
-    case Sizes$2.huge:
-      return '0rem';
-
-    case Sizes$2.massive:
-      return '0rem';
-
-    default:
-      return size;
-  }
-};
-
-var topBoxAfter = function topBoxAfter(size) {
-  switch (size) {
-    case Sizes$2.mini:
-      return '0.5625rem';
-
-    case Sizes$2.tiny:
-      return '0.5rem';
-
-    case Sizes$2.small:
-      return '0.4375rem';
-
-    case Sizes$2.medium:
-      return '0.3125rem';
-
-    case Sizes$2.large:
-      return '0.25rem';
-
-    case Sizes$2.big:
-      return '0.25rem';
-
-    case Sizes$2.huge:
-      return '0.25rem';
-
-    case Sizes$2.massive:
-      return '0.25rem';
-
-    default:
-      return size;
-  }
-};
-
-var Container$5 = styled__default["default"].div(_templateObject$8 || (_templateObject$8 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n\n  &,\n  label,\n  input {\n    cursor: ", ";\n  }\n\n  > input {\n    display: none;\n  }\n\n  label {\n    font-size: ", ";\n    opacity: ", ";\n    color: ", ";\n    padding-top: ", ";\n  }\n\n  > input + div {\n    position: relative;\n    padding-left: ", ";\n    opacity: ", ";\n    display: flex;\n    align-items: center;\n\n    &:before {\n      content: '';\n      position: absolute;\n      left: 0;\n      top: ", ";\n      width: ", ";\n      height: ", ";\n      border: 1px solid ", ";\n      background: ", ";\n      border-radius: 50%;\n    }\n    &:after {\n      content: ' ';\n      position: absolute;\n      left: 4px;\n      top: ", ";\n      width: ", ";\n      height: ", ";\n      border: 1px solid ", ";\n      background: ", ";\n      border-radius: 50%;\n      color: ", ";\n      text-align: center;\n      font-size: 12px;\n    }\n  }\n  > input:not(:checked) + div {\n    &:after {\n      opacity: 0;\n      transform: scale(0);\n    }\n  }\n  > input:checked + div {\n    &:after {\n      opacity: 1;\n      transform: scale(1);\n    }\n  }\n"])), function (props) {
-  return props.disabled ? 'default' : 'pointer';
-}, function (props) {
-  if (props.sizeBox) {
-    return labelSize(props.sizeBox);
-  }
-
-  return '1.0625rem';
-}, function (props) {
-  return props.disabled ? 0.5 : 1;
-}, colors.gray20, function (props) {
-  if (props.sizeBox) {
-    return paddingTop(props.sizeBox);
-  }
-
-  return '0rem';
-}, function (props) {
-  if (props.sizeBox) {
-    return paddingLeft(props.sizeBox);
-  }
-
-  return '1.5625rem';
-}, function (props) {
-  return props.disabled ? 0.5 : 1;
-}, function (props) {
-  if (props.sizeBox) {
-    return topBoxBefore(props.sizeBox);
-  }
-
-  return '1px';
-}, function (props) {
-  if (props.sizeBox) {
-    return size(props.sizeBox);
-  }
-
-  return '17px';
-}, function (props) {
-  if (props.sizeBox) {
-    return size(props.sizeBox);
-  }
-
-  return '17px';
-}, colors.default30, colors.default20, function (props) {
-  if (props.sizeBox) {
-    return topBoxAfter(props.sizeBox);
-  }
-
-  return '5px';
-}, function (props) {
-  if (props.sizeBox) {
-    return sizeChecked(props.sizeBox);
-  }
-
-  return '9px';
-}, function (props) {
-  if (props.sizeBox) {
-    return sizeChecked(props.sizeBox);
-  }
-
-  return '9px';
-}, colors.gray20, colors.gray20, colors.white);
-
-var _excluded$5 = ["label", "labelStyle", "sizeBox", "containerClassName", "containerStyle", "labelClassName"];
-
-function Radio(_ref) {
-  var label = _ref.label,
-      labelStyle = _ref.labelStyle,
-      sizeBox = _ref.sizeBox,
-      containerClassName = _ref.containerClassName,
-      containerStyle = _ref.containerStyle,
-      labelClassName = _ref.labelClassName,
-      rest = _objectWithoutPropertiesLoose$3(_ref, _excluded$5);
-
-  return jsxRuntime.jsxs(Container$5, Object.assign({
-    onClick: !rest.disabled && rest.onChange ? rest.onChange : undefined,
-    disabled: rest.disabled,
-    sizeBox: sizeBox,
-    className: containerClassName,
-    style: containerStyle,
-    role: "radio"
-  }, {
-    children: [jsxRuntime.jsx("input", Object.assign({
-      "data-testid": "input-radio",
-      type: "radio"
-    }, rest), void 0), jsxRuntime.jsx("div", {
-      children: jsxRuntime.jsx("label", Object.assign({
-        className: labelClassName,
-        style: labelStyle
-      }, {
-        children: label
-      }), void 0)
-    }, void 0)]
-  }), void 0);
-}
-
-var _templateObject$7;
-var Container$4 = styled__default["default"].div(_templateObject$7 || (_templateObject$7 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  width: 100% !important;\n  display: flex !important;\n  flex-direction: column !important;\n  padding-bottom: ", ";\n\n  label {\n    font-size: 14px;\n    margin-left: 15px;\n    color: ", ";\n  }\n\n  /*!\n * # Semantic UI 2.4.0 - Dropdown\n * http://github.com/semantic-org/semantic-ui/\n *\n *\n * Released under the MIT license\n * http://opensource.org/licenses/MIT\n *\n */\n\n  /*******************************\n            Dropdown\n*******************************/\n\n  .ui.dropdown {\n    cursor: pointer;\n    position: relative;\n    display: inline-block;\n    outline: none;\n    text-align: ", ";\n    color: ", ";\n    -webkit-transition: width 0.1s ease, -webkit-box-shadow 0.1s ease;\n    transition: width 0.1s ease, -webkit-box-shadow 0.1s ease;\n    transition: box-shadow 0.1s ease, width 0.1s ease;\n    transition: box-shadow 0.1s ease, width 0.1s ease,\n      -webkit-box-shadow 0.1s ease;\n    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);\n  }\n\n  /*******************************\n            Content\n*******************************/\n\n  /*--------------\n      Menu\n---------------*/\n\n  .ui.dropdown .menu {\n    cursor: auto;\n    position: absolute;\n    display: none;\n    outline: none;\n    top: 100%;\n    min-width: -webkit-max-content;\n    min-width: -moz-max-content;\n    min-width: max-content;\n    margin: 0em;\n    padding: 0em 0em;\n    background: #ffffff;\n    font-size: 1em;\n    text-shadow: none;\n    text-align: left;\n    -webkit-box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n    box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n    border: 1px solid rgba(34, 36, 38, 0.15);\n    border-radius: ", ";\n    -webkit-transition: opacity 0.1s ease;\n    transition: opacity 0.1s ease;\n    z-index: 11;\n    will-change: transform, opacity;\n    /* border-top: ", ";\n        border-left: ", ";\n        border-right: ", "; */\n  }\n  .ui.dropdown .menu > * {\n    white-space: nowrap;\n  }\n\n  /*--------------\n  Hidden Input\n---------------*/\n\n  .ui.dropdown > input:not(.search):first-child,\n  .ui.dropdown > select {\n    display: none !important;\n  }\n\n  /*--------------\n Dropdown Icon\n---------------*/\n\n  .ui.dropdown > .dropdown.icon {\n    position: relative;\n    width: auto;\n    font-size: 0.85714286em;\n    margin: 0em 0em 0em 1em;\n  }\n  .ui.dropdown .menu > .item .dropdown.icon {\n    width: auto;\n    float: right;\n    margin: 0em 0em 0em 1em;\n  }\n  .ui.dropdown .menu > .item .dropdown.icon + .text {\n    margin-right: 1em;\n  }\n\n  /*--------------\n      Text\n---------------*/\n\n  .ui.dropdown > .text {\n    display: inline-block;\n    -webkit-transition: none;\n    transition: none;\n  }\n\n  /*--------------\n    Menu Item\n---------------*/\n\n  .ui.dropdown .menu > .item {\n    position: relative;\n    cursor: pointer;\n    display: block;\n    border: none;\n    height: auto;\n    text-align: left;\n    border-top: none;\n    line-height: 1em;\n    color: ", ";\n    padding: 0.78571429rem 1.14285714rem !important;\n    font-size: 1rem;\n    text-transform: none;\n    font-weight: normal;\n    -webkit-box-shadow: none;\n    box-shadow: none;\n    -webkit-touch-callout: none;\n  }\n  .ui.dropdown .menu > .item:first-child {\n    border-top-width: 0px;\n  }\n\n  /*--------------\n  Floated Content\n---------------*/\n\n  .ui.dropdown > .text > [class*='right floated'],\n  .ui.dropdown .menu .item > [class*='right floated'] {\n    float: right !important;\n    margin-right: 0em !important;\n    margin-left: 1em !important;\n  }\n  .ui.dropdown > .text > [class*='left floated'],\n  .ui.dropdown .menu .item > [class*='left floated'] {\n    float: left !important;\n    margin-left: 0em !important;\n    margin-right: 1em !important;\n  }\n  .ui.dropdown .menu .item > .icon.floated,\n  .ui.dropdown .menu .item > .flag.floated,\n  .ui.dropdown .menu .item > .image.floated,\n  .ui.dropdown .menu .item > img.floated {\n    margin-top: 0em;\n  }\n\n  /*--------------\n  Menu Divider\n---------------*/\n\n  .ui.dropdown .menu > .header {\n    margin: 1rem 0rem 0.75rem;\n    padding: 0em 1.14285714rem;\n    color: rgba(0, 0, 0, 0.85);\n    font-size: 0.78571429em;\n    font-weight: bold;\n    text-transform: uppercase;\n  }\n  .ui.dropdown .menu > .divider {\n    border-top: 1px solid rgba(34, 36, 38, 0.1);\n    height: 0em;\n    margin: 0.5em 0em;\n  }\n  .ui.dropdown.dropdown .menu > .input {\n    width: auto;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    margin: 1.14285714rem 0.78571429rem;\n    min-width: 10rem;\n  }\n  .ui.dropdown .menu > .header + .input {\n    margin-top: 0em;\n  }\n  .ui.dropdown .menu > .input:not(.transparent) input {\n    padding: 0.5em 1em;\n  }\n  .ui.dropdown .menu > .input:not(.transparent) .button,\n  .ui.dropdown .menu > .input:not(.transparent) .icon,\n  .ui.dropdown .menu > .input:not(.transparent) .label {\n    padding-top: 0.5em;\n    padding-bottom: 0.5em;\n  }\n\n  /*-----------------\n  Item Description\n-------------------*/\n\n  .ui.dropdown > .text > .description,\n  .ui.dropdown .menu > .item > .description {\n    float: right;\n    margin: 0em 0em 0em 1em;\n    color: rgba(0, 0, 0, 0.4);\n  }\n\n  /*-----------------\n       Message\n-------------------*/\n\n  .ui.dropdown .menu > .message {\n    padding: 0.78571429rem 1.14285714rem;\n    font-weight: normal;\n  }\n  .ui.dropdown .menu > .message:not(.ui) {\n    color: rgba(0, 0, 0, 0.4);\n  }\n\n  /*--------------\n    Sub Menu\n---------------*/\n\n  .ui.dropdown .menu .menu {\n    top: 0% !important;\n    left: 100%;\n    right: auto;\n    margin: 0em 0em 0em -0.5em !important;\n    border-radius: 0.28571429rem !important;\n    z-index: 21 !important;\n  }\n\n  /* Hide Arrow */\n  .ui.dropdown .menu .menu:after {\n    display: none;\n  }\n\n  /*--------------\n   Sub Elements\n---------------*/\n\n  /* Icons / Flags / Labels / Image */\n  .ui.dropdown > .text > .icon,\n  .ui.dropdown > .text > .label,\n  .ui.dropdown > .text > .flag,\n  .ui.dropdown > .text > img,\n  .ui.dropdown > .text > .image {\n    margin-top: 0em;\n  }\n  .ui.dropdown .menu > .item > .icon,\n  .ui.dropdown .menu > .item > .label,\n  .ui.dropdown .menu > .item > .flag,\n  .ui.dropdown .menu > .item > .image,\n  .ui.dropdown .menu > .item > img {\n    margin-top: 0em;\n  }\n  .ui.dropdown > .text > .icon,\n  .ui.dropdown > .text > .label,\n  .ui.dropdown > .text > .flag,\n  .ui.dropdown > .text > img,\n  .ui.dropdown > .text > .image,\n  .ui.dropdown .menu > .item > .icon,\n  .ui.dropdown .menu > .item > .label,\n  .ui.dropdown .menu > .item > .flag,\n  .ui.dropdown .menu > .item > .image,\n  .ui.dropdown .menu > .item > img {\n    margin-left: 0em;\n    float: none;\n    margin-right: 0.78571429rem;\n  }\n\n  /*--------------\n     Image\n---------------*/\n\n  .ui.dropdown > .text > img,\n  .ui.dropdown > .text > .image,\n  .ui.dropdown .menu > .item > .image,\n  .ui.dropdown .menu > .item > img {\n    display: inline-block;\n    vertical-align: top;\n    width: auto;\n    margin-top: -0.5em;\n    margin-bottom: -0.5em;\n    max-height: 2em;\n  }\n\n  /*******************************\n            Coupling\n*******************************/\n\n  /*--------------\n      Menu\n---------------*/\n\n  /* Remove Menu Item Divider */\n  .ui.dropdown .ui.menu > .item:before,\n  .ui.menu .ui.dropdown .menu > .item:before {\n    display: none;\n  }\n\n  /* Prevent Menu Item Border */\n  .ui.menu .ui.dropdown .menu .active.item {\n    border-left: none;\n  }\n\n  /* Automatically float dropdown menu right on last menu item */\n  .ui.menu .right.menu .dropdown:last-child .menu,\n  .ui.menu .right.dropdown.item .menu,\n  .ui.buttons > .ui.dropdown:last-child .menu {\n    left: auto;\n    right: 0em;\n  }\n\n  /*--------------\n      Label\n---------------*/\n\n  /* Dropdown Menu */\n  .ui.label.dropdown .menu {\n    min-width: 100%;\n  }\n\n  /*--------------\n     Button\n---------------*/\n\n  /* No Margin On Icon Button */\n  .ui.dropdown.icon.button > .dropdown.icon {\n    margin: 0em;\n  }\n  .ui.button.dropdown .menu {\n    min-width: 100%;\n  }\n\n  /*******************************\n              Types\n*******************************/\n\n  /*--------------\n    Selection\n---------------*/\n\n  /* Displays like a select box */\n  .ui.selection.dropdown {\n    cursor: pointer;\n    word-wrap: break-word;\n    line-height: 1em;\n    white-space: normal;\n    outline: 0;\n    -webkit-transform: rotateZ(0deg);\n    transform: rotateZ(0deg);\n    min-width: 14em;\n    min-height: 2.71428571em;\n    background: ", ";\n    display: inline-block;\n    padding: 0.78571429em 2.6em 0.78571429em 1.1em;\n    color: ", ";\n    -webkit-box-shadow: none;\n    box-shadow: none;\n    border: 1px solid\n      ", ";\n    border-radius: ", ";\n    -webkit-transition: width 0.1s ease, -webkit-box-shadow 0.1s ease;\n    transition: width 0.1s ease, -webkit-box-shadow 0.1s ease;\n    transition: box-shadow 0.1s ease, width 0.1s ease;\n    transition: box-shadow 0.1s ease, width 0.1s ease,\n      -webkit-box-shadow 0.1s ease;\n    border-radius: ", ";\n    border-top: ", ";\n    border-left: ", ";\n    border-right: ", ";\n  }\n  .ui.selection.dropdown.visible,\n  .ui.selection.dropdown.active {\n    z-index: 10;\n  }\n  select.ui.dropdown {\n    height: 38px;\n    padding: 0.5em;\n    border: 1px solid rgba(34, 36, 38, 0.15);\n    visibility: visible;\n  }\n  .ui.selection.dropdown > .search.icon,\n  .ui.selection.dropdown > .delete.icon,\n  .ui.selection.dropdown > .dropdown.icon {\n    cursor: pointer;\n    position: absolute;\n    width: auto;\n    height: auto;\n    line-height: 1.21428571em;\n    top: 0.78571429em;\n    right: 1em;\n    z-index: 3;\n    margin: -0.78571429em;\n    padding: 0.91666667em;\n    opacity: 0.8;\n    -webkit-transition: opacity 0.1s ease;\n    transition: opacity 0.1s ease;\n  }\n\n  /* Compact */\n  .ui.compact.selection.dropdown {\n    min-width: 0px;\n  }\n\n  /*  Selection Menu */\n  .ui.selection.dropdown .menu {\n    overflow-x: hidden;\n    overflow-y: auto;\n    -webkit-backface-visibility: hidden;\n    backface-visibility: hidden;\n    -webkit-overflow-scrolling: touch;\n    border-top-width: 0px !important;\n    width: auto;\n    outline: none;\n    margin: 0px -1px;\n    min-width: calc(100% + 2px);\n    width: calc(100% + 2px);\n    border-radius: 0em 0em 0.28571429rem 0.28571429rem;\n    -webkit-box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n    box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n    -webkit-transition: opacity 0.1s ease;\n    transition: opacity 0.1s ease;\n    border-bottom-left-radius: 20px;\n    border-bottom-right-radius: 20px;\n  }\n  .ui.selection.dropdown .menu:after,\n  .ui.selection.dropdown .menu:before {\n    display: none;\n  }\n\n  /*--------------\n    Message\n---------------*/\n\n  .ui.selection.dropdown .menu > .message {\n    padding: 0.78571429rem 1.14285714rem;\n  }\n  @media only screen and (max-width: 767px) {\n    .ui.selection.dropdown .menu {\n      max-height: 8.01428571rem;\n    }\n  }\n  @media only screen and (min-width: 768px) {\n    .ui.selection.dropdown .menu {\n      max-height: 10.68571429rem;\n    }\n  }\n  @media only screen and (min-width: 992px) {\n    .ui.selection.dropdown .menu {\n      max-height: 16.02857143rem;\n    }\n  }\n  @media only screen and (min-width: 1920px) {\n    .ui.selection.dropdown .menu {\n      max-height: 21.37142857rem;\n    }\n  }\n\n  /* Menu Item */\n  .ui.selection.dropdown .menu > .item {\n    border-top: 1px solid #fafafa;\n    padding: 0.78571429rem 1.04285714rem !important;\n    white-space: normal;\n    word-wrap: normal;\n  }\n\n  /* User Item */\n  .ui.selection.dropdown .menu > .hidden.addition.item {\n    display: none;\n  }\n\n  /* Hover */\n  .ui.selection.dropdown:hover {\n    border-color: ", ";\n    -webkit-box-shadow: none;\n    box-shadow: none;\n  }\n\n  /* Active */\n  .ui.selection.active.dropdown {\n    border-color: ", ";\n    -webkit-box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n    box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n  }\n  .ui.selection.active.dropdown .menu {\n    border-color: ", ";\n    -webkit-box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n    box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n  }\n\n  /* Focus */\n  .ui.selection.dropdown:focus {\n    border-color: ", ";\n    -webkit-box-shadow: none;\n    box-shadow: none;\n  }\n  .ui.selection.dropdown:focus .menu {\n    border-color: ", ";\n    -webkit-box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n    box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n  }\n\n  /* Visible */\n  .ui.selection.visible.dropdown > .text:not(.default) {\n    font-weight: normal;\n    color: ", ";\n  }\n\n  /* Visible Hover */\n  .ui.selection.active.dropdown:hover {\n    border-color: ", ";\n    -webkit-box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n    box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n  }\n  .ui.selection.active.dropdown:hover .menu {\n    border-color: ", ";\n    -webkit-box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n    box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n  }\n\n  /* Dropdown Icon */\n  .ui.active.selection.dropdown > .dropdown.icon,\n  .ui.visible.selection.dropdown > .dropdown.icon {\n    opacity: '';\n    z-index: 3;\n  }\n\n  /* Connecting Border */\n  .ui.active.selection.dropdown {\n    border-bottom-left-radius: 0em !important;\n    border-bottom-right-radius: 0em !important;\n  }\n\n  /* Empty Connecting Border */\n  .ui.active.empty.selection.dropdown {\n    border-radius: 0.28571429rem !important;\n    -webkit-box-shadow: none !important;\n    box-shadow: none !important;\n  }\n  .ui.active.empty.selection.dropdown .menu {\n    border: none !important;\n    -webkit-box-shadow: none !important;\n    box-shadow: none !important;\n  }\n\n  /*--------------\n   Searchable\n---------------*/\n\n  /* Search Selection */\n  .ui.search.dropdown {\n    min-width: '';\n  }\n\n  /* Search Dropdown */\n  .ui.search.dropdown > input.search {\n    background: none transparent !important;\n    border: none !important;\n    -webkit-box-shadow: none !important;\n    box-shadow: none !important;\n    cursor: text;\n    top: 0em;\n    left: 1px;\n    width: 100%;\n    outline: none;\n    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);\n    padding: inherit;\n    color: ", ";\n    text-align: ", ";\n  }\n\n  /* Text Layering */\n  .ui.search.dropdown > input.search {\n    position: absolute;\n    z-index: 2;\n  }\n  .ui.search.dropdown > .text {\n    cursor: text;\n    position: relative;\n    left: 1px;\n    z-index: 3;\n  }\n\n  /* Search Selection */\n  .ui.search.selection.dropdown > input.search {\n    line-height: 1.21428571em;\n    padding: 0.67857143em 2.1em 0.67857143em 1em;\n  }\n\n  /* Used to size multi select input to character width */\n  .ui.search.selection.dropdown > span.sizer {\n    line-height: 1.21428571em;\n    padding: 0.67857143em 2.1em 0.67857143em 1em;\n    display: none;\n    white-space: pre;\n  }\n\n  /* Active/Visible Search */\n  .ui.search.dropdown.active > input.search,\n  .ui.search.dropdown.visible > input.search {\n    cursor: auto;\n    color: ", ";\n  }\n  .ui.search.dropdown.active > .text,\n  .ui.search.dropdown.visible > .text {\n    pointer-events: none;\n  }\n\n  /* Filtered Text */\n  .ui.active.search.dropdown input.search:focus + .text .icon,\n  .ui.active.search.dropdown input.search:focus + .text .flag {\n    opacity: 0.45;\n  }\n  .ui.active.search.dropdown input.search:focus + .text {\n    color: rgba(115, 115, 115, 0.87) !important;\n  }\n\n  .input.search::placeholder {\n    color: ", ";\n  }\n  /* Search Menu */\n  .ui.search.dropdown .menu {\n    overflow-x: hidden;\n    overflow-y: auto;\n    -webkit-backface-visibility: hidden;\n    backface-visibility: hidden;\n    -webkit-overflow-scrolling: touch;\n  }\n  @media only screen and (max-width: 767px) {\n    .ui.search.dropdown .menu {\n      max-height: 8.01428571rem;\n    }\n  }\n  @media only screen and (min-width: 768px) {\n    .ui.search.dropdown .menu {\n      max-height: 10.68571429rem;\n    }\n  }\n  @media only screen and (min-width: 992px) {\n    .ui.search.dropdown .menu {\n      max-height: 16.02857143rem;\n    }\n  }\n  @media only screen and (min-width: 1920px) {\n    .ui.search.dropdown .menu {\n      max-height: 21.37142857rem;\n    }\n  }\n\n  /*--------------\n    Multiple\n---------------*/\n\n  /* Multiple Selection */\n  .ui.multiple.dropdown {\n    padding: 0.22619048em 2.1em 0.22619048em 0.35714286em;\n  }\n  .ui.multiple.dropdown .menu {\n    cursor: auto;\n  }\n\n  /* Multiple Search Selection */\n  .ui.multiple.search.dropdown,\n  .ui.multiple.search.dropdown > input.search {\n    cursor: text;\n  }\n\n  /* Selection Label */\n  .ui.multiple.dropdown > .label {\n    -webkit-user-select: none;\n    -moz-user-select: none;\n    -ms-user-select: none;\n    user-select: none;\n    display: inline-block;\n    vertical-align: top;\n    white-space: normal;\n    font-size: 1em;\n    padding: 0.35714286em 0.78571429em;\n    margin: 0.14285714rem 0.28571429rem 0.14285714rem 0.5em;\n    -webkit-box-shadow: 0px 0px 0px 1px rgba(34, 36, 38, 0.15) inset;\n    box-shadow: 0px 0px 0px 1px rgba(34, 36, 38, 0.15) inset;\n    border-radius: 20px;\n    color: ", ";\n    background-color: ", ";\n  }\n\n  /* Dropdown Icon */\n  .ui.multiple.dropdown .dropdown.icon {\n    margin: '';\n    padding: '';\n  }\n\n  /* Text */\n  .ui.multiple.dropdown > .text {\n    position: static;\n    padding: 0;\n    max-width: 100%;\n    margin: 0.45238095em 0em 0.45238095em 0.64285714em;\n    line-height: 1.21428571em;\n  }\n  .ui.multiple.dropdown > .label ~ input.search {\n    margin-left: 0.14285714em !important;\n  }\n  .ui.multiple.dropdown > .label ~ .text {\n    display: none;\n  }\n\n  /*-----------------\n  Multiple Search\n-----------------*/\n\n  /* Prompt Text */\n  .ui.multiple.search.dropdown > .text {\n    display: inline-block;\n    position: absolute;\n    top: 0;\n    left: 0;\n    padding: inherit;\n    margin: 0.45238095em 0em 0.45238095em 0.64285714em;\n    line-height: 1.21428571em;\n  }\n  .ui.multiple.search.dropdown > .label ~ .text {\n    display: none;\n  }\n\n  /* Search */\n  .ui.multiple.search.dropdown > input.search {\n    position: static;\n    padding: 0;\n    max-width: 100%;\n    margin: 0.45238095em 0em 0.45238095em 0.64285714em;\n    width: 2.2em;\n    line-height: 1.21428571em;\n  }\n\n  /*--------------\n     Inline\n---------------*/\n\n  .ui.inline.dropdown {\n    cursor: pointer;\n    display: inline-block;\n    color: inherit;\n  }\n  .ui.inline.dropdown .dropdown.icon {\n    margin: 0em 0.21428571em 0em 0.21428571em;\n    vertical-align: baseline;\n  }\n  .ui.inline.dropdown > .text {\n    font-weight: bold;\n  }\n  .ui.inline.dropdown .menu {\n    cursor: auto;\n    margin-top: 0.21428571em;\n    border-radius: 0.28571429rem;\n  }\n\n  /*******************************\n            States\n*******************************/\n\n  /*--------------------\n        Active\n----------------------*/\n\n  /* Menu Item Active */\n  .ui.dropdown .menu .active.item {\n    background: transparent;\n    font-weight: bold;\n    color: ", ";\n    -webkit-box-shadow: none;\n    box-shadow: none;\n    z-index: 12;\n  }\n\n  /*--------------------\n        Hover\n----------------------*/\n\n  /* Menu Item Hover */\n  .ui.dropdown .menu > .item:hover {\n    background: rgba(0, 0, 0, 0.05);\n    color: ", ";\n    z-index: 13;\n  }\n\n  /*--------------------\n       Loading\n---------------------*/\n\n  .ui.loading.dropdown > i.icon {\n    height: 1em !important;\n  }\n  .ui.loading.selection.dropdown > i.icon {\n    padding: 1.5em 1.28571429em !important;\n  }\n  .ui.loading.dropdown > i.icon:before {\n    position: absolute;\n    content: '';\n    top: 50%;\n    left: 50%;\n    margin: -0.64285714em 0em 0em -0.64285714em;\n    width: 1.28571429em;\n    height: 1.28571429em;\n    border-radius: 500rem;\n    border: 0.2em solid rgba(0, 0, 0, 0.1);\n  }\n  .ui.loading.dropdown > i.icon:after {\n    position: absolute;\n    content: '';\n    top: 50%;\n    left: 50%;\n    -webkit-box-shadow: 0px 0px 0px 1px transparent;\n    box-shadow: 0px 0px 0px 1px transparent;\n    margin: -0.64285714em 0em 0em -0.64285714em;\n    width: 1.28571429em;\n    height: 1.28571429em;\n    -webkit-animation: dropdown-spin 0.6s linear;\n    animation: dropdown-spin 0.6s linear;\n    -webkit-animation-iteration-count: infinite;\n    animation-iteration-count: infinite;\n    border-radius: 500rem;\n    border-color: ", " transparent transparent;\n    border-style: solid;\n    border-width: 0.2em;\n  }\n\n  /* Coupling */\n  .ui.loading.dropdown.button > i.icon:before,\n  .ui.loading.dropdown.button > i.icon:after {\n    display: none;\n  }\n  @-webkit-keyframes dropdown-spin {\n    from {\n      -webkit-transform: rotate(0deg);\n      transform: rotate(0deg);\n    }\n    to {\n      -webkit-transform: rotate(360deg);\n      transform: rotate(360deg);\n    }\n  }\n  @keyframes dropdown-spin {\n    from {\n      -webkit-transform: rotate(0deg);\n      transform: rotate(0deg);\n    }\n    to {\n      -webkit-transform: rotate(360deg);\n      transform: rotate(360deg);\n    }\n  }\n\n  /*--------------------\n     Default Text\n----------------------*/\n\n  .ui.dropdown:not(.button) > .default.text,\n  .ui.default.dropdown:not(.button) > .text {\n    color: ", ";\n  }\n  .ui.dropdown:not(.button) > input:focus ~ .default.text,\n  .ui.default.dropdown:not(.button) > input:focus ~ .text {\n    color: ", ";\n  }\n\n  /*--------------------\n        Loading\n----------------------*/\n\n  .ui.loading.dropdown > .text {\n    -webkit-transition: none;\n    transition: none;\n  }\n\n  /* Used To Check Position */\n  .ui.dropdown .loading.menu {\n    display: block;\n    visibility: hidden;\n    z-index: -1;\n  }\n  .ui.dropdown > .loading.menu {\n    left: 0px !important;\n    right: auto !important;\n  }\n  .ui.dropdown > .menu .loading.menu {\n    left: 100% !important;\n    right: auto !important;\n  }\n\n  /*--------------------\n    Keyboard Select\n----------------------*/\n\n  /* Selected Item */\n  .ui.dropdown.selected,\n  .ui.dropdown .menu .selected.item {\n    background: rgba(0, 0, 0, 0.03);\n    color: ", ";\n  }\n\n  /*--------------------\n    Search Filtered\n----------------------*/\n\n  /* Filtered Item */\n  .ui.dropdown > .filtered.text {\n    visibility: hidden;\n  }\n  .ui.dropdown .filtered.item {\n    display: none !important;\n  }\n\n  /*--------------------\n        Error\n----------------------*/\n\n  .ui.dropdown.error,\n  .ui.dropdown.error > .text,\n  .ui.dropdown.error > .default.text {\n    color: #9f3a38;\n  }\n  .ui.selection.dropdown.error {\n    background: ", ";\n    border-color: ", ";\n  }\n  .ui.selection.dropdown.error:hover {\n    border-color: ", ";\n  }\n  .ui.dropdown.error > .menu,\n  .ui.dropdown.error > .menu .menu {\n    border-color: ", ";\n  }\n  .ui.dropdown.error > .menu > .item {\n    color: ", ";\n  }\n  .ui.multiple.selection.error.dropdown > .label {\n    border-color: ", ";\n  }\n\n  /* Item Hover */\n  .ui.dropdown.error > .menu > .item:hover {\n    background-color: ", ";\n  }\n\n  /* Item Active */\n  .ui.dropdown.error > .menu .active.item {\n    background-color: ", ";\n  }\n\n  /*--------------------\n        Clear\n----------------------*/\n\n  .ui.dropdown > .clear.dropdown.icon {\n    opacity: 0.8;\n    -webkit-transition: opacity 0.1s ease;\n    transition: opacity 0.1s ease;\n  }\n  .ui.dropdown > .clear.dropdown.icon:hover {\n    opacity: 1;\n  }\n\n  /*--------------------\n        Disabled\n----------------------*/\n\n  /* Disabled */\n  .ui.disabled.dropdown,\n  .ui.dropdown .menu > .disabled.item {\n    cursor: default;\n    pointer-events: none;\n    opacity: 0.45;\n  }\n\n  /*******************************\n           Variations\n*******************************/\n\n  /*--------------\n    Direction\n---------------*/\n\n  /* Flyout Direction */\n  .ui.dropdown .menu {\n    left: 0px;\n  }\n\n  /* Default Side (Right) */\n  .ui.dropdown .right.menu > .menu,\n  .ui.dropdown .menu .right.menu {\n    left: 100% !important;\n    right: auto !important;\n    border-radius: 0.28571429rem !important;\n  }\n\n  /* Leftward Opening Menu */\n  .ui.dropdown > .left.menu {\n    left: auto !important;\n    right: 0px !important;\n  }\n  .ui.dropdown > .left.menu .menu,\n  .ui.dropdown .menu .left.menu {\n    left: auto;\n    right: 100%;\n    margin: 0em -0.5em 0em 0em !important;\n    border-radius: 0.28571429rem !important;\n  }\n  .ui.dropdown .item .left.dropdown.icon,\n  .ui.dropdown .left.menu .item .dropdown.icon {\n    width: auto;\n    float: left;\n    margin: 0em 0em 0em 0em;\n  }\n  .ui.dropdown .item .left.dropdown.icon,\n  .ui.dropdown .left.menu .item .dropdown.icon {\n    width: auto;\n    float: left;\n    margin: 0em 0em 0em 0em;\n  }\n  .ui.dropdown .item .left.dropdown.icon + .text,\n  .ui.dropdown .left.menu .item .dropdown.icon + .text {\n    margin-left: 1em;\n    margin-right: 0em;\n  }\n\n  /*--------------\n     Upward\n---------------*/\n\n  /* Upward Main Menu */\n  .ui.upward.dropdown > .menu {\n    top: auto;\n    bottom: 100%;\n    -webkit-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.08);\n    box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.08);\n    border-radius: 0.28571429rem 0.28571429rem 0em 0em;\n  }\n\n  /* Upward Sub Menu */\n  .ui.dropdown .upward.menu {\n    top: auto !important;\n    bottom: 0 !important;\n  }\n\n  /* Active Upward */\n  .ui.simple.upward.active.dropdown,\n  .ui.simple.upward.dropdown:hover {\n    border-radius: 0.28571429rem 0.28571429rem 0em 0em !important;\n  }\n  .ui.upward.dropdown.button:not(.pointing):not(.floating).active {\n    border-radius: 0.28571429rem 0.28571429rem 0em 0em;\n  }\n\n  /* Selection */\n  .ui.upward.selection.dropdown .menu {\n    border-top-width: 1px !important;\n    border-bottom-width: 0px !important;\n    -webkit-box-shadow: 0px -2px 3px 0px rgba(0, 0, 0, 0.08);\n    box-shadow: 0px -2px 3px 0px rgba(0, 0, 0, 0.08);\n    border-top-left-radius: 20px;\n    border-top-right-radius: 20px;\n  }\n  .ui.upward.selection.dropdown:hover {\n    -webkit-box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.05);\n    box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.05);\n  }\n\n  /* Active Upward */\n  .ui.active.upward.selection.dropdown {\n    border-radius: 0em 0em 20px 20px !important;\n  }\n\n  /* Visible Upward */\n  .ui.upward.selection.dropdown.visible {\n    -webkit-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.08);\n    box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.08);\n    border-radius: 0em 0em 20px 20px !important;\n  }\n\n  /* Visible Hover Upward */\n  .ui.upward.active.selection.dropdown:hover {\n    -webkit-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.05);\n    box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.05);\n  }\n  .ui.upward.active.selection.dropdown:hover .menu {\n    -webkit-box-shadow: 0px -2px 3px 0px rgba(0, 0, 0, 0.08);\n    box-shadow: 0px -2px 3px 0px rgba(0, 0, 0, 0.08);\n  }\n\n  /*--------------\n     Simple\n---------------*/\n\n  /*  Selection Menu */\n  .ui.scrolling.dropdown .menu,\n  .ui.dropdown .scrolling.menu {\n    overflow-x: hidden;\n    overflow-y: auto;\n  }\n  .ui.scrolling.dropdown .menu {\n    overflow-x: hidden;\n    overflow-y: auto;\n    -webkit-backface-visibility: hidden;\n    backface-visibility: hidden;\n    -webkit-overflow-scrolling: touch;\n    min-width: 100% !important;\n    width: auto !important;\n  }\n  .ui.dropdown .scrolling.menu {\n    position: static;\n    overflow-y: auto;\n    border: none;\n    -webkit-box-shadow: none !important;\n    box-shadow: none !important;\n    border-radius: 0 !important;\n    margin: 0 !important;\n    min-width: 100% !important;\n    width: auto !important;\n    border-top: 1px solid rgba(34, 36, 38, 0.15);\n  }\n  .ui.scrolling.dropdown .menu .item.item.item,\n  .ui.dropdown .scrolling.menu > .item.item.item {\n    border-top: none;\n  }\n  .ui.scrolling.dropdown .menu .item:first-child,\n  .ui.dropdown .scrolling.menu .item:first-child {\n    border-top: none;\n  }\n  .ui.dropdown > .animating.menu .scrolling.menu,\n  .ui.dropdown > .visible.menu .scrolling.menu {\n    display: block;\n  }\n\n  /* Scrollbar in IE */\n  @media all and (-ms-high-contrast: none) {\n    .ui.scrolling.dropdown .menu,\n    .ui.dropdown .scrolling.menu {\n      min-width: calc(100% - 17px);\n    }\n  }\n  @media only screen and (max-width: 767px) {\n    .ui.scrolling.dropdown .menu,\n    .ui.dropdown .scrolling.menu {\n      max-height: 10.28571429rem;\n    }\n  }\n  @media only screen and (min-width: 768px) {\n    .ui.scrolling.dropdown .menu,\n    .ui.dropdown .scrolling.menu {\n      max-height: 15.42857143rem;\n    }\n  }\n  @media only screen and (min-width: 992px) {\n    .ui.scrolling.dropdown .menu,\n    .ui.dropdown .scrolling.menu {\n      max-height: 20.57142857rem;\n    }\n  }\n  @media only screen and (min-width: 1920px) {\n    .ui.scrolling.dropdown .menu,\n    .ui.dropdown .scrolling.menu {\n      max-height: 20.57142857rem;\n    }\n  }\n\n  /*--------------\n     Simple\n---------------*/\n\n  /* Displays without javascript */\n  .ui.simple.dropdown .menu:before,\n  .ui.simple.dropdown .menu:after {\n    display: none;\n  }\n  .ui.simple.dropdown .menu {\n    position: absolute;\n    display: block;\n    overflow: hidden;\n    top: -9999px !important;\n    opacity: 0;\n    width: 0;\n    height: 0;\n    -webkit-transition: opacity 0.1s ease;\n    transition: opacity 0.1s ease;\n  }\n  .ui.simple.active.dropdown,\n  .ui.simple.dropdown:hover {\n    border-bottom-left-radius: 0em !important;\n    border-bottom-right-radius: 0em !important;\n  }\n  .ui.simple.active.dropdown > .menu,\n  .ui.simple.dropdown:hover > .menu {\n    overflow: visible;\n    width: auto;\n    height: auto;\n    top: 100% !important;\n    opacity: 1;\n  }\n  .ui.simple.dropdown > .menu > .item:active > .menu,\n  .ui.simple.dropdown:hover > .menu > .item:hover > .menu {\n    overflow: visible;\n    width: auto;\n    height: auto;\n    top: 0% !important;\n    left: 100% !important;\n    opacity: 1;\n  }\n  .ui.simple.disabled.dropdown:hover .menu {\n    display: none;\n    height: 0px;\n    width: 0px;\n    overflow: hidden;\n  }\n\n  /* Visible */\n  .ui.simple.visible.dropdown > .menu {\n    display: block;\n  }\n\n  /*--------------\n      Fluid\n---------------*/\n\n  .ui.fluid.dropdown {\n    display: block;\n    width: 100%;\n    min-width: 0em;\n  }\n  .ui.fluid.dropdown > .dropdown.icon {\n    float: right;\n  }\n\n  /*--------------\n    Floating\n---------------*/\n\n  .ui.floating.dropdown .menu {\n    left: 0;\n    right: auto;\n    -webkit-box-shadow: 0px 2px 4px 0px rgba(34, 36, 38, 0.12),\n      0px 2px 10px 0px rgba(34, 36, 38, 0.15) !important;\n    box-shadow: 0px 2px 4px 0px rgba(34, 36, 38, 0.12),\n      0px 2px 10px 0px rgba(34, 36, 38, 0.15) !important;\n    border-radius: 0.28571429rem !important;\n  }\n  .ui.floating.dropdown > .menu {\n    margin-top: 0.5em !important;\n    border-radius: 0.28571429rem !important;\n  }\n\n  /*--------------\n     Pointing\n---------------*/\n\n  .ui.pointing.dropdown > .menu {\n    top: 100%;\n    margin-top: 0.78571429rem;\n    border-radius: 0.28571429rem;\n  }\n  .ui.pointing.dropdown > .menu:after {\n    display: block;\n    position: absolute;\n    pointer-events: none;\n    content: '';\n    visibility: visible;\n    -webkit-transform: rotate(45deg);\n    transform: rotate(45deg);\n    width: 0.5em;\n    height: 0.5em;\n    -webkit-box-shadow: -1px -1px 0px 0px rgba(34, 36, 38, 0.15);\n    box-shadow: -1px -1px 0px 0px rgba(34, 36, 38, 0.15);\n    background: #ffffff;\n    z-index: 2;\n  }\n  .ui.pointing.dropdown > .menu:after {\n    top: -0.25em;\n    left: 50%;\n    margin: 0em 0em 0em -0.25em;\n  }\n\n  /* Top Left Pointing */\n  .ui.top.left.pointing.dropdown > .menu {\n    top: 100%;\n    bottom: auto;\n    left: 0%;\n    right: auto;\n    margin: 1em 0em 0em;\n  }\n  .ui.top.left.pointing.dropdown > .menu {\n    top: 100%;\n    bottom: auto;\n    left: 0%;\n    right: auto;\n    margin: 1em 0em 0em;\n  }\n  .ui.top.left.pointing.dropdown > .menu:after {\n    top: -0.25em;\n    left: 1em;\n    right: auto;\n    margin: 0em;\n    -webkit-transform: rotate(45deg);\n    transform: rotate(45deg);\n  }\n\n  /* Top Right Pointing */\n  .ui.top.right.pointing.dropdown > .menu {\n    top: 100%;\n    bottom: auto;\n    right: 0%;\n    left: auto;\n    margin: 1em 0em 0em;\n  }\n  .ui.top.pointing.dropdown > .left.menu:after,\n  .ui.top.right.pointing.dropdown > .menu:after {\n    top: -0.25em;\n    left: auto !important;\n    right: 1em !important;\n    margin: 0em;\n    -webkit-transform: rotate(45deg);\n    transform: rotate(45deg);\n  }\n\n  /* Left Pointing */\n  .ui.left.pointing.dropdown > .menu {\n    top: 0%;\n    left: 100%;\n    right: auto;\n    margin: 0em 0em 0em 1em;\n  }\n  .ui.left.pointing.dropdown > .menu:after {\n    top: 1em;\n    left: -0.25em;\n    margin: 0em 0em 0em 0em;\n    -webkit-transform: rotate(-45deg);\n    transform: rotate(-45deg);\n  }\n  .ui.left:not(.top):not(.bottom).pointing.dropdown > .left.menu {\n    left: auto !important;\n    right: 100% !important;\n    margin: 0em 1em 0em 0em;\n  }\n  .ui.left:not(.top):not(.bottom).pointing.dropdown > .left.menu:after {\n    top: 1em;\n    left: auto;\n    right: -0.25em;\n    margin: 0em 0em 0em 0em;\n    -webkit-transform: rotate(135deg);\n    transform: rotate(135deg);\n  }\n\n  /* Right Pointing */\n  .ui.right.pointing.dropdown > .menu {\n    top: 0%;\n    left: auto;\n    right: 100%;\n    margin: 0em 1em 0em 0em;\n  }\n  .ui.right.pointing.dropdown > .menu:after {\n    top: 1em;\n    left: auto;\n    right: -0.25em;\n    margin: 0em 0em 0em 0em;\n    -webkit-transform: rotate(135deg);\n    transform: rotate(135deg);\n  }\n\n  /* Bottom Pointing */\n  .ui.bottom.pointing.dropdown > .menu {\n    top: auto;\n    bottom: 100%;\n    left: 0%;\n    right: auto;\n    margin: 0em 0em 1em;\n  }\n  .ui.bottom.pointing.dropdown > .menu:after {\n    top: auto;\n    bottom: -0.25em;\n    right: auto;\n    margin: 0em;\n    -webkit-transform: rotate(-135deg);\n    transform: rotate(-135deg);\n  }\n\n  /* Reverse Sub-Menu Direction */\n  .ui.bottom.pointing.dropdown > .menu .menu {\n    top: auto !important;\n    bottom: 0px !important;\n  }\n\n  /* Bottom Left */\n  .ui.bottom.left.pointing.dropdown > .menu {\n    left: 0%;\n    right: auto;\n  }\n  .ui.bottom.left.pointing.dropdown > .menu:after {\n    left: 1em;\n    right: auto;\n  }\n\n  /* Bottom Right */\n  .ui.bottom.right.pointing.dropdown > .menu {\n    right: 0%;\n    left: auto;\n  }\n  .ui.bottom.right.pointing.dropdown > .menu:after {\n    left: auto;\n    right: 1em;\n  }\n\n  /* Upward pointing */\n  .ui.pointing.upward.dropdown .menu,\n  .ui.top.pointing.upward.dropdown .menu {\n    top: auto !important;\n    bottom: 100% !important;\n    margin: 0em 0em 0.78571429rem;\n    border-radius: 0.28571429rem;\n  }\n  .ui.pointing.upward.dropdown .menu:after,\n  .ui.top.pointing.upward.dropdown .menu:after {\n    top: 100% !important;\n    bottom: auto !important;\n    -webkit-box-shadow: 1px 1px 0px 0px rgba(34, 36, 38, 0.15);\n    box-shadow: 1px 1px 0px 0px rgba(34, 36, 38, 0.15);\n    margin: -0.25em 0em 0em;\n  }\n\n  /* Right Pointing Upward */\n  .ui.right.pointing.upward.dropdown:not(.top):not(.bottom) .menu {\n    top: auto !important;\n    bottom: 0 !important;\n    margin: 0em 1em 0em 0em;\n  }\n  .ui.right.pointing.upward.dropdown:not(.top):not(.bottom) .menu:after {\n    top: auto !important;\n    bottom: 0 !important;\n    margin: 0em 0em 1em 0em;\n    -webkit-box-shadow: -1px -1px 0px 0px rgba(34, 36, 38, 0.15);\n    box-shadow: -1px -1px 0px 0px rgba(34, 36, 38, 0.15);\n  }\n\n  /* Left Pointing Upward */\n  .ui.left.pointing.upward.dropdown:not(.top):not(.bottom) .menu {\n    top: auto !important;\n    bottom: 0 !important;\n    margin: 0em 0em 0em 1em;\n  }\n  .ui.left.pointing.upward.dropdown:not(.top):not(.bottom) .menu:after {\n    top: auto !important;\n    bottom: 0 !important;\n    margin: 0em 0em 1em 0em;\n    -webkit-box-shadow: -1px -1px 0px 0px rgba(34, 36, 38, 0.15);\n    box-shadow: -1px -1px 0px 0px rgba(34, 36, 38, 0.15);\n  }\n\n  /*******************************\n         Theme Overrides\n*******************************/\n\n  /* Dropdown Carets */\n  .ui.dropdown > .dropdown.icon {\n    font-family: 'Dropdown';\n    line-height: 1;\n    height: 1em;\n    width: 1.23em;\n    -webkit-backface-visibility: hidden;\n    backface-visibility: hidden;\n    font-weight: normal;\n    font-style: normal;\n    text-align: center;\n  }\n  .ui.dropdown > .dropdown.icon {\n    width: auto;\n  }\n  .ui.dropdown > .dropdown.icon:before {\n    content: '\f0d7';\n  }\n\n  /* Sub Menu */\n  .ui.dropdown .menu .item .dropdown.icon:before {\n    content: '\f0da' /*rtl:'\f0d9'*/;\n  }\n  .ui.dropdown .item .left.dropdown.icon:before,\n  .ui.dropdown .left.menu .item .dropdown.icon:before {\n    content: '\f0d9' /*rtl:\"\f0da\"*/;\n  }\n\n  /* Vertical Menu Dropdown */\n  .ui.vertical.menu .dropdown.item > .dropdown.icon:before {\n    content: '\f0da' /*rtl:\"\f0d9\"*/;\n  }\n  .ui.dropdown > .clear.icon:before {\n    content: '\f00d';\n  }\n\n  .ui.selection.active.dropdown .menu::-webkit-scrollbar {\n    width: 7px;\n    border-radius: 50px;\n    z-index: -1px;\n  }\n\n  .ui.selection.active.dropdown .menu::-webkit-scrollbar-thumb {\n    background-color: ", ";\n    border-radius: 50px;\n  }\n\n  .ui.selection.active.dropdown .menu::-webkit-scrollbar-thumb:hover {\n    background-color: ", ";\n  }\n  /* Icons for Reference (Subsetted in 2.4.0)\n  .dropdown.down:before { content: \"\f0d7\"; }\n  .dropdown.up:before { content: \"\f0d8\"; }\n  .dropdown.left:before { content: \"\f0d9\"; }\n  .dropdown.right:before { content: \"\f0da\"; }\n  .dropdown.close:before { content: \"\f00d\"; }\n*/\n\n  /*******************************\n        User Overrides\n*******************************/\n\n  small {\n    margin-left: 15px;\n    font-size: 10px;\n    color: ", ";\n  }\n"], ["\n  font-family: MontSerrat !important;\n  width: 100% !important;\n  display: flex !important;\n  flex-direction: column !important;\n  padding-bottom: ", ";\n\n  label {\n    font-size: 14px;\n    margin-left: 15px;\n    color: ", ";\n  }\n\n  /*!\n * # Semantic UI 2.4.0 - Dropdown\n * http://github.com/semantic-org/semantic-ui/\n *\n *\n * Released under the MIT license\n * http://opensource.org/licenses/MIT\n *\n */\n\n  /*******************************\n            Dropdown\n*******************************/\n\n  .ui.dropdown {\n    cursor: pointer;\n    position: relative;\n    display: inline-block;\n    outline: none;\n    text-align: ", ";\n    color: ", ";\n    -webkit-transition: width 0.1s ease, -webkit-box-shadow 0.1s ease;\n    transition: width 0.1s ease, -webkit-box-shadow 0.1s ease;\n    transition: box-shadow 0.1s ease, width 0.1s ease;\n    transition: box-shadow 0.1s ease, width 0.1s ease,\n      -webkit-box-shadow 0.1s ease;\n    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);\n  }\n\n  /*******************************\n            Content\n*******************************/\n\n  /*--------------\n      Menu\n---------------*/\n\n  .ui.dropdown .menu {\n    cursor: auto;\n    position: absolute;\n    display: none;\n    outline: none;\n    top: 100%;\n    min-width: -webkit-max-content;\n    min-width: -moz-max-content;\n    min-width: max-content;\n    margin: 0em;\n    padding: 0em 0em;\n    background: #ffffff;\n    font-size: 1em;\n    text-shadow: none;\n    text-align: left;\n    -webkit-box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n    box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n    border: 1px solid rgba(34, 36, 38, 0.15);\n    border-radius: ", ";\n    -webkit-transition: opacity 0.1s ease;\n    transition: opacity 0.1s ease;\n    z-index: 11;\n    will-change: transform, opacity;\n    /* border-top: ", ";\n        border-left: ", ";\n        border-right: ", "; */\n  }\n  .ui.dropdown .menu > * {\n    white-space: nowrap;\n  }\n\n  /*--------------\n  Hidden Input\n---------------*/\n\n  .ui.dropdown > input:not(.search):first-child,\n  .ui.dropdown > select {\n    display: none !important;\n  }\n\n  /*--------------\n Dropdown Icon\n---------------*/\n\n  .ui.dropdown > .dropdown.icon {\n    position: relative;\n    width: auto;\n    font-size: 0.85714286em;\n    margin: 0em 0em 0em 1em;\n  }\n  .ui.dropdown .menu > .item .dropdown.icon {\n    width: auto;\n    float: right;\n    margin: 0em 0em 0em 1em;\n  }\n  .ui.dropdown .menu > .item .dropdown.icon + .text {\n    margin-right: 1em;\n  }\n\n  /*--------------\n      Text\n---------------*/\n\n  .ui.dropdown > .text {\n    display: inline-block;\n    -webkit-transition: none;\n    transition: none;\n  }\n\n  /*--------------\n    Menu Item\n---------------*/\n\n  .ui.dropdown .menu > .item {\n    position: relative;\n    cursor: pointer;\n    display: block;\n    border: none;\n    height: auto;\n    text-align: left;\n    border-top: none;\n    line-height: 1em;\n    color: ", ";\n    padding: 0.78571429rem 1.14285714rem !important;\n    font-size: 1rem;\n    text-transform: none;\n    font-weight: normal;\n    -webkit-box-shadow: none;\n    box-shadow: none;\n    -webkit-touch-callout: none;\n  }\n  .ui.dropdown .menu > .item:first-child {\n    border-top-width: 0px;\n  }\n\n  /*--------------\n  Floated Content\n---------------*/\n\n  .ui.dropdown > .text > [class*='right floated'],\n  .ui.dropdown .menu .item > [class*='right floated'] {\n    float: right !important;\n    margin-right: 0em !important;\n    margin-left: 1em !important;\n  }\n  .ui.dropdown > .text > [class*='left floated'],\n  .ui.dropdown .menu .item > [class*='left floated'] {\n    float: left !important;\n    margin-left: 0em !important;\n    margin-right: 1em !important;\n  }\n  .ui.dropdown .menu .item > .icon.floated,\n  .ui.dropdown .menu .item > .flag.floated,\n  .ui.dropdown .menu .item > .image.floated,\n  .ui.dropdown .menu .item > img.floated {\n    margin-top: 0em;\n  }\n\n  /*--------------\n  Menu Divider\n---------------*/\n\n  .ui.dropdown .menu > .header {\n    margin: 1rem 0rem 0.75rem;\n    padding: 0em 1.14285714rem;\n    color: rgba(0, 0, 0, 0.85);\n    font-size: 0.78571429em;\n    font-weight: bold;\n    text-transform: uppercase;\n  }\n  .ui.dropdown .menu > .divider {\n    border-top: 1px solid rgba(34, 36, 38, 0.1);\n    height: 0em;\n    margin: 0.5em 0em;\n  }\n  .ui.dropdown.dropdown .menu > .input {\n    width: auto;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    margin: 1.14285714rem 0.78571429rem;\n    min-width: 10rem;\n  }\n  .ui.dropdown .menu > .header + .input {\n    margin-top: 0em;\n  }\n  .ui.dropdown .menu > .input:not(.transparent) input {\n    padding: 0.5em 1em;\n  }\n  .ui.dropdown .menu > .input:not(.transparent) .button,\n  .ui.dropdown .menu > .input:not(.transparent) .icon,\n  .ui.dropdown .menu > .input:not(.transparent) .label {\n    padding-top: 0.5em;\n    padding-bottom: 0.5em;\n  }\n\n  /*-----------------\n  Item Description\n-------------------*/\n\n  .ui.dropdown > .text > .description,\n  .ui.dropdown .menu > .item > .description {\n    float: right;\n    margin: 0em 0em 0em 1em;\n    color: rgba(0, 0, 0, 0.4);\n  }\n\n  /*-----------------\n       Message\n-------------------*/\n\n  .ui.dropdown .menu > .message {\n    padding: 0.78571429rem 1.14285714rem;\n    font-weight: normal;\n  }\n  .ui.dropdown .menu > .message:not(.ui) {\n    color: rgba(0, 0, 0, 0.4);\n  }\n\n  /*--------------\n    Sub Menu\n---------------*/\n\n  .ui.dropdown .menu .menu {\n    top: 0% !important;\n    left: 100%;\n    right: auto;\n    margin: 0em 0em 0em -0.5em !important;\n    border-radius: 0.28571429rem !important;\n    z-index: 21 !important;\n  }\n\n  /* Hide Arrow */\n  .ui.dropdown .menu .menu:after {\n    display: none;\n  }\n\n  /*--------------\n   Sub Elements\n---------------*/\n\n  /* Icons / Flags / Labels / Image */\n  .ui.dropdown > .text > .icon,\n  .ui.dropdown > .text > .label,\n  .ui.dropdown > .text > .flag,\n  .ui.dropdown > .text > img,\n  .ui.dropdown > .text > .image {\n    margin-top: 0em;\n  }\n  .ui.dropdown .menu > .item > .icon,\n  .ui.dropdown .menu > .item > .label,\n  .ui.dropdown .menu > .item > .flag,\n  .ui.dropdown .menu > .item > .image,\n  .ui.dropdown .menu > .item > img {\n    margin-top: 0em;\n  }\n  .ui.dropdown > .text > .icon,\n  .ui.dropdown > .text > .label,\n  .ui.dropdown > .text > .flag,\n  .ui.dropdown > .text > img,\n  .ui.dropdown > .text > .image,\n  .ui.dropdown .menu > .item > .icon,\n  .ui.dropdown .menu > .item > .label,\n  .ui.dropdown .menu > .item > .flag,\n  .ui.dropdown .menu > .item > .image,\n  .ui.dropdown .menu > .item > img {\n    margin-left: 0em;\n    float: none;\n    margin-right: 0.78571429rem;\n  }\n\n  /*--------------\n     Image\n---------------*/\n\n  .ui.dropdown > .text > img,\n  .ui.dropdown > .text > .image,\n  .ui.dropdown .menu > .item > .image,\n  .ui.dropdown .menu > .item > img {\n    display: inline-block;\n    vertical-align: top;\n    width: auto;\n    margin-top: -0.5em;\n    margin-bottom: -0.5em;\n    max-height: 2em;\n  }\n\n  /*******************************\n            Coupling\n*******************************/\n\n  /*--------------\n      Menu\n---------------*/\n\n  /* Remove Menu Item Divider */\n  .ui.dropdown .ui.menu > .item:before,\n  .ui.menu .ui.dropdown .menu > .item:before {\n    display: none;\n  }\n\n  /* Prevent Menu Item Border */\n  .ui.menu .ui.dropdown .menu .active.item {\n    border-left: none;\n  }\n\n  /* Automatically float dropdown menu right on last menu item */\n  .ui.menu .right.menu .dropdown:last-child .menu,\n  .ui.menu .right.dropdown.item .menu,\n  .ui.buttons > .ui.dropdown:last-child .menu {\n    left: auto;\n    right: 0em;\n  }\n\n  /*--------------\n      Label\n---------------*/\n\n  /* Dropdown Menu */\n  .ui.label.dropdown .menu {\n    min-width: 100%;\n  }\n\n  /*--------------\n     Button\n---------------*/\n\n  /* No Margin On Icon Button */\n  .ui.dropdown.icon.button > .dropdown.icon {\n    margin: 0em;\n  }\n  .ui.button.dropdown .menu {\n    min-width: 100%;\n  }\n\n  /*******************************\n              Types\n*******************************/\n\n  /*--------------\n    Selection\n---------------*/\n\n  /* Displays like a select box */\n  .ui.selection.dropdown {\n    cursor: pointer;\n    word-wrap: break-word;\n    line-height: 1em;\n    white-space: normal;\n    outline: 0;\n    -webkit-transform: rotateZ(0deg);\n    transform: rotateZ(0deg);\n    min-width: 14em;\n    min-height: 2.71428571em;\n    background: ", ";\n    display: inline-block;\n    padding: 0.78571429em 2.6em 0.78571429em 1.1em;\n    color: ", ";\n    -webkit-box-shadow: none;\n    box-shadow: none;\n    border: 1px solid\n      ", ";\n    border-radius: ", ";\n    -webkit-transition: width 0.1s ease, -webkit-box-shadow 0.1s ease;\n    transition: width 0.1s ease, -webkit-box-shadow 0.1s ease;\n    transition: box-shadow 0.1s ease, width 0.1s ease;\n    transition: box-shadow 0.1s ease, width 0.1s ease,\n      -webkit-box-shadow 0.1s ease;\n    border-radius: ", ";\n    border-top: ", ";\n    border-left: ", ";\n    border-right: ", ";\n  }\n  .ui.selection.dropdown.visible,\n  .ui.selection.dropdown.active {\n    z-index: 10;\n  }\n  select.ui.dropdown {\n    height: 38px;\n    padding: 0.5em;\n    border: 1px solid rgba(34, 36, 38, 0.15);\n    visibility: visible;\n  }\n  .ui.selection.dropdown > .search.icon,\n  .ui.selection.dropdown > .delete.icon,\n  .ui.selection.dropdown > .dropdown.icon {\n    cursor: pointer;\n    position: absolute;\n    width: auto;\n    height: auto;\n    line-height: 1.21428571em;\n    top: 0.78571429em;\n    right: 1em;\n    z-index: 3;\n    margin: -0.78571429em;\n    padding: 0.91666667em;\n    opacity: 0.8;\n    -webkit-transition: opacity 0.1s ease;\n    transition: opacity 0.1s ease;\n  }\n\n  /* Compact */\n  .ui.compact.selection.dropdown {\n    min-width: 0px;\n  }\n\n  /*  Selection Menu */\n  .ui.selection.dropdown .menu {\n    overflow-x: hidden;\n    overflow-y: auto;\n    -webkit-backface-visibility: hidden;\n    backface-visibility: hidden;\n    -webkit-overflow-scrolling: touch;\n    border-top-width: 0px !important;\n    width: auto;\n    outline: none;\n    margin: 0px -1px;\n    min-width: calc(100% + 2px);\n    width: calc(100% + 2px);\n    border-radius: 0em 0em 0.28571429rem 0.28571429rem;\n    -webkit-box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n    box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n    -webkit-transition: opacity 0.1s ease;\n    transition: opacity 0.1s ease;\n    border-bottom-left-radius: 20px;\n    border-bottom-right-radius: 20px;\n  }\n  .ui.selection.dropdown .menu:after,\n  .ui.selection.dropdown .menu:before {\n    display: none;\n  }\n\n  /*--------------\n    Message\n---------------*/\n\n  .ui.selection.dropdown .menu > .message {\n    padding: 0.78571429rem 1.14285714rem;\n  }\n  @media only screen and (max-width: 767px) {\n    .ui.selection.dropdown .menu {\n      max-height: 8.01428571rem;\n    }\n  }\n  @media only screen and (min-width: 768px) {\n    .ui.selection.dropdown .menu {\n      max-height: 10.68571429rem;\n    }\n  }\n  @media only screen and (min-width: 992px) {\n    .ui.selection.dropdown .menu {\n      max-height: 16.02857143rem;\n    }\n  }\n  @media only screen and (min-width: 1920px) {\n    .ui.selection.dropdown .menu {\n      max-height: 21.37142857rem;\n    }\n  }\n\n  /* Menu Item */\n  .ui.selection.dropdown .menu > .item {\n    border-top: 1px solid #fafafa;\n    padding: 0.78571429rem 1.04285714rem !important;\n    white-space: normal;\n    word-wrap: normal;\n  }\n\n  /* User Item */\n  .ui.selection.dropdown .menu > .hidden.addition.item {\n    display: none;\n  }\n\n  /* Hover */\n  .ui.selection.dropdown:hover {\n    border-color: ", ";\n    -webkit-box-shadow: none;\n    box-shadow: none;\n  }\n\n  /* Active */\n  .ui.selection.active.dropdown {\n    border-color: ", ";\n    -webkit-box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n    box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n  }\n  .ui.selection.active.dropdown .menu {\n    border-color: ", ";\n    -webkit-box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n    box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n  }\n\n  /* Focus */\n  .ui.selection.dropdown:focus {\n    border-color: ", ";\n    -webkit-box-shadow: none;\n    box-shadow: none;\n  }\n  .ui.selection.dropdown:focus .menu {\n    border-color: ", ";\n    -webkit-box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n    box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n  }\n\n  /* Visible */\n  .ui.selection.visible.dropdown > .text:not(.default) {\n    font-weight: normal;\n    color: ", ";\n  }\n\n  /* Visible Hover */\n  .ui.selection.active.dropdown:hover {\n    border-color: ", ";\n    -webkit-box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n    box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n  }\n  .ui.selection.active.dropdown:hover .menu {\n    border-color: ", ";\n    -webkit-box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n    box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n  }\n\n  /* Dropdown Icon */\n  .ui.active.selection.dropdown > .dropdown.icon,\n  .ui.visible.selection.dropdown > .dropdown.icon {\n    opacity: '';\n    z-index: 3;\n  }\n\n  /* Connecting Border */\n  .ui.active.selection.dropdown {\n    border-bottom-left-radius: 0em !important;\n    border-bottom-right-radius: 0em !important;\n  }\n\n  /* Empty Connecting Border */\n  .ui.active.empty.selection.dropdown {\n    border-radius: 0.28571429rem !important;\n    -webkit-box-shadow: none !important;\n    box-shadow: none !important;\n  }\n  .ui.active.empty.selection.dropdown .menu {\n    border: none !important;\n    -webkit-box-shadow: none !important;\n    box-shadow: none !important;\n  }\n\n  /*--------------\n   Searchable\n---------------*/\n\n  /* Search Selection */\n  .ui.search.dropdown {\n    min-width: '';\n  }\n\n  /* Search Dropdown */\n  .ui.search.dropdown > input.search {\n    background: none transparent !important;\n    border: none !important;\n    -webkit-box-shadow: none !important;\n    box-shadow: none !important;\n    cursor: text;\n    top: 0em;\n    left: 1px;\n    width: 100%;\n    outline: none;\n    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);\n    padding: inherit;\n    color: ", ";\n    text-align: ", ";\n  }\n\n  /* Text Layering */\n  .ui.search.dropdown > input.search {\n    position: absolute;\n    z-index: 2;\n  }\n  .ui.search.dropdown > .text {\n    cursor: text;\n    position: relative;\n    left: 1px;\n    z-index: 3;\n  }\n\n  /* Search Selection */\n  .ui.search.selection.dropdown > input.search {\n    line-height: 1.21428571em;\n    padding: 0.67857143em 2.1em 0.67857143em 1em;\n  }\n\n  /* Used to size multi select input to character width */\n  .ui.search.selection.dropdown > span.sizer {\n    line-height: 1.21428571em;\n    padding: 0.67857143em 2.1em 0.67857143em 1em;\n    display: none;\n    white-space: pre;\n  }\n\n  /* Active/Visible Search */\n  .ui.search.dropdown.active > input.search,\n  .ui.search.dropdown.visible > input.search {\n    cursor: auto;\n    color: ", ";\n  }\n  .ui.search.dropdown.active > .text,\n  .ui.search.dropdown.visible > .text {\n    pointer-events: none;\n  }\n\n  /* Filtered Text */\n  .ui.active.search.dropdown input.search:focus + .text .icon,\n  .ui.active.search.dropdown input.search:focus + .text .flag {\n    opacity: 0.45;\n  }\n  .ui.active.search.dropdown input.search:focus + .text {\n    color: rgba(115, 115, 115, 0.87) !important;\n  }\n\n  .input.search::placeholder {\n    color: ", ";\n  }\n  /* Search Menu */\n  .ui.search.dropdown .menu {\n    overflow-x: hidden;\n    overflow-y: auto;\n    -webkit-backface-visibility: hidden;\n    backface-visibility: hidden;\n    -webkit-overflow-scrolling: touch;\n  }\n  @media only screen and (max-width: 767px) {\n    .ui.search.dropdown .menu {\n      max-height: 8.01428571rem;\n    }\n  }\n  @media only screen and (min-width: 768px) {\n    .ui.search.dropdown .menu {\n      max-height: 10.68571429rem;\n    }\n  }\n  @media only screen and (min-width: 992px) {\n    .ui.search.dropdown .menu {\n      max-height: 16.02857143rem;\n    }\n  }\n  @media only screen and (min-width: 1920px) {\n    .ui.search.dropdown .menu {\n      max-height: 21.37142857rem;\n    }\n  }\n\n  /*--------------\n    Multiple\n---------------*/\n\n  /* Multiple Selection */\n  .ui.multiple.dropdown {\n    padding: 0.22619048em 2.1em 0.22619048em 0.35714286em;\n  }\n  .ui.multiple.dropdown .menu {\n    cursor: auto;\n  }\n\n  /* Multiple Search Selection */\n  .ui.multiple.search.dropdown,\n  .ui.multiple.search.dropdown > input.search {\n    cursor: text;\n  }\n\n  /* Selection Label */\n  .ui.multiple.dropdown > .label {\n    -webkit-user-select: none;\n    -moz-user-select: none;\n    -ms-user-select: none;\n    user-select: none;\n    display: inline-block;\n    vertical-align: top;\n    white-space: normal;\n    font-size: 1em;\n    padding: 0.35714286em 0.78571429em;\n    margin: 0.14285714rem 0.28571429rem 0.14285714rem 0.5em;\n    -webkit-box-shadow: 0px 0px 0px 1px rgba(34, 36, 38, 0.15) inset;\n    box-shadow: 0px 0px 0px 1px rgba(34, 36, 38, 0.15) inset;\n    border-radius: 20px;\n    color: ", ";\n    background-color: ", ";\n  }\n\n  /* Dropdown Icon */\n  .ui.multiple.dropdown .dropdown.icon {\n    margin: '';\n    padding: '';\n  }\n\n  /* Text */\n  .ui.multiple.dropdown > .text {\n    position: static;\n    padding: 0;\n    max-width: 100%;\n    margin: 0.45238095em 0em 0.45238095em 0.64285714em;\n    line-height: 1.21428571em;\n  }\n  .ui.multiple.dropdown > .label ~ input.search {\n    margin-left: 0.14285714em !important;\n  }\n  .ui.multiple.dropdown > .label ~ .text {\n    display: none;\n  }\n\n  /*-----------------\n  Multiple Search\n-----------------*/\n\n  /* Prompt Text */\n  .ui.multiple.search.dropdown > .text {\n    display: inline-block;\n    position: absolute;\n    top: 0;\n    left: 0;\n    padding: inherit;\n    margin: 0.45238095em 0em 0.45238095em 0.64285714em;\n    line-height: 1.21428571em;\n  }\n  .ui.multiple.search.dropdown > .label ~ .text {\n    display: none;\n  }\n\n  /* Search */\n  .ui.multiple.search.dropdown > input.search {\n    position: static;\n    padding: 0;\n    max-width: 100%;\n    margin: 0.45238095em 0em 0.45238095em 0.64285714em;\n    width: 2.2em;\n    line-height: 1.21428571em;\n  }\n\n  /*--------------\n     Inline\n---------------*/\n\n  .ui.inline.dropdown {\n    cursor: pointer;\n    display: inline-block;\n    color: inherit;\n  }\n  .ui.inline.dropdown .dropdown.icon {\n    margin: 0em 0.21428571em 0em 0.21428571em;\n    vertical-align: baseline;\n  }\n  .ui.inline.dropdown > .text {\n    font-weight: bold;\n  }\n  .ui.inline.dropdown .menu {\n    cursor: auto;\n    margin-top: 0.21428571em;\n    border-radius: 0.28571429rem;\n  }\n\n  /*******************************\n            States\n*******************************/\n\n  /*--------------------\n        Active\n----------------------*/\n\n  /* Menu Item Active */\n  .ui.dropdown .menu .active.item {\n    background: transparent;\n    font-weight: bold;\n    color: ", ";\n    -webkit-box-shadow: none;\n    box-shadow: none;\n    z-index: 12;\n  }\n\n  /*--------------------\n        Hover\n----------------------*/\n\n  /* Menu Item Hover */\n  .ui.dropdown .menu > .item:hover {\n    background: rgba(0, 0, 0, 0.05);\n    color: ", ";\n    z-index: 13;\n  }\n\n  /*--------------------\n       Loading\n---------------------*/\n\n  .ui.loading.dropdown > i.icon {\n    height: 1em !important;\n  }\n  .ui.loading.selection.dropdown > i.icon {\n    padding: 1.5em 1.28571429em !important;\n  }\n  .ui.loading.dropdown > i.icon:before {\n    position: absolute;\n    content: '';\n    top: 50%;\n    left: 50%;\n    margin: -0.64285714em 0em 0em -0.64285714em;\n    width: 1.28571429em;\n    height: 1.28571429em;\n    border-radius: 500rem;\n    border: 0.2em solid rgba(0, 0, 0, 0.1);\n  }\n  .ui.loading.dropdown > i.icon:after {\n    position: absolute;\n    content: '';\n    top: 50%;\n    left: 50%;\n    -webkit-box-shadow: 0px 0px 0px 1px transparent;\n    box-shadow: 0px 0px 0px 1px transparent;\n    margin: -0.64285714em 0em 0em -0.64285714em;\n    width: 1.28571429em;\n    height: 1.28571429em;\n    -webkit-animation: dropdown-spin 0.6s linear;\n    animation: dropdown-spin 0.6s linear;\n    -webkit-animation-iteration-count: infinite;\n    animation-iteration-count: infinite;\n    border-radius: 500rem;\n    border-color: ", " transparent transparent;\n    border-style: solid;\n    border-width: 0.2em;\n  }\n\n  /* Coupling */\n  .ui.loading.dropdown.button > i.icon:before,\n  .ui.loading.dropdown.button > i.icon:after {\n    display: none;\n  }\n  @-webkit-keyframes dropdown-spin {\n    from {\n      -webkit-transform: rotate(0deg);\n      transform: rotate(0deg);\n    }\n    to {\n      -webkit-transform: rotate(360deg);\n      transform: rotate(360deg);\n    }\n  }\n  @keyframes dropdown-spin {\n    from {\n      -webkit-transform: rotate(0deg);\n      transform: rotate(0deg);\n    }\n    to {\n      -webkit-transform: rotate(360deg);\n      transform: rotate(360deg);\n    }\n  }\n\n  /*--------------------\n     Default Text\n----------------------*/\n\n  .ui.dropdown:not(.button) > .default.text,\n  .ui.default.dropdown:not(.button) > .text {\n    color: ", ";\n  }\n  .ui.dropdown:not(.button) > input:focus ~ .default.text,\n  .ui.default.dropdown:not(.button) > input:focus ~ .text {\n    color: ", ";\n  }\n\n  /*--------------------\n        Loading\n----------------------*/\n\n  .ui.loading.dropdown > .text {\n    -webkit-transition: none;\n    transition: none;\n  }\n\n  /* Used To Check Position */\n  .ui.dropdown .loading.menu {\n    display: block;\n    visibility: hidden;\n    z-index: -1;\n  }\n  .ui.dropdown > .loading.menu {\n    left: 0px !important;\n    right: auto !important;\n  }\n  .ui.dropdown > .menu .loading.menu {\n    left: 100% !important;\n    right: auto !important;\n  }\n\n  /*--------------------\n    Keyboard Select\n----------------------*/\n\n  /* Selected Item */\n  .ui.dropdown.selected,\n  .ui.dropdown .menu .selected.item {\n    background: rgba(0, 0, 0, 0.03);\n    color: ", ";\n  }\n\n  /*--------------------\n    Search Filtered\n----------------------*/\n\n  /* Filtered Item */\n  .ui.dropdown > .filtered.text {\n    visibility: hidden;\n  }\n  .ui.dropdown .filtered.item {\n    display: none !important;\n  }\n\n  /*--------------------\n        Error\n----------------------*/\n\n  .ui.dropdown.error,\n  .ui.dropdown.error > .text,\n  .ui.dropdown.error > .default.text {\n    color: #9f3a38;\n  }\n  .ui.selection.dropdown.error {\n    background: ", ";\n    border-color: ", ";\n  }\n  .ui.selection.dropdown.error:hover {\n    border-color: ", ";\n  }\n  .ui.dropdown.error > .menu,\n  .ui.dropdown.error > .menu .menu {\n    border-color: ", ";\n  }\n  .ui.dropdown.error > .menu > .item {\n    color: ", ";\n  }\n  .ui.multiple.selection.error.dropdown > .label {\n    border-color: ", ";\n  }\n\n  /* Item Hover */\n  .ui.dropdown.error > .menu > .item:hover {\n    background-color: ", ";\n  }\n\n  /* Item Active */\n  .ui.dropdown.error > .menu .active.item {\n    background-color: ", ";\n  }\n\n  /*--------------------\n        Clear\n----------------------*/\n\n  .ui.dropdown > .clear.dropdown.icon {\n    opacity: 0.8;\n    -webkit-transition: opacity 0.1s ease;\n    transition: opacity 0.1s ease;\n  }\n  .ui.dropdown > .clear.dropdown.icon:hover {\n    opacity: 1;\n  }\n\n  /*--------------------\n        Disabled\n----------------------*/\n\n  /* Disabled */\n  .ui.disabled.dropdown,\n  .ui.dropdown .menu > .disabled.item {\n    cursor: default;\n    pointer-events: none;\n    opacity: 0.45;\n  }\n\n  /*******************************\n           Variations\n*******************************/\n\n  /*--------------\n    Direction\n---------------*/\n\n  /* Flyout Direction */\n  .ui.dropdown .menu {\n    left: 0px;\n  }\n\n  /* Default Side (Right) */\n  .ui.dropdown .right.menu > .menu,\n  .ui.dropdown .menu .right.menu {\n    left: 100% !important;\n    right: auto !important;\n    border-radius: 0.28571429rem !important;\n  }\n\n  /* Leftward Opening Menu */\n  .ui.dropdown > .left.menu {\n    left: auto !important;\n    right: 0px !important;\n  }\n  .ui.dropdown > .left.menu .menu,\n  .ui.dropdown .menu .left.menu {\n    left: auto;\n    right: 100%;\n    margin: 0em -0.5em 0em 0em !important;\n    border-radius: 0.28571429rem !important;\n  }\n  .ui.dropdown .item .left.dropdown.icon,\n  .ui.dropdown .left.menu .item .dropdown.icon {\n    width: auto;\n    float: left;\n    margin: 0em 0em 0em 0em;\n  }\n  .ui.dropdown .item .left.dropdown.icon,\n  .ui.dropdown .left.menu .item .dropdown.icon {\n    width: auto;\n    float: left;\n    margin: 0em 0em 0em 0em;\n  }\n  .ui.dropdown .item .left.dropdown.icon + .text,\n  .ui.dropdown .left.menu .item .dropdown.icon + .text {\n    margin-left: 1em;\n    margin-right: 0em;\n  }\n\n  /*--------------\n     Upward\n---------------*/\n\n  /* Upward Main Menu */\n  .ui.upward.dropdown > .menu {\n    top: auto;\n    bottom: 100%;\n    -webkit-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.08);\n    box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.08);\n    border-radius: 0.28571429rem 0.28571429rem 0em 0em;\n  }\n\n  /* Upward Sub Menu */\n  .ui.dropdown .upward.menu {\n    top: auto !important;\n    bottom: 0 !important;\n  }\n\n  /* Active Upward */\n  .ui.simple.upward.active.dropdown,\n  .ui.simple.upward.dropdown:hover {\n    border-radius: 0.28571429rem 0.28571429rem 0em 0em !important;\n  }\n  .ui.upward.dropdown.button:not(.pointing):not(.floating).active {\n    border-radius: 0.28571429rem 0.28571429rem 0em 0em;\n  }\n\n  /* Selection */\n  .ui.upward.selection.dropdown .menu {\n    border-top-width: 1px !important;\n    border-bottom-width: 0px !important;\n    -webkit-box-shadow: 0px -2px 3px 0px rgba(0, 0, 0, 0.08);\n    box-shadow: 0px -2px 3px 0px rgba(0, 0, 0, 0.08);\n    border-top-left-radius: 20px;\n    border-top-right-radius: 20px;\n  }\n  .ui.upward.selection.dropdown:hover {\n    -webkit-box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.05);\n    box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.05);\n  }\n\n  /* Active Upward */\n  .ui.active.upward.selection.dropdown {\n    border-radius: 0em 0em 20px 20px !important;\n  }\n\n  /* Visible Upward */\n  .ui.upward.selection.dropdown.visible {\n    -webkit-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.08);\n    box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.08);\n    border-radius: 0em 0em 20px 20px !important;\n  }\n\n  /* Visible Hover Upward */\n  .ui.upward.active.selection.dropdown:hover {\n    -webkit-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.05);\n    box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.05);\n  }\n  .ui.upward.active.selection.dropdown:hover .menu {\n    -webkit-box-shadow: 0px -2px 3px 0px rgba(0, 0, 0, 0.08);\n    box-shadow: 0px -2px 3px 0px rgba(0, 0, 0, 0.08);\n  }\n\n  /*--------------\n     Simple\n---------------*/\n\n  /*  Selection Menu */\n  .ui.scrolling.dropdown .menu,\n  .ui.dropdown .scrolling.menu {\n    overflow-x: hidden;\n    overflow-y: auto;\n  }\n  .ui.scrolling.dropdown .menu {\n    overflow-x: hidden;\n    overflow-y: auto;\n    -webkit-backface-visibility: hidden;\n    backface-visibility: hidden;\n    -webkit-overflow-scrolling: touch;\n    min-width: 100% !important;\n    width: auto !important;\n  }\n  .ui.dropdown .scrolling.menu {\n    position: static;\n    overflow-y: auto;\n    border: none;\n    -webkit-box-shadow: none !important;\n    box-shadow: none !important;\n    border-radius: 0 !important;\n    margin: 0 !important;\n    min-width: 100% !important;\n    width: auto !important;\n    border-top: 1px solid rgba(34, 36, 38, 0.15);\n  }\n  .ui.scrolling.dropdown .menu .item.item.item,\n  .ui.dropdown .scrolling.menu > .item.item.item {\n    border-top: none;\n  }\n  .ui.scrolling.dropdown .menu .item:first-child,\n  .ui.dropdown .scrolling.menu .item:first-child {\n    border-top: none;\n  }\n  .ui.dropdown > .animating.menu .scrolling.menu,\n  .ui.dropdown > .visible.menu .scrolling.menu {\n    display: block;\n  }\n\n  /* Scrollbar in IE */\n  @media all and (-ms-high-contrast: none) {\n    .ui.scrolling.dropdown .menu,\n    .ui.dropdown .scrolling.menu {\n      min-width: calc(100% - 17px);\n    }\n  }\n  @media only screen and (max-width: 767px) {\n    .ui.scrolling.dropdown .menu,\n    .ui.dropdown .scrolling.menu {\n      max-height: 10.28571429rem;\n    }\n  }\n  @media only screen and (min-width: 768px) {\n    .ui.scrolling.dropdown .menu,\n    .ui.dropdown .scrolling.menu {\n      max-height: 15.42857143rem;\n    }\n  }\n  @media only screen and (min-width: 992px) {\n    .ui.scrolling.dropdown .menu,\n    .ui.dropdown .scrolling.menu {\n      max-height: 20.57142857rem;\n    }\n  }\n  @media only screen and (min-width: 1920px) {\n    .ui.scrolling.dropdown .menu,\n    .ui.dropdown .scrolling.menu {\n      max-height: 20.57142857rem;\n    }\n  }\n\n  /*--------------\n     Simple\n---------------*/\n\n  /* Displays without javascript */\n  .ui.simple.dropdown .menu:before,\n  .ui.simple.dropdown .menu:after {\n    display: none;\n  }\n  .ui.simple.dropdown .menu {\n    position: absolute;\n    display: block;\n    overflow: hidden;\n    top: -9999px !important;\n    opacity: 0;\n    width: 0;\n    height: 0;\n    -webkit-transition: opacity 0.1s ease;\n    transition: opacity 0.1s ease;\n  }\n  .ui.simple.active.dropdown,\n  .ui.simple.dropdown:hover {\n    border-bottom-left-radius: 0em !important;\n    border-bottom-right-radius: 0em !important;\n  }\n  .ui.simple.active.dropdown > .menu,\n  .ui.simple.dropdown:hover > .menu {\n    overflow: visible;\n    width: auto;\n    height: auto;\n    top: 100% !important;\n    opacity: 1;\n  }\n  .ui.simple.dropdown > .menu > .item:active > .menu,\n  .ui.simple.dropdown:hover > .menu > .item:hover > .menu {\n    overflow: visible;\n    width: auto;\n    height: auto;\n    top: 0% !important;\n    left: 100% !important;\n    opacity: 1;\n  }\n  .ui.simple.disabled.dropdown:hover .menu {\n    display: none;\n    height: 0px;\n    width: 0px;\n    overflow: hidden;\n  }\n\n  /* Visible */\n  .ui.simple.visible.dropdown > .menu {\n    display: block;\n  }\n\n  /*--------------\n      Fluid\n---------------*/\n\n  .ui.fluid.dropdown {\n    display: block;\n    width: 100%;\n    min-width: 0em;\n  }\n  .ui.fluid.dropdown > .dropdown.icon {\n    float: right;\n  }\n\n  /*--------------\n    Floating\n---------------*/\n\n  .ui.floating.dropdown .menu {\n    left: 0;\n    right: auto;\n    -webkit-box-shadow: 0px 2px 4px 0px rgba(34, 36, 38, 0.12),\n      0px 2px 10px 0px rgba(34, 36, 38, 0.15) !important;\n    box-shadow: 0px 2px 4px 0px rgba(34, 36, 38, 0.12),\n      0px 2px 10px 0px rgba(34, 36, 38, 0.15) !important;\n    border-radius: 0.28571429rem !important;\n  }\n  .ui.floating.dropdown > .menu {\n    margin-top: 0.5em !important;\n    border-radius: 0.28571429rem !important;\n  }\n\n  /*--------------\n     Pointing\n---------------*/\n\n  .ui.pointing.dropdown > .menu {\n    top: 100%;\n    margin-top: 0.78571429rem;\n    border-radius: 0.28571429rem;\n  }\n  .ui.pointing.dropdown > .menu:after {\n    display: block;\n    position: absolute;\n    pointer-events: none;\n    content: '';\n    visibility: visible;\n    -webkit-transform: rotate(45deg);\n    transform: rotate(45deg);\n    width: 0.5em;\n    height: 0.5em;\n    -webkit-box-shadow: -1px -1px 0px 0px rgba(34, 36, 38, 0.15);\n    box-shadow: -1px -1px 0px 0px rgba(34, 36, 38, 0.15);\n    background: #ffffff;\n    z-index: 2;\n  }\n  .ui.pointing.dropdown > .menu:after {\n    top: -0.25em;\n    left: 50%;\n    margin: 0em 0em 0em -0.25em;\n  }\n\n  /* Top Left Pointing */\n  .ui.top.left.pointing.dropdown > .menu {\n    top: 100%;\n    bottom: auto;\n    left: 0%;\n    right: auto;\n    margin: 1em 0em 0em;\n  }\n  .ui.top.left.pointing.dropdown > .menu {\n    top: 100%;\n    bottom: auto;\n    left: 0%;\n    right: auto;\n    margin: 1em 0em 0em;\n  }\n  .ui.top.left.pointing.dropdown > .menu:after {\n    top: -0.25em;\n    left: 1em;\n    right: auto;\n    margin: 0em;\n    -webkit-transform: rotate(45deg);\n    transform: rotate(45deg);\n  }\n\n  /* Top Right Pointing */\n  .ui.top.right.pointing.dropdown > .menu {\n    top: 100%;\n    bottom: auto;\n    right: 0%;\n    left: auto;\n    margin: 1em 0em 0em;\n  }\n  .ui.top.pointing.dropdown > .left.menu:after,\n  .ui.top.right.pointing.dropdown > .menu:after {\n    top: -0.25em;\n    left: auto !important;\n    right: 1em !important;\n    margin: 0em;\n    -webkit-transform: rotate(45deg);\n    transform: rotate(45deg);\n  }\n\n  /* Left Pointing */\n  .ui.left.pointing.dropdown > .menu {\n    top: 0%;\n    left: 100%;\n    right: auto;\n    margin: 0em 0em 0em 1em;\n  }\n  .ui.left.pointing.dropdown > .menu:after {\n    top: 1em;\n    left: -0.25em;\n    margin: 0em 0em 0em 0em;\n    -webkit-transform: rotate(-45deg);\n    transform: rotate(-45deg);\n  }\n  .ui.left:not(.top):not(.bottom).pointing.dropdown > .left.menu {\n    left: auto !important;\n    right: 100% !important;\n    margin: 0em 1em 0em 0em;\n  }\n  .ui.left:not(.top):not(.bottom).pointing.dropdown > .left.menu:after {\n    top: 1em;\n    left: auto;\n    right: -0.25em;\n    margin: 0em 0em 0em 0em;\n    -webkit-transform: rotate(135deg);\n    transform: rotate(135deg);\n  }\n\n  /* Right Pointing */\n  .ui.right.pointing.dropdown > .menu {\n    top: 0%;\n    left: auto;\n    right: 100%;\n    margin: 0em 1em 0em 0em;\n  }\n  .ui.right.pointing.dropdown > .menu:after {\n    top: 1em;\n    left: auto;\n    right: -0.25em;\n    margin: 0em 0em 0em 0em;\n    -webkit-transform: rotate(135deg);\n    transform: rotate(135deg);\n  }\n\n  /* Bottom Pointing */\n  .ui.bottom.pointing.dropdown > .menu {\n    top: auto;\n    bottom: 100%;\n    left: 0%;\n    right: auto;\n    margin: 0em 0em 1em;\n  }\n  .ui.bottom.pointing.dropdown > .menu:after {\n    top: auto;\n    bottom: -0.25em;\n    right: auto;\n    margin: 0em;\n    -webkit-transform: rotate(-135deg);\n    transform: rotate(-135deg);\n  }\n\n  /* Reverse Sub-Menu Direction */\n  .ui.bottom.pointing.dropdown > .menu .menu {\n    top: auto !important;\n    bottom: 0px !important;\n  }\n\n  /* Bottom Left */\n  .ui.bottom.left.pointing.dropdown > .menu {\n    left: 0%;\n    right: auto;\n  }\n  .ui.bottom.left.pointing.dropdown > .menu:after {\n    left: 1em;\n    right: auto;\n  }\n\n  /* Bottom Right */\n  .ui.bottom.right.pointing.dropdown > .menu {\n    right: 0%;\n    left: auto;\n  }\n  .ui.bottom.right.pointing.dropdown > .menu:after {\n    left: auto;\n    right: 1em;\n  }\n\n  /* Upward pointing */\n  .ui.pointing.upward.dropdown .menu,\n  .ui.top.pointing.upward.dropdown .menu {\n    top: auto !important;\n    bottom: 100% !important;\n    margin: 0em 0em 0.78571429rem;\n    border-radius: 0.28571429rem;\n  }\n  .ui.pointing.upward.dropdown .menu:after,\n  .ui.top.pointing.upward.dropdown .menu:after {\n    top: 100% !important;\n    bottom: auto !important;\n    -webkit-box-shadow: 1px 1px 0px 0px rgba(34, 36, 38, 0.15);\n    box-shadow: 1px 1px 0px 0px rgba(34, 36, 38, 0.15);\n    margin: -0.25em 0em 0em;\n  }\n\n  /* Right Pointing Upward */\n  .ui.right.pointing.upward.dropdown:not(.top):not(.bottom) .menu {\n    top: auto !important;\n    bottom: 0 !important;\n    margin: 0em 1em 0em 0em;\n  }\n  .ui.right.pointing.upward.dropdown:not(.top):not(.bottom) .menu:after {\n    top: auto !important;\n    bottom: 0 !important;\n    margin: 0em 0em 1em 0em;\n    -webkit-box-shadow: -1px -1px 0px 0px rgba(34, 36, 38, 0.15);\n    box-shadow: -1px -1px 0px 0px rgba(34, 36, 38, 0.15);\n  }\n\n  /* Left Pointing Upward */\n  .ui.left.pointing.upward.dropdown:not(.top):not(.bottom) .menu {\n    top: auto !important;\n    bottom: 0 !important;\n    margin: 0em 0em 0em 1em;\n  }\n  .ui.left.pointing.upward.dropdown:not(.top):not(.bottom) .menu:after {\n    top: auto !important;\n    bottom: 0 !important;\n    margin: 0em 0em 1em 0em;\n    -webkit-box-shadow: -1px -1px 0px 0px rgba(34, 36, 38, 0.15);\n    box-shadow: -1px -1px 0px 0px rgba(34, 36, 38, 0.15);\n  }\n\n  /*******************************\n         Theme Overrides\n*******************************/\n\n  /* Dropdown Carets */\n  .ui.dropdown > .dropdown.icon {\n    font-family: 'Dropdown';\n    line-height: 1;\n    height: 1em;\n    width: 1.23em;\n    -webkit-backface-visibility: hidden;\n    backface-visibility: hidden;\n    font-weight: normal;\n    font-style: normal;\n    text-align: center;\n  }\n  .ui.dropdown > .dropdown.icon {\n    width: auto;\n  }\n  .ui.dropdown > .dropdown.icon:before {\n    content: '\\f0d7';\n  }\n\n  /* Sub Menu */\n  .ui.dropdown .menu .item .dropdown.icon:before {\n    content: '\\f0da' /*rtl:'\\f0d9'*/;\n  }\n  .ui.dropdown .item .left.dropdown.icon:before,\n  .ui.dropdown .left.menu .item .dropdown.icon:before {\n    content: '\\f0d9' /*rtl:\"\\f0da\"*/;\n  }\n\n  /* Vertical Menu Dropdown */\n  .ui.vertical.menu .dropdown.item > .dropdown.icon:before {\n    content: '\\f0da' /*rtl:\"\\f0d9\"*/;\n  }\n  .ui.dropdown > .clear.icon:before {\n    content: '\\f00d';\n  }\n\n  .ui.selection.active.dropdown .menu::-webkit-scrollbar {\n    width: 7px;\n    border-radius: 50px;\n    z-index: -1px;\n  }\n\n  .ui.selection.active.dropdown .menu::-webkit-scrollbar-thumb {\n    background-color: ", ";\n    border-radius: 50px;\n  }\n\n  .ui.selection.active.dropdown .menu::-webkit-scrollbar-thumb:hover {\n    background-color: ", ";\n  }\n  /* Icons for Reference (Subsetted in 2.4.0)\n  .dropdown.down:before { content: \"\\f0d7\"; }\n  .dropdown.up:before { content: \"\\f0d8\"; }\n  .dropdown.left:before { content: \"\\f0d9\"; }\n  .dropdown.right:before { content: \"\\f0da\"; }\n  .dropdown.close:before { content: \"\\f00d\"; }\n*/\n\n  /*******************************\n        User Overrides\n*******************************/\n\n  small {\n    margin-left: 15px;\n    font-size: 10px;\n    color: ", ";\n  }\n"])), function (props) {
-  return props.error ? '' : '20px';
-}, function (props) {
-  return props.error ? colors.brand20 : props.colorLabel ? props.colorLabel : colors.brand10;
-}, function (props) {
-  return props.textAlign && props.textAlign === 'center' ? 'center' : 'left';
-}, colors.gray20, function (props) {
-  return props.line ? '0' : '0.28571429rem';
-}, function (props) {
-  return props.line ? 'none' : '';
-}, function (props) {
-  return props.line ? 'none' : '';
-}, function (props) {
-  return props.line ? 'none' : '';
-}, function (props) {
-  return props.brand ? colors.brand10 : colors.gray20;
-}, function (props) {
-  return props.brand ? colors.brandLight : colors.white;
-}, function (props) {
-  return props.brand ? colors.brand10 : colors.gray20;
-}, function (props) {
-  return props.brand ? colors.brandLight : props.line ? colors.gray10 : 'rgba(34, 36, 38, 0.15)';
-}, function (props) {
-  return props.line ? 0 : '0.28571429rem';
-}, function (props) {
-  return props.line ? 'none' : '20px';
-}, function (props) {
-  return props.line ? 'none' : '';
-}, function (props) {
-  return props.line ? 'none' : '';
-}, function (props) {
-  return props.line ? 'none' : '';
-}, function (props) {
-  return props.brand ? colors.brandLight : colors.gray10;
-}, function (props) {
-  return props.brand ? colors.brandTransparent : colors.gray10;
-}, function (props) {
-  return props.error ? colors.brand20 : props.brand ? colors.brandLight : colors.gray10;
-}, function (props) {
-  return props.error ? colors.brand20 : props.brand ? colors.brandLight : colors.gray10;
-}, function (props) {
-  return props.error ? colors.brand20 : props.brand ? colors.brandLight : colors.gray10;
-}, function (props) {
-  return props.brand ? colors.brandDark : colors.black;
-}, function (props) {
-  return props.error ? colors.brand20 : props.brand ? colors.brandLight : colors.gray10;
-}, function (props) {
-  return props.error ? colors.brand20 : props.brand ? colors.brandLight : colors.gray10;
-}, function (props) {
-  return props.brand ? colors.brand10 : colors.gray20;
-}, function (props) {
-  return props.textAlign && props.textAlign === 'center' ? 'center' : 'left';
-}, function (props) {
-  return props.brand ? colors.brandDark : colors.black;
-}, function (props) {
-  return props.brand ? colors.brandTransparent : colors.gray10;
-}, function (props) {
-  return props.brand ? colors.brandLight : colors.gray20;
-}, function (props) {
-  return props.brand ? colors.brand10 : colors.card;
-}, function (props) {
-  return props.brand ? colors.brandDark : colors.black;
-}, function (props) {
-  return props.brand ? colors.brandDark : colors.black;
-}, colors.brand10, function (props) {
-  return props.brand ? colors.brand10 : colors.default20;
-}, function (props) {
-  return props.brand ? colors.brand10 : colors.default20;
-}, function (props) {
-  return props.brand ? colors.brandDark : colors.black;
-}, function (props) {
-  return props.line ? colors.white : colors.error;
-}, colors.brand20, colors.brand20, colors.brand20, colors.brand20, colors.brand20, colors.error, colors.error, colors.brand10, colors.brandTransparent2, colors.brand20);
-
-var _excluded$4 = ["options", "brand", "textAlign", "errorMessage", "label", "colorLabel", "line"];
-
-var Dropdown = function Dropdown(_ref) {
-  var options = _ref.options,
-      brand = _ref.brand,
-      textAlign = _ref.textAlign,
-      errorMessage = _ref.errorMessage,
-      label = _ref.label,
-      colorLabel = _ref.colorLabel,
-      line = _ref.line,
-      rest = _objectWithoutPropertiesLoose$3(_ref, _excluded$4);
-
-  return jsxRuntime.jsxs(Container$4, Object.assign({
-    brand: brand,
-    textAlign: textAlign,
-    error: errorMessage,
-    colorLabel: colorLabel,
-    line: line
-  }, {
-    children: [label && jsxRuntime.jsx("label", {
-      children: label
-    }, void 0), jsxRuntime.jsx(semanticUiReact.Dropdown, Object.assign({}, rest, {
-      selection: true,
-      noResultsMessage: "Nenhum resultado encontrado",
-      error: !!errorMessage,
-      options: options
-    }), void 0), errorMessage && jsxRuntime.jsx("small", {
-      children: errorMessage
-    }, void 0)]
-  }), void 0);
-};
-
-var _excluded$3 = ["value", "clearError", "errors", "name", "register", "required", "setValue", "validate"];
-
-var DropdownForm = function DropdownForm(_ref) {
-  var value = _ref.value,
-      clearError = _ref.clearError,
-      errors = _ref.errors,
-      name = _ref.name,
-      register = _ref.register,
-      required = _ref.required,
-      setValue = _ref.setValue,
-      validate = _ref.validate,
-      rest = _objectWithoutPropertiesLoose$3(_ref, _excluded$3);
-
-  var _useState = React$2.useState(),
-      valueDefault = _useState[0],
-      setValueDefault = _useState[1];
-
-  var _useState2 = React$2.useState(''),
-      message = _useState2[0],
-      setMessage = _useState2[1];
-
-  React$2.useEffect(function () {
-    if (!valueDefault) {
-      setValue(name, value);
-    } else {
-      setValue(name, valueDefault);
-    }
-  }, [valueDefault]);
-  React$2.useEffect(function () {
-    setValueDefault(value);
-  }, [value]);
-  React$2.useEffect(function () {
-    if (register) {
-      register({
-        name: name
-      }, {
-        required: required,
-        validate: validate && required ? function (value) {
-          if (validate(value)) {
-            setMessage(validate(value));
-            return false;
-          }
-
-          setMessage('');
-          return true;
-        } : null
-      });
-    }
-  }, [register]);
-  return jsxRuntime.jsx(Dropdown, Object.assign({}, rest, {
-    value: valueDefault,
-    onChange: function onChange(_ev, data) {
-      setValueDefault(data.value);
-      setValue(name, value);
-
-      if (errors && clearError) {
-        clearError(name);
-      }
-    },
-    line: rest.line,
-    errorMessage: errors ? errors.type === 'required' ? 'Obrigatório' : "" + message : ''
-  }), void 0);
-};
-
-var _templateObject$6, _templateObject2$4, _templateObject3$4;
-var toggleWidth = 50;
-var toggleHeight = 30;
-var toggleGutter = 5;
-var toggleRadius = toggleHeight / 2;
-var toggleControlSsize = toggleHeight - toggleGutter * 2;
-var Sizes$1 = {
-  mini: 'mini',
-  tiny: 'tiny',
-  small: 'small',
-  medium: 'medium',
-  large: 'large',
-  big: 'big',
-  huge: 'huge',
-  massive: 'massive'
-};
-
-var widthSwitch = function widthSwitch(size) {
-  switch (size) {
-    case Sizes$1.mini:
-      return 30;
-
-    case Sizes$1.tiny:
-      return 35;
-
-    case Sizes$1.small:
-      return 40;
-
-    case Sizes$1.medium:
-      return 50;
-
-    case Sizes$1.large:
-      return 60;
-
-    case Sizes$1.big:
-      return 70;
-
-    case Sizes$1.huge:
-      return 80;
-
-    case Sizes$1.massive:
-      return 90;
-
-    default:
-      return 50;
-  }
-};
-
-var heightSwitch = function heightSwitch(size) {
-  switch (size) {
-    case Sizes$1.mini:
-      return 20;
-
-    case Sizes$1.tiny:
-      return 22.5;
-
-    case Sizes$1.small:
-      return 25;
-
-    case Sizes$1.medium:
-      return 30;
-
-    case Sizes$1.large:
-      return 35;
-
-    case Sizes$1.big:
-      return 40;
-
-    case Sizes$1.huge:
-      return 45;
-
-    case Sizes$1.massive:
-      return 50;
-
-    default:
-      return 30;
-  }
-};
-
-var sizeGutter = function sizeGutter(size) {
-  switch (size) {
-    case Sizes$1.mini:
-      return 5;
-
-    case Sizes$1.tiny:
-      return 5;
-
-    case Sizes$1.small:
-      return 5;
-
-    case Sizes$1.medium:
-      return 5;
-
-    case Sizes$1.large:
-      return 5;
-
-    case Sizes$1.big:
-      return 5;
-
-    case Sizes$1.huge:
-      return 5;
-
-    case Sizes$1.massive:
-      return 5;
-
-    default:
-      return 5;
-  }
-};
-
-var widthToggle = function widthToggle(size) {
-  switch (size) {
-    case Sizes$1.mini:
-      return '40px !important';
-
-    case Sizes$1.tiny:
-      return '3.125rem !important';
-
-    case Sizes$1.small:
-      return '3.75rem !important';
-
-    case Sizes$1.medium:
-      return '4.0625rem !important';
-
-    case Sizes$1.large:
-      return '4.375rem !important';
-
-    case Sizes$1.big:
-      return '5rem !important';
-
-    case Sizes$1.huge:
-      return '5.625rem !important';
-
-    case Sizes$1.massive:
-      return '6.25rem !important';
-
-    default:
-      return '4.0625rem !important';
-  }
-};
-
-var fontToggle = function fontToggle(size) {
-  switch (size) {
-    case Sizes$1.mini:
-      return '0.5rem !important';
-
-    case Sizes$1.tiny:
-      return '0.5625rem !important';
-
-    case Sizes$1.small:
-      return '0.625rem !important';
-
-    case Sizes$1.medium:
-      return '0.6875rem !important';
-
-    case Sizes$1.large:
-      return '0.75rem !important';
-
-    case Sizes$1.big:
-      return '0.8125rem !important';
-
-    case Sizes$1.huge:
-      return '0.875rem !important';
-
-    case Sizes$1.massive:
-      return '0.9375rem !important';
-
-    default:
-      return '0.6875rem !important';
-  }
-};
-
-var fontActiveInactive = function fontActiveInactive(size) {
-  switch (size) {
-    case Sizes$1.mini:
-      return '0.4375rem !important';
-
-    case Sizes$1.tiny:
-      return '0.5rem !important';
-
-    case Sizes$1.small:
-      return '0.5625rem !important';
-
-    case Sizes$1.medium:
-      return '0.625rem !important';
-
-    case Sizes$1.large:
-      return '0.6875rem !important';
-
-    case Sizes$1.big:
-      return '0.75rem !important';
-
-    case Sizes$1.huge:
-      return '0.8125rem !important';
-
-    case Sizes$1.massive:
-      return '0.875rem !important';
-
-    default:
-      return '0.625rem !important';
-  }
-};
-
-var Switch = styled__default["default"].button(_templateObject$6 || (_templateObject$6 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  display: flex !important;\n  flex-direction: row !important;\n  position: relative !important;\n  /* padding-left: ", "; */\n  /* margin-bottom: 12px; */\n  cursor: ", ";\n  font-size: 1.375rem !important;\n  user-select: none !important;\n\n  div {\n    position: absolute !important;\n    opacity: 0 !important;\n    height: 0 !important;\n    width: 0 !important;\n    display: none !important;\n  }\n\n  .control {\n    height: ", ";\n    width: ", ";\n    border-radius: ", ";\n    background-color: ", " !important;\n    transition: background-color 0.15s ease-in !important;\n\n    &:after {\n      content: '' !important;\n      position: absolute !important;\n      left: 5px !important;\n      top: 5px !important;\n      height: ", ";\n      width: ", ";\n      border-radius: 50px !important;\n      background-color: white !important;\n      transition: left 0.15s ease-in !important;\n      border: 1px solid ", " !important;\n    }\n  }\n\n  div.checked ~ .control {\n    background-color: ", ";\n\n    &:after {\n      left: ", ";\n    }\n  }\n"])), function (props) {
-  return props.size ? widthSwitch(props.size) + "px" : toggleWidth + "px";
-}, function (props) {
-  return props.disabled ? 'not-allowed !important' : 'pointer !important';
-}, function (props) {
-  return props.size ? heightSwitch(props.size) + "px !important" : toggleHeight + "px !important";
-}, function (props) {
-  return props.size ? widthSwitch(props.size) + "px !important" : toggleWidth + "px !important";
-}, function (props) {
-  return props.size ? heightSwitch(props.size) / 2 + "px !important" : toggleRadius + "px !important";
-}, colors.card, function (props) {
-  return props.size ? heightSwitch(props.size) - sizeGutter(props.size) * 2 + "px !important" : toggleControlSsize + "px !important";
-}, function (props) {
-  return props.size ? heightSwitch(props.size) - sizeGutter(props.size) * 2 + "px !important" : toggleControlSsize + "px !important";
-}, colors.default10, function (props) {
-  return props.disabled ? colors.brandTransparent + " !important" : colors.brandDark + " !important";
-}, function (props) {
-  return props.size ? widthSwitch(props.size) - (heightSwitch(props.size) - sizeGutter(props.size) * 2) - sizeGutter(props.size) + "px !important" : toggleWidth - toggleControlSsize - toggleGutter + "px !important";
-});
-var Toggle = styled__default["default"].button(_templateObject2$4 || (_templateObject2$4 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  display: flex !important;\n  flex-direction: row !important;\n  opacity: ", ";\n\n  cursor: ", ";\n\n  .btn {\n    display: flex !important;\n    align-items: center !important;\n    justify-content: center !important;\n    width: ", ";\n    border: 1px solid ", " !important;\n    padding: 0.5rem 0 !important;\n\n    span {\n      font-size: ", ";\n    }\n  }\n\n  .left {\n    background-color: ", ";\n    border-top-left-radius: 20px !important;\n    border-bottom-left-radius: 20px !important;\n    border-right: 0 !important;\n    transition: 400ms !important;\n\n    color: ", ";\n  }\n\n  .right {\n    background-color: ", ";\n    border-top-right-radius: 20px !important;\n    border-bottom-right-radius: 20px !important;\n    border-left: 0 !important;\n    transition: 400ms !important;\n\n    color: ", ";\n  }\n"])), function (props) {
-  return props.disabled ? '0.5 !important' : '1 !important';
-}, function (props) {
-  return props.disabled ? 'not-allowed !important' : 'pointer !important';
-}, function (props) {
-  return props.size ? widthToggle(props.size) : '4rem !important';
-}, colors.card, function (props) {
-  return props.size ? fontToggle(props.size) : '0.6875rem !important';
-}, function (props) {
-  return !props.checked ? colors.brand10 + " !important" : colors.white + " !important";
-}, function (props) {
-  return !props.checked ? colors.white + " !important" : colors.gray20 + " !important";
-}, function (props) {
-  return props.checked ? colors.brand10 + " !important" : colors.white + " !important";
-}, function (props) {
-  return props.checked ? colors.white + " !important" : colors.gray20 + " !important";
-});
-var ActiveInactive = styled__default["default"].button(_templateObject3$4 || (_templateObject3$4 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  display: flex !important;\n  flex-direction: row !important;\n  opacity: ", ";\n\n  cursor: ", ";\n\n  .btn {\n    display: flex !important;\n    align-items: center !important;\n    justify-content: center !important;\n    width: ", ";\n    border: 1px solid ", " !important;\n    padding: 0.5rem 0 !important;\n\n    span {\n      font-size: ", ";\n    }\n  }\n\n  .left {\n    background-color: ", ";\n    border-top-left-radius: 20px !important;\n    border-bottom-left-radius: 20px !important;\n    border-right: 0 !important;\n    transition: 400ms !important;\n\n    span {\n      color: ", ";\n    }\n  }\n\n  .right {\n    background-color: ", ";\n    border-top-right-radius: 20px !important;\n    border-bottom-right-radius: 20px !important;\n    border-left: 0 !important;\n    transition: 400ms !important;\n\n    span {\n      color: ", ";\n    }\n  }\n"])), function (props) {
-  return props.disabled ? '0.5 !important' : '1 !important';
-}, function (props) {
-  return props.disabled ? 'not-allowed !important' : 'pointer !important';
-}, function (props) {
-  return props.size ? widthToggle(props.size) : '4.375rem !important';
-}, colors.card, function (props) {
-  return props.size ? fontActiveInactive(props.size) : '0.625rem !important';
-}, function (props) {
-  return !props.checked ? colors.brand20 + " !important" : colors.white + " !important";
-}, function (props) {
-  return !props.checked ? colors.white + " !important" : colors.gray20 + " !important";
-}, function (props) {
-  return props.checked ? colors.brandGreen + " !important" : colors.white + " !important";
-}, function (props) {
-  return props.checked ? colors.white + " !important" : colors.gray20 + " !important";
-});
-
-var TYPES = {
-  "switch": 'switch',
-  toggle: 'toggle',
-  activeInactive: 'activeInactive'
-};
-
-function Selection(_ref) {
-  var type = _ref.type,
-      _ref$checked = _ref.checked,
-      checked = _ref$checked === void 0 ? false : _ref$checked,
-      onClick = _ref.onClick,
-      onChange = _ref.onChange,
-      size = _ref.size,
-      disabled = _ref.disabled,
-      ref = _ref.ref,
-      className = _ref.className,
-      style = _ref.style;
-  var eventFunction = onClick || onChange;
-
-  function renderSwitch() {
-    return jsxRuntime.jsxs(Switch, Object.assign({
-      className: className,
-      style: style,
-      size: size,
-      ref: ref,
-      disabled: disabled,
-      role: "switch",
-      onClick: eventFunction
-    }, {
-      children: [jsxRuntime.jsx("div", {
-        className: "" + (checked ? 'checked' : '')
-      }, void 0), jsxRuntime.jsx("span", {
-        "data-testid": "control",
-        className: "control"
-      }, void 0)]
-    }), void 0);
-  }
-
-  function renderToggle() {
-    return jsxRuntime.jsxs(Toggle, Object.assign({
-      className: className,
-      style: style,
-      checked: checked,
-      ref: ref,
-      size: size,
-      disabled: disabled,
-      role: "switch",
-      onClick: eventFunction
-    }, {
-      children: [jsxRuntime.jsx("div", Object.assign({
-        "data-testid": "btn-left",
-        className: "btn left"
-      }, {
-        children: jsxRuntime.jsx("span", {
-          children: "n\xE3o"
-        }, void 0)
-      }), void 0), jsxRuntime.jsx("div", Object.assign({
-        "data-testid": "btn-right",
-        className: "btn right"
-      }, {
-        children: jsxRuntime.jsx("span", {
-          children: "sim"
-        }, void 0)
-      }), void 0)]
-    }), void 0);
-  }
-
-  function renderActiveInactive() {
-    return jsxRuntime.jsxs(ActiveInactive, Object.assign({
-      className: className,
-      style: style,
-      checked: checked,
-      ref: ref,
-      size: size,
-      disabled: disabled,
-      role: "switch",
-      onClick: eventFunction
-    }, {
-      children: [jsxRuntime.jsx("div", Object.assign({
-        className: "btn left"
-      }, {
-        children: jsxRuntime.jsx("span", {
-          children: checked ? 'desativar' : 'inativo'
-        }, void 0)
-      }), void 0), jsxRuntime.jsx("div", Object.assign({
-        className: "btn right"
-      }, {
-        children: jsxRuntime.jsx("span", {
-          children: checked ? 'ativo' : 'ativar'
-        }, void 0)
-      }), void 0)]
-    }), void 0);
-  }
-
-  switch (type) {
-    case TYPES["switch"]:
-      return renderSwitch();
-
-    case TYPES.toggle:
-      return renderToggle();
-
-    case TYPES.activeInactive:
-      return renderActiveInactive();
-
-    default:
-      return null;
-  }
-}
-
-var _templateObject$5;
-var Sizes = {
-  small: 'small',
-  medium: 'medium',
-  big: 'big'
-};
-
-var widthBtnMoreLess = function widthBtnMoreLess(size) {
-  switch (size) {
-    case Sizes.small:
-      return '20px';
-
-    case Sizes.medium:
-      return '30px';
-
-    case Sizes.big:
-      return '40px';
-
-    default:
-      return '30px';
-  }
-};
-
-var heightBtnMoreLess = function heightBtnMoreLess(size) {
-  switch (size) {
-    case Sizes.small:
-      return '20px';
-
-    case Sizes.medium:
-      return '30px';
-
-    case Sizes.big:
-      return '40px';
-
-    default:
-      return '30px';
-  }
-};
-
-var widthValueMoreLess = function widthValueMoreLess(size, value) {
-  if (size === Sizes.small) {
-    if (value < 100) {
-      return '15px';
-    }
-
-    if (value < 1000) {
-      return '20px';
-    }
-
-    if (value < 10000) {
-      return '25px';
-    }
-
-    return '30px';
-  }
-
-  if (size === Sizes.medium) {
-    if (value < 100) {
-      return '20px';
-    }
-
-    if (value < 1000) {
-      return '30px';
-    }
-
-    if (value < 10000) {
-      return '40px';
-    }
-
-    return '50px';
-  }
-
-  if (size === Sizes.big) {
-    if (value < 100) {
-      return '30px';
-    }
-
-    if (value < 1000) {
-      return '40px';
-    }
-
-    if (value < 10000) {
-      return '55px';
-    }
-
-    return '70px';
-  }
-
-  return '50px';
-};
-
-var fontMoreLess = function fontMoreLess(size) {
-  switch (size) {
-    case Sizes.small:
-      return '10px';
-
-    case Sizes.medium:
-      return '15px';
-
-    case Sizes.big:
-      return '22px';
-
-    default:
-      return '15px';
-  }
-};
-
-var Container$3 = styled__default["default"].div(_templateObject$5 || (_templateObject$5 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  opacity: ", ";\n\n  .btn {\n    width: ", ";\n    font-size: ", ";\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    height: ", ";\n    color: ", ";\n  }\n\n  .left {\n    opacity: ", ";\n\n    cursor: ", ";\n  }\n\n  .right {\n    opacity: ", ";\n\n    cursor: ", ";\n  }\n\n  input {\n    text-align: center;\n    width: ", ";\n    font-size: ", ";\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    color: ", ";\n    border: none;\n    outline: none;\n  }\n\n  input[type='number']::-webkit-inner-spin-button {\n    -webkit-appearance: none;\n  }\n  input[type='number'] {\n    -moz-appearance: textfield;\n    appearance: textfield;\n  }\n\n  input:disabled {\n    background-color: transparent;\n  }\n"])), function (props) {
-  return props.disabled ? '0.5' : '1';
-}, function (props) {
-  return props.size ? widthBtnMoreLess(props.size) : '30px';
-}, function (props) {
-  return props.size ? fontMoreLess(props.size) : '15px';
-}, function (props) {
-  return props.size ? heightBtnMoreLess(props.size) : '30px';
-}, colors.gray20, function (props) {
-  return props.noLess ? '0.2' : '1';
-}, function (props) {
-  return props.disabled || props.noLess ? 'default' : 'pointer';
-}, function (props) {
-  return props.noMore ? '0.2' : '1';
-}, function (props) {
-  return props.disabled || props.noMore ? 'default' : 'pointer';
-}, function (props) {
-  return props.size ? widthValueMoreLess(props.size, props.value) : '15px';
-}, function (props) {
-  return props.size ? fontMoreLess(props.size) : '15px';
-}, colors.gray20);
-
-var MoreLess = function MoreLess(_ref) {
-  var size = _ref.size,
-      disabled = _ref.disabled,
-      value = _ref.value,
-      limit = _ref.limit,
-      minimum = _ref.minimum,
-      more = _ref.more,
-      less = _ref.less,
-      _onChange = _ref.onChange;
-
-  var _useState = React$2.useState(false),
-      noLess = _useState[0],
-      setNoLess = _useState[1];
-
-  var _useState2 = React$2.useState(false),
-      noMore = _useState2[0],
-      setNoMore = _useState2[1];
-
-  var _useState3 = React$2.useState('medium'),
-      sizeState = _useState3[0],
-      setSizeState = _useState3[1];
-
-  React$2.useEffect(function () {
-    if (size) {
-      setSizeState(size);
-    }
-  }, [size]);
-  React$2.useEffect(function () {
-    if (minimum && value <= minimum || value <= 0) {
-      setNoLess(true);
-    } else {
-      setNoLess(false);
-    }
-  }, [minimum, value]);
-  React$2.useEffect(function () {
-    if (limit && value >= limit) {
-      setNoMore(true);
-    } else {
-      setNoMore(false);
-    }
-  }, [limit, value]);
-  return jsxRuntime.jsxs(Container$3, Object.assign({
-    limit: limit,
-    minimum: minimum,
-    value: value,
-    size: sizeState,
-    disabled: disabled,
-    noLess: noLess,
-    noMore: noMore
-  }, {
-    children: [jsxRuntime.jsx("div", Object.assign({
-      className: "btn left",
-      onClick: function onClick() {
-        return !disabled ? less ? noLess ? null : less() : null : null;
-      }
-    }, {
-      children: jsxRuntime.jsx(FontAwesomeIcon, {
-        icon: faMinus
-      }, void 0)
-    }), void 0), jsxRuntime.jsx("input", {
-      value: value || value === 0 ? value.toString() : '',
-      type: "number",
-      onChange: function onChange(event) {
-        return _onChange ? _onChange(Number(event.target.value)) : null;
-      },
-      disabled: disabled || !_onChange
-    }, void 0), jsxRuntime.jsx("div", Object.assign({
-      className: "btn right",
-      onClick: function onClick() {
-        return !disabled ? noMore ? null : more ? more() : null : null;
-      }
-    }, {
-      children: jsxRuntime.jsx(FontAwesomeIcon, {
-        icon: faPlus
-      }, void 0)
-    }), void 0)]
-  }), void 0);
-};
-
-var _templateObject$4, _templateObject2$3, _templateObject3$3;
-var Shadow = styled__default["default"].div(_templateObject$4 || (_templateObject$4 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  box-shadow: ", ";\n\n  border: ", ";\n  padding: 1.25rem;\n  background-color: ", ";\n  border-radius: 1.875rem;\n  position: relative;\n\n  width: ", ";\n\n  .loading-card {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    background-color: rgba(255, 255, 255, 0.8);\n    width: 100%;\n    height: 100%;\n    top: 0;\n    left: 0;\n    right: 0;\n    bottom: 0;\n    border-radius: 30px;\n    z-index: 2;\n    position: absolute;\n  }\n"])), function (props) {
-  if (props.type == 'none') {
-    return 'none';
-  }
-
-  if (props.type == 'border') {
-    return 'none';
-  }
-
-  if (props.type == 'min-shadow') {
-    return '0px 0.125rem 0.25rem #00000029';
-  }
-
-  return '0 1.25rem 3.125rem 0 rgba(0, 0, 0, 0.16)';
-}, function (props) {
-  var _props$style;
-
-  return props.type == 'border' || (_props$style = props.style) != null && _props$style.borderRadius ? "1px solid  " + colors.default20 : '';
-}, colors.white, function (props) {
-  if (props.width) {
-    if (typeof props.width === 'string') {
-      return props.width;
-    }
-
-    return props.width + "px";
-  }
-
-  return '100%';
-});
-var Button$1 = styled__default["default"].a(_templateObject2$3 || (_templateObject2$3 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  background-color: ", ";\n  padding: 0.75rem 1.5625rem;\n  border-radius: 1.875rem;\n  border: 1px solid ", ";\n  width: ", ";\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n\n  :hover {\n    background-color: ", ";\n  }\n\n  span {\n    margin-left: 0.9375rem;\n    font-size: 0.9375rem;\n    color: ", ";\n  }\n"])), colors.card, colors.default30, function (props) {
-  if (props.width) {
-    if (typeof props.width === 'string') {
-      return props.width;
-    }
-
-    return props.width + "px";
-  }
-
-  return '100%';
-}, colors.default10, function (props) {
-  return props.colorText ? props.colorText : colors.brandDark;
-});
-var Complement = styled__default["default"].div(_templateObject3$3 || (_templateObject3$3 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n\n  color: ", ";\n  background-color: ", ";\n\n  border: 1px solid ", ";\n  text-align: center;\n  margin-top: -1.5625rem;\n  padding-top: 1.5625rem;\n  width: 100%;\n\n  border-bottom-left-radius: 1.875rem;\n  border-bottom-right-radius: 1.875rem;\n"])), colors.gray20, colors.default10, colors.default20);
-
-var _excluded$2 = ["children", "width", "type", "style", "icon", "sizeIcon", "colorIcon", "text", "colorText", "onClick", "loading", "className", "id", "complement", "complementStyle", "complementClassName"];
-
-var Card = function Card(_ref) {
-  var children = _ref.children,
-      width = _ref.width,
-      _ref$type = _ref.type,
-      type = _ref$type === void 0 ? 'shadow' : _ref$type,
-      style = _ref.style,
-      icon = _ref.icon,
-      sizeIcon = _ref.sizeIcon,
-      colorIcon = _ref.colorIcon,
-      text = _ref.text,
-      colorText = _ref.colorText,
-      onClick = _ref.onClick,
-      loading = _ref.loading,
-      className = _ref.className,
-      id = _ref.id,
-      complement = _ref.complement,
-      complementStyle = _ref.complementStyle,
-      complementClassName = _ref.complementClassName,
-      rest = _objectWithoutPropertiesLoose$3(_ref, _excluded$2);
-
-  function renderShadow() {
-    if (complement) {
-      return jsxRuntime.jsxs("div", {
-        children: [jsxRuntime.jsxs(Shadow, Object.assign({
-          className: className,
-          width: width,
-          style: style,
-          type: type,
-          id: id
-        }, {
-          children: [loading && jsxRuntime.jsx("div", Object.assign({
-            className: "loading-card"
-          }, {
-            children: jsxRuntime.jsx(Loader, {}, void 0)
-          }), void 0), children]
-        }), void 0), jsxRuntime.jsx(Complement, Object.assign({
-          className: complementClassName,
-          style: complementStyle
-        }, {
-          children: complement
-        }), void 0)]
-      }, void 0);
-    }
-
-    return jsxRuntime.jsxs(Shadow, Object.assign({
-      className: className,
-      width: width,
-      style: style,
-      type: type,
-      id: id
-    }, {
-      children: [loading && jsxRuntime.jsx("div", Object.assign({
-        className: "loading-card"
-      }, {
-        children: jsxRuntime.jsx(Loader, {}, void 0)
-      }), void 0), children]
-    }), void 0);
-  }
-
-  function renderButton() {
-    return jsxRuntime.jsxs(Button$1, Object.assign({
-      style: style,
-      colorText: colorText,
-      onClick: onClick,
-      href: rest.href,
-      width: width,
-      className: className,
-      id: id
-    }, {
-      children: [icon && jsxRuntime.jsx(React__default["default"].Fragment, {
-        children: jsxRuntime.jsx(FontAwesomeIcon, {
-          icon: icon,
-          color: colorIcon || colors.brandDark,
-          size: sizeIcon || 'lg'
-        }, void 0)
-      }, void 0), jsxRuntime.jsx("span", {
-        children: text
-      }, void 0)]
-    }), void 0);
-  }
-
-  switch (type) {
-    case 'shadow'  :
-      return renderShadow();
-
-    case 'button':
-      return renderButton();
-
-    default:
-      return renderShadow();
-  }
-};
-
-var _templateObject$3, _templateObject2$2, _templateObject3$2, _templateObject4$1;
-var Header = styled__default["default"].div(_templateObject$3 || (_templateObject$3 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  display: flex;\n  margin-bottom: 10px;\n"])));
-var Title$1 = styled__default["default"].span(_templateObject2$2 || (_templateObject2$2 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  flex: 1;\n  text-align: left;\n  color: ", ";\n  font-weight: bold;\n"])), colors.gray20);
-var Message = styled__default["default"].span(_templateObject3$2 || (_templateObject3$2 = _taggedTemplateLiteralLoose(["\n  flex: 1;\n  text-align: right;\n  color: ", ";\n"])), colors.gray10);
-var Container$2 = styled__default["default"].div(_templateObject4$1 || (_templateObject4$1 = _taggedTemplateLiteralLoose(["\n  margin-bottom: ", ";\n\n  /*!\n * # Semantic UI 2.4.1 - Table\n * http://github.com/semantic-org/semantic-ui/\n *\n *\n * Released under the MIT license\n * http://opensource.org/licenses/MIT\n *\n */\n\n  /*******************************\n             Table\n*******************************/\n\n  /* Prototype */\n  .ui.table {\n    width: 100%;\n    background: #ffffff;\n    margin: 1em 0em;\n    border: none !important;\n    -webkit-box-shadow: none;\n    box-shadow: none;\n    border-radius: 0.28571429rem;\n    text-align: left;\n    color: #707070;\n    border-collapse: separate;\n    border-spacing: 0px;\n  }\n  .ui.table:first-child {\n    margin-top: 0em;\n  }\n  .ui.table:last-child {\n    margin-bottom: 0em;\n  }\n\n  /*******************************\n               Parts\n  *******************************/\n\n  /* Table Content */\n  .ui.table th,\n  .ui.table td {\n    -webkit-transition: background 0.1s ease, color 0.1s ease;\n    transition: background 0.1s ease, color 0.1s ease;\n  }\n\n  /* Headers */\n  .ui.table thead {\n    -webkit-box-shadow: none;\n    box-shadow: none;\n  }\n  .ui.table thead th {\n    cursor: auto;\n    background: none !important;\n    text-align: inherit;\n    color: #9b4dee !important;\n    padding: 0.92857143em 0.78571429em;\n    vertical-align: inherit;\n    font-style: none;\n    font-weight: bold;\n    text-transform: none;\n    border-bottom: 1px solid rgba(34, 36, 38, 0.1);\n    border-left: none;\n  }\n  .ui.table thead tr > th:first-child {\n    border-left: none;\n  }\n  .ui.table thead tr:first-child > th:first-child {\n    border-radius: 0.28571429rem 0em 0em 0em;\n  }\n  .ui.table thead tr:first-child > th:last-child {\n    border-radius: 0em 0.28571429rem 0em 0em;\n  }\n  .ui.table thead tr:first-child > th:only-child {\n    border-radius: 0.28571429rem 0.28571429rem 0em 0em;\n  }\n\n  /* Footer */\n  .ui.table tfoot {\n    -webkit-box-shadow: none;\n    box-shadow: none;\n    margin-top: 20px;\n  }\n  .ui.table tfoot th {\n    cursor: auto;\n    border-top: 1px solid rgba(34, 36, 38, 0.15);\n    background: #f9fafb;\n    text-align: inherit;\n    color: rgba(0, 0, 0, 0.87);\n    padding: 0.78571429em 0.78571429em;\n    vertical-align: middle;\n    font-style: normal;\n    font-weight: normal;\n    text-transform: none;\n  }\n  .ui.table tfoot tr > th:first-child {\n    border-left: none;\n  }\n  .ui.table tfoot tr:first-child > th:first-child {\n    border-radius: 0em 0em 0em 0.28571429rem;\n  }\n  .ui.table tfoot tr:first-child > th:last-child {\n    border-radius: 0em 0em 0.28571429rem 0em;\n  }\n  .ui.table tfoot tr:first-child > th:only-child {\n    border-radius: 0em 0em 0.28571429rem 0.28571429rem;\n  }\n\n  /* Table Row */\n  .ui.table tr td {\n    border-top: 1px solid rgba(34, 36, 38, 0.1);\n  }\n  .ui.table tr:first-child td {\n    border-top: none;\n  }\n\n  /* Repeated tbody */\n  .ui.table tbody + tbody tr:first-child td {\n    border-top: 1px solid rgba(34, 36, 38, 0.1);\n  }\n\n  /* Table Cells */\n  .ui.table td {\n    padding: 0.78571429em 0.78571429em;\n    text-align: inherit;\n  }\n\n  /* Icons */\n  .ui.table > .icon {\n    vertical-align: baseline;\n  }\n  .ui.table > .icon:only-child {\n    margin: 0em;\n  }\n\n  /* Table Segment */\n  .ui.table.segment {\n    padding: 0em;\n  }\n  .ui.table.segment:after {\n    display: none;\n  }\n  .ui.table.segment.stacked:after {\n    display: block;\n  }\n\n  /* Responsive */\n  @media only screen and (max-width: 767px) {\n    .ui.table:not(.unstackable) {\n      width: 100%;\n    }\n    .ui.table:not(.unstackable) tbody,\n    .ui.table:not(.unstackable) tr,\n    .ui.table:not(.unstackable) tr > th,\n    .ui.table:not(.unstackable) tr > td {\n      width: auto !important;\n      display: block !important;\n    }\n    .ui.table:not(.unstackable) {\n      padding: 0em;\n    }\n    .ui.table:not(.unstackable) thead {\n      display: block;\n    }\n    .ui.table:not(.unstackable) tfoot {\n      display: block;\n    }\n    .ui.table:not(.unstackable) tr {\n      padding-top: 1em;\n      padding-bottom: 1em;\n      -webkit-box-shadow: 0px -1px 0px 0px rgba(0, 0, 0, 0.1) inset !important;\n      box-shadow: 0px -1px 0px 0px rgba(0, 0, 0, 0.1) inset !important;\n    }\n    .ui.table:not(.unstackable) tr > th,\n    .ui.table:not(.unstackable) tr > td {\n      background: none;\n      border: none !important;\n      padding: 0.25em 0.75em !important;\n      -webkit-box-shadow: none !important;\n      box-shadow: none !important;\n    }\n    .ui.table:not(.unstackable) th:first-child,\n    .ui.table:not(.unstackable) td:first-child {\n      font-weight: bold;\n    }\n\n    /* Definition Table */\n    .ui.definition.table:not(.unstackable) thead th:first-child {\n      -webkit-box-shadow: none !important;\n      box-shadow: none !important;\n    }\n  }\n\n  /*******************************\n              Coupling\n  *******************************/\n\n  /* UI Image */\n  .ui.table th .image,\n  .ui.table th .image img,\n  .ui.table td .image,\n  .ui.table td .image img {\n    max-width: none;\n  }\n\n  /*******************************\n               Types\n  *******************************/\n\n  /*--------------\n      Complex\n  ---------------*/\n\n  .ui.structured.table {\n    border-collapse: collapse;\n  }\n  .ui.structured.table thead th {\n    border-left: none;\n    border-right: none;\n  }\n  .ui.structured.sortable.table thead th {\n    border-left: 1px solid rgba(34, 36, 38, 0.15);\n    border-right: 1px solid rgba(34, 36, 38, 0.15);\n  }\n  .ui.structured.basic.table th {\n    border-left: none;\n    border-right: none;\n  }\n  .ui.structured.celled.table tr th,\n  .ui.structured.celled.table tr td {\n    border-left: 1px solid rgba(34, 36, 38, 0.1);\n    border-right: 1px solid rgba(34, 36, 38, 0.1);\n  }\n\n  /*--------------\n     Definition\n  ---------------*/\n\n  .ui.definition.table thead:not(.full-width) th:first-child {\n    pointer-events: none;\n    background: transparent;\n    font-weight: normal;\n    color: rgba(0, 0, 0, 0.4);\n    -webkit-box-shadow: -1px -1px 0px 1px #ffffff;\n    box-shadow: -1px -1px 0px 1px #ffffff;\n  }\n  .ui.definition.table tfoot:not(.full-width) th:first-child {\n    pointer-events: none;\n    background: transparent;\n    font-weight: rgba(0, 0, 0, 0.4);\n    color: normal;\n    -webkit-box-shadow: 1px 1px 0px 1px #ffffff;\n    box-shadow: 1px 1px 0px 1px #ffffff;\n  }\n\n  /* Remove Border */\n  .ui.celled.definition.table thead:not(.full-width) th:first-child {\n    -webkit-box-shadow: 0px -1px 0px 1px #ffffff;\n    box-shadow: 0px -1px 0px 1px #ffffff;\n  }\n  .ui.celled.definition.table tfoot:not(.full-width) th:first-child {\n    -webkit-box-shadow: 0px 1px 0px 1px #ffffff;\n    box-shadow: 0px 1px 0px 1px #ffffff;\n  }\n\n  /* Highlight Defining Column */\n  .ui.definition.table tr td:first-child:not(.ignored),\n  .ui.definition.table tr td.definition {\n    background: none;\n    font-weight: bold;\n    color: ", ";\n    text-transform: '';\n    -webkit-box-shadow: '';\n    box-shadow: '';\n    text-align: '';\n    font-size: 1em;\n    padding-left: '';\n    padding-right: '';\n  }\n\n  /* Fix 2nd Column */\n  .ui.definition.table thead:not(.full-width) th:nth-child(2) {\n    border-left: 1px solid rgba(34, 36, 38, 0.15);\n  }\n  .ui.definition.table tfoot:not(.full-width) th:nth-child(2) {\n    border-left: 1px solid rgba(34, 36, 38, 0.15);\n  }\n  .ui.definition.table td:nth-child(2) {\n    border-left: 1px solid rgba(34, 36, 38, 0.15);\n  }\n\n  /*******************************\n               States\n  *******************************/\n\n  /*--------------\n      Positive\n  ---------------*/\n\n  .ui.table tr.positive,\n  .ui.table td.positive {\n    -webkit-box-shadow: 0px 0px 0px #a3c293 inset;\n    box-shadow: 0px 0px 0px #a3c293 inset;\n  }\n  .ui.table tr.positive,\n  .ui.table td.positive {\n    background: #fcfff5 !important;\n    color: #2c662d !important;\n  }\n\n  /*--------------\n       Negative\n  ---------------*/\n\n  .ui.table tr.negative,\n  .ui.table td.negative {\n    -webkit-box-shadow: 0px 0px 0px #e0b4b4 inset;\n    box-shadow: 0px 0px 0px #e0b4b4 inset;\n  }\n  .ui.table tr.negative,\n  .ui.table td.negative {\n    background: #fff6f6 !important;\n    color: #9f3a38 !important;\n  }\n\n  /*--------------\n        Error\n  ---------------*/\n\n  .ui.table tr.error,\n  .ui.table td.error {\n    -webkit-box-shadow: 0px 0px 0px #e0b4b4 inset;\n    box-shadow: 0px 0px 0px #e0b4b4 inset;\n  }\n  .ui.table tr.error,\n  .ui.table td.error {\n    background: #fff6f6 !important;\n    color: #9f3a38 !important;\n  }\n\n  /*--------------\n       Warning\n  ---------------*/\n\n  .ui.table tr.warning,\n  .ui.table td.warning {\n    -webkit-box-shadow: 0px 0px 0px #c9ba9b inset;\n    box-shadow: 0px 0px 0px #c9ba9b inset;\n  }\n  .ui.table tr.warning,\n  .ui.table td.warning {\n    background: #fffaf3 !important;\n    color: #573a08 !important;\n  }\n\n  /*--------------\n       Active\n  ---------------*/\n\n  .ui.table tr.active,\n  .ui.table td.active {\n    -webkit-box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.87) inset;\n    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.87) inset;\n  }\n  .ui.table tr.active,\n  .ui.table td.active {\n    background: #e0e0e0 !important;\n    color: rgba(0, 0, 0, 0.87) !important;\n  }\n\n  /*--------------\n       Disabled\n  ---------------*/\n\n  .ui.table tr.disabled td,\n  .ui.table tr td.disabled,\n  .ui.table tr.disabled:hover,\n  .ui.table tr:hover td.disabled {\n    pointer-events: none;\n    color: rgba(40, 40, 40, 0.3);\n  }\n\n  /*******************************\n            Variations\n  *******************************/\n\n  /*--------------\n      Stackable\n  ---------------*/\n\n  @media only screen and (max-width: 991px) {\n    .ui[class*='tablet stackable'].table,\n    .ui[class*='tablet stackable'].table tbody,\n    .ui[class*='tablet stackable'].table tr,\n    .ui[class*='tablet stackable'].table tr > th,\n    .ui[class*='tablet stackable'].table tr > td {\n      width: 100% !important;\n      display: block !important;\n    }\n    .ui[class*='tablet stackable'].table {\n      padding: 0em;\n    }\n    .ui[class*='tablet stackable'].table thead {\n      display: block;\n    }\n    .ui[class*='tablet stackable'].table tfoot {\n      display: block;\n    }\n    .ui[class*='tablet stackable'].table tr {\n      padding-top: 1em;\n      padding-bottom: 1em;\n      -webkit-box-shadow: 0px -1px 0px 0px rgba(0, 0, 0, 0.1) inset !important;\n      box-shadow: 0px -1px 0px 0px rgba(0, 0, 0, 0.1) inset !important;\n    }\n    .ui[class*='tablet stackable'].table tr > th,\n    .ui[class*='tablet stackable'].table tr > td {\n      background: none;\n      border: none !important;\n      padding: 0.25em 0.75em;\n      -webkit-box-shadow: none !important;\n      box-shadow: none !important;\n    }\n\n    /* Definition Table */\n    .ui.definition[class*='tablet stackable'].table thead th:first-child {\n      -webkit-box-shadow: none !important;\n      box-shadow: none !important;\n    }\n  }\n\n  /*--------------\n   Text Alignment\n  ---------------*/\n\n  .ui.table[class*='left aligned'],\n  .ui.table [class*='left aligned'] {\n    text-align: left;\n  }\n  .ui.table[class*='center aligned'],\n  .ui.table [class*='center aligned'] {\n    text-align: center;\n  }\n  .ui.table[class*='right aligned'],\n  .ui.table [class*='right aligned'] {\n    text-align: right;\n  }\n\n  /*------------------\n   Vertical Alignment\n  ------------------*/\n\n  .ui.table[class*='top aligned'],\n  .ui.table [class*='top aligned'] {\n    vertical-align: top;\n  }\n  .ui.table[class*='middle aligned'],\n  .ui.table [class*='middle aligned'] {\n    vertical-align: middle;\n  }\n  .ui.table[class*='bottom aligned'],\n  .ui.table [class*='bottom aligned'] {\n    vertical-align: bottom;\n  }\n\n  /*--------------\n      Collapsing\n  ---------------*/\n\n  .ui.table th.collapsing,\n  .ui.table td.collapsing {\n    width: 1px;\n    white-space: nowrap;\n  }\n\n  /*--------------\n       Fixed\n  ---------------*/\n\n  .ui.fixed.table {\n    table-layout: fixed;\n  }\n  .ui.fixed.table th,\n  .ui.fixed.table td {\n    overflow: hidden;\n    text-overflow: ellipsis;\n  }\n\n  /*--------------\n     Selectable\n  ---------------*/\n\n  .ui.selectable.table tbody tr:hover,\n  .ui.table tbody tr td.selectable:hover {\n    background: rgba(0, 0, 0, 0.05) !important;\n    color: rgba(0, 0, 0, 0.95) !important;\n  }\n  .ui.selectable.inverted.table tbody tr:hover,\n  .ui.inverted.table tbody tr td.selectable:hover {\n    background: rgba(255, 255, 255, 0.08) !important;\n    color: #ffffff !important;\n  }\n\n  /* Selectable Cell Link */\n  .ui.table tbody tr td.selectable {\n    padding: 0em;\n  }\n  .ui.table tbody tr td.selectable > a:not(.ui) {\n    display: block;\n    color: inherit;\n    padding: 0.78571429em 0.78571429em;\n  }\n\n  /* Other States */\n  .ui.selectable.table tr.error:hover,\n  .ui.table tr td.selectable.error:hover,\n  .ui.selectable.table tr:hover td.error {\n    background: #ffe7e7 !important;\n    color: #943634 !important;\n  }\n  .ui.selectable.table tr.warning:hover,\n  .ui.table tr td.selectable.warning:hover,\n  .ui.selectable.table tr:hover td.warning {\n    background: #fff4e4 !important;\n    color: #493107 !important;\n  }\n  .ui.selectable.table tr.active:hover,\n  .ui.table tr td.selectable.active:hover,\n  .ui.selectable.table tr:hover td.active {\n    background: #e0e0e0 !important;\n    color: rgba(0, 0, 0, 0.87) !important;\n  }\n  .ui.selectable.table tr.positive:hover,\n  .ui.table tr td.selectable.positive:hover,\n  .ui.selectable.table tr:hover td.positive {\n    background: #f7ffe6 !important;\n    color: #275b28 !important;\n  }\n  .ui.selectable.table tr.negative:hover,\n  .ui.table tr td.selectable.negative:hover,\n  .ui.selectable.table tr:hover td.negative {\n    background: #ffe7e7 !important;\n    color: #943634 !important;\n  }\n\n  /*-------------------\n        Attached\n  --------------------*/\n\n  /* Middle */\n  .ui.attached.table {\n    top: 0px;\n    bottom: 0px;\n    border-radius: 0px;\n    margin: 0em -1px;\n    width: calc(100% - (-1px * 2));\n    max-width: calc(100% - (-1px * 2));\n    -webkit-box-shadow: none;\n    box-shadow: none;\n    border: 1px solid #d4d4d5;\n  }\n  .ui.attached + .ui.attached.table:not(.top) {\n    border-top: none;\n  }\n\n  /* Top */\n  .ui[class*='top attached'].table {\n    bottom: 0px;\n    margin-bottom: 0em;\n    top: 0px;\n    margin-top: 1em;\n    border-radius: 0.28571429rem 0.28571429rem 0em 0em;\n  }\n  .ui.table[class*='top attached']:first-child {\n    margin-top: 0em;\n  }\n\n  /* Bottom */\n  .ui[class*='bottom attached'].table {\n    bottom: 0px;\n    margin-top: 0em;\n    top: 0px;\n    margin-bottom: 1em;\n    -webkit-box-shadow: none, none;\n    box-shadow: none, none;\n    border-radius: 0em 0em 0.28571429rem 0.28571429rem;\n  }\n  .ui[class*='bottom attached'].table:last-child {\n    margin-bottom: 0em;\n  }\n\n  /*--------------\n       Striped\n  ---------------*/\n\n  /* Table Striping */\n  .ui.striped.table > tr:nth-child(2n),\n  .ui.striped.table tbody tr:nth-child(2n) {\n    background-color: rgba(0, 0, 50, 0.02);\n  }\n\n  /* Stripes */\n  .ui.inverted.striped.table > tr:nth-child(2n),\n  .ui.inverted.striped.table tbody tr:nth-child(2n) {\n    background-color: rgba(255, 255, 255, 0.05);\n  }\n\n  /* Allow striped active hover */\n  .ui.striped.selectable.selectable.selectable.table tbody tr.active:hover {\n    background: #efefef !important;\n    color: rgba(0, 0, 0, 0.95) !important;\n  }\n\n  /*--------------\n     Single Line\n  ---------------*/\n\n  .ui.table[class*='single line'],\n  .ui.table [class*='single line'] {\n    white-space: nowrap;\n  }\n  .ui.table[class*='single line'],\n  .ui.table [class*='single line'] {\n    white-space: nowrap;\n  }\n\n  /*-------------------\n         Colors\n  --------------------*/\n\n  /* Red */\n  .ui.red.table {\n    border-top: 0.2em solid #db2828;\n  }\n  .ui.inverted.red.table {\n    background-color: #db2828 !important;\n    color: #ffffff !important;\n  }\n\n  /* Orange */\n  .ui.orange.table {\n    border-top: 0.2em solid #f2711c;\n  }\n  .ui.inverted.orange.table {\n    background-color: #f2711c !important;\n    color: #ffffff !important;\n  }\n\n  /* Yellow */\n  .ui.yellow.table {\n    border-top: 0.2em solid #fbbd08;\n  }\n  .ui.inverted.yellow.table {\n    background-color: #fbbd08 !important;\n    color: #ffffff !important;\n  }\n\n  /* Olive */\n  .ui.olive.table {\n    border-top: 0.2em solid #b5cc18;\n  }\n  .ui.inverted.olive.table {\n    background-color: #b5cc18 !important;\n    color: #ffffff !important;\n  }\n\n  /* Green */\n  .ui.green.table {\n    border-top: 0.2em solid #21ba45;\n  }\n  .ui.inverted.green.table {\n    background-color: #21ba45 !important;\n    color: #ffffff !important;\n  }\n\n  /* Teal */\n  .ui.teal.table {\n    border-top: 0.2em solid #00b5ad;\n  }\n  .ui.inverted.teal.table {\n    background-color: #00b5ad !important;\n    color: #ffffff !important;\n  }\n\n  /* Blue */\n  .ui.blue.table {\n    border-top: 0.2em solid #2185d0;\n  }\n  .ui.inverted.blue.table {\n    background-color: #2185d0 !important;\n    color: #ffffff !important;\n  }\n\n  /* Violet */\n  .ui.violet.table {\n    border-top: 0.2em solid #6435c9;\n  }\n  .ui.inverted.violet.table {\n    background-color: #6435c9 !important;\n    color: #ffffff !important;\n  }\n\n  /* Purple */\n  .ui.purple.table {\n    border-top: 0.2em solid #a333c8;\n  }\n  .ui.inverted.purple.table {\n    background-color: #a333c8 !important;\n    color: #ffffff !important;\n  }\n\n  /* Pink */\n  .ui.pink.table {\n    border-top: 0.2em solid #e03997;\n  }\n  .ui.inverted.pink.table {\n    background-color: #e03997 !important;\n    color: #ffffff !important;\n  }\n\n  /* Brown */\n  .ui.brown.table {\n    border-top: 0.2em solid #a5673f;\n  }\n  .ui.inverted.brown.table {\n    background-color: #a5673f !important;\n    color: #ffffff !important;\n  }\n\n  /* Grey */\n  .ui.grey.table {\n    border-top: 0.2em solid #767676;\n  }\n  .ui.inverted.grey.table {\n    background-color: #767676 !important;\n    color: #ffffff !important;\n  }\n\n  /* Black */\n  .ui.black.table {\n    border-top: 0.2em solid #1b1c1d;\n  }\n  .ui.inverted.black.table {\n    background-color: #1b1c1d !important;\n    color: #ffffff !important;\n  }\n\n  /*--------------\n    Column Count\n  ---------------*/\n\n  /* Grid Based */\n  .ui.one.column.table td {\n    width: 100%;\n  }\n  .ui.two.column.table td {\n    width: 50%;\n  }\n  .ui.three.column.table td {\n    width: 33.33333333%;\n  }\n  .ui.four.column.table td {\n    width: 25%;\n  }\n  .ui.five.column.table td {\n    width: 20%;\n  }\n  .ui.six.column.table td {\n    width: 16.66666667%;\n  }\n  .ui.seven.column.table td {\n    width: 14.28571429%;\n  }\n  .ui.eight.column.table td {\n    width: 12.5%;\n  }\n  .ui.nine.column.table td {\n    width: 11.11111111%;\n  }\n  .ui.ten.column.table td {\n    width: 10%;\n  }\n  .ui.eleven.column.table td {\n    width: 9.09090909%;\n  }\n  .ui.twelve.column.table td {\n    width: 8.33333333%;\n  }\n  .ui.thirteen.column.table td {\n    width: 7.69230769%;\n  }\n  .ui.fourteen.column.table td {\n    width: 7.14285714%;\n  }\n  .ui.fifteen.column.table td {\n    width: 6.66666667%;\n  }\n  .ui.sixteen.column.table td {\n    width: 6.25%;\n  }\n\n  /* Column Width */\n  .ui.table th.one.wide,\n  .ui.table td.one.wide {\n    width: 6.25%;\n  }\n  .ui.table th.two.wide,\n  .ui.table td.two.wide {\n    width: 12.5%;\n  }\n  .ui.table th.three.wide,\n  .ui.table td.three.wide {\n    width: 18.75%;\n  }\n  .ui.table th.four.wide,\n  .ui.table td.four.wide {\n    width: 25%;\n  }\n  .ui.table th.five.wide,\n  .ui.table td.five.wide {\n    width: 31.25%;\n  }\n  .ui.table th.six.wide,\n  .ui.table td.six.wide {\n    width: 37.5%;\n  }\n  .ui.table th.seven.wide,\n  .ui.table td.seven.wide {\n    width: 43.75%;\n  }\n  .ui.table th.eight.wide,\n  .ui.table td.eight.wide {\n    width: 50%;\n  }\n  .ui.table th.nine.wide,\n  .ui.table td.nine.wide {\n    width: 56.25%;\n  }\n  .ui.table th.ten.wide,\n  .ui.table td.ten.wide {\n    width: 62.5%;\n  }\n  .ui.table th.eleven.wide,\n  .ui.table td.eleven.wide {\n    width: 68.75%;\n  }\n  .ui.table th.twelve.wide,\n  .ui.table td.twelve.wide {\n    width: 75%;\n  }\n  .ui.table th.thirteen.wide,\n  .ui.table td.thirteen.wide {\n    width: 81.25%;\n  }\n  .ui.table th.fourteen.wide,\n  .ui.table td.fourteen.wide {\n    width: 87.5%;\n  }\n  .ui.table th.fifteen.wide,\n  .ui.table td.fifteen.wide {\n    width: 93.75%;\n  }\n  .ui.table th.sixteen.wide,\n  .ui.table td.sixteen.wide {\n    width: 100%;\n  }\n\n  /*--------------\n      Sortable\n  ---------------*/\n\n  .ui.sortable.table thead th {\n    cursor: pointer;\n    white-space: nowrap;\n    border-left: 1px solid rgba(34, 36, 38, 0.15);\n    color: rgba(0, 0, 0, 0.87);\n  }\n  .ui.sortable.table thead th:first-child {\n    border-left: none;\n  }\n  .ui.sortable.table thead th.sorted,\n  .ui.sortable.table thead th.sorted:hover {\n    -webkit-user-select: none;\n    -moz-user-select: none;\n    -ms-user-select: none;\n    user-select: none;\n  }\n  .ui.sortable.table thead th:after {\n    display: none;\n    font-style: normal;\n    font-weight: normal;\n    text-decoration: inherit;\n    content: '';\n    height: 1em;\n    width: auto;\n    opacity: 0.8;\n    margin: 0em 0em 0em 0.5em;\n    font-family: 'Icons';\n  }\n  .ui.sortable.table thead th.ascending:after {\n    content: '\f0d8';\n  }\n  .ui.sortable.table thead th.descending:after {\n    content: '\f0d7';\n  }\n\n  /* Hover */\n  .ui.sortable.table th.disabled:hover {\n    cursor: auto;\n    color: rgba(40, 40, 40, 0.3);\n  }\n  .ui.sortable.table thead th:hover {\n    background: rgba(0, 0, 0, 0.05);\n    color: rgba(0, 0, 0, 0.8);\n  }\n\n  /* Sorted */\n  .ui.sortable.table thead th.sorted {\n    background: rgba(0, 0, 0, 0.05);\n    color: rgba(0, 0, 0, 0.95);\n  }\n  .ui.sortable.table thead th.sorted:after {\n    display: inline-block;\n  }\n\n  /* Sorted Hover */\n  .ui.sortable.table thead th.sorted:hover {\n    background: rgba(0, 0, 0, 0.05);\n    color: rgba(0, 0, 0, 0.95);\n  }\n\n  /* Inverted */\n  .ui.inverted.sortable.table thead th.sorted {\n    background: rgba(255, 255, 255, 0.15) -webkit-gradient(linear, left top, left\n          bottom, from(transparent), to(rgba(0, 0, 0, 0.05)));\n    background: rgba(255, 255, 255, 0.15) -webkit-linear-gradient(transparent, rgba(0, 0, 0, 0.05));\n    background: rgba(255, 255, 255, 0.15)\n      linear-gradient(transparent, rgba(0, 0, 0, 0.05));\n    color: #ffffff;\n  }\n  .ui.inverted.sortable.table thead th:hover {\n    background: rgba(255, 255, 255, 0.08) -webkit-gradient(linear, left top, left\n          bottom, from(transparent), to(rgba(0, 0, 0, 0.05)));\n    background: rgba(255, 255, 255, 0.08) -webkit-linear-gradient(transparent, rgba(0, 0, 0, 0.05));\n    background: rgba(255, 255, 255, 0.08)\n      linear-gradient(transparent, rgba(0, 0, 0, 0.05));\n    color: #ffffff;\n  }\n  .ui.inverted.sortable.table thead th {\n    border-left-color: transparent;\n    border-right-color: transparent;\n  }\n\n  /*--------------\n      Inverted\n  ---------------*/\n\n  /* Text Color */\n  .ui.inverted.table {\n    background: #333333;\n    color: rgba(255, 255, 255, 0.9);\n    border: none;\n  }\n  .ui.inverted.table th {\n    background-color: rgba(0, 0, 0, 0.15);\n    border-color: rgba(255, 255, 255, 0.1) !important;\n    color: rgba(255, 255, 255, 0.9) !important;\n  }\n  .ui.inverted.table tr td {\n    border-color: rgba(255, 255, 255, 0.1) !important;\n  }\n  .ui.inverted.table tr.disabled td,\n  .ui.inverted.table tr td.disabled,\n  .ui.inverted.table tr.disabled:hover td,\n  .ui.inverted.table tr:hover td.disabled {\n    pointer-events: none;\n    color: rgba(225, 225, 225, 0.3);\n  }\n\n  /* Definition */\n  .ui.inverted.definition.table tfoot:not(.full-width) th:first-child,\n  .ui.inverted.definition.table thead:not(.full-width) th:first-child {\n    background: #ffffff;\n  }\n  .ui.inverted.definition.table tr td:first-child {\n    background: rgba(255, 255, 255, 0.02);\n    color: #ffffff;\n  }\n\n  /*--------------\n     Collapsing\n  ---------------*/\n\n  .ui.collapsing.table {\n    width: auto;\n  }\n\n  /*--------------\n        Basic\n  ---------------*/\n\n  .ui.basic.table {\n    background: transparent;\n    border: 1px solid rgba(34, 36, 38, 0.15);\n    -webkit-box-shadow: none;\n    box-shadow: none;\n  }\n  .ui.basic.table thead,\n  .ui.basic.table tfoot {\n    -webkit-box-shadow: none;\n    box-shadow: none;\n  }\n  .ui.basic.table th {\n    background: transparent;\n    border-left: none;\n  }\n  .ui.basic.table tbody tr {\n    border-bottom: 1px solid rgba(0, 0, 0, 0.1);\n  }\n  .ui.basic.table td {\n    background: transparent;\n  }\n  .ui.basic.striped.table tbody tr:nth-child(2n) {\n    background-color: rgba(0, 0, 0, 0.05) !important;\n  }\n\n  /* Very Basic */\n  .ui[class*='very basic'].table {\n    border: none;\n  }\n  .ui[class*='very basic'].table:not(.sortable):not(.striped) th,\n  .ui[class*='very basic'].table:not(.sortable):not(.striped) td {\n    padding: '';\n  }\n  .ui[class*='very basic'].table:not(.sortable):not(.striped) th:first-child,\n  .ui[class*='very basic'].table:not(.sortable):not(.striped) td:first-child {\n    padding-left: 0em;\n  }\n  .ui[class*='very basic'].table:not(.sortable):not(.striped) th:last-child,\n  .ui[class*='very basic'].table:not(.sortable):not(.striped) td:last-child {\n    padding-right: 0em;\n  }\n  .ui[class*='very basic'].table:not(.sortable):not(.striped)\n    thead\n    tr:first-child\n    th {\n    padding-top: 0em;\n  }\n\n  /*--------------\n       Celled\n  ---------------*/\n\n  .ui.celled.table tr th,\n  .ui.celled.table tr td {\n    border-left: 1px solid rgba(34, 36, 38, 0.1);\n  }\n  .ui.celled.table tr th:first-child,\n  .ui.celled.table tr td:first-child {\n    border-left: none;\n  }\n\n  /*--------------\n       Padded\n  ---------------*/\n\n  .ui.padded.table th {\n    padding-left: 1em;\n    padding-right: 1em;\n  }\n  .ui.padded.table th,\n  .ui.padded.table td {\n    padding: 1em 1em;\n  }\n\n  /* Very */\n  .ui[class*='very padded'].table th {\n    padding-left: 1.5em;\n    padding-right: 1.5em;\n  }\n  .ui[class*='very padded'].table td {\n    padding: 1.5em 1.5em;\n  }\n\n  /*--------------\n       Compact\n  ---------------*/\n\n  .ui.compact.table th {\n    padding-left: 0.7em;\n    padding-right: 0.7em;\n  }\n  .ui.compact.table td {\n    padding: 0.5em 0.7em;\n  }\n\n  /* Very */\n  .ui[class*='very compact'].table th {\n    padding-left: 0.6em;\n    padding-right: 0.6em;\n  }\n  .ui[class*='very compact'].table td {\n    padding: 0.4em 0.6em;\n  }\n\n  /*--------------\n        Sizes\n  ---------------*/\n\n  /* Small */\n  .ui.small.table {\n    font-size: 0.9em;\n  }\n\n  /* Standard */\n  .ui.table {\n    font-size: 1em;\n  }\n\n  /* Large */\n  .ui.large.table {\n    font-size: 1.1em;\n  }\n\n  /*******************************\n           Site Overrides\n  *******************************/\n"], ["\n  margin-bottom: ", ";\n\n  /*!\n * # Semantic UI 2.4.1 - Table\n * http://github.com/semantic-org/semantic-ui/\n *\n *\n * Released under the MIT license\n * http://opensource.org/licenses/MIT\n *\n */\n\n  /*******************************\n             Table\n*******************************/\n\n  /* Prototype */\n  .ui.table {\n    width: 100%;\n    background: #ffffff;\n    margin: 1em 0em;\n    border: none !important;\n    -webkit-box-shadow: none;\n    box-shadow: none;\n    border-radius: 0.28571429rem;\n    text-align: left;\n    color: #707070;\n    border-collapse: separate;\n    border-spacing: 0px;\n  }\n  .ui.table:first-child {\n    margin-top: 0em;\n  }\n  .ui.table:last-child {\n    margin-bottom: 0em;\n  }\n\n  /*******************************\n               Parts\n  *******************************/\n\n  /* Table Content */\n  .ui.table th,\n  .ui.table td {\n    -webkit-transition: background 0.1s ease, color 0.1s ease;\n    transition: background 0.1s ease, color 0.1s ease;\n  }\n\n  /* Headers */\n  .ui.table thead {\n    -webkit-box-shadow: none;\n    box-shadow: none;\n  }\n  .ui.table thead th {\n    cursor: auto;\n    background: none !important;\n    text-align: inherit;\n    color: #9b4dee !important;\n    padding: 0.92857143em 0.78571429em;\n    vertical-align: inherit;\n    font-style: none;\n    font-weight: bold;\n    text-transform: none;\n    border-bottom: 1px solid rgba(34, 36, 38, 0.1);\n    border-left: none;\n  }\n  .ui.table thead tr > th:first-child {\n    border-left: none;\n  }\n  .ui.table thead tr:first-child > th:first-child {\n    border-radius: 0.28571429rem 0em 0em 0em;\n  }\n  .ui.table thead tr:first-child > th:last-child {\n    border-radius: 0em 0.28571429rem 0em 0em;\n  }\n  .ui.table thead tr:first-child > th:only-child {\n    border-radius: 0.28571429rem 0.28571429rem 0em 0em;\n  }\n\n  /* Footer */\n  .ui.table tfoot {\n    -webkit-box-shadow: none;\n    box-shadow: none;\n    margin-top: 20px;\n  }\n  .ui.table tfoot th {\n    cursor: auto;\n    border-top: 1px solid rgba(34, 36, 38, 0.15);\n    background: #f9fafb;\n    text-align: inherit;\n    color: rgba(0, 0, 0, 0.87);\n    padding: 0.78571429em 0.78571429em;\n    vertical-align: middle;\n    font-style: normal;\n    font-weight: normal;\n    text-transform: none;\n  }\n  .ui.table tfoot tr > th:first-child {\n    border-left: none;\n  }\n  .ui.table tfoot tr:first-child > th:first-child {\n    border-radius: 0em 0em 0em 0.28571429rem;\n  }\n  .ui.table tfoot tr:first-child > th:last-child {\n    border-radius: 0em 0em 0.28571429rem 0em;\n  }\n  .ui.table tfoot tr:first-child > th:only-child {\n    border-radius: 0em 0em 0.28571429rem 0.28571429rem;\n  }\n\n  /* Table Row */\n  .ui.table tr td {\n    border-top: 1px solid rgba(34, 36, 38, 0.1);\n  }\n  .ui.table tr:first-child td {\n    border-top: none;\n  }\n\n  /* Repeated tbody */\n  .ui.table tbody + tbody tr:first-child td {\n    border-top: 1px solid rgba(34, 36, 38, 0.1);\n  }\n\n  /* Table Cells */\n  .ui.table td {\n    padding: 0.78571429em 0.78571429em;\n    text-align: inherit;\n  }\n\n  /* Icons */\n  .ui.table > .icon {\n    vertical-align: baseline;\n  }\n  .ui.table > .icon:only-child {\n    margin: 0em;\n  }\n\n  /* Table Segment */\n  .ui.table.segment {\n    padding: 0em;\n  }\n  .ui.table.segment:after {\n    display: none;\n  }\n  .ui.table.segment.stacked:after {\n    display: block;\n  }\n\n  /* Responsive */\n  @media only screen and (max-width: 767px) {\n    .ui.table:not(.unstackable) {\n      width: 100%;\n    }\n    .ui.table:not(.unstackable) tbody,\n    .ui.table:not(.unstackable) tr,\n    .ui.table:not(.unstackable) tr > th,\n    .ui.table:not(.unstackable) tr > td {\n      width: auto !important;\n      display: block !important;\n    }\n    .ui.table:not(.unstackable) {\n      padding: 0em;\n    }\n    .ui.table:not(.unstackable) thead {\n      display: block;\n    }\n    .ui.table:not(.unstackable) tfoot {\n      display: block;\n    }\n    .ui.table:not(.unstackable) tr {\n      padding-top: 1em;\n      padding-bottom: 1em;\n      -webkit-box-shadow: 0px -1px 0px 0px rgba(0, 0, 0, 0.1) inset !important;\n      box-shadow: 0px -1px 0px 0px rgba(0, 0, 0, 0.1) inset !important;\n    }\n    .ui.table:not(.unstackable) tr > th,\n    .ui.table:not(.unstackable) tr > td {\n      background: none;\n      border: none !important;\n      padding: 0.25em 0.75em !important;\n      -webkit-box-shadow: none !important;\n      box-shadow: none !important;\n    }\n    .ui.table:not(.unstackable) th:first-child,\n    .ui.table:not(.unstackable) td:first-child {\n      font-weight: bold;\n    }\n\n    /* Definition Table */\n    .ui.definition.table:not(.unstackable) thead th:first-child {\n      -webkit-box-shadow: none !important;\n      box-shadow: none !important;\n    }\n  }\n\n  /*******************************\n              Coupling\n  *******************************/\n\n  /* UI Image */\n  .ui.table th .image,\n  .ui.table th .image img,\n  .ui.table td .image,\n  .ui.table td .image img {\n    max-width: none;\n  }\n\n  /*******************************\n               Types\n  *******************************/\n\n  /*--------------\n      Complex\n  ---------------*/\n\n  .ui.structured.table {\n    border-collapse: collapse;\n  }\n  .ui.structured.table thead th {\n    border-left: none;\n    border-right: none;\n  }\n  .ui.structured.sortable.table thead th {\n    border-left: 1px solid rgba(34, 36, 38, 0.15);\n    border-right: 1px solid rgba(34, 36, 38, 0.15);\n  }\n  .ui.structured.basic.table th {\n    border-left: none;\n    border-right: none;\n  }\n  .ui.structured.celled.table tr th,\n  .ui.structured.celled.table tr td {\n    border-left: 1px solid rgba(34, 36, 38, 0.1);\n    border-right: 1px solid rgba(34, 36, 38, 0.1);\n  }\n\n  /*--------------\n     Definition\n  ---------------*/\n\n  .ui.definition.table thead:not(.full-width) th:first-child {\n    pointer-events: none;\n    background: transparent;\n    font-weight: normal;\n    color: rgba(0, 0, 0, 0.4);\n    -webkit-box-shadow: -1px -1px 0px 1px #ffffff;\n    box-shadow: -1px -1px 0px 1px #ffffff;\n  }\n  .ui.definition.table tfoot:not(.full-width) th:first-child {\n    pointer-events: none;\n    background: transparent;\n    font-weight: rgba(0, 0, 0, 0.4);\n    color: normal;\n    -webkit-box-shadow: 1px 1px 0px 1px #ffffff;\n    box-shadow: 1px 1px 0px 1px #ffffff;\n  }\n\n  /* Remove Border */\n  .ui.celled.definition.table thead:not(.full-width) th:first-child {\n    -webkit-box-shadow: 0px -1px 0px 1px #ffffff;\n    box-shadow: 0px -1px 0px 1px #ffffff;\n  }\n  .ui.celled.definition.table tfoot:not(.full-width) th:first-child {\n    -webkit-box-shadow: 0px 1px 0px 1px #ffffff;\n    box-shadow: 0px 1px 0px 1px #ffffff;\n  }\n\n  /* Highlight Defining Column */\n  .ui.definition.table tr td:first-child:not(.ignored),\n  .ui.definition.table tr td.definition {\n    background: none;\n    font-weight: bold;\n    color: ", ";\n    text-transform: '';\n    -webkit-box-shadow: '';\n    box-shadow: '';\n    text-align: '';\n    font-size: 1em;\n    padding-left: '';\n    padding-right: '';\n  }\n\n  /* Fix 2nd Column */\n  .ui.definition.table thead:not(.full-width) th:nth-child(2) {\n    border-left: 1px solid rgba(34, 36, 38, 0.15);\n  }\n  .ui.definition.table tfoot:not(.full-width) th:nth-child(2) {\n    border-left: 1px solid rgba(34, 36, 38, 0.15);\n  }\n  .ui.definition.table td:nth-child(2) {\n    border-left: 1px solid rgba(34, 36, 38, 0.15);\n  }\n\n  /*******************************\n               States\n  *******************************/\n\n  /*--------------\n      Positive\n  ---------------*/\n\n  .ui.table tr.positive,\n  .ui.table td.positive {\n    -webkit-box-shadow: 0px 0px 0px #a3c293 inset;\n    box-shadow: 0px 0px 0px #a3c293 inset;\n  }\n  .ui.table tr.positive,\n  .ui.table td.positive {\n    background: #fcfff5 !important;\n    color: #2c662d !important;\n  }\n\n  /*--------------\n       Negative\n  ---------------*/\n\n  .ui.table tr.negative,\n  .ui.table td.negative {\n    -webkit-box-shadow: 0px 0px 0px #e0b4b4 inset;\n    box-shadow: 0px 0px 0px #e0b4b4 inset;\n  }\n  .ui.table tr.negative,\n  .ui.table td.negative {\n    background: #fff6f6 !important;\n    color: #9f3a38 !important;\n  }\n\n  /*--------------\n        Error\n  ---------------*/\n\n  .ui.table tr.error,\n  .ui.table td.error {\n    -webkit-box-shadow: 0px 0px 0px #e0b4b4 inset;\n    box-shadow: 0px 0px 0px #e0b4b4 inset;\n  }\n  .ui.table tr.error,\n  .ui.table td.error {\n    background: #fff6f6 !important;\n    color: #9f3a38 !important;\n  }\n\n  /*--------------\n       Warning\n  ---------------*/\n\n  .ui.table tr.warning,\n  .ui.table td.warning {\n    -webkit-box-shadow: 0px 0px 0px #c9ba9b inset;\n    box-shadow: 0px 0px 0px #c9ba9b inset;\n  }\n  .ui.table tr.warning,\n  .ui.table td.warning {\n    background: #fffaf3 !important;\n    color: #573a08 !important;\n  }\n\n  /*--------------\n       Active\n  ---------------*/\n\n  .ui.table tr.active,\n  .ui.table td.active {\n    -webkit-box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.87) inset;\n    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.87) inset;\n  }\n  .ui.table tr.active,\n  .ui.table td.active {\n    background: #e0e0e0 !important;\n    color: rgba(0, 0, 0, 0.87) !important;\n  }\n\n  /*--------------\n       Disabled\n  ---------------*/\n\n  .ui.table tr.disabled td,\n  .ui.table tr td.disabled,\n  .ui.table tr.disabled:hover,\n  .ui.table tr:hover td.disabled {\n    pointer-events: none;\n    color: rgba(40, 40, 40, 0.3);\n  }\n\n  /*******************************\n            Variations\n  *******************************/\n\n  /*--------------\n      Stackable\n  ---------------*/\n\n  @media only screen and (max-width: 991px) {\n    .ui[class*='tablet stackable'].table,\n    .ui[class*='tablet stackable'].table tbody,\n    .ui[class*='tablet stackable'].table tr,\n    .ui[class*='tablet stackable'].table tr > th,\n    .ui[class*='tablet stackable'].table tr > td {\n      width: 100% !important;\n      display: block !important;\n    }\n    .ui[class*='tablet stackable'].table {\n      padding: 0em;\n    }\n    .ui[class*='tablet stackable'].table thead {\n      display: block;\n    }\n    .ui[class*='tablet stackable'].table tfoot {\n      display: block;\n    }\n    .ui[class*='tablet stackable'].table tr {\n      padding-top: 1em;\n      padding-bottom: 1em;\n      -webkit-box-shadow: 0px -1px 0px 0px rgba(0, 0, 0, 0.1) inset !important;\n      box-shadow: 0px -1px 0px 0px rgba(0, 0, 0, 0.1) inset !important;\n    }\n    .ui[class*='tablet stackable'].table tr > th,\n    .ui[class*='tablet stackable'].table tr > td {\n      background: none;\n      border: none !important;\n      padding: 0.25em 0.75em;\n      -webkit-box-shadow: none !important;\n      box-shadow: none !important;\n    }\n\n    /* Definition Table */\n    .ui.definition[class*='tablet stackable'].table thead th:first-child {\n      -webkit-box-shadow: none !important;\n      box-shadow: none !important;\n    }\n  }\n\n  /*--------------\n   Text Alignment\n  ---------------*/\n\n  .ui.table[class*='left aligned'],\n  .ui.table [class*='left aligned'] {\n    text-align: left;\n  }\n  .ui.table[class*='center aligned'],\n  .ui.table [class*='center aligned'] {\n    text-align: center;\n  }\n  .ui.table[class*='right aligned'],\n  .ui.table [class*='right aligned'] {\n    text-align: right;\n  }\n\n  /*------------------\n   Vertical Alignment\n  ------------------*/\n\n  .ui.table[class*='top aligned'],\n  .ui.table [class*='top aligned'] {\n    vertical-align: top;\n  }\n  .ui.table[class*='middle aligned'],\n  .ui.table [class*='middle aligned'] {\n    vertical-align: middle;\n  }\n  .ui.table[class*='bottom aligned'],\n  .ui.table [class*='bottom aligned'] {\n    vertical-align: bottom;\n  }\n\n  /*--------------\n      Collapsing\n  ---------------*/\n\n  .ui.table th.collapsing,\n  .ui.table td.collapsing {\n    width: 1px;\n    white-space: nowrap;\n  }\n\n  /*--------------\n       Fixed\n  ---------------*/\n\n  .ui.fixed.table {\n    table-layout: fixed;\n  }\n  .ui.fixed.table th,\n  .ui.fixed.table td {\n    overflow: hidden;\n    text-overflow: ellipsis;\n  }\n\n  /*--------------\n     Selectable\n  ---------------*/\n\n  .ui.selectable.table tbody tr:hover,\n  .ui.table tbody tr td.selectable:hover {\n    background: rgba(0, 0, 0, 0.05) !important;\n    color: rgba(0, 0, 0, 0.95) !important;\n  }\n  .ui.selectable.inverted.table tbody tr:hover,\n  .ui.inverted.table tbody tr td.selectable:hover {\n    background: rgba(255, 255, 255, 0.08) !important;\n    color: #ffffff !important;\n  }\n\n  /* Selectable Cell Link */\n  .ui.table tbody tr td.selectable {\n    padding: 0em;\n  }\n  .ui.table tbody tr td.selectable > a:not(.ui) {\n    display: block;\n    color: inherit;\n    padding: 0.78571429em 0.78571429em;\n  }\n\n  /* Other States */\n  .ui.selectable.table tr.error:hover,\n  .ui.table tr td.selectable.error:hover,\n  .ui.selectable.table tr:hover td.error {\n    background: #ffe7e7 !important;\n    color: #943634 !important;\n  }\n  .ui.selectable.table tr.warning:hover,\n  .ui.table tr td.selectable.warning:hover,\n  .ui.selectable.table tr:hover td.warning {\n    background: #fff4e4 !important;\n    color: #493107 !important;\n  }\n  .ui.selectable.table tr.active:hover,\n  .ui.table tr td.selectable.active:hover,\n  .ui.selectable.table tr:hover td.active {\n    background: #e0e0e0 !important;\n    color: rgba(0, 0, 0, 0.87) !important;\n  }\n  .ui.selectable.table tr.positive:hover,\n  .ui.table tr td.selectable.positive:hover,\n  .ui.selectable.table tr:hover td.positive {\n    background: #f7ffe6 !important;\n    color: #275b28 !important;\n  }\n  .ui.selectable.table tr.negative:hover,\n  .ui.table tr td.selectable.negative:hover,\n  .ui.selectable.table tr:hover td.negative {\n    background: #ffe7e7 !important;\n    color: #943634 !important;\n  }\n\n  /*-------------------\n        Attached\n  --------------------*/\n\n  /* Middle */\n  .ui.attached.table {\n    top: 0px;\n    bottom: 0px;\n    border-radius: 0px;\n    margin: 0em -1px;\n    width: calc(100% - (-1px * 2));\n    max-width: calc(100% - (-1px * 2));\n    -webkit-box-shadow: none;\n    box-shadow: none;\n    border: 1px solid #d4d4d5;\n  }\n  .ui.attached + .ui.attached.table:not(.top) {\n    border-top: none;\n  }\n\n  /* Top */\n  .ui[class*='top attached'].table {\n    bottom: 0px;\n    margin-bottom: 0em;\n    top: 0px;\n    margin-top: 1em;\n    border-radius: 0.28571429rem 0.28571429rem 0em 0em;\n  }\n  .ui.table[class*='top attached']:first-child {\n    margin-top: 0em;\n  }\n\n  /* Bottom */\n  .ui[class*='bottom attached'].table {\n    bottom: 0px;\n    margin-top: 0em;\n    top: 0px;\n    margin-bottom: 1em;\n    -webkit-box-shadow: none, none;\n    box-shadow: none, none;\n    border-radius: 0em 0em 0.28571429rem 0.28571429rem;\n  }\n  .ui[class*='bottom attached'].table:last-child {\n    margin-bottom: 0em;\n  }\n\n  /*--------------\n       Striped\n  ---------------*/\n\n  /* Table Striping */\n  .ui.striped.table > tr:nth-child(2n),\n  .ui.striped.table tbody tr:nth-child(2n) {\n    background-color: rgba(0, 0, 50, 0.02);\n  }\n\n  /* Stripes */\n  .ui.inverted.striped.table > tr:nth-child(2n),\n  .ui.inverted.striped.table tbody tr:nth-child(2n) {\n    background-color: rgba(255, 255, 255, 0.05);\n  }\n\n  /* Allow striped active hover */\n  .ui.striped.selectable.selectable.selectable.table tbody tr.active:hover {\n    background: #efefef !important;\n    color: rgba(0, 0, 0, 0.95) !important;\n  }\n\n  /*--------------\n     Single Line\n  ---------------*/\n\n  .ui.table[class*='single line'],\n  .ui.table [class*='single line'] {\n    white-space: nowrap;\n  }\n  .ui.table[class*='single line'],\n  .ui.table [class*='single line'] {\n    white-space: nowrap;\n  }\n\n  /*-------------------\n         Colors\n  --------------------*/\n\n  /* Red */\n  .ui.red.table {\n    border-top: 0.2em solid #db2828;\n  }\n  .ui.inverted.red.table {\n    background-color: #db2828 !important;\n    color: #ffffff !important;\n  }\n\n  /* Orange */\n  .ui.orange.table {\n    border-top: 0.2em solid #f2711c;\n  }\n  .ui.inverted.orange.table {\n    background-color: #f2711c !important;\n    color: #ffffff !important;\n  }\n\n  /* Yellow */\n  .ui.yellow.table {\n    border-top: 0.2em solid #fbbd08;\n  }\n  .ui.inverted.yellow.table {\n    background-color: #fbbd08 !important;\n    color: #ffffff !important;\n  }\n\n  /* Olive */\n  .ui.olive.table {\n    border-top: 0.2em solid #b5cc18;\n  }\n  .ui.inverted.olive.table {\n    background-color: #b5cc18 !important;\n    color: #ffffff !important;\n  }\n\n  /* Green */\n  .ui.green.table {\n    border-top: 0.2em solid #21ba45;\n  }\n  .ui.inverted.green.table {\n    background-color: #21ba45 !important;\n    color: #ffffff !important;\n  }\n\n  /* Teal */\n  .ui.teal.table {\n    border-top: 0.2em solid #00b5ad;\n  }\n  .ui.inverted.teal.table {\n    background-color: #00b5ad !important;\n    color: #ffffff !important;\n  }\n\n  /* Blue */\n  .ui.blue.table {\n    border-top: 0.2em solid #2185d0;\n  }\n  .ui.inverted.blue.table {\n    background-color: #2185d0 !important;\n    color: #ffffff !important;\n  }\n\n  /* Violet */\n  .ui.violet.table {\n    border-top: 0.2em solid #6435c9;\n  }\n  .ui.inverted.violet.table {\n    background-color: #6435c9 !important;\n    color: #ffffff !important;\n  }\n\n  /* Purple */\n  .ui.purple.table {\n    border-top: 0.2em solid #a333c8;\n  }\n  .ui.inverted.purple.table {\n    background-color: #a333c8 !important;\n    color: #ffffff !important;\n  }\n\n  /* Pink */\n  .ui.pink.table {\n    border-top: 0.2em solid #e03997;\n  }\n  .ui.inverted.pink.table {\n    background-color: #e03997 !important;\n    color: #ffffff !important;\n  }\n\n  /* Brown */\n  .ui.brown.table {\n    border-top: 0.2em solid #a5673f;\n  }\n  .ui.inverted.brown.table {\n    background-color: #a5673f !important;\n    color: #ffffff !important;\n  }\n\n  /* Grey */\n  .ui.grey.table {\n    border-top: 0.2em solid #767676;\n  }\n  .ui.inverted.grey.table {\n    background-color: #767676 !important;\n    color: #ffffff !important;\n  }\n\n  /* Black */\n  .ui.black.table {\n    border-top: 0.2em solid #1b1c1d;\n  }\n  .ui.inverted.black.table {\n    background-color: #1b1c1d !important;\n    color: #ffffff !important;\n  }\n\n  /*--------------\n    Column Count\n  ---------------*/\n\n  /* Grid Based */\n  .ui.one.column.table td {\n    width: 100%;\n  }\n  .ui.two.column.table td {\n    width: 50%;\n  }\n  .ui.three.column.table td {\n    width: 33.33333333%;\n  }\n  .ui.four.column.table td {\n    width: 25%;\n  }\n  .ui.five.column.table td {\n    width: 20%;\n  }\n  .ui.six.column.table td {\n    width: 16.66666667%;\n  }\n  .ui.seven.column.table td {\n    width: 14.28571429%;\n  }\n  .ui.eight.column.table td {\n    width: 12.5%;\n  }\n  .ui.nine.column.table td {\n    width: 11.11111111%;\n  }\n  .ui.ten.column.table td {\n    width: 10%;\n  }\n  .ui.eleven.column.table td {\n    width: 9.09090909%;\n  }\n  .ui.twelve.column.table td {\n    width: 8.33333333%;\n  }\n  .ui.thirteen.column.table td {\n    width: 7.69230769%;\n  }\n  .ui.fourteen.column.table td {\n    width: 7.14285714%;\n  }\n  .ui.fifteen.column.table td {\n    width: 6.66666667%;\n  }\n  .ui.sixteen.column.table td {\n    width: 6.25%;\n  }\n\n  /* Column Width */\n  .ui.table th.one.wide,\n  .ui.table td.one.wide {\n    width: 6.25%;\n  }\n  .ui.table th.two.wide,\n  .ui.table td.two.wide {\n    width: 12.5%;\n  }\n  .ui.table th.three.wide,\n  .ui.table td.three.wide {\n    width: 18.75%;\n  }\n  .ui.table th.four.wide,\n  .ui.table td.four.wide {\n    width: 25%;\n  }\n  .ui.table th.five.wide,\n  .ui.table td.five.wide {\n    width: 31.25%;\n  }\n  .ui.table th.six.wide,\n  .ui.table td.six.wide {\n    width: 37.5%;\n  }\n  .ui.table th.seven.wide,\n  .ui.table td.seven.wide {\n    width: 43.75%;\n  }\n  .ui.table th.eight.wide,\n  .ui.table td.eight.wide {\n    width: 50%;\n  }\n  .ui.table th.nine.wide,\n  .ui.table td.nine.wide {\n    width: 56.25%;\n  }\n  .ui.table th.ten.wide,\n  .ui.table td.ten.wide {\n    width: 62.5%;\n  }\n  .ui.table th.eleven.wide,\n  .ui.table td.eleven.wide {\n    width: 68.75%;\n  }\n  .ui.table th.twelve.wide,\n  .ui.table td.twelve.wide {\n    width: 75%;\n  }\n  .ui.table th.thirteen.wide,\n  .ui.table td.thirteen.wide {\n    width: 81.25%;\n  }\n  .ui.table th.fourteen.wide,\n  .ui.table td.fourteen.wide {\n    width: 87.5%;\n  }\n  .ui.table th.fifteen.wide,\n  .ui.table td.fifteen.wide {\n    width: 93.75%;\n  }\n  .ui.table th.sixteen.wide,\n  .ui.table td.sixteen.wide {\n    width: 100%;\n  }\n\n  /*--------------\n      Sortable\n  ---------------*/\n\n  .ui.sortable.table thead th {\n    cursor: pointer;\n    white-space: nowrap;\n    border-left: 1px solid rgba(34, 36, 38, 0.15);\n    color: rgba(0, 0, 0, 0.87);\n  }\n  .ui.sortable.table thead th:first-child {\n    border-left: none;\n  }\n  .ui.sortable.table thead th.sorted,\n  .ui.sortable.table thead th.sorted:hover {\n    -webkit-user-select: none;\n    -moz-user-select: none;\n    -ms-user-select: none;\n    user-select: none;\n  }\n  .ui.sortable.table thead th:after {\n    display: none;\n    font-style: normal;\n    font-weight: normal;\n    text-decoration: inherit;\n    content: '';\n    height: 1em;\n    width: auto;\n    opacity: 0.8;\n    margin: 0em 0em 0em 0.5em;\n    font-family: 'Icons';\n  }\n  .ui.sortable.table thead th.ascending:after {\n    content: '\\f0d8';\n  }\n  .ui.sortable.table thead th.descending:after {\n    content: '\\f0d7';\n  }\n\n  /* Hover */\n  .ui.sortable.table th.disabled:hover {\n    cursor: auto;\n    color: rgba(40, 40, 40, 0.3);\n  }\n  .ui.sortable.table thead th:hover {\n    background: rgba(0, 0, 0, 0.05);\n    color: rgba(0, 0, 0, 0.8);\n  }\n\n  /* Sorted */\n  .ui.sortable.table thead th.sorted {\n    background: rgba(0, 0, 0, 0.05);\n    color: rgba(0, 0, 0, 0.95);\n  }\n  .ui.sortable.table thead th.sorted:after {\n    display: inline-block;\n  }\n\n  /* Sorted Hover */\n  .ui.sortable.table thead th.sorted:hover {\n    background: rgba(0, 0, 0, 0.05);\n    color: rgba(0, 0, 0, 0.95);\n  }\n\n  /* Inverted */\n  .ui.inverted.sortable.table thead th.sorted {\n    background: rgba(255, 255, 255, 0.15) -webkit-gradient(linear, left top, left\n          bottom, from(transparent), to(rgba(0, 0, 0, 0.05)));\n    background: rgba(255, 255, 255, 0.15) -webkit-linear-gradient(transparent, rgba(0, 0, 0, 0.05));\n    background: rgba(255, 255, 255, 0.15)\n      linear-gradient(transparent, rgba(0, 0, 0, 0.05));\n    color: #ffffff;\n  }\n  .ui.inverted.sortable.table thead th:hover {\n    background: rgba(255, 255, 255, 0.08) -webkit-gradient(linear, left top, left\n          bottom, from(transparent), to(rgba(0, 0, 0, 0.05)));\n    background: rgba(255, 255, 255, 0.08) -webkit-linear-gradient(transparent, rgba(0, 0, 0, 0.05));\n    background: rgba(255, 255, 255, 0.08)\n      linear-gradient(transparent, rgba(0, 0, 0, 0.05));\n    color: #ffffff;\n  }\n  .ui.inverted.sortable.table thead th {\n    border-left-color: transparent;\n    border-right-color: transparent;\n  }\n\n  /*--------------\n      Inverted\n  ---------------*/\n\n  /* Text Color */\n  .ui.inverted.table {\n    background: #333333;\n    color: rgba(255, 255, 255, 0.9);\n    border: none;\n  }\n  .ui.inverted.table th {\n    background-color: rgba(0, 0, 0, 0.15);\n    border-color: rgba(255, 255, 255, 0.1) !important;\n    color: rgba(255, 255, 255, 0.9) !important;\n  }\n  .ui.inverted.table tr td {\n    border-color: rgba(255, 255, 255, 0.1) !important;\n  }\n  .ui.inverted.table tr.disabled td,\n  .ui.inverted.table tr td.disabled,\n  .ui.inverted.table tr.disabled:hover td,\n  .ui.inverted.table tr:hover td.disabled {\n    pointer-events: none;\n    color: rgba(225, 225, 225, 0.3);\n  }\n\n  /* Definition */\n  .ui.inverted.definition.table tfoot:not(.full-width) th:first-child,\n  .ui.inverted.definition.table thead:not(.full-width) th:first-child {\n    background: #ffffff;\n  }\n  .ui.inverted.definition.table tr td:first-child {\n    background: rgba(255, 255, 255, 0.02);\n    color: #ffffff;\n  }\n\n  /*--------------\n     Collapsing\n  ---------------*/\n\n  .ui.collapsing.table {\n    width: auto;\n  }\n\n  /*--------------\n        Basic\n  ---------------*/\n\n  .ui.basic.table {\n    background: transparent;\n    border: 1px solid rgba(34, 36, 38, 0.15);\n    -webkit-box-shadow: none;\n    box-shadow: none;\n  }\n  .ui.basic.table thead,\n  .ui.basic.table tfoot {\n    -webkit-box-shadow: none;\n    box-shadow: none;\n  }\n  .ui.basic.table th {\n    background: transparent;\n    border-left: none;\n  }\n  .ui.basic.table tbody tr {\n    border-bottom: 1px solid rgba(0, 0, 0, 0.1);\n  }\n  .ui.basic.table td {\n    background: transparent;\n  }\n  .ui.basic.striped.table tbody tr:nth-child(2n) {\n    background-color: rgba(0, 0, 0, 0.05) !important;\n  }\n\n  /* Very Basic */\n  .ui[class*='very basic'].table {\n    border: none;\n  }\n  .ui[class*='very basic'].table:not(.sortable):not(.striped) th,\n  .ui[class*='very basic'].table:not(.sortable):not(.striped) td {\n    padding: '';\n  }\n  .ui[class*='very basic'].table:not(.sortable):not(.striped) th:first-child,\n  .ui[class*='very basic'].table:not(.sortable):not(.striped) td:first-child {\n    padding-left: 0em;\n  }\n  .ui[class*='very basic'].table:not(.sortable):not(.striped) th:last-child,\n  .ui[class*='very basic'].table:not(.sortable):not(.striped) td:last-child {\n    padding-right: 0em;\n  }\n  .ui[class*='very basic'].table:not(.sortable):not(.striped)\n    thead\n    tr:first-child\n    th {\n    padding-top: 0em;\n  }\n\n  /*--------------\n       Celled\n  ---------------*/\n\n  .ui.celled.table tr th,\n  .ui.celled.table tr td {\n    border-left: 1px solid rgba(34, 36, 38, 0.1);\n  }\n  .ui.celled.table tr th:first-child,\n  .ui.celled.table tr td:first-child {\n    border-left: none;\n  }\n\n  /*--------------\n       Padded\n  ---------------*/\n\n  .ui.padded.table th {\n    padding-left: 1em;\n    padding-right: 1em;\n  }\n  .ui.padded.table th,\n  .ui.padded.table td {\n    padding: 1em 1em;\n  }\n\n  /* Very */\n  .ui[class*='very padded'].table th {\n    padding-left: 1.5em;\n    padding-right: 1.5em;\n  }\n  .ui[class*='very padded'].table td {\n    padding: 1.5em 1.5em;\n  }\n\n  /*--------------\n       Compact\n  ---------------*/\n\n  .ui.compact.table th {\n    padding-left: 0.7em;\n    padding-right: 0.7em;\n  }\n  .ui.compact.table td {\n    padding: 0.5em 0.7em;\n  }\n\n  /* Very */\n  .ui[class*='very compact'].table th {\n    padding-left: 0.6em;\n    padding-right: 0.6em;\n  }\n  .ui[class*='very compact'].table td {\n    padding: 0.4em 0.6em;\n  }\n\n  /*--------------\n        Sizes\n  ---------------*/\n\n  /* Small */\n  .ui.small.table {\n    font-size: 0.9em;\n  }\n\n  /* Standard */\n  .ui.table {\n    font-size: 1em;\n  }\n\n  /* Large */\n  .ui.large.table {\n    font-size: 1.1em;\n  }\n\n  /*******************************\n           Site Overrides\n  *******************************/\n"])), function (props) {
-  return props.hasMore || props.hasPagination ? '20px' : '0';
-}, colors.brand10);
-
-var _excluded$1 = ["children", "title", "titleStyle", "titleClassName", "message", "messageStyle", "messageClassName", "hasMore", "hasMoreText", "pagination"];
-
-function TableComponent(_ref) {
-  var children = _ref.children,
-      title = _ref.title,
-      titleStyle = _ref.titleStyle,
-      titleClassName = _ref.titleClassName,
-      message = _ref.message,
-      messageStyle = _ref.messageStyle,
-      messageClassName = _ref.messageClassName,
-      hasMore = _ref.hasMore,
-      hasMoreText = _ref.hasMoreText,
-      pagination = _ref.pagination,
-      rest = _objectWithoutPropertiesLoose$3(_ref, _excluded$1);
-
-  return jsxRuntime.jsxs("div", {
-    children: [title || message ? jsxRuntime.jsxs(Header, {
-      children: [jsxRuntime.jsx(Title$1, Object.assign({
-        style: titleStyle,
-        className: titleClassName
-      }, {
-        children: title
-      }), void 0), jsxRuntime.jsx(Message, Object.assign({
-        style: messageStyle,
-        className: messageClassName
-      }, {
-        children: message
-      }), void 0)]
-    }, void 0) : null, jsxRuntime.jsx(Container$2, Object.assign({
-      hasMore: !!hasMore,
-      hasPagination: !!pagination
-    }, {
-      children: jsxRuntime.jsx(semanticUiReact.Table, Object.assign({}, rest, {
-        children: children
-      }), void 0)
-    }), void 0), hasMore ? jsxRuntime.jsx(ButtonMain, {
-      "data-testid": "hasmore-button",
-      secondary: true,
-      textFirst: hasMoreText || 'ver a',
-      textEnd: !hasMoreText ? '' : 'lista completa',
-      notStrong: !!hasMoreText,
-      onClick: hasMore
-    }, void 0) : null, pagination ? jsxRuntime.jsxs("div", {
-      children: [jsxRuntime.jsx("br", {}, void 0), pagination]
-    }, void 0) : null]
-  }, void 0);
-}
-
-var Table = TableComponent;
-Table.Row = semanticUiReact.TableRow;
-Table.Header = semanticUiReact.TableHeader;
-Table.HeaderCell = semanticUiReact.TableHeaderCell;
-Table.Body = semanticUiReact.TableBody;
-Table.Cell = semanticUiReact.TableCell;
-Table.Footer = semanticUiReact.TableFooter;
-
-var _templateObject$2, _templateObject2$1, _templateObject3$1;
-var ContainerPagination = styled__default["default"].div(_templateObject$2 || (_templateObject$2 = _taggedTemplateLiteralLoose(["\n  display: flex;\n  font-size: ", ";\n\n  justify-content: center;\n  align-items: center;\n\n  button + button {\n    margin-left: 0.5em;\n  }\n\n  button {\n    ", "\n  }\n"])), function (props) {
-  return getFontSize(props.size, '1rem');
-}, function (props) {
-  return !props.disabledAll ? styled.css(_templateObject2$1 || (_templateObject2$1 = _taggedTemplateLiteralLoose(["\n            opacity: 1 !important;\n          "]))) : '';
-});
-var Button = styled__default["default"].button(_templateObject3$1 || (_templateObject3$1 = _taggedTemplateLiteralLoose(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  text-align: center;\n  color: ", ";\n  background-color: ", ";\n  border: 1px solid ", ";\n  font-size: 1.125em;\n  font-weight: 500;\n  width: 2.5em;\n  height: 2.5em;\n  border-radius: 0.625em;\n  transition: all 0.4s ease;\n\n  &:not(:disabled):hover {\n    background-color: ", ";\n  }\n\n  &:disabled {\n    border: none;\n    cursor: default;\n    opacity: 0.75;\n  }\n"])), function (props) {
-  return props.active ? colors.white : colors.brand10;
-}, function (props) {
-  return props.active ? colors.brand10 : colors.white;
-}, colors.hover, colors.hover);
-
-var brothersCount = 2;
-
-function generatePagesArray(from, to) {
-  return [].concat(new Array(to - from)).map(function (_, index) {
-    return from + index + 1;
-  }).filter(function (page) {
-    return page > 0;
-  });
-}
-
-function Pagination(_ref) {
-  var totalCount = _ref.totalCount,
-      _ref$currentPage = _ref.currentPage,
-      currentPage = _ref$currentPage === void 0 ? 1 : _ref$currentPage,
-      _ref$limitPerPage = _ref.limitPerPage,
-      limitPerPage = _ref$limitPerPage === void 0 ? 30 : _ref$limitPerPage,
-      onPageChange = _ref.onPageChange,
-      _ref$doubleJumpArrow = _ref.doubleJumpArrow,
-      doubleJumpArrow = _ref$doubleJumpArrow === void 0 ? false : _ref$doubleJumpArrow,
-      _ref$disabled = _ref.disabled,
-      disabled = _ref$disabled === void 0 ? false : _ref$disabled,
-      _ref$size = _ref.size,
-      size = _ref$size === void 0 ? 'md' : _ref$size,
-      className = _ref.className,
-      style = _ref.style;
-  var totalPages = Math.ceil(totalCount / limitPerPage);
-  var previousPages = currentPage > 1 ? generatePagesArray(currentPage - (brothersCount + 1), currentPage - 1) : [];
-  var nextPages = currentPage < totalPages ? generatePagesArray(currentPage, Math.min(totalPages, currentPage + brothersCount)) : [];
-
-  function handlePageChange(event) {
-    var newPage = Number(event.currentTarget.value);
-    return onPageChange && onPageChange(newPage);
-  }
-
-  if (totalPages == 0) return null;
-  return jsxRuntime.jsxs(ContainerPagination, Object.assign({
-    className: className,
-    style: style,
-    disabledAll: disabled,
-    size: size,
-    role: "group"
-  }, {
-    children: [doubleJumpArrow && jsxRuntime.jsx(Button, Object.assign({
-      disabled: currentPage == 1 || disabled,
-      value: 1,
-      onClick: handlePageChange,
-      active: currentPage == 1
-    }, {
-      children: jsxRuntime.jsx(FontAwesomeIcon, {
-        icon: faAngleDoubleLeft
-      }, void 0)
-    }), void 0), jsxRuntime.jsx(Button, Object.assign({
-      onClick: handlePageChange,
-      value: currentPage - 1,
-      disabled: currentPage == 1 || disabled,
-      active: currentPage == 1
-    }, {
-      children: jsxRuntime.jsx(FontAwesomeIcon, {
-        icon: faAngleLeft
-      }, void 0)
-    }), void 0), currentPage >= brothersCount + 2 && jsxRuntime.jsxs(jsxRuntime.Fragment, {
-      children: [jsxRuntime.jsx(Button, Object.assign({
-        onClick: handlePageChange,
-        value: 1,
-        disabled: disabled
-      }, {
-        children: 1
-      }), void 0), currentPage > brothersCount + 2 && jsxRuntime.jsx(Button, Object.assign({
-        disabled: disabled
-      }, {
-        children: "..."
-      }), void 0)]
-    }, void 0), previousPages.map(function (value) {
-      return jsxRuntime.jsx(Button, Object.assign({
-        onClick: handlePageChange,
-        value: value,
-        disabled: disabled
-      }, {
-        children: value
-      }), value);
-    }), jsxRuntime.jsx(Button, Object.assign({
-      onClick: handlePageChange,
-      disabled: true,
-      value: currentPage,
-      active: true
-    }, {
-      children: currentPage
-    }), void 0), nextPages.map(function (value) {
-      return jsxRuntime.jsx(Button, Object.assign({
-        onClick: handlePageChange,
-        disabled: disabled,
-        value: value
-      }, {
-        children: value
-      }), value);
-    }), totalPages >= currentPage + brothersCount + 1 && jsxRuntime.jsxs(jsxRuntime.Fragment, {
-      children: [totalPages > currentPage + brothersCount + 1 && jsxRuntime.jsx(Button, Object.assign({
-        disabled: disabled
-      }, {
-        children: "..."
-      }), void 0), jsxRuntime.jsx(Button, Object.assign({
-        onClick: handlePageChange,
-        disabled: disabled,
-        value: totalPages
-      }, {
-        children: totalPages
-      }), void 0)]
-    }, void 0), jsxRuntime.jsx(Button, Object.assign({
-      onClick: handlePageChange,
-      value: currentPage + 1,
-      disabled: currentPage == totalPages || disabled,
-      active: currentPage == totalPages
-    }, {
-      children: jsxRuntime.jsx(FontAwesomeIcon, {
-        icon: faAngleRight
-      }, void 0)
-    }), void 0), doubleJumpArrow && jsxRuntime.jsx(Button, Object.assign({
-      disabled: currentPage == totalPages || disabled,
-      active: currentPage == totalPages,
-      value: totalPages,
-      onClick: handlePageChange
-    }, {
-      children: jsxRuntime.jsx(FontAwesomeIcon, {
-        icon: faAngleDoubleRight
-      }, void 0)
-    }), void 0)]
-  }), void 0);
-}
-
-var _templateObject$1, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7;
-var Container$1 = styled__default["default"].div(_templateObject$1 || (_templateObject$1 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  display: flex;\n  width: ", ";\n  justify-content: space-between;\n  background-color: ", ";\n  border: 1px solid ", ";\n  padding: 0.9375rem 1.25rem;\n  align-items: center;\n  cursor: pointer;\n  box-shadow: 0px 3px 2px 0px rgba(0, 0, 0, 0.16);\n\n  .icon-title {\n    display: flex;\n    align-items: center;\n  }\n\n  .title-subtitle {\n    display: flex;\n    flex-direction: column;\n    flex: 1;\n    margin-left: ", ";\n  }\n\n  .value-icon {\n    display: flex;\n    align-items: center;\n    flex: 1;\n    justify-content: flex-end;\n  }\n\n  ", "\n"])), function (props) {
-  if (props.width) {
-    if (typeof props.width === 'string') {
-      return props.width;
-    }
-
-    return props.width + "px";
-  }
-
-  return '100%';
-}, function (props) {
-  return props.secondary ? colors.card : colors.white;
-}, colors.card, function (props) {
-  return props.icon ? '15px' : '0';
-}, function (props) {
-  return props.open ? styled.css(_templateObject2 || (_templateObject2 = _taggedTemplateLiteralLoose(["\n          border-top-left-radius: 20px;\n          border-top-right-radius: 20px;\n        "]))) : styled.css(_templateObject3 || (_templateObject3 = _taggedTemplateLiteralLoose(["\n          border-radius: 20px;\n        "])));
-});
-var Title = styled__default["default"].span(_templateObject4 || (_templateObject4 = _taggedTemplateLiteralLoose(["\n  font-size: ", ";\n  color: ", ";\n"])), function (props) {
-  return props.subtitle ? '0.875rem' : '1rem';
-}, colors.gray20);
-var Subtitle = styled__default["default"].span(_templateObject5 || (_templateObject5 = _taggedTemplateLiteralLoose(["\n  color: ", ";\n  font-size: 0.75rem;\n"])), colors.gray10);
-var Value = styled__default["default"].span(_templateObject6 || (_templateObject6 = _taggedTemplateLiteralLoose(["\n  margin-right: 1.25rem;\n  color: ", ";\n"])), colors.gray20);
-var Body = styled__default["default"].div(_templateObject7 || (_templateObject7 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  width: ", ";\n  padding: 1.25rem;\n  border: 1px solid ", ";\n  border-top: 0;\n  border-bottom-left-radius: 20px;\n  border-bottom-right-radius: 20px;\n  display: ", ";\n  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.16);\n"])), function (props) {
-  if (typeof props.width === 'string') {
-    return props.width;
-  }
-
-  return props.width + "px";
-}, colors.card, function (props) {
-  return props.open ? 'block' : 'none';
-});
-
-var Accordion = function Accordion(_ref) {
-  var className = _ref.className,
-      style = _ref.style,
-      title = _ref.title,
-      titleClassName = _ref.titleClassName,
-      titleStyle = _ref.titleStyle,
-      subtitle = _ref.subtitle,
-      subtitleClassName = _ref.subtitleClassName,
-      subtitleStyle = _ref.subtitleStyle,
-      value = _ref.value,
-      valueClassName = _ref.valueClassName,
-      valueStyle = _ref.valueStyle,
-      children = _ref.children,
-      secondary = _ref.secondary,
-      open = _ref.open,
-      _onClick = _ref.onClick,
-      width = _ref.width,
-      icon = _ref.icon,
-      iconClassName = _ref.iconClassName,
-      iconStyle = _ref.iconStyle,
-      customIcon = _ref.customIcon,
-      bodyClassName = _ref.bodyClassName,
-      bodyStyle = _ref.bodyStyle;
-  return jsxRuntime.jsxs(jsxRuntime.Fragment, {
-    children: [jsxRuntime.jsxs(Container$1, Object.assign({
-      role: "button",
-      className: className,
-      style: style,
-      secondary: secondary,
-      subtitle: subtitle,
-      open: open,
-      onClick: function onClick(event) {
-        return _onClick(event);
-      },
-      width: width,
-      icon: !!(icon || customIcon)
-    }, {
-      children: [jsxRuntime.jsxs("div", Object.assign({
-        className: "icon-title"
-      }, {
-        children: [customIcon || (icon ? jsxRuntime.jsx(FontAwesomeIcon, {
-          "data-testid": "accordion-icon",
-          className: iconClassName,
-          style: iconStyle,
-          icon: icon,
-          size: "lg",
-          color: colors.brand10
-        }, void 0) : null), jsxRuntime.jsxs("div", Object.assign({
-          className: "title-subtitle"
-        }, {
-          children: [jsxRuntime.jsx(Title, Object.assign({
-            className: titleClassName,
-            style: titleStyle,
-            subtitle: subtitle
-          }, {
-            children: title
-          }), void 0), subtitle && jsxRuntime.jsx(Subtitle, Object.assign({
-            className: subtitleClassName,
-            style: subtitleStyle
-          }, {
-            children: subtitle
-          }), void 0)]
-        }), void 0)]
-      }), void 0), jsxRuntime.jsxs("div", Object.assign({
-        className: "value-icon"
-      }, {
-        children: [value && jsxRuntime.jsx(Value, Object.assign({
-          className: valueClassName,
-          style: valueStyle
-        }, {
-          children: value
-        }), void 0), secondary ? jsxRuntime.jsx(FontAwesomeIcon, {
-          icon: open ? faAngleUp : faAngleDown,
-          style: {
-            fontSize: 20
-          }
-        }, void 0) : jsxRuntime.jsx(FontAwesomeIcon, {
-          icon: open ? faAngleUp : faAngleDown,
-          style: {
-            fontSize: 20
-          },
-          color: colors.brand10
-        }, void 0)]
-      }), void 0)]
-    }), void 0), jsxRuntime.jsx(Body, Object.assign({
-      className: bodyClassName,
-      style: bodyStyle,
-      open: open,
-      width: width
-    }, {
-      children: children
-    }), void 0)]
-  }, void 0);
 };
 
 function _interopDefault$2(e){return e&&"object"==typeof e&&"default"in e?e["default"]:e}var React$1=_interopDefault$2(React__default["default"]);function _defaults2$1(e,t){for(var n=Object.getOwnPropertyNames(t),a=0;a<n.length;a++){var i=n[a],r=Object.getOwnPropertyDescriptor(t,i);r&&r.configurable&&e[i]===undefined&&Object.defineProperty(e,i,r);}return e}function _extends$1(){return (_extends$1=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var a in n)Object.prototype.hasOwnProperty.call(n,a)&&(e[a]=n[a]);}return e}).apply(this,arguments)}function _inheritsLoose$1(e,t){e.prototype=Object.create(t.prototype),_defaults2$1(e.prototype.constructor=e,t);}function _objectWithoutPropertiesLoose$1(e,t){if(null==e)return {};var n,a,i={},r=Object.keys(e);for(a=0;a<r.length;a++)n=r[a],0<=t.indexOf(n)||(i[n]=e[n]);return i}function _assertThisInitialized$1(e){if(void 0===e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return e}var invariant$2=function(e,t,n,a,i,r,o,s){if(!e){var l;if(t===undefined)l=new Error("Minified exception occurred; use the non-minified dev environment for the full error message and additional helpful warnings.");else {var u=[n,a,i,r,o,s],c=0;(l=new Error(t.replace(/%s/g,function(){return u[c++]}))).name="Invariant Violation";}throw l.framesToPop=1,l}},invariant_1=invariant$2;function setInputSelection$1(e,t,n){if("selectionStart"in e&&"selectionEnd"in e)e.selectionStart=t,e.selectionEnd=n;else {var a=e.createTextRange();a.collapse(!0),a.moveStart("character",t),a.moveEnd("character",n-t),a.select();}}function getInputSelection$1(e){var t=0,n=0;if("selectionStart"in e&&"selectionEnd"in e)t=e.selectionStart,n=e.selectionEnd;else {var a=document.selection.createRange();a.parentElement()===e&&(t=-a.moveStart("character",-e.value.length),n=-a.moveEnd("character",-e.value.length));}return {start:t,end:n,length:n-t}}var defaultFormatChars$1={9:"[0-9]",a:"[A-Za-z]","*":"[A-Za-z0-9]"},defaultMaskChar$1="_";function parseMask$1(e,t,n){var a="",i="",r=null,o=[];if(t===undefined&&(t=defaultMaskChar$1),null==n&&(n=defaultFormatChars$1),!e||"string"!=typeof e)return {maskChar:t,formatChars:n,mask:null,prefix:null,lastEditablePosition:null,permanents:[]};var s=!1;return e.split("").forEach(function(e){s=!s&&"\\"===e||(s||!n[e]?(o.push(a.length),a.length===o.length-1&&(i+=e)):r=a.length+1,a+=e,!1);}),{maskChar:t,formatChars:n,prefix:i,mask:a,lastEditablePosition:r,permanents:o}}function isPermanentCharacter$1(e,t){return -1!==e.permanents.indexOf(t)}function isAllowedCharacter$1(e,t,n){var a=e.mask,i=e.formatChars;if(!n)return !1;if(isPermanentCharacter$1(e,t))return a[t]===n;var r=i[a[t]];return new RegExp(r).test(n)}function isEmpty$1(n,e){return e.split("").every(function(e,t){return isPermanentCharacter$1(n,t)||!isAllowedCharacter$1(n,t,e)})}function getFilledLength$1(e,t){var n=e.maskChar,a=e.prefix;if(!n){for(;t.length>a.length&&isPermanentCharacter$1(e,t.length-1);)t=t.slice(0,t.length-1);return t.length}for(var i=a.length,r=t.length;r>=a.length;r--){var o=t[r];if(!isPermanentCharacter$1(e,r)&&isAllowedCharacter$1(e,r,o)){i=r+1;break}}return i}function isFilled$1(e,t){return getFilledLength$1(e,t)===e.mask.length}function formatValue$1(e,t){var n=e.maskChar,a=e.mask,i=e.prefix;if(!n){for((t=insertString$1(e,"",t,0)).length<i.length&&(t=i);t.length<a.length&&isPermanentCharacter$1(e,t.length);)t+=a[t.length];return t}if(t)return insertString$1(e,formatValue$1(e,""),t,0);for(var r=0;r<a.length;r++)isPermanentCharacter$1(e,r)?t+=a[r]:t+=n;return t}function clearRange$1(n,e,a,t){var i=a+t,r=n.maskChar,o=n.mask,s=n.prefix,l=e.split("");if(r)return l.map(function(e,t){return t<a||i<=t?e:isPermanentCharacter$1(n,t)?o[t]:r}).join("");for(var u=i;u<l.length;u++)isPermanentCharacter$1(n,u)&&(l[u]="");return a=Math.max(s.length,a),l.splice(a,i-a),e=l.join(""),formatValue$1(n,e)}function insertString$1(r,o,e,s){var l=r.mask,u=r.maskChar,c=r.prefix,t=e.split(""),h=isFilled$1(r,o);return !u&&s>o.length&&(o+=l.slice(o.length,s)),t.every(function(e){for(;i=e,isPermanentCharacter$1(r,a=s)&&i!==l[a];){if(s>=o.length&&(o+=l[s]),t=e,n=s,u&&isPermanentCharacter$1(r,n)&&t===u)return !0;if(++s>=l.length)return !1}var t,n,a,i;return !isAllowedCharacter$1(r,s,e)&&e!==u||(s<o.length?o=u||h||s<c.length?o.slice(0,s)+e+o.slice(s+1):(o=o.slice(0,s)+e+o.slice(s),formatValue$1(r,o)):u||(o+=e),++s<l.length)}),o}function getInsertStringLength$1(a,e,t,i){var r=a.mask,o=a.maskChar,n=t.split(""),s=i;return n.every(function(e){for(;n=e,isPermanentCharacter$1(a,t=i)&&n!==r[t];)if(++i>=r.length)return !1;var t,n;return (isAllowedCharacter$1(a,i,e)||e===o)&&i++,i<r.length}),i-s}function getLeftEditablePosition$1(e,t){for(var n=t;0<=n;--n)if(!isPermanentCharacter$1(e,n))return n;return null}function getRightEditablePosition$1(e,t){for(var n=e.mask,a=t;a<n.length;++a)if(!isPermanentCharacter$1(e,a))return a;return null}function getStringValue$1(e){return e||0===e?e+"":""}function processChange$1(e,t,n,a,i){var r=e.mask,o=e.prefix,s=e.lastEditablePosition,l=t,u="",c=0,h=0,f=Math.min(i.start,n.start);if(n.end>i.start?h=(c=getInsertStringLength$1(e,a,u=l.slice(i.start,n.end),f))?i.length:0:l.length<a.length&&(h=a.length-l.length),l=a,h){if(1===h&&!i.length)f=i.start===n.start?getRightEditablePosition$1(e,n.start):getLeftEditablePosition$1(e,n.start);l=clearRange$1(e,l,f,h);}return l=insertString$1(e,l,u,f),(f+=c)>=r.length?f=r.length:f<o.length&&!c?f=o.length:f>=o.length&&f<s&&c&&(f=getRightEditablePosition$1(e,f)),u||(u=null),{value:l=formatValue$1(e,l),enteredString:u,selection:{start:f,end:f}}}function isWindowsPhoneBrowser$1(){var e=new RegExp("windows","i"),t=new RegExp("phone","i"),n=navigator.userAgent;return e.test(n)&&t.test(n)}function isFunction$1(e){return "function"==typeof e}function getRequestAnimationFrame$1(){return window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame}function getCancelAnimationFrame$1(){return window.cancelAnimationFrame||window.webkitCancelRequestAnimationFrame||window.webkitCancelAnimationFrame||window.mozCancelAnimationFrame}function defer$1(e){return (!!getCancelAnimationFrame$1()?getRequestAnimationFrame$1():function(){return setTimeout(e,1e3/60)})(e)}function cancelDefer$1(e){(getCancelAnimationFrame$1()||clearTimeout)(e);}var InputElement$1=function(c){function e(e){var f=c.call(this,e)||this;f.focused=!1,f.mounted=!1,f.previousSelection=null,f.selectionDeferId=null,f.saveSelectionLoopDeferId=null,f.saveSelectionLoop=function(){f.previousSelection=f.getSelection(),f.saveSelectionLoopDeferId=defer$1(f.saveSelectionLoop);},f.runSaveSelectionLoop=function(){null===f.saveSelectionLoopDeferId&&f.saveSelectionLoop();},f.stopSaveSelectionLoop=function(){null!==f.saveSelectionLoopDeferId&&(cancelDefer$1(f.saveSelectionLoopDeferId),f.saveSelectionLoopDeferId=null,f.previousSelection=null);},f.getInputDOMNode=function(){if(!f.mounted)return null;var e=reactDom__default["default"].findDOMNode(_assertThisInitialized$1(_assertThisInitialized$1(f))),t="undefined"!=typeof window&&e instanceof window.Element;if(e&&!t)return null;if("INPUT"!==e.nodeName&&(e=e.querySelector("input")),!e)throw new Error("react-input-mask: inputComponent doesn't contain input node");return e},f.getInputValue=function(){var e=f.getInputDOMNode();return e?e.value:null},f.setInputValue=function(e){var t=f.getInputDOMNode();t&&(f.value=e,t.value=e);},f.setCursorToEnd=function(){var e=getFilledLength$1(f.maskOptions,f.value),t=getRightEditablePosition$1(f.maskOptions,e);null!==t&&f.setCursorPosition(t);},f.setSelection=function(e,t,n){void 0===n&&(n={});var a=f.getInputDOMNode(),i=f.isFocused();a&&i&&(n.deferred||setInputSelection$1(a,e,t),null!==f.selectionDeferId&&cancelDefer$1(f.selectionDeferId),f.selectionDeferId=defer$1(function(){f.selectionDeferId=null,setInputSelection$1(a,e,t);}),f.previousSelection={start:e,end:t,length:Math.abs(t-e)});},f.getSelection=function(){return getInputSelection$1(f.getInputDOMNode())},f.getCursorPosition=function(){return f.getSelection().start},f.setCursorPosition=function(e){f.setSelection(e,e);},f.isFocused=function(){return f.focused},f.getBeforeMaskedValueChangeConfig=function(){var e=f.maskOptions,t=e.mask,n=e.maskChar,a=e.permanents,i=e.formatChars;return {mask:t,maskChar:n,permanents:a,alwaysShowMask:!!f.props.alwaysShowMask,formatChars:i}},f.isInputAutofilled=function(e,t,n,a){var i=f.getInputDOMNode();try{if(i.matches(":-webkit-autofill"))return !0}catch(r){}return !f.focused||a.end<n.length&&t.end===e.length},f.onChange=function(e){var t=_assertThisInitialized$1(_assertThisInitialized$1(f)).beforePasteState,n=_assertThisInitialized$1(_assertThisInitialized$1(f)).previousSelection,a=f.props.beforeMaskedValueChange,i=f.getInputValue(),r=f.value,o=f.getSelection();f.isInputAutofilled(i,o,r,n)&&(r=formatValue$1(f.maskOptions,""),n={start:0,end:0,length:0}),t&&(n=t.selection,r=t.value,o={start:n.start+i.length,end:n.start+i.length,length:0},i=r.slice(0,n.start)+i+r.slice(n.end),f.beforePasteState=null);var s=processChange$1(f.maskOptions,i,o,r,n),l=s.enteredString,u=s.selection,c=s.value;if(isFunction$1(a)){var h=a({value:c,selection:u},{value:r,selection:n},l,f.getBeforeMaskedValueChangeConfig());c=h.value,u=h.selection;}f.setInputValue(c),isFunction$1(f.props.onChange)&&f.props.onChange(e),f.isWindowsPhoneBrowser?f.setSelection(u.start,u.end,{deferred:!0}):f.setSelection(u.start,u.end);},f.onFocus=function(e){var t=f.props.beforeMaskedValueChange,n=f.maskOptions,a=n.mask,i=n.prefix;if(f.focused=!0,f.mounted=!0,a){if(f.value)getFilledLength$1(f.maskOptions,f.value)<f.maskOptions.mask.length&&f.setCursorToEnd();else {var r=formatValue$1(f.maskOptions,i),o=formatValue$1(f.maskOptions,r),s=getFilledLength$1(f.maskOptions,o),l=getRightEditablePosition$1(f.maskOptions,s),u={start:l,end:l};if(isFunction$1(t)){var c=t({value:o,selection:u},{value:f.value,selection:null},null,f.getBeforeMaskedValueChangeConfig());o=c.value,u=c.selection;}var h=o!==f.getInputValue();h&&f.setInputValue(o),h&&isFunction$1(f.props.onChange)&&f.props.onChange(e),f.setSelection(u.start,u.end);}f.runSaveSelectionLoop();}isFunction$1(f.props.onFocus)&&f.props.onFocus(e);},f.onBlur=function(e){var t=f.props.beforeMaskedValueChange,n=f.maskOptions.mask;if(f.stopSaveSelectionLoop(),f.focused=!1,n&&!f.props.alwaysShowMask&&isEmpty$1(f.maskOptions,f.value)){var a="";if(isFunction$1(t))a=t({value:a,selection:null},{value:f.value,selection:f.previousSelection},null,f.getBeforeMaskedValueChangeConfig()).value;var i=a!==f.getInputValue();i&&f.setInputValue(a),i&&isFunction$1(f.props.onChange)&&f.props.onChange(e);}isFunction$1(f.props.onBlur)&&f.props.onBlur(e);},f.onMouseDown=function(e){if(!f.focused&&document.addEventListener){f.mouseDownX=e.clientX,f.mouseDownY=e.clientY,f.mouseDownTime=(new Date).getTime();var r=function r(e){if(document.removeEventListener("mouseup",r),f.focused){var t=Math.abs(e.clientX-f.mouseDownX),n=Math.abs(e.clientY-f.mouseDownY),a=Math.max(t,n),i=(new Date).getTime()-f.mouseDownTime;(a<=10&&i<=200||a<=5&&i<=300)&&f.setCursorToEnd();}};document.addEventListener("mouseup",r);}isFunction$1(f.props.onMouseDown)&&f.props.onMouseDown(e);},f.onPaste=function(e){isFunction$1(f.props.onPaste)&&f.props.onPaste(e),e.defaultPrevented||(f.beforePasteState={value:f.getInputValue(),selection:f.getSelection()},f.setInputValue(""));},f.handleRef=function(e){null==f.props.children&&isFunction$1(f.props.inputRef)&&f.props.inputRef(e);};var t=e.mask,n=e.maskChar,a=e.formatChars,i=e.alwaysShowMask,r=e.beforeMaskedValueChange,o=e.defaultValue,s=e.value;f.maskOptions=parseMask$1(t,n,a),null==o&&(o=""),null==s&&(s=o);var l=getStringValue$1(s);if(f.maskOptions.mask&&(i||l)&&(l=formatValue$1(f.maskOptions,l),isFunction$1(r))){var u=e.value;null==e.value&&(u=o),l=r({value:l,selection:null},{value:u=getStringValue$1(u),selection:null},null,f.getBeforeMaskedValueChangeConfig()).value;}return f.value=l,f}_inheritsLoose$1(e,c);var t=e.prototype;return t.componentDidMount=function(){this.mounted=!0,this.getInputDOMNode()&&(this.isWindowsPhoneBrowser=isWindowsPhoneBrowser$1(),this.maskOptions.mask&&this.getInputValue()!==this.value&&this.setInputValue(this.value));},t.componentDidUpdate=function(){var e=this.previousSelection,t=this.props,n=t.beforeMaskedValueChange,a=t.alwaysShowMask,i=t.mask,r=t.maskChar,o=t.formatChars,s=this.maskOptions,l=a||this.isFocused(),u=null!=this.props.value,c=u?getStringValue$1(this.props.value):this.value,h=e?e.start:null;if(this.maskOptions=parseMask$1(i,r,o),this.maskOptions.mask){!s.mask&&this.isFocused()&&this.runSaveSelectionLoop();var f=this.maskOptions.mask&&this.maskOptions.mask!==s.mask;if(s.mask||u||(c=this.getInputValue()),(f||this.maskOptions.mask&&(c||l))&&(c=formatValue$1(this.maskOptions,c)),f){var p=getFilledLength$1(this.maskOptions,c);(null===h||p<h)&&(h=isFilled$1(this.maskOptions,c)?p:getRightEditablePosition$1(this.maskOptions,p));}!this.maskOptions.mask||!isEmpty$1(this.maskOptions,c)||l||u&&this.props.value||(c="");var d={start:h,end:h};if(isFunction$1(n)){var m=n({value:c,selection:d},{value:this.value,selection:this.previousSelection},null,this.getBeforeMaskedValueChangeConfig());c=m.value,d=m.selection;}this.value=c;var g=this.getInputValue()!==this.value;g?(this.setInputValue(this.value),this.forceUpdate()):f&&this.forceUpdate();var v=!1;null!=d.start&&null!=d.end&&(v=!e||e.start!==d.start||e.end!==d.end),(v||g)&&this.setSelection(d.start,d.end);}else s.mask&&(this.stopSaveSelectionLoop(),this.forceUpdate());},t.componentWillUnmount=function(){this.mounted=!1,null!==this.selectionDeferId&&cancelDefer$1(this.selectionDeferId),this.stopSaveSelectionLoop();},t.render=function(){var t,e=this.props,n=(e.children),a=_objectWithoutPropertiesLoose$1(e,["mask","alwaysShowMask","maskChar","formatChars","inputRef","beforeMaskedValueChange","children"]);if(n){isFunction$1(n)||invariant_1(!1);var i=["onChange","onPaste","onMouseDown","onFocus","onBlur","value","disabled","readOnly"],r=_extends$1({},a);i.forEach(function(e){return delete r[e]}),t=n(r),i.filter(function(e){return null!=t.props[e]&&t.props[e]!==a[e]}).length&&invariant_1(!1);}else t=React$1.createElement("input",_extends$1({ref:this.handleRef},a));var o={onFocus:this.onFocus,onBlur:this.onBlur};return this.maskOptions.mask&&(a.disabled||a.readOnly||(o.onChange=this.onChange,o.onPaste=this.onPaste,o.onMouseDown=this.onMouseDown),null!=a.value&&(o.value=this.value)),t=React$1.cloneElement(t,o)},e}(React$1.Component);var reactInputMask_production_min=InputElement$1;
@@ -7028,8 +4537,8 @@ if (process.env.NODE_ENV === 'production') {
 }
 });
 
-var _templateObject;
-var Container = styled__default["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  display: flex;\n  flex-direction: column;\n\n  input {\n    outline: none;\n    padding: 7px 15px;\n    border-radius: 20px;\n    border: 1px solid\n      ", ";\n    color: ", ";\n    cursor: pointer;\n    font-weight: 500;\n    background-color: ", ";\n    font-size: ", ";\n\n    &::placeholder {\n      color: ", ";\n    }\n  }\n\n  span {\n    font-size: ", ";\n    color: ", ";\n    margin-left: 15px;\n    margin-bottom: 3px;\n  }\n\n  .calendar-icon {\n    position: relative;\n    margin-left: -25px;\n    font-size: ", ";\n    color: ", ";\n  }\n\n  .react-datepicker-popper[data-placement^='bottom']\n    .react-datepicker__triangle,\n  .react-datepicker-popper[data-placement^='top'] .react-datepicker__triangle,\n  .react-datepicker__year-read-view--down-arrow,\n  .react-datepicker__month-read-view--down-arrow,\n  .react-datepicker__month-year-read-view--down-arrow {\n    margin-left: -8px !important;\n    position: absolute !important;\n  }\n  .react-datepicker-popper[data-placement^='bottom']\n    .react-datepicker__triangle,\n  .react-datepicker-popper[data-placement^='top'] .react-datepicker__triangle,\n  .react-datepicker__year-read-view--down-arrow,\n  .react-datepicker__month-read-view--down-arrow,\n  .react-datepicker__month-year-read-view--down-arrow,\n  .react-datepicker-popper[data-placement^='bottom']\n    .react-datepicker__triangle::before,\n  .react-datepicker-popper[data-placement^='top']\n    .react-datepicker__triangle::before,\n  .react-datepicker__year-read-view--down-arrow::before,\n  .react-datepicker__month-read-view--down-arrow::before,\n  .react-datepicker__month-year-read-view--down-arrow::before {\n    box-sizing: content-box !important;\n    position: absolute !important;\n    border: 8px solid transparent !important;\n    height: 0 !important;\n    width: 1px !important;\n  }\n\n  .react-datepicker-popper[data-placement^='bottom']\n    .react-datepicker__triangle::before,\n  .react-datepicker-popper[data-placement^='top']\n    .react-datepicker__triangle::before,\n  .react-datepicker__year-read-view--down-arrow::before,\n  .react-datepicker__month-read-view--down-arrow::before,\n  .react-datepicker__month-year-read-view--down-arrow::before {\n    content: '' !important;\n    z-index: -1 !important;\n    border-width: 8px !important;\n    left: -8px !important;\n    border-bottom-color: #291f1f !important;\n  }\n\n  .react-datepicker-popper[data-placement^='bottom']\n    .react-datepicker__triangle {\n    top: 0 !important;\n    margin-top: -8px !important;\n  }\n\n  .react-datepicker-popper[data-placement^='bottom']\n    .react-datepicker__triangle,\n  .react-datepicker-popper[data-placement^='bottom']\n    .react-datepicker__triangle::before {\n    border-top: none !important;\n    border-bottom-color: #ffffff !important;\n  }\n\n  .react-datepicker-popper[data-placement^='bottom']\n    .react-datepicker__triangle::before {\n    top: -1px !important;\n    border-bottom-color: #aeaeae !important;\n  }\n\n  .react-datepicker-popper[data-placement^='top'] .react-datepicker__triangle,\n  .react-datepicker__year-read-view--down-arrow,\n  .react-datepicker__month-read-view--down-arrow,\n  .react-datepicker__month-year-read-view--down-arrow {\n    bottom: 0 !important;\n    margin-bottom: -8px !important;\n  }\n\n  .react-datepicker-popper[data-placement^='top'] .react-datepicker__triangle,\n  .react-datepicker__year-read-view--down-arrow,\n  .react-datepicker__month-read-view--down-arrow,\n  .react-datepicker__month-year-read-view--down-arrow,\n  .react-datepicker-popper[data-placement^='top']\n    .react-datepicker__triangle::before,\n  .react-datepicker__year-read-view--down-arrow::before,\n  .react-datepicker__month-read-view--down-arrow::before,\n  .react-datepicker__month-year-read-view--down-arrow::before {\n    border-bottom: none !important;\n    border-top-color: #fff !important;\n  }\n\n  .react-datepicker-popper[data-placement^='top']\n    .react-datepicker__triangle::before,\n  .react-datepicker__year-read-view--down-arrow::before,\n  .react-datepicker__month-read-view--down-arrow::before,\n  .react-datepicker__month-year-read-view--down-arrow::before {\n    bottom: -1px !important;\n    border-top-color: #aeaeae !important;\n  }\n\n  .react-datepicker-wrapper {\n    display: inline-block;\n    padding: 0;\n    border: 0;\n  }\n\n  .react-datepicker {\n    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;\n    font-size: 0.8rem !important;\n    background-color: #fff !important;\n    color: #000 !important;\n    border: 1px solid #aeaeae !important;\n    border-radius: 20px !important;\n    display: inline-block !important;\n    position: relative !important;\n  }\n\n  .react-datepicker--time-only .react-datepicker__triangle {\n    left: 35px !important;\n  }\n\n  .react-datepicker--time-only .react-datepicker__time-container {\n    border-left: 0 !important;\n  }\n\n  .react-datepicker--time-only .react-datepicker__time,\n  .react-datepicker--time-only .react-datepicker__time-box {\n    border-bottom-left-radius: 20px !important;\n    border-bottom-right-radius: 20px !important;\n  }\n\n  .react-datepicker__triangle {\n    position: absolute !important;\n    left: 50px !important;\n  }\n\n  .react-datepicker-popper {\n    z-index: 1 !important;\n  }\n\n  .react-datepicker-popper[data-placement^='bottom'] {\n    margin-top: 10px !important;\n  }\n\n  .react-datepicker-popper[data-placement='bottom-end']\n    .react-datepicker__triangle,\n  .react-datepicker-popper[data-placement='top-end']\n    .react-datepicker__triangle {\n    left: auto !important;\n    right: 50px !important;\n  }\n\n  .react-datepicker-popper[data-placement^='top'] {\n    margin-bottom: 10px !important;\n  }\n\n  .react-datepicker-popper[data-placement^='right'] {\n    margin-left: 8px !important;\n  }\n\n  .react-datepicker-popper[data-placement^='right']\n    .react-datepicker__triangle {\n    left: auto !important;\n    right: 42px !important;\n  }\n\n  .react-datepicker-popper[data-placement^='left'] {\n    margin-right: 8px !important;\n  }\n\n  .react-datepicker-popper[data-placement^='left'] .react-datepicker__triangle {\n    left: 42px !important;\n    right: auto !important;\n  }\n\n  .react-datepicker__header {\n    text-align: center !important;\n    background-color: #ffffff !important;\n    border-bottom: 1px solid #aeaeae !important;\n    border-top-left-radius: 20px !important;\n    padding-top: 18px !important;\n    position: relative !important;\n    padding-bottom: 10px !important;\n  }\n\n  .react-datepicker__header--time {\n    padding-bottom: 8px !important;\n    padding-left: 5px !important;\n    padding-right: 5px !important;\n  }\n\n  .react-datepicker__header--time:not(.react-datepicker__header--time--only) {\n    border-top-left-radius: 0 !important;\n  }\n\n  .react-datepicker__header:not(.react-datepicker__header--has-time-select) {\n    border-top-right-radius: 20px !important;\n  }\n\n  .react-datepicker__year-dropdown-container--select,\n  .react-datepicker__month-dropdown-container--select,\n  .react-datepicker__month-year-dropdown-container--select,\n  .react-datepicker__year-dropdown-container--scroll,\n  .react-datepicker__month-dropdown-container--scroll,\n  .react-datepicker__month-year-dropdown-container--scroll {\n    display: inline-block !important;\n    margin: 0 2px !important;\n  }\n\n  .react-datepicker__current-month,\n  .react-datepicker-time__header,\n  .react-datepicker-year-header {\n    margin-top: 0 !important;\n    color: #707070 !important;\n    font-weight: bold !important;\n    font-size: 0.944rem !important;\n  }\n\n  .react-datepicker-time__header {\n    text-overflow: ellipsis !important;\n    white-space: nowrap !important;\n    overflow: hidden !important;\n  }\n\n  .react-datepicker__navigation {\n    background: none !important;\n    line-height: 1.7rem !important;\n    text-align: center !important;\n    cursor: pointer !important;\n    position: absolute !important;\n    top: 20px !important;\n    width: 0 !important;\n    padding: 0 !important;\n    border: 0.5rem solid transparent !important;\n    z-index: 1 !important;\n    height: 15px !important;\n    width: 20px !important;\n    text-indent: -999em !important;\n    overflow: hidden !important;\n    outline: none !important;\n  }\n\n  .react-datepicker__navigation--previous {\n    left: 10px !important;\n    border-right-color: #9b4dee !important;\n  }\n\n  .react-datepicker__navigation--previous:hover {\n    border-right-color: rgba(155, 77, 238, 0.2) !important;\n  }\n\n  .react-datepicker__navigation--previous--disabled,\n  .react-datepicker__navigation--previous--disabled:hover {\n    border-right-color: rgba(155, 77, 238, 0.2) !important;\n    cursor: default !important;\n  }\n\n  .react-datepicker__navigation--next {\n    right: 10px !important;\n    border-left-color: #9b4dee !important;\n  }\n\n  .react-datepicker__navigation--next--with-time:not(.react-datepicker__navigation--next--with-today-button) {\n    right: 95px !important;\n  }\n\n  .react-datepicker__navigation--next:hover {\n    border-left-color: rgba(155, 77, 238, 0.2) !important;\n  }\n\n  .react-datepicker__navigation--next--disabled,\n  .react-datepicker__navigation--next--disabled:hover {\n    border-left-color: rgba(155, 77, 238, 0.2) !important;\n    cursor: default !important;\n  }\n\n  .react-datepicker__navigation--years {\n    position: relative !important;\n    top: 0 !important;\n    display: block !important;\n    margin-left: auto !important;\n    margin-right: auto !important;\n  }\n\n  .react-datepicker__navigation--years-previous {\n    top: 4px !important;\n    border-top-color: #ccc !important;\n  }\n\n  .react-datepicker__navigation--years-previous:hover {\n    border-top-color: #b3b3b3 !important;\n  }\n\n  .react-datepicker__navigation--years-upcoming {\n    top: -4px !important;\n    border-bottom-color: #ccc !important;\n  }\n\n  .react-datepicker__navigation--years-upcoming:hover {\n    border-bottom-color: #b3b3b3 !important;\n  }\n\n  .react-datepicker__month-container {\n    float: left !important;\n  }\n\n  .react-datepicker__year {\n    margin: 0.4rem !important;\n    text-align: center !important;\n  }\n\n  .react-datepicker__year-wrapper {\n    display: flex !important;\n    flex-wrap: wrap !important;\n    max-width: 180px !important;\n  }\n\n  .react-datepicker__year .react-datepicker__year-text {\n    display: inline-block !important;\n    width: 4rem !important;\n    margin: 2px !important;\n  }\n\n  .react-datepicker__month {\n    margin: 10px 0.4rem !important;\n    text-align: center !important;\n  }\n\n  .react-datepicker__month .react-datepicker__month-text,\n  .react-datepicker__month .react-datepicker__quarter-text {\n    display: inline-block !important;\n    width: 4rem !important;\n    margin: 2px !important;\n  }\n\n  .react-datepicker__input-time-container {\n    clear: both !important;\n    width: 100% !important;\n    float: left !important;\n    margin: 5px 0 10px 15px !important;\n    text-align: left !important;\n  }\n\n  .react-datepicker__input-time-container .react-datepicker-time__caption {\n    display: inline-block !important;\n    color: #707070 !important;\n  }\n\n  .react-datepicker__input-time-container\n    .react-datepicker-time__input-container {\n    display: inline-block !important;\n  }\n\n  .react-datepicker__input-time-container\n    .react-datepicker-time__input-container\n    .react-datepicker-time__input {\n    display: inline-block !important;\n    margin-left: 10px !important;\n  }\n\n  .react-datepicker__input-time-container\n    .react-datepicker-time__input-container\n    .react-datepicker-time__input\n    input {\n    width: 85px !important;\n    border-radius: 20px !important;\n    padding: 5px 10px !important;\n    outline: none !important;\n    border-style: solid !important;\n    border-width: 1px !important;\n    border-color: #707070 !important;\n  }\n\n  .react-datepicker__input-time-container\n    .react-datepicker-time__input-container\n    .react-datepicker-time__input\n    input[type='time']::-webkit-inner-spin-button,\n  .react-datepicker__input-time-container\n    .react-datepicker-time__input-container\n    .react-datepicker-time__input\n    input[type='time']::-webkit-outer-spin-button {\n    -webkit-appearance: none !important;\n    margin: 0 !important;\n  }\n\n  .react-datepicker__input-time-container\n    .react-datepicker-time__input-container\n    .react-datepicker-time__input\n    input[type='time'] {\n    -moz-appearance: textfield !important;\n  }\n\n  .react-datepicker__input-time-container\n    .react-datepicker-time__input-container\n    .react-datepicker-time__delimiter {\n    margin-left: 5px !important;\n    display: inline-block !important;\n  }\n\n  .react-datepicker__time-container {\n    float: right !important;\n    border-left: 1px solid #aeaeae !important;\n    width: 85px !important;\n  }\n\n  .react-datepicker__time-container--with-today-button {\n    display: inline !important;\n    border: 1px solid #aeaeae !important;\n    border-radius: 0.3rem !important;\n    position: absolute !important;\n    right: -72px !important;\n    top: 0 !important;\n  }\n\n  .react-datepicker__time-container .react-datepicker__time {\n    position: relative !important;\n    background: white !important;\n    border-bottom-right-radius: 20px !important;\n  }\n\n  .react-datepicker__time-container\n    .react-datepicker__time\n    .react-datepicker__time-box {\n    width: 85px !important;\n    overflow-x: hidden !important;\n    margin: 0 auto !important;\n    text-align: center !important;\n    border-bottom-right-radius: 20px !important;\n  }\n\n  .react-datepicker__time-container\n    .react-datepicker__time\n    .react-datepicker__time-box\n    ul.react-datepicker__time-list {\n    list-style: none !important;\n    margin: 0 !important;\n    height: calc(195px + (1.7rem / 2)) !important;\n    overflow-y: scroll !important;\n    padding-right: 0px !important;\n    padding-left: 0px !important;\n    width: 100% !important;\n    box-sizing: content-box !important;\n  }\n\n  .react-datepicker__time-container\n    .react-datepicker__time\n    .react-datepicker__time-box\n    ul.react-datepicker__time-list\n    li.react-datepicker__time-list-item {\n    height: 30px !important;\n    padding: 5px 10px !important;\n    white-space: nowrap !important;\n    color: #707070 !important;\n  }\n\n  .react-datepicker__time-container\n    .react-datepicker__time\n    .react-datepicker__time-box\n    ul.react-datepicker__time-list\n    li.react-datepicker__time-list-item:hover {\n    cursor: pointer !important;\n    background-color: #f0f0f0 !important;\n  }\n\n  .react-datepicker__time-container\n    .react-datepicker__time\n    .react-datepicker__time-box\n    ul.react-datepicker__time-list\n    li.react-datepicker__time-list-item--selected {\n    background-color: #9b4dee !important;\n    color: white !important;\n    font-weight: bold !important;\n  }\n\n  .react-datepicker__time-container\n    .react-datepicker__time\n    .react-datepicker__time-box\n    ul.react-datepicker__time-list\n    li.react-datepicker__time-list-item--selected:hover {\n    background-color: #9b4dee !important;\n  }\n\n  .react-datepicker__time-container\n    .react-datepicker__time\n    .react-datepicker__time-box\n    ul.react-datepicker__time-list\n    li.react-datepicker__time-list-item--disabled {\n    color: #ccc !important;\n  }\n\n  .react-datepicker__time-container\n    .react-datepicker__time\n    .react-datepicker__time-box\n    ul.react-datepicker__time-list\n    li.react-datepicker__time-list-item--disabled:hover {\n    cursor: default !important;\n    background-color: transparent !important;\n  }\n\n  .react-datepicker__week-number {\n    color: #ccc !important;\n    display: inline-block !important;\n    width: 1.7rem !important;\n    line-height: 1.7rem !important;\n    text-align: center !important;\n    margin: 0.166rem !important;\n  }\n\n  .react-datepicker__week-number.react-datepicker__week-number--clickable {\n    cursor: pointer !important;\n  }\n\n  .react-datepicker__week-number.react-datepicker__week-number--clickable:hover {\n    border-radius: 0.3rem !important;\n    background-color: #f0f0f0 !important;\n  }\n\n  .react-datepicker__day-names,\n  .react-datepicker__week {\n    white-space: nowrap !important;\n    margin-top: 10px !important;\n  }\n\n  .react-datepicker__day-name,\n  .react-datepicker__day,\n  .react-datepicker__time-name {\n    color: #707070 !important;\n    display: inline-block !important;\n    width: 1.7rem !important;\n    line-height: 1.7rem !important;\n    text-align: center !important;\n    margin: 0.166rem !important;\n    outline: none !important;\n  }\n\n  .react-datepicker__month--selected,\n  .react-datepicker__month--in-selecting-range,\n  .react-datepicker__month--in-range,\n  .react-datepicker__quarter--selected,\n  .react-datepicker__quarter--in-selecting-range,\n  .react-datepicker__quarter--in-range {\n    border-radius: 10px !important;\n    background-color: #9b4dee !important;\n    color: #fff !important;\n  }\n\n  .react-datepicker__month--selected:hover,\n  .react-datepicker__month--in-selecting-range:hover,\n  .react-datepicker__month--in-range:hover,\n  .react-datepicker__quarter--selected:hover,\n  .react-datepicker__quarter--in-selecting-range:hover,\n  .react-datepicker__quarter--in-range:hover {\n    background-color: rgba(155, 77, 238, 0.8) !important;\n  }\n\n  .react-datepicker__month--disabled,\n  .react-datepicker__quarter--disabled {\n    color: #ccc !important;\n    pointer-events: none !important;\n  }\n\n  .react-datepicker__month--disabled:hover,\n  .react-datepicker__quarter--disabled:hover {\n    cursor: default !important;\n    background-color: transparent !important;\n  }\n\n  .react-datepicker__day,\n  .react-datepicker__month-text,\n  .react-datepicker__quarter-text,\n  .react-datepicker__year-text {\n    cursor: pointer !important;\n  }\n\n  .react-datepicker__day:hover {\n    border-radius: 50% !important;\n    background-color: #f0f0f0 !important;\n  }\n  .react-datepicker__month-text:hover,\n  .react-datepicker__quarter-text:hover,\n  .react-datepicker__year-text:hover {\n    border-radius: 10px !important;\n    background-color: #f0f0f0 !important;\n  }\n\n  .react-datepicker__day--today,\n  .react-datepicker__month-text--today,\n  .react-datepicker__quarter-text--today,\n  .react-datepicker__year-text--today {\n    font-weight: bold !important;\n  }\n\n  .react-datepicker__day--highlighted,\n  .react-datepicker__month-text--highlighted,\n  .react-datepicker__quarter-text--highlighted,\n  .react-datepicker__year-text--highlighted {\n    border-radius: 0.3rem !important;\n    background-color: #3dcc4a !important;\n    color: #fff !important;\n  }\n\n  .react-datepicker__day--highlighted:hover,\n  .react-datepicker__month-text--highlighted:hover,\n  .react-datepicker__quarter-text--highlighted:hover,\n  .react-datepicker__year-text--highlighted:hover {\n    background-color: #32be3f !important;\n  }\n\n  .react-datepicker__day--highlighted-custom-1,\n  .react-datepicker__month-text--highlighted-custom-1,\n  .react-datepicker__quarter-text--highlighted-custom-1,\n  .react-datepicker__year-text--highlighted-custom-1 {\n    color: magenta !important;\n  }\n\n  .react-datepicker__day--highlighted-custom-2,\n  .react-datepicker__month-text--highlighted-custom-2,\n  .react-datepicker__quarter-text--highlighted-custom-2,\n  .react-datepicker__year-text--highlighted-custom-2 {\n    color: green !important;\n  }\n\n  .react-datepicker__day--selected,\n  .react-datepicker__day--in-selecting-range,\n  .react-datepicker__day--in-range {\n    border-radius: 50% !important;\n    background-color: #9b4dee !important;\n    color: #fff !important;\n    outline: none !important;\n  }\n  .react-datepicker__month-text--selected,\n  .react-datepicker__month-text--in-selecting-range,\n  .react-datepicker__month-text--in-range,\n  .react-datepicker__quarter-text--selected,\n  .react-datepicker__quarter-text--in-selecting-range,\n  .react-datepicker__quarter-text--in-range,\n  .react-datepicker__year-text--selected,\n  .react-datepicker__year-text--in-selecting-range,\n  .react-datepicker__year-text--in-range {\n    border-radius: 10px !important;\n    background-color: #9b4dee !important;\n    color: #fff !important;\n    outline: none !important;\n  }\n\n  .react-datepicker__day--selected:hover,\n  .react-datepicker__day--in-selecting-range:hover,\n  .react-datepicker__day--in-range:hover,\n  .react-datepicker__month-text--selected:hover,\n  .react-datepicker__month-text--in-selecting-range:hover,\n  .react-datepicker__month-text--in-range:hover,\n  .react-datepicker__quarter-text--selected:hover,\n  .react-datepicker__quarter-text--in-selecting-range:hover,\n  .react-datepicker__quarter-text--in-range:hover,\n  .react-datepicker__year-text--selected:hover,\n  .react-datepicker__year-text--in-selecting-range:hover,\n  .react-datepicker__year-text--in-range:hover {\n    background-color: rgba(155, 77, 238, 0.8) !important;\n    outline: none !important;\n  }\n\n  .react-datepicker__day--keyboard-selected {\n    border-radius: 50% !important;\n    background-color: #9b4dee !important;\n    color: #fff !important;\n    outline: none !important;\n  }\n  .react-datepicker__month-text--keyboard-selected,\n  .react-datepicker__quarter-text--keyboard-selected,\n  .react-datepicker__year-text--keyboard-selected {\n    border-radius: 10px !important;\n    background-color: #9b4dee !important;\n    color: #fff !important;\n    outline: none !important;\n  }\n\n  .react-datepicker__day--keyboard-selected:hover,\n  .react-datepicker__month-text--keyboard-selected:hover,\n  .react-datepicker__quarter-text--keyboard-selected:hover,\n  .react-datepicker__year-text--keyboard-selected:hover {\n    background-color: rgba(155, 77, 238, 0.8) !important;\n  }\n\n  .react-datepicker__day--in-selecting-range,\n  .react-datepicker__month-text--in-selecting-range,\n  .react-datepicker__quarter-text--in-selecting-range,\n  .react-datepicker__year-text--in-selecting-range {\n    background-color: rgba(155, 77, 238, 0.5) !important;\n    outline: none !important;\n  }\n\n  .react-datepicker__month--selecting-range .react-datepicker__day--in-range,\n  .react-datepicker__month--selecting-range\n    .react-datepicker__month-text--in-range,\n  .react-datepicker__month--selecting-range\n    .react-datepicker__quarter-text--in-range,\n  .react-datepicker__month--selecting-range\n    .react-datepicker__year-text--in-range {\n    background-color: #f0f0f0 !important;\n    color: #000 !important;\n    outline: none !important;\n  }\n\n  .react-datepicker__day--disabled,\n  .react-datepicker__month-text--disabled,\n  .react-datepicker__quarter-text--disabled,\n  .react-datepicker__year-text--disabled {\n    cursor: default !important;\n    color: #ccc !important;\n  }\n\n  .react-datepicker__day--disabled:hover,\n  .react-datepicker__month-text--disabled:hover,\n  .react-datepicker__quarter-text--disabled:hover,\n  .react-datepicker__year-text--disabled:hover {\n    background-color: transparent !important;\n  }\n\n  .react-datepicker__month-text.react-datepicker__month--selected:hover,\n  .react-datepicker__month-text.react-datepicker__month--in-range:hover,\n  .react-datepicker__month-text.react-datepicker__quarter--selected:hover,\n  .react-datepicker__month-text.react-datepicker__quarter--in-range:hover,\n  .react-datepicker__quarter-text.react-datepicker__month--selected:hover,\n  .react-datepicker__quarter-text.react-datepicker__month--in-range:hover,\n  .react-datepicker__quarter-text.react-datepicker__quarter--selected:hover,\n  .react-datepicker__quarter-text.react-datepicker__quarter--in-range:hover {\n    background-color: #9b4dee !important;\n  }\n\n  .react-datepicker__month-text:hover,\n  .react-datepicker__quarter-text:hover {\n    background-color: #f0f0f0 !important;\n  }\n\n  .react-datepicker__input-container {\n    position: relative !important;\n    display: inline-block !important;\n    width: 100% !important;\n  }\n\n  .react-datepicker__year-read-view,\n  .react-datepicker__month-read-view,\n  .react-datepicker__month-year-read-view {\n    border: 1px solid transparent !important;\n    border-radius: 0.3rem !important;\n  }\n\n  .react-datepicker__year-read-view:hover,\n  .react-datepicker__month-read-view:hover,\n  .react-datepicker__month-year-read-view:hover {\n    cursor: pointer !important;\n  }\n\n  .react-datepicker__year-read-view:hover,\n  .react-datepicker__year-read-view--down-arrow,\n  .react-datepicker__year-read-view:hover,\n  .react-datepicker__month-read-view--down-arrow,\n  .react-datepicker__month-read-view:hover,\n  .react-datepicker__year-read-view--down-arrow,\n  .react-datepicker__month-read-view:hover,\n  .react-datepicker__month-read-view--down-arrow,\n  .react-datepicker__month-year-read-view:hover,\n  .react-datepicker__year-read-view--down-arrow,\n  .react-datepicker__month-year-read-view:hover,\n  .react-datepicker__month-read-view--down-arrow {\n    border-top-color: #b3b3b3 !important;\n  }\n\n  .react-datepicker__year-read-view--down-arrow,\n  .react-datepicker__month-read-view--down-arrow,\n  .react-datepicker__month-year-read-view--down-arrow {\n    border-top-color: #ccc !important;\n    float: right !important;\n    margin-left: 20px !important;\n    top: 5px !important;\n    position: relative !important;\n    border-width: 0.45rem !important;\n  }\n\n  .react-datepicker__year-dropdown,\n  .react-datepicker__month-dropdown,\n  .react-datepicker__month-year-dropdown {\n    background-color: #f0f0f0 !important;\n    position: absolute !important;\n    width: 50% !important;\n    left: 25% !important;\n    top: 30px !important;\n    z-index: 1 !important;\n    text-align: center !important;\n    border-radius: 0.3rem !important;\n    border: 1px solid #aeaeae !important;\n  }\n\n  .react-datepicker__year-dropdown:hover,\n  .react-datepicker__month-dropdown:hover,\n  .react-datepicker__month-year-dropdown:hover {\n    cursor: pointer !important;\n  }\n\n  .react-datepicker__year-dropdown--scrollable,\n  .react-datepicker__month-dropdown--scrollable,\n  .react-datepicker__month-year-dropdown--scrollable {\n    height: 150px !important;\n    overflow-y: scroll !important;\n  }\n\n  .react-datepicker__year-option,\n  .react-datepicker__month-option,\n  .react-datepicker__month-year-option {\n    line-height: 20px !important;\n    width: 100% !important;\n    display: block !important;\n    margin-left: auto !important;\n    margin-right: auto !important;\n  }\n\n  .react-datepicker__year-option:first-of-type,\n  .react-datepicker__month-option:first-of-type,\n  .react-datepicker__month-year-option:first-of-type {\n    border-top-left-radius: 0.3rem !important;\n    border-top-right-radius: 0.3rem !important;\n  }\n\n  .react-datepicker__year-option:last-of-type,\n  .react-datepicker__month-option:last-of-type,\n  .react-datepicker__month-year-option:last-of-type {\n    -webkit-user-select: none !important;\n    -moz-user-select: none !important;\n    -ms-user-select: none !important;\n    user-select: none !important;\n    border-bottom-left-radius: 0.3rem !important;\n    border-bottom-right-radius: 0.3rem !important;\n  }\n\n  .react-datepicker__year-option:hover,\n  .react-datepicker__month-option:hover,\n  .react-datepicker__month-year-option:hover {\n    background-color: #ccc !important;\n  }\n\n  .react-datepicker__year-option:hover\n    .react-datepicker__navigation--years-upcoming,\n  .react-datepicker__month-option:hover\n    .react-datepicker__navigation--years-upcoming,\n  .react-datepicker__month-year-option:hover\n    .react-datepicker__navigation--years-upcoming {\n    border-bottom-color: #b3b3b3 !important;\n  }\n\n  .react-datepicker__year-option:hover\n    .react-datepicker__navigation--years-previous,\n  .react-datepicker__month-option:hover\n    .react-datepicker__navigation--years-previous,\n  .react-datepicker__month-year-option:hover\n    .react-datepicker__navigation--years-previous {\n    border-top-color: #b3b3b3 !important;\n  }\n\n  .react-datepicker__year-option--selected,\n  .react-datepicker__month-option--selected,\n  .react-datepicker__month-year-option--selected {\n    position: absolute !important;\n    left: 15px !important;\n  }\n\n  .react-datepicker__close-icon {\n    cursor: pointer !important;\n    background-color: transparent !important;\n    border: 0 !important;\n    outline: 0 !important;\n    padding: 0px 6px 0px 0px !important;\n    position: absolute !important;\n    top: 0 !important;\n    right: 0 !important;\n    height: 100% !important;\n    display: table-cell !important;\n    vertical-align: middle !important;\n  }\n\n  .react-datepicker__close-icon::after {\n    cursor: pointer !important;\n    background-color: #9b4dee !important;\n    color: #fff !important;\n    border-radius: 50% !important;\n    height: 16px !important;\n    width: 16px !important;\n    padding: 2px !important;\n    font-size: 12px !important;\n    line-height: 1 !important;\n    text-align: center !important;\n    display: table-cell !important;\n    vertical-align: middle !important;\n  }\n\n  .react-datepicker__today-button {\n    background: rgba(155, 77, 238, 0.1) !important;\n    border-top: 1px solid #aeaeae !important;\n    cursor: pointer !important;\n    text-align: center !important;\n    font-weight: bold !important;\n    padding: 5px 0 !important;\n    clear: left !important;\n    border-bottom-left-radius: 20px !important;\n    border-bottom-right-radius: 20px !important;\n  }\n\n  .react-datepicker__portal {\n    position: fixed !important;\n    width: 100vw !important;\n    height: 100vh !important;\n    background-color: rgba(0, 0, 0, 0.8) !important;\n    left: 0 !important;\n    top: 0 !important;\n    justify-content: center !important;\n    align-items: center !important;\n    display: flex !important;\n    z-index: 2147483647 !important;\n  }\n\n  .react-datepicker__portal .react-datepicker__day-name,\n  .react-datepicker__portal .react-datepicker__day,\n  .react-datepicker__portal .react-datepicker__time-name {\n    width: 3rem !important;\n    line-height: 3rem !important;\n  }\n\n  @media (max-width: 400px), (max-height: 550px) {\n    .react-datepicker__portal .react-datepicker__day-name,\n    .react-datepicker__portal .react-datepicker__day,\n    .react-datepicker__portal .react-datepicker__time-name {\n      width: 2rem !important;\n      line-height: 2rem !important;\n    }\n  }\n\n  .react-datepicker__portal .react-datepicker__current-month,\n  .react-datepicker__portal .react-datepicker-time__header {\n    font-size: 1.44rem !important;\n  }\n\n  .react-datepicker__portal .react-datepicker__navigation {\n    border: 0.81rem solid transparent !important;\n  }\n\n  .react-datepicker__portal .react-datepicker__navigation--previous {\n    border-right-color: #ccc !important;\n  }\n\n  .react-datepicker__portal .react-datepicker__navigation--previous:hover {\n    border-right-color: #b3b3b3 !important;\n  }\n\n  .react-datepicker__portal .react-datepicker__navigation--previous--disabled,\n  .react-datepicker__portal\n    .react-datepicker__navigation--previous--disabled:hover {\n    border-right-color: #e6e6e6 !important;\n    cursor: default !important;\n  }\n\n  .react-datepicker__portal .react-datepicker__navigation--next {\n    border-left-color: #ccc !important;\n  }\n\n  .react-datepicker__portal .react-datepicker__navigation--next:hover {\n    border-left-color: #b3b3b3 !important;\n  }\n\n  .react-datepicker__portal .react-datepicker__navigation--next--disabled,\n  .react-datepicker__portal\n    .react-datepicker__navigation--next--disabled:hover {\n    border-left-color: #e6e6e6 !important;\n    cursor: default !important;\n  }\n"])), function (props) {
+var _templateObject$c;
+var Container$7 = styled__default["default"].div(_templateObject$c || (_templateObject$c = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  display: flex;\n  flex-direction: column;\n\n  input {\n    outline: none;\n    padding: 7px 15px;\n    border-radius: 20px;\n    border: 1px solid\n      ", ";\n    color: ", ";\n    cursor: pointer;\n    font-weight: 500;\n    background-color: ", ";\n    font-size: ", ";\n\n    &::placeholder {\n      color: ", ";\n    }\n  }\n\n  span {\n    font-size: ", ";\n    color: ", ";\n    margin-left: 15px;\n    margin-bottom: 3px;\n  }\n\n  .calendar-icon {\n    position: relative;\n    margin-left: -25px;\n    font-size: ", ";\n    color: ", ";\n  }\n\n  .react-datepicker-popper[data-placement^='bottom']\n    .react-datepicker__triangle,\n  .react-datepicker-popper[data-placement^='top'] .react-datepicker__triangle,\n  .react-datepicker__year-read-view--down-arrow,\n  .react-datepicker__month-read-view--down-arrow,\n  .react-datepicker__month-year-read-view--down-arrow {\n    margin-left: -8px !important;\n    position: absolute !important;\n  }\n  .react-datepicker-popper[data-placement^='bottom']\n    .react-datepicker__triangle,\n  .react-datepicker-popper[data-placement^='top'] .react-datepicker__triangle,\n  .react-datepicker__year-read-view--down-arrow,\n  .react-datepicker__month-read-view--down-arrow,\n  .react-datepicker__month-year-read-view--down-arrow,\n  .react-datepicker-popper[data-placement^='bottom']\n    .react-datepicker__triangle::before,\n  .react-datepicker-popper[data-placement^='top']\n    .react-datepicker__triangle::before,\n  .react-datepicker__year-read-view--down-arrow::before,\n  .react-datepicker__month-read-view--down-arrow::before,\n  .react-datepicker__month-year-read-view--down-arrow::before {\n    box-sizing: content-box !important;\n    position: absolute !important;\n    border: 8px solid transparent !important;\n    height: 0 !important;\n    width: 1px !important;\n  }\n\n  .react-datepicker-popper[data-placement^='bottom']\n    .react-datepicker__triangle::before,\n  .react-datepicker-popper[data-placement^='top']\n    .react-datepicker__triangle::before,\n  .react-datepicker__year-read-view--down-arrow::before,\n  .react-datepicker__month-read-view--down-arrow::before,\n  .react-datepicker__month-year-read-view--down-arrow::before {\n    content: '' !important;\n    z-index: -1 !important;\n    border-width: 8px !important;\n    left: -8px !important;\n    border-bottom-color: #291f1f !important;\n  }\n\n  .react-datepicker-popper[data-placement^='bottom']\n    .react-datepicker__triangle {\n    top: 0 !important;\n    margin-top: -8px !important;\n  }\n\n  .react-datepicker-popper[data-placement^='bottom']\n    .react-datepicker__triangle,\n  .react-datepicker-popper[data-placement^='bottom']\n    .react-datepicker__triangle::before {\n    border-top: none !important;\n    border-bottom-color: #ffffff !important;\n  }\n\n  .react-datepicker-popper[data-placement^='bottom']\n    .react-datepicker__triangle::before {\n    top: -1px !important;\n    border-bottom-color: #aeaeae !important;\n  }\n\n  .react-datepicker-popper[data-placement^='top'] .react-datepicker__triangle,\n  .react-datepicker__year-read-view--down-arrow,\n  .react-datepicker__month-read-view--down-arrow,\n  .react-datepicker__month-year-read-view--down-arrow {\n    bottom: 0 !important;\n    margin-bottom: -8px !important;\n  }\n\n  .react-datepicker-popper[data-placement^='top'] .react-datepicker__triangle,\n  .react-datepicker__year-read-view--down-arrow,\n  .react-datepicker__month-read-view--down-arrow,\n  .react-datepicker__month-year-read-view--down-arrow,\n  .react-datepicker-popper[data-placement^='top']\n    .react-datepicker__triangle::before,\n  .react-datepicker__year-read-view--down-arrow::before,\n  .react-datepicker__month-read-view--down-arrow::before,\n  .react-datepicker__month-year-read-view--down-arrow::before {\n    border-bottom: none !important;\n    border-top-color: #fff !important;\n  }\n\n  .react-datepicker-popper[data-placement^='top']\n    .react-datepicker__triangle::before,\n  .react-datepicker__year-read-view--down-arrow::before,\n  .react-datepicker__month-read-view--down-arrow::before,\n  .react-datepicker__month-year-read-view--down-arrow::before {\n    bottom: -1px !important;\n    border-top-color: #aeaeae !important;\n  }\n\n  .react-datepicker-wrapper {\n    display: inline-block;\n    padding: 0;\n    border: 0;\n  }\n\n  .react-datepicker {\n    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;\n    font-size: 0.8rem !important;\n    background-color: #fff !important;\n    color: #000 !important;\n    border: 1px solid #aeaeae !important;\n    border-radius: 20px !important;\n    display: inline-block !important;\n    position: relative !important;\n  }\n\n  .react-datepicker--time-only .react-datepicker__triangle {\n    left: 35px !important;\n  }\n\n  .react-datepicker--time-only .react-datepicker__time-container {\n    border-left: 0 !important;\n  }\n\n  .react-datepicker--time-only .react-datepicker__time,\n  .react-datepicker--time-only .react-datepicker__time-box {\n    border-bottom-left-radius: 20px !important;\n    border-bottom-right-radius: 20px !important;\n  }\n\n  .react-datepicker__triangle {\n    position: absolute !important;\n    left: 50px !important;\n  }\n\n  .react-datepicker-popper {\n    z-index: 1 !important;\n  }\n\n  .react-datepicker-popper[data-placement^='bottom'] {\n    margin-top: 10px !important;\n  }\n\n  .react-datepicker-popper[data-placement='bottom-end']\n    .react-datepicker__triangle,\n  .react-datepicker-popper[data-placement='top-end']\n    .react-datepicker__triangle {\n    left: auto !important;\n    right: 50px !important;\n  }\n\n  .react-datepicker-popper[data-placement^='top'] {\n    margin-bottom: 10px !important;\n  }\n\n  .react-datepicker-popper[data-placement^='right'] {\n    margin-left: 8px !important;\n  }\n\n  .react-datepicker-popper[data-placement^='right']\n    .react-datepicker__triangle {\n    left: auto !important;\n    right: 42px !important;\n  }\n\n  .react-datepicker-popper[data-placement^='left'] {\n    margin-right: 8px !important;\n  }\n\n  .react-datepicker-popper[data-placement^='left'] .react-datepicker__triangle {\n    left: 42px !important;\n    right: auto !important;\n  }\n\n  .react-datepicker__header {\n    text-align: center !important;\n    background-color: #ffffff !important;\n    border-bottom: 1px solid #aeaeae !important;\n    border-top-left-radius: 20px !important;\n    padding-top: 18px !important;\n    position: relative !important;\n    padding-bottom: 10px !important;\n  }\n\n  .react-datepicker__header--time {\n    padding-bottom: 8px !important;\n    padding-left: 5px !important;\n    padding-right: 5px !important;\n  }\n\n  .react-datepicker__header--time:not(.react-datepicker__header--time--only) {\n    border-top-left-radius: 0 !important;\n  }\n\n  .react-datepicker__header:not(.react-datepicker__header--has-time-select) {\n    border-top-right-radius: 20px !important;\n  }\n\n  .react-datepicker__year-dropdown-container--select,\n  .react-datepicker__month-dropdown-container--select,\n  .react-datepicker__month-year-dropdown-container--select,\n  .react-datepicker__year-dropdown-container--scroll,\n  .react-datepicker__month-dropdown-container--scroll,\n  .react-datepicker__month-year-dropdown-container--scroll {\n    display: inline-block !important;\n    margin: 0 2px !important;\n  }\n\n  .react-datepicker__current-month,\n  .react-datepicker-time__header,\n  .react-datepicker-year-header {\n    margin-top: 0 !important;\n    color: #707070 !important;\n    font-weight: bold !important;\n    font-size: 0.944rem !important;\n  }\n\n  .react-datepicker-time__header {\n    text-overflow: ellipsis !important;\n    white-space: nowrap !important;\n    overflow: hidden !important;\n  }\n\n  .react-datepicker__navigation {\n    background: none !important;\n    line-height: 1.7rem !important;\n    text-align: center !important;\n    cursor: pointer !important;\n    position: absolute !important;\n    top: 20px !important;\n    width: 0 !important;\n    padding: 0 !important;\n    border: 0.5rem solid transparent !important;\n    z-index: 1 !important;\n    height: 15px !important;\n    width: 20px !important;\n    text-indent: -999em !important;\n    overflow: hidden !important;\n    outline: none !important;\n  }\n\n  .react-datepicker__navigation--previous {\n    left: 10px !important;\n    border-right-color: #9b4dee !important;\n  }\n\n  .react-datepicker__navigation--previous:hover {\n    border-right-color: rgba(155, 77, 238, 0.2) !important;\n  }\n\n  .react-datepicker__navigation--previous--disabled,\n  .react-datepicker__navigation--previous--disabled:hover {\n    border-right-color: rgba(155, 77, 238, 0.2) !important;\n    cursor: default !important;\n  }\n\n  .react-datepicker__navigation--next {\n    right: 10px !important;\n    border-left-color: #9b4dee !important;\n  }\n\n  .react-datepicker__navigation--next--with-time:not(.react-datepicker__navigation--next--with-today-button) {\n    right: 95px !important;\n  }\n\n  .react-datepicker__navigation--next:hover {\n    border-left-color: rgba(155, 77, 238, 0.2) !important;\n  }\n\n  .react-datepicker__navigation--next--disabled,\n  .react-datepicker__navigation--next--disabled:hover {\n    border-left-color: rgba(155, 77, 238, 0.2) !important;\n    cursor: default !important;\n  }\n\n  .react-datepicker__navigation--years {\n    position: relative !important;\n    top: 0 !important;\n    display: block !important;\n    margin-left: auto !important;\n    margin-right: auto !important;\n  }\n\n  .react-datepicker__navigation--years-previous {\n    top: 4px !important;\n    border-top-color: #ccc !important;\n  }\n\n  .react-datepicker__navigation--years-previous:hover {\n    border-top-color: #b3b3b3 !important;\n  }\n\n  .react-datepicker__navigation--years-upcoming {\n    top: -4px !important;\n    border-bottom-color: #ccc !important;\n  }\n\n  .react-datepicker__navigation--years-upcoming:hover {\n    border-bottom-color: #b3b3b3 !important;\n  }\n\n  .react-datepicker__month-container {\n    float: left !important;\n  }\n\n  .react-datepicker__year {\n    margin: 0.4rem !important;\n    text-align: center !important;\n  }\n\n  .react-datepicker__year-wrapper {\n    display: flex !important;\n    flex-wrap: wrap !important;\n    max-width: 180px !important;\n  }\n\n  .react-datepicker__year .react-datepicker__year-text {\n    display: inline-block !important;\n    width: 4rem !important;\n    margin: 2px !important;\n  }\n\n  .react-datepicker__month {\n    margin: 10px 0.4rem !important;\n    text-align: center !important;\n  }\n\n  .react-datepicker__month .react-datepicker__month-text,\n  .react-datepicker__month .react-datepicker__quarter-text {\n    display: inline-block !important;\n    width: 4rem !important;\n    margin: 2px !important;\n  }\n\n  .react-datepicker__input-time-container {\n    clear: both !important;\n    width: 100% !important;\n    float: left !important;\n    margin: 5px 0 10px 15px !important;\n    text-align: left !important;\n  }\n\n  .react-datepicker__input-time-container .react-datepicker-time__caption {\n    display: inline-block !important;\n    color: #707070 !important;\n  }\n\n  .react-datepicker__input-time-container\n    .react-datepicker-time__input-container {\n    display: inline-block !important;\n  }\n\n  .react-datepicker__input-time-container\n    .react-datepicker-time__input-container\n    .react-datepicker-time__input {\n    display: inline-block !important;\n    margin-left: 10px !important;\n  }\n\n  .react-datepicker__input-time-container\n    .react-datepicker-time__input-container\n    .react-datepicker-time__input\n    input {\n    width: 85px !important;\n    border-radius: 20px !important;\n    padding: 5px 10px !important;\n    outline: none !important;\n    border-style: solid !important;\n    border-width: 1px !important;\n    border-color: #707070 !important;\n  }\n\n  .react-datepicker__input-time-container\n    .react-datepicker-time__input-container\n    .react-datepicker-time__input\n    input[type='time']::-webkit-inner-spin-button,\n  .react-datepicker__input-time-container\n    .react-datepicker-time__input-container\n    .react-datepicker-time__input\n    input[type='time']::-webkit-outer-spin-button {\n    -webkit-appearance: none !important;\n    margin: 0 !important;\n  }\n\n  .react-datepicker__input-time-container\n    .react-datepicker-time__input-container\n    .react-datepicker-time__input\n    input[type='time'] {\n    -moz-appearance: textfield !important;\n  }\n\n  .react-datepicker__input-time-container\n    .react-datepicker-time__input-container\n    .react-datepicker-time__delimiter {\n    margin-left: 5px !important;\n    display: inline-block !important;\n  }\n\n  .react-datepicker__time-container {\n    float: right !important;\n    border-left: 1px solid #aeaeae !important;\n    width: 85px !important;\n  }\n\n  .react-datepicker__time-container--with-today-button {\n    display: inline !important;\n    border: 1px solid #aeaeae !important;\n    border-radius: 0.3rem !important;\n    position: absolute !important;\n    right: -72px !important;\n    top: 0 !important;\n  }\n\n  .react-datepicker__time-container .react-datepicker__time {\n    position: relative !important;\n    background: white !important;\n    border-bottom-right-radius: 20px !important;\n  }\n\n  .react-datepicker__time-container\n    .react-datepicker__time\n    .react-datepicker__time-box {\n    width: 85px !important;\n    overflow-x: hidden !important;\n    margin: 0 auto !important;\n    text-align: center !important;\n    border-bottom-right-radius: 20px !important;\n  }\n\n  .react-datepicker__time-container\n    .react-datepicker__time\n    .react-datepicker__time-box\n    ul.react-datepicker__time-list {\n    list-style: none !important;\n    margin: 0 !important;\n    height: calc(195px + (1.7rem / 2)) !important;\n    overflow-y: scroll !important;\n    padding-right: 0px !important;\n    padding-left: 0px !important;\n    width: 100% !important;\n    box-sizing: content-box !important;\n  }\n\n  .react-datepicker__time-container\n    .react-datepicker__time\n    .react-datepicker__time-box\n    ul.react-datepicker__time-list\n    li.react-datepicker__time-list-item {\n    height: 30px !important;\n    padding: 5px 10px !important;\n    white-space: nowrap !important;\n    color: #707070 !important;\n  }\n\n  .react-datepicker__time-container\n    .react-datepicker__time\n    .react-datepicker__time-box\n    ul.react-datepicker__time-list\n    li.react-datepicker__time-list-item:hover {\n    cursor: pointer !important;\n    background-color: #f0f0f0 !important;\n  }\n\n  .react-datepicker__time-container\n    .react-datepicker__time\n    .react-datepicker__time-box\n    ul.react-datepicker__time-list\n    li.react-datepicker__time-list-item--selected {\n    background-color: #9b4dee !important;\n    color: white !important;\n    font-weight: bold !important;\n  }\n\n  .react-datepicker__time-container\n    .react-datepicker__time\n    .react-datepicker__time-box\n    ul.react-datepicker__time-list\n    li.react-datepicker__time-list-item--selected:hover {\n    background-color: #9b4dee !important;\n  }\n\n  .react-datepicker__time-container\n    .react-datepicker__time\n    .react-datepicker__time-box\n    ul.react-datepicker__time-list\n    li.react-datepicker__time-list-item--disabled {\n    color: #ccc !important;\n  }\n\n  .react-datepicker__time-container\n    .react-datepicker__time\n    .react-datepicker__time-box\n    ul.react-datepicker__time-list\n    li.react-datepicker__time-list-item--disabled:hover {\n    cursor: default !important;\n    background-color: transparent !important;\n  }\n\n  .react-datepicker__week-number {\n    color: #ccc !important;\n    display: inline-block !important;\n    width: 1.7rem !important;\n    line-height: 1.7rem !important;\n    text-align: center !important;\n    margin: 0.166rem !important;\n  }\n\n  .react-datepicker__week-number.react-datepicker__week-number--clickable {\n    cursor: pointer !important;\n  }\n\n  .react-datepicker__week-number.react-datepicker__week-number--clickable:hover {\n    border-radius: 0.3rem !important;\n    background-color: #f0f0f0 !important;\n  }\n\n  .react-datepicker__day-names,\n  .react-datepicker__week {\n    white-space: nowrap !important;\n    margin-top: 10px !important;\n  }\n\n  .react-datepicker__day-name,\n  .react-datepicker__day,\n  .react-datepicker__time-name {\n    color: #707070 !important;\n    display: inline-block !important;\n    width: 1.7rem !important;\n    line-height: 1.7rem !important;\n    text-align: center !important;\n    margin: 0.166rem !important;\n    outline: none !important;\n  }\n\n  .react-datepicker__month--selected,\n  .react-datepicker__month--in-selecting-range,\n  .react-datepicker__month--in-range,\n  .react-datepicker__quarter--selected,\n  .react-datepicker__quarter--in-selecting-range,\n  .react-datepicker__quarter--in-range {\n    border-radius: 10px !important;\n    background-color: #9b4dee !important;\n    color: #fff !important;\n  }\n\n  .react-datepicker__month--selected:hover,\n  .react-datepicker__month--in-selecting-range:hover,\n  .react-datepicker__month--in-range:hover,\n  .react-datepicker__quarter--selected:hover,\n  .react-datepicker__quarter--in-selecting-range:hover,\n  .react-datepicker__quarter--in-range:hover {\n    background-color: rgba(155, 77, 238, 0.8) !important;\n  }\n\n  .react-datepicker__month--disabled,\n  .react-datepicker__quarter--disabled {\n    color: #ccc !important;\n    pointer-events: none !important;\n  }\n\n  .react-datepicker__month--disabled:hover,\n  .react-datepicker__quarter--disabled:hover {\n    cursor: default !important;\n    background-color: transparent !important;\n  }\n\n  .react-datepicker__day,\n  .react-datepicker__month-text,\n  .react-datepicker__quarter-text,\n  .react-datepicker__year-text {\n    cursor: pointer !important;\n  }\n\n  .react-datepicker__day:hover {\n    border-radius: 50% !important;\n    background-color: #f0f0f0 !important;\n  }\n  .react-datepicker__month-text:hover,\n  .react-datepicker__quarter-text:hover,\n  .react-datepicker__year-text:hover {\n    border-radius: 10px !important;\n    background-color: #f0f0f0 !important;\n  }\n\n  .react-datepicker__day--today,\n  .react-datepicker__month-text--today,\n  .react-datepicker__quarter-text--today,\n  .react-datepicker__year-text--today {\n    font-weight: bold !important;\n  }\n\n  .react-datepicker__day--highlighted,\n  .react-datepicker__month-text--highlighted,\n  .react-datepicker__quarter-text--highlighted,\n  .react-datepicker__year-text--highlighted {\n    border-radius: 0.3rem !important;\n    background-color: #3dcc4a !important;\n    color: #fff !important;\n  }\n\n  .react-datepicker__day--highlighted:hover,\n  .react-datepicker__month-text--highlighted:hover,\n  .react-datepicker__quarter-text--highlighted:hover,\n  .react-datepicker__year-text--highlighted:hover {\n    background-color: #32be3f !important;\n  }\n\n  .react-datepicker__day--highlighted-custom-1,\n  .react-datepicker__month-text--highlighted-custom-1,\n  .react-datepicker__quarter-text--highlighted-custom-1,\n  .react-datepicker__year-text--highlighted-custom-1 {\n    color: magenta !important;\n  }\n\n  .react-datepicker__day--highlighted-custom-2,\n  .react-datepicker__month-text--highlighted-custom-2,\n  .react-datepicker__quarter-text--highlighted-custom-2,\n  .react-datepicker__year-text--highlighted-custom-2 {\n    color: green !important;\n  }\n\n  .react-datepicker__day--selected,\n  .react-datepicker__day--in-selecting-range,\n  .react-datepicker__day--in-range {\n    border-radius: 50% !important;\n    background-color: #9b4dee !important;\n    color: #fff !important;\n    outline: none !important;\n  }\n  .react-datepicker__month-text--selected,\n  .react-datepicker__month-text--in-selecting-range,\n  .react-datepicker__month-text--in-range,\n  .react-datepicker__quarter-text--selected,\n  .react-datepicker__quarter-text--in-selecting-range,\n  .react-datepicker__quarter-text--in-range,\n  .react-datepicker__year-text--selected,\n  .react-datepicker__year-text--in-selecting-range,\n  .react-datepicker__year-text--in-range {\n    border-radius: 10px !important;\n    background-color: #9b4dee !important;\n    color: #fff !important;\n    outline: none !important;\n  }\n\n  .react-datepicker__day--selected:hover,\n  .react-datepicker__day--in-selecting-range:hover,\n  .react-datepicker__day--in-range:hover,\n  .react-datepicker__month-text--selected:hover,\n  .react-datepicker__month-text--in-selecting-range:hover,\n  .react-datepicker__month-text--in-range:hover,\n  .react-datepicker__quarter-text--selected:hover,\n  .react-datepicker__quarter-text--in-selecting-range:hover,\n  .react-datepicker__quarter-text--in-range:hover,\n  .react-datepicker__year-text--selected:hover,\n  .react-datepicker__year-text--in-selecting-range:hover,\n  .react-datepicker__year-text--in-range:hover {\n    background-color: rgba(155, 77, 238, 0.8) !important;\n    outline: none !important;\n  }\n\n  .react-datepicker__day--keyboard-selected {\n    border-radius: 50% !important;\n    background-color: #9b4dee !important;\n    color: #fff !important;\n    outline: none !important;\n  }\n  .react-datepicker__month-text--keyboard-selected,\n  .react-datepicker__quarter-text--keyboard-selected,\n  .react-datepicker__year-text--keyboard-selected {\n    border-radius: 10px !important;\n    background-color: #9b4dee !important;\n    color: #fff !important;\n    outline: none !important;\n  }\n\n  .react-datepicker__day--keyboard-selected:hover,\n  .react-datepicker__month-text--keyboard-selected:hover,\n  .react-datepicker__quarter-text--keyboard-selected:hover,\n  .react-datepicker__year-text--keyboard-selected:hover {\n    background-color: rgba(155, 77, 238, 0.8) !important;\n  }\n\n  .react-datepicker__day--in-selecting-range,\n  .react-datepicker__month-text--in-selecting-range,\n  .react-datepicker__quarter-text--in-selecting-range,\n  .react-datepicker__year-text--in-selecting-range {\n    background-color: rgba(155, 77, 238, 0.5) !important;\n    outline: none !important;\n  }\n\n  .react-datepicker__month--selecting-range .react-datepicker__day--in-range,\n  .react-datepicker__month--selecting-range\n    .react-datepicker__month-text--in-range,\n  .react-datepicker__month--selecting-range\n    .react-datepicker__quarter-text--in-range,\n  .react-datepicker__month--selecting-range\n    .react-datepicker__year-text--in-range {\n    background-color: #f0f0f0 !important;\n    color: #000 !important;\n    outline: none !important;\n  }\n\n  .react-datepicker__day--disabled,\n  .react-datepicker__month-text--disabled,\n  .react-datepicker__quarter-text--disabled,\n  .react-datepicker__year-text--disabled {\n    cursor: default !important;\n    color: #ccc !important;\n  }\n\n  .react-datepicker__day--disabled:hover,\n  .react-datepicker__month-text--disabled:hover,\n  .react-datepicker__quarter-text--disabled:hover,\n  .react-datepicker__year-text--disabled:hover {\n    background-color: transparent !important;\n  }\n\n  .react-datepicker__month-text.react-datepicker__month--selected:hover,\n  .react-datepicker__month-text.react-datepicker__month--in-range:hover,\n  .react-datepicker__month-text.react-datepicker__quarter--selected:hover,\n  .react-datepicker__month-text.react-datepicker__quarter--in-range:hover,\n  .react-datepicker__quarter-text.react-datepicker__month--selected:hover,\n  .react-datepicker__quarter-text.react-datepicker__month--in-range:hover,\n  .react-datepicker__quarter-text.react-datepicker__quarter--selected:hover,\n  .react-datepicker__quarter-text.react-datepicker__quarter--in-range:hover {\n    background-color: #9b4dee !important;\n  }\n\n  .react-datepicker__month-text:hover,\n  .react-datepicker__quarter-text:hover {\n    background-color: #f0f0f0 !important;\n  }\n\n  .react-datepicker__input-container {\n    position: relative !important;\n    display: inline-block !important;\n    width: 100% !important;\n  }\n\n  .react-datepicker__year-read-view,\n  .react-datepicker__month-read-view,\n  .react-datepicker__month-year-read-view {\n    border: 1px solid transparent !important;\n    border-radius: 0.3rem !important;\n  }\n\n  .react-datepicker__year-read-view:hover,\n  .react-datepicker__month-read-view:hover,\n  .react-datepicker__month-year-read-view:hover {\n    cursor: pointer !important;\n  }\n\n  .react-datepicker__year-read-view:hover,\n  .react-datepicker__year-read-view--down-arrow,\n  .react-datepicker__year-read-view:hover,\n  .react-datepicker__month-read-view--down-arrow,\n  .react-datepicker__month-read-view:hover,\n  .react-datepicker__year-read-view--down-arrow,\n  .react-datepicker__month-read-view:hover,\n  .react-datepicker__month-read-view--down-arrow,\n  .react-datepicker__month-year-read-view:hover,\n  .react-datepicker__year-read-view--down-arrow,\n  .react-datepicker__month-year-read-view:hover,\n  .react-datepicker__month-read-view--down-arrow {\n    border-top-color: #b3b3b3 !important;\n  }\n\n  .react-datepicker__year-read-view--down-arrow,\n  .react-datepicker__month-read-view--down-arrow,\n  .react-datepicker__month-year-read-view--down-arrow {\n    border-top-color: #ccc !important;\n    float: right !important;\n    margin-left: 20px !important;\n    top: 5px !important;\n    position: relative !important;\n    border-width: 0.45rem !important;\n  }\n\n  .react-datepicker__year-dropdown,\n  .react-datepicker__month-dropdown,\n  .react-datepicker__month-year-dropdown {\n    background-color: #f0f0f0 !important;\n    position: absolute !important;\n    width: 50% !important;\n    left: 25% !important;\n    top: 30px !important;\n    z-index: 1 !important;\n    text-align: center !important;\n    border-radius: 0.3rem !important;\n    border: 1px solid #aeaeae !important;\n  }\n\n  .react-datepicker__year-dropdown:hover,\n  .react-datepicker__month-dropdown:hover,\n  .react-datepicker__month-year-dropdown:hover {\n    cursor: pointer !important;\n  }\n\n  .react-datepicker__year-dropdown--scrollable,\n  .react-datepicker__month-dropdown--scrollable,\n  .react-datepicker__month-year-dropdown--scrollable {\n    height: 150px !important;\n    overflow-y: scroll !important;\n  }\n\n  .react-datepicker__year-option,\n  .react-datepicker__month-option,\n  .react-datepicker__month-year-option {\n    line-height: 20px !important;\n    width: 100% !important;\n    display: block !important;\n    margin-left: auto !important;\n    margin-right: auto !important;\n  }\n\n  .react-datepicker__year-option:first-of-type,\n  .react-datepicker__month-option:first-of-type,\n  .react-datepicker__month-year-option:first-of-type {\n    border-top-left-radius: 0.3rem !important;\n    border-top-right-radius: 0.3rem !important;\n  }\n\n  .react-datepicker__year-option:last-of-type,\n  .react-datepicker__month-option:last-of-type,\n  .react-datepicker__month-year-option:last-of-type {\n    -webkit-user-select: none !important;\n    -moz-user-select: none !important;\n    -ms-user-select: none !important;\n    user-select: none !important;\n    border-bottom-left-radius: 0.3rem !important;\n    border-bottom-right-radius: 0.3rem !important;\n  }\n\n  .react-datepicker__year-option:hover,\n  .react-datepicker__month-option:hover,\n  .react-datepicker__month-year-option:hover {\n    background-color: #ccc !important;\n  }\n\n  .react-datepicker__year-option:hover\n    .react-datepicker__navigation--years-upcoming,\n  .react-datepicker__month-option:hover\n    .react-datepicker__navigation--years-upcoming,\n  .react-datepicker__month-year-option:hover\n    .react-datepicker__navigation--years-upcoming {\n    border-bottom-color: #b3b3b3 !important;\n  }\n\n  .react-datepicker__year-option:hover\n    .react-datepicker__navigation--years-previous,\n  .react-datepicker__month-option:hover\n    .react-datepicker__navigation--years-previous,\n  .react-datepicker__month-year-option:hover\n    .react-datepicker__navigation--years-previous {\n    border-top-color: #b3b3b3 !important;\n  }\n\n  .react-datepicker__year-option--selected,\n  .react-datepicker__month-option--selected,\n  .react-datepicker__month-year-option--selected {\n    position: absolute !important;\n    left: 15px !important;\n  }\n\n  .react-datepicker__close-icon {\n    cursor: pointer !important;\n    background-color: transparent !important;\n    border: 0 !important;\n    outline: 0 !important;\n    padding: 0px 6px 0px 0px !important;\n    position: absolute !important;\n    top: 0 !important;\n    right: 0 !important;\n    height: 100% !important;\n    display: table-cell !important;\n    vertical-align: middle !important;\n  }\n\n  .react-datepicker__close-icon::after {\n    cursor: pointer !important;\n    background-color: #9b4dee !important;\n    color: #fff !important;\n    border-radius: 50% !important;\n    height: 16px !important;\n    width: 16px !important;\n    padding: 2px !important;\n    font-size: 12px !important;\n    line-height: 1 !important;\n    text-align: center !important;\n    display: table-cell !important;\n    vertical-align: middle !important;\n  }\n\n  .react-datepicker__today-button {\n    background: rgba(155, 77, 238, 0.1) !important;\n    border-top: 1px solid #aeaeae !important;\n    cursor: pointer !important;\n    text-align: center !important;\n    font-weight: bold !important;\n    padding: 5px 0 !important;\n    clear: left !important;\n    border-bottom-left-radius: 20px !important;\n    border-bottom-right-radius: 20px !important;\n  }\n\n  .react-datepicker__portal {\n    position: fixed !important;\n    width: 100vw !important;\n    height: 100vh !important;\n    background-color: rgba(0, 0, 0, 0.8) !important;\n    left: 0 !important;\n    top: 0 !important;\n    justify-content: center !important;\n    align-items: center !important;\n    display: flex !important;\n    z-index: 2147483647 !important;\n  }\n\n  .react-datepicker__portal .react-datepicker__day-name,\n  .react-datepicker__portal .react-datepicker__day,\n  .react-datepicker__portal .react-datepicker__time-name {\n    width: 3rem !important;\n    line-height: 3rem !important;\n  }\n\n  @media (max-width: 400px), (max-height: 550px) {\n    .react-datepicker__portal .react-datepicker__day-name,\n    .react-datepicker__portal .react-datepicker__day,\n    .react-datepicker__portal .react-datepicker__time-name {\n      width: 2rem !important;\n      line-height: 2rem !important;\n    }\n  }\n\n  .react-datepicker__portal .react-datepicker__current-month,\n  .react-datepicker__portal .react-datepicker-time__header {\n    font-size: 1.44rem !important;\n  }\n\n  .react-datepicker__portal .react-datepicker__navigation {\n    border: 0.81rem solid transparent !important;\n  }\n\n  .react-datepicker__portal .react-datepicker__navigation--previous {\n    border-right-color: #ccc !important;\n  }\n\n  .react-datepicker__portal .react-datepicker__navigation--previous:hover {\n    border-right-color: #b3b3b3 !important;\n  }\n\n  .react-datepicker__portal .react-datepicker__navigation--previous--disabled,\n  .react-datepicker__portal\n    .react-datepicker__navigation--previous--disabled:hover {\n    border-right-color: #e6e6e6 !important;\n    cursor: default !important;\n  }\n\n  .react-datepicker__portal .react-datepicker__navigation--next {\n    border-left-color: #ccc !important;\n  }\n\n  .react-datepicker__portal .react-datepicker__navigation--next:hover {\n    border-left-color: #b3b3b3 !important;\n  }\n\n  .react-datepicker__portal .react-datepicker__navigation--next--disabled,\n  .react-datepicker__portal\n    .react-datepicker__navigation--next--disabled:hover {\n    border-left-color: #e6e6e6 !important;\n    cursor: default !important;\n  }\n"])), function (props) {
   return props.brand ? colors.brandLight : colors.gray10;
 }, function (props) {
   return props.brand ? colors.brand10 : colors.gray20;
@@ -7047,7 +4556,7 @@ var Container = styled__default["default"].div(_templateObject || (_templateObje
   return props.brand ? colors.brand10 : colors.gray20;
 });
 
-var _excluded = ["label", "labelClassName", "labelStyle", "brand", "otherFormatDate", "size"];
+var _excluded$a = ["label", "labelClassName", "labelStyle", "brand", "otherFormatDate", "size"];
 DatePicker.registerLocale('pt-BR', br__default["default"]);
 
 var Calendar = function Calendar(_ref) {
@@ -7057,7 +4566,7 @@ var Calendar = function Calendar(_ref) {
       brand = _ref.brand,
       otherFormatDate = _ref.otherFormatDate,
       size = _ref.size,
-      rest = _objectWithoutPropertiesLoose$3(_ref, _excluded);
+      rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$a);
 
   // eslint-disable-next-line react/display-name
   var CustomInput = React__default["default"].forwardRef(function (props, ref) {
@@ -7071,7 +4580,7 @@ var Calendar = function Calendar(_ref) {
       placeholder: rest.placeholderText
     }, void 0);
   });
-  return jsxRuntime.jsxs(Container, Object.assign({
+  return jsxRuntime.jsxs(Container$7, Object.assign({
     brand: brand,
     size: size
   }, {
@@ -7100,6 +4609,2550 @@ var Calendar = function Calendar(_ref) {
     }, void 0)]
   }), void 0);
 };
+
+var _templateObject$b, _templateObject2$7, _templateObject3$7;
+var Shadow = styled__default["default"].div(_templateObject$b || (_templateObject$b = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  box-shadow: ", ";\n\n  border: ", ";\n  padding: 1.25rem;\n  background-color: ", ";\n  border-radius: 1.875rem;\n  position: relative;\n\n  width: ", ";\n\n  .loading-card {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    background-color: rgba(255, 255, 255, 0.8);\n    width: 100%;\n    height: 100%;\n    top: 0;\n    left: 0;\n    right: 0;\n    bottom: 0;\n    border-radius: 30px;\n    z-index: 2;\n    position: absolute;\n  }\n"])), function (props) {
+  if (props.type == 'none') {
+    return 'none';
+  }
+
+  if (props.type == 'border') {
+    return 'none';
+  }
+
+  if (props.type == 'min-shadow') {
+    return '0px 0.125rem 0.25rem #00000029';
+  }
+
+  return '0 1.25rem 3.125rem 0 rgba(0, 0, 0, 0.16)';
+}, function (props) {
+  var _props$style;
+
+  return props.type == 'border' || (_props$style = props.style) != null && _props$style.borderRadius ? "1px solid  " + colors.default20 : '';
+}, colors.white, function (props) {
+  if (props.width) {
+    if (typeof props.width === 'string') {
+      return props.width;
+    }
+
+    return props.width + "px";
+  }
+
+  return '100%';
+});
+var Button$1 = styled__default["default"].a(_templateObject2$7 || (_templateObject2$7 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  background-color: ", ";\n  padding: 0.75rem 1.5625rem;\n  border-radius: 1.875rem;\n  border: 1px solid ", ";\n  width: ", ";\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n\n  :hover {\n    background-color: ", ";\n  }\n\n  span {\n    margin-left: 0.9375rem;\n    font-size: 0.9375rem;\n    color: ", ";\n  }\n"])), colors.card, colors.default30, function (props) {
+  if (props.width) {
+    if (typeof props.width === 'string') {
+      return props.width;
+    }
+
+    return props.width + "px";
+  }
+
+  return '100%';
+}, colors.default10, function (props) {
+  return props.colorText ? props.colorText : colors.brandDark;
+});
+var Complement = styled__default["default"].div(_templateObject3$7 || (_templateObject3$7 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n\n  color: ", ";\n  background-color: ", ";\n\n  border: 1px solid ", ";\n  text-align: center;\n  margin-top: -1.5625rem;\n  padding-top: 1.5625rem;\n  width: 100%;\n\n  border-bottom-left-radius: 1.875rem;\n  border-bottom-right-radius: 1.875rem;\n"])), colors.gray20, colors.default10, colors.default20);
+
+var _excluded$9 = ["children", "width", "type", "style", "icon", "sizeIcon", "colorIcon", "text", "colorText", "onClick", "loading", "className", "id", "complement", "complementStyle", "complementClassName"];
+
+var Card = function Card(_ref) {
+  var children = _ref.children,
+      width = _ref.width,
+      _ref$type = _ref.type,
+      type = _ref$type === void 0 ? 'shadow' : _ref$type,
+      style = _ref.style,
+      icon = _ref.icon,
+      sizeIcon = _ref.sizeIcon,
+      colorIcon = _ref.colorIcon,
+      text = _ref.text,
+      colorText = _ref.colorText,
+      onClick = _ref.onClick,
+      loading = _ref.loading,
+      className = _ref.className,
+      id = _ref.id,
+      complement = _ref.complement,
+      complementStyle = _ref.complementStyle,
+      complementClassName = _ref.complementClassName,
+      rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$9);
+
+  function renderShadow() {
+    if (complement) {
+      return jsxRuntime.jsxs("div", {
+        children: [jsxRuntime.jsxs(Shadow, Object.assign({
+          className: className,
+          width: width,
+          style: style,
+          type: type,
+          id: id
+        }, {
+          children: [loading && jsxRuntime.jsx("div", Object.assign({
+            className: "loading-card"
+          }, {
+            children: jsxRuntime.jsx(Loader, {}, void 0)
+          }), void 0), children]
+        }), void 0), jsxRuntime.jsx(Complement, Object.assign({
+          className: complementClassName,
+          style: complementStyle
+        }, {
+          children: complement
+        }), void 0)]
+      }, void 0);
+    }
+
+    return jsxRuntime.jsxs(Shadow, Object.assign({
+      className: className,
+      width: width,
+      style: style,
+      type: type,
+      id: id
+    }, {
+      children: [loading && jsxRuntime.jsx("div", Object.assign({
+        className: "loading-card"
+      }, {
+        children: jsxRuntime.jsx(Loader, {}, void 0)
+      }), void 0), children]
+    }), void 0);
+  }
+
+  function renderButton() {
+    return jsxRuntime.jsxs(Button$1, Object.assign({
+      style: style,
+      colorText: colorText,
+      onClick: onClick,
+      href: rest.href,
+      width: width,
+      className: className,
+      id: id
+    }, {
+      children: [icon && jsxRuntime.jsx(React__default["default"].Fragment, {
+        children: jsxRuntime.jsx(FontAwesomeIcon, {
+          icon: icon,
+          color: colorIcon || colors.brandDark,
+          size: sizeIcon || 'lg'
+        }, void 0)
+      }, void 0), jsxRuntime.jsx("span", {
+        children: text
+      }, void 0)]
+    }), void 0);
+  }
+
+  switch (type) {
+    case 'shadow'  :
+      return renderShadow();
+
+    case 'button':
+      return renderButton();
+
+    default:
+      return renderShadow();
+  }
+};
+
+var _templateObject$a;
+var Sizes$3 = {
+  mini: 'mini',
+  tiny: 'tiny',
+  small: 'small',
+  medium: 'medium',
+  large: 'large',
+  big: 'big',
+  huge: 'huge',
+  massive: 'massive'
+};
+
+var size$1 = function size(_size) {
+  switch (_size) {
+    case Sizes$3.mini:
+      return '10px';
+
+    case Sizes$3.tiny:
+      return '12px';
+
+    case Sizes$3.small:
+      return '14px';
+
+    case Sizes$3.medium:
+      return '17px';
+
+    case Sizes$3.large:
+      return '20px';
+
+    case Sizes$3.big:
+      return '23px';
+
+    case Sizes$3.huge:
+      return '26px';
+
+    case Sizes$3.massive:
+      return '30px';
+
+    default:
+      return _size;
+  }
+};
+
+var sizeChecked$1 = function sizeChecked(size) {
+  switch (size) {
+    case Sizes$3.mini:
+      return '8px';
+
+    case Sizes$3.tiny:
+      return '10px';
+
+    case Sizes$3.small:
+      return '11px';
+
+    case Sizes$3.medium:
+      return '13px';
+
+    case Sizes$3.large:
+      return '16px';
+
+    case Sizes$3.big:
+      return '19px';
+
+    case Sizes$3.huge:
+      return '21px';
+
+    case Sizes$3.massive:
+      return '23px';
+
+    default:
+      return size;
+  }
+};
+
+var marginLeft = function marginLeft(size) {
+  switch (size) {
+    case Sizes$3.mini:
+      return '1px';
+
+    case Sizes$3.tiny:
+      return '1.2px';
+
+    case Sizes$3.small:
+      return '1.4px';
+
+    case Sizes$3.medium:
+      return '2px';
+
+    case Sizes$3.large:
+      return '2px';
+
+    case Sizes$3.big:
+      return '2px';
+
+    case Sizes$3.huge:
+      return '3px';
+
+    case Sizes$3.massive:
+      return '4px';
+
+    default:
+      return size;
+  }
+};
+
+var labelSize$1 = function labelSize(size) {
+  switch (size) {
+    case Sizes$3.mini:
+      return '10px';
+
+    case Sizes$3.tiny:
+      return '13px';
+
+    case Sizes$3.small:
+      return '14px';
+
+    case Sizes$3.medium:
+      return '16px';
+
+    case Sizes$3.large:
+      return '18px';
+
+    case Sizes$3.big:
+      return '20px';
+
+    case Sizes$3.huge:
+      return '22px';
+
+    case Sizes$3.massive:
+      return '24px';
+
+    default:
+      return size;
+  }
+};
+
+var marginRight = function marginRight(size) {
+  switch (size) {
+    case Sizes$3.mini:
+      return '5px';
+
+    case Sizes$3.tiny:
+      return '6px';
+
+    case Sizes$3.small:
+      return '7px';
+
+    case Sizes$3.medium:
+      return '8px';
+
+    case Sizes$3.large:
+      return '9px';
+
+    case Sizes$3.big:
+      return '10px';
+
+    case Sizes$3.huge:
+      return '11px';
+
+    case Sizes$3.massive:
+      return '12px';
+
+    default:
+      return size;
+  }
+};
+
+var Container$6 = styled__default["default"].div(_templateObject$a || (_templateObject$a = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  display: flex;\n  align-items: center;\n\n  > input {\n    display: none;\n  }\n\n  label {\n    font-size: ", ";\n    color: ", ";\n    cursor: ", ";\n    opacity: ", ";\n  }\n\n  > input + div {\n    position: relative;\n    cursor: ", ";\n    opacity: ", ";\n    display: flex;\n    align-items: center;\n\n    &:before {\n      content: '';\n      position: absolute;\n      width: ", ";\n      height: ", ";\n      border: 1px solid ", ";\n      background: ", ";\n      border-radius: 5px;\n    }\n    &:after {\n      content: ' ';\n      position: absolute;\n      width: ", ";\n      height: ", ";\n      border: 1px solid ", ";\n      background: ", ";\n      border-radius: 5px;\n      color: ", ";\n      text-align: center;\n      font-size: 12px;\n    }\n  }\n  > input:not(:checked) + div {\n    &:after {\n      opacity: 0;\n      transform: scale(0);\n    }\n  }\n  > input:checked + div {\n    &:after {\n      opacity: 1;\n      transform: scale(1);\n    }\n  }\n\n  span {\n    margin-left: ", ";\n    margin-right: ", ";\n    font-size: ", ";\n    color: ", ";\n    z-index: 1;\n  }\n"])), function (props) {
+  if (props.sizeBox) {
+    return labelSize$1(props.sizeBox);
+  }
+
+  return '17px';
+}, colors.gray20, function (props) {
+  return props.disabled ? 'default' : 'pointer';
+}, function (props) {
+  return props.disabled ? 0.5 : 1;
+}, function (props) {
+  return props.disabled ? 'default' : 'pointer';
+}, function (props) {
+  return props.disabled ? 0.5 : 1;
+}, function (props) {
+  if (props.sizeBox) {
+    return size$1(props.sizeBox);
+  }
+
+  return '17px';
+}, function (props) {
+  if (props.sizeBox) {
+    return size$1(props.sizeBox);
+  }
+
+  return '17px';
+}, colors.default20, colors.default20, function (props) {
+  if (props.sizeBox) {
+    return size$1(props.sizeBox);
+  }
+
+  return '17px';
+}, function (props) {
+  if (props.sizeBox) {
+    return size$1(props.sizeBox);
+  }
+
+  return '17px';
+}, colors.brandDark, colors.brandDark, colors.white, function (props) {
+  if (props.sizeBox) {
+    return marginLeft(props.sizeBox);
+  }
+
+  return '2.5px';
+}, function (props) {
+  if (props.sizeBox) {
+    return marginRight(props.sizeBox);
+  }
+
+  return '8px';
+}, function (props) {
+  if (props.sizeBox) {
+    return sizeChecked$1(props.sizeBox);
+  }
+
+  return '13px';
+}, function (props) {
+  return props.checked ? colors.white : colors.default20;
+});
+
+var _excluded$8 = ["label", "labelStyle", "sizeBox"];
+
+var Checkbox = function Checkbox(_ref) {
+  var label = _ref.label,
+      labelStyle = _ref.labelStyle,
+      sizeBox = _ref.sizeBox,
+      rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$8);
+
+  return jsxRuntime.jsxs(Container$6, Object.assign({
+    onClick: function onClick() {
+      return !rest.disabled ? rest.onChange ? rest.onChange() : null : null;
+    },
+    disabled: rest.disabled,
+    sizeBox: sizeBox,
+    checked: rest.checked
+  }, {
+    children: [jsxRuntime.jsx("input", Object.assign({
+      type: "checkbox"
+    }, rest), void 0), jsxRuntime.jsxs("div", {
+      children: [jsxRuntime.jsx("span", {
+        children: jsxRuntime.jsx(FontAwesomeIcon, {
+          icon: faCheck
+        }, void 0)
+      }, void 0), jsxRuntime.jsx("label", Object.assign({
+        style: labelStyle
+      }, {
+        children: label
+      }), void 0)]
+    }, void 0)]
+  }), void 0);
+};
+
+var _templateObject$9, _templateObject2$6, _templateObject3$6, _templateObject4$4, _templateObject5$3, _templateObject6$3, _templateObject7$3, _templateObject8$1;
+var Background$1 = styled__default["default"].div(_templateObject$9 || (_templateObject$9 = _taggedTemplateLiteralLoose(["\n  ", "\n"])), function (props) {
+  return props.open ? styled.css(_templateObject2$6 || (_templateObject2$6 = _taggedTemplateLiteralLoose(["\n          opacity: 1;\n          visibility: visible;\n          position: fixed;\n          top: 0;\n          right: 0;\n          bottom: 0;\n          left: 0;\n          background: rgba(0, 0, 0, 0.5);\n          transition: opacity 0.25s ease;\n          overflow: auto;\n          display: flex;\n          z-index: 999;\n        "]))) : styled.css(_templateObject3$6 || (_templateObject3$6 = _taggedTemplateLiteralLoose(["\n          opacity: 1;\n          visibility: hidden;\n        "])));
+});
+var Dialog = styled__default["default"].div(_templateObject4$4 || (_templateObject4$4 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  ", "\n"])), function (props) {
+  return props.open ? styled.css(_templateObject5$3 || (_templateObject5$3 = _taggedTemplateLiteralLoose(["\n          transition: bottom 0.25s ease;\n          width: 97%;\n          background: ", ";\n          border-top-left-radius: 30px;\n          border-top-right-radius: 30px;\n          margin-top: auto;\n          margin-left: auto;\n          margin-right: auto;\n          position: relative;\n          /* overflow: auto; */\n\n          overflow: ", ";\n          padding-bottom: ", ";\n          height: ", ";\n          max-height: ", ";\n\n          .box-dialog {\n            position: relative;\n            padding: 20px 20px 0;\n            overflow: ", ";\n\n            height: ", ";\n            /* max-height: 100%; */\n          }\n\n          .loading-dialog {\n            display: flex;\n            justify-content: center;\n            align-items: center;\n            background-color: rgba(255, 255, 255, 0.8);\n            width: 100%;\n            height: 100%;\n            top: 0;\n            left: 0;\n            right: 0;\n            bottom: 0;\n            border-radius: 30px;\n            z-index: 2;\n            position: absolute;\n          }\n        "])), colors.white, function () {
+    if (props.maxHeight || props.loading) {
+      return 'none';
+    }
+
+    return 'auto';
+  }, function () {
+    if (props.maxHeight) {
+      return '0';
+    }
+
+    return '20px';
+  }, function () {
+    if (props.maxHeight) {
+      return '100%';
+    }
+
+    return 'auto';
+  }, function () {
+    if (props.maxHeight) {
+      if (typeof props.maxHeight === 'string') {
+        return props.maxHeight;
+      }
+
+      return props.maxHeight + "px";
+    }
+
+    return '100%';
+  }, props.loading ? 'hidden' : 'auto', props.title ? "calc(100% - " + props.sizeHeader + "px)" : '100%') : styled.css(_templateObject6$3 || (_templateObject6$3 = _taggedTemplateLiteralLoose(["\n          transition: bottom 0.25s ease;\n          bottom: -100%;\n        "])));
+});
+var Header$2 = styled__default["default"].div(_templateObject7$3 || (_templateObject7$3 = _taggedTemplateLiteralLoose(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  border-bottom: ", ";\n  font-size: 1.25rem;\n\n  .name-icon-modal {\n    display: flex;\n    align-items: center;\n  }\n\n  & strong {\n    padding: ", ";\n    color: ", ";\n  }\n"])), function (props) {
+  return props.noBorder ? 'none' : "1px solid " + colors.default20;
+}, function (props) {
+  return props.iconBack ? '1.25rem 0' : '1.25rem 1.875rem';
+}, colors.brand10);
+var Icon$1 = styled__default["default"].div(_templateObject8$1 || (_templateObject8$1 = _taggedTemplateLiteralLoose(["\n  padding: 1.25rem 1.875rem;\n  cursor: pointer;\n"])));
+
+var DialogComponent = function DialogComponent(_ref) {
+  var open = _ref.open,
+      children = _ref.children,
+      onClose = _ref.onClose,
+      loading = _ref.loading,
+      maxHeight = _ref.maxHeight,
+      title = _ref.title,
+      onBack = _ref.onBack,
+      noBorder = _ref.noBorder,
+      _ref$closeIcon = _ref.closeIcon,
+      closeIcon = _ref$closeIcon === void 0 ? false : _ref$closeIcon;
+
+  var _useState = React$2.useState(62),
+      sizeHeader = _useState[0],
+      setSizeHeader = _useState[1];
+
+  React$2.useEffect(function () {
+    if (document.getElementById('headerDialog')) {
+      setSizeHeader(document.getElementById('headerDialog').clientHeight);
+    }
+  }, [document.getElementById('headerDialog')]);
+  return jsxRuntime.jsx(Background$1, Object.assign({
+    open: open,
+    onClick: function onClick(event) {
+      event.stopPropagation();
+      onClose();
+    }
+  }, {
+    children: jsxRuntime.jsxs(Dialog, Object.assign({
+      open: open,
+      onClick: function onClick(event) {
+        return event.stopPropagation();
+      },
+      maxHeight: maxHeight,
+      sizeHeader: sizeHeader,
+      loading: loading,
+      title: title
+    }, {
+      children: [title ? jsxRuntime.jsxs(Header$2, Object.assign({
+        iconBack: !!onBack,
+        noBorder: noBorder,
+        id: "headerDialog"
+      }, {
+        children: [jsxRuntime.jsxs("div", Object.assign({
+          className: "name-icon-modal"
+        }, {
+          children: [onBack ? jsxRuntime.jsx(Icon$1, Object.assign({
+            onClick: function onClick() {
+              return onBack();
+            }
+          }, {
+            children: jsxRuntime.jsx(FontAwesomeIcon, {
+              icon: faAngleLeft,
+              size: "lg",
+              color: colors.brand10
+            }, void 0)
+          }), void 0) : null, jsxRuntime.jsx("strong", {
+            children: title
+          }, void 0)]
+        }), void 0), closeIcon && jsxRuntime.jsx(Icon$1, Object.assign({
+          onClick: function onClick(event) {
+            event.stopPropagation();
+            onClose();
+          }
+        }, {
+          children: jsxRuntime.jsx(FontAwesomeIcon, {
+            icon: faTimes,
+            style: {
+              fontSize: '1.25rem'
+            },
+            color: colors.brand10
+          }, void 0)
+        }), void 0)]
+      }), void 0) : null, jsxRuntime.jsxs("div", Object.assign({
+        className: "box-dialog",
+        id: "sizeBody"
+      }, {
+        children: [loading && jsxRuntime.jsx("div", Object.assign({
+          className: "loading-dialog"
+        }, {
+          children: jsxRuntime.jsx(Loader, {}, void 0)
+        }), void 0), children]
+      }), void 0)]
+    }), void 0)
+  }), void 0);
+};
+
+var _templateObject$8;
+var Container$5 = styled__default["default"].div(_templateObject$8 || (_templateObject$8 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  width: 100% !important;\n  display: flex !important;\n  flex-direction: column !important;\n  padding-bottom: ", ";\n\n  label {\n    font-size: 14px;\n    margin-left: 15px;\n    color: ", ";\n  }\n\n  /*!\n * # Semantic UI 2.4.0 - Dropdown\n * http://github.com/semantic-org/semantic-ui/\n *\n *\n * Released under the MIT license\n * http://opensource.org/licenses/MIT\n *\n */\n\n  /*******************************\n            Dropdown\n*******************************/\n\n  .ui.dropdown {\n    cursor: pointer;\n    position: relative;\n    display: inline-block;\n    outline: none;\n    text-align: ", ";\n    color: ", ";\n    -webkit-transition: width 0.1s ease, -webkit-box-shadow 0.1s ease;\n    transition: width 0.1s ease, -webkit-box-shadow 0.1s ease;\n    transition: box-shadow 0.1s ease, width 0.1s ease;\n    transition: box-shadow 0.1s ease, width 0.1s ease,\n      -webkit-box-shadow 0.1s ease;\n    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);\n  }\n\n  /*******************************\n            Content\n*******************************/\n\n  /*--------------\n      Menu\n---------------*/\n\n  .ui.dropdown .menu {\n    cursor: auto;\n    position: absolute;\n    display: none;\n    outline: none;\n    top: 100%;\n    min-width: -webkit-max-content;\n    min-width: -moz-max-content;\n    min-width: max-content;\n    margin: 0em;\n    padding: 0em 0em;\n    background: #ffffff;\n    font-size: 1em;\n    text-shadow: none;\n    text-align: left;\n    -webkit-box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n    box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n    border: 1px solid rgba(34, 36, 38, 0.15);\n    border-radius: ", ";\n    -webkit-transition: opacity 0.1s ease;\n    transition: opacity 0.1s ease;\n    z-index: 11;\n    will-change: transform, opacity;\n    /* border-top: ", ";\n        border-left: ", ";\n        border-right: ", "; */\n  }\n  .ui.dropdown .menu > * {\n    white-space: nowrap;\n  }\n\n  /*--------------\n  Hidden Input\n---------------*/\n\n  .ui.dropdown > input:not(.search):first-child,\n  .ui.dropdown > select {\n    display: none !important;\n  }\n\n  /*--------------\n Dropdown Icon\n---------------*/\n\n  .ui.dropdown > .dropdown.icon {\n    position: relative;\n    width: auto;\n    font-size: 0.85714286em;\n    margin: 0em 0em 0em 1em;\n  }\n  .ui.dropdown .menu > .item .dropdown.icon {\n    width: auto;\n    float: right;\n    margin: 0em 0em 0em 1em;\n  }\n  .ui.dropdown .menu > .item .dropdown.icon + .text {\n    margin-right: 1em;\n  }\n\n  /*--------------\n      Text\n---------------*/\n\n  .ui.dropdown > .text {\n    display: inline-block;\n    -webkit-transition: none;\n    transition: none;\n  }\n\n  /*--------------\n    Menu Item\n---------------*/\n\n  .ui.dropdown .menu > .item {\n    position: relative;\n    cursor: pointer;\n    display: block;\n    border: none;\n    height: auto;\n    text-align: left;\n    border-top: none;\n    line-height: 1em;\n    color: ", ";\n    padding: 0.78571429rem 1.14285714rem !important;\n    font-size: 1rem;\n    text-transform: none;\n    font-weight: normal;\n    -webkit-box-shadow: none;\n    box-shadow: none;\n    -webkit-touch-callout: none;\n  }\n  .ui.dropdown .menu > .item:first-child {\n    border-top-width: 0px;\n  }\n\n  /*--------------\n  Floated Content\n---------------*/\n\n  .ui.dropdown > .text > [class*='right floated'],\n  .ui.dropdown .menu .item > [class*='right floated'] {\n    float: right !important;\n    margin-right: 0em !important;\n    margin-left: 1em !important;\n  }\n  .ui.dropdown > .text > [class*='left floated'],\n  .ui.dropdown .menu .item > [class*='left floated'] {\n    float: left !important;\n    margin-left: 0em !important;\n    margin-right: 1em !important;\n  }\n  .ui.dropdown .menu .item > .icon.floated,\n  .ui.dropdown .menu .item > .flag.floated,\n  .ui.dropdown .menu .item > .image.floated,\n  .ui.dropdown .menu .item > img.floated {\n    margin-top: 0em;\n  }\n\n  /*--------------\n  Menu Divider\n---------------*/\n\n  .ui.dropdown .menu > .header {\n    margin: 1rem 0rem 0.75rem;\n    padding: 0em 1.14285714rem;\n    color: rgba(0, 0, 0, 0.85);\n    font-size: 0.78571429em;\n    font-weight: bold;\n    text-transform: uppercase;\n  }\n  .ui.dropdown .menu > .divider {\n    border-top: 1px solid rgba(34, 36, 38, 0.1);\n    height: 0em;\n    margin: 0.5em 0em;\n  }\n  .ui.dropdown.dropdown .menu > .input {\n    width: auto;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    margin: 1.14285714rem 0.78571429rem;\n    min-width: 10rem;\n  }\n  .ui.dropdown .menu > .header + .input {\n    margin-top: 0em;\n  }\n  .ui.dropdown .menu > .input:not(.transparent) input {\n    padding: 0.5em 1em;\n  }\n  .ui.dropdown .menu > .input:not(.transparent) .button,\n  .ui.dropdown .menu > .input:not(.transparent) .icon,\n  .ui.dropdown .menu > .input:not(.transparent) .label {\n    padding-top: 0.5em;\n    padding-bottom: 0.5em;\n  }\n\n  /*-----------------\n  Item Description\n-------------------*/\n\n  .ui.dropdown > .text > .description,\n  .ui.dropdown .menu > .item > .description {\n    float: right;\n    margin: 0em 0em 0em 1em;\n    color: rgba(0, 0, 0, 0.4);\n  }\n\n  /*-----------------\n       Message\n-------------------*/\n\n  .ui.dropdown .menu > .message {\n    padding: 0.78571429rem 1.14285714rem;\n    font-weight: normal;\n  }\n  .ui.dropdown .menu > .message:not(.ui) {\n    color: rgba(0, 0, 0, 0.4);\n  }\n\n  /*--------------\n    Sub Menu\n---------------*/\n\n  .ui.dropdown .menu .menu {\n    top: 0% !important;\n    left: 100%;\n    right: auto;\n    margin: 0em 0em 0em -0.5em !important;\n    border-radius: 0.28571429rem !important;\n    z-index: 21 !important;\n  }\n\n  /* Hide Arrow */\n  .ui.dropdown .menu .menu:after {\n    display: none;\n  }\n\n  /*--------------\n   Sub Elements\n---------------*/\n\n  /* Icons / Flags / Labels / Image */\n  .ui.dropdown > .text > .icon,\n  .ui.dropdown > .text > .label,\n  .ui.dropdown > .text > .flag,\n  .ui.dropdown > .text > img,\n  .ui.dropdown > .text > .image {\n    margin-top: 0em;\n  }\n  .ui.dropdown .menu > .item > .icon,\n  .ui.dropdown .menu > .item > .label,\n  .ui.dropdown .menu > .item > .flag,\n  .ui.dropdown .menu > .item > .image,\n  .ui.dropdown .menu > .item > img {\n    margin-top: 0em;\n  }\n  .ui.dropdown > .text > .icon,\n  .ui.dropdown > .text > .label,\n  .ui.dropdown > .text > .flag,\n  .ui.dropdown > .text > img,\n  .ui.dropdown > .text > .image,\n  .ui.dropdown .menu > .item > .icon,\n  .ui.dropdown .menu > .item > .label,\n  .ui.dropdown .menu > .item > .flag,\n  .ui.dropdown .menu > .item > .image,\n  .ui.dropdown .menu > .item > img {\n    margin-left: 0em;\n    float: none;\n    margin-right: 0.78571429rem;\n  }\n\n  /*--------------\n     Image\n---------------*/\n\n  .ui.dropdown > .text > img,\n  .ui.dropdown > .text > .image,\n  .ui.dropdown .menu > .item > .image,\n  .ui.dropdown .menu > .item > img {\n    display: inline-block;\n    vertical-align: top;\n    width: auto;\n    margin-top: -0.5em;\n    margin-bottom: -0.5em;\n    max-height: 2em;\n  }\n\n  /*******************************\n            Coupling\n*******************************/\n\n  /*--------------\n      Menu\n---------------*/\n\n  /* Remove Menu Item Divider */\n  .ui.dropdown .ui.menu > .item:before,\n  .ui.menu .ui.dropdown .menu > .item:before {\n    display: none;\n  }\n\n  /* Prevent Menu Item Border */\n  .ui.menu .ui.dropdown .menu .active.item {\n    border-left: none;\n  }\n\n  /* Automatically float dropdown menu right on last menu item */\n  .ui.menu .right.menu .dropdown:last-child .menu,\n  .ui.menu .right.dropdown.item .menu,\n  .ui.buttons > .ui.dropdown:last-child .menu {\n    left: auto;\n    right: 0em;\n  }\n\n  /*--------------\n      Label\n---------------*/\n\n  /* Dropdown Menu */\n  .ui.label.dropdown .menu {\n    min-width: 100%;\n  }\n\n  /*--------------\n     Button\n---------------*/\n\n  /* No Margin On Icon Button */\n  .ui.dropdown.icon.button > .dropdown.icon {\n    margin: 0em;\n  }\n  .ui.button.dropdown .menu {\n    min-width: 100%;\n  }\n\n  /*******************************\n              Types\n*******************************/\n\n  /*--------------\n    Selection\n---------------*/\n\n  /* Displays like a select box */\n  .ui.selection.dropdown {\n    cursor: pointer;\n    word-wrap: break-word;\n    line-height: 1em;\n    white-space: normal;\n    outline: 0;\n    -webkit-transform: rotateZ(0deg);\n    transform: rotateZ(0deg);\n    min-width: 14em;\n    min-height: 2.71428571em;\n    background: ", ";\n    display: inline-block;\n    padding: 0.78571429em 2.6em 0.78571429em 1.1em;\n    color: ", ";\n    -webkit-box-shadow: none;\n    box-shadow: none;\n    border: 1px solid\n      ", ";\n    border-radius: ", ";\n    -webkit-transition: width 0.1s ease, -webkit-box-shadow 0.1s ease;\n    transition: width 0.1s ease, -webkit-box-shadow 0.1s ease;\n    transition: box-shadow 0.1s ease, width 0.1s ease;\n    transition: box-shadow 0.1s ease, width 0.1s ease,\n      -webkit-box-shadow 0.1s ease;\n    border-radius: ", ";\n    border-top: ", ";\n    border-left: ", ";\n    border-right: ", ";\n  }\n  .ui.selection.dropdown.visible,\n  .ui.selection.dropdown.active {\n    z-index: 10;\n  }\n  select.ui.dropdown {\n    height: 38px;\n    padding: 0.5em;\n    border: 1px solid rgba(34, 36, 38, 0.15);\n    visibility: visible;\n  }\n  .ui.selection.dropdown > .search.icon,\n  .ui.selection.dropdown > .delete.icon,\n  .ui.selection.dropdown > .dropdown.icon {\n    cursor: pointer;\n    position: absolute;\n    width: auto;\n    height: auto;\n    line-height: 1.21428571em;\n    top: 0.78571429em;\n    right: 1em;\n    z-index: 3;\n    margin: -0.78571429em;\n    padding: 0.91666667em;\n    opacity: 0.8;\n    -webkit-transition: opacity 0.1s ease;\n    transition: opacity 0.1s ease;\n  }\n\n  /* Compact */\n  .ui.compact.selection.dropdown {\n    min-width: 0px;\n  }\n\n  /*  Selection Menu */\n  .ui.selection.dropdown .menu {\n    overflow-x: hidden;\n    overflow-y: auto;\n    -webkit-backface-visibility: hidden;\n    backface-visibility: hidden;\n    -webkit-overflow-scrolling: touch;\n    border-top-width: 0px !important;\n    width: auto;\n    outline: none;\n    margin: 0px -1px;\n    min-width: calc(100% + 2px);\n    width: calc(100% + 2px);\n    border-radius: 0em 0em 0.28571429rem 0.28571429rem;\n    -webkit-box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n    box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n    -webkit-transition: opacity 0.1s ease;\n    transition: opacity 0.1s ease;\n    border-bottom-left-radius: 20px;\n    border-bottom-right-radius: 20px;\n  }\n  .ui.selection.dropdown .menu:after,\n  .ui.selection.dropdown .menu:before {\n    display: none;\n  }\n\n  /*--------------\n    Message\n---------------*/\n\n  .ui.selection.dropdown .menu > .message {\n    padding: 0.78571429rem 1.14285714rem;\n  }\n  @media only screen and (max-width: 767px) {\n    .ui.selection.dropdown .menu {\n      max-height: 8.01428571rem;\n    }\n  }\n  @media only screen and (min-width: 768px) {\n    .ui.selection.dropdown .menu {\n      max-height: 10.68571429rem;\n    }\n  }\n  @media only screen and (min-width: 992px) {\n    .ui.selection.dropdown .menu {\n      max-height: 16.02857143rem;\n    }\n  }\n  @media only screen and (min-width: 1920px) {\n    .ui.selection.dropdown .menu {\n      max-height: 21.37142857rem;\n    }\n  }\n\n  /* Menu Item */\n  .ui.selection.dropdown .menu > .item {\n    border-top: 1px solid #fafafa;\n    padding: 0.78571429rem 1.04285714rem !important;\n    white-space: normal;\n    word-wrap: normal;\n  }\n\n  /* User Item */\n  .ui.selection.dropdown .menu > .hidden.addition.item {\n    display: none;\n  }\n\n  /* Hover */\n  .ui.selection.dropdown:hover {\n    border-color: ", ";\n    -webkit-box-shadow: none;\n    box-shadow: none;\n  }\n\n  /* Active */\n  .ui.selection.active.dropdown {\n    border-color: ", ";\n    -webkit-box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n    box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n  }\n  .ui.selection.active.dropdown .menu {\n    border-color: ", ";\n    -webkit-box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n    box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n  }\n\n  /* Focus */\n  .ui.selection.dropdown:focus {\n    border-color: ", ";\n    -webkit-box-shadow: none;\n    box-shadow: none;\n  }\n  .ui.selection.dropdown:focus .menu {\n    border-color: ", ";\n    -webkit-box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n    box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n  }\n\n  /* Visible */\n  .ui.selection.visible.dropdown > .text:not(.default) {\n    font-weight: normal;\n    color: ", ";\n  }\n\n  /* Visible Hover */\n  .ui.selection.active.dropdown:hover {\n    border-color: ", ";\n    -webkit-box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n    box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n  }\n  .ui.selection.active.dropdown:hover .menu {\n    border-color: ", ";\n    -webkit-box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n    box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n  }\n\n  /* Dropdown Icon */\n  .ui.active.selection.dropdown > .dropdown.icon,\n  .ui.visible.selection.dropdown > .dropdown.icon {\n    opacity: '';\n    z-index: 3;\n  }\n\n  /* Connecting Border */\n  .ui.active.selection.dropdown {\n    border-bottom-left-radius: 0em !important;\n    border-bottom-right-radius: 0em !important;\n  }\n\n  /* Empty Connecting Border */\n  .ui.active.empty.selection.dropdown {\n    border-radius: 0.28571429rem !important;\n    -webkit-box-shadow: none !important;\n    box-shadow: none !important;\n  }\n  .ui.active.empty.selection.dropdown .menu {\n    border: none !important;\n    -webkit-box-shadow: none !important;\n    box-shadow: none !important;\n  }\n\n  /*--------------\n   Searchable\n---------------*/\n\n  /* Search Selection */\n  .ui.search.dropdown {\n    min-width: '';\n  }\n\n  /* Search Dropdown */\n  .ui.search.dropdown > input.search {\n    background: none transparent !important;\n    border: none !important;\n    -webkit-box-shadow: none !important;\n    box-shadow: none !important;\n    cursor: text;\n    top: 0em;\n    left: 1px;\n    width: 100%;\n    outline: none;\n    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);\n    padding: inherit;\n    color: ", ";\n    text-align: ", ";\n  }\n\n  /* Text Layering */\n  .ui.search.dropdown > input.search {\n    position: absolute;\n    z-index: 2;\n  }\n  .ui.search.dropdown > .text {\n    cursor: text;\n    position: relative;\n    left: 1px;\n    z-index: 3;\n  }\n\n  /* Search Selection */\n  .ui.search.selection.dropdown > input.search {\n    line-height: 1.21428571em;\n    padding: 0.67857143em 2.1em 0.67857143em 1em;\n  }\n\n  /* Used to size multi select input to character width */\n  .ui.search.selection.dropdown > span.sizer {\n    line-height: 1.21428571em;\n    padding: 0.67857143em 2.1em 0.67857143em 1em;\n    display: none;\n    white-space: pre;\n  }\n\n  /* Active/Visible Search */\n  .ui.search.dropdown.active > input.search,\n  .ui.search.dropdown.visible > input.search {\n    cursor: auto;\n    color: ", ";\n  }\n  .ui.search.dropdown.active > .text,\n  .ui.search.dropdown.visible > .text {\n    pointer-events: none;\n  }\n\n  /* Filtered Text */\n  .ui.active.search.dropdown input.search:focus + .text .icon,\n  .ui.active.search.dropdown input.search:focus + .text .flag {\n    opacity: 0.45;\n  }\n  .ui.active.search.dropdown input.search:focus + .text {\n    color: rgba(115, 115, 115, 0.87) !important;\n  }\n\n  .input.search::placeholder {\n    color: ", ";\n  }\n  /* Search Menu */\n  .ui.search.dropdown .menu {\n    overflow-x: hidden;\n    overflow-y: auto;\n    -webkit-backface-visibility: hidden;\n    backface-visibility: hidden;\n    -webkit-overflow-scrolling: touch;\n  }\n  @media only screen and (max-width: 767px) {\n    .ui.search.dropdown .menu {\n      max-height: 8.01428571rem;\n    }\n  }\n  @media only screen and (min-width: 768px) {\n    .ui.search.dropdown .menu {\n      max-height: 10.68571429rem;\n    }\n  }\n  @media only screen and (min-width: 992px) {\n    .ui.search.dropdown .menu {\n      max-height: 16.02857143rem;\n    }\n  }\n  @media only screen and (min-width: 1920px) {\n    .ui.search.dropdown .menu {\n      max-height: 21.37142857rem;\n    }\n  }\n\n  /*--------------\n    Multiple\n---------------*/\n\n  /* Multiple Selection */\n  .ui.multiple.dropdown {\n    padding: 0.22619048em 2.1em 0.22619048em 0.35714286em;\n  }\n  .ui.multiple.dropdown .menu {\n    cursor: auto;\n  }\n\n  /* Multiple Search Selection */\n  .ui.multiple.search.dropdown,\n  .ui.multiple.search.dropdown > input.search {\n    cursor: text;\n  }\n\n  /* Selection Label */\n  .ui.multiple.dropdown > .label {\n    -webkit-user-select: none;\n    -moz-user-select: none;\n    -ms-user-select: none;\n    user-select: none;\n    display: inline-block;\n    vertical-align: top;\n    white-space: normal;\n    font-size: 1em;\n    padding: 0.35714286em 0.78571429em;\n    margin: 0.14285714rem 0.28571429rem 0.14285714rem 0.5em;\n    -webkit-box-shadow: 0px 0px 0px 1px rgba(34, 36, 38, 0.15) inset;\n    box-shadow: 0px 0px 0px 1px rgba(34, 36, 38, 0.15) inset;\n    border-radius: 20px;\n    color: ", ";\n    background-color: ", ";\n  }\n\n  /* Dropdown Icon */\n  .ui.multiple.dropdown .dropdown.icon {\n    margin: '';\n    padding: '';\n  }\n\n  /* Text */\n  .ui.multiple.dropdown > .text {\n    position: static;\n    padding: 0;\n    max-width: 100%;\n    margin: 0.45238095em 0em 0.45238095em 0.64285714em;\n    line-height: 1.21428571em;\n  }\n  .ui.multiple.dropdown > .label ~ input.search {\n    margin-left: 0.14285714em !important;\n  }\n  .ui.multiple.dropdown > .label ~ .text {\n    display: none;\n  }\n\n  /*-----------------\n  Multiple Search\n-----------------*/\n\n  /* Prompt Text */\n  .ui.multiple.search.dropdown > .text {\n    display: inline-block;\n    position: absolute;\n    top: 0;\n    left: 0;\n    padding: inherit;\n    margin: 0.45238095em 0em 0.45238095em 0.64285714em;\n    line-height: 1.21428571em;\n  }\n  .ui.multiple.search.dropdown > .label ~ .text {\n    display: none;\n  }\n\n  /* Search */\n  .ui.multiple.search.dropdown > input.search {\n    position: static;\n    padding: 0;\n    max-width: 100%;\n    margin: 0.45238095em 0em 0.45238095em 0.64285714em;\n    width: 2.2em;\n    line-height: 1.21428571em;\n  }\n\n  /*--------------\n     Inline\n---------------*/\n\n  .ui.inline.dropdown {\n    cursor: pointer;\n    display: inline-block;\n    color: inherit;\n  }\n  .ui.inline.dropdown .dropdown.icon {\n    margin: 0em 0.21428571em 0em 0.21428571em;\n    vertical-align: baseline;\n  }\n  .ui.inline.dropdown > .text {\n    font-weight: bold;\n  }\n  .ui.inline.dropdown .menu {\n    cursor: auto;\n    margin-top: 0.21428571em;\n    border-radius: 0.28571429rem;\n  }\n\n  /*******************************\n            States\n*******************************/\n\n  /*--------------------\n        Active\n----------------------*/\n\n  /* Menu Item Active */\n  .ui.dropdown .menu .active.item {\n    background: transparent;\n    font-weight: bold;\n    color: ", ";\n    -webkit-box-shadow: none;\n    box-shadow: none;\n    z-index: 12;\n  }\n\n  /*--------------------\n        Hover\n----------------------*/\n\n  /* Menu Item Hover */\n  .ui.dropdown .menu > .item:hover {\n    background: rgba(0, 0, 0, 0.05);\n    color: ", ";\n    z-index: 13;\n  }\n\n  /*--------------------\n       Loading\n---------------------*/\n\n  .ui.loading.dropdown > i.icon {\n    height: 1em !important;\n  }\n  .ui.loading.selection.dropdown > i.icon {\n    padding: 1.5em 1.28571429em !important;\n  }\n  .ui.loading.dropdown > i.icon:before {\n    position: absolute;\n    content: '';\n    top: 50%;\n    left: 50%;\n    margin: -0.64285714em 0em 0em -0.64285714em;\n    width: 1.28571429em;\n    height: 1.28571429em;\n    border-radius: 500rem;\n    border: 0.2em solid rgba(0, 0, 0, 0.1);\n  }\n  .ui.loading.dropdown > i.icon:after {\n    position: absolute;\n    content: '';\n    top: 50%;\n    left: 50%;\n    -webkit-box-shadow: 0px 0px 0px 1px transparent;\n    box-shadow: 0px 0px 0px 1px transparent;\n    margin: -0.64285714em 0em 0em -0.64285714em;\n    width: 1.28571429em;\n    height: 1.28571429em;\n    -webkit-animation: dropdown-spin 0.6s linear;\n    animation: dropdown-spin 0.6s linear;\n    -webkit-animation-iteration-count: infinite;\n    animation-iteration-count: infinite;\n    border-radius: 500rem;\n    border-color: ", " transparent transparent;\n    border-style: solid;\n    border-width: 0.2em;\n  }\n\n  /* Coupling */\n  .ui.loading.dropdown.button > i.icon:before,\n  .ui.loading.dropdown.button > i.icon:after {\n    display: none;\n  }\n  @-webkit-keyframes dropdown-spin {\n    from {\n      -webkit-transform: rotate(0deg);\n      transform: rotate(0deg);\n    }\n    to {\n      -webkit-transform: rotate(360deg);\n      transform: rotate(360deg);\n    }\n  }\n  @keyframes dropdown-spin {\n    from {\n      -webkit-transform: rotate(0deg);\n      transform: rotate(0deg);\n    }\n    to {\n      -webkit-transform: rotate(360deg);\n      transform: rotate(360deg);\n    }\n  }\n\n  /*--------------------\n     Default Text\n----------------------*/\n\n  .ui.dropdown:not(.button) > .default.text,\n  .ui.default.dropdown:not(.button) > .text {\n    color: ", ";\n  }\n  .ui.dropdown:not(.button) > input:focus ~ .default.text,\n  .ui.default.dropdown:not(.button) > input:focus ~ .text {\n    color: ", ";\n  }\n\n  /*--------------------\n        Loading\n----------------------*/\n\n  .ui.loading.dropdown > .text {\n    -webkit-transition: none;\n    transition: none;\n  }\n\n  /* Used To Check Position */\n  .ui.dropdown .loading.menu {\n    display: block;\n    visibility: hidden;\n    z-index: -1;\n  }\n  .ui.dropdown > .loading.menu {\n    left: 0px !important;\n    right: auto !important;\n  }\n  .ui.dropdown > .menu .loading.menu {\n    left: 100% !important;\n    right: auto !important;\n  }\n\n  /*--------------------\n    Keyboard Select\n----------------------*/\n\n  /* Selected Item */\n  .ui.dropdown.selected,\n  .ui.dropdown .menu .selected.item {\n    background: rgba(0, 0, 0, 0.03);\n    color: ", ";\n  }\n\n  /*--------------------\n    Search Filtered\n----------------------*/\n\n  /* Filtered Item */\n  .ui.dropdown > .filtered.text {\n    visibility: hidden;\n  }\n  .ui.dropdown .filtered.item {\n    display: none !important;\n  }\n\n  /*--------------------\n        Error\n----------------------*/\n\n  .ui.dropdown.error,\n  .ui.dropdown.error > .text,\n  .ui.dropdown.error > .default.text {\n    color: #9f3a38;\n  }\n  .ui.selection.dropdown.error {\n    background: ", ";\n    border-color: ", ";\n  }\n  .ui.selection.dropdown.error:hover {\n    border-color: ", ";\n  }\n  .ui.dropdown.error > .menu,\n  .ui.dropdown.error > .menu .menu {\n    border-color: ", ";\n  }\n  .ui.dropdown.error > .menu > .item {\n    color: ", ";\n  }\n  .ui.multiple.selection.error.dropdown > .label {\n    border-color: ", ";\n  }\n\n  /* Item Hover */\n  .ui.dropdown.error > .menu > .item:hover {\n    background-color: ", ";\n  }\n\n  /* Item Active */\n  .ui.dropdown.error > .menu .active.item {\n    background-color: ", ";\n  }\n\n  /*--------------------\n        Clear\n----------------------*/\n\n  .ui.dropdown > .clear.dropdown.icon {\n    opacity: 0.8;\n    -webkit-transition: opacity 0.1s ease;\n    transition: opacity 0.1s ease;\n  }\n  .ui.dropdown > .clear.dropdown.icon:hover {\n    opacity: 1;\n  }\n\n  /*--------------------\n        Disabled\n----------------------*/\n\n  /* Disabled */\n  .ui.disabled.dropdown,\n  .ui.dropdown .menu > .disabled.item {\n    cursor: default;\n    pointer-events: none;\n    opacity: 0.45;\n  }\n\n  /*******************************\n           Variations\n*******************************/\n\n  /*--------------\n    Direction\n---------------*/\n\n  /* Flyout Direction */\n  .ui.dropdown .menu {\n    left: 0px;\n  }\n\n  /* Default Side (Right) */\n  .ui.dropdown .right.menu > .menu,\n  .ui.dropdown .menu .right.menu {\n    left: 100% !important;\n    right: auto !important;\n    border-radius: 0.28571429rem !important;\n  }\n\n  /* Leftward Opening Menu */\n  .ui.dropdown > .left.menu {\n    left: auto !important;\n    right: 0px !important;\n  }\n  .ui.dropdown > .left.menu .menu,\n  .ui.dropdown .menu .left.menu {\n    left: auto;\n    right: 100%;\n    margin: 0em -0.5em 0em 0em !important;\n    border-radius: 0.28571429rem !important;\n  }\n  .ui.dropdown .item .left.dropdown.icon,\n  .ui.dropdown .left.menu .item .dropdown.icon {\n    width: auto;\n    float: left;\n    margin: 0em 0em 0em 0em;\n  }\n  .ui.dropdown .item .left.dropdown.icon,\n  .ui.dropdown .left.menu .item .dropdown.icon {\n    width: auto;\n    float: left;\n    margin: 0em 0em 0em 0em;\n  }\n  .ui.dropdown .item .left.dropdown.icon + .text,\n  .ui.dropdown .left.menu .item .dropdown.icon + .text {\n    margin-left: 1em;\n    margin-right: 0em;\n  }\n\n  /*--------------\n     Upward\n---------------*/\n\n  /* Upward Main Menu */\n  .ui.upward.dropdown > .menu {\n    top: auto;\n    bottom: 100%;\n    -webkit-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.08);\n    box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.08);\n    border-radius: 0.28571429rem 0.28571429rem 0em 0em;\n  }\n\n  /* Upward Sub Menu */\n  .ui.dropdown .upward.menu {\n    top: auto !important;\n    bottom: 0 !important;\n  }\n\n  /* Active Upward */\n  .ui.simple.upward.active.dropdown,\n  .ui.simple.upward.dropdown:hover {\n    border-radius: 0.28571429rem 0.28571429rem 0em 0em !important;\n  }\n  .ui.upward.dropdown.button:not(.pointing):not(.floating).active {\n    border-radius: 0.28571429rem 0.28571429rem 0em 0em;\n  }\n\n  /* Selection */\n  .ui.upward.selection.dropdown .menu {\n    border-top-width: 1px !important;\n    border-bottom-width: 0px !important;\n    -webkit-box-shadow: 0px -2px 3px 0px rgba(0, 0, 0, 0.08);\n    box-shadow: 0px -2px 3px 0px rgba(0, 0, 0, 0.08);\n    border-top-left-radius: 20px;\n    border-top-right-radius: 20px;\n  }\n  .ui.upward.selection.dropdown:hover {\n    -webkit-box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.05);\n    box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.05);\n  }\n\n  /* Active Upward */\n  .ui.active.upward.selection.dropdown {\n    border-radius: 0em 0em 20px 20px !important;\n  }\n\n  /* Visible Upward */\n  .ui.upward.selection.dropdown.visible {\n    -webkit-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.08);\n    box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.08);\n    border-radius: 0em 0em 20px 20px !important;\n  }\n\n  /* Visible Hover Upward */\n  .ui.upward.active.selection.dropdown:hover {\n    -webkit-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.05);\n    box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.05);\n  }\n  .ui.upward.active.selection.dropdown:hover .menu {\n    -webkit-box-shadow: 0px -2px 3px 0px rgba(0, 0, 0, 0.08);\n    box-shadow: 0px -2px 3px 0px rgba(0, 0, 0, 0.08);\n  }\n\n  /*--------------\n     Simple\n---------------*/\n\n  /*  Selection Menu */\n  .ui.scrolling.dropdown .menu,\n  .ui.dropdown .scrolling.menu {\n    overflow-x: hidden;\n    overflow-y: auto;\n  }\n  .ui.scrolling.dropdown .menu {\n    overflow-x: hidden;\n    overflow-y: auto;\n    -webkit-backface-visibility: hidden;\n    backface-visibility: hidden;\n    -webkit-overflow-scrolling: touch;\n    min-width: 100% !important;\n    width: auto !important;\n  }\n  .ui.dropdown .scrolling.menu {\n    position: static;\n    overflow-y: auto;\n    border: none;\n    -webkit-box-shadow: none !important;\n    box-shadow: none !important;\n    border-radius: 0 !important;\n    margin: 0 !important;\n    min-width: 100% !important;\n    width: auto !important;\n    border-top: 1px solid rgba(34, 36, 38, 0.15);\n  }\n  .ui.scrolling.dropdown .menu .item.item.item,\n  .ui.dropdown .scrolling.menu > .item.item.item {\n    border-top: none;\n  }\n  .ui.scrolling.dropdown .menu .item:first-child,\n  .ui.dropdown .scrolling.menu .item:first-child {\n    border-top: none;\n  }\n  .ui.dropdown > .animating.menu .scrolling.menu,\n  .ui.dropdown > .visible.menu .scrolling.menu {\n    display: block;\n  }\n\n  /* Scrollbar in IE */\n  @media all and (-ms-high-contrast: none) {\n    .ui.scrolling.dropdown .menu,\n    .ui.dropdown .scrolling.menu {\n      min-width: calc(100% - 17px);\n    }\n  }\n  @media only screen and (max-width: 767px) {\n    .ui.scrolling.dropdown .menu,\n    .ui.dropdown .scrolling.menu {\n      max-height: 10.28571429rem;\n    }\n  }\n  @media only screen and (min-width: 768px) {\n    .ui.scrolling.dropdown .menu,\n    .ui.dropdown .scrolling.menu {\n      max-height: 15.42857143rem;\n    }\n  }\n  @media only screen and (min-width: 992px) {\n    .ui.scrolling.dropdown .menu,\n    .ui.dropdown .scrolling.menu {\n      max-height: 20.57142857rem;\n    }\n  }\n  @media only screen and (min-width: 1920px) {\n    .ui.scrolling.dropdown .menu,\n    .ui.dropdown .scrolling.menu {\n      max-height: 20.57142857rem;\n    }\n  }\n\n  /*--------------\n     Simple\n---------------*/\n\n  /* Displays without javascript */\n  .ui.simple.dropdown .menu:before,\n  .ui.simple.dropdown .menu:after {\n    display: none;\n  }\n  .ui.simple.dropdown .menu {\n    position: absolute;\n    display: block;\n    overflow: hidden;\n    top: -9999px !important;\n    opacity: 0;\n    width: 0;\n    height: 0;\n    -webkit-transition: opacity 0.1s ease;\n    transition: opacity 0.1s ease;\n  }\n  .ui.simple.active.dropdown,\n  .ui.simple.dropdown:hover {\n    border-bottom-left-radius: 0em !important;\n    border-bottom-right-radius: 0em !important;\n  }\n  .ui.simple.active.dropdown > .menu,\n  .ui.simple.dropdown:hover > .menu {\n    overflow: visible;\n    width: auto;\n    height: auto;\n    top: 100% !important;\n    opacity: 1;\n  }\n  .ui.simple.dropdown > .menu > .item:active > .menu,\n  .ui.simple.dropdown:hover > .menu > .item:hover > .menu {\n    overflow: visible;\n    width: auto;\n    height: auto;\n    top: 0% !important;\n    left: 100% !important;\n    opacity: 1;\n  }\n  .ui.simple.disabled.dropdown:hover .menu {\n    display: none;\n    height: 0px;\n    width: 0px;\n    overflow: hidden;\n  }\n\n  /* Visible */\n  .ui.simple.visible.dropdown > .menu {\n    display: block;\n  }\n\n  /*--------------\n      Fluid\n---------------*/\n\n  .ui.fluid.dropdown {\n    display: block;\n    width: 100%;\n    min-width: 0em;\n  }\n  .ui.fluid.dropdown > .dropdown.icon {\n    float: right;\n  }\n\n  /*--------------\n    Floating\n---------------*/\n\n  .ui.floating.dropdown .menu {\n    left: 0;\n    right: auto;\n    -webkit-box-shadow: 0px 2px 4px 0px rgba(34, 36, 38, 0.12),\n      0px 2px 10px 0px rgba(34, 36, 38, 0.15) !important;\n    box-shadow: 0px 2px 4px 0px rgba(34, 36, 38, 0.12),\n      0px 2px 10px 0px rgba(34, 36, 38, 0.15) !important;\n    border-radius: 0.28571429rem !important;\n  }\n  .ui.floating.dropdown > .menu {\n    margin-top: 0.5em !important;\n    border-radius: 0.28571429rem !important;\n  }\n\n  /*--------------\n     Pointing\n---------------*/\n\n  .ui.pointing.dropdown > .menu {\n    top: 100%;\n    margin-top: 0.78571429rem;\n    border-radius: 0.28571429rem;\n  }\n  .ui.pointing.dropdown > .menu:after {\n    display: block;\n    position: absolute;\n    pointer-events: none;\n    content: '';\n    visibility: visible;\n    -webkit-transform: rotate(45deg);\n    transform: rotate(45deg);\n    width: 0.5em;\n    height: 0.5em;\n    -webkit-box-shadow: -1px -1px 0px 0px rgba(34, 36, 38, 0.15);\n    box-shadow: -1px -1px 0px 0px rgba(34, 36, 38, 0.15);\n    background: #ffffff;\n    z-index: 2;\n  }\n  .ui.pointing.dropdown > .menu:after {\n    top: -0.25em;\n    left: 50%;\n    margin: 0em 0em 0em -0.25em;\n  }\n\n  /* Top Left Pointing */\n  .ui.top.left.pointing.dropdown > .menu {\n    top: 100%;\n    bottom: auto;\n    left: 0%;\n    right: auto;\n    margin: 1em 0em 0em;\n  }\n  .ui.top.left.pointing.dropdown > .menu {\n    top: 100%;\n    bottom: auto;\n    left: 0%;\n    right: auto;\n    margin: 1em 0em 0em;\n  }\n  .ui.top.left.pointing.dropdown > .menu:after {\n    top: -0.25em;\n    left: 1em;\n    right: auto;\n    margin: 0em;\n    -webkit-transform: rotate(45deg);\n    transform: rotate(45deg);\n  }\n\n  /* Top Right Pointing */\n  .ui.top.right.pointing.dropdown > .menu {\n    top: 100%;\n    bottom: auto;\n    right: 0%;\n    left: auto;\n    margin: 1em 0em 0em;\n  }\n  .ui.top.pointing.dropdown > .left.menu:after,\n  .ui.top.right.pointing.dropdown > .menu:after {\n    top: -0.25em;\n    left: auto !important;\n    right: 1em !important;\n    margin: 0em;\n    -webkit-transform: rotate(45deg);\n    transform: rotate(45deg);\n  }\n\n  /* Left Pointing */\n  .ui.left.pointing.dropdown > .menu {\n    top: 0%;\n    left: 100%;\n    right: auto;\n    margin: 0em 0em 0em 1em;\n  }\n  .ui.left.pointing.dropdown > .menu:after {\n    top: 1em;\n    left: -0.25em;\n    margin: 0em 0em 0em 0em;\n    -webkit-transform: rotate(-45deg);\n    transform: rotate(-45deg);\n  }\n  .ui.left:not(.top):not(.bottom).pointing.dropdown > .left.menu {\n    left: auto !important;\n    right: 100% !important;\n    margin: 0em 1em 0em 0em;\n  }\n  .ui.left:not(.top):not(.bottom).pointing.dropdown > .left.menu:after {\n    top: 1em;\n    left: auto;\n    right: -0.25em;\n    margin: 0em 0em 0em 0em;\n    -webkit-transform: rotate(135deg);\n    transform: rotate(135deg);\n  }\n\n  /* Right Pointing */\n  .ui.right.pointing.dropdown > .menu {\n    top: 0%;\n    left: auto;\n    right: 100%;\n    margin: 0em 1em 0em 0em;\n  }\n  .ui.right.pointing.dropdown > .menu:after {\n    top: 1em;\n    left: auto;\n    right: -0.25em;\n    margin: 0em 0em 0em 0em;\n    -webkit-transform: rotate(135deg);\n    transform: rotate(135deg);\n  }\n\n  /* Bottom Pointing */\n  .ui.bottom.pointing.dropdown > .menu {\n    top: auto;\n    bottom: 100%;\n    left: 0%;\n    right: auto;\n    margin: 0em 0em 1em;\n  }\n  .ui.bottom.pointing.dropdown > .menu:after {\n    top: auto;\n    bottom: -0.25em;\n    right: auto;\n    margin: 0em;\n    -webkit-transform: rotate(-135deg);\n    transform: rotate(-135deg);\n  }\n\n  /* Reverse Sub-Menu Direction */\n  .ui.bottom.pointing.dropdown > .menu .menu {\n    top: auto !important;\n    bottom: 0px !important;\n  }\n\n  /* Bottom Left */\n  .ui.bottom.left.pointing.dropdown > .menu {\n    left: 0%;\n    right: auto;\n  }\n  .ui.bottom.left.pointing.dropdown > .menu:after {\n    left: 1em;\n    right: auto;\n  }\n\n  /* Bottom Right */\n  .ui.bottom.right.pointing.dropdown > .menu {\n    right: 0%;\n    left: auto;\n  }\n  .ui.bottom.right.pointing.dropdown > .menu:after {\n    left: auto;\n    right: 1em;\n  }\n\n  /* Upward pointing */\n  .ui.pointing.upward.dropdown .menu,\n  .ui.top.pointing.upward.dropdown .menu {\n    top: auto !important;\n    bottom: 100% !important;\n    margin: 0em 0em 0.78571429rem;\n    border-radius: 0.28571429rem;\n  }\n  .ui.pointing.upward.dropdown .menu:after,\n  .ui.top.pointing.upward.dropdown .menu:after {\n    top: 100% !important;\n    bottom: auto !important;\n    -webkit-box-shadow: 1px 1px 0px 0px rgba(34, 36, 38, 0.15);\n    box-shadow: 1px 1px 0px 0px rgba(34, 36, 38, 0.15);\n    margin: -0.25em 0em 0em;\n  }\n\n  /* Right Pointing Upward */\n  .ui.right.pointing.upward.dropdown:not(.top):not(.bottom) .menu {\n    top: auto !important;\n    bottom: 0 !important;\n    margin: 0em 1em 0em 0em;\n  }\n  .ui.right.pointing.upward.dropdown:not(.top):not(.bottom) .menu:after {\n    top: auto !important;\n    bottom: 0 !important;\n    margin: 0em 0em 1em 0em;\n    -webkit-box-shadow: -1px -1px 0px 0px rgba(34, 36, 38, 0.15);\n    box-shadow: -1px -1px 0px 0px rgba(34, 36, 38, 0.15);\n  }\n\n  /* Left Pointing Upward */\n  .ui.left.pointing.upward.dropdown:not(.top):not(.bottom) .menu {\n    top: auto !important;\n    bottom: 0 !important;\n    margin: 0em 0em 0em 1em;\n  }\n  .ui.left.pointing.upward.dropdown:not(.top):not(.bottom) .menu:after {\n    top: auto !important;\n    bottom: 0 !important;\n    margin: 0em 0em 1em 0em;\n    -webkit-box-shadow: -1px -1px 0px 0px rgba(34, 36, 38, 0.15);\n    box-shadow: -1px -1px 0px 0px rgba(34, 36, 38, 0.15);\n  }\n\n  /*******************************\n         Theme Overrides\n*******************************/\n\n  /* Dropdown Carets */\n  .ui.dropdown > .dropdown.icon {\n    font-family: 'Dropdown';\n    line-height: 1;\n    height: 1em;\n    width: 1.23em;\n    -webkit-backface-visibility: hidden;\n    backface-visibility: hidden;\n    font-weight: normal;\n    font-style: normal;\n    text-align: center;\n  }\n  .ui.dropdown > .dropdown.icon {\n    width: auto;\n  }\n  .ui.dropdown > .dropdown.icon:before {\n    content: '\f0d7';\n  }\n\n  /* Sub Menu */\n  .ui.dropdown .menu .item .dropdown.icon:before {\n    content: '\f0da' /*rtl:'\f0d9'*/;\n  }\n  .ui.dropdown .item .left.dropdown.icon:before,\n  .ui.dropdown .left.menu .item .dropdown.icon:before {\n    content: '\f0d9' /*rtl:\"\f0da\"*/;\n  }\n\n  /* Vertical Menu Dropdown */\n  .ui.vertical.menu .dropdown.item > .dropdown.icon:before {\n    content: '\f0da' /*rtl:\"\f0d9\"*/;\n  }\n  .ui.dropdown > .clear.icon:before {\n    content: '\f00d';\n  }\n\n  .ui.selection.active.dropdown .menu::-webkit-scrollbar {\n    width: 7px;\n    border-radius: 50px;\n    z-index: -1px;\n  }\n\n  .ui.selection.active.dropdown .menu::-webkit-scrollbar-thumb {\n    background-color: ", ";\n    border-radius: 50px;\n  }\n\n  .ui.selection.active.dropdown .menu::-webkit-scrollbar-thumb:hover {\n    background-color: ", ";\n  }\n  /* Icons for Reference (Subsetted in 2.4.0)\n  .dropdown.down:before { content: \"\f0d7\"; }\n  .dropdown.up:before { content: \"\f0d8\"; }\n  .dropdown.left:before { content: \"\f0d9\"; }\n  .dropdown.right:before { content: \"\f0da\"; }\n  .dropdown.close:before { content: \"\f00d\"; }\n*/\n\n  /*******************************\n        User Overrides\n*******************************/\n\n  small {\n    margin-left: 15px;\n    font-size: 10px;\n    color: ", ";\n  }\n"], ["\n  font-family: MontSerrat !important;\n  width: 100% !important;\n  display: flex !important;\n  flex-direction: column !important;\n  padding-bottom: ", ";\n\n  label {\n    font-size: 14px;\n    margin-left: 15px;\n    color: ", ";\n  }\n\n  /*!\n * # Semantic UI 2.4.0 - Dropdown\n * http://github.com/semantic-org/semantic-ui/\n *\n *\n * Released under the MIT license\n * http://opensource.org/licenses/MIT\n *\n */\n\n  /*******************************\n            Dropdown\n*******************************/\n\n  .ui.dropdown {\n    cursor: pointer;\n    position: relative;\n    display: inline-block;\n    outline: none;\n    text-align: ", ";\n    color: ", ";\n    -webkit-transition: width 0.1s ease, -webkit-box-shadow 0.1s ease;\n    transition: width 0.1s ease, -webkit-box-shadow 0.1s ease;\n    transition: box-shadow 0.1s ease, width 0.1s ease;\n    transition: box-shadow 0.1s ease, width 0.1s ease,\n      -webkit-box-shadow 0.1s ease;\n    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);\n  }\n\n  /*******************************\n            Content\n*******************************/\n\n  /*--------------\n      Menu\n---------------*/\n\n  .ui.dropdown .menu {\n    cursor: auto;\n    position: absolute;\n    display: none;\n    outline: none;\n    top: 100%;\n    min-width: -webkit-max-content;\n    min-width: -moz-max-content;\n    min-width: max-content;\n    margin: 0em;\n    padding: 0em 0em;\n    background: #ffffff;\n    font-size: 1em;\n    text-shadow: none;\n    text-align: left;\n    -webkit-box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n    box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n    border: 1px solid rgba(34, 36, 38, 0.15);\n    border-radius: ", ";\n    -webkit-transition: opacity 0.1s ease;\n    transition: opacity 0.1s ease;\n    z-index: 11;\n    will-change: transform, opacity;\n    /* border-top: ", ";\n        border-left: ", ";\n        border-right: ", "; */\n  }\n  .ui.dropdown .menu > * {\n    white-space: nowrap;\n  }\n\n  /*--------------\n  Hidden Input\n---------------*/\n\n  .ui.dropdown > input:not(.search):first-child,\n  .ui.dropdown > select {\n    display: none !important;\n  }\n\n  /*--------------\n Dropdown Icon\n---------------*/\n\n  .ui.dropdown > .dropdown.icon {\n    position: relative;\n    width: auto;\n    font-size: 0.85714286em;\n    margin: 0em 0em 0em 1em;\n  }\n  .ui.dropdown .menu > .item .dropdown.icon {\n    width: auto;\n    float: right;\n    margin: 0em 0em 0em 1em;\n  }\n  .ui.dropdown .menu > .item .dropdown.icon + .text {\n    margin-right: 1em;\n  }\n\n  /*--------------\n      Text\n---------------*/\n\n  .ui.dropdown > .text {\n    display: inline-block;\n    -webkit-transition: none;\n    transition: none;\n  }\n\n  /*--------------\n    Menu Item\n---------------*/\n\n  .ui.dropdown .menu > .item {\n    position: relative;\n    cursor: pointer;\n    display: block;\n    border: none;\n    height: auto;\n    text-align: left;\n    border-top: none;\n    line-height: 1em;\n    color: ", ";\n    padding: 0.78571429rem 1.14285714rem !important;\n    font-size: 1rem;\n    text-transform: none;\n    font-weight: normal;\n    -webkit-box-shadow: none;\n    box-shadow: none;\n    -webkit-touch-callout: none;\n  }\n  .ui.dropdown .menu > .item:first-child {\n    border-top-width: 0px;\n  }\n\n  /*--------------\n  Floated Content\n---------------*/\n\n  .ui.dropdown > .text > [class*='right floated'],\n  .ui.dropdown .menu .item > [class*='right floated'] {\n    float: right !important;\n    margin-right: 0em !important;\n    margin-left: 1em !important;\n  }\n  .ui.dropdown > .text > [class*='left floated'],\n  .ui.dropdown .menu .item > [class*='left floated'] {\n    float: left !important;\n    margin-left: 0em !important;\n    margin-right: 1em !important;\n  }\n  .ui.dropdown .menu .item > .icon.floated,\n  .ui.dropdown .menu .item > .flag.floated,\n  .ui.dropdown .menu .item > .image.floated,\n  .ui.dropdown .menu .item > img.floated {\n    margin-top: 0em;\n  }\n\n  /*--------------\n  Menu Divider\n---------------*/\n\n  .ui.dropdown .menu > .header {\n    margin: 1rem 0rem 0.75rem;\n    padding: 0em 1.14285714rem;\n    color: rgba(0, 0, 0, 0.85);\n    font-size: 0.78571429em;\n    font-weight: bold;\n    text-transform: uppercase;\n  }\n  .ui.dropdown .menu > .divider {\n    border-top: 1px solid rgba(34, 36, 38, 0.1);\n    height: 0em;\n    margin: 0.5em 0em;\n  }\n  .ui.dropdown.dropdown .menu > .input {\n    width: auto;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    margin: 1.14285714rem 0.78571429rem;\n    min-width: 10rem;\n  }\n  .ui.dropdown .menu > .header + .input {\n    margin-top: 0em;\n  }\n  .ui.dropdown .menu > .input:not(.transparent) input {\n    padding: 0.5em 1em;\n  }\n  .ui.dropdown .menu > .input:not(.transparent) .button,\n  .ui.dropdown .menu > .input:not(.transparent) .icon,\n  .ui.dropdown .menu > .input:not(.transparent) .label {\n    padding-top: 0.5em;\n    padding-bottom: 0.5em;\n  }\n\n  /*-----------------\n  Item Description\n-------------------*/\n\n  .ui.dropdown > .text > .description,\n  .ui.dropdown .menu > .item > .description {\n    float: right;\n    margin: 0em 0em 0em 1em;\n    color: rgba(0, 0, 0, 0.4);\n  }\n\n  /*-----------------\n       Message\n-------------------*/\n\n  .ui.dropdown .menu > .message {\n    padding: 0.78571429rem 1.14285714rem;\n    font-weight: normal;\n  }\n  .ui.dropdown .menu > .message:not(.ui) {\n    color: rgba(0, 0, 0, 0.4);\n  }\n\n  /*--------------\n    Sub Menu\n---------------*/\n\n  .ui.dropdown .menu .menu {\n    top: 0% !important;\n    left: 100%;\n    right: auto;\n    margin: 0em 0em 0em -0.5em !important;\n    border-radius: 0.28571429rem !important;\n    z-index: 21 !important;\n  }\n\n  /* Hide Arrow */\n  .ui.dropdown .menu .menu:after {\n    display: none;\n  }\n\n  /*--------------\n   Sub Elements\n---------------*/\n\n  /* Icons / Flags / Labels / Image */\n  .ui.dropdown > .text > .icon,\n  .ui.dropdown > .text > .label,\n  .ui.dropdown > .text > .flag,\n  .ui.dropdown > .text > img,\n  .ui.dropdown > .text > .image {\n    margin-top: 0em;\n  }\n  .ui.dropdown .menu > .item > .icon,\n  .ui.dropdown .menu > .item > .label,\n  .ui.dropdown .menu > .item > .flag,\n  .ui.dropdown .menu > .item > .image,\n  .ui.dropdown .menu > .item > img {\n    margin-top: 0em;\n  }\n  .ui.dropdown > .text > .icon,\n  .ui.dropdown > .text > .label,\n  .ui.dropdown > .text > .flag,\n  .ui.dropdown > .text > img,\n  .ui.dropdown > .text > .image,\n  .ui.dropdown .menu > .item > .icon,\n  .ui.dropdown .menu > .item > .label,\n  .ui.dropdown .menu > .item > .flag,\n  .ui.dropdown .menu > .item > .image,\n  .ui.dropdown .menu > .item > img {\n    margin-left: 0em;\n    float: none;\n    margin-right: 0.78571429rem;\n  }\n\n  /*--------------\n     Image\n---------------*/\n\n  .ui.dropdown > .text > img,\n  .ui.dropdown > .text > .image,\n  .ui.dropdown .menu > .item > .image,\n  .ui.dropdown .menu > .item > img {\n    display: inline-block;\n    vertical-align: top;\n    width: auto;\n    margin-top: -0.5em;\n    margin-bottom: -0.5em;\n    max-height: 2em;\n  }\n\n  /*******************************\n            Coupling\n*******************************/\n\n  /*--------------\n      Menu\n---------------*/\n\n  /* Remove Menu Item Divider */\n  .ui.dropdown .ui.menu > .item:before,\n  .ui.menu .ui.dropdown .menu > .item:before {\n    display: none;\n  }\n\n  /* Prevent Menu Item Border */\n  .ui.menu .ui.dropdown .menu .active.item {\n    border-left: none;\n  }\n\n  /* Automatically float dropdown menu right on last menu item */\n  .ui.menu .right.menu .dropdown:last-child .menu,\n  .ui.menu .right.dropdown.item .menu,\n  .ui.buttons > .ui.dropdown:last-child .menu {\n    left: auto;\n    right: 0em;\n  }\n\n  /*--------------\n      Label\n---------------*/\n\n  /* Dropdown Menu */\n  .ui.label.dropdown .menu {\n    min-width: 100%;\n  }\n\n  /*--------------\n     Button\n---------------*/\n\n  /* No Margin On Icon Button */\n  .ui.dropdown.icon.button > .dropdown.icon {\n    margin: 0em;\n  }\n  .ui.button.dropdown .menu {\n    min-width: 100%;\n  }\n\n  /*******************************\n              Types\n*******************************/\n\n  /*--------------\n    Selection\n---------------*/\n\n  /* Displays like a select box */\n  .ui.selection.dropdown {\n    cursor: pointer;\n    word-wrap: break-word;\n    line-height: 1em;\n    white-space: normal;\n    outline: 0;\n    -webkit-transform: rotateZ(0deg);\n    transform: rotateZ(0deg);\n    min-width: 14em;\n    min-height: 2.71428571em;\n    background: ", ";\n    display: inline-block;\n    padding: 0.78571429em 2.6em 0.78571429em 1.1em;\n    color: ", ";\n    -webkit-box-shadow: none;\n    box-shadow: none;\n    border: 1px solid\n      ", ";\n    border-radius: ", ";\n    -webkit-transition: width 0.1s ease, -webkit-box-shadow 0.1s ease;\n    transition: width 0.1s ease, -webkit-box-shadow 0.1s ease;\n    transition: box-shadow 0.1s ease, width 0.1s ease;\n    transition: box-shadow 0.1s ease, width 0.1s ease,\n      -webkit-box-shadow 0.1s ease;\n    border-radius: ", ";\n    border-top: ", ";\n    border-left: ", ";\n    border-right: ", ";\n  }\n  .ui.selection.dropdown.visible,\n  .ui.selection.dropdown.active {\n    z-index: 10;\n  }\n  select.ui.dropdown {\n    height: 38px;\n    padding: 0.5em;\n    border: 1px solid rgba(34, 36, 38, 0.15);\n    visibility: visible;\n  }\n  .ui.selection.dropdown > .search.icon,\n  .ui.selection.dropdown > .delete.icon,\n  .ui.selection.dropdown > .dropdown.icon {\n    cursor: pointer;\n    position: absolute;\n    width: auto;\n    height: auto;\n    line-height: 1.21428571em;\n    top: 0.78571429em;\n    right: 1em;\n    z-index: 3;\n    margin: -0.78571429em;\n    padding: 0.91666667em;\n    opacity: 0.8;\n    -webkit-transition: opacity 0.1s ease;\n    transition: opacity 0.1s ease;\n  }\n\n  /* Compact */\n  .ui.compact.selection.dropdown {\n    min-width: 0px;\n  }\n\n  /*  Selection Menu */\n  .ui.selection.dropdown .menu {\n    overflow-x: hidden;\n    overflow-y: auto;\n    -webkit-backface-visibility: hidden;\n    backface-visibility: hidden;\n    -webkit-overflow-scrolling: touch;\n    border-top-width: 0px !important;\n    width: auto;\n    outline: none;\n    margin: 0px -1px;\n    min-width: calc(100% + 2px);\n    width: calc(100% + 2px);\n    border-radius: 0em 0em 0.28571429rem 0.28571429rem;\n    -webkit-box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n    box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n    -webkit-transition: opacity 0.1s ease;\n    transition: opacity 0.1s ease;\n    border-bottom-left-radius: 20px;\n    border-bottom-right-radius: 20px;\n  }\n  .ui.selection.dropdown .menu:after,\n  .ui.selection.dropdown .menu:before {\n    display: none;\n  }\n\n  /*--------------\n    Message\n---------------*/\n\n  .ui.selection.dropdown .menu > .message {\n    padding: 0.78571429rem 1.14285714rem;\n  }\n  @media only screen and (max-width: 767px) {\n    .ui.selection.dropdown .menu {\n      max-height: 8.01428571rem;\n    }\n  }\n  @media only screen and (min-width: 768px) {\n    .ui.selection.dropdown .menu {\n      max-height: 10.68571429rem;\n    }\n  }\n  @media only screen and (min-width: 992px) {\n    .ui.selection.dropdown .menu {\n      max-height: 16.02857143rem;\n    }\n  }\n  @media only screen and (min-width: 1920px) {\n    .ui.selection.dropdown .menu {\n      max-height: 21.37142857rem;\n    }\n  }\n\n  /* Menu Item */\n  .ui.selection.dropdown .menu > .item {\n    border-top: 1px solid #fafafa;\n    padding: 0.78571429rem 1.04285714rem !important;\n    white-space: normal;\n    word-wrap: normal;\n  }\n\n  /* User Item */\n  .ui.selection.dropdown .menu > .hidden.addition.item {\n    display: none;\n  }\n\n  /* Hover */\n  .ui.selection.dropdown:hover {\n    border-color: ", ";\n    -webkit-box-shadow: none;\n    box-shadow: none;\n  }\n\n  /* Active */\n  .ui.selection.active.dropdown {\n    border-color: ", ";\n    -webkit-box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n    box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n  }\n  .ui.selection.active.dropdown .menu {\n    border-color: ", ";\n    -webkit-box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n    box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n  }\n\n  /* Focus */\n  .ui.selection.dropdown:focus {\n    border-color: ", ";\n    -webkit-box-shadow: none;\n    box-shadow: none;\n  }\n  .ui.selection.dropdown:focus .menu {\n    border-color: ", ";\n    -webkit-box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n    box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n  }\n\n  /* Visible */\n  .ui.selection.visible.dropdown > .text:not(.default) {\n    font-weight: normal;\n    color: ", ";\n  }\n\n  /* Visible Hover */\n  .ui.selection.active.dropdown:hover {\n    border-color: ", ";\n    -webkit-box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n    box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n  }\n  .ui.selection.active.dropdown:hover .menu {\n    border-color: ", ";\n    -webkit-box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n    box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);\n  }\n\n  /* Dropdown Icon */\n  .ui.active.selection.dropdown > .dropdown.icon,\n  .ui.visible.selection.dropdown > .dropdown.icon {\n    opacity: '';\n    z-index: 3;\n  }\n\n  /* Connecting Border */\n  .ui.active.selection.dropdown {\n    border-bottom-left-radius: 0em !important;\n    border-bottom-right-radius: 0em !important;\n  }\n\n  /* Empty Connecting Border */\n  .ui.active.empty.selection.dropdown {\n    border-radius: 0.28571429rem !important;\n    -webkit-box-shadow: none !important;\n    box-shadow: none !important;\n  }\n  .ui.active.empty.selection.dropdown .menu {\n    border: none !important;\n    -webkit-box-shadow: none !important;\n    box-shadow: none !important;\n  }\n\n  /*--------------\n   Searchable\n---------------*/\n\n  /* Search Selection */\n  .ui.search.dropdown {\n    min-width: '';\n  }\n\n  /* Search Dropdown */\n  .ui.search.dropdown > input.search {\n    background: none transparent !important;\n    border: none !important;\n    -webkit-box-shadow: none !important;\n    box-shadow: none !important;\n    cursor: text;\n    top: 0em;\n    left: 1px;\n    width: 100%;\n    outline: none;\n    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);\n    padding: inherit;\n    color: ", ";\n    text-align: ", ";\n  }\n\n  /* Text Layering */\n  .ui.search.dropdown > input.search {\n    position: absolute;\n    z-index: 2;\n  }\n  .ui.search.dropdown > .text {\n    cursor: text;\n    position: relative;\n    left: 1px;\n    z-index: 3;\n  }\n\n  /* Search Selection */\n  .ui.search.selection.dropdown > input.search {\n    line-height: 1.21428571em;\n    padding: 0.67857143em 2.1em 0.67857143em 1em;\n  }\n\n  /* Used to size multi select input to character width */\n  .ui.search.selection.dropdown > span.sizer {\n    line-height: 1.21428571em;\n    padding: 0.67857143em 2.1em 0.67857143em 1em;\n    display: none;\n    white-space: pre;\n  }\n\n  /* Active/Visible Search */\n  .ui.search.dropdown.active > input.search,\n  .ui.search.dropdown.visible > input.search {\n    cursor: auto;\n    color: ", ";\n  }\n  .ui.search.dropdown.active > .text,\n  .ui.search.dropdown.visible > .text {\n    pointer-events: none;\n  }\n\n  /* Filtered Text */\n  .ui.active.search.dropdown input.search:focus + .text .icon,\n  .ui.active.search.dropdown input.search:focus + .text .flag {\n    opacity: 0.45;\n  }\n  .ui.active.search.dropdown input.search:focus + .text {\n    color: rgba(115, 115, 115, 0.87) !important;\n  }\n\n  .input.search::placeholder {\n    color: ", ";\n  }\n  /* Search Menu */\n  .ui.search.dropdown .menu {\n    overflow-x: hidden;\n    overflow-y: auto;\n    -webkit-backface-visibility: hidden;\n    backface-visibility: hidden;\n    -webkit-overflow-scrolling: touch;\n  }\n  @media only screen and (max-width: 767px) {\n    .ui.search.dropdown .menu {\n      max-height: 8.01428571rem;\n    }\n  }\n  @media only screen and (min-width: 768px) {\n    .ui.search.dropdown .menu {\n      max-height: 10.68571429rem;\n    }\n  }\n  @media only screen and (min-width: 992px) {\n    .ui.search.dropdown .menu {\n      max-height: 16.02857143rem;\n    }\n  }\n  @media only screen and (min-width: 1920px) {\n    .ui.search.dropdown .menu {\n      max-height: 21.37142857rem;\n    }\n  }\n\n  /*--------------\n    Multiple\n---------------*/\n\n  /* Multiple Selection */\n  .ui.multiple.dropdown {\n    padding: 0.22619048em 2.1em 0.22619048em 0.35714286em;\n  }\n  .ui.multiple.dropdown .menu {\n    cursor: auto;\n  }\n\n  /* Multiple Search Selection */\n  .ui.multiple.search.dropdown,\n  .ui.multiple.search.dropdown > input.search {\n    cursor: text;\n  }\n\n  /* Selection Label */\n  .ui.multiple.dropdown > .label {\n    -webkit-user-select: none;\n    -moz-user-select: none;\n    -ms-user-select: none;\n    user-select: none;\n    display: inline-block;\n    vertical-align: top;\n    white-space: normal;\n    font-size: 1em;\n    padding: 0.35714286em 0.78571429em;\n    margin: 0.14285714rem 0.28571429rem 0.14285714rem 0.5em;\n    -webkit-box-shadow: 0px 0px 0px 1px rgba(34, 36, 38, 0.15) inset;\n    box-shadow: 0px 0px 0px 1px rgba(34, 36, 38, 0.15) inset;\n    border-radius: 20px;\n    color: ", ";\n    background-color: ", ";\n  }\n\n  /* Dropdown Icon */\n  .ui.multiple.dropdown .dropdown.icon {\n    margin: '';\n    padding: '';\n  }\n\n  /* Text */\n  .ui.multiple.dropdown > .text {\n    position: static;\n    padding: 0;\n    max-width: 100%;\n    margin: 0.45238095em 0em 0.45238095em 0.64285714em;\n    line-height: 1.21428571em;\n  }\n  .ui.multiple.dropdown > .label ~ input.search {\n    margin-left: 0.14285714em !important;\n  }\n  .ui.multiple.dropdown > .label ~ .text {\n    display: none;\n  }\n\n  /*-----------------\n  Multiple Search\n-----------------*/\n\n  /* Prompt Text */\n  .ui.multiple.search.dropdown > .text {\n    display: inline-block;\n    position: absolute;\n    top: 0;\n    left: 0;\n    padding: inherit;\n    margin: 0.45238095em 0em 0.45238095em 0.64285714em;\n    line-height: 1.21428571em;\n  }\n  .ui.multiple.search.dropdown > .label ~ .text {\n    display: none;\n  }\n\n  /* Search */\n  .ui.multiple.search.dropdown > input.search {\n    position: static;\n    padding: 0;\n    max-width: 100%;\n    margin: 0.45238095em 0em 0.45238095em 0.64285714em;\n    width: 2.2em;\n    line-height: 1.21428571em;\n  }\n\n  /*--------------\n     Inline\n---------------*/\n\n  .ui.inline.dropdown {\n    cursor: pointer;\n    display: inline-block;\n    color: inherit;\n  }\n  .ui.inline.dropdown .dropdown.icon {\n    margin: 0em 0.21428571em 0em 0.21428571em;\n    vertical-align: baseline;\n  }\n  .ui.inline.dropdown > .text {\n    font-weight: bold;\n  }\n  .ui.inline.dropdown .menu {\n    cursor: auto;\n    margin-top: 0.21428571em;\n    border-radius: 0.28571429rem;\n  }\n\n  /*******************************\n            States\n*******************************/\n\n  /*--------------------\n        Active\n----------------------*/\n\n  /* Menu Item Active */\n  .ui.dropdown .menu .active.item {\n    background: transparent;\n    font-weight: bold;\n    color: ", ";\n    -webkit-box-shadow: none;\n    box-shadow: none;\n    z-index: 12;\n  }\n\n  /*--------------------\n        Hover\n----------------------*/\n\n  /* Menu Item Hover */\n  .ui.dropdown .menu > .item:hover {\n    background: rgba(0, 0, 0, 0.05);\n    color: ", ";\n    z-index: 13;\n  }\n\n  /*--------------------\n       Loading\n---------------------*/\n\n  .ui.loading.dropdown > i.icon {\n    height: 1em !important;\n  }\n  .ui.loading.selection.dropdown > i.icon {\n    padding: 1.5em 1.28571429em !important;\n  }\n  .ui.loading.dropdown > i.icon:before {\n    position: absolute;\n    content: '';\n    top: 50%;\n    left: 50%;\n    margin: -0.64285714em 0em 0em -0.64285714em;\n    width: 1.28571429em;\n    height: 1.28571429em;\n    border-radius: 500rem;\n    border: 0.2em solid rgba(0, 0, 0, 0.1);\n  }\n  .ui.loading.dropdown > i.icon:after {\n    position: absolute;\n    content: '';\n    top: 50%;\n    left: 50%;\n    -webkit-box-shadow: 0px 0px 0px 1px transparent;\n    box-shadow: 0px 0px 0px 1px transparent;\n    margin: -0.64285714em 0em 0em -0.64285714em;\n    width: 1.28571429em;\n    height: 1.28571429em;\n    -webkit-animation: dropdown-spin 0.6s linear;\n    animation: dropdown-spin 0.6s linear;\n    -webkit-animation-iteration-count: infinite;\n    animation-iteration-count: infinite;\n    border-radius: 500rem;\n    border-color: ", " transparent transparent;\n    border-style: solid;\n    border-width: 0.2em;\n  }\n\n  /* Coupling */\n  .ui.loading.dropdown.button > i.icon:before,\n  .ui.loading.dropdown.button > i.icon:after {\n    display: none;\n  }\n  @-webkit-keyframes dropdown-spin {\n    from {\n      -webkit-transform: rotate(0deg);\n      transform: rotate(0deg);\n    }\n    to {\n      -webkit-transform: rotate(360deg);\n      transform: rotate(360deg);\n    }\n  }\n  @keyframes dropdown-spin {\n    from {\n      -webkit-transform: rotate(0deg);\n      transform: rotate(0deg);\n    }\n    to {\n      -webkit-transform: rotate(360deg);\n      transform: rotate(360deg);\n    }\n  }\n\n  /*--------------------\n     Default Text\n----------------------*/\n\n  .ui.dropdown:not(.button) > .default.text,\n  .ui.default.dropdown:not(.button) > .text {\n    color: ", ";\n  }\n  .ui.dropdown:not(.button) > input:focus ~ .default.text,\n  .ui.default.dropdown:not(.button) > input:focus ~ .text {\n    color: ", ";\n  }\n\n  /*--------------------\n        Loading\n----------------------*/\n\n  .ui.loading.dropdown > .text {\n    -webkit-transition: none;\n    transition: none;\n  }\n\n  /* Used To Check Position */\n  .ui.dropdown .loading.menu {\n    display: block;\n    visibility: hidden;\n    z-index: -1;\n  }\n  .ui.dropdown > .loading.menu {\n    left: 0px !important;\n    right: auto !important;\n  }\n  .ui.dropdown > .menu .loading.menu {\n    left: 100% !important;\n    right: auto !important;\n  }\n\n  /*--------------------\n    Keyboard Select\n----------------------*/\n\n  /* Selected Item */\n  .ui.dropdown.selected,\n  .ui.dropdown .menu .selected.item {\n    background: rgba(0, 0, 0, 0.03);\n    color: ", ";\n  }\n\n  /*--------------------\n    Search Filtered\n----------------------*/\n\n  /* Filtered Item */\n  .ui.dropdown > .filtered.text {\n    visibility: hidden;\n  }\n  .ui.dropdown .filtered.item {\n    display: none !important;\n  }\n\n  /*--------------------\n        Error\n----------------------*/\n\n  .ui.dropdown.error,\n  .ui.dropdown.error > .text,\n  .ui.dropdown.error > .default.text {\n    color: #9f3a38;\n  }\n  .ui.selection.dropdown.error {\n    background: ", ";\n    border-color: ", ";\n  }\n  .ui.selection.dropdown.error:hover {\n    border-color: ", ";\n  }\n  .ui.dropdown.error > .menu,\n  .ui.dropdown.error > .menu .menu {\n    border-color: ", ";\n  }\n  .ui.dropdown.error > .menu > .item {\n    color: ", ";\n  }\n  .ui.multiple.selection.error.dropdown > .label {\n    border-color: ", ";\n  }\n\n  /* Item Hover */\n  .ui.dropdown.error > .menu > .item:hover {\n    background-color: ", ";\n  }\n\n  /* Item Active */\n  .ui.dropdown.error > .menu .active.item {\n    background-color: ", ";\n  }\n\n  /*--------------------\n        Clear\n----------------------*/\n\n  .ui.dropdown > .clear.dropdown.icon {\n    opacity: 0.8;\n    -webkit-transition: opacity 0.1s ease;\n    transition: opacity 0.1s ease;\n  }\n  .ui.dropdown > .clear.dropdown.icon:hover {\n    opacity: 1;\n  }\n\n  /*--------------------\n        Disabled\n----------------------*/\n\n  /* Disabled */\n  .ui.disabled.dropdown,\n  .ui.dropdown .menu > .disabled.item {\n    cursor: default;\n    pointer-events: none;\n    opacity: 0.45;\n  }\n\n  /*******************************\n           Variations\n*******************************/\n\n  /*--------------\n    Direction\n---------------*/\n\n  /* Flyout Direction */\n  .ui.dropdown .menu {\n    left: 0px;\n  }\n\n  /* Default Side (Right) */\n  .ui.dropdown .right.menu > .menu,\n  .ui.dropdown .menu .right.menu {\n    left: 100% !important;\n    right: auto !important;\n    border-radius: 0.28571429rem !important;\n  }\n\n  /* Leftward Opening Menu */\n  .ui.dropdown > .left.menu {\n    left: auto !important;\n    right: 0px !important;\n  }\n  .ui.dropdown > .left.menu .menu,\n  .ui.dropdown .menu .left.menu {\n    left: auto;\n    right: 100%;\n    margin: 0em -0.5em 0em 0em !important;\n    border-radius: 0.28571429rem !important;\n  }\n  .ui.dropdown .item .left.dropdown.icon,\n  .ui.dropdown .left.menu .item .dropdown.icon {\n    width: auto;\n    float: left;\n    margin: 0em 0em 0em 0em;\n  }\n  .ui.dropdown .item .left.dropdown.icon,\n  .ui.dropdown .left.menu .item .dropdown.icon {\n    width: auto;\n    float: left;\n    margin: 0em 0em 0em 0em;\n  }\n  .ui.dropdown .item .left.dropdown.icon + .text,\n  .ui.dropdown .left.menu .item .dropdown.icon + .text {\n    margin-left: 1em;\n    margin-right: 0em;\n  }\n\n  /*--------------\n     Upward\n---------------*/\n\n  /* Upward Main Menu */\n  .ui.upward.dropdown > .menu {\n    top: auto;\n    bottom: 100%;\n    -webkit-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.08);\n    box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.08);\n    border-radius: 0.28571429rem 0.28571429rem 0em 0em;\n  }\n\n  /* Upward Sub Menu */\n  .ui.dropdown .upward.menu {\n    top: auto !important;\n    bottom: 0 !important;\n  }\n\n  /* Active Upward */\n  .ui.simple.upward.active.dropdown,\n  .ui.simple.upward.dropdown:hover {\n    border-radius: 0.28571429rem 0.28571429rem 0em 0em !important;\n  }\n  .ui.upward.dropdown.button:not(.pointing):not(.floating).active {\n    border-radius: 0.28571429rem 0.28571429rem 0em 0em;\n  }\n\n  /* Selection */\n  .ui.upward.selection.dropdown .menu {\n    border-top-width: 1px !important;\n    border-bottom-width: 0px !important;\n    -webkit-box-shadow: 0px -2px 3px 0px rgba(0, 0, 0, 0.08);\n    box-shadow: 0px -2px 3px 0px rgba(0, 0, 0, 0.08);\n    border-top-left-radius: 20px;\n    border-top-right-radius: 20px;\n  }\n  .ui.upward.selection.dropdown:hover {\n    -webkit-box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.05);\n    box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.05);\n  }\n\n  /* Active Upward */\n  .ui.active.upward.selection.dropdown {\n    border-radius: 0em 0em 20px 20px !important;\n  }\n\n  /* Visible Upward */\n  .ui.upward.selection.dropdown.visible {\n    -webkit-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.08);\n    box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.08);\n    border-radius: 0em 0em 20px 20px !important;\n  }\n\n  /* Visible Hover Upward */\n  .ui.upward.active.selection.dropdown:hover {\n    -webkit-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.05);\n    box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.05);\n  }\n  .ui.upward.active.selection.dropdown:hover .menu {\n    -webkit-box-shadow: 0px -2px 3px 0px rgba(0, 0, 0, 0.08);\n    box-shadow: 0px -2px 3px 0px rgba(0, 0, 0, 0.08);\n  }\n\n  /*--------------\n     Simple\n---------------*/\n\n  /*  Selection Menu */\n  .ui.scrolling.dropdown .menu,\n  .ui.dropdown .scrolling.menu {\n    overflow-x: hidden;\n    overflow-y: auto;\n  }\n  .ui.scrolling.dropdown .menu {\n    overflow-x: hidden;\n    overflow-y: auto;\n    -webkit-backface-visibility: hidden;\n    backface-visibility: hidden;\n    -webkit-overflow-scrolling: touch;\n    min-width: 100% !important;\n    width: auto !important;\n  }\n  .ui.dropdown .scrolling.menu {\n    position: static;\n    overflow-y: auto;\n    border: none;\n    -webkit-box-shadow: none !important;\n    box-shadow: none !important;\n    border-radius: 0 !important;\n    margin: 0 !important;\n    min-width: 100% !important;\n    width: auto !important;\n    border-top: 1px solid rgba(34, 36, 38, 0.15);\n  }\n  .ui.scrolling.dropdown .menu .item.item.item,\n  .ui.dropdown .scrolling.menu > .item.item.item {\n    border-top: none;\n  }\n  .ui.scrolling.dropdown .menu .item:first-child,\n  .ui.dropdown .scrolling.menu .item:first-child {\n    border-top: none;\n  }\n  .ui.dropdown > .animating.menu .scrolling.menu,\n  .ui.dropdown > .visible.menu .scrolling.menu {\n    display: block;\n  }\n\n  /* Scrollbar in IE */\n  @media all and (-ms-high-contrast: none) {\n    .ui.scrolling.dropdown .menu,\n    .ui.dropdown .scrolling.menu {\n      min-width: calc(100% - 17px);\n    }\n  }\n  @media only screen and (max-width: 767px) {\n    .ui.scrolling.dropdown .menu,\n    .ui.dropdown .scrolling.menu {\n      max-height: 10.28571429rem;\n    }\n  }\n  @media only screen and (min-width: 768px) {\n    .ui.scrolling.dropdown .menu,\n    .ui.dropdown .scrolling.menu {\n      max-height: 15.42857143rem;\n    }\n  }\n  @media only screen and (min-width: 992px) {\n    .ui.scrolling.dropdown .menu,\n    .ui.dropdown .scrolling.menu {\n      max-height: 20.57142857rem;\n    }\n  }\n  @media only screen and (min-width: 1920px) {\n    .ui.scrolling.dropdown .menu,\n    .ui.dropdown .scrolling.menu {\n      max-height: 20.57142857rem;\n    }\n  }\n\n  /*--------------\n     Simple\n---------------*/\n\n  /* Displays without javascript */\n  .ui.simple.dropdown .menu:before,\n  .ui.simple.dropdown .menu:after {\n    display: none;\n  }\n  .ui.simple.dropdown .menu {\n    position: absolute;\n    display: block;\n    overflow: hidden;\n    top: -9999px !important;\n    opacity: 0;\n    width: 0;\n    height: 0;\n    -webkit-transition: opacity 0.1s ease;\n    transition: opacity 0.1s ease;\n  }\n  .ui.simple.active.dropdown,\n  .ui.simple.dropdown:hover {\n    border-bottom-left-radius: 0em !important;\n    border-bottom-right-radius: 0em !important;\n  }\n  .ui.simple.active.dropdown > .menu,\n  .ui.simple.dropdown:hover > .menu {\n    overflow: visible;\n    width: auto;\n    height: auto;\n    top: 100% !important;\n    opacity: 1;\n  }\n  .ui.simple.dropdown > .menu > .item:active > .menu,\n  .ui.simple.dropdown:hover > .menu > .item:hover > .menu {\n    overflow: visible;\n    width: auto;\n    height: auto;\n    top: 0% !important;\n    left: 100% !important;\n    opacity: 1;\n  }\n  .ui.simple.disabled.dropdown:hover .menu {\n    display: none;\n    height: 0px;\n    width: 0px;\n    overflow: hidden;\n  }\n\n  /* Visible */\n  .ui.simple.visible.dropdown > .menu {\n    display: block;\n  }\n\n  /*--------------\n      Fluid\n---------------*/\n\n  .ui.fluid.dropdown {\n    display: block;\n    width: 100%;\n    min-width: 0em;\n  }\n  .ui.fluid.dropdown > .dropdown.icon {\n    float: right;\n  }\n\n  /*--------------\n    Floating\n---------------*/\n\n  .ui.floating.dropdown .menu {\n    left: 0;\n    right: auto;\n    -webkit-box-shadow: 0px 2px 4px 0px rgba(34, 36, 38, 0.12),\n      0px 2px 10px 0px rgba(34, 36, 38, 0.15) !important;\n    box-shadow: 0px 2px 4px 0px rgba(34, 36, 38, 0.12),\n      0px 2px 10px 0px rgba(34, 36, 38, 0.15) !important;\n    border-radius: 0.28571429rem !important;\n  }\n  .ui.floating.dropdown > .menu {\n    margin-top: 0.5em !important;\n    border-radius: 0.28571429rem !important;\n  }\n\n  /*--------------\n     Pointing\n---------------*/\n\n  .ui.pointing.dropdown > .menu {\n    top: 100%;\n    margin-top: 0.78571429rem;\n    border-radius: 0.28571429rem;\n  }\n  .ui.pointing.dropdown > .menu:after {\n    display: block;\n    position: absolute;\n    pointer-events: none;\n    content: '';\n    visibility: visible;\n    -webkit-transform: rotate(45deg);\n    transform: rotate(45deg);\n    width: 0.5em;\n    height: 0.5em;\n    -webkit-box-shadow: -1px -1px 0px 0px rgba(34, 36, 38, 0.15);\n    box-shadow: -1px -1px 0px 0px rgba(34, 36, 38, 0.15);\n    background: #ffffff;\n    z-index: 2;\n  }\n  .ui.pointing.dropdown > .menu:after {\n    top: -0.25em;\n    left: 50%;\n    margin: 0em 0em 0em -0.25em;\n  }\n\n  /* Top Left Pointing */\n  .ui.top.left.pointing.dropdown > .menu {\n    top: 100%;\n    bottom: auto;\n    left: 0%;\n    right: auto;\n    margin: 1em 0em 0em;\n  }\n  .ui.top.left.pointing.dropdown > .menu {\n    top: 100%;\n    bottom: auto;\n    left: 0%;\n    right: auto;\n    margin: 1em 0em 0em;\n  }\n  .ui.top.left.pointing.dropdown > .menu:after {\n    top: -0.25em;\n    left: 1em;\n    right: auto;\n    margin: 0em;\n    -webkit-transform: rotate(45deg);\n    transform: rotate(45deg);\n  }\n\n  /* Top Right Pointing */\n  .ui.top.right.pointing.dropdown > .menu {\n    top: 100%;\n    bottom: auto;\n    right: 0%;\n    left: auto;\n    margin: 1em 0em 0em;\n  }\n  .ui.top.pointing.dropdown > .left.menu:after,\n  .ui.top.right.pointing.dropdown > .menu:after {\n    top: -0.25em;\n    left: auto !important;\n    right: 1em !important;\n    margin: 0em;\n    -webkit-transform: rotate(45deg);\n    transform: rotate(45deg);\n  }\n\n  /* Left Pointing */\n  .ui.left.pointing.dropdown > .menu {\n    top: 0%;\n    left: 100%;\n    right: auto;\n    margin: 0em 0em 0em 1em;\n  }\n  .ui.left.pointing.dropdown > .menu:after {\n    top: 1em;\n    left: -0.25em;\n    margin: 0em 0em 0em 0em;\n    -webkit-transform: rotate(-45deg);\n    transform: rotate(-45deg);\n  }\n  .ui.left:not(.top):not(.bottom).pointing.dropdown > .left.menu {\n    left: auto !important;\n    right: 100% !important;\n    margin: 0em 1em 0em 0em;\n  }\n  .ui.left:not(.top):not(.bottom).pointing.dropdown > .left.menu:after {\n    top: 1em;\n    left: auto;\n    right: -0.25em;\n    margin: 0em 0em 0em 0em;\n    -webkit-transform: rotate(135deg);\n    transform: rotate(135deg);\n  }\n\n  /* Right Pointing */\n  .ui.right.pointing.dropdown > .menu {\n    top: 0%;\n    left: auto;\n    right: 100%;\n    margin: 0em 1em 0em 0em;\n  }\n  .ui.right.pointing.dropdown > .menu:after {\n    top: 1em;\n    left: auto;\n    right: -0.25em;\n    margin: 0em 0em 0em 0em;\n    -webkit-transform: rotate(135deg);\n    transform: rotate(135deg);\n  }\n\n  /* Bottom Pointing */\n  .ui.bottom.pointing.dropdown > .menu {\n    top: auto;\n    bottom: 100%;\n    left: 0%;\n    right: auto;\n    margin: 0em 0em 1em;\n  }\n  .ui.bottom.pointing.dropdown > .menu:after {\n    top: auto;\n    bottom: -0.25em;\n    right: auto;\n    margin: 0em;\n    -webkit-transform: rotate(-135deg);\n    transform: rotate(-135deg);\n  }\n\n  /* Reverse Sub-Menu Direction */\n  .ui.bottom.pointing.dropdown > .menu .menu {\n    top: auto !important;\n    bottom: 0px !important;\n  }\n\n  /* Bottom Left */\n  .ui.bottom.left.pointing.dropdown > .menu {\n    left: 0%;\n    right: auto;\n  }\n  .ui.bottom.left.pointing.dropdown > .menu:after {\n    left: 1em;\n    right: auto;\n  }\n\n  /* Bottom Right */\n  .ui.bottom.right.pointing.dropdown > .menu {\n    right: 0%;\n    left: auto;\n  }\n  .ui.bottom.right.pointing.dropdown > .menu:after {\n    left: auto;\n    right: 1em;\n  }\n\n  /* Upward pointing */\n  .ui.pointing.upward.dropdown .menu,\n  .ui.top.pointing.upward.dropdown .menu {\n    top: auto !important;\n    bottom: 100% !important;\n    margin: 0em 0em 0.78571429rem;\n    border-radius: 0.28571429rem;\n  }\n  .ui.pointing.upward.dropdown .menu:after,\n  .ui.top.pointing.upward.dropdown .menu:after {\n    top: 100% !important;\n    bottom: auto !important;\n    -webkit-box-shadow: 1px 1px 0px 0px rgba(34, 36, 38, 0.15);\n    box-shadow: 1px 1px 0px 0px rgba(34, 36, 38, 0.15);\n    margin: -0.25em 0em 0em;\n  }\n\n  /* Right Pointing Upward */\n  .ui.right.pointing.upward.dropdown:not(.top):not(.bottom) .menu {\n    top: auto !important;\n    bottom: 0 !important;\n    margin: 0em 1em 0em 0em;\n  }\n  .ui.right.pointing.upward.dropdown:not(.top):not(.bottom) .menu:after {\n    top: auto !important;\n    bottom: 0 !important;\n    margin: 0em 0em 1em 0em;\n    -webkit-box-shadow: -1px -1px 0px 0px rgba(34, 36, 38, 0.15);\n    box-shadow: -1px -1px 0px 0px rgba(34, 36, 38, 0.15);\n  }\n\n  /* Left Pointing Upward */\n  .ui.left.pointing.upward.dropdown:not(.top):not(.bottom) .menu {\n    top: auto !important;\n    bottom: 0 !important;\n    margin: 0em 0em 0em 1em;\n  }\n  .ui.left.pointing.upward.dropdown:not(.top):not(.bottom) .menu:after {\n    top: auto !important;\n    bottom: 0 !important;\n    margin: 0em 0em 1em 0em;\n    -webkit-box-shadow: -1px -1px 0px 0px rgba(34, 36, 38, 0.15);\n    box-shadow: -1px -1px 0px 0px rgba(34, 36, 38, 0.15);\n  }\n\n  /*******************************\n         Theme Overrides\n*******************************/\n\n  /* Dropdown Carets */\n  .ui.dropdown > .dropdown.icon {\n    font-family: 'Dropdown';\n    line-height: 1;\n    height: 1em;\n    width: 1.23em;\n    -webkit-backface-visibility: hidden;\n    backface-visibility: hidden;\n    font-weight: normal;\n    font-style: normal;\n    text-align: center;\n  }\n  .ui.dropdown > .dropdown.icon {\n    width: auto;\n  }\n  .ui.dropdown > .dropdown.icon:before {\n    content: '\\f0d7';\n  }\n\n  /* Sub Menu */\n  .ui.dropdown .menu .item .dropdown.icon:before {\n    content: '\\f0da' /*rtl:'\\f0d9'*/;\n  }\n  .ui.dropdown .item .left.dropdown.icon:before,\n  .ui.dropdown .left.menu .item .dropdown.icon:before {\n    content: '\\f0d9' /*rtl:\"\\f0da\"*/;\n  }\n\n  /* Vertical Menu Dropdown */\n  .ui.vertical.menu .dropdown.item > .dropdown.icon:before {\n    content: '\\f0da' /*rtl:\"\\f0d9\"*/;\n  }\n  .ui.dropdown > .clear.icon:before {\n    content: '\\f00d';\n  }\n\n  .ui.selection.active.dropdown .menu::-webkit-scrollbar {\n    width: 7px;\n    border-radius: 50px;\n    z-index: -1px;\n  }\n\n  .ui.selection.active.dropdown .menu::-webkit-scrollbar-thumb {\n    background-color: ", ";\n    border-radius: 50px;\n  }\n\n  .ui.selection.active.dropdown .menu::-webkit-scrollbar-thumb:hover {\n    background-color: ", ";\n  }\n  /* Icons for Reference (Subsetted in 2.4.0)\n  .dropdown.down:before { content: \"\\f0d7\"; }\n  .dropdown.up:before { content: \"\\f0d8\"; }\n  .dropdown.left:before { content: \"\\f0d9\"; }\n  .dropdown.right:before { content: \"\\f0da\"; }\n  .dropdown.close:before { content: \"\\f00d\"; }\n*/\n\n  /*******************************\n        User Overrides\n*******************************/\n\n  small {\n    margin-left: 15px;\n    font-size: 10px;\n    color: ", ";\n  }\n"])), function (props) {
+  return props.error ? '' : '20px';
+}, function (props) {
+  return props.error ? colors.brand20 : props.colorLabel ? props.colorLabel : colors.brand10;
+}, function (props) {
+  return props.textAlign && props.textAlign === 'center' ? 'center' : 'left';
+}, colors.gray20, function (props) {
+  return props.line ? '0' : '0.28571429rem';
+}, function (props) {
+  return props.line ? 'none' : '';
+}, function (props) {
+  return props.line ? 'none' : '';
+}, function (props) {
+  return props.line ? 'none' : '';
+}, function (props) {
+  return props.brand ? colors.brand10 : colors.gray20;
+}, function (props) {
+  return props.brand ? colors.brandLight : colors.white;
+}, function (props) {
+  return props.brand ? colors.brand10 : colors.gray20;
+}, function (props) {
+  return props.brand ? colors.brandLight : props.line ? colors.gray10 : 'rgba(34, 36, 38, 0.15)';
+}, function (props) {
+  return props.line ? 0 : '0.28571429rem';
+}, function (props) {
+  return props.line ? 'none' : '20px';
+}, function (props) {
+  return props.line ? 'none' : '';
+}, function (props) {
+  return props.line ? 'none' : '';
+}, function (props) {
+  return props.line ? 'none' : '';
+}, function (props) {
+  return props.brand ? colors.brandLight : colors.gray10;
+}, function (props) {
+  return props.brand ? colors.brandTransparent : colors.gray10;
+}, function (props) {
+  return props.error ? colors.brand20 : props.brand ? colors.brandLight : colors.gray10;
+}, function (props) {
+  return props.error ? colors.brand20 : props.brand ? colors.brandLight : colors.gray10;
+}, function (props) {
+  return props.error ? colors.brand20 : props.brand ? colors.brandLight : colors.gray10;
+}, function (props) {
+  return props.brand ? colors.brandDark : colors.black;
+}, function (props) {
+  return props.error ? colors.brand20 : props.brand ? colors.brandLight : colors.gray10;
+}, function (props) {
+  return props.error ? colors.brand20 : props.brand ? colors.brandLight : colors.gray10;
+}, function (props) {
+  return props.brand ? colors.brand10 : colors.gray20;
+}, function (props) {
+  return props.textAlign && props.textAlign === 'center' ? 'center' : 'left';
+}, function (props) {
+  return props.brand ? colors.brandDark : colors.black;
+}, function (props) {
+  return props.brand ? colors.brandTransparent : colors.gray10;
+}, function (props) {
+  return props.brand ? colors.brandLight : colors.gray20;
+}, function (props) {
+  return props.brand ? colors.brand10 : colors.card;
+}, function (props) {
+  return props.brand ? colors.brandDark : colors.black;
+}, function (props) {
+  return props.brand ? colors.brandDark : colors.black;
+}, colors.brand10, function (props) {
+  return props.brand ? colors.brand10 : colors.default20;
+}, function (props) {
+  return props.brand ? colors.brand10 : colors.default20;
+}, function (props) {
+  return props.brand ? colors.brandDark : colors.black;
+}, function (props) {
+  return props.line ? colors.white : colors.error;
+}, colors.brand20, colors.brand20, colors.brand20, colors.brand20, colors.brand20, colors.error, colors.error, colors.brand10, colors.brandTransparent2, colors.brand20);
+
+var _excluded$7 = ["options", "brand", "textAlign", "errorMessage", "label", "colorLabel", "line"];
+
+var Dropdown = function Dropdown(_ref) {
+  var options = _ref.options,
+      brand = _ref.brand,
+      textAlign = _ref.textAlign,
+      errorMessage = _ref.errorMessage,
+      label = _ref.label,
+      colorLabel = _ref.colorLabel,
+      line = _ref.line,
+      rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$7);
+
+  return jsxRuntime.jsxs(Container$5, Object.assign({
+    brand: brand,
+    textAlign: textAlign,
+    error: errorMessage,
+    colorLabel: colorLabel,
+    line: line
+  }, {
+    children: [label && jsxRuntime.jsx("label", {
+      children: label
+    }, void 0), jsxRuntime.jsx(semanticUiReact.Dropdown, Object.assign({}, rest, {
+      selection: true,
+      noResultsMessage: "Nenhum resultado encontrado",
+      error: !!errorMessage,
+      options: options
+    }), void 0), errorMessage && jsxRuntime.jsx("small", {
+      children: errorMessage
+    }, void 0)]
+  }), void 0);
+};
+
+var _excluded$6 = ["value", "clearError", "errors", "name", "register", "required", "setValue", "validate"];
+
+var DropdownForm = function DropdownForm(_ref) {
+  var value = _ref.value,
+      clearError = _ref.clearError,
+      errors = _ref.errors,
+      name = _ref.name,
+      register = _ref.register,
+      required = _ref.required,
+      setValue = _ref.setValue,
+      validate = _ref.validate,
+      rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$6);
+
+  var _useState = React$2.useState(),
+      valueDefault = _useState[0],
+      setValueDefault = _useState[1];
+
+  var _useState2 = React$2.useState(''),
+      message = _useState2[0],
+      setMessage = _useState2[1];
+
+  React$2.useEffect(function () {
+    if (!valueDefault) {
+      setValue(name, value);
+    } else {
+      setValue(name, valueDefault);
+    }
+  }, [valueDefault]);
+  React$2.useEffect(function () {
+    setValueDefault(value);
+  }, [value]);
+  React$2.useEffect(function () {
+    if (register) {
+      register({
+        name: name
+      }, {
+        required: required,
+        validate: validate && required ? function (value) {
+          if (validate(value)) {
+            setMessage(validate(value));
+            return false;
+          }
+
+          setMessage('');
+          return true;
+        } : null
+      });
+    }
+  }, [register]);
+  return jsxRuntime.jsx(Dropdown, Object.assign({}, rest, {
+    value: valueDefault,
+    onChange: function onChange(_ev, data) {
+      setValueDefault(data.value);
+      setValue(name, value);
+
+      if (errors && clearError) {
+        clearError(name);
+      }
+    },
+    line: rest.line,
+    errorMessage: errors ? errors.type === 'required' ? 'Obrigatório' : "" + message : ''
+  }), void 0);
+};
+
+var _templateObject$7, _templateObject2$5, _templateObject3$5, _templateObject4$3, _templateObject5$2, _templateObject6$2, _templateObject7$2;
+var Container$4 = styled__default["default"].div(_templateObject$7 || (_templateObject$7 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  position: relative;\n  opacity: ", ";\n  width: ", ";\n\n  input {\n    font-family: MontSerrat !important;\n    color: ", ";\n    width: 100%;\n    height: 100%;\n    padding-top: 20px;\n    padding-left: ", ";\n    padding-bottom: 5px;\n    padding-right: ", ";\n    border: none;\n    outline: none;\n    background-color: transparent;\n\n    &::placeholder {\n      color: ", ";\n    }\n  }\n\n  ", "\n\n  input:disabled {\n    background-color: transparent;\n  }\n\n  label {\n    font-family: MontSerrat !important;\n    position: absolute;\n    bottom: 0px;\n    top: 0px;\n    left: 0px;\n    width: 100%;\n    right: 100%;\n    pointer-events: none;\n    border-bottom-width: 1px;\n    border-bottom-style: solid;\n    border-bottom-color: ", ";\n\n    ", "\n  }\n\n  span {\n    font-family: MontSerrat !important;\n    position: absolute;\n    bottom: 5px;\n    left: ", ";\n    transition: all 0.3s ease;\n\n    ", "\n  }\n\n  .icon {\n    position: absolute;\n    bottom: 0;\n    padding: 5px 10px;\n    ", "\n  }\n\n  .icon-action {\n    position: absolute;\n    bottom: 0;\n    padding: 5px 10px;\n    ", "\n    cursor: pointer;\n  }\n"])), function (props) {
+  return props.disabled ? '50%' : '100%';
+}, function (props) {
+  if (props.width) {
+    if (typeof props.width === 'string') {
+      return props.width;
+    }
+
+    return props.width + "px";
+  }
+
+  return '100%';
+}, function (props) {
+  return props.textColor ? props.textColor : colors.gray20;
+}, function (props) {
+  if (props.icon && !props.action) {
+    if (props.iconPosition === 'right') {
+      return '15px';
+    }
+
+    return '40px';
+  }
+
+  if (props.action && !props.icon) {
+    if (props.actionPosition === 'left') {
+      return '40px';
+    }
+
+    return '15px';
+  }
+
+  if (props.action || props.icon) {
+    return '40px';
+  }
+
+  return '15px';
+}, function (props) {
+  if (props.icon && !props.action) {
+    if (props.iconPosition === 'right') {
+      return '40px';
+    }
+
+    return '0px';
+  }
+
+  if (props.action && !props.icon) {
+    if (props.actionPosition === 'left') {
+      return '0px';
+    }
+
+    return '40px';
+  }
+
+  if (props.action && props.icon) {
+    return '40px';
+  }
+
+  return '0px';
+}, colors.default10, function (props) {
+  return props.date && !props.isFieldActive ? styled.css(_templateObject2$5 || (_templateObject2$5 = _taggedTemplateLiteralLoose(["\n          input::-webkit-calendar-picker-indicator {\n            display: none !important;\n          }\n\n          input[type='date']::-webkit-input-placeholder {\n            display: none !important;\n            visibility: hidden !important;\n            -webkit-appearance: none;\n          }\n\n          input[type='date']::-webkit-datetime-edit-fields-wrapper,\n          input[type='date']::-webkit-datetime-edit-fields-wrapper {\n            visibility: hidden;\n          }\n        "]))) : null;
+}, function (props) {
+  if ((props.requiredText || props.errorMessage) && props.errorColor) {
+    return props.errorColor;
+  }
+
+  if (props.requiredText || props.errorMessage) {
+    return colors.danger20;
+  }
+
+  return colors.gray10;
+}, function (props) {
+  return props.isFieldActive ? styled.css(_templateObject3$5 || (_templateObject3$5 = _taggedTemplateLiteralLoose(["\n            color: ", ";\n          "])), colors.brand10) : styled.css(_templateObject4$3 || (_templateObject4$3 = _taggedTemplateLiteralLoose(["\n            color: ", ";\n          "])), colors.gray20);
+}, function (props) {
+  if (props.icon && !props.action) {
+    if (props.iconPosition === 'right') {
+      return '15px';
+    }
+
+    return '40px';
+  }
+
+  if (props.action && !props.icon) {
+    if (props.actionPosition === 'left') {
+      return '40px';
+    }
+
+    return '15px';
+  }
+
+  if (props.action || props.icon) {
+    return '40px';
+  }
+
+  return '15px';
+}, function (props) {
+  return props.isFieldActive ? styled.css(_templateObject5$2 || (_templateObject5$2 = _taggedTemplateLiteralLoose(["\n            transform: translateY(-100%);\n            font-size: 14px;\n            color: ", ";\n          "])), function (props) {
+    if ((props.requiredText || props.errorMessage) && props.errorColor) {
+      return props.errorColor;
+    }
+
+    if (props.requiredText || props.errorMessage) {
+      return colors.danger20;
+    }
+
+    return colors.brand10;
+  }) : styled.css(_templateObject6$2 || (_templateObject6$2 = _taggedTemplateLiteralLoose(["\n            font-size: 16px;\n            color: ", ";\n          "])), function (props) {
+    if ((props.requiredText || props.errorMessage) && props.errorColor) {
+      return props.errorColor;
+    }
+
+    if (props.requiredText || props.errorMessage) {
+      return colors.danger20;
+    }
+
+    return colors.gray20;
+  });
+}, function (props) {
+  return props.iconPosition === 'right' && 'right: 0;';
+}, function (props) {
+  return props.actionPosition && props.actionPosition === 'left' ? 'left: 0;' : 'right: 0;';
+});
+var LabelError$1 = styled__default["default"].span(_templateObject7$2 || (_templateObject7$2 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  font-size: 10px;\n  margin-left: 0;\n  color: ", ";\n"])), function (props) {
+  if (props.errorColor) {
+    return props.errorColor;
+  }
+
+  return colors.danger20;
+});
+
+var _excluded$5 = ["containerStyle", "label", "labelStyle", "errorMessage", "width", "textColor", "inputRef", "name", "icon", "iconPosition", "iconColor", "action"];
+
+var InputLine = function InputLine(_ref) {
+  var containerStyle = _ref.containerStyle,
+      label = _ref.label,
+      labelStyle = _ref.labelStyle,
+      errorMessage = _ref.errorMessage,
+      width = _ref.width,
+      textColor = _ref.textColor,
+      inputRef = _ref.inputRef,
+      name = _ref.name,
+      icon = _ref.icon,
+      iconPosition = _ref.iconPosition,
+      iconColor = _ref.iconColor,
+      action = _ref.action,
+      rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$5);
+
+  var _useState = React$2.useState(false),
+      isFieldActive = _useState[0],
+      setIsFieldActive = _useState[1];
+
+  React$2.useEffect(function () {
+    if (rest.value) {
+      if (!isFieldActive) {
+        setIsFieldActive(true);
+      }
+    }
+  }, [rest.value]);
+
+  var handleFocus = function handleFocus() {
+    if (!isFieldActive) {
+      setIsFieldActive(true);
+    }
+  };
+
+  var handleBlur = function handleBlur() {
+    if (isFieldActive && !rest.value) {
+      setIsFieldActive(false);
+    }
+
+    if (rest.onBlur) {
+      setImmediate(rest.onBlur);
+    }
+  };
+
+  return jsxRuntime.jsxs("div", Object.assign({
+    style: {
+      paddingBottom: errorMessage ? 0 : 20
+    }
+  }, {
+    children: [jsxRuntime.jsxs(Container$4, Object.assign({
+      isFieldActive: isFieldActive,
+      errorMessage: errorMessage,
+      // labelStyle={labelStyle}
+      containerStyle: containerStyle,
+      width: width,
+      disabled: rest.disabled ? rest.disabled : undefined,
+      style: containerStyle,
+      textColor: textColor,
+      icon: !!icon,
+      iconPosition: iconPosition,
+      action: action,
+      actionPosition: action == null ? void 0 : action.position,
+      date: rest.type === 'date'
+    }, {
+      children: [icon && jsxRuntime.jsx("div", Object.assign({
+        className: "icon"
+      }, {
+        children: jsxRuntime.jsx(FontAwesomeIcon, {
+          icon: icon,
+          color: iconColor || colors.brand10
+        }, void 0)
+      }), void 0), action && jsxRuntime.jsx("div", Object.assign({
+        className: "icon-action",
+        onClick: action.onClick
+      }, {
+        children: jsxRuntime.jsx(FontAwesomeIcon, {
+          icon: action.icon,
+          color: action.iconColor || colors.brand10
+        }, void 0)
+      }), void 0), jsxRuntime.jsx("input", Object.assign({}, rest, {
+        onFocus: handleFocus,
+        onBlur: handleBlur,
+        name: name,
+        placeholder: isFieldActive ? rest.placeholder : '',
+        ref: inputRef
+      }), void 0), jsxRuntime.jsx("label", {
+        children: jsxRuntime.jsx("span", Object.assign({
+          style: labelStyle
+        }, {
+          children: label
+        }), void 0)
+      }, void 0)]
+    }), void 0), errorMessage ? jsxRuntime.jsx(LabelError$1, {
+      children: errorMessage
+    }, void 0) : null]
+  }), void 0);
+};
+
+var _excluded$4 = ["register", "errors", "validate", "name", "required", "values", "limit", "minimum", "msgErrorValidate"];
+
+var InputLineForm = function InputLineForm(_ref) {
+  var _rest$action;
+
+  var register = _ref.register,
+      errors = _ref.errors,
+      validate = _ref.validate,
+      name = _ref.name,
+      required = _ref.required,
+      values = _ref.values,
+      limit = _ref.limit,
+      minimum = _ref.minimum,
+      msgErrorValidate = _ref.msgErrorValidate,
+      rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$4);
+
+  var _useState = React$2.useState(false),
+      isFieldActive = _useState[0],
+      setIsFieldActive = _useState[1];
+
+  var _useState2 = React$2.useState(''),
+      message = _useState2[0],
+      setMessage = _useState2[1];
+
+  var value = values ? values(name) || rest.defaultValue : rest.value;
+  React$2.useEffect(function () {
+    if (value) {
+      if (!isFieldActive) {
+        setIsFieldActive(true);
+      }
+    }
+  }, [value]);
+
+  var handleFocus = function handleFocus() {
+    if (!isFieldActive) {
+      setIsFieldActive(true);
+    }
+  };
+
+  var handleBlur = function handleBlur() {
+    if (isFieldActive && !value) {
+      setIsFieldActive(false);
+    }
+
+    if (rest.onBlur) {
+      setImmediate(rest.onBlur);
+    }
+  };
+
+  var validadeRegister = function validadeRegister(valueRegister) {
+    var result = true;
+    var mensagem = '';
+
+    if (validate) {
+      if (validate(valueRegister)) {
+        mensagem = validate(valueRegister);
+        result = false;
+      }
+    }
+
+    if (limit) {
+      if (valueRegister.length > limit) {
+        mensagem = msgErrorValidate ? "" + msgErrorValidate : limit + " caracteres permitidos.";
+        result = false;
+      }
+    }
+
+    if (minimum) {
+      if (valueRegister.length < minimum) {
+        mensagem = msgErrorValidate ? "" + msgErrorValidate : (rest.label || name) + " deve ter " + minimum + " ou mais caracteres.";
+        result = false;
+      }
+    }
+
+    setMessage(mensagem);
+    return result;
+  };
+
+  return jsxRuntime.jsxs("div", Object.assign({
+    style: {
+      paddingBottom: message || errors ? 0 : 20
+    }
+  }, {
+    children: [jsxRuntime.jsxs(Container$4, Object.assign({
+      isFieldActive: isFieldActive,
+      requiredText: !!(errors && errors.type === 'required'),
+      errorMessage: errors,
+      // action={rest.action?.icon ? true : false}
+      containerStyle: rest.containerStyle,
+      width: rest.width,
+      disabled: rest.disabled,
+      style: rest.containerStyle,
+      textColor: rest.textColor,
+      icon: !!rest.icon,
+      iconPosition: rest.iconPosition,
+      action: rest.action,
+      actionPosition: (_rest$action = rest.action) == null ? void 0 : _rest$action.position,
+      date: rest.type === 'date'
+    }, {
+      children: [rest.icon && jsxRuntime.jsx("div", Object.assign({
+        className: "icon"
+      }, {
+        children: jsxRuntime.jsx(FontAwesomeIcon, {
+          icon: rest.icon,
+          color: rest.iconColor || colors.brand10
+        }, void 0)
+      }), void 0), rest.action && jsxRuntime.jsx("div", Object.assign({
+        className: "icon-action",
+        onClick: rest.action.onClick
+      }, {
+        children: jsxRuntime.jsx(FontAwesomeIcon, {
+          icon: rest.action.icon,
+          color: rest.action.iconColor || colors.brand10
+        }, void 0)
+      }), void 0), jsxRuntime.jsx("input", Object.assign({}, rest, {
+        onFocus: handleFocus,
+        onBlur: handleBlur,
+        name: name,
+        placeholder: isFieldActive ? rest.placeholder : '',
+        ref: register ? register({
+          required: required,
+          validate: validadeRegister
+        }) : null
+      }), void 0), jsxRuntime.jsx("label", {
+        children: jsxRuntime.jsx("span", Object.assign({
+          style: rest.labelStyle
+        }, {
+          children: rest.label
+        }), void 0)
+      }, void 0)]
+    }), void 0), errors ? jsxRuntime.jsx(LabelError$1, {
+      children: errors.type === 'required' ? 'Obrigatório' : "" + message
+    }, void 0) : null]
+  }), void 0);
+};
+
+var _templateObject$6, _templateObject2$4, _templateObject3$4, _templateObject4$2, _templateObject5$1, _templateObject6$1, _templateObject7$1, _templateObject8, _templateObject9;
+var Sizes$2 = {
+  mini: 'mini',
+  tiny: 'tiny',
+  small: 'small',
+  large: 'large',
+  fullscreen: 'fullscreen'
+};
+
+var sizeWidth = function sizeWidth(size) {
+  switch (size) {
+    case Sizes$2.mini:
+      return '35%';
+
+    case Sizes$2.tiny:
+      return '45%';
+
+    case Sizes$2.small:
+      return '55%';
+
+    case Sizes$2.large:
+      return '65%';
+
+    case Sizes$2.fullscreen:
+      return '95%';
+
+    default:
+      return size;
+  }
+};
+
+var Background = styled__default["default"].div(_templateObject$6 || (_templateObject$6 = _taggedTemplateLiteralLoose(["\n  ", "\n"])), function (props) {
+  return props.open ? styled.css(_templateObject2$4 || (_templateObject2$4 = _taggedTemplateLiteralLoose(["\n          opacity: 1;\n          visibility: visible;\n          position: fixed;\n          top: 0;\n          right: 0;\n          bottom: 0;\n          left: 0;\n          background: rgba(0, 0, 0, 0.5);\n          transition: opacity 0.25s ease;\n          overflow: auto;\n          padding: 40px 0;\n          display: flex;\n          z-index: 999;\n        "]))) : styled.css(_templateObject3$4 || (_templateObject3$4 = _taggedTemplateLiteralLoose(["\n          opacity: 1;\n          visibility: hidden;\n        "])));
+});
+var Modal = styled__default["default"].div(_templateObject4$2 || (_templateObject4$2 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  transition: top 0.25s ease;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  width: ", ";\n  margin: auto;\n  background: ", ";\n  border-radius: 30px;\n"])), function (props) {
+  if (props.width) {
+    if (typeof props.width === 'string') {
+      return props.width;
+    }
+
+    return props.width + "px";
+  }
+
+  if (props.size) {
+    return sizeWidth(props.size);
+  }
+
+  return '80%';
+}, colors.white);
+styled__default["default"].div(_templateObject5$1 || (_templateObject5$1 = _taggedTemplateLiteralLoose(["\n  transition: bottom 1s ease;\n  width: 90%;\n  background: ", ";\n  border-top-left-radius: 30px;\n  border-top-right-radius: 30px;\n"])), colors.white);
+var Header$1 = styled__default["default"].div(_templateObject6$1 || (_templateObject6$1 = _taggedTemplateLiteralLoose(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  border-bottom: ", ";\n  font-size: 20px;\n\n  .name-icon-modal {\n    display: flex;\n    align-items: center;\n  }\n\n  & strong {\n    padding: ", ";\n    color: ", ";\n  }\n"])), function (props) {
+  return props.noBorder ? 'none' : "1px solid " + colors.default20;
+}, function (props) {
+  return props.iconBack ? '20px 0' : '20px 30px';
+}, colors.brand10);
+var Icon = styled__default["default"].div(_templateObject7$1 || (_templateObject7$1 = _taggedTemplateLiteralLoose(["\n  padding: 20px 30px;\n  cursor: pointer;\n"])));
+var Body = styled__default["default"].div(_templateObject8 || (_templateObject8 = _taggedTemplateLiteralLoose(["\n  padding: 20px 30px;\n  height: 100%;\n  position: relative;\n\n  .loading-modal {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    background-color: rgba(255, 255, 255, 0.8);\n    width: 100%;\n    height: 100%;\n    top: 0;\n    left: 0;\n    right: 0;\n    bottom: 0;\n    border-radius: 30px;\n    z-index: 2;\n    position: absolute;\n  }\n"])));
+var Actions = styled__default["default"].div(_templateObject9 || (_templateObject9 = _taggedTemplateLiteralLoose(["\n  border-top: 1px solid ", ";\n  margin: 0 30px;\n  padding: 20px 0;\n  display: flex;\n  flex-direction: row-reverse;\n"])), colors.default20);
+
+var ModalComponent = function ModalComponent(_ref) {
+  var open = _ref.open,
+      title = _ref.title,
+      children = _ref.children,
+      actions = _ref.actions,
+      width = _ref.width,
+      onClose = _ref.onClose,
+      closeOnDimerClick = _ref.closeOnDimerClick,
+      loading = _ref.loading,
+      onBack = _ref.onBack,
+      size = _ref.size,
+      noBorder = _ref.noBorder,
+      _ref$closeIcon = _ref.closeIcon,
+      closeIcon = _ref$closeIcon === void 0 ? true : _ref$closeIcon;
+  React$2.useEffect(function () {
+    if (open) {
+      window.addEventListener('keydown', function (event) {
+        return escModal(event);
+      });
+    } else {
+      window.removeEventListener('keydown', function (event) {
+        return escModal(event);
+      });
+    }
+
+    return window.removeEventListener('keydown', function (event) {
+      return escModal(event);
+    });
+  }, [open]);
+
+  function escModal(event) {
+    if (open && event.key == 'Escape' && closeOnDimerClick) {
+      event.stopPropagation();
+      onClose();
+    }
+  }
+
+  return jsxRuntime.jsx(Background, Object.assign({
+    open: open,
+    onClick: function onClick(event) {
+      if (closeOnDimerClick) {
+        event.stopPropagation();
+        onClose();
+      }
+    }
+  }, {
+    children: jsxRuntime.jsxs(Modal, Object.assign({
+      size: size,
+      width: width,
+      onClick: function onClick(event) {
+        return event.stopPropagation();
+      }
+    }, {
+      children: [jsxRuntime.jsxs(Header$1, Object.assign({
+        iconBack: !!onBack,
+        noBorder: noBorder
+      }, {
+        children: [jsxRuntime.jsxs("div", Object.assign({
+          className: "name-icon-modal"
+        }, {
+          children: [onBack ? jsxRuntime.jsx(Icon, Object.assign({
+            onClick: function onClick() {
+              return onBack();
+            }
+          }, {
+            children: jsxRuntime.jsx(FontAwesomeIcon, {
+              icon: faAngleLeft,
+              size: "lg",
+              color: colors.brand10
+            }, void 0)
+          }), void 0) : null, jsxRuntime.jsx("strong", {
+            children: title
+          }, void 0)]
+        }), void 0), closeIcon && jsxRuntime.jsx(Icon, Object.assign({
+          onClick: function onClick(event) {
+            event.stopPropagation();
+            onClose();
+          }
+        }, {
+          children: jsxRuntime.jsx(FontAwesomeIcon, {
+            icon: faTimes,
+            style: {
+              fontSize: 20
+            },
+            color: colors.brand10
+          }, void 0)
+        }), void 0)]
+      }), void 0), jsxRuntime.jsxs(Body, {
+        children: [loading && jsxRuntime.jsx("div", Object.assign({
+          className: "loading-modal"
+        }, {
+          children: jsxRuntime.jsx(Loader, {}, void 0)
+        }), void 0), children]
+      }, void 0), actions && jsxRuntime.jsx(Actions, {
+        children: actions
+      }, void 0)]
+    }), void 0)
+  }), void 0);
+};
+
+var _templateObject$5;
+
+var widthBtnMoreLess = function widthBtnMoreLess(size) {
+  switch (size) {
+    case 'xs':
+      return '14px';
+
+    case 'sm':
+      return '22px';
+
+    case 'md':
+      return '30px';
+
+    case 'lg':
+      return '38px';
+
+    case 'xl':
+      return '46px';
+
+    default:
+      return '30px';
+  }
+};
+
+var heightBtnMoreLess = function heightBtnMoreLess(size) {
+  switch (size) {
+    case 'xs':
+      return '14px';
+
+    case 'sm':
+      return '22px';
+
+    case 'md':
+      return '30px';
+
+    case 'lg':
+      return '38px';
+
+    case 'xl':
+      return '46px';
+
+    default:
+      return '30px';
+  }
+};
+
+var widthValueMoreLess = function widthValueMoreLess(size, value) {
+  var valueAbs = Math.abs(value);
+
+  switch (size) {
+    case 'xs':
+      if (valueAbs < 100) {
+        return '15px';
+      }
+
+      if (valueAbs < 1000) {
+        return '20px';
+      }
+
+      if (valueAbs < 10000) {
+        return '25px';
+      }
+
+      return '30px';
+
+    case 'sm':
+      {
+        if (valueAbs < 100) {
+          return '25px';
+        }
+
+        if (valueAbs < 1000) {
+          return '30px';
+        }
+
+        if (valueAbs < 10000) {
+          return '35px';
+        }
+
+        return '40px';
+      }
+
+    case 'md':
+      {
+        if (valueAbs < 100) {
+          return '20px';
+        }
+
+        if (valueAbs < 1000) {
+          return '30px';
+        }
+
+        if (valueAbs < 10000) {
+          return '40px';
+        }
+
+        return '50px';
+      }
+
+    case 'lg':
+      {
+        if (valueAbs < 100) {
+          return '25px';
+        }
+
+        if (valueAbs < 1000) {
+          return '35px';
+        }
+
+        if (valueAbs < 10000) {
+          return '50px';
+        }
+
+        return '60px';
+      }
+
+    case 'xl':
+      {
+        if (valueAbs < 100) {
+          return '30px';
+        }
+
+        if (valueAbs < 1000) {
+          return '40px';
+        }
+
+        if (valueAbs < 10000) {
+          return '55px';
+        }
+
+        return '70px';
+      }
+
+    default:
+      {
+        if (valueAbs < 100) {
+          return '20px';
+        }
+
+        if (valueAbs < 1000) {
+          return '30px';
+        }
+
+        if (valueAbs < 10000) {
+          return '40px';
+        }
+
+        return '50px';
+      }
+  }
+};
+
+var fontMoreLess = function fontMoreLess(size) {
+  switch (size) {
+    case 'xs':
+      return '9px';
+
+    case 'sm':
+      return '12px';
+
+    case 'md':
+      return '15px';
+
+    case 'lg':
+      return '18px';
+
+    case 'xl':
+      return '21px';
+
+    default:
+      return '15px';
+  }
+};
+
+var Container$3 = styled__default["default"].div(_templateObject$5 || (_templateObject$5 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  opacity: ", ";\n\n  button {\n    width: ", ";\n    font-size: ", ";\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    height: ", ";\n    color: ", ";\n    transition: color 0.2s ease-in-out;\n\n    &:not(:disabled):hover {\n      color: ", ";\n    }\n\n    &:disabled {\n      opacity: 0.2;\n      cursor: default;\n    }\n  }\n\n  input {\n    text-align: center;\n    width: ", ";\n    font-size: ", ";\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    color: ", ";\n    border: none;\n    outline: none;\n  }\n\n  input[type='number']::-webkit-inner-spin-button {\n    -webkit-appearance: none;\n  }\n  input[type='number'] {\n    -moz-appearance: textfield;\n    appearance: textfield;\n  }\n\n  input:disabled {\n    background-color: transparent;\n  }\n"])), function (props) {
+  return props.disabled ? '0.5' : '1';
+}, function (props) {
+  return widthBtnMoreLess(props.size);
+}, function (props) {
+  return fontMoreLess(props.size);
+}, function (props) {
+  return heightBtnMoreLess(props.size);
+}, colors.gray20, colors.hover, function (props) {
+  return props.size ? widthValueMoreLess(props.size, props.value) : '15px';
+}, function (props) {
+  return fontMoreLess(props.size);
+}, colors.gray20);
+
+function MoreLess(_ref) {
+  var _ref$size = _ref.size,
+      size = _ref$size === void 0 ? 'md' : _ref$size,
+      disabled = _ref.disabled,
+      value = _ref.value,
+      maximum = _ref.maximum,
+      _ref$minimum = _ref.minimum,
+      minimum = _ref$minimum === void 0 ? 0 : _ref$minimum,
+      _onChange = _ref.onChange,
+      _ref$quantityToChange = _ref.quantityToChange,
+      quantityToChange = _ref$quantityToChange === void 0 ? 1 : _ref$quantityToChange;
+  var noLess = React$2.useMemo(function () {
+    if (value <= minimum) {
+      return true;
+    }
+
+    return false;
+  }, [minimum, value]);
+  var noMore = React$2.useMemo(function () {
+    if (typeof maximum == 'number' && value >= maximum) {
+      return true;
+    }
+
+    return false;
+  }, [maximum, value]);
+
+  function handleChangeValue(newValue) {
+    if (typeof maximum == 'number' && newValue > maximum) {
+      return _onChange(maximum);
+    }
+
+    if (newValue < minimum) return _onChange(minimum);
+
+    _onChange(newValue);
+  }
+
+  return jsxRuntime.jsxs(Container$3, Object.assign({
+    maximum: maximum,
+    minimum: minimum,
+    value: value,
+    size: size,
+    disabled: disabled,
+    role: "group"
+  }, {
+    children: [jsxRuntime.jsx("button", Object.assign({
+      disabled: disabled || noLess,
+      onClick: function onClick() {
+        return handleChangeValue(value - quantityToChange);
+      }
+    }, {
+      children: jsxRuntime.jsx(FontAwesomeIcon, {
+        icon: faMinus
+      }, void 0)
+    }), void 0), jsxRuntime.jsx("input", {
+      value: value || value === 0 ? value.toString() : '',
+      type: "number",
+      onChange: function onChange(event) {
+        return _onChange(Number(event.target.value));
+      },
+      disabled: disabled
+    }, void 0), jsxRuntime.jsx("button", Object.assign({
+      disabled: disabled || noMore,
+      onClick: function onClick() {
+        return handleChangeValue(value + quantityToChange);
+      }
+    }, {
+      children: jsxRuntime.jsx(FontAwesomeIcon, {
+        icon: faPlus
+      }, void 0)
+    }), void 0)]
+  }), void 0);
+}
+
+var _templateObject$4;
+var Sizes$1 = {
+  mini: 'mini',
+  tiny: 'tiny',
+  small: 'small',
+  medium: 'medium',
+  large: 'large',
+  big: 'big',
+  huge: 'huge',
+  massive: 'massive'
+};
+
+var size = function size(_size) {
+  switch (_size) {
+    case Sizes$1.mini:
+      return '0.625rem';
+
+    case Sizes$1.tiny:
+      return '0.75rem';
+
+    case Sizes$1.small:
+      return '0.875rem';
+
+    case Sizes$1.medium:
+      return '1.0625rem';
+
+    case Sizes$1.large:
+      return '1.25rem';
+
+    case Sizes$1.big:
+      return '1.4375rem';
+
+    case Sizes$1.huge:
+      return '1.625rem';
+
+    case Sizes$1.massive:
+      return '1.875rem';
+
+    default:
+      return _size;
+  }
+};
+
+var sizeChecked = function sizeChecked(size) {
+  switch (size) {
+    case Sizes$1.mini:
+      return '0.125rem';
+
+    case Sizes$1.tiny:
+      return '0.25rem';
+
+    case Sizes$1.small:
+      return '0.375rem';
+
+    case Sizes$1.medium:
+      return '0.5625rem';
+
+    case Sizes$1.large:
+      return '0.75rem';
+
+    case Sizes$1.big:
+      return '0.9375rem';
+
+    case Sizes$1.huge:
+      return '1.125rem';
+
+    case Sizes$1.massive:
+      return '1.375rem';
+
+    default:
+      return size;
+  }
+};
+
+var labelSize = function labelSize(size) {
+  switch (size) {
+    case Sizes$1.mini:
+      return '0.625rem';
+
+    case Sizes$1.tiny:
+      return '0.8125rem';
+
+    case Sizes$1.small:
+      return '0.875rem';
+
+    case Sizes$1.medium:
+      return '1rem';
+
+    case Sizes$1.large:
+      return '1.125rem';
+
+    case Sizes$1.big:
+      return '1.25rem';
+
+    case Sizes$1.huge:
+      return '1.375rem';
+
+    case Sizes$1.massive:
+      return '1.5rem';
+
+    default:
+      return size;
+  }
+};
+
+var paddingLeft = function paddingLeft(size) {
+  switch (size) {
+    case Sizes$1.mini:
+      return '0.9375rem';
+
+    case Sizes$1.tiny:
+      return '1.125rem';
+
+    case Sizes$1.small:
+      return '1.25rem';
+
+    case Sizes$1.medium:
+      return '1.5625rem';
+
+    case Sizes$1.large:
+      return '1.75rem';
+
+    case Sizes$1.big:
+      return '2rem';
+
+    case Sizes$1.huge:
+      return '2.1875rem';
+
+    case Sizes$1.massive:
+      return '2.5rem';
+
+    default:
+      return size;
+  }
+};
+
+var paddingTop = function paddingTop(size) {
+  switch (size) {
+    case Sizes$1.mini:
+      return '0rem';
+
+    case Sizes$1.tiny:
+      return '0rem';
+
+    case Sizes$1.small:
+      return '0rem';
+
+    case Sizes$1.medium:
+      return '0rem';
+
+    case Sizes$1.large:
+      return '0.125rem';
+
+    case Sizes$1.big:
+      return '0.125rem';
+
+    case Sizes$1.huge:
+      return '0.1875rem';
+
+    case Sizes$1.massive:
+      return '0.25rem';
+
+    default:
+      return size;
+  }
+};
+
+var topBoxBefore = function topBoxBefore(size) {
+  switch (size) {
+    case Sizes$1.mini:
+      return '0.3125rem';
+
+    case Sizes$1.tiny:
+      return '0.25rem';
+
+    case Sizes$1.small:
+      return '0.1875rem';
+
+    case Sizes$1.medium:
+      return '0.0625rem';
+
+    case Sizes$1.large:
+      return '0rem';
+
+    case Sizes$1.big:
+      return '0rem';
+
+    case Sizes$1.huge:
+      return '0rem';
+
+    case Sizes$1.massive:
+      return '0rem';
+
+    default:
+      return size;
+  }
+};
+
+var topBoxAfter = function topBoxAfter(size) {
+  switch (size) {
+    case Sizes$1.mini:
+      return '0.5625rem';
+
+    case Sizes$1.tiny:
+      return '0.5rem';
+
+    case Sizes$1.small:
+      return '0.4375rem';
+
+    case Sizes$1.medium:
+      return '0.3125rem';
+
+    case Sizes$1.large:
+      return '0.25rem';
+
+    case Sizes$1.big:
+      return '0.25rem';
+
+    case Sizes$1.huge:
+      return '0.25rem';
+
+    case Sizes$1.massive:
+      return '0.25rem';
+
+    default:
+      return size;
+  }
+};
+
+var Container$2 = styled__default["default"].div(_templateObject$4 || (_templateObject$4 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n\n  &,\n  label,\n  input {\n    cursor: ", ";\n  }\n\n  > input {\n    display: none;\n  }\n\n  label {\n    font-size: ", ";\n    opacity: ", ";\n    color: ", ";\n    padding-top: ", ";\n  }\n\n  > input + div {\n    position: relative;\n    padding-left: ", ";\n    opacity: ", ";\n    display: flex;\n    align-items: center;\n\n    &:before {\n      content: '';\n      position: absolute;\n      left: 0;\n      top: ", ";\n      width: ", ";\n      height: ", ";\n      border: 1px solid ", ";\n      background: ", ";\n      border-radius: 50%;\n    }\n    &:after {\n      content: ' ';\n      position: absolute;\n      left: 4px;\n      top: ", ";\n      width: ", ";\n      height: ", ";\n      border: 1px solid ", ";\n      background: ", ";\n      border-radius: 50%;\n      color: ", ";\n      text-align: center;\n      font-size: 12px;\n    }\n  }\n  > input:not(:checked) + div {\n    &:after {\n      opacity: 0;\n      transform: scale(0);\n    }\n  }\n  > input:checked + div {\n    &:after {\n      opacity: 1;\n      transform: scale(1);\n    }\n  }\n"])), function (props) {
+  return props.disabled ? 'default' : 'pointer';
+}, function (props) {
+  if (props.sizeBox) {
+    return labelSize(props.sizeBox);
+  }
+
+  return '1.0625rem';
+}, function (props) {
+  return props.disabled ? 0.5 : 1;
+}, colors.gray20, function (props) {
+  if (props.sizeBox) {
+    return paddingTop(props.sizeBox);
+  }
+
+  return '0rem';
+}, function (props) {
+  if (props.sizeBox) {
+    return paddingLeft(props.sizeBox);
+  }
+
+  return '1.5625rem';
+}, function (props) {
+  return props.disabled ? 0.5 : 1;
+}, function (props) {
+  if (props.sizeBox) {
+    return topBoxBefore(props.sizeBox);
+  }
+
+  return '1px';
+}, function (props) {
+  if (props.sizeBox) {
+    return size(props.sizeBox);
+  }
+
+  return '17px';
+}, function (props) {
+  if (props.sizeBox) {
+    return size(props.sizeBox);
+  }
+
+  return '17px';
+}, colors.default30, colors.default20, function (props) {
+  if (props.sizeBox) {
+    return topBoxAfter(props.sizeBox);
+  }
+
+  return '5px';
+}, function (props) {
+  if (props.sizeBox) {
+    return sizeChecked(props.sizeBox);
+  }
+
+  return '9px';
+}, function (props) {
+  if (props.sizeBox) {
+    return sizeChecked(props.sizeBox);
+  }
+
+  return '9px';
+}, colors.gray20, colors.gray20, colors.white);
+
+var _excluded$3 = ["label", "labelStyle", "sizeBox", "containerClassName", "containerStyle", "labelClassName"];
+
+function Radio(_ref) {
+  var label = _ref.label,
+      labelStyle = _ref.labelStyle,
+      sizeBox = _ref.sizeBox,
+      containerClassName = _ref.containerClassName,
+      containerStyle = _ref.containerStyle,
+      labelClassName = _ref.labelClassName,
+      rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$3);
+
+  return jsxRuntime.jsxs(Container$2, Object.assign({
+    onClick: !rest.disabled && rest.onChange ? rest.onChange : undefined,
+    disabled: rest.disabled,
+    sizeBox: sizeBox,
+    className: containerClassName,
+    style: containerStyle,
+    role: "radio"
+  }, {
+    children: [jsxRuntime.jsx("input", Object.assign({
+      "data-testid": "input-radio",
+      type: "radio"
+    }, rest), void 0), jsxRuntime.jsx("div", {
+      children: jsxRuntime.jsx("label", Object.assign({
+        className: labelClassName,
+        style: labelStyle
+      }, {
+        children: label
+      }), void 0)
+    }, void 0)]
+  }), void 0);
+}
+
+var _templateObject$3, _templateObject2$3, _templateObject3$3;
+var toggleWidth = 50;
+var toggleHeight = 30;
+var toggleGutter = 5;
+var toggleRadius = toggleHeight / 2;
+var toggleControlSsize = toggleHeight - toggleGutter * 2;
+var Sizes = {
+  mini: 'mini',
+  tiny: 'tiny',
+  small: 'small',
+  medium: 'medium',
+  large: 'large',
+  big: 'big',
+  huge: 'huge',
+  massive: 'massive'
+};
+
+var widthSwitch = function widthSwitch(size) {
+  switch (size) {
+    case Sizes.mini:
+      return 30;
+
+    case Sizes.tiny:
+      return 35;
+
+    case Sizes.small:
+      return 40;
+
+    case Sizes.medium:
+      return 50;
+
+    case Sizes.large:
+      return 60;
+
+    case Sizes.big:
+      return 70;
+
+    case Sizes.huge:
+      return 80;
+
+    case Sizes.massive:
+      return 90;
+
+    default:
+      return 50;
+  }
+};
+
+var heightSwitch = function heightSwitch(size) {
+  switch (size) {
+    case Sizes.mini:
+      return 20;
+
+    case Sizes.tiny:
+      return 22.5;
+
+    case Sizes.small:
+      return 25;
+
+    case Sizes.medium:
+      return 30;
+
+    case Sizes.large:
+      return 35;
+
+    case Sizes.big:
+      return 40;
+
+    case Sizes.huge:
+      return 45;
+
+    case Sizes.massive:
+      return 50;
+
+    default:
+      return 30;
+  }
+};
+
+var sizeGutter = function sizeGutter(size) {
+  switch (size) {
+    case Sizes.mini:
+      return 5;
+
+    case Sizes.tiny:
+      return 5;
+
+    case Sizes.small:
+      return 5;
+
+    case Sizes.medium:
+      return 5;
+
+    case Sizes.large:
+      return 5;
+
+    case Sizes.big:
+      return 5;
+
+    case Sizes.huge:
+      return 5;
+
+    case Sizes.massive:
+      return 5;
+
+    default:
+      return 5;
+  }
+};
+
+var widthToggle = function widthToggle(size) {
+  switch (size) {
+    case Sizes.mini:
+      return '40px !important';
+
+    case Sizes.tiny:
+      return '3.125rem !important';
+
+    case Sizes.small:
+      return '3.75rem !important';
+
+    case Sizes.medium:
+      return '4.0625rem !important';
+
+    case Sizes.large:
+      return '4.375rem !important';
+
+    case Sizes.big:
+      return '5rem !important';
+
+    case Sizes.huge:
+      return '5.625rem !important';
+
+    case Sizes.massive:
+      return '6.25rem !important';
+
+    default:
+      return '4.0625rem !important';
+  }
+};
+
+var fontToggle = function fontToggle(size) {
+  switch (size) {
+    case Sizes.mini:
+      return '0.5rem !important';
+
+    case Sizes.tiny:
+      return '0.5625rem !important';
+
+    case Sizes.small:
+      return '0.625rem !important';
+
+    case Sizes.medium:
+      return '0.6875rem !important';
+
+    case Sizes.large:
+      return '0.75rem !important';
+
+    case Sizes.big:
+      return '0.8125rem !important';
+
+    case Sizes.huge:
+      return '0.875rem !important';
+
+    case Sizes.massive:
+      return '0.9375rem !important';
+
+    default:
+      return '0.6875rem !important';
+  }
+};
+
+var fontActiveInactive = function fontActiveInactive(size) {
+  switch (size) {
+    case Sizes.mini:
+      return '0.4375rem !important';
+
+    case Sizes.tiny:
+      return '0.5rem !important';
+
+    case Sizes.small:
+      return '0.5625rem !important';
+
+    case Sizes.medium:
+      return '0.625rem !important';
+
+    case Sizes.large:
+      return '0.6875rem !important';
+
+    case Sizes.big:
+      return '0.75rem !important';
+
+    case Sizes.huge:
+      return '0.8125rem !important';
+
+    case Sizes.massive:
+      return '0.875rem !important';
+
+    default:
+      return '0.625rem !important';
+  }
+};
+
+var Switch = styled__default["default"].button(_templateObject$3 || (_templateObject$3 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  display: flex !important;\n  flex-direction: row !important;\n  position: relative !important;\n  /* padding-left: ", "; */\n  /* margin-bottom: 12px; */\n  cursor: ", ";\n  font-size: 1.375rem !important;\n  user-select: none !important;\n\n  div {\n    position: absolute !important;\n    opacity: 0 !important;\n    height: 0 !important;\n    width: 0 !important;\n    display: none !important;\n  }\n\n  .control {\n    height: ", ";\n    width: ", ";\n    border-radius: ", ";\n    background-color: ", " !important;\n    transition: background-color 0.15s ease-in !important;\n\n    &:after {\n      content: '' !important;\n      position: absolute !important;\n      left: 5px !important;\n      top: 5px !important;\n      height: ", ";\n      width: ", ";\n      border-radius: 50px !important;\n      background-color: white !important;\n      transition: left 0.15s ease-in !important;\n      border: 1px solid ", " !important;\n    }\n  }\n\n  div.checked ~ .control {\n    background-color: ", ";\n\n    &:after {\n      left: ", ";\n    }\n  }\n"])), function (props) {
+  return props.size ? widthSwitch(props.size) + "px" : toggleWidth + "px";
+}, function (props) {
+  return props.disabled ? 'not-allowed !important' : 'pointer !important';
+}, function (props) {
+  return props.size ? heightSwitch(props.size) + "px !important" : toggleHeight + "px !important";
+}, function (props) {
+  return props.size ? widthSwitch(props.size) + "px !important" : toggleWidth + "px !important";
+}, function (props) {
+  return props.size ? heightSwitch(props.size) / 2 + "px !important" : toggleRadius + "px !important";
+}, colors.card, function (props) {
+  return props.size ? heightSwitch(props.size) - sizeGutter(props.size) * 2 + "px !important" : toggleControlSsize + "px !important";
+}, function (props) {
+  return props.size ? heightSwitch(props.size) - sizeGutter(props.size) * 2 + "px !important" : toggleControlSsize + "px !important";
+}, colors.default10, function (props) {
+  return props.disabled ? colors.brandTransparent + " !important" : colors.brandDark + " !important";
+}, function (props) {
+  return props.size ? widthSwitch(props.size) - (heightSwitch(props.size) - sizeGutter(props.size) * 2) - sizeGutter(props.size) + "px !important" : toggleWidth - toggleControlSsize - toggleGutter + "px !important";
+});
+var Toggle = styled__default["default"].button(_templateObject2$3 || (_templateObject2$3 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  display: flex !important;\n  flex-direction: row !important;\n  opacity: ", ";\n\n  cursor: ", ";\n\n  .btn {\n    display: flex !important;\n    align-items: center !important;\n    justify-content: center !important;\n    width: ", ";\n    border: 1px solid ", " !important;\n    padding: 0.5rem 0 !important;\n\n    span {\n      font-size: ", ";\n    }\n  }\n\n  .left {\n    background-color: ", ";\n    border-top-left-radius: 20px !important;\n    border-bottom-left-radius: 20px !important;\n    border-right: 0 !important;\n    transition: 400ms !important;\n\n    color: ", ";\n  }\n\n  .right {\n    background-color: ", ";\n    border-top-right-radius: 20px !important;\n    border-bottom-right-radius: 20px !important;\n    border-left: 0 !important;\n    transition: 400ms !important;\n\n    color: ", ";\n  }\n"])), function (props) {
+  return props.disabled ? '0.5 !important' : '1 !important';
+}, function (props) {
+  return props.disabled ? 'not-allowed !important' : 'pointer !important';
+}, function (props) {
+  return props.size ? widthToggle(props.size) : '4rem !important';
+}, colors.card, function (props) {
+  return props.size ? fontToggle(props.size) : '0.6875rem !important';
+}, function (props) {
+  return !props.checked ? colors.brand10 + " !important" : colors.white + " !important";
+}, function (props) {
+  return !props.checked ? colors.white + " !important" : colors.gray20 + " !important";
+}, function (props) {
+  return props.checked ? colors.brand10 + " !important" : colors.white + " !important";
+}, function (props) {
+  return props.checked ? colors.white + " !important" : colors.gray20 + " !important";
+});
+var ActiveInactive = styled__default["default"].button(_templateObject3$3 || (_templateObject3$3 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  display: flex !important;\n  flex-direction: row !important;\n  opacity: ", ";\n\n  cursor: ", ";\n\n  .btn {\n    display: flex !important;\n    align-items: center !important;\n    justify-content: center !important;\n    width: ", ";\n    border: 1px solid ", " !important;\n    padding: 0.5rem 0 !important;\n\n    span {\n      font-size: ", ";\n    }\n  }\n\n  .left {\n    background-color: ", ";\n    border-top-left-radius: 20px !important;\n    border-bottom-left-radius: 20px !important;\n    border-right: 0 !important;\n    transition: 400ms !important;\n\n    span {\n      color: ", ";\n    }\n  }\n\n  .right {\n    background-color: ", ";\n    border-top-right-radius: 20px !important;\n    border-bottom-right-radius: 20px !important;\n    border-left: 0 !important;\n    transition: 400ms !important;\n\n    span {\n      color: ", ";\n    }\n  }\n"])), function (props) {
+  return props.disabled ? '0.5 !important' : '1 !important';
+}, function (props) {
+  return props.disabled ? 'not-allowed !important' : 'pointer !important';
+}, function (props) {
+  return props.size ? widthToggle(props.size) : '4.375rem !important';
+}, colors.card, function (props) {
+  return props.size ? fontActiveInactive(props.size) : '0.625rem !important';
+}, function (props) {
+  return !props.checked ? colors.brand20 + " !important" : colors.white + " !important";
+}, function (props) {
+  return !props.checked ? colors.white + " !important" : colors.gray20 + " !important";
+}, function (props) {
+  return props.checked ? colors.brandGreen + " !important" : colors.white + " !important";
+}, function (props) {
+  return props.checked ? colors.white + " !important" : colors.gray20 + " !important";
+});
+
+var TYPES = {
+  "switch": 'switch',
+  toggle: 'toggle',
+  activeInactive: 'activeInactive'
+};
+
+function Selection(_ref) {
+  var type = _ref.type,
+      _ref$checked = _ref.checked,
+      checked = _ref$checked === void 0 ? false : _ref$checked,
+      onClick = _ref.onClick,
+      onChange = _ref.onChange,
+      size = _ref.size,
+      disabled = _ref.disabled,
+      ref = _ref.ref,
+      className = _ref.className,
+      style = _ref.style;
+  var eventFunction = onClick || onChange;
+
+  function renderSwitch() {
+    return jsxRuntime.jsxs(Switch, Object.assign({
+      className: className,
+      style: style,
+      size: size,
+      ref: ref,
+      disabled: disabled,
+      role: "switch",
+      onClick: eventFunction
+    }, {
+      children: [jsxRuntime.jsx("div", {
+        className: "" + (checked ? 'checked' : '')
+      }, void 0), jsxRuntime.jsx("span", {
+        "data-testid": "control",
+        className: "control"
+      }, void 0)]
+    }), void 0);
+  }
+
+  function renderToggle() {
+    return jsxRuntime.jsxs(Toggle, Object.assign({
+      className: className,
+      style: style,
+      checked: checked,
+      ref: ref,
+      size: size,
+      disabled: disabled,
+      role: "switch",
+      onClick: eventFunction
+    }, {
+      children: [jsxRuntime.jsx("div", Object.assign({
+        "data-testid": "btn-left",
+        className: "btn left"
+      }, {
+        children: jsxRuntime.jsx("span", {
+          children: "n\xE3o"
+        }, void 0)
+      }), void 0), jsxRuntime.jsx("div", Object.assign({
+        "data-testid": "btn-right",
+        className: "btn right"
+      }, {
+        children: jsxRuntime.jsx("span", {
+          children: "sim"
+        }, void 0)
+      }), void 0)]
+    }), void 0);
+  }
+
+  function renderActiveInactive() {
+    return jsxRuntime.jsxs(ActiveInactive, Object.assign({
+      className: className,
+      style: style,
+      checked: checked,
+      ref: ref,
+      size: size,
+      disabled: disabled,
+      role: "switch",
+      onClick: eventFunction
+    }, {
+      children: [jsxRuntime.jsx("div", Object.assign({
+        className: "btn left"
+      }, {
+        children: jsxRuntime.jsx("span", {
+          children: checked ? 'desativar' : 'inativo'
+        }, void 0)
+      }), void 0), jsxRuntime.jsx("div", Object.assign({
+        className: "btn right"
+      }, {
+        children: jsxRuntime.jsx("span", {
+          children: checked ? 'ativo' : 'ativar'
+        }, void 0)
+      }), void 0)]
+    }), void 0);
+  }
+
+  switch (type) {
+    case TYPES["switch"]:
+      return renderSwitch();
+
+    case TYPES.toggle:
+      return renderToggle();
+
+    case TYPES.activeInactive:
+      return renderActiveInactive();
+
+    default:
+      return null;
+  }
+}
+
+var _templateObject$2, _templateObject2$2, _templateObject3$2;
+var ContainerPagination = styled__default["default"].div(_templateObject$2 || (_templateObject$2 = _taggedTemplateLiteralLoose(["\n  display: flex;\n  font-size: ", ";\n\n  justify-content: center;\n  align-items: center;\n\n  button + button {\n    margin-left: 0.5em;\n  }\n\n  button {\n    ", "\n  }\n"])), function (props) {
+  return getFontSize(props.size, '1rem');
+}, function (props) {
+  return !props.disabledAll ? styled.css(_templateObject2$2 || (_templateObject2$2 = _taggedTemplateLiteralLoose(["\n            opacity: 1 !important;\n          "]))) : '';
+});
+var Button = styled__default["default"].button(_templateObject3$2 || (_templateObject3$2 = _taggedTemplateLiteralLoose(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  text-align: center;\n  color: ", ";\n  background-color: ", ";\n  border: 1px solid ", ";\n  font-size: 1.125em;\n  font-weight: 500;\n  width: 2.5em;\n  height: 2.5em;\n  border-radius: 0.625em;\n  transition: all 0.4s ease;\n\n  &:not(:disabled):hover {\n    background-color: ", ";\n  }\n\n  &:disabled {\n    border: none;\n    cursor: default;\n    opacity: 0.75;\n  }\n"])), function (props) {
+  return props.active ? colors.white : colors.brand10;
+}, function (props) {
+  return props.active ? colors.brand10 : colors.white;
+}, colors.hover, colors.hover);
+
+var brothersCount = 2;
+
+function generatePagesArray(from, to) {
+  return [].concat(new Array(to - from)).map(function (_, index) {
+    return from + index + 1;
+  }).filter(function (page) {
+    return page > 0;
+  });
+}
+
+function Pagination(_ref) {
+  var totalCount = _ref.totalCount,
+      _ref$currentPage = _ref.currentPage,
+      currentPage = _ref$currentPage === void 0 ? 1 : _ref$currentPage,
+      _ref$limitPerPage = _ref.limitPerPage,
+      limitPerPage = _ref$limitPerPage === void 0 ? 30 : _ref$limitPerPage,
+      onPageChange = _ref.onPageChange,
+      _ref$doubleJumpArrow = _ref.doubleJumpArrow,
+      doubleJumpArrow = _ref$doubleJumpArrow === void 0 ? false : _ref$doubleJumpArrow,
+      _ref$disabled = _ref.disabled,
+      disabled = _ref$disabled === void 0 ? false : _ref$disabled,
+      _ref$size = _ref.size,
+      size = _ref$size === void 0 ? 'md' : _ref$size,
+      className = _ref.className,
+      style = _ref.style;
+  var totalPages = Math.ceil(totalCount / limitPerPage);
+  var previousPages = currentPage > 1 ? generatePagesArray(currentPage - (brothersCount + 1), currentPage - 1) : [];
+  var nextPages = currentPage < totalPages ? generatePagesArray(currentPage, Math.min(totalPages, currentPage + brothersCount)) : [];
+
+  function handlePageChange(event) {
+    var newPage = Number(event.currentTarget.value);
+    return onPageChange && onPageChange(newPage);
+  }
+
+  if (totalPages == 0) return null;
+  return jsxRuntime.jsxs(ContainerPagination, Object.assign({
+    className: className,
+    style: style,
+    disabledAll: disabled,
+    size: size,
+    role: "group"
+  }, {
+    children: [doubleJumpArrow && jsxRuntime.jsx(Button, Object.assign({
+      disabled: currentPage == 1 || disabled,
+      value: 1,
+      onClick: handlePageChange,
+      active: currentPage == 1
+    }, {
+      children: jsxRuntime.jsx(FontAwesomeIcon, {
+        icon: faAngleDoubleLeft
+      }, void 0)
+    }), void 0), jsxRuntime.jsx(Button, Object.assign({
+      onClick: handlePageChange,
+      value: currentPage - 1,
+      disabled: currentPage == 1 || disabled,
+      active: currentPage == 1
+    }, {
+      children: jsxRuntime.jsx(FontAwesomeIcon, {
+        icon: faAngleLeft
+      }, void 0)
+    }), void 0), currentPage >= brothersCount + 2 && jsxRuntime.jsxs(jsxRuntime.Fragment, {
+      children: [jsxRuntime.jsx(Button, Object.assign({
+        onClick: handlePageChange,
+        value: 1,
+        disabled: disabled
+      }, {
+        children: 1
+      }), void 0), currentPage > brothersCount + 2 && jsxRuntime.jsx(Button, Object.assign({
+        disabled: disabled
+      }, {
+        children: "..."
+      }), void 0)]
+    }, void 0), previousPages.map(function (value) {
+      return jsxRuntime.jsx(Button, Object.assign({
+        onClick: handlePageChange,
+        value: value,
+        disabled: disabled
+      }, {
+        children: value
+      }), value);
+    }), jsxRuntime.jsx(Button, Object.assign({
+      onClick: handlePageChange,
+      disabled: true,
+      value: currentPage,
+      active: true
+    }, {
+      children: currentPage
+    }), void 0), nextPages.map(function (value) {
+      return jsxRuntime.jsx(Button, Object.assign({
+        onClick: handlePageChange,
+        disabled: disabled,
+        value: value
+      }, {
+        children: value
+      }), value);
+    }), totalPages >= currentPage + brothersCount + 1 && jsxRuntime.jsxs(jsxRuntime.Fragment, {
+      children: [totalPages > currentPage + brothersCount + 1 && jsxRuntime.jsx(Button, Object.assign({
+        disabled: disabled
+      }, {
+        children: "..."
+      }), void 0), jsxRuntime.jsx(Button, Object.assign({
+        onClick: handlePageChange,
+        disabled: disabled,
+        value: totalPages
+      }, {
+        children: totalPages
+      }), void 0)]
+    }, void 0), jsxRuntime.jsx(Button, Object.assign({
+      onClick: handlePageChange,
+      value: currentPage + 1,
+      disabled: currentPage == totalPages || disabled,
+      active: currentPage == totalPages
+    }, {
+      children: jsxRuntime.jsx(FontAwesomeIcon, {
+        icon: faAngleRight
+      }, void 0)
+    }), void 0), doubleJumpArrow && jsxRuntime.jsx(Button, Object.assign({
+      disabled: currentPage == totalPages || disabled,
+      active: currentPage == totalPages,
+      value: totalPages,
+      onClick: handlePageChange
+    }, {
+      children: jsxRuntime.jsx(FontAwesomeIcon, {
+        icon: faAngleDoubleRight
+      }, void 0)
+    }), void 0)]
+  }), void 0);
+}
+
+var _templateObject$1, _templateObject2$1, _templateObject3$1, _templateObject4$1;
+var Header = styled__default["default"].div(_templateObject$1 || (_templateObject$1 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  display: flex;\n  margin-bottom: 10px;\n"])));
+var Title = styled__default["default"].span(_templateObject2$1 || (_templateObject2$1 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  flex: 1;\n  text-align: left;\n  color: ", ";\n  font-weight: bold;\n"])), colors.gray20);
+var Message = styled__default["default"].span(_templateObject3$1 || (_templateObject3$1 = _taggedTemplateLiteralLoose(["\n  flex: 1;\n  text-align: right;\n  color: ", ";\n"])), colors.gray10);
+var Container$1 = styled__default["default"].div(_templateObject4$1 || (_templateObject4$1 = _taggedTemplateLiteralLoose(["\n  margin-bottom: ", ";\n\n  /*!\n * # Semantic UI 2.4.1 - Table\n * http://github.com/semantic-org/semantic-ui/\n *\n *\n * Released under the MIT license\n * http://opensource.org/licenses/MIT\n *\n */\n\n  /*******************************\n             Table\n*******************************/\n\n  /* Prototype */\n  .ui.table {\n    width: 100%;\n    background: #ffffff;\n    margin: 1em 0em;\n    border: none !important;\n    -webkit-box-shadow: none;\n    box-shadow: none;\n    border-radius: 0.28571429rem;\n    text-align: left;\n    color: #707070;\n    border-collapse: separate;\n    border-spacing: 0px;\n  }\n  .ui.table:first-child {\n    margin-top: 0em;\n  }\n  .ui.table:last-child {\n    margin-bottom: 0em;\n  }\n\n  /*******************************\n               Parts\n  *******************************/\n\n  /* Table Content */\n  .ui.table th,\n  .ui.table td {\n    -webkit-transition: background 0.1s ease, color 0.1s ease;\n    transition: background 0.1s ease, color 0.1s ease;\n  }\n\n  /* Headers */\n  .ui.table thead {\n    -webkit-box-shadow: none;\n    box-shadow: none;\n  }\n  .ui.table thead th {\n    cursor: auto;\n    background: none !important;\n    text-align: inherit;\n    color: #9b4dee !important;\n    padding: 0.92857143em 0.78571429em;\n    vertical-align: inherit;\n    font-style: none;\n    font-weight: bold;\n    text-transform: none;\n    border-bottom: 1px solid rgba(34, 36, 38, 0.1);\n    border-left: none;\n  }\n  .ui.table thead tr > th:first-child {\n    border-left: none;\n  }\n  .ui.table thead tr:first-child > th:first-child {\n    border-radius: 0.28571429rem 0em 0em 0em;\n  }\n  .ui.table thead tr:first-child > th:last-child {\n    border-radius: 0em 0.28571429rem 0em 0em;\n  }\n  .ui.table thead tr:first-child > th:only-child {\n    border-radius: 0.28571429rem 0.28571429rem 0em 0em;\n  }\n\n  /* Footer */\n  .ui.table tfoot {\n    -webkit-box-shadow: none;\n    box-shadow: none;\n    margin-top: 20px;\n  }\n  .ui.table tfoot th {\n    cursor: auto;\n    border-top: 1px solid rgba(34, 36, 38, 0.15);\n    background: #f9fafb;\n    text-align: inherit;\n    color: rgba(0, 0, 0, 0.87);\n    padding: 0.78571429em 0.78571429em;\n    vertical-align: middle;\n    font-style: normal;\n    font-weight: normal;\n    text-transform: none;\n  }\n  .ui.table tfoot tr > th:first-child {\n    border-left: none;\n  }\n  .ui.table tfoot tr:first-child > th:first-child {\n    border-radius: 0em 0em 0em 0.28571429rem;\n  }\n  .ui.table tfoot tr:first-child > th:last-child {\n    border-radius: 0em 0em 0.28571429rem 0em;\n  }\n  .ui.table tfoot tr:first-child > th:only-child {\n    border-radius: 0em 0em 0.28571429rem 0.28571429rem;\n  }\n\n  /* Table Row */\n  .ui.table tr td {\n    border-top: 1px solid rgba(34, 36, 38, 0.1);\n  }\n  .ui.table tr:first-child td {\n    border-top: none;\n  }\n\n  /* Repeated tbody */\n  .ui.table tbody + tbody tr:first-child td {\n    border-top: 1px solid rgba(34, 36, 38, 0.1);\n  }\n\n  /* Table Cells */\n  .ui.table td {\n    padding: 0.78571429em 0.78571429em;\n    text-align: inherit;\n  }\n\n  /* Icons */\n  .ui.table > .icon {\n    vertical-align: baseline;\n  }\n  .ui.table > .icon:only-child {\n    margin: 0em;\n  }\n\n  /* Table Segment */\n  .ui.table.segment {\n    padding: 0em;\n  }\n  .ui.table.segment:after {\n    display: none;\n  }\n  .ui.table.segment.stacked:after {\n    display: block;\n  }\n\n  /* Responsive */\n  @media only screen and (max-width: 767px) {\n    .ui.table:not(.unstackable) {\n      width: 100%;\n    }\n    .ui.table:not(.unstackable) tbody,\n    .ui.table:not(.unstackable) tr,\n    .ui.table:not(.unstackable) tr > th,\n    .ui.table:not(.unstackable) tr > td {\n      width: auto !important;\n      display: block !important;\n    }\n    .ui.table:not(.unstackable) {\n      padding: 0em;\n    }\n    .ui.table:not(.unstackable) thead {\n      display: block;\n    }\n    .ui.table:not(.unstackable) tfoot {\n      display: block;\n    }\n    .ui.table:not(.unstackable) tr {\n      padding-top: 1em;\n      padding-bottom: 1em;\n      -webkit-box-shadow: 0px -1px 0px 0px rgba(0, 0, 0, 0.1) inset !important;\n      box-shadow: 0px -1px 0px 0px rgba(0, 0, 0, 0.1) inset !important;\n    }\n    .ui.table:not(.unstackable) tr > th,\n    .ui.table:not(.unstackable) tr > td {\n      background: none;\n      border: none !important;\n      padding: 0.25em 0.75em !important;\n      -webkit-box-shadow: none !important;\n      box-shadow: none !important;\n    }\n    .ui.table:not(.unstackable) th:first-child,\n    .ui.table:not(.unstackable) td:first-child {\n      font-weight: bold;\n    }\n\n    /* Definition Table */\n    .ui.definition.table:not(.unstackable) thead th:first-child {\n      -webkit-box-shadow: none !important;\n      box-shadow: none !important;\n    }\n  }\n\n  /*******************************\n              Coupling\n  *******************************/\n\n  /* UI Image */\n  .ui.table th .image,\n  .ui.table th .image img,\n  .ui.table td .image,\n  .ui.table td .image img {\n    max-width: none;\n  }\n\n  /*******************************\n               Types\n  *******************************/\n\n  /*--------------\n      Complex\n  ---------------*/\n\n  .ui.structured.table {\n    border-collapse: collapse;\n  }\n  .ui.structured.table thead th {\n    border-left: none;\n    border-right: none;\n  }\n  .ui.structured.sortable.table thead th {\n    border-left: 1px solid rgba(34, 36, 38, 0.15);\n    border-right: 1px solid rgba(34, 36, 38, 0.15);\n  }\n  .ui.structured.basic.table th {\n    border-left: none;\n    border-right: none;\n  }\n  .ui.structured.celled.table tr th,\n  .ui.structured.celled.table tr td {\n    border-left: 1px solid rgba(34, 36, 38, 0.1);\n    border-right: 1px solid rgba(34, 36, 38, 0.1);\n  }\n\n  /*--------------\n     Definition\n  ---------------*/\n\n  .ui.definition.table thead:not(.full-width) th:first-child {\n    pointer-events: none;\n    background: transparent;\n    font-weight: normal;\n    color: rgba(0, 0, 0, 0.4);\n    -webkit-box-shadow: -1px -1px 0px 1px #ffffff;\n    box-shadow: -1px -1px 0px 1px #ffffff;\n  }\n  .ui.definition.table tfoot:not(.full-width) th:first-child {\n    pointer-events: none;\n    background: transparent;\n    font-weight: rgba(0, 0, 0, 0.4);\n    color: normal;\n    -webkit-box-shadow: 1px 1px 0px 1px #ffffff;\n    box-shadow: 1px 1px 0px 1px #ffffff;\n  }\n\n  /* Remove Border */\n  .ui.celled.definition.table thead:not(.full-width) th:first-child {\n    -webkit-box-shadow: 0px -1px 0px 1px #ffffff;\n    box-shadow: 0px -1px 0px 1px #ffffff;\n  }\n  .ui.celled.definition.table tfoot:not(.full-width) th:first-child {\n    -webkit-box-shadow: 0px 1px 0px 1px #ffffff;\n    box-shadow: 0px 1px 0px 1px #ffffff;\n  }\n\n  /* Highlight Defining Column */\n  .ui.definition.table tr td:first-child:not(.ignored),\n  .ui.definition.table tr td.definition {\n    background: none;\n    font-weight: bold;\n    color: ", ";\n    text-transform: '';\n    -webkit-box-shadow: '';\n    box-shadow: '';\n    text-align: '';\n    font-size: 1em;\n    padding-left: '';\n    padding-right: '';\n  }\n\n  /* Fix 2nd Column */\n  .ui.definition.table thead:not(.full-width) th:nth-child(2) {\n    border-left: 1px solid rgba(34, 36, 38, 0.15);\n  }\n  .ui.definition.table tfoot:not(.full-width) th:nth-child(2) {\n    border-left: 1px solid rgba(34, 36, 38, 0.15);\n  }\n  .ui.definition.table td:nth-child(2) {\n    border-left: 1px solid rgba(34, 36, 38, 0.15);\n  }\n\n  /*******************************\n               States\n  *******************************/\n\n  /*--------------\n      Positive\n  ---------------*/\n\n  .ui.table tr.positive,\n  .ui.table td.positive {\n    -webkit-box-shadow: 0px 0px 0px #a3c293 inset;\n    box-shadow: 0px 0px 0px #a3c293 inset;\n  }\n  .ui.table tr.positive,\n  .ui.table td.positive {\n    background: #fcfff5 !important;\n    color: #2c662d !important;\n  }\n\n  /*--------------\n       Negative\n  ---------------*/\n\n  .ui.table tr.negative,\n  .ui.table td.negative {\n    -webkit-box-shadow: 0px 0px 0px #e0b4b4 inset;\n    box-shadow: 0px 0px 0px #e0b4b4 inset;\n  }\n  .ui.table tr.negative,\n  .ui.table td.negative {\n    background: #fff6f6 !important;\n    color: #9f3a38 !important;\n  }\n\n  /*--------------\n        Error\n  ---------------*/\n\n  .ui.table tr.error,\n  .ui.table td.error {\n    -webkit-box-shadow: 0px 0px 0px #e0b4b4 inset;\n    box-shadow: 0px 0px 0px #e0b4b4 inset;\n  }\n  .ui.table tr.error,\n  .ui.table td.error {\n    background: #fff6f6 !important;\n    color: #9f3a38 !important;\n  }\n\n  /*--------------\n       Warning\n  ---------------*/\n\n  .ui.table tr.warning,\n  .ui.table td.warning {\n    -webkit-box-shadow: 0px 0px 0px #c9ba9b inset;\n    box-shadow: 0px 0px 0px #c9ba9b inset;\n  }\n  .ui.table tr.warning,\n  .ui.table td.warning {\n    background: #fffaf3 !important;\n    color: #573a08 !important;\n  }\n\n  /*--------------\n       Active\n  ---------------*/\n\n  .ui.table tr.active,\n  .ui.table td.active {\n    -webkit-box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.87) inset;\n    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.87) inset;\n  }\n  .ui.table tr.active,\n  .ui.table td.active {\n    background: #e0e0e0 !important;\n    color: rgba(0, 0, 0, 0.87) !important;\n  }\n\n  /*--------------\n       Disabled\n  ---------------*/\n\n  .ui.table tr.disabled td,\n  .ui.table tr td.disabled,\n  .ui.table tr.disabled:hover,\n  .ui.table tr:hover td.disabled {\n    pointer-events: none;\n    color: rgba(40, 40, 40, 0.3);\n  }\n\n  /*******************************\n            Variations\n  *******************************/\n\n  /*--------------\n      Stackable\n  ---------------*/\n\n  @media only screen and (max-width: 991px) {\n    .ui[class*='tablet stackable'].table,\n    .ui[class*='tablet stackable'].table tbody,\n    .ui[class*='tablet stackable'].table tr,\n    .ui[class*='tablet stackable'].table tr > th,\n    .ui[class*='tablet stackable'].table tr > td {\n      width: 100% !important;\n      display: block !important;\n    }\n    .ui[class*='tablet stackable'].table {\n      padding: 0em;\n    }\n    .ui[class*='tablet stackable'].table thead {\n      display: block;\n    }\n    .ui[class*='tablet stackable'].table tfoot {\n      display: block;\n    }\n    .ui[class*='tablet stackable'].table tr {\n      padding-top: 1em;\n      padding-bottom: 1em;\n      -webkit-box-shadow: 0px -1px 0px 0px rgba(0, 0, 0, 0.1) inset !important;\n      box-shadow: 0px -1px 0px 0px rgba(0, 0, 0, 0.1) inset !important;\n    }\n    .ui[class*='tablet stackable'].table tr > th,\n    .ui[class*='tablet stackable'].table tr > td {\n      background: none;\n      border: none !important;\n      padding: 0.25em 0.75em;\n      -webkit-box-shadow: none !important;\n      box-shadow: none !important;\n    }\n\n    /* Definition Table */\n    .ui.definition[class*='tablet stackable'].table thead th:first-child {\n      -webkit-box-shadow: none !important;\n      box-shadow: none !important;\n    }\n  }\n\n  /*--------------\n   Text Alignment\n  ---------------*/\n\n  .ui.table[class*='left aligned'],\n  .ui.table [class*='left aligned'] {\n    text-align: left;\n  }\n  .ui.table[class*='center aligned'],\n  .ui.table [class*='center aligned'] {\n    text-align: center;\n  }\n  .ui.table[class*='right aligned'],\n  .ui.table [class*='right aligned'] {\n    text-align: right;\n  }\n\n  /*------------------\n   Vertical Alignment\n  ------------------*/\n\n  .ui.table[class*='top aligned'],\n  .ui.table [class*='top aligned'] {\n    vertical-align: top;\n  }\n  .ui.table[class*='middle aligned'],\n  .ui.table [class*='middle aligned'] {\n    vertical-align: middle;\n  }\n  .ui.table[class*='bottom aligned'],\n  .ui.table [class*='bottom aligned'] {\n    vertical-align: bottom;\n  }\n\n  /*--------------\n      Collapsing\n  ---------------*/\n\n  .ui.table th.collapsing,\n  .ui.table td.collapsing {\n    width: 1px;\n    white-space: nowrap;\n  }\n\n  /*--------------\n       Fixed\n  ---------------*/\n\n  .ui.fixed.table {\n    table-layout: fixed;\n  }\n  .ui.fixed.table th,\n  .ui.fixed.table td {\n    overflow: hidden;\n    text-overflow: ellipsis;\n  }\n\n  /*--------------\n     Selectable\n  ---------------*/\n\n  .ui.selectable.table tbody tr:hover,\n  .ui.table tbody tr td.selectable:hover {\n    background: rgba(0, 0, 0, 0.05) !important;\n    color: rgba(0, 0, 0, 0.95) !important;\n  }\n  .ui.selectable.inverted.table tbody tr:hover,\n  .ui.inverted.table tbody tr td.selectable:hover {\n    background: rgba(255, 255, 255, 0.08) !important;\n    color: #ffffff !important;\n  }\n\n  /* Selectable Cell Link */\n  .ui.table tbody tr td.selectable {\n    padding: 0em;\n  }\n  .ui.table tbody tr td.selectable > a:not(.ui) {\n    display: block;\n    color: inherit;\n    padding: 0.78571429em 0.78571429em;\n  }\n\n  /* Other States */\n  .ui.selectable.table tr.error:hover,\n  .ui.table tr td.selectable.error:hover,\n  .ui.selectable.table tr:hover td.error {\n    background: #ffe7e7 !important;\n    color: #943634 !important;\n  }\n  .ui.selectable.table tr.warning:hover,\n  .ui.table tr td.selectable.warning:hover,\n  .ui.selectable.table tr:hover td.warning {\n    background: #fff4e4 !important;\n    color: #493107 !important;\n  }\n  .ui.selectable.table tr.active:hover,\n  .ui.table tr td.selectable.active:hover,\n  .ui.selectable.table tr:hover td.active {\n    background: #e0e0e0 !important;\n    color: rgba(0, 0, 0, 0.87) !important;\n  }\n  .ui.selectable.table tr.positive:hover,\n  .ui.table tr td.selectable.positive:hover,\n  .ui.selectable.table tr:hover td.positive {\n    background: #f7ffe6 !important;\n    color: #275b28 !important;\n  }\n  .ui.selectable.table tr.negative:hover,\n  .ui.table tr td.selectable.negative:hover,\n  .ui.selectable.table tr:hover td.negative {\n    background: #ffe7e7 !important;\n    color: #943634 !important;\n  }\n\n  /*-------------------\n        Attached\n  --------------------*/\n\n  /* Middle */\n  .ui.attached.table {\n    top: 0px;\n    bottom: 0px;\n    border-radius: 0px;\n    margin: 0em -1px;\n    width: calc(100% - (-1px * 2));\n    max-width: calc(100% - (-1px * 2));\n    -webkit-box-shadow: none;\n    box-shadow: none;\n    border: 1px solid #d4d4d5;\n  }\n  .ui.attached + .ui.attached.table:not(.top) {\n    border-top: none;\n  }\n\n  /* Top */\n  .ui[class*='top attached'].table {\n    bottom: 0px;\n    margin-bottom: 0em;\n    top: 0px;\n    margin-top: 1em;\n    border-radius: 0.28571429rem 0.28571429rem 0em 0em;\n  }\n  .ui.table[class*='top attached']:first-child {\n    margin-top: 0em;\n  }\n\n  /* Bottom */\n  .ui[class*='bottom attached'].table {\n    bottom: 0px;\n    margin-top: 0em;\n    top: 0px;\n    margin-bottom: 1em;\n    -webkit-box-shadow: none, none;\n    box-shadow: none, none;\n    border-radius: 0em 0em 0.28571429rem 0.28571429rem;\n  }\n  .ui[class*='bottom attached'].table:last-child {\n    margin-bottom: 0em;\n  }\n\n  /*--------------\n       Striped\n  ---------------*/\n\n  /* Table Striping */\n  .ui.striped.table > tr:nth-child(2n),\n  .ui.striped.table tbody tr:nth-child(2n) {\n    background-color: rgba(0, 0, 50, 0.02);\n  }\n\n  /* Stripes */\n  .ui.inverted.striped.table > tr:nth-child(2n),\n  .ui.inverted.striped.table tbody tr:nth-child(2n) {\n    background-color: rgba(255, 255, 255, 0.05);\n  }\n\n  /* Allow striped active hover */\n  .ui.striped.selectable.selectable.selectable.table tbody tr.active:hover {\n    background: #efefef !important;\n    color: rgba(0, 0, 0, 0.95) !important;\n  }\n\n  /*--------------\n     Single Line\n  ---------------*/\n\n  .ui.table[class*='single line'],\n  .ui.table [class*='single line'] {\n    white-space: nowrap;\n  }\n  .ui.table[class*='single line'],\n  .ui.table [class*='single line'] {\n    white-space: nowrap;\n  }\n\n  /*-------------------\n         Colors\n  --------------------*/\n\n  /* Red */\n  .ui.red.table {\n    border-top: 0.2em solid #db2828;\n  }\n  .ui.inverted.red.table {\n    background-color: #db2828 !important;\n    color: #ffffff !important;\n  }\n\n  /* Orange */\n  .ui.orange.table {\n    border-top: 0.2em solid #f2711c;\n  }\n  .ui.inverted.orange.table {\n    background-color: #f2711c !important;\n    color: #ffffff !important;\n  }\n\n  /* Yellow */\n  .ui.yellow.table {\n    border-top: 0.2em solid #fbbd08;\n  }\n  .ui.inverted.yellow.table {\n    background-color: #fbbd08 !important;\n    color: #ffffff !important;\n  }\n\n  /* Olive */\n  .ui.olive.table {\n    border-top: 0.2em solid #b5cc18;\n  }\n  .ui.inverted.olive.table {\n    background-color: #b5cc18 !important;\n    color: #ffffff !important;\n  }\n\n  /* Green */\n  .ui.green.table {\n    border-top: 0.2em solid #21ba45;\n  }\n  .ui.inverted.green.table {\n    background-color: #21ba45 !important;\n    color: #ffffff !important;\n  }\n\n  /* Teal */\n  .ui.teal.table {\n    border-top: 0.2em solid #00b5ad;\n  }\n  .ui.inverted.teal.table {\n    background-color: #00b5ad !important;\n    color: #ffffff !important;\n  }\n\n  /* Blue */\n  .ui.blue.table {\n    border-top: 0.2em solid #2185d0;\n  }\n  .ui.inverted.blue.table {\n    background-color: #2185d0 !important;\n    color: #ffffff !important;\n  }\n\n  /* Violet */\n  .ui.violet.table {\n    border-top: 0.2em solid #6435c9;\n  }\n  .ui.inverted.violet.table {\n    background-color: #6435c9 !important;\n    color: #ffffff !important;\n  }\n\n  /* Purple */\n  .ui.purple.table {\n    border-top: 0.2em solid #a333c8;\n  }\n  .ui.inverted.purple.table {\n    background-color: #a333c8 !important;\n    color: #ffffff !important;\n  }\n\n  /* Pink */\n  .ui.pink.table {\n    border-top: 0.2em solid #e03997;\n  }\n  .ui.inverted.pink.table {\n    background-color: #e03997 !important;\n    color: #ffffff !important;\n  }\n\n  /* Brown */\n  .ui.brown.table {\n    border-top: 0.2em solid #a5673f;\n  }\n  .ui.inverted.brown.table {\n    background-color: #a5673f !important;\n    color: #ffffff !important;\n  }\n\n  /* Grey */\n  .ui.grey.table {\n    border-top: 0.2em solid #767676;\n  }\n  .ui.inverted.grey.table {\n    background-color: #767676 !important;\n    color: #ffffff !important;\n  }\n\n  /* Black */\n  .ui.black.table {\n    border-top: 0.2em solid #1b1c1d;\n  }\n  .ui.inverted.black.table {\n    background-color: #1b1c1d !important;\n    color: #ffffff !important;\n  }\n\n  /*--------------\n    Column Count\n  ---------------*/\n\n  /* Grid Based */\n  .ui.one.column.table td {\n    width: 100%;\n  }\n  .ui.two.column.table td {\n    width: 50%;\n  }\n  .ui.three.column.table td {\n    width: 33.33333333%;\n  }\n  .ui.four.column.table td {\n    width: 25%;\n  }\n  .ui.five.column.table td {\n    width: 20%;\n  }\n  .ui.six.column.table td {\n    width: 16.66666667%;\n  }\n  .ui.seven.column.table td {\n    width: 14.28571429%;\n  }\n  .ui.eight.column.table td {\n    width: 12.5%;\n  }\n  .ui.nine.column.table td {\n    width: 11.11111111%;\n  }\n  .ui.ten.column.table td {\n    width: 10%;\n  }\n  .ui.eleven.column.table td {\n    width: 9.09090909%;\n  }\n  .ui.twelve.column.table td {\n    width: 8.33333333%;\n  }\n  .ui.thirteen.column.table td {\n    width: 7.69230769%;\n  }\n  .ui.fourteen.column.table td {\n    width: 7.14285714%;\n  }\n  .ui.fifteen.column.table td {\n    width: 6.66666667%;\n  }\n  .ui.sixteen.column.table td {\n    width: 6.25%;\n  }\n\n  /* Column Width */\n  .ui.table th.one.wide,\n  .ui.table td.one.wide {\n    width: 6.25%;\n  }\n  .ui.table th.two.wide,\n  .ui.table td.two.wide {\n    width: 12.5%;\n  }\n  .ui.table th.three.wide,\n  .ui.table td.three.wide {\n    width: 18.75%;\n  }\n  .ui.table th.four.wide,\n  .ui.table td.four.wide {\n    width: 25%;\n  }\n  .ui.table th.five.wide,\n  .ui.table td.five.wide {\n    width: 31.25%;\n  }\n  .ui.table th.six.wide,\n  .ui.table td.six.wide {\n    width: 37.5%;\n  }\n  .ui.table th.seven.wide,\n  .ui.table td.seven.wide {\n    width: 43.75%;\n  }\n  .ui.table th.eight.wide,\n  .ui.table td.eight.wide {\n    width: 50%;\n  }\n  .ui.table th.nine.wide,\n  .ui.table td.nine.wide {\n    width: 56.25%;\n  }\n  .ui.table th.ten.wide,\n  .ui.table td.ten.wide {\n    width: 62.5%;\n  }\n  .ui.table th.eleven.wide,\n  .ui.table td.eleven.wide {\n    width: 68.75%;\n  }\n  .ui.table th.twelve.wide,\n  .ui.table td.twelve.wide {\n    width: 75%;\n  }\n  .ui.table th.thirteen.wide,\n  .ui.table td.thirteen.wide {\n    width: 81.25%;\n  }\n  .ui.table th.fourteen.wide,\n  .ui.table td.fourteen.wide {\n    width: 87.5%;\n  }\n  .ui.table th.fifteen.wide,\n  .ui.table td.fifteen.wide {\n    width: 93.75%;\n  }\n  .ui.table th.sixteen.wide,\n  .ui.table td.sixteen.wide {\n    width: 100%;\n  }\n\n  /*--------------\n      Sortable\n  ---------------*/\n\n  .ui.sortable.table thead th {\n    cursor: pointer;\n    white-space: nowrap;\n    border-left: 1px solid rgba(34, 36, 38, 0.15);\n    color: rgba(0, 0, 0, 0.87);\n  }\n  .ui.sortable.table thead th:first-child {\n    border-left: none;\n  }\n  .ui.sortable.table thead th.sorted,\n  .ui.sortable.table thead th.sorted:hover {\n    -webkit-user-select: none;\n    -moz-user-select: none;\n    -ms-user-select: none;\n    user-select: none;\n  }\n  .ui.sortable.table thead th:after {\n    display: none;\n    font-style: normal;\n    font-weight: normal;\n    text-decoration: inherit;\n    content: '';\n    height: 1em;\n    width: auto;\n    opacity: 0.8;\n    margin: 0em 0em 0em 0.5em;\n    font-family: 'Icons';\n  }\n  .ui.sortable.table thead th.ascending:after {\n    content: '\f0d8';\n  }\n  .ui.sortable.table thead th.descending:after {\n    content: '\f0d7';\n  }\n\n  /* Hover */\n  .ui.sortable.table th.disabled:hover {\n    cursor: auto;\n    color: rgba(40, 40, 40, 0.3);\n  }\n  .ui.sortable.table thead th:hover {\n    background: rgba(0, 0, 0, 0.05);\n    color: rgba(0, 0, 0, 0.8);\n  }\n\n  /* Sorted */\n  .ui.sortable.table thead th.sorted {\n    background: rgba(0, 0, 0, 0.05);\n    color: rgba(0, 0, 0, 0.95);\n  }\n  .ui.sortable.table thead th.sorted:after {\n    display: inline-block;\n  }\n\n  /* Sorted Hover */\n  .ui.sortable.table thead th.sorted:hover {\n    background: rgba(0, 0, 0, 0.05);\n    color: rgba(0, 0, 0, 0.95);\n  }\n\n  /* Inverted */\n  .ui.inverted.sortable.table thead th.sorted {\n    background: rgba(255, 255, 255, 0.15) -webkit-gradient(linear, left top, left\n          bottom, from(transparent), to(rgba(0, 0, 0, 0.05)));\n    background: rgba(255, 255, 255, 0.15) -webkit-linear-gradient(transparent, rgba(0, 0, 0, 0.05));\n    background: rgba(255, 255, 255, 0.15)\n      linear-gradient(transparent, rgba(0, 0, 0, 0.05));\n    color: #ffffff;\n  }\n  .ui.inverted.sortable.table thead th:hover {\n    background: rgba(255, 255, 255, 0.08) -webkit-gradient(linear, left top, left\n          bottom, from(transparent), to(rgba(0, 0, 0, 0.05)));\n    background: rgba(255, 255, 255, 0.08) -webkit-linear-gradient(transparent, rgba(0, 0, 0, 0.05));\n    background: rgba(255, 255, 255, 0.08)\n      linear-gradient(transparent, rgba(0, 0, 0, 0.05));\n    color: #ffffff;\n  }\n  .ui.inverted.sortable.table thead th {\n    border-left-color: transparent;\n    border-right-color: transparent;\n  }\n\n  /*--------------\n      Inverted\n  ---------------*/\n\n  /* Text Color */\n  .ui.inverted.table {\n    background: #333333;\n    color: rgba(255, 255, 255, 0.9);\n    border: none;\n  }\n  .ui.inverted.table th {\n    background-color: rgba(0, 0, 0, 0.15);\n    border-color: rgba(255, 255, 255, 0.1) !important;\n    color: rgba(255, 255, 255, 0.9) !important;\n  }\n  .ui.inverted.table tr td {\n    border-color: rgba(255, 255, 255, 0.1) !important;\n  }\n  .ui.inverted.table tr.disabled td,\n  .ui.inverted.table tr td.disabled,\n  .ui.inverted.table tr.disabled:hover td,\n  .ui.inverted.table tr:hover td.disabled {\n    pointer-events: none;\n    color: rgba(225, 225, 225, 0.3);\n  }\n\n  /* Definition */\n  .ui.inverted.definition.table tfoot:not(.full-width) th:first-child,\n  .ui.inverted.definition.table thead:not(.full-width) th:first-child {\n    background: #ffffff;\n  }\n  .ui.inverted.definition.table tr td:first-child {\n    background: rgba(255, 255, 255, 0.02);\n    color: #ffffff;\n  }\n\n  /*--------------\n     Collapsing\n  ---------------*/\n\n  .ui.collapsing.table {\n    width: auto;\n  }\n\n  /*--------------\n        Basic\n  ---------------*/\n\n  .ui.basic.table {\n    background: transparent;\n    border: 1px solid rgba(34, 36, 38, 0.15);\n    -webkit-box-shadow: none;\n    box-shadow: none;\n  }\n  .ui.basic.table thead,\n  .ui.basic.table tfoot {\n    -webkit-box-shadow: none;\n    box-shadow: none;\n  }\n  .ui.basic.table th {\n    background: transparent;\n    border-left: none;\n  }\n  .ui.basic.table tbody tr {\n    border-bottom: 1px solid rgba(0, 0, 0, 0.1);\n  }\n  .ui.basic.table td {\n    background: transparent;\n  }\n  .ui.basic.striped.table tbody tr:nth-child(2n) {\n    background-color: rgba(0, 0, 0, 0.05) !important;\n  }\n\n  /* Very Basic */\n  .ui[class*='very basic'].table {\n    border: none;\n  }\n  .ui[class*='very basic'].table:not(.sortable):not(.striped) th,\n  .ui[class*='very basic'].table:not(.sortable):not(.striped) td {\n    padding: '';\n  }\n  .ui[class*='very basic'].table:not(.sortable):not(.striped) th:first-child,\n  .ui[class*='very basic'].table:not(.sortable):not(.striped) td:first-child {\n    padding-left: 0em;\n  }\n  .ui[class*='very basic'].table:not(.sortable):not(.striped) th:last-child,\n  .ui[class*='very basic'].table:not(.sortable):not(.striped) td:last-child {\n    padding-right: 0em;\n  }\n  .ui[class*='very basic'].table:not(.sortable):not(.striped)\n    thead\n    tr:first-child\n    th {\n    padding-top: 0em;\n  }\n\n  /*--------------\n       Celled\n  ---------------*/\n\n  .ui.celled.table tr th,\n  .ui.celled.table tr td {\n    border-left: 1px solid rgba(34, 36, 38, 0.1);\n  }\n  .ui.celled.table tr th:first-child,\n  .ui.celled.table tr td:first-child {\n    border-left: none;\n  }\n\n  /*--------------\n       Padded\n  ---------------*/\n\n  .ui.padded.table th {\n    padding-left: 1em;\n    padding-right: 1em;\n  }\n  .ui.padded.table th,\n  .ui.padded.table td {\n    padding: 1em 1em;\n  }\n\n  /* Very */\n  .ui[class*='very padded'].table th {\n    padding-left: 1.5em;\n    padding-right: 1.5em;\n  }\n  .ui[class*='very padded'].table td {\n    padding: 1.5em 1.5em;\n  }\n\n  /*--------------\n       Compact\n  ---------------*/\n\n  .ui.compact.table th {\n    padding-left: 0.7em;\n    padding-right: 0.7em;\n  }\n  .ui.compact.table td {\n    padding: 0.5em 0.7em;\n  }\n\n  /* Very */\n  .ui[class*='very compact'].table th {\n    padding-left: 0.6em;\n    padding-right: 0.6em;\n  }\n  .ui[class*='very compact'].table td {\n    padding: 0.4em 0.6em;\n  }\n\n  /*--------------\n        Sizes\n  ---------------*/\n\n  /* Small */\n  .ui.small.table {\n    font-size: 0.9em;\n  }\n\n  /* Standard */\n  .ui.table {\n    font-size: 1em;\n  }\n\n  /* Large */\n  .ui.large.table {\n    font-size: 1.1em;\n  }\n\n  /*******************************\n           Site Overrides\n  *******************************/\n"], ["\n  margin-bottom: ", ";\n\n  /*!\n * # Semantic UI 2.4.1 - Table\n * http://github.com/semantic-org/semantic-ui/\n *\n *\n * Released under the MIT license\n * http://opensource.org/licenses/MIT\n *\n */\n\n  /*******************************\n             Table\n*******************************/\n\n  /* Prototype */\n  .ui.table {\n    width: 100%;\n    background: #ffffff;\n    margin: 1em 0em;\n    border: none !important;\n    -webkit-box-shadow: none;\n    box-shadow: none;\n    border-radius: 0.28571429rem;\n    text-align: left;\n    color: #707070;\n    border-collapse: separate;\n    border-spacing: 0px;\n  }\n  .ui.table:first-child {\n    margin-top: 0em;\n  }\n  .ui.table:last-child {\n    margin-bottom: 0em;\n  }\n\n  /*******************************\n               Parts\n  *******************************/\n\n  /* Table Content */\n  .ui.table th,\n  .ui.table td {\n    -webkit-transition: background 0.1s ease, color 0.1s ease;\n    transition: background 0.1s ease, color 0.1s ease;\n  }\n\n  /* Headers */\n  .ui.table thead {\n    -webkit-box-shadow: none;\n    box-shadow: none;\n  }\n  .ui.table thead th {\n    cursor: auto;\n    background: none !important;\n    text-align: inherit;\n    color: #9b4dee !important;\n    padding: 0.92857143em 0.78571429em;\n    vertical-align: inherit;\n    font-style: none;\n    font-weight: bold;\n    text-transform: none;\n    border-bottom: 1px solid rgba(34, 36, 38, 0.1);\n    border-left: none;\n  }\n  .ui.table thead tr > th:first-child {\n    border-left: none;\n  }\n  .ui.table thead tr:first-child > th:first-child {\n    border-radius: 0.28571429rem 0em 0em 0em;\n  }\n  .ui.table thead tr:first-child > th:last-child {\n    border-radius: 0em 0.28571429rem 0em 0em;\n  }\n  .ui.table thead tr:first-child > th:only-child {\n    border-radius: 0.28571429rem 0.28571429rem 0em 0em;\n  }\n\n  /* Footer */\n  .ui.table tfoot {\n    -webkit-box-shadow: none;\n    box-shadow: none;\n    margin-top: 20px;\n  }\n  .ui.table tfoot th {\n    cursor: auto;\n    border-top: 1px solid rgba(34, 36, 38, 0.15);\n    background: #f9fafb;\n    text-align: inherit;\n    color: rgba(0, 0, 0, 0.87);\n    padding: 0.78571429em 0.78571429em;\n    vertical-align: middle;\n    font-style: normal;\n    font-weight: normal;\n    text-transform: none;\n  }\n  .ui.table tfoot tr > th:first-child {\n    border-left: none;\n  }\n  .ui.table tfoot tr:first-child > th:first-child {\n    border-radius: 0em 0em 0em 0.28571429rem;\n  }\n  .ui.table tfoot tr:first-child > th:last-child {\n    border-radius: 0em 0em 0.28571429rem 0em;\n  }\n  .ui.table tfoot tr:first-child > th:only-child {\n    border-radius: 0em 0em 0.28571429rem 0.28571429rem;\n  }\n\n  /* Table Row */\n  .ui.table tr td {\n    border-top: 1px solid rgba(34, 36, 38, 0.1);\n  }\n  .ui.table tr:first-child td {\n    border-top: none;\n  }\n\n  /* Repeated tbody */\n  .ui.table tbody + tbody tr:first-child td {\n    border-top: 1px solid rgba(34, 36, 38, 0.1);\n  }\n\n  /* Table Cells */\n  .ui.table td {\n    padding: 0.78571429em 0.78571429em;\n    text-align: inherit;\n  }\n\n  /* Icons */\n  .ui.table > .icon {\n    vertical-align: baseline;\n  }\n  .ui.table > .icon:only-child {\n    margin: 0em;\n  }\n\n  /* Table Segment */\n  .ui.table.segment {\n    padding: 0em;\n  }\n  .ui.table.segment:after {\n    display: none;\n  }\n  .ui.table.segment.stacked:after {\n    display: block;\n  }\n\n  /* Responsive */\n  @media only screen and (max-width: 767px) {\n    .ui.table:not(.unstackable) {\n      width: 100%;\n    }\n    .ui.table:not(.unstackable) tbody,\n    .ui.table:not(.unstackable) tr,\n    .ui.table:not(.unstackable) tr > th,\n    .ui.table:not(.unstackable) tr > td {\n      width: auto !important;\n      display: block !important;\n    }\n    .ui.table:not(.unstackable) {\n      padding: 0em;\n    }\n    .ui.table:not(.unstackable) thead {\n      display: block;\n    }\n    .ui.table:not(.unstackable) tfoot {\n      display: block;\n    }\n    .ui.table:not(.unstackable) tr {\n      padding-top: 1em;\n      padding-bottom: 1em;\n      -webkit-box-shadow: 0px -1px 0px 0px rgba(0, 0, 0, 0.1) inset !important;\n      box-shadow: 0px -1px 0px 0px rgba(0, 0, 0, 0.1) inset !important;\n    }\n    .ui.table:not(.unstackable) tr > th,\n    .ui.table:not(.unstackable) tr > td {\n      background: none;\n      border: none !important;\n      padding: 0.25em 0.75em !important;\n      -webkit-box-shadow: none !important;\n      box-shadow: none !important;\n    }\n    .ui.table:not(.unstackable) th:first-child,\n    .ui.table:not(.unstackable) td:first-child {\n      font-weight: bold;\n    }\n\n    /* Definition Table */\n    .ui.definition.table:not(.unstackable) thead th:first-child {\n      -webkit-box-shadow: none !important;\n      box-shadow: none !important;\n    }\n  }\n\n  /*******************************\n              Coupling\n  *******************************/\n\n  /* UI Image */\n  .ui.table th .image,\n  .ui.table th .image img,\n  .ui.table td .image,\n  .ui.table td .image img {\n    max-width: none;\n  }\n\n  /*******************************\n               Types\n  *******************************/\n\n  /*--------------\n      Complex\n  ---------------*/\n\n  .ui.structured.table {\n    border-collapse: collapse;\n  }\n  .ui.structured.table thead th {\n    border-left: none;\n    border-right: none;\n  }\n  .ui.structured.sortable.table thead th {\n    border-left: 1px solid rgba(34, 36, 38, 0.15);\n    border-right: 1px solid rgba(34, 36, 38, 0.15);\n  }\n  .ui.structured.basic.table th {\n    border-left: none;\n    border-right: none;\n  }\n  .ui.structured.celled.table tr th,\n  .ui.structured.celled.table tr td {\n    border-left: 1px solid rgba(34, 36, 38, 0.1);\n    border-right: 1px solid rgba(34, 36, 38, 0.1);\n  }\n\n  /*--------------\n     Definition\n  ---------------*/\n\n  .ui.definition.table thead:not(.full-width) th:first-child {\n    pointer-events: none;\n    background: transparent;\n    font-weight: normal;\n    color: rgba(0, 0, 0, 0.4);\n    -webkit-box-shadow: -1px -1px 0px 1px #ffffff;\n    box-shadow: -1px -1px 0px 1px #ffffff;\n  }\n  .ui.definition.table tfoot:not(.full-width) th:first-child {\n    pointer-events: none;\n    background: transparent;\n    font-weight: rgba(0, 0, 0, 0.4);\n    color: normal;\n    -webkit-box-shadow: 1px 1px 0px 1px #ffffff;\n    box-shadow: 1px 1px 0px 1px #ffffff;\n  }\n\n  /* Remove Border */\n  .ui.celled.definition.table thead:not(.full-width) th:first-child {\n    -webkit-box-shadow: 0px -1px 0px 1px #ffffff;\n    box-shadow: 0px -1px 0px 1px #ffffff;\n  }\n  .ui.celled.definition.table tfoot:not(.full-width) th:first-child {\n    -webkit-box-shadow: 0px 1px 0px 1px #ffffff;\n    box-shadow: 0px 1px 0px 1px #ffffff;\n  }\n\n  /* Highlight Defining Column */\n  .ui.definition.table tr td:first-child:not(.ignored),\n  .ui.definition.table tr td.definition {\n    background: none;\n    font-weight: bold;\n    color: ", ";\n    text-transform: '';\n    -webkit-box-shadow: '';\n    box-shadow: '';\n    text-align: '';\n    font-size: 1em;\n    padding-left: '';\n    padding-right: '';\n  }\n\n  /* Fix 2nd Column */\n  .ui.definition.table thead:not(.full-width) th:nth-child(2) {\n    border-left: 1px solid rgba(34, 36, 38, 0.15);\n  }\n  .ui.definition.table tfoot:not(.full-width) th:nth-child(2) {\n    border-left: 1px solid rgba(34, 36, 38, 0.15);\n  }\n  .ui.definition.table td:nth-child(2) {\n    border-left: 1px solid rgba(34, 36, 38, 0.15);\n  }\n\n  /*******************************\n               States\n  *******************************/\n\n  /*--------------\n      Positive\n  ---------------*/\n\n  .ui.table tr.positive,\n  .ui.table td.positive {\n    -webkit-box-shadow: 0px 0px 0px #a3c293 inset;\n    box-shadow: 0px 0px 0px #a3c293 inset;\n  }\n  .ui.table tr.positive,\n  .ui.table td.positive {\n    background: #fcfff5 !important;\n    color: #2c662d !important;\n  }\n\n  /*--------------\n       Negative\n  ---------------*/\n\n  .ui.table tr.negative,\n  .ui.table td.negative {\n    -webkit-box-shadow: 0px 0px 0px #e0b4b4 inset;\n    box-shadow: 0px 0px 0px #e0b4b4 inset;\n  }\n  .ui.table tr.negative,\n  .ui.table td.negative {\n    background: #fff6f6 !important;\n    color: #9f3a38 !important;\n  }\n\n  /*--------------\n        Error\n  ---------------*/\n\n  .ui.table tr.error,\n  .ui.table td.error {\n    -webkit-box-shadow: 0px 0px 0px #e0b4b4 inset;\n    box-shadow: 0px 0px 0px #e0b4b4 inset;\n  }\n  .ui.table tr.error,\n  .ui.table td.error {\n    background: #fff6f6 !important;\n    color: #9f3a38 !important;\n  }\n\n  /*--------------\n       Warning\n  ---------------*/\n\n  .ui.table tr.warning,\n  .ui.table td.warning {\n    -webkit-box-shadow: 0px 0px 0px #c9ba9b inset;\n    box-shadow: 0px 0px 0px #c9ba9b inset;\n  }\n  .ui.table tr.warning,\n  .ui.table td.warning {\n    background: #fffaf3 !important;\n    color: #573a08 !important;\n  }\n\n  /*--------------\n       Active\n  ---------------*/\n\n  .ui.table tr.active,\n  .ui.table td.active {\n    -webkit-box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.87) inset;\n    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.87) inset;\n  }\n  .ui.table tr.active,\n  .ui.table td.active {\n    background: #e0e0e0 !important;\n    color: rgba(0, 0, 0, 0.87) !important;\n  }\n\n  /*--------------\n       Disabled\n  ---------------*/\n\n  .ui.table tr.disabled td,\n  .ui.table tr td.disabled,\n  .ui.table tr.disabled:hover,\n  .ui.table tr:hover td.disabled {\n    pointer-events: none;\n    color: rgba(40, 40, 40, 0.3);\n  }\n\n  /*******************************\n            Variations\n  *******************************/\n\n  /*--------------\n      Stackable\n  ---------------*/\n\n  @media only screen and (max-width: 991px) {\n    .ui[class*='tablet stackable'].table,\n    .ui[class*='tablet stackable'].table tbody,\n    .ui[class*='tablet stackable'].table tr,\n    .ui[class*='tablet stackable'].table tr > th,\n    .ui[class*='tablet stackable'].table tr > td {\n      width: 100% !important;\n      display: block !important;\n    }\n    .ui[class*='tablet stackable'].table {\n      padding: 0em;\n    }\n    .ui[class*='tablet stackable'].table thead {\n      display: block;\n    }\n    .ui[class*='tablet stackable'].table tfoot {\n      display: block;\n    }\n    .ui[class*='tablet stackable'].table tr {\n      padding-top: 1em;\n      padding-bottom: 1em;\n      -webkit-box-shadow: 0px -1px 0px 0px rgba(0, 0, 0, 0.1) inset !important;\n      box-shadow: 0px -1px 0px 0px rgba(0, 0, 0, 0.1) inset !important;\n    }\n    .ui[class*='tablet stackable'].table tr > th,\n    .ui[class*='tablet stackable'].table tr > td {\n      background: none;\n      border: none !important;\n      padding: 0.25em 0.75em;\n      -webkit-box-shadow: none !important;\n      box-shadow: none !important;\n    }\n\n    /* Definition Table */\n    .ui.definition[class*='tablet stackable'].table thead th:first-child {\n      -webkit-box-shadow: none !important;\n      box-shadow: none !important;\n    }\n  }\n\n  /*--------------\n   Text Alignment\n  ---------------*/\n\n  .ui.table[class*='left aligned'],\n  .ui.table [class*='left aligned'] {\n    text-align: left;\n  }\n  .ui.table[class*='center aligned'],\n  .ui.table [class*='center aligned'] {\n    text-align: center;\n  }\n  .ui.table[class*='right aligned'],\n  .ui.table [class*='right aligned'] {\n    text-align: right;\n  }\n\n  /*------------------\n   Vertical Alignment\n  ------------------*/\n\n  .ui.table[class*='top aligned'],\n  .ui.table [class*='top aligned'] {\n    vertical-align: top;\n  }\n  .ui.table[class*='middle aligned'],\n  .ui.table [class*='middle aligned'] {\n    vertical-align: middle;\n  }\n  .ui.table[class*='bottom aligned'],\n  .ui.table [class*='bottom aligned'] {\n    vertical-align: bottom;\n  }\n\n  /*--------------\n      Collapsing\n  ---------------*/\n\n  .ui.table th.collapsing,\n  .ui.table td.collapsing {\n    width: 1px;\n    white-space: nowrap;\n  }\n\n  /*--------------\n       Fixed\n  ---------------*/\n\n  .ui.fixed.table {\n    table-layout: fixed;\n  }\n  .ui.fixed.table th,\n  .ui.fixed.table td {\n    overflow: hidden;\n    text-overflow: ellipsis;\n  }\n\n  /*--------------\n     Selectable\n  ---------------*/\n\n  .ui.selectable.table tbody tr:hover,\n  .ui.table tbody tr td.selectable:hover {\n    background: rgba(0, 0, 0, 0.05) !important;\n    color: rgba(0, 0, 0, 0.95) !important;\n  }\n  .ui.selectable.inverted.table tbody tr:hover,\n  .ui.inverted.table tbody tr td.selectable:hover {\n    background: rgba(255, 255, 255, 0.08) !important;\n    color: #ffffff !important;\n  }\n\n  /* Selectable Cell Link */\n  .ui.table tbody tr td.selectable {\n    padding: 0em;\n  }\n  .ui.table tbody tr td.selectable > a:not(.ui) {\n    display: block;\n    color: inherit;\n    padding: 0.78571429em 0.78571429em;\n  }\n\n  /* Other States */\n  .ui.selectable.table tr.error:hover,\n  .ui.table tr td.selectable.error:hover,\n  .ui.selectable.table tr:hover td.error {\n    background: #ffe7e7 !important;\n    color: #943634 !important;\n  }\n  .ui.selectable.table tr.warning:hover,\n  .ui.table tr td.selectable.warning:hover,\n  .ui.selectable.table tr:hover td.warning {\n    background: #fff4e4 !important;\n    color: #493107 !important;\n  }\n  .ui.selectable.table tr.active:hover,\n  .ui.table tr td.selectable.active:hover,\n  .ui.selectable.table tr:hover td.active {\n    background: #e0e0e0 !important;\n    color: rgba(0, 0, 0, 0.87) !important;\n  }\n  .ui.selectable.table tr.positive:hover,\n  .ui.table tr td.selectable.positive:hover,\n  .ui.selectable.table tr:hover td.positive {\n    background: #f7ffe6 !important;\n    color: #275b28 !important;\n  }\n  .ui.selectable.table tr.negative:hover,\n  .ui.table tr td.selectable.negative:hover,\n  .ui.selectable.table tr:hover td.negative {\n    background: #ffe7e7 !important;\n    color: #943634 !important;\n  }\n\n  /*-------------------\n        Attached\n  --------------------*/\n\n  /* Middle */\n  .ui.attached.table {\n    top: 0px;\n    bottom: 0px;\n    border-radius: 0px;\n    margin: 0em -1px;\n    width: calc(100% - (-1px * 2));\n    max-width: calc(100% - (-1px * 2));\n    -webkit-box-shadow: none;\n    box-shadow: none;\n    border: 1px solid #d4d4d5;\n  }\n  .ui.attached + .ui.attached.table:not(.top) {\n    border-top: none;\n  }\n\n  /* Top */\n  .ui[class*='top attached'].table {\n    bottom: 0px;\n    margin-bottom: 0em;\n    top: 0px;\n    margin-top: 1em;\n    border-radius: 0.28571429rem 0.28571429rem 0em 0em;\n  }\n  .ui.table[class*='top attached']:first-child {\n    margin-top: 0em;\n  }\n\n  /* Bottom */\n  .ui[class*='bottom attached'].table {\n    bottom: 0px;\n    margin-top: 0em;\n    top: 0px;\n    margin-bottom: 1em;\n    -webkit-box-shadow: none, none;\n    box-shadow: none, none;\n    border-radius: 0em 0em 0.28571429rem 0.28571429rem;\n  }\n  .ui[class*='bottom attached'].table:last-child {\n    margin-bottom: 0em;\n  }\n\n  /*--------------\n       Striped\n  ---------------*/\n\n  /* Table Striping */\n  .ui.striped.table > tr:nth-child(2n),\n  .ui.striped.table tbody tr:nth-child(2n) {\n    background-color: rgba(0, 0, 50, 0.02);\n  }\n\n  /* Stripes */\n  .ui.inverted.striped.table > tr:nth-child(2n),\n  .ui.inverted.striped.table tbody tr:nth-child(2n) {\n    background-color: rgba(255, 255, 255, 0.05);\n  }\n\n  /* Allow striped active hover */\n  .ui.striped.selectable.selectable.selectable.table tbody tr.active:hover {\n    background: #efefef !important;\n    color: rgba(0, 0, 0, 0.95) !important;\n  }\n\n  /*--------------\n     Single Line\n  ---------------*/\n\n  .ui.table[class*='single line'],\n  .ui.table [class*='single line'] {\n    white-space: nowrap;\n  }\n  .ui.table[class*='single line'],\n  .ui.table [class*='single line'] {\n    white-space: nowrap;\n  }\n\n  /*-------------------\n         Colors\n  --------------------*/\n\n  /* Red */\n  .ui.red.table {\n    border-top: 0.2em solid #db2828;\n  }\n  .ui.inverted.red.table {\n    background-color: #db2828 !important;\n    color: #ffffff !important;\n  }\n\n  /* Orange */\n  .ui.orange.table {\n    border-top: 0.2em solid #f2711c;\n  }\n  .ui.inverted.orange.table {\n    background-color: #f2711c !important;\n    color: #ffffff !important;\n  }\n\n  /* Yellow */\n  .ui.yellow.table {\n    border-top: 0.2em solid #fbbd08;\n  }\n  .ui.inverted.yellow.table {\n    background-color: #fbbd08 !important;\n    color: #ffffff !important;\n  }\n\n  /* Olive */\n  .ui.olive.table {\n    border-top: 0.2em solid #b5cc18;\n  }\n  .ui.inverted.olive.table {\n    background-color: #b5cc18 !important;\n    color: #ffffff !important;\n  }\n\n  /* Green */\n  .ui.green.table {\n    border-top: 0.2em solid #21ba45;\n  }\n  .ui.inverted.green.table {\n    background-color: #21ba45 !important;\n    color: #ffffff !important;\n  }\n\n  /* Teal */\n  .ui.teal.table {\n    border-top: 0.2em solid #00b5ad;\n  }\n  .ui.inverted.teal.table {\n    background-color: #00b5ad !important;\n    color: #ffffff !important;\n  }\n\n  /* Blue */\n  .ui.blue.table {\n    border-top: 0.2em solid #2185d0;\n  }\n  .ui.inverted.blue.table {\n    background-color: #2185d0 !important;\n    color: #ffffff !important;\n  }\n\n  /* Violet */\n  .ui.violet.table {\n    border-top: 0.2em solid #6435c9;\n  }\n  .ui.inverted.violet.table {\n    background-color: #6435c9 !important;\n    color: #ffffff !important;\n  }\n\n  /* Purple */\n  .ui.purple.table {\n    border-top: 0.2em solid #a333c8;\n  }\n  .ui.inverted.purple.table {\n    background-color: #a333c8 !important;\n    color: #ffffff !important;\n  }\n\n  /* Pink */\n  .ui.pink.table {\n    border-top: 0.2em solid #e03997;\n  }\n  .ui.inverted.pink.table {\n    background-color: #e03997 !important;\n    color: #ffffff !important;\n  }\n\n  /* Brown */\n  .ui.brown.table {\n    border-top: 0.2em solid #a5673f;\n  }\n  .ui.inverted.brown.table {\n    background-color: #a5673f !important;\n    color: #ffffff !important;\n  }\n\n  /* Grey */\n  .ui.grey.table {\n    border-top: 0.2em solid #767676;\n  }\n  .ui.inverted.grey.table {\n    background-color: #767676 !important;\n    color: #ffffff !important;\n  }\n\n  /* Black */\n  .ui.black.table {\n    border-top: 0.2em solid #1b1c1d;\n  }\n  .ui.inverted.black.table {\n    background-color: #1b1c1d !important;\n    color: #ffffff !important;\n  }\n\n  /*--------------\n    Column Count\n  ---------------*/\n\n  /* Grid Based */\n  .ui.one.column.table td {\n    width: 100%;\n  }\n  .ui.two.column.table td {\n    width: 50%;\n  }\n  .ui.three.column.table td {\n    width: 33.33333333%;\n  }\n  .ui.four.column.table td {\n    width: 25%;\n  }\n  .ui.five.column.table td {\n    width: 20%;\n  }\n  .ui.six.column.table td {\n    width: 16.66666667%;\n  }\n  .ui.seven.column.table td {\n    width: 14.28571429%;\n  }\n  .ui.eight.column.table td {\n    width: 12.5%;\n  }\n  .ui.nine.column.table td {\n    width: 11.11111111%;\n  }\n  .ui.ten.column.table td {\n    width: 10%;\n  }\n  .ui.eleven.column.table td {\n    width: 9.09090909%;\n  }\n  .ui.twelve.column.table td {\n    width: 8.33333333%;\n  }\n  .ui.thirteen.column.table td {\n    width: 7.69230769%;\n  }\n  .ui.fourteen.column.table td {\n    width: 7.14285714%;\n  }\n  .ui.fifteen.column.table td {\n    width: 6.66666667%;\n  }\n  .ui.sixteen.column.table td {\n    width: 6.25%;\n  }\n\n  /* Column Width */\n  .ui.table th.one.wide,\n  .ui.table td.one.wide {\n    width: 6.25%;\n  }\n  .ui.table th.two.wide,\n  .ui.table td.two.wide {\n    width: 12.5%;\n  }\n  .ui.table th.three.wide,\n  .ui.table td.three.wide {\n    width: 18.75%;\n  }\n  .ui.table th.four.wide,\n  .ui.table td.four.wide {\n    width: 25%;\n  }\n  .ui.table th.five.wide,\n  .ui.table td.five.wide {\n    width: 31.25%;\n  }\n  .ui.table th.six.wide,\n  .ui.table td.six.wide {\n    width: 37.5%;\n  }\n  .ui.table th.seven.wide,\n  .ui.table td.seven.wide {\n    width: 43.75%;\n  }\n  .ui.table th.eight.wide,\n  .ui.table td.eight.wide {\n    width: 50%;\n  }\n  .ui.table th.nine.wide,\n  .ui.table td.nine.wide {\n    width: 56.25%;\n  }\n  .ui.table th.ten.wide,\n  .ui.table td.ten.wide {\n    width: 62.5%;\n  }\n  .ui.table th.eleven.wide,\n  .ui.table td.eleven.wide {\n    width: 68.75%;\n  }\n  .ui.table th.twelve.wide,\n  .ui.table td.twelve.wide {\n    width: 75%;\n  }\n  .ui.table th.thirteen.wide,\n  .ui.table td.thirteen.wide {\n    width: 81.25%;\n  }\n  .ui.table th.fourteen.wide,\n  .ui.table td.fourteen.wide {\n    width: 87.5%;\n  }\n  .ui.table th.fifteen.wide,\n  .ui.table td.fifteen.wide {\n    width: 93.75%;\n  }\n  .ui.table th.sixteen.wide,\n  .ui.table td.sixteen.wide {\n    width: 100%;\n  }\n\n  /*--------------\n      Sortable\n  ---------------*/\n\n  .ui.sortable.table thead th {\n    cursor: pointer;\n    white-space: nowrap;\n    border-left: 1px solid rgba(34, 36, 38, 0.15);\n    color: rgba(0, 0, 0, 0.87);\n  }\n  .ui.sortable.table thead th:first-child {\n    border-left: none;\n  }\n  .ui.sortable.table thead th.sorted,\n  .ui.sortable.table thead th.sorted:hover {\n    -webkit-user-select: none;\n    -moz-user-select: none;\n    -ms-user-select: none;\n    user-select: none;\n  }\n  .ui.sortable.table thead th:after {\n    display: none;\n    font-style: normal;\n    font-weight: normal;\n    text-decoration: inherit;\n    content: '';\n    height: 1em;\n    width: auto;\n    opacity: 0.8;\n    margin: 0em 0em 0em 0.5em;\n    font-family: 'Icons';\n  }\n  .ui.sortable.table thead th.ascending:after {\n    content: '\\f0d8';\n  }\n  .ui.sortable.table thead th.descending:after {\n    content: '\\f0d7';\n  }\n\n  /* Hover */\n  .ui.sortable.table th.disabled:hover {\n    cursor: auto;\n    color: rgba(40, 40, 40, 0.3);\n  }\n  .ui.sortable.table thead th:hover {\n    background: rgba(0, 0, 0, 0.05);\n    color: rgba(0, 0, 0, 0.8);\n  }\n\n  /* Sorted */\n  .ui.sortable.table thead th.sorted {\n    background: rgba(0, 0, 0, 0.05);\n    color: rgba(0, 0, 0, 0.95);\n  }\n  .ui.sortable.table thead th.sorted:after {\n    display: inline-block;\n  }\n\n  /* Sorted Hover */\n  .ui.sortable.table thead th.sorted:hover {\n    background: rgba(0, 0, 0, 0.05);\n    color: rgba(0, 0, 0, 0.95);\n  }\n\n  /* Inverted */\n  .ui.inverted.sortable.table thead th.sorted {\n    background: rgba(255, 255, 255, 0.15) -webkit-gradient(linear, left top, left\n          bottom, from(transparent), to(rgba(0, 0, 0, 0.05)));\n    background: rgba(255, 255, 255, 0.15) -webkit-linear-gradient(transparent, rgba(0, 0, 0, 0.05));\n    background: rgba(255, 255, 255, 0.15)\n      linear-gradient(transparent, rgba(0, 0, 0, 0.05));\n    color: #ffffff;\n  }\n  .ui.inverted.sortable.table thead th:hover {\n    background: rgba(255, 255, 255, 0.08) -webkit-gradient(linear, left top, left\n          bottom, from(transparent), to(rgba(0, 0, 0, 0.05)));\n    background: rgba(255, 255, 255, 0.08) -webkit-linear-gradient(transparent, rgba(0, 0, 0, 0.05));\n    background: rgba(255, 255, 255, 0.08)\n      linear-gradient(transparent, rgba(0, 0, 0, 0.05));\n    color: #ffffff;\n  }\n  .ui.inverted.sortable.table thead th {\n    border-left-color: transparent;\n    border-right-color: transparent;\n  }\n\n  /*--------------\n      Inverted\n  ---------------*/\n\n  /* Text Color */\n  .ui.inverted.table {\n    background: #333333;\n    color: rgba(255, 255, 255, 0.9);\n    border: none;\n  }\n  .ui.inverted.table th {\n    background-color: rgba(0, 0, 0, 0.15);\n    border-color: rgba(255, 255, 255, 0.1) !important;\n    color: rgba(255, 255, 255, 0.9) !important;\n  }\n  .ui.inverted.table tr td {\n    border-color: rgba(255, 255, 255, 0.1) !important;\n  }\n  .ui.inverted.table tr.disabled td,\n  .ui.inverted.table tr td.disabled,\n  .ui.inverted.table tr.disabled:hover td,\n  .ui.inverted.table tr:hover td.disabled {\n    pointer-events: none;\n    color: rgba(225, 225, 225, 0.3);\n  }\n\n  /* Definition */\n  .ui.inverted.definition.table tfoot:not(.full-width) th:first-child,\n  .ui.inverted.definition.table thead:not(.full-width) th:first-child {\n    background: #ffffff;\n  }\n  .ui.inverted.definition.table tr td:first-child {\n    background: rgba(255, 255, 255, 0.02);\n    color: #ffffff;\n  }\n\n  /*--------------\n     Collapsing\n  ---------------*/\n\n  .ui.collapsing.table {\n    width: auto;\n  }\n\n  /*--------------\n        Basic\n  ---------------*/\n\n  .ui.basic.table {\n    background: transparent;\n    border: 1px solid rgba(34, 36, 38, 0.15);\n    -webkit-box-shadow: none;\n    box-shadow: none;\n  }\n  .ui.basic.table thead,\n  .ui.basic.table tfoot {\n    -webkit-box-shadow: none;\n    box-shadow: none;\n  }\n  .ui.basic.table th {\n    background: transparent;\n    border-left: none;\n  }\n  .ui.basic.table tbody tr {\n    border-bottom: 1px solid rgba(0, 0, 0, 0.1);\n  }\n  .ui.basic.table td {\n    background: transparent;\n  }\n  .ui.basic.striped.table tbody tr:nth-child(2n) {\n    background-color: rgba(0, 0, 0, 0.05) !important;\n  }\n\n  /* Very Basic */\n  .ui[class*='very basic'].table {\n    border: none;\n  }\n  .ui[class*='very basic'].table:not(.sortable):not(.striped) th,\n  .ui[class*='very basic'].table:not(.sortable):not(.striped) td {\n    padding: '';\n  }\n  .ui[class*='very basic'].table:not(.sortable):not(.striped) th:first-child,\n  .ui[class*='very basic'].table:not(.sortable):not(.striped) td:first-child {\n    padding-left: 0em;\n  }\n  .ui[class*='very basic'].table:not(.sortable):not(.striped) th:last-child,\n  .ui[class*='very basic'].table:not(.sortable):not(.striped) td:last-child {\n    padding-right: 0em;\n  }\n  .ui[class*='very basic'].table:not(.sortable):not(.striped)\n    thead\n    tr:first-child\n    th {\n    padding-top: 0em;\n  }\n\n  /*--------------\n       Celled\n  ---------------*/\n\n  .ui.celled.table tr th,\n  .ui.celled.table tr td {\n    border-left: 1px solid rgba(34, 36, 38, 0.1);\n  }\n  .ui.celled.table tr th:first-child,\n  .ui.celled.table tr td:first-child {\n    border-left: none;\n  }\n\n  /*--------------\n       Padded\n  ---------------*/\n\n  .ui.padded.table th {\n    padding-left: 1em;\n    padding-right: 1em;\n  }\n  .ui.padded.table th,\n  .ui.padded.table td {\n    padding: 1em 1em;\n  }\n\n  /* Very */\n  .ui[class*='very padded'].table th {\n    padding-left: 1.5em;\n    padding-right: 1.5em;\n  }\n  .ui[class*='very padded'].table td {\n    padding: 1.5em 1.5em;\n  }\n\n  /*--------------\n       Compact\n  ---------------*/\n\n  .ui.compact.table th {\n    padding-left: 0.7em;\n    padding-right: 0.7em;\n  }\n  .ui.compact.table td {\n    padding: 0.5em 0.7em;\n  }\n\n  /* Very */\n  .ui[class*='very compact'].table th {\n    padding-left: 0.6em;\n    padding-right: 0.6em;\n  }\n  .ui[class*='very compact'].table td {\n    padding: 0.4em 0.6em;\n  }\n\n  /*--------------\n        Sizes\n  ---------------*/\n\n  /* Small */\n  .ui.small.table {\n    font-size: 0.9em;\n  }\n\n  /* Standard */\n  .ui.table {\n    font-size: 1em;\n  }\n\n  /* Large */\n  .ui.large.table {\n    font-size: 1.1em;\n  }\n\n  /*******************************\n           Site Overrides\n  *******************************/\n"])), function (props) {
+  return props.hasMore || props.hasPagination ? '20px' : '0';
+}, colors.brand10);
+
+var _excluded$2 = ["children", "title", "titleStyle", "titleClassName", "message", "messageStyle", "messageClassName", "hasMore", "hasMoreText", "pagination"];
+
+function TableComponent(_ref) {
+  var children = _ref.children,
+      title = _ref.title,
+      titleStyle = _ref.titleStyle,
+      titleClassName = _ref.titleClassName,
+      message = _ref.message,
+      messageStyle = _ref.messageStyle,
+      messageClassName = _ref.messageClassName,
+      hasMore = _ref.hasMore,
+      hasMoreText = _ref.hasMoreText,
+      pagination = _ref.pagination,
+      rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$2);
+
+  return jsxRuntime.jsxs("div", {
+    children: [title || message ? jsxRuntime.jsxs(Header, {
+      children: [jsxRuntime.jsx(Title, Object.assign({
+        style: titleStyle,
+        className: titleClassName
+      }, {
+        children: title
+      }), void 0), jsxRuntime.jsx(Message, Object.assign({
+        style: messageStyle,
+        className: messageClassName
+      }, {
+        children: message
+      }), void 0)]
+    }, void 0) : null, jsxRuntime.jsx(Container$1, Object.assign({
+      hasMore: !!hasMore,
+      hasPagination: !!pagination
+    }, {
+      children: jsxRuntime.jsx(semanticUiReact.Table, Object.assign({}, rest, {
+        children: children
+      }), void 0)
+    }), void 0), hasMore ? jsxRuntime.jsx(ButtonMain, {
+      "data-testid": "hasmore-button",
+      secondary: true,
+      textFirst: hasMoreText || 'ver a',
+      textEnd: !hasMoreText ? '' : 'lista completa',
+      notStrong: !!hasMoreText,
+      onClick: hasMore
+    }, void 0) : null, pagination ? jsxRuntime.jsxs("div", {
+      children: [jsxRuntime.jsx("br", {}, void 0), pagination]
+    }, void 0) : null]
+  }, void 0);
+}
+
+var Table = TableComponent;
+Table.Row = semanticUiReact.TableRow;
+Table.Header = semanticUiReact.TableHeader;
+Table.HeaderCell = semanticUiReact.TableHeaderCell;
+Table.Body = semanticUiReact.TableBody;
+Table.Cell = semanticUiReact.TableCell;
+Table.Footer = semanticUiReact.TableFooter;
+
+var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7;
+var Label = styled__default["default"].span(_templateObject || (_templateObject = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  font-size: 14px;\n  color: ", ";\n  margin-left: 15px;\n"])), function (props) {
+  if (props.errorMessage && props.errorColor) {
+    return props.errorColor;
+  }
+
+  if (props.errorMessage) {
+    return colors.danger20;
+  }
+
+  if (props.labelColor) {
+    return props.labelColor;
+  }
+
+  return colors.brand10;
+});
+var Container = styled__default["default"].div(_templateObject2 || (_templateObject2 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  width: ", ";\n  position: relative;\n\n  opacity: ", ";\n\n  textarea {\n    font-family: MontSerrat !important;\n    color: ", ";\n    resize: none;\n    width: ", ";\n\n    border-radius: 20px;\n    height: ", ";\n\n    margin: 0px;\n    outline: none;\n    padding: 20px;\n    border-color: ", ";\n\n    &::placeholder {\n      color: ", ";\n    }\n\n    -moz-appearance: none;\n    -webkit-appearance: none;\n  }\n\n  label {\n    position: absolute;\n    bottom: 0px;\n    top: 0px;\n    left: 0px;\n    width: 100%;\n    right: 100%;\n    pointer-events: none;\n    border-bottom-width: 1px;\n    border-bottom-style: solid;\n    border-bottom-color: ", ";\n\n    ", "\n  }\n\n  textarea::-webkit-scrollbar {\n    width: 7px;\n    border-radius: 50px;\n  }\n\n  textarea::-webkit-scrollbar-thumb {\n    background-color: ", ";\n    border-radius: 50px;\n  }\n\n  textarea::-webkit-scrollbar-thumb:hover {\n    background-color: ", ";\n  }\n"])), function (props) {
+  return getMeasurement(props.width);
+}, function (props) {
+  return props.disabled ? '50%' : '100%';
+}, function (props) {
+  return props.textColor ? props.textColor : colors.gray20;
+}, function (props) {
+  return getMeasurement(props.width);
+}, function (props) {
+  return getMeasurement(props.height);
+}, function (props) {
+  if (props.errorMessage && props.errorColor) {
+    return props.errorColor;
+  }
+
+  if (props.errorMessage) {
+    return colors.danger20;
+  }
+
+  return colors.gray10;
+}, colors.default10, function (props) {
+  if (props.errorMessage && props.errorColor) {
+    return props.errorColor;
+  }
+
+  if (props.errorMessage) {
+    return colors.danger20;
+  }
+
+  return colors.gray10;
+}, function (props) {
+  return props.isFieldActive ? styled.css(_templateObject3 || (_templateObject3 = _taggedTemplateLiteralLoose(["\n            color: ", ";\n          "])), colors.brand10) : styled.css(_templateObject4 || (_templateObject4 = _taggedTemplateLiteralLoose(["\n            color: ", ";\n          "])), colors.gray20);
+}, colors.brand10, colors.brandTransparent2);
+var LabelError = styled__default["default"].span(_templateObject5 || (_templateObject5 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  font-size: 10px;\n  margin-left: 0;\n  margin-top: -2px;\n  color: ", ";\n"])), function (props) {
+  if (props.errorColor) {
+    return props.errorColor;
+  }
+
+  return colors.danger20;
+});
+var Footer = styled__default["default"].div(_templateObject6 || (_templateObject6 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: space-between;\n  font-size: 10px;\n"])));
+var LabelLengthInfo = styled__default["default"].span(_templateObject7 || (_templateObject7 = _taggedTemplateLiteralLoose(["\n  font-size: 10px;\n  color: ", ";\n"])), colors.gray10);
+
+var _excluded$1 = ["label", "labelClassName", "labelStyle", "labelColor", "errorClassName", "errorStyle", "errorMessage", "errorColor", "containerStyle", "textColor", "width", "height", "lengthInfo", "lengthInfoClassName", "lengthInfoStyle"];
+
+function TextArea(_ref) {
+  var label = _ref.label,
+      labelClassName = _ref.labelClassName,
+      labelStyle = _ref.labelStyle,
+      labelColor = _ref.labelColor,
+      errorClassName = _ref.errorClassName,
+      errorStyle = _ref.errorStyle,
+      errorMessage = _ref.errorMessage,
+      errorColor = _ref.errorColor,
+      containerStyle = _ref.containerStyle,
+      textColor = _ref.textColor,
+      width = _ref.width,
+      height = _ref.height,
+      lengthInfo = _ref.lengthInfo,
+      lengthInfoClassName = _ref.lengthInfoClassName,
+      lengthInfoStyle = _ref.lengthInfoStyle,
+      rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$1);
+
+  return jsxRuntime.jsxs("div", {
+    children: [label && jsxRuntime.jsx(Label, Object.assign({
+      style: labelStyle,
+      errorMessage: errorMessage,
+      labelColor: labelColor,
+      className: labelClassName,
+      errorColor: errorColor
+    }, {
+      children: label
+    }), void 0), jsxRuntime.jsx(Container, Object.assign({
+      errorMessage: errorMessage,
+      errorColor: errorColor,
+      containerStyle: containerStyle,
+      style: containerStyle,
+      disabled: rest.disabled,
+      textColor: textColor,
+      width: width,
+      height: height
+    }, {
+      children: jsxRuntime.jsx("textarea", Object.assign({}, rest), void 0)
+    }), void 0), jsxRuntime.jsxs(Footer, {
+      children: [jsxRuntime.jsx(LabelError, Object.assign({
+        className: errorClassName,
+        style: errorStyle,
+        errorColor: errorColor
+      }, {
+        children: errorMessage
+      }), void 0), (lengthInfo || typeof lengthInfo == 'number') && rest.maxLength ? jsxRuntime.jsx(LabelLengthInfo, Object.assign({
+        className: lengthInfoClassName,
+        style: lengthInfoStyle
+      }, {
+        children: (typeof lengthInfo == 'number' ? lengthInfo : typeof rest.value == 'string' ? rest.value.length : 0) + "/" + rest.maxLength + " caracteres"
+      }), void 0) : null]
+    }, void 0)]
+  }, void 0);
+}
+
+var _excluded = ["register", "errors", "validate", "name", "required", "limit", "minimum"];
+
+function TextAreaForm(_ref) {
+  var register = _ref.register,
+      errors = _ref.errors,
+      validate = _ref.validate,
+      name = _ref.name,
+      required = _ref.required,
+      limit = _ref.limit,
+      minimum = _ref.minimum,
+      rest = _objectWithoutPropertiesLoose$2(_ref, _excluded);
+
+  var _useState = React$2.useState(''),
+      message = _useState[0],
+      setMessage = _useState[1];
+
+  return jsxRuntime.jsx(TextArea, Object.assign({}, rest, {
+    name: name,
+    errorMessage: errors ? errors.type === 'required' ? 'Obrigatório' : "" + message : ''
+  }, register({
+    required: required,
+    validate: validate && required ? function (value) {
+      if (validate(value)) {
+        setMessage(validate(value));
+        return false;
+      }
+
+      setMessage('');
+      return true;
+    } : limit && required ? function (value) {
+      if (value.length > limit) {
+        setMessage(limit + " caracteres permitidos.");
+        return false;
+      }
+
+      setMessage('');
+      return true;
+    } : minimum && required ? function (value) {
+      if (value.length < minimum) {
+        setMessage(name + " deve ter " + minimum + " ou mais caracteres.");
+        return false;
+      }
+
+      setMessage('');
+      return true;
+    } : null
+  })), void 0);
+}
 
 exports.Accordion = Accordion;
 exports.ButtonMain = ButtonMain;

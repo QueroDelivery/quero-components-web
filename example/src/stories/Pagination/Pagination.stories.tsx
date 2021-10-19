@@ -54,6 +54,26 @@ export default {
         },
       },
     },
+    disabled: {
+      control: 'boolean',
+      table: {
+        type: {
+          summary: 'boolean'
+        }
+      },
+      defaultValue: false,
+      description: 'Desabilita todo o componente',
+    },
+    doubleJumpArrow: {
+      control: 'boolean',
+      table: {
+        type: {
+          summary: 'boolean'
+        }
+      },
+      defaultValue: false,
+      description: 'Mostra botões nas extremidades, utilizados para ir ao início e fim da paginação.',
+    },
   },
 } as Meta;
 

@@ -1,7 +1,7 @@
+import React from 'react';
 import { useState } from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import { MoreLess } from '@quero-delivery/quero-components-web';
-import { MoreLessProps } from './Interface';
+import { MoreLess, MoreLessProps } from '@quero-delivery/quero-components-web';
 import '@quero-delivery/quero-components-web/dist/index.css';
 import { action } from '@storybook/addon-actions';
 
@@ -12,14 +12,12 @@ export default {
     size: {
       control: {
         type: 'inline-radio',
-        options: ['small', 'medium', 'big'],
+        options: ['xs', 'sm', 'md', 'lg', 'xl'],
       },
       description: 'Tamanho do MoreLess',
-      defaultValue: {
-        summary: 'O tamanho padrão é o medium',
-      },
+      defaultValue: 'md',
       type: {
-        summary: 'small | medium | big',
+        summary: 'xs | sm | md | lg | xl',
       },
     },
     disabled: {
@@ -34,13 +32,17 @@ export default {
     minimum: {
       control: 'number',
       description: 'Menor valor do MoreLess',
+      defaultValue: 0,
       table: {
+        defaultValue: {
+          summary: '1',
+        },
         type: {
           summary: 'number',
         },
       },
     },
-    limit: {
+    maximum: {
       control: 'number',
       description: 'Maior valor do MoreLess',
       table: {
@@ -58,27 +60,23 @@ export default {
         },
       },
     },
-    more: {
-      control: 'string',
-      description: 'Função para aumentar o valor do MoreLess',
+    quantityToChange: {
+      control: 'number',
+      description: 'Valor a ser alterado ao adicionar ou diminuir o value',
+      defaultValue: 1,
       table: {
-        type: {
-          summary: 'requered |function',
+        defaultValue: {
+          summary: '1',
         },
-      },
-    },
-    less: {
-      control: 'string',
-      description: 'Função para diminuir o valor do MoreLess',
-      table: {
         type: {
-          summary: 'requered | function',
+          summary: 'number',
         },
       },
     },
     onChange: {
       control: 'string',
-      description: 'Função responsavel por manipular o MoreLess',
+      description:
+        'Função responsavel por manipular o MoreLess, recebendo o novo valor',
       table: {
         defaultValue: {
           summary: 'Recebe o valor do MoreLess',
@@ -94,20 +92,14 @@ export default {
 const Template: Story<MoreLessProps> = args => {
   const [value, setValue] = useState(args.value);
   return (
-    <MoreLess
-      {...args}
-      value={value}
-      more={() => setValue(value + 1)}
-      less={() => setValue(value - 1)}
-    />
+    <MoreLess {...args} value={value} onChange={value => setValue(value)} />
   );
 };
 
 export const Default = Template.bind({});
 Default.args = {
   value: 0,
-  more: action('adicioar'),
-  less: action('remover'),
+  onChange: action('update'),
 };
 
 Default.parameters = {
@@ -115,8 +107,7 @@ Default.parameters = {
     source: {
       code: `<MoreLess
       value={0}
-      more={() => {}}
-      less={() => {}}
+      onChange={() => {}}
     />`,
     },
   },
@@ -125,9 +116,8 @@ Default.parameters = {
 export const Size = Template.bind({});
 Size.args = {
   value: 2,
-  more: action('adicioar'),
-  less: action('remover'),
-  size: 'medium',
+  onChange: action('update'),
+  size: 'md',
 };
 
 Size.parameters = {
@@ -135,9 +125,8 @@ Size.parameters = {
     source: {
       code: `<MoreLess
       value={2}
-      more={() => {}}
-      less={() => {}}
-      size="medium"
+      onChange={() => {}}
+      size="md"
     />`,
     },
   },
@@ -146,8 +135,7 @@ Size.parameters = {
 export const Disabled = Template.bind({});
 Disabled.args = {
   value: 2,
-  more: action('adicioar'),
-  less: action('remover'),
+  onChange: action('update'),
   disabled: true,
 };
 
@@ -156,8 +144,7 @@ Disabled.parameters = {
     source: {
       code: `<MoreLess
       value={2}
-      more={() => {}}
-      less={() => {}}
+      onChange={() => {}}
       disabled={true}
     />`,
     },
@@ -167,8 +154,7 @@ Disabled.parameters = {
 export const Minimum = Template.bind({});
 Minimum.args = {
   value: 2,
-  more: action('adicioar'),
-  less: action('remover'),
+  onChange: action('update'),
   minimum: 2,
 };
 
@@ -177,29 +163,26 @@ Minimum.parameters = {
     source: {
       code: `<MoreLess
       value={2}
-      more={() => {}}
-      less={() => {}}
+      onChange={() => {}}
       minimum={2}
     />`,
     },
   },
 };
 
-export const Limit = Template.bind({});
-Limit.args = {
+export const Maximum = Template.bind({});
+Maximum.args = {
   value: 10,
-  more: action('adicioar'),
-  less: action('remover'),
-  limit: 10,
+  onChange: action('update'),
+  maximum: 10,
 };
 
-Limit.parameters = {
+Maximum.parameters = {
   docs: {
     source: {
       code: `<MoreLess
       value={10}
-      more={() => {}}
-      less={() => {}}
+      onChange={() => {}}
       limit={10}
     />`,
     },
@@ -209,9 +192,7 @@ Limit.parameters = {
 export const OnChange = Template.bind({});
 OnChange.args = {
   value: 4,
-  more: action('adicioar'),
-  less: action('remover'),
-  onChange: action('mudar valor'),
+  onChange: action('update'),
 };
 
 OnChange.parameters = {
@@ -219,8 +200,6 @@ OnChange.parameters = {
     source: {
       code: `<MoreLess
       value={4}
-      more={() => {}}
-      less={() => {}}
       onChange={() => {}}
     />`,
     },
