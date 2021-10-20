@@ -1,8 +1,13 @@
+import { sizesTypes } from '../../helpers/FnUtil';
+declare type Positions = 'left' | 'center' | 'right';
 interface LoaderProps {
     color?: string;
-    size?: string | number;
-    position?: 'left' | 'center' | 'right';
+    size: sizesTypes;
+    outsideColor?: string;
 }
-export declare const Container: import("styled-components").StyledComponent<"div", any, LoaderProps, never>;
+interface ContainerProps {
+    position: Positions;
+}
+export declare const Container: import("styled-components").StyledComponent<"div", any, ContainerProps, never>;
 export declare const Load: import("styled-components").StyledComponent<"div", any, LoaderProps, never>;
 export {};

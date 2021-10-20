@@ -285,7 +285,7 @@ onReturnClick.parameters = {
 export const Size = Template.bind({});
 Size.args = {
   open: true,
-  size: 'small',
+  size: 'sm',
   title: 'Título do Modal',
   onClose: action('fechar'),
 };
@@ -295,7 +295,7 @@ Size.parameters = {
     source: {
       code: `<Modal
       open={true}
-      size="small"
+      size="sm"
       title="Título do Modal"
       onClose={() => {}}
     />`,

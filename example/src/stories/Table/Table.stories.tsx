@@ -75,7 +75,6 @@ export default {
 } as Meta;
 
 export const Primary: Story<TableComponentProps> = args => {
-  console.log(args);
   const hasMore = args.defaultProps?.hasMore ? () => {} : undefined;
   const [page, setPage] = useState(1);
   return (

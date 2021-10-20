@@ -2871,7 +2871,7 @@ var Accordion = function Accordion(_ref) {
   }, void 0);
 };
 
-var Sizes$4 = {
+var Sizes$3 = {
   xs: 'xs',
   sm: 'sm',
   md: 'md',
@@ -2891,19 +2891,19 @@ var getMeasurement = function getMeasurement(size, defaultValue) {
 };
 var getFontSize = function getFontSize(defaultSize, sizeBase) {
   switch (defaultSize) {
-    case Sizes$4.xs:
+    case Sizes$3.xs:
       return "calc(" + getMeasurement(sizeBase) + " - 0.25rem)";
 
-    case Sizes$4.sm:
+    case Sizes$3.sm:
       return "calc(" + getMeasurement(sizeBase) + " - 0.125rem)";
 
-    case Sizes$4.md:
+    case Sizes$3.md:
       return getMeasurement(sizeBase);
 
-    case Sizes$4.lg:
+    case Sizes$3.lg:
       return "calc(" + getMeasurement(sizeBase) + " + 0.125rem)";
 
-    case Sizes$4.xl:
+    case Sizes$3.xl:
       return "calc(" + getMeasurement(sizeBase) + " + 0.25rem)";
 
     default:
@@ -3018,136 +3018,97 @@ var Amount = styled__default["default"].div(_templateObject6$4 || (_templateObje
 var LoadingContainer = styled__default["default"].div(_templateObject7$3 || (_templateObject7$3 = _taggedTemplateLiteralLoose(["\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n"])));
 
 var _templateObject$d, _templateObject2$8;
-var Sizes$3 = {
-  mini: 'mini',
-  tiny: 'tiny',
-  small: 'small',
-  medium: 'medium',
-  large: 'large',
-  big: 'big',
-  huge: 'huge',
-  massive: 'massive'
+var POSITIONS = {
+  center: 'center',
+  left: 'flex-start',
+  right: 'flex-end'
 };
 
 var widthLoader = function widthLoader(size) {
   switch (size) {
-    case Sizes$3.mini:
+    case 'xs':
       return '1em';
 
-    case Sizes$3.tiny:
-      return '1.5em';
-
-    case Sizes$3.small:
+    case 'sm':
       return '2em';
 
-    case Sizes$3.medium:
+    case 'md':
       return '2.5em';
 
-    case Sizes$3.large:
+    case 'lg':
       return '3em';
 
-    case Sizes$3.big:
-      return '3.5em';
-
-    case Sizes$3.huge:
+    case 'xl':
       return '4em';
 
-    case Sizes$3.massive:
-      return '4.5em';
-
     default:
-      return size;
+      return '2.5em';
   }
 };
 
 var widthBorder = function widthBorder(size) {
   switch (size) {
-    case Sizes$3.mini:
+    case 'xs':
       return '2px';
 
-    case Sizes$3.tiny:
-      return '2.5px';
-
-    case Sizes$3.small:
+    case 'sm':
       return '3px';
 
-    case Sizes$3.medium:
-      return '3.5px';
-
-    case Sizes$3.large:
+    case 'md':
       return '4px';
 
-    case Sizes$3.big:
-      return '4.5px';
-
-    case Sizes$3.huge:
+    case 'lg':
       return '5px';
 
-    case Sizes$3.massive:
-      return '5.5px';
+    case 'xl':
+      return '6px';
 
     default:
-      return size;
+      return '4px';
   }
 };
 
 var Container$8 = styled__default["default"].div(_templateObject$d || (_templateObject$d = _taggedTemplateLiteralLoose(["\n  width: 100%;\n  display: flex;\n  justify-content: ", ";\n"])), function (props) {
-  return props.position === 'left' ? 'flex-start' : props.position === 'right' ? 'flex-end' : 'center';
+  return POSITIONS[props.position];
 });
-var Load = styled__default["default"].div(_templateObject2$8 || (_templateObject2$8 = _taggedTemplateLiteralLoose(["\n  border-width: ", ";\n  border-style: solid;\n  border-color: ", ";\n  border-top-width: ", ";\n  border-top-style: solid;\n  border-top-color: ", ";\n\n  border-radius: 50%;\n  width: ", ";\n  height: ", ";\n  animation: spin 0.6s linear infinite;\n\n  @keyframes spin {\n    0% {\n      transform: rotate(0deg);\n    }\n    100% {\n      transform: rotate(360deg);\n    }\n  }\n"])), function (props) {
-  if (props.size) {
-    return widthBorder(props.size);
-  }
-
-  return '3.5px';
-}, colors.default20, function (props) {
-  if (props.size) {
-    return widthBorder(props.size);
-  }
-
-  return '3.5px';
+var Load = styled__default["default"].div(_templateObject2$8 || (_templateObject2$8 = _taggedTemplateLiteralLoose(["\n  border-width: ", ";\n  border-style: solid;\n  border-color: ", ";\n  border-top-width: ", ";\n  border-top-style: solid;\n  border-top-color: ", ";\n  border-radius: 50%;\n  width: ", ";\n  height: ", ";\n  animation: spin 0.6s linear infinite;\n\n  @keyframes spin {\n    0% {\n      transform: rotate(0deg);\n    }\n    100% {\n      transform: rotate(360deg);\n    }\n  }\n"])), function (props) {
+  return widthBorder(props.size);
 }, function (props) {
-  if (props.color) {
-    return props.color;
-  }
-
-  return colors.brand10;
+  return props.outsideColor || colors.default20;
 }, function (props) {
-  if (props.size) {
-    return widthLoader(props.size);
-  }
-
-  return '2.5em';
+  return widthBorder(props.size);
 }, function (props) {
-  if (props.size) {
-    if (props.size) {
-      return widthLoader(props.size);
-    }
-  }
-
-  return '2.5em';
+  return props.color || colors.brand10;
+}, function (props) {
+  return widthLoader(props.size);
+}, function (props) {
+  return widthLoader(props.size);
 });
 
-var Loader = function Loader(_ref) {
+function Loader(_ref) {
   var color = _ref.color,
-      size = _ref.size,
+      _ref$size = _ref.size,
+      size = _ref$size === void 0 ? 'md' : _ref$size,
       className = _ref.className,
       style = _ref.style,
-      position = _ref.position;
+      _ref$position = _ref.position,
+      position = _ref$position === void 0 ? 'center' : _ref$position,
+      outsideColor = _ref.outsideColor;
   return jsxRuntime.jsx(Container$8, Object.assign({
-    position: position,
-    role: "progressbar",
-    "aria-busy": "true",
-    "aria-live": "polite"
+    position: position
   }, {
     children: jsxRuntime.jsx(Load, {
+      role: "progressbar",
+      "aria-busy": "true",
+      "aria-live": "polite",
       color: color,
       size: size,
       style: style,
-      className: className
+      className: className,
+      outsideColor: outsideColor
     }, void 0)
   }), void 0);
-};
+}
 
 var _excluded$b = ["textFirst", "textFirstClassName", "textFirstStyle", "textEnd", "textEndClassName", "textEndStyle", "firstStrong", "notStrong", "strong", "loading", "secondary", "backPurple", "children", "notification", "amount", "width", "icon", "iconClassName", "iconStyle", "containerIconClassName", "containerIconStyle", "customIcon", "iconPosition", "noBorder", "tertiary", "size", "rectangular"];
 

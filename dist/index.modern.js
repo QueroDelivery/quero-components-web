@@ -2906,7 +2906,7 @@ function _objectWithoutPropertiesLoose$2(source, excluded) {
   return target;
 }
 
-const Sizes$4 = {
+const Sizes$3 = {
   xs: 'xs',
   sm: 'sm',
   md: 'md',
@@ -2926,19 +2926,19 @@ const getMeasurement = (size, defaultValue) => {
 };
 const getFontSize = (defaultSize, sizeBase) => {
   switch (defaultSize) {
-    case Sizes$4.xs:
+    case Sizes$3.xs:
       return `calc(${getMeasurement(sizeBase)} - 0.25rem)`;
 
-    case Sizes$4.sm:
+    case Sizes$3.sm:
       return `calc(${getMeasurement(sizeBase)} - 0.125rem)`;
 
-    case Sizes$4.md:
+    case Sizes$3.md:
       return getMeasurement(sizeBase);
 
-    case Sizes$4.lg:
+    case Sizes$3.lg:
       return `calc(${getMeasurement(sizeBase)} + 0.125rem)`;
 
-    case Sizes$4.xl:
+    case Sizes$3.xl:
       return `calc(${getMeasurement(sizeBase)} + 0.25rem)`;
 
     default:
@@ -3128,76 +3128,53 @@ const LoadingContainer = styled.div(_t7$3 || (_t7$3 = _$e`
 let _$d = t => t,
     _t$d,
     _t2$8;
-const Sizes$3 = {
-  mini: 'mini',
-  tiny: 'tiny',
-  small: 'small',
-  medium: 'medium',
-  large: 'large',
-  big: 'big',
-  huge: 'huge',
-  massive: 'massive'
+const POSITIONS = {
+  center: 'center',
+  left: 'flex-start',
+  right: 'flex-end'
 };
 
 const widthLoader = size => {
   switch (size) {
-    case Sizes$3.mini:
+    case 'xs':
       return '1em';
 
-    case Sizes$3.tiny:
-      return '1.5em';
-
-    case Sizes$3.small:
+    case 'sm':
       return '2em';
 
-    case Sizes$3.medium:
+    case 'md':
       return '2.5em';
 
-    case Sizes$3.large:
+    case 'lg':
       return '3em';
 
-    case Sizes$3.big:
-      return '3.5em';
-
-    case Sizes$3.huge:
+    case 'xl':
       return '4em';
 
-    case Sizes$3.massive:
-      return '4.5em';
-
     default:
-      return size;
+      return '2.5em';
   }
 };
 
 const widthBorder = size => {
   switch (size) {
-    case Sizes$3.mini:
+    case 'xs':
       return '2px';
 
-    case Sizes$3.tiny:
-      return '2.5px';
-
-    case Sizes$3.small:
+    case 'sm':
       return '3px';
 
-    case Sizes$3.medium:
-      return '3.5px';
-
-    case Sizes$3.large:
+    case 'md':
       return '4px';
 
-    case Sizes$3.big:
-      return '4.5px';
-
-    case Sizes$3.huge:
+    case 'lg':
       return '5px';
 
-    case Sizes$3.massive:
-      return '5.5px';
+    case 'xl':
+      return '6px';
 
     default:
-      return size;
+      return '4px';
   }
 };
 
@@ -3205,7 +3182,7 @@ const Container$8 = styled.div(_t$d || (_t$d = _$d`
   width: 100%;
   display: flex;
   justify-content: ${0};
-`), props => props.position === 'left' ? 'flex-start' : props.position === 'right' ? 'flex-end' : 'center');
+`), props => POSITIONS[props.position]);
 const Load = styled.div(_t2$8 || (_t2$8 = _$d`
   border-width: ${0};
   border-style: solid;
@@ -3213,7 +3190,6 @@ const Load = styled.div(_t2$8 || (_t2$8 = _$d`
   border-top-width: ${0};
   border-top-style: solid;
   border-top-color: ${0};
-
   border-radius: 50%;
   width: ${0};
   height: ${0};
@@ -3227,61 +3203,31 @@ const Load = styled.div(_t2$8 || (_t2$8 = _$d`
       transform: rotate(360deg);
     }
   }
-`), props => {
-  if (props.size) {
-    return widthBorder(props.size);
-  }
+`), props => widthBorder(props.size), props => props.outsideColor || colors.default20, props => widthBorder(props.size), props => props.color || colors.brand10, props => widthLoader(props.size), props => widthLoader(props.size));
 
-  return '3.5px';
-}, colors.default20, props => {
-  if (props.size) {
-    return widthBorder(props.size);
-  }
-
-  return '3.5px';
-}, props => {
-  if (props.color) {
-    return props.color;
-  }
-
-  return colors.brand10;
-}, props => {
-  if (props.size) {
-    return widthLoader(props.size);
-  }
-
-  return '2.5em';
-}, props => {
-  if (props.size) {
-    if (props.size) {
-      return widthLoader(props.size);
-    }
-  }
-
-  return '2.5em';
-});
-
-const Loader = ({
+function Loader({
   color,
-  size,
+  size = 'md',
   className,
   style,
-  position
-}) => {
+  position = 'center',
+  outsideColor
+}) {
   return jsx(Container$8, Object.assign({
-    position: position,
-    role: "progressbar",
-    "aria-busy": "true",
-    "aria-live": "polite"
+    position: position
   }, {
     children: jsx(Load, {
+      role: "progressbar",
+      "aria-busy": "true",
+      "aria-live": "polite",
       color: color,
       size: size,
       style: style,
-      className: className
+      className: className,
+      outsideColor: outsideColor
     }, void 0)
   }), void 0);
-};
+}
 
 const _excluded$b = ["textFirst", "textFirstClassName", "textFirstStyle", "textEnd", "textEndClassName", "textEndStyle", "firstStrong", "notStrong", "strong", "loading", "secondary", "backPurple", "children", "notification", "amount", "width", "icon", "iconClassName", "iconStyle", "containerIconClassName", "containerIconStyle", "customIcon", "iconPosition", "noBorder", "tertiary", "size", "rectangular"];
 
