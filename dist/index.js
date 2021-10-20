@@ -2743,7 +2743,7 @@ var colors = {
   error: '#e0457b25'
 };
 
-var _templateObject$f, _templateObject2$a, _templateObject3$9, _templateObject4$6, _templateObject5$5, _templateObject6$5, _templateObject7$5;
+var _templateObject$f, _templateObject2$a, _templateObject3$9, _templateObject4$6, _templateObject5$5, _templateObject6$5, _templateObject7$4;
 var Container$9 = styled__default["default"].div(_templateObject$f || (_templateObject$f = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  display: flex;\n  width: ", ";\n  justify-content: space-between;\n  background-color: ", ";\n  border: 1px solid ", ";\n  padding: 0.9375rem 1.25rem;\n  align-items: center;\n  cursor: pointer;\n  box-shadow: 0px 3px 2px 0px rgba(0, 0, 0, 0.16);\n\n  .icon-title {\n    display: flex;\n    align-items: center;\n  }\n\n  .title-subtitle {\n    display: flex;\n    flex-direction: column;\n    flex: 1;\n    margin-left: ", ";\n  }\n\n  .value-icon {\n    display: flex;\n    align-items: center;\n    flex: 1;\n    justify-content: flex-end;\n  }\n\n  ", "\n"])), function (props) {
   if (props.width) {
     if (typeof props.width === 'string') {
@@ -2766,7 +2766,7 @@ var Title$1 = styled__default["default"].span(_templateObject4$6 || (_templateOb
 }, colors.gray20);
 var Subtitle = styled__default["default"].span(_templateObject5$5 || (_templateObject5$5 = _taggedTemplateLiteralLoose(["\n  color: ", ";\n  font-size: 0.75rem;\n"])), colors.gray10);
 var Value = styled__default["default"].span(_templateObject6$5 || (_templateObject6$5 = _taggedTemplateLiteralLoose(["\n  margin-right: 1.25rem;\n  color: ", ";\n"])), colors.gray20);
-var Body$1 = styled__default["default"].div(_templateObject7$5 || (_templateObject7$5 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  width: ", ";\n  padding: 1.25rem;\n  border: 1px solid ", ";\n  border-top: 0;\n  border-bottom-left-radius: 20px;\n  border-bottom-right-radius: 20px;\n  display: ", ";\n  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.16);\n"])), function (props) {
+var Body$1 = styled__default["default"].div(_templateObject7$4 || (_templateObject7$4 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  width: ", ";\n  padding: 1.25rem;\n  border: 1px solid ", ";\n  border-top: 0;\n  border-bottom-left-radius: 20px;\n  border-bottom-right-radius: 20px;\n  display: ", ";\n  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.16);\n"])), function (props) {
   if (typeof props.width === 'string') {
     return props.width;
   }
@@ -2871,7 +2871,7 @@ var Accordion = function Accordion(_ref) {
   }, void 0);
 };
 
-var Sizes$5 = {
+var Sizes$4 = {
   xs: 'xs',
   sm: 'sm',
   md: 'md',
@@ -2891,19 +2891,19 @@ var getMeasurement = function getMeasurement(size, defaultValue) {
 };
 var getFontSize = function getFontSize(defaultSize, sizeBase) {
   switch (defaultSize) {
-    case Sizes$5.xs:
+    case Sizes$4.xs:
       return "calc(" + getMeasurement(sizeBase) + " - 0.25rem)";
 
-    case Sizes$5.sm:
+    case Sizes$4.sm:
       return "calc(" + getMeasurement(sizeBase) + " - 0.125rem)";
 
-    case Sizes$5.md:
+    case Sizes$4.md:
       return getMeasurement(sizeBase);
 
-    case Sizes$5.lg:
+    case Sizes$4.lg:
       return "calc(" + getMeasurement(sizeBase) + " + 0.125rem)";
 
-    case Sizes$5.xl:
+    case Sizes$4.xl:
       return "calc(" + getMeasurement(sizeBase) + " + 0.25rem)";
 
     default:
@@ -2911,7 +2911,7 @@ var getFontSize = function getFontSize(defaultSize, sizeBase) {
   }
 };
 
-var _templateObject$e, _templateObject2$9, _templateObject3$8, _templateObject4$5, _templateObject5$4, _templateObject6$4, _templateObject7$4;
+var _templateObject$e, _templateObject2$9, _templateObject3$8, _templateObject4$5, _templateObject5$4, _templateObject6$4, _templateObject7$3;
 var Button$2 = styled__default["default"].button(_templateObject$e || (_templateObject$e = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  font-size: ", ";\n  position: ", ";\n  line-height: 0;\n  background-color: ", ";\n  color: ", ";\n  padding: 0.65em 1.25em;\n  width: ", ";\n  border-radius: ", ";\n  cursor: pointer;\n  border: ", ";\n  outline: none;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n\n  &:disabled {\n    opacity: 0.5;\n    cursor: not-allowed;\n    pointer-events: none;\n  }\n\n  &:hover {\n    background-color: ", ";\n    color: ", ";\n  }\n"])), function (props) {
   return props.size ? getFontSize(props.size, '1rem') : '1rem';
 }, function (props) {
@@ -3009,16 +3009,16 @@ var TextEnd = styled__default["default"].span(_templateObject3$8 || (_templateOb
   return props.size ? getFontSize(props.size, '1rem') : '1rem';
 });
 var Notification = styled__default["default"].button(_templateObject4$5 || (_templateObject4$5 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  background-color: ", ";\n  height: 40px;\n  width: 100%;\n  border-radius: 30px;\n  cursor: pointer;\n  border: 1px solid ", ";\n  outline: none;\n\n  &:disabled {\n    opacity: 0.5;\n    cursor: not-allowed;\n    pointer-events: none;\n  }\n\n  &:hover {\n    background-color: ", ";\n  }\n\n  span {\n    color: ", ";\n    margin-left: 20px;\n    font-weight: bold;\n  }\n"])), colors.brand10, colors.brand30, colors.brandTransparent2, colors.brand30);
-var Icon$2 = styled__default["default"].div(_templateObject5$4 || (_templateObject5$4 = _taggedTemplateLiteralLoose(["\n  margin-right: ", ";\n  margin-left: ", ";\n"])), function (props) {
+var Icon$1 = styled__default["default"].div(_templateObject5$4 || (_templateObject5$4 = _taggedTemplateLiteralLoose(["\n  margin-right: ", ";\n  margin-left: ", ";\n"])), function (props) {
   return props.iconPosition === 'left' && props.hasText ? '10px' : '';
 }, function (props) {
   return props.iconPosition === 'right' && props.hasText ? '10px' : '';
 });
 var Amount = styled__default["default"].div(_templateObject6$4 || (_templateObject6$4 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  background-color: ", ";\n  width: 20px;\n  height: 20px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  border-radius: 50%;\n  color: ", ";\n  font-size: 0.625rem;\n"])), colors.brand30, colors.brand10);
-var LoadingContainer = styled__default["default"].div(_templateObject7$4 || (_templateObject7$4 = _taggedTemplateLiteralLoose(["\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n"])));
+var LoadingContainer = styled__default["default"].div(_templateObject7$3 || (_templateObject7$3 = _taggedTemplateLiteralLoose(["\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n"])));
 
 var _templateObject$d, _templateObject2$8;
-var Sizes$4 = {
+var Sizes$3 = {
   mini: 'mini',
   tiny: 'tiny',
   small: 'small',
@@ -3031,28 +3031,28 @@ var Sizes$4 = {
 
 var widthLoader = function widthLoader(size) {
   switch (size) {
-    case Sizes$4.mini:
+    case Sizes$3.mini:
       return '1em';
 
-    case Sizes$4.tiny:
+    case Sizes$3.tiny:
       return '1.5em';
 
-    case Sizes$4.small:
+    case Sizes$3.small:
       return '2em';
 
-    case Sizes$4.medium:
+    case Sizes$3.medium:
       return '2.5em';
 
-    case Sizes$4.large:
+    case Sizes$3.large:
       return '3em';
 
-    case Sizes$4.big:
+    case Sizes$3.big:
       return '3.5em';
 
-    case Sizes$4.huge:
+    case Sizes$3.huge:
       return '4em';
 
-    case Sizes$4.massive:
+    case Sizes$3.massive:
       return '4.5em';
 
     default:
@@ -3062,28 +3062,28 @@ var widthLoader = function widthLoader(size) {
 
 var widthBorder = function widthBorder(size) {
   switch (size) {
-    case Sizes$4.mini:
+    case Sizes$3.mini:
       return '2px';
 
-    case Sizes$4.tiny:
+    case Sizes$3.tiny:
       return '2.5px';
 
-    case Sizes$4.small:
+    case Sizes$3.small:
       return '3px';
 
-    case Sizes$4.medium:
+    case Sizes$3.medium:
       return '3.5px';
 
-    case Sizes$4.large:
+    case Sizes$3.large:
       return '4px';
 
-    case Sizes$4.big:
+    case Sizes$3.big:
       return '4.5px';
 
-    case Sizes$4.huge:
+    case Sizes$3.huge:
       return '5px';
 
-    case Sizes$4.massive:
+    case Sizes$3.massive:
       return '5.5px';
 
     default:
@@ -3135,7 +3135,10 @@ var Loader = function Loader(_ref) {
       style = _ref.style,
       position = _ref.position;
   return jsxRuntime.jsx(Container$8, Object.assign({
-    position: position
+    position: position,
+    role: "progressbar",
+    "aria-busy": "true",
+    "aria-live": "polite"
   }, {
     children: jsxRuntime.jsx(Load, {
       color: color,
@@ -3198,7 +3201,7 @@ var ButtonMain = function ButtonMain(_ref) {
             alignItems: 'center'
           }
         }, {
-          children: [jsxRuntime.jsx(Icon$2 // loading={loading}
+          children: [jsxRuntime.jsx(Icon$1 // loading={loading}
           , Object.assign({
             // loading={loading}
             iconPosition: iconPosition,
@@ -3220,7 +3223,7 @@ var ButtonMain = function ButtonMain(_ref) {
   }
 
   function renderIcon() {
-    if (customIcon) return jsxRuntime.jsx(Icon$2, Object.assign({
+    if (customIcon) return jsxRuntime.jsx(Icon$1, Object.assign({
       className: containerIconClassName,
       style: containerIconStyle,
       iconPosition: iconPosition,
@@ -3228,7 +3231,7 @@ var ButtonMain = function ButtonMain(_ref) {
     }, {
       children: customIcon
     }), void 0);
-    return jsxRuntime.jsx(Icon$2, Object.assign({
+    return jsxRuntime.jsx(Icon$1, Object.assign({
       className: containerIconClassName,
       style: containerIconStyle,
       iconPosition: iconPosition,
@@ -4751,7 +4754,7 @@ var Card = function Card(_ref) {
 };
 
 var _templateObject$a;
-var Sizes$3 = {
+var Sizes$2 = {
   mini: 'mini',
   tiny: 'tiny',
   small: 'small',
@@ -4764,28 +4767,28 @@ var Sizes$3 = {
 
 var size$1 = function size(_size) {
   switch (_size) {
-    case Sizes$3.mini:
+    case Sizes$2.mini:
       return '10px';
 
-    case Sizes$3.tiny:
+    case Sizes$2.tiny:
       return '12px';
 
-    case Sizes$3.small:
+    case Sizes$2.small:
       return '14px';
 
-    case Sizes$3.medium:
+    case Sizes$2.medium:
       return '17px';
 
-    case Sizes$3.large:
+    case Sizes$2.large:
       return '20px';
 
-    case Sizes$3.big:
+    case Sizes$2.big:
       return '23px';
 
-    case Sizes$3.huge:
+    case Sizes$2.huge:
       return '26px';
 
-    case Sizes$3.massive:
+    case Sizes$2.massive:
       return '30px';
 
     default:
@@ -4795,28 +4798,28 @@ var size$1 = function size(_size) {
 
 var sizeChecked$1 = function sizeChecked(size) {
   switch (size) {
-    case Sizes$3.mini:
+    case Sizes$2.mini:
       return '8px';
 
-    case Sizes$3.tiny:
+    case Sizes$2.tiny:
       return '10px';
 
-    case Sizes$3.small:
+    case Sizes$2.small:
       return '11px';
 
-    case Sizes$3.medium:
+    case Sizes$2.medium:
       return '13px';
 
-    case Sizes$3.large:
+    case Sizes$2.large:
       return '16px';
 
-    case Sizes$3.big:
+    case Sizes$2.big:
       return '19px';
 
-    case Sizes$3.huge:
+    case Sizes$2.huge:
       return '21px';
 
-    case Sizes$3.massive:
+    case Sizes$2.massive:
       return '23px';
 
     default:
@@ -4826,28 +4829,28 @@ var sizeChecked$1 = function sizeChecked(size) {
 
 var marginLeft = function marginLeft(size) {
   switch (size) {
-    case Sizes$3.mini:
+    case Sizes$2.mini:
       return '1px';
 
-    case Sizes$3.tiny:
+    case Sizes$2.tiny:
       return '1.2px';
 
-    case Sizes$3.small:
+    case Sizes$2.small:
       return '1.4px';
 
-    case Sizes$3.medium:
+    case Sizes$2.medium:
       return '2px';
 
-    case Sizes$3.large:
+    case Sizes$2.large:
       return '2px';
 
-    case Sizes$3.big:
+    case Sizes$2.big:
       return '2px';
 
-    case Sizes$3.huge:
+    case Sizes$2.huge:
       return '3px';
 
-    case Sizes$3.massive:
+    case Sizes$2.massive:
       return '4px';
 
     default:
@@ -4857,28 +4860,28 @@ var marginLeft = function marginLeft(size) {
 
 var labelSize$1 = function labelSize(size) {
   switch (size) {
-    case Sizes$3.mini:
+    case Sizes$2.mini:
       return '10px';
 
-    case Sizes$3.tiny:
+    case Sizes$2.tiny:
       return '13px';
 
-    case Sizes$3.small:
+    case Sizes$2.small:
       return '14px';
 
-    case Sizes$3.medium:
+    case Sizes$2.medium:
       return '16px';
 
-    case Sizes$3.large:
+    case Sizes$2.large:
       return '18px';
 
-    case Sizes$3.big:
+    case Sizes$2.big:
       return '20px';
 
-    case Sizes$3.huge:
+    case Sizes$2.huge:
       return '22px';
 
-    case Sizes$3.massive:
+    case Sizes$2.massive:
       return '24px';
 
     default:
@@ -4888,28 +4891,28 @@ var labelSize$1 = function labelSize(size) {
 
 var marginRight = function marginRight(size) {
   switch (size) {
-    case Sizes$3.mini:
+    case Sizes$2.mini:
       return '5px';
 
-    case Sizes$3.tiny:
+    case Sizes$2.tiny:
       return '6px';
 
-    case Sizes$3.small:
+    case Sizes$2.small:
       return '7px';
 
-    case Sizes$3.medium:
+    case Sizes$2.medium:
       return '8px';
 
-    case Sizes$3.large:
+    case Sizes$2.large:
       return '9px';
 
-    case Sizes$3.big:
+    case Sizes$2.big:
       return '10px';
 
-    case Sizes$3.huge:
+    case Sizes$2.huge:
       return '11px';
 
-    case Sizes$3.massive:
+    case Sizes$2.massive:
       return '12px';
 
     default:
@@ -5009,7 +5012,7 @@ var Checkbox = function Checkbox(_ref) {
   }), void 0);
 };
 
-var _templateObject$9, _templateObject2$6, _templateObject3$6, _templateObject4$4, _templateObject5$3, _templateObject6$3, _templateObject7$3, _templateObject8$1;
+var _templateObject$9, _templateObject2$6, _templateObject3$6, _templateObject4$4, _templateObject5$3, _templateObject6$3, _templateObject7$2, _templateObject8;
 var Background$1 = styled__default["default"].div(_templateObject$9 || (_templateObject$9 = _taggedTemplateLiteralLoose(["\n  ", "\n"])), function (props) {
   return props.open ? styled.css(_templateObject2$6 || (_templateObject2$6 = _taggedTemplateLiteralLoose(["\n          opacity: 1;\n          visibility: visible;\n          position: fixed;\n          top: 0;\n          right: 0;\n          bottom: 0;\n          left: 0;\n          background: rgba(0, 0, 0, 0.5);\n          transition: opacity 0.25s ease;\n          overflow: auto;\n          display: flex;\n          z-index: 999;\n        "]))) : styled.css(_templateObject3$6 || (_templateObject3$6 = _taggedTemplateLiteralLoose(["\n          opacity: 1;\n          visibility: hidden;\n        "])));
 });
@@ -5044,12 +5047,12 @@ var Dialog = styled__default["default"].div(_templateObject4$4 || (_templateObje
     return '100%';
   }, props.loading ? 'hidden' : 'auto', props.title ? "calc(100% - " + props.sizeHeader + "px)" : '100%') : styled.css(_templateObject6$3 || (_templateObject6$3 = _taggedTemplateLiteralLoose(["\n          transition: bottom 0.25s ease;\n          bottom: -100%;\n        "])));
 });
-var Header$2 = styled__default["default"].div(_templateObject7$3 || (_templateObject7$3 = _taggedTemplateLiteralLoose(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  border-bottom: ", ";\n  font-size: 1.25rem;\n\n  .name-icon-modal {\n    display: flex;\n    align-items: center;\n  }\n\n  & strong {\n    padding: ", ";\n    color: ", ";\n  }\n"])), function (props) {
+var Header$2 = styled__default["default"].div(_templateObject7$2 || (_templateObject7$2 = _taggedTemplateLiteralLoose(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  border-bottom: ", ";\n  font-size: 1.25rem;\n\n  .name-icon-modal {\n    display: flex;\n    align-items: center;\n  }\n\n  & strong {\n    padding: ", ";\n    color: ", ";\n  }\n"])), function (props) {
   return props.noBorder ? 'none' : "1px solid " + colors.default20;
 }, function (props) {
   return props.iconBack ? '1.25rem 0' : '1.25rem 1.875rem';
 }, colors.brand10);
-var Icon$1 = styled__default["default"].div(_templateObject8$1 || (_templateObject8$1 = _taggedTemplateLiteralLoose(["\n  padding: 1.25rem 1.875rem;\n  cursor: pointer;\n"])));
+var Icon = styled__default["default"].div(_templateObject8 || (_templateObject8 = _taggedTemplateLiteralLoose(["\n  padding: 1.25rem 1.875rem;\n  cursor: pointer;\n"])));
 
 var DialogComponent = function DialogComponent(_ref) {
   var open = _ref.open,
@@ -5097,7 +5100,7 @@ var DialogComponent = function DialogComponent(_ref) {
         children: [jsxRuntime.jsxs("div", Object.assign({
           className: "name-icon-modal"
         }, {
-          children: [onBack ? jsxRuntime.jsx(Icon$1, Object.assign({
+          children: [onBack ? jsxRuntime.jsx(Icon, Object.assign({
             onClick: function onClick() {
               return onBack();
             }
@@ -5110,7 +5113,7 @@ var DialogComponent = function DialogComponent(_ref) {
           }), void 0) : null, jsxRuntime.jsx("strong", {
             children: title
           }, void 0)]
-        }), void 0), closeIcon && jsxRuntime.jsx(Icon$1, Object.assign({
+        }), void 0), closeIcon && jsxRuntime.jsx(Icon, Object.assign({
           onClick: function onClick(event) {
             event.stopPropagation();
             onClose();
@@ -5309,7 +5312,7 @@ var DropdownForm = function DropdownForm(_ref) {
   }), void 0);
 };
 
-var _templateObject$7, _templateObject2$5, _templateObject3$5, _templateObject4$3, _templateObject5$2, _templateObject6$2, _templateObject7$2;
+var _templateObject$7, _templateObject2$5, _templateObject3$5, _templateObject4$3, _templateObject5$2, _templateObject6$2, _templateObject7$1;
 var Container$4 = styled__default["default"].div(_templateObject$7 || (_templateObject$7 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  position: relative;\n  opacity: ", ";\n  width: ", ";\n\n  input {\n    font-family: MontSerrat !important;\n    color: ", ";\n    width: 100%;\n    height: 100%;\n    padding-top: 20px;\n    padding-left: ", ";\n    padding-bottom: 5px;\n    padding-right: ", ";\n    border: none;\n    outline: none;\n    background-color: transparent;\n\n    &::placeholder {\n      color: ", ";\n    }\n  }\n\n  ", "\n\n  input:disabled {\n    background-color: transparent;\n  }\n\n  label {\n    font-family: MontSerrat !important;\n    position: absolute;\n    bottom: 0px;\n    top: 0px;\n    left: 0px;\n    width: 100%;\n    right: 100%;\n    pointer-events: none;\n    border-bottom-width: 1px;\n    border-bottom-style: solid;\n    border-bottom-color: ", ";\n\n    ", "\n  }\n\n  span {\n    font-family: MontSerrat !important;\n    position: absolute;\n    bottom: 5px;\n    left: ", ";\n    transition: all 0.3s ease;\n\n    ", "\n  }\n\n  .icon {\n    position: absolute;\n    bottom: 0;\n    padding: 5px 10px;\n    ", "\n  }\n\n  .icon-action {\n    position: absolute;\n    bottom: 0;\n    padding: 5px 10px;\n    ", "\n    cursor: pointer;\n  }\n"])), function (props) {
   return props.disabled ? '50%' : '100%';
 }, function (props) {
@@ -5431,7 +5434,7 @@ var Container$4 = styled__default["default"].div(_templateObject$7 || (_template
 }, function (props) {
   return props.actionPosition && props.actionPosition === 'left' ? 'left: 0;' : 'right: 0;';
 });
-var LabelError$1 = styled__default["default"].span(_templateObject7$2 || (_templateObject7$2 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  font-size: 10px;\n  margin-left: 0;\n  color: ", ";\n"])), function (props) {
+var LabelError$1 = styled__default["default"].span(_templateObject7$1 || (_templateObject7$1 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  font-size: 10px;\n  margin-left: 0;\n  color: ", ";\n"])), function (props) {
   if (props.errorColor) {
     return props.errorColor;
   }
@@ -5674,66 +5677,49 @@ var InputLineForm = function InputLineForm(_ref) {
   }), void 0);
 };
 
-var _templateObject$6, _templateObject2$4, _templateObject3$4, _templateObject4$2, _templateObject5$1, _templateObject6$1, _templateObject7$1, _templateObject8, _templateObject9;
-var Sizes$2 = {
-  mini: 'mini',
-  tiny: 'tiny',
-  small: 'small',
-  large: 'large',
-  fullscreen: 'fullscreen'
-};
+var _templateObject$6, _templateObject2$4, _templateObject3$4, _templateObject4$2, _templateObject5$1, _templateObject6$1;
 
 var sizeWidth = function sizeWidth(size) {
   switch (size) {
-    case Sizes$2.mini:
+    case 'xs':
       return '35%';
 
-    case Sizes$2.tiny:
+    case 'sm':
       return '45%';
 
-    case Sizes$2.small:
+    case 'md':
       return '55%';
 
-    case Sizes$2.large:
+    case 'lg':
       return '65%';
 
-    case Sizes$2.fullscreen:
+    case 'xl':
       return '95%';
 
     default:
-      return size;
+      return '55%';
   }
 };
 
-var Background = styled__default["default"].div(_templateObject$6 || (_templateObject$6 = _taggedTemplateLiteralLoose(["\n  ", "\n"])), function (props) {
-  return props.open ? styled.css(_templateObject2$4 || (_templateObject2$4 = _taggedTemplateLiteralLoose(["\n          opacity: 1;\n          visibility: visible;\n          position: fixed;\n          top: 0;\n          right: 0;\n          bottom: 0;\n          left: 0;\n          background: rgba(0, 0, 0, 0.5);\n          transition: opacity 0.25s ease;\n          overflow: auto;\n          padding: 40px 0;\n          display: flex;\n          z-index: 999;\n        "]))) : styled.css(_templateObject3$4 || (_templateObject3$4 = _taggedTemplateLiteralLoose(["\n          opacity: 1;\n          visibility: hidden;\n        "])));
-});
-var Modal = styled__default["default"].div(_templateObject4$2 || (_templateObject4$2 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  transition: top 0.25s ease;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  width: ", ";\n  margin: auto;\n  background: ", ";\n  border-radius: 30px;\n"])), function (props) {
+var Z_INDEX_MODAL = 999;
+var Background = styled__default["default"].div(_templateObject$6 || (_templateObject$6 = _taggedTemplateLiteralLoose(["\n  opacity: 0;\n  visibility: hidden;\n  display: none;\n  transition: opacity 0.25s ease-in-out;\n\n  &.open {\n    opacity: 1;\n    visibility: visible;\n    position: fixed;\n    top: 0;\n    right: 0;\n    bottom: 0;\n    left: 0;\n    background: rgba(0, 0, 0, 0.5);\n    overflow: auto;\n    padding: 2.5rem 0;\n    display: flex;\n    z-index: ", ";\n  }\n"])), Z_INDEX_MODAL);
+var Modal = styled__default["default"].div(_templateObject2$4 || (_templateObject2$4 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  transition: top 0.25s ease;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  width: ", ";\n  margin: auto;\n  background: ", ";\n  border-radius: 1.875rem;\n"])), function (props) {
   if (props.width) {
-    if (typeof props.width === 'string') {
-      return props.width;
-    }
-
-    return props.width + "px";
+    return getMeasurement(props.width, '80%');
   }
 
-  if (props.size) {
-    return sizeWidth(props.size);
-  }
-
-  return '80%';
+  return sizeWidth(props.size);
 }, colors.white);
-styled__default["default"].div(_templateObject5$1 || (_templateObject5$1 = _taggedTemplateLiteralLoose(["\n  transition: bottom 1s ease;\n  width: 90%;\n  background: ", ";\n  border-top-left-radius: 30px;\n  border-top-right-radius: 30px;\n"])), colors.white);
-var Header$1 = styled__default["default"].div(_templateObject6$1 || (_templateObject6$1 = _taggedTemplateLiteralLoose(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  border-bottom: ", ";\n  font-size: 20px;\n\n  .name-icon-modal {\n    display: flex;\n    align-items: center;\n  }\n\n  & strong {\n    padding: ", ";\n    color: ", ";\n  }\n"])), function (props) {
+styled__default["default"].div(_templateObject3$4 || (_templateObject3$4 = _taggedTemplateLiteralLoose(["\n  transition: bottom 1s ease;\n  width: 90%;\n  background: ", ";\n  border-top-left-radius: 1.875rem;\n  border-top-right-radius: 1.875rem;\n"])), colors.white);
+var Header$1 = styled__default["default"].div(_templateObject4$2 || (_templateObject4$2 = _taggedTemplateLiteralLoose(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  border-bottom: ", ";\n  font-size: 1.25rem;\n\n  .name-icon-modal {\n    display: flex;\n    align-items: center;\n  }\n\n  & strong {\n    padding: ", ";\n    color: ", ";\n  }\n\n  button {\n    padding: 1.25rem 1.875rem;\n  }\n"])), function (props) {
   return props.noBorder ? 'none' : "1px solid " + colors.default20;
 }, function (props) {
   return props.iconBack ? '20px 0' : '20px 30px';
 }, colors.brand10);
-var Icon = styled__default["default"].div(_templateObject7$1 || (_templateObject7$1 = _taggedTemplateLiteralLoose(["\n  padding: 20px 30px;\n  cursor: pointer;\n"])));
-var Body = styled__default["default"].div(_templateObject8 || (_templateObject8 = _taggedTemplateLiteralLoose(["\n  padding: 20px 30px;\n  height: 100%;\n  position: relative;\n\n  .loading-modal {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    background-color: rgba(255, 255, 255, 0.8);\n    width: 100%;\n    height: 100%;\n    top: 0;\n    left: 0;\n    right: 0;\n    bottom: 0;\n    border-radius: 30px;\n    z-index: 2;\n    position: absolute;\n  }\n"])));
-var Actions = styled__default["default"].div(_templateObject9 || (_templateObject9 = _taggedTemplateLiteralLoose(["\n  border-top: 1px solid ", ";\n  margin: 0 30px;\n  padding: 20px 0;\n  display: flex;\n  flex-direction: row-reverse;\n"])), colors.default20);
+var Body = styled__default["default"].div(_templateObject5$1 || (_templateObject5$1 = _taggedTemplateLiteralLoose(["\n  padding: 1.25rem 1.875rem;\n  height: 100%;\n  position: relative;\n\n  .loading-modal {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    background-color: rgba(255, 255, 255, 0.8);\n    width: 100%;\n    height: 100%;\n    top: 0;\n    left: 0;\n    right: 0;\n    bottom: 0;\n    border-radius: 1.875rem;\n    z-index: 2;\n    position: absolute;\n  }\n"])));
+var Actions = styled__default["default"].div(_templateObject6$1 || (_templateObject6$1 = _taggedTemplateLiteralLoose(["\n  border-top: 1px solid ", ";\n  margin: 0 1.875rem;\n  padding: 1.25rem 0;\n  display: flex;\n  flex-direction: row-reverse;\n"])), colors.default20);
 
-var ModalComponent = function ModalComponent(_ref) {
+function ModalComponent(_ref) {
   var open = _ref.open,
       title = _ref.title,
       children = _ref.children,
@@ -5742,25 +5728,31 @@ var ModalComponent = function ModalComponent(_ref) {
       onClose = _ref.onClose,
       closeOnDimerClick = _ref.closeOnDimerClick,
       loading = _ref.loading,
-      onBack = _ref.onBack,
-      size = _ref.size,
+      onReturnClick = _ref.onReturnClick,
+      _ref$size = _ref.size,
+      size = _ref$size === void 0 ? 'md' : _ref$size,
       noBorder = _ref.noBorder,
       _ref$closeIcon = _ref.closeIcon,
-      closeIcon = _ref$closeIcon === void 0 ? true : _ref$closeIcon;
+      closeIcon = _ref$closeIcon === void 0 ? true : _ref$closeIcon,
+      className = _ref.className,
+      style = _ref.style,
+      headerClassName = _ref.headerClassName,
+      headerStyle = _ref.headerStyle,
+      bodyClassName = _ref.bodyClassName,
+      bodyStyle = _ref.bodyStyle;
   React$2.useEffect(function () {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    var keydownListener = function keydownListener(event) {
+      escModal(event);
+    };
+
     if (open) {
-      window.addEventListener('keydown', function (event) {
-        return escModal(event);
-      });
-    } else {
-      window.removeEventListener('keydown', function (event) {
-        return escModal(event);
-      });
+      window.addEventListener('keydown', keydownListener);
     }
 
-    return window.removeEventListener('keydown', function (event) {
-      return escModal(event);
-    });
+    return function () {
+      window.removeEventListener('keydown', keydownListener);
+    };
   }, [open]);
 
   function escModal(event) {
@@ -5771,46 +5763,56 @@ var ModalComponent = function ModalComponent(_ref) {
   }
 
   return jsxRuntime.jsx(Background, Object.assign({
-    open: open,
     onClick: function onClick(event) {
       if (closeOnDimerClick) {
         event.stopPropagation();
         onClose();
       }
-    }
+    },
+    className: "" + (open ? 'open' : ''),
+    "data-testid": "modal-background"
   }, {
     children: jsxRuntime.jsxs(Modal, Object.assign({
+      className: className,
+      style: style,
       size: size,
       width: width,
       onClick: function onClick(event) {
         return event.stopPropagation();
-      }
+      },
+      role: "dialog"
     }, {
       children: [jsxRuntime.jsxs(Header$1, Object.assign({
-        iconBack: !!onBack,
-        noBorder: noBorder
+        className: headerClassName,
+        style: headerStyle,
+        iconBack: !!onReturnClick,
+        noBorder: noBorder,
+        role: "heading"
       }, {
         children: [jsxRuntime.jsxs("div", Object.assign({
           className: "name-icon-modal"
         }, {
-          children: [onBack ? jsxRuntime.jsx(Icon, Object.assign({
-            onClick: function onClick() {
-              return onBack();
-            }
+          children: [!!onReturnClick && jsxRuntime.jsx("button", Object.assign({
+            onClick: function onClick(event) {
+              event.stopPropagation();
+              onReturnClick();
+            },
+            "aria-label": "return"
           }, {
             children: jsxRuntime.jsx(FontAwesomeIcon, {
               icon: faAngleLeft,
               size: "lg",
               color: colors.brand10
             }, void 0)
-          }), void 0) : null, jsxRuntime.jsx("strong", {
+          }), void 0), jsxRuntime.jsx("strong", {
             children: title
           }, void 0)]
-        }), void 0), closeIcon && jsxRuntime.jsx(Icon, Object.assign({
+        }), void 0), closeIcon && jsxRuntime.jsx("button", Object.assign({
           onClick: function onClick(event) {
             event.stopPropagation();
             onClose();
-          }
+          },
+          "aria-label": "close"
         }, {
           children: jsxRuntime.jsx(FontAwesomeIcon, {
             icon: faTimes,
@@ -5820,18 +5822,21 @@ var ModalComponent = function ModalComponent(_ref) {
             color: colors.brand10
           }, void 0)
         }), void 0)]
-      }), void 0), jsxRuntime.jsxs(Body, {
+      }), void 0), jsxRuntime.jsxs(Body, Object.assign({
+        className: bodyClassName,
+        style: bodyStyle
+      }, {
         children: [loading && jsxRuntime.jsx("div", Object.assign({
           className: "loading-modal"
         }, {
           children: jsxRuntime.jsx(Loader, {}, void 0)
         }), void 0), children]
-      }, void 0), actions && jsxRuntime.jsx(Actions, {
+      }), void 0), !!actions && jsxRuntime.jsx(Actions, {
         children: actions
       }, void 0)]
     }), void 0)
   }), void 0);
-};
+}
 
 var _templateObject$5;
 

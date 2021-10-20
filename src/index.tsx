@@ -12,7 +12,7 @@ import DropdownForm from './components/Dropdown/DropdownForm';
 import InputLine from './components/InputLine/InputLine';
 import InputLineForm from './components/InputLine/InputLineForm';
 import Loader from './components/Loader/Loader';
-import Modal from './components/Modal/Modal';
+import Modal, { ModalProps } from './components/Modal/Modal';
 import MoreLess, { MoreLessProps } from './components/MoreLess/MoreLess';
 import Radio, { RadioProps } from './components/Radio/Radio';
 import Selection, { SelectionProps } from './components/Selection/Selection';
@@ -51,9 +51,10 @@ export type {
   AccordionProps,
   ButtonProps,
   CalendarProps,
+  ModalProps,
+  MoreLessProps,
   PaginationProps,
   RadioProps,
-  MoreLessProps,
   SelectionProps,
   TableComponentProps,
   TextAreaProps,

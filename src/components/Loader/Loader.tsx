@@ -27,7 +27,12 @@ const Loader: React.FC<LoaderProps> = ({
   position,
 }) => {
   return (
-    <Container position={position}>
+    <Container
+      position={position}
+      role="progressbar"
+      aria-busy="true"
+      aria-live="polite"
+    >
       <Load color={color} size={size} style={style} className={className} />
     </Container>
   );

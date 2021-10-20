@@ -2718,7 +2718,7 @@ let _$f = t => t,
     _t4$6,
     _t5$5,
     _t6$5,
-    _t7$5;
+    _t7$4;
 const Container$9 = styled.div(_t$f || (_t$f = _$f`
   font-family: MontSerrat !important;
   display: flex;
@@ -2779,7 +2779,7 @@ const Value = styled.span(_t6$5 || (_t6$5 = _$f`
   margin-right: 1.25rem;
   color: ${0};
 `), colors.gray20);
-const Body$1 = styled.div(_t7$5 || (_t7$5 = _$f`
+const Body$1 = styled.div(_t7$4 || (_t7$4 = _$f`
   font-family: MontSerrat !important;
   width: ${0};
   padding: 1.25rem;
@@ -2906,7 +2906,7 @@ function _objectWithoutPropertiesLoose$2(source, excluded) {
   return target;
 }
 
-const Sizes$5 = {
+const Sizes$4 = {
   xs: 'xs',
   sm: 'sm',
   md: 'md',
@@ -2926,19 +2926,19 @@ const getMeasurement = (size, defaultValue) => {
 };
 const getFontSize = (defaultSize, sizeBase) => {
   switch (defaultSize) {
-    case Sizes$5.xs:
+    case Sizes$4.xs:
       return `calc(${getMeasurement(sizeBase)} - 0.25rem)`;
 
-    case Sizes$5.sm:
+    case Sizes$4.sm:
       return `calc(${getMeasurement(sizeBase)} - 0.125rem)`;
 
-    case Sizes$5.md:
+    case Sizes$4.md:
       return getMeasurement(sizeBase);
 
-    case Sizes$5.lg:
+    case Sizes$4.lg:
       return `calc(${getMeasurement(sizeBase)} + 0.125rem)`;
 
-    case Sizes$5.xl:
+    case Sizes$4.xl:
       return `calc(${getMeasurement(sizeBase)} + 0.25rem)`;
 
     default:
@@ -2953,7 +2953,7 @@ let _$e = t => t,
     _t4$5,
     _t5$4,
     _t6$4,
-    _t7$4;
+    _t7$3;
 const Button$2 = styled.button(_t$e || (_t$e = _$e`
   font-family: MontSerrat !important;
   font-size: ${0};
@@ -3098,7 +3098,7 @@ const Notification = styled.button(_t4$5 || (_t4$5 = _$e`
     font-weight: bold;
   }
 `), colors.brand10, colors.brand30, colors.brandTransparent2, colors.brand30);
-const Icon$2 = styled.div(_t5$4 || (_t5$4 = _$e`
+const Icon$1 = styled.div(_t5$4 || (_t5$4 = _$e`
   margin-right: ${0};
   margin-left: ${0};
 `), props => props.iconPosition === 'left' && props.hasText ? '10px' : '', props => props.iconPosition === 'right' && props.hasText ? '10px' : '');
@@ -3114,7 +3114,7 @@ const Amount = styled.div(_t6$4 || (_t6$4 = _$e`
   color: ${0};
   font-size: 0.625rem;
 `), colors.brand30, colors.brand10);
-const LoadingContainer = styled.div(_t7$4 || (_t7$4 = _$e`
+const LoadingContainer = styled.div(_t7$3 || (_t7$3 = _$e`
   position: absolute;
   top: 0;
   left: 0;
@@ -3128,7 +3128,7 @@ const LoadingContainer = styled.div(_t7$4 || (_t7$4 = _$e`
 let _$d = t => t,
     _t$d,
     _t2$8;
-const Sizes$4 = {
+const Sizes$3 = {
   mini: 'mini',
   tiny: 'tiny',
   small: 'small',
@@ -3141,28 +3141,28 @@ const Sizes$4 = {
 
 const widthLoader = size => {
   switch (size) {
-    case Sizes$4.mini:
+    case Sizes$3.mini:
       return '1em';
 
-    case Sizes$4.tiny:
+    case Sizes$3.tiny:
       return '1.5em';
 
-    case Sizes$4.small:
+    case Sizes$3.small:
       return '2em';
 
-    case Sizes$4.medium:
+    case Sizes$3.medium:
       return '2.5em';
 
-    case Sizes$4.large:
+    case Sizes$3.large:
       return '3em';
 
-    case Sizes$4.big:
+    case Sizes$3.big:
       return '3.5em';
 
-    case Sizes$4.huge:
+    case Sizes$3.huge:
       return '4em';
 
-    case Sizes$4.massive:
+    case Sizes$3.massive:
       return '4.5em';
 
     default:
@@ -3172,28 +3172,28 @@ const widthLoader = size => {
 
 const widthBorder = size => {
   switch (size) {
-    case Sizes$4.mini:
+    case Sizes$3.mini:
       return '2px';
 
-    case Sizes$4.tiny:
+    case Sizes$3.tiny:
       return '2.5px';
 
-    case Sizes$4.small:
+    case Sizes$3.small:
       return '3px';
 
-    case Sizes$4.medium:
+    case Sizes$3.medium:
       return '3.5px';
 
-    case Sizes$4.large:
+    case Sizes$3.large:
       return '4px';
 
-    case Sizes$4.big:
+    case Sizes$3.big:
       return '4.5px';
 
-    case Sizes$4.huge:
+    case Sizes$3.huge:
       return '5px';
 
-    case Sizes$4.massive:
+    case Sizes$3.massive:
       return '5.5px';
 
     default:
@@ -3269,7 +3269,10 @@ const Loader = ({
   position
 }) => {
   return jsx(Container$8, Object.assign({
-    position: position
+    position: position,
+    role: "progressbar",
+    "aria-busy": "true",
+    "aria-live": "polite"
   }, {
     children: jsx(Load, {
       color: color,
@@ -3333,7 +3336,7 @@ const ButtonMain = _ref => {
             alignItems: 'center'
           }
         }, {
-          children: [jsx(Icon$2 // loading={loading}
+          children: [jsx(Icon$1 // loading={loading}
           , Object.assign({
             // loading={loading}
             iconPosition: iconPosition,
@@ -3355,7 +3358,7 @@ const ButtonMain = _ref => {
   }
 
   function renderIcon() {
-    if (customIcon) return jsx(Icon$2, Object.assign({
+    if (customIcon) return jsx(Icon$1, Object.assign({
       className: containerIconClassName,
       style: containerIconStyle,
       iconPosition: iconPosition,
@@ -3363,7 +3366,7 @@ const ButtonMain = _ref => {
     }, {
       children: customIcon
     }), void 0);
-    return jsx(Icon$2, Object.assign({
+    return jsx(Icon$1, Object.assign({
       className: containerIconClassName,
       style: containerIconStyle,
       iconPosition: iconPosition,
@@ -5935,7 +5938,7 @@ const Card = _ref => {
 
 let _$a = t => t,
     _t$a;
-const Sizes$3 = {
+const Sizes$2 = {
   mini: 'mini',
   tiny: 'tiny',
   small: 'small',
@@ -5948,28 +5951,28 @@ const Sizes$3 = {
 
 const size$1 = size => {
   switch (size) {
-    case Sizes$3.mini:
+    case Sizes$2.mini:
       return '10px';
 
-    case Sizes$3.tiny:
+    case Sizes$2.tiny:
       return '12px';
 
-    case Sizes$3.small:
+    case Sizes$2.small:
       return '14px';
 
-    case Sizes$3.medium:
+    case Sizes$2.medium:
       return '17px';
 
-    case Sizes$3.large:
+    case Sizes$2.large:
       return '20px';
 
-    case Sizes$3.big:
+    case Sizes$2.big:
       return '23px';
 
-    case Sizes$3.huge:
+    case Sizes$2.huge:
       return '26px';
 
-    case Sizes$3.massive:
+    case Sizes$2.massive:
       return '30px';
 
     default:
@@ -5979,28 +5982,28 @@ const size$1 = size => {
 
 const sizeChecked$1 = size => {
   switch (size) {
-    case Sizes$3.mini:
+    case Sizes$2.mini:
       return '8px';
 
-    case Sizes$3.tiny:
+    case Sizes$2.tiny:
       return '10px';
 
-    case Sizes$3.small:
+    case Sizes$2.small:
       return '11px';
 
-    case Sizes$3.medium:
+    case Sizes$2.medium:
       return '13px';
 
-    case Sizes$3.large:
+    case Sizes$2.large:
       return '16px';
 
-    case Sizes$3.big:
+    case Sizes$2.big:
       return '19px';
 
-    case Sizes$3.huge:
+    case Sizes$2.huge:
       return '21px';
 
-    case Sizes$3.massive:
+    case Sizes$2.massive:
       return '23px';
 
     default:
@@ -6010,28 +6013,28 @@ const sizeChecked$1 = size => {
 
 const marginLeft = size => {
   switch (size) {
-    case Sizes$3.mini:
+    case Sizes$2.mini:
       return '1px';
 
-    case Sizes$3.tiny:
+    case Sizes$2.tiny:
       return '1.2px';
 
-    case Sizes$3.small:
+    case Sizes$2.small:
       return '1.4px';
 
-    case Sizes$3.medium:
+    case Sizes$2.medium:
       return '2px';
 
-    case Sizes$3.large:
+    case Sizes$2.large:
       return '2px';
 
-    case Sizes$3.big:
+    case Sizes$2.big:
       return '2px';
 
-    case Sizes$3.huge:
+    case Sizes$2.huge:
       return '3px';
 
-    case Sizes$3.massive:
+    case Sizes$2.massive:
       return '4px';
 
     default:
@@ -6041,28 +6044,28 @@ const marginLeft = size => {
 
 const labelSize$1 = size => {
   switch (size) {
-    case Sizes$3.mini:
+    case Sizes$2.mini:
       return '10px';
 
-    case Sizes$3.tiny:
+    case Sizes$2.tiny:
       return '13px';
 
-    case Sizes$3.small:
+    case Sizes$2.small:
       return '14px';
 
-    case Sizes$3.medium:
+    case Sizes$2.medium:
       return '16px';
 
-    case Sizes$3.large:
+    case Sizes$2.large:
       return '18px';
 
-    case Sizes$3.big:
+    case Sizes$2.big:
       return '20px';
 
-    case Sizes$3.huge:
+    case Sizes$2.huge:
       return '22px';
 
-    case Sizes$3.massive:
+    case Sizes$2.massive:
       return '24px';
 
     default:
@@ -6072,28 +6075,28 @@ const labelSize$1 = size => {
 
 const marginRight = size => {
   switch (size) {
-    case Sizes$3.mini:
+    case Sizes$2.mini:
       return '5px';
 
-    case Sizes$3.tiny:
+    case Sizes$2.tiny:
       return '6px';
 
-    case Sizes$3.small:
+    case Sizes$2.small:
       return '7px';
 
-    case Sizes$3.medium:
+    case Sizes$2.medium:
       return '8px';
 
-    case Sizes$3.large:
+    case Sizes$2.large:
       return '9px';
 
-    case Sizes$3.big:
+    case Sizes$2.big:
       return '10px';
 
-    case Sizes$3.huge:
+    case Sizes$2.huge:
       return '11px';
 
-    case Sizes$3.massive:
+    case Sizes$2.massive:
       return '12px';
 
     default:
@@ -6255,8 +6258,8 @@ let _$9 = t => t,
     _t4$4,
     _t5$3,
     _t6$3,
-    _t7$3,
-    _t8$1;
+    _t7$2,
+    _t8;
 const Background$1 = styled.div(_t$9 || (_t$9 = _$9`
   ${0}
 `), props => props.open ? css$1(_t2$6 || (_t2$6 = _$9`
@@ -6352,7 +6355,7 @@ const Dialog = styled.div(_t4$4 || (_t4$4 = _$9`
           transition: bottom 0.25s ease;
           bottom: -100%;
         `)));
-const Header$2 = styled.div(_t7$3 || (_t7$3 = _$9`
+const Header$2 = styled.div(_t7$2 || (_t7$2 = _$9`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -6369,7 +6372,7 @@ const Header$2 = styled.div(_t7$3 || (_t7$3 = _$9`
     color: ${0};
   }
 `), props => props.noBorder ? 'none' : `1px solid ${colors.default20}`, props => props.iconBack ? '1.25rem 0' : '1.25rem 1.875rem', colors.brand10);
-const Icon$1 = styled.div(_t8$1 || (_t8$1 = _$9`
+const Icon = styled.div(_t8 || (_t8 = _$9`
   padding: 1.25rem 1.875rem;
   cursor: pointer;
 `));
@@ -6414,7 +6417,7 @@ const DialogComponent = ({
         children: [jsxs("div", Object.assign({
           className: "name-icon-modal"
         }, {
-          children: [onBack ? jsx(Icon$1, Object.assign({
+          children: [onBack ? jsx(Icon, Object.assign({
             onClick: () => onBack()
           }, {
             children: jsx(FontAwesomeIcon, {
@@ -6425,7 +6428,7 @@ const DialogComponent = ({
           }), void 0) : null, jsx("strong", {
             children: title
           }, void 0)]
-        }), void 0), _closeIcon && jsx(Icon$1, Object.assign({
+        }), void 0), _closeIcon && jsx(Icon, Object.assign({
           onClick: event => {
             event.stopPropagation();
             onClose();
@@ -8096,7 +8099,7 @@ let _$7 = t => t,
     _t4$3,
     _t5$2,
     _t6$2,
-    _t7$2;
+    _t7$1;
 const Container$4 = styled.div(_t$7 || (_t$7 = _$7`
   font-family: MontSerrat !important;
   position: relative;
@@ -8300,7 +8303,7 @@ const Container$4 = styled.div(_t$7 || (_t$7 = _$7`
 
   return colors.gray20;
 }), props => props.iconPosition === 'right' && 'right: 0;', props => props.actionPosition && props.actionPosition === 'left' ? 'left: 0;' : 'right: 0;');
-const LabelError$1 = styled.span(_t7$2 || (_t7$2 = _$7`
+const LabelError$1 = styled.span(_t7$1 || (_t7$1 = _$7`
   font-family: MontSerrat !important;
   font-size: 10px;
   margin-left: 0;
@@ -8549,61 +8552,53 @@ let _$6 = t => t,
     _t3$4,
     _t4$2,
     _t5$1,
-    _t6$1,
-    _t7$1,
-    _t8,
-    _t9;
-const Sizes$2 = {
-  mini: 'mini',
-  tiny: 'tiny',
-  small: 'small',
-  large: 'large',
-  fullscreen: 'fullscreen'
-};
+    _t6$1;
 
 const sizeWidth = size => {
   switch (size) {
-    case Sizes$2.mini:
+    case 'xs':
       return '35%';
 
-    case Sizes$2.tiny:
+    case 'sm':
       return '45%';
 
-    case Sizes$2.small:
+    case 'md':
       return '55%';
 
-    case Sizes$2.large:
+    case 'lg':
       return '65%';
 
-    case Sizes$2.fullscreen:
+    case 'xl':
       return '95%';
 
     default:
-      return size;
+      return '55%';
   }
 };
 
+const Z_INDEX_MODAL = 999;
 const Background = styled.div(_t$6 || (_t$6 = _$6`
-  ${0}
-`), props => props.open ? css$1(_t2$4 || (_t2$4 = _$6`
-          opacity: 1;
-          visibility: visible;
-          position: fixed;
-          top: 0;
-          right: 0;
-          bottom: 0;
-          left: 0;
-          background: rgba(0, 0, 0, 0.5);
-          transition: opacity 0.25s ease;
-          overflow: auto;
-          padding: 40px 0;
-          display: flex;
-          z-index: 999;
-        `)) : css$1(_t3$4 || (_t3$4 = _$6`
-          opacity: 1;
-          visibility: hidden;
-        `)));
-const Modal = styled.div(_t4$2 || (_t4$2 = _$6`
+  opacity: 0;
+  visibility: hidden;
+  display: none;
+  transition: opacity 0.25s ease-in-out;
+
+  &.open {
+    opacity: 1;
+    visibility: visible;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    overflow: auto;
+    padding: 2.5rem 0;
+    display: flex;
+    z-index: ${0};
+  }
+`), Z_INDEX_MODAL);
+const Modal = styled.div(_t2$4 || (_t2$4 = _$6`
   font-family: MontSerrat !important;
   transition: top 0.25s ease;
   top: 0;
@@ -8613,35 +8608,27 @@ const Modal = styled.div(_t4$2 || (_t4$2 = _$6`
   width: ${0};
   margin: auto;
   background: ${0};
-  border-radius: 30px;
+  border-radius: 1.875rem;
 `), props => {
   if (props.width) {
-    if (typeof props.width === 'string') {
-      return props.width;
-    }
-
-    return `${props.width}px`;
+    return getMeasurement(props.width, '80%');
   }
 
-  if (props.size) {
-    return sizeWidth(props.size);
-  }
-
-  return '80%';
+  return sizeWidth(props.size);
 }, colors.white);
-styled.div(_t5$1 || (_t5$1 = _$6`
+styled.div(_t3$4 || (_t3$4 = _$6`
   transition: bottom 1s ease;
   width: 90%;
   background: ${0};
-  border-top-left-radius: 30px;
-  border-top-right-radius: 30px;
+  border-top-left-radius: 1.875rem;
+  border-top-right-radius: 1.875rem;
 `), colors.white);
-const Header$1 = styled.div(_t6$1 || (_t6$1 = _$6`
+const Header$1 = styled.div(_t4$2 || (_t4$2 = _$6`
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-bottom: ${0};
-  font-size: 20px;
+  font-size: 1.25rem;
 
   .name-icon-modal {
     display: flex;
@@ -8652,13 +8639,13 @@ const Header$1 = styled.div(_t6$1 || (_t6$1 = _$6`
     padding: ${0};
     color: ${0};
   }
+
+  button {
+    padding: 1.25rem 1.875rem;
+  }
 `), props => props.noBorder ? 'none' : `1px solid ${colors.default20}`, props => props.iconBack ? '20px 0' : '20px 30px', colors.brand10);
-const Icon = styled.div(_t7$1 || (_t7$1 = _$6`
-  padding: 20px 30px;
-  cursor: pointer;
-`));
-const Body = styled.div(_t8 || (_t8 = _$6`
-  padding: 20px 30px;
+const Body = styled.div(_t5$1 || (_t5$1 = _$6`
+  padding: 1.25rem 1.875rem;
   height: 100%;
   position: relative;
 
@@ -8673,20 +8660,20 @@ const Body = styled.div(_t8 || (_t8 = _$6`
     left: 0;
     right: 0;
     bottom: 0;
-    border-radius: 30px;
+    border-radius: 1.875rem;
     z-index: 2;
     position: absolute;
   }
 `));
-const Actions = styled.div(_t9 || (_t9 = _$6`
+const Actions = styled.div(_t6$1 || (_t6$1 = _$6`
   border-top: 1px solid ${0};
-  margin: 0 30px;
-  padding: 20px 0;
+  margin: 0 1.875rem;
+  padding: 1.25rem 0;
   display: flex;
   flex-direction: row-reverse;
 `), colors.default20);
 
-const ModalComponent = ({
+function ModalComponent({
   open,
   title,
   children,
@@ -8695,19 +8682,30 @@ const ModalComponent = ({
   onClose,
   closeOnDimerClick,
   loading,
-  onBack,
-  size,
+  onReturnClick,
+  size = 'md',
   noBorder,
-  closeIcon: _closeIcon = true
-}) => {
+  closeIcon = true,
+  className,
+  style,
+  headerClassName,
+  headerStyle,
+  bodyClassName,
+  bodyStyle
+}) {
   useEffect(() => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const keydownListener = event => {
+      escModal(event);
+    };
+
     if (open) {
-      window.addEventListener('keydown', event => escModal(event));
-    } else {
-      window.removeEventListener('keydown', event => escModal(event));
+      window.addEventListener('keydown', keydownListener);
     }
 
-    return window.removeEventListener('keydown', event => escModal(event));
+    return () => {
+      window.removeEventListener('keydown', keydownListener);
+    };
   }, [open]);
 
   function escModal(event) {
@@ -8718,42 +8716,54 @@ const ModalComponent = ({
   }
 
   return jsx(Background, Object.assign({
-    open: open,
     onClick: event => {
       if (closeOnDimerClick) {
         event.stopPropagation();
         onClose();
       }
-    }
+    },
+    className: `${open ? 'open' : ''}`,
+    "data-testid": "modal-background"
   }, {
     children: jsxs(Modal, Object.assign({
+      className: className,
+      style: style,
       size: size,
       width: width,
-      onClick: event => event.stopPropagation()
+      onClick: event => event.stopPropagation(),
+      role: "dialog"
     }, {
       children: [jsxs(Header$1, Object.assign({
-        iconBack: !!onBack,
-        noBorder: noBorder
+        className: headerClassName,
+        style: headerStyle,
+        iconBack: !!onReturnClick,
+        noBorder: noBorder,
+        role: "heading"
       }, {
         children: [jsxs("div", Object.assign({
           className: "name-icon-modal"
         }, {
-          children: [onBack ? jsx(Icon, Object.assign({
-            onClick: () => onBack()
+          children: [!!onReturnClick && jsx("button", Object.assign({
+            onClick: event => {
+              event.stopPropagation();
+              onReturnClick();
+            },
+            "aria-label": "return"
           }, {
             children: jsx(FontAwesomeIcon, {
               icon: faAngleLeft,
               size: "lg",
               color: colors.brand10
             }, void 0)
-          }), void 0) : null, jsx("strong", {
+          }), void 0), jsx("strong", {
             children: title
           }, void 0)]
-        }), void 0), _closeIcon && jsx(Icon, Object.assign({
+        }), void 0), closeIcon && jsx("button", Object.assign({
           onClick: event => {
             event.stopPropagation();
             onClose();
-          }
+          },
+          "aria-label": "close"
         }, {
           children: jsx(FontAwesomeIcon, {
             icon: faTimes,
@@ -8763,18 +8773,21 @@ const ModalComponent = ({
             color: colors.brand10
           }, void 0)
         }), void 0)]
-      }), void 0), jsxs(Body, {
+      }), void 0), jsxs(Body, Object.assign({
+        className: bodyClassName,
+        style: bodyStyle
+      }, {
         children: [loading && jsx("div", Object.assign({
           className: "loading-modal"
         }, {
           children: jsx(Loader, {}, void 0)
         }), void 0), children]
-      }, void 0), actions && jsx(Actions, {
+      }), void 0), !!actions && jsx(Actions, {
         children: actions
       }, void 0)]
     }), void 0)
   }), void 0);
-};
+}
 
 let _$5 = t => t,
     _t$5;
