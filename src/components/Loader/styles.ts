@@ -1,123 +1,73 @@
 import styled from 'styled-components';
+import { sizesTypes } from '../../helpers/FnUtil';
 import { colors } from '../../styles/colors';
 
-const Sizes = {
-  mini: 'mini',
-  tiny: 'tiny',
-  small: 'small',
-  medium: 'medium',
-  large: 'large',
-  big: 'big',
-  huge: 'huge',
-  massive: 'massive',
-};
-
+type Positions = 'left' | 'center' | 'right';
 interface LoaderProps {
   color?: string;
-  size?: string | number;
-  position?: 'left' | 'center' | 'right';
+  size: sizesTypes;
+  outsideColor?: string;
+}
+interface ContainerProps {
+  position: Positions;
 }
 
-const widthLoader = (size: string | number) => {
+const POSITIONS: Record<Positions, string> = {
+  center: 'center',
+  left: 'flex-start',
+  right: 'flex-end',
+};
+
+const widthLoader = (size: sizesTypes) => {
   switch (size) {
-    case Sizes.mini:
+    case 'xs':
       return '1em';
-    case Sizes.tiny:
-      return '1.5em';
-    case Sizes.small:
+    case 'sm':
       return '2em';
-    case Sizes.medium:
+    case 'md':
       return '2.5em';
-    case Sizes.large:
+    case 'lg':
       return '3em';
-    case Sizes.big:
-      return '3.5em';
-    case Sizes.huge:
+    case 'xl':
       return '4em';
-    case Sizes.massive:
-      return '4.5em';
     default:
-      return size;
+      return '2.5em';
   }
 };
 
-const widthBorder = (size: string | number) => {
+const widthBorder = (size: sizesTypes) => {
   switch (size) {
-    case Sizes.mini:
+    case 'xs':
       return '2px';
-    case Sizes.tiny:
-      return '2.5px';
-    case Sizes.small:
+    case 'sm':
       return '3px';
-    case Sizes.medium:
-      return '3.5px';
-    case Sizes.large:
+    case 'md':
       return '4px';
-    case Sizes.big:
-      return '4.5px';
-    case Sizes.huge:
+    case 'lg':
       return '5px';
-    case Sizes.massive:
-      return '5.5px';
+    case 'xl':
+      return '6px';
     default:
-      return size;
+      return '4px';
   }
 };
 
-export const Container = styled.div<LoaderProps>`
+export const Container = styled.div<ContainerProps>`
   width: 100%;
   display: flex;
-  justify-content: ${props =>
-    props.position === 'left'
-      ? 'flex-start'
-      : props.position === 'right'
-      ? 'flex-end'
-      : 'center'};
+  justify-content: ${props => POSITIONS[props.position]};
 `;
 
 export const Load = styled.div<LoaderProps>`
-  border-width: ${props => {
-    if (props.size) {
-      return widthBorder(props.size);
-    }
-
-    return '3.5px';
-  }};
+  border-width: ${props => widthBorder(props.size)};
   border-style: solid;
-  border-color: ${colors.default20};
-  border-top-width: ${props => {
-    if (props.size) {
-      return widthBorder(props.size);
-    }
-
-    return '3.5px';
-  }};
+  border-color: ${props => props.outsideColor || colors.default20};
+  border-top-width: ${props => widthBorder(props.size)};
   border-top-style: solid;
-  border-top-color: ${props => {
-    if (props.color) {
-      return props.color;
-    }
-
-    return colors.brand10;
-  }};
-
+  border-top-color: ${props => props.color || colors.brand10};
   border-radius: 50%;
-  width: ${props => {
-    if (props.size) {
-      return widthLoader(props.size);
-    }
-
-    return '2.5em';
-  }};
-  height: ${props => {
-    if (props.size) {
-      if (props.size) {
-        return widthLoader(props.size);
-      }
-    }
-
-    return '2.5em';
-  }};
+  width: ${props => widthLoader(props.size)};
+  height: ${props => widthLoader(props.size)};
   animation: spin 0.6s linear infinite;
 
   @keyframes spin {

@@ -11,7 +11,7 @@ import Dropdown from './components/Dropdown/Dropdown';
 import DropdownForm from './components/Dropdown/DropdownForm';
 import InputLine from './components/InputLine/InputLine';
 import InputLineForm from './components/InputLine/InputLineForm';
-import Loader from './components/Loader/Loader';
+import Loader, { LoaderProps } from './components/Loader/Loader';
 import Modal, { ModalProps } from './components/Modal/Modal';
 import MoreLess, { MoreLessProps } from './components/MoreLess/MoreLess';
 import Radio, { RadioProps } from './components/Radio/Radio';
@@ -51,6 +51,7 @@ export type {
   AccordionProps,
   ButtonProps,
   CalendarProps,
+  LoaderProps,
   ModalProps,
   MoreLessProps,
   PaginationProps,
