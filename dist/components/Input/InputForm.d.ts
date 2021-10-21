@@ -1,5 +1,5 @@
-import React from 'react';
-import { InputProps } from './InputLine';
+/// <reference types="react" />
+import { InputProps } from './Input';
 export interface InputFormProps extends InputProps {
     required?: boolean;
     name: string;
@@ -11,5 +11,5 @@ export interface InputFormProps extends InputProps {
     minimum?: number;
     msgErrorValidate?: string;
 }
-declare const InputForm: React.FC<InputFormProps>;
+declare function InputForm({ register, errors, validate, name, required, values, limit, minimum, msgErrorValidate, ...rest }: InputFormProps): JSX.Element;
 export default InputForm;

@@ -79,7 +79,7 @@ const ButtonMain: React.FC<ButtonProps> = ({
     return (
       <Notification {...rest}>
         {loading ? (
-          <Loader size="tiny" />
+          <Loader size="sm" />
         ) : (
           <div
             style={{
@@ -189,7 +189,7 @@ const ButtonMain: React.FC<ButtonProps> = ({
 
         {loading && (
           <LoadingContainer data-testid="button-loading">
-            <Loader size="tiny" />
+            <Loader size="sm" />
           </LoadingContainer>
         )}
       </Button>

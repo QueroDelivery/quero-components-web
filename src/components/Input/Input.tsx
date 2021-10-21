@@ -8,118 +8,149 @@ import React, {
 import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { Container, LabelError } from './styles';
+import { InputContainer, LabelError } from './styles';
 import { colors } from '../../styles/colors';
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   label?: string;
-  errorMessage?: string;
-  containerStyle?: React.CSSProperties;
+  labelClassName?: string;
   labelStyle?: React.CSSProperties;
+
+  containerClassName?: string;
+  containerStyle?: React.CSSProperties;
+
   width?: string | number;
   textColor?: string;
   inputRef?: RefObject<HTMLInputElement>;
+
   icon?: IconDefinition;
+  iconClassName?: string;
   iconPosition?: 'left' | 'right';
   iconColor?: string;
+
   action?: {
     icon: IconDefinition;
     iconColor?: string;
-    onClick: () => void;
+    onClick: React.MouseEventHandler<HTMLButtonElement>;
     position?: 'left' | 'right';
-  } | null;
+    className?: string;
+  };
+
+  errorMessage?: string;
+  errorClassName?: string;
+  errorStyle?: React.CSSProperties;
 }
 
-const InputLine: React.FC<InputProps> = ({
+function Input({
+  containerClassName,
   containerStyle,
-  label,
-  labelStyle,
-  errorMessage,
   width,
   textColor,
   inputRef,
-  name,
+
   icon,
+  iconClassName,
   iconPosition,
   iconColor,
   action,
+
+  label,
+  labelClassName,
+  labelStyle,
+  errorMessage,
+  errorClassName,
+  errorStyle,
   ...rest
-}) => {
+}: InputProps) {
   const [isFieldActive, setIsFieldActive] = useState(false);
 
   useEffect(() => {
     if (rest.value) {
-      if (!isFieldActive) {
-        setIsFieldActive(true);
-      }
+      setIsFieldActive(true);
     }
   }, [rest.value]);
 
-  const handleFocus = () => {
-    if (!isFieldActive) {
+  const handleFocus = (event: React.FocusEvent<HTMLInputElement>) => {
+    if (!isFieldActive || !!event.currentTarget.value) {
       setIsFieldActive(true);
+    }
+
+    if (rest.onFocus) {
+      setImmediate(rest.onFocus);
     }
   };
 
-  const handleBlur = () => {
-    if (isFieldActive && !rest.value) {
+  const handleBlur = (event: React.FocusEvent<HTMLInputElement>) => {
+    if (isFieldActive && !rest.value && !event.currentTarget.value) {
       setIsFieldActive(false);
     }
+
     if (rest.onBlur) {
       setImmediate(rest.onBlur);
     }
   };
 
   return (
-    <div
-      style={{
-        paddingBottom: errorMessage ? 0 : 20,
-      }}
-    >
-      <Container
+    <div role="group">
+      <InputContainer
         isFieldActive={isFieldActive}
-        errorMessage={errorMessage}
-        // labelStyle={labelStyle}
-        containerStyle={containerStyle}
+        className={containerClassName}
+        style={containerStyle}
         width={width}
         disabled={rest.disabled ? rest.disabled : undefined}
-        style={containerStyle}
         textColor={textColor}
         icon={!!icon}
         iconPosition={iconPosition}
         action={action}
         actionPosition={action?.position}
         date={rest.type === 'date'}
+        errorMessage={errorMessage}
       >
         {icon && (
           <div className="icon">
-            <FontAwesomeIcon icon={icon} color={iconColor || colors.brand10} />
+            <FontAwesomeIcon
+              className={iconClassName}
+              icon={icon}
+              color={iconColor || colors.brand10}
+            />
           </div>
         )}
 
         {action && (
-          <div className="icon-action" onClick={action.onClick}>
+          <button
+            className={`icon-action ${action.className || ''}`}
+            onClick={action.onClick}
+          >
             <FontAwesomeIcon
               icon={action.icon}
               color={action.iconColor || colors.brand10}
             />
-          </div>
+          </button>
         )}
         <input
           {...rest}
           onFocus={handleFocus}
           onBlur={handleBlur}
-          name={name}
           placeholder={isFieldActive ? rest.placeholder : ''}
           ref={inputRef}
         />
-        <label>
-          <span style={labelStyle}>{label}</span>
-        </label>
-      </Container>
-      {errorMessage ? <LabelError>{errorMessage}</LabelError> : null}
+        <div className="label-container">
+          <label
+            htmlFor={rest.name}
+            className={labelClassName}
+            style={labelStyle}
+          >
+            {label}
+          </label>
+        </div>
+      </InputContainer>
+      {!!errorMessage && (
+        <LabelError className={errorClassName} style={errorStyle}>
+          {errorMessage}
+        </LabelError>
+      )}
     </div>
   );
-};
+}
 
-export default InputLine;
+export default Input;

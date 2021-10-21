@@ -23,11 +23,11 @@ const widthLoader = (size: sizesTypes) => {
     case 'xs':
       return '1em';
     case 'sm':
-      return '2em';
+      return '1.75em';
     case 'md':
       return '2.5em';
     case 'lg':
-      return '3em';
+      return '3.25em';
     case 'xl':
       return '4em';
     default:

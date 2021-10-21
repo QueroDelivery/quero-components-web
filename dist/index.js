@@ -3030,13 +3030,13 @@ var widthLoader = function widthLoader(size) {
       return '1em';
 
     case 'sm':
-      return '2em';
+      return '1.75em';
 
     case 'md':
       return '2.5em';
 
     case 'lg':
-      return '3em';
+      return '3.25em';
 
     case 'xl':
       return '4em';
@@ -3146,7 +3146,7 @@ var ButtonMain = function ButtonMain(_ref) {
   function renderButtonNotification() {
     return jsxRuntime.jsx(Notification, Object.assign({}, rest, {
       children: loading ? jsxRuntime.jsx(Loader, {
-        size: "tiny"
+        size: "sm"
       }, void 0) : jsxRuntime.jsxs("div", Object.assign({
         style: {
           display: 'flex',
@@ -3246,7 +3246,7 @@ var ButtonMain = function ButtonMain(_ref) {
         "data-testid": "button-loading"
       }, {
         children: jsxRuntime.jsx(Loader, {
-          size: "tiny"
+          size: "sm"
         }, void 0)
       }), void 0)]
     }), void 0);
@@ -5274,7 +5274,7 @@ var DropdownForm = function DropdownForm(_ref) {
 };
 
 var _templateObject$7, _templateObject2$5, _templateObject3$5, _templateObject4$3, _templateObject5$2, _templateObject6$2, _templateObject7$1;
-var Container$4 = styled__default["default"].div(_templateObject$7 || (_templateObject$7 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  position: relative;\n  opacity: ", ";\n  width: ", ";\n\n  input {\n    font-family: MontSerrat !important;\n    color: ", ";\n    width: 100%;\n    height: 100%;\n    padding-top: 20px;\n    padding-left: ", ";\n    padding-bottom: 5px;\n    padding-right: ", ";\n    border: none;\n    outline: none;\n    background-color: transparent;\n\n    &::placeholder {\n      color: ", ";\n    }\n  }\n\n  ", "\n\n  input:disabled {\n    background-color: transparent;\n  }\n\n  label {\n    font-family: MontSerrat !important;\n    position: absolute;\n    bottom: 0px;\n    top: 0px;\n    left: 0px;\n    width: 100%;\n    right: 100%;\n    pointer-events: none;\n    border-bottom-width: 1px;\n    border-bottom-style: solid;\n    border-bottom-color: ", ";\n\n    ", "\n  }\n\n  span {\n    font-family: MontSerrat !important;\n    position: absolute;\n    bottom: 5px;\n    left: ", ";\n    transition: all 0.3s ease;\n\n    ", "\n  }\n\n  .icon {\n    position: absolute;\n    bottom: 0;\n    padding: 5px 10px;\n    ", "\n  }\n\n  .icon-action {\n    position: absolute;\n    bottom: 0;\n    padding: 5px 10px;\n    ", "\n    cursor: pointer;\n  }\n"])), function (props) {
+var Container$4 = styled__default["default"].div(_templateObject$7 || (_templateObject$7 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  position: relative;\n  opacity: ", ";\n  width: ", ";\n\n  input {\n    font-family: MontSerrat !important;\n    color: ", ";\n    width: 100%;\n    height: 100%;\n    padding-top: 20px;\n    padding-left: ", ";\n    padding-bottom: 5px;\n    padding-right: ", ";\n    border: none;\n    outline: none;\n    background-color: transparent;\n\n    &::placeholder {\n      color: ", ";\n    }\n  }\n\n  ", "\n\n  input:disabled {\n    background-color: transparent;\n  }\n\n  .label-container {\n    font-family: MontSerrat !important;\n    position: absolute;\n    bottom: 0px;\n    top: 0px;\n    left: 0px;\n    width: 100%;\n    right: 100%;\n    pointer-events: none;\n    border-bottom-width: 1px;\n    border-bottom-style: solid;\n    border-bottom-color: ", ";\n\n    ", "\n  }\n\n  span,\n  label {\n    font-family: MontSerrat !important;\n    position: absolute;\n    bottom: 5px;\n    left: ", ";\n\n    transition: all 0.3s ease;\n\n    ", "\n  }\n\n  .icon {\n    position: absolute;\n    bottom: 0;\n    padding: 5px 10px;\n    ", "\n  }\n\n  .icon-action {\n    position: absolute;\n    bottom: 0;\n    padding: 5px 10px;\n    ", "\n  }\n"])), function (props) {
   return props.disabled ? '50%' : '100%';
 }, function (props) {
   if (props.width) {
@@ -5287,7 +5287,7 @@ var Container$4 = styled__default["default"].div(_templateObject$7 || (_template
 
   return '100%';
 }, function (props) {
-  return props.textColor ? props.textColor : colors.gray20;
+  return props.textColor || colors.gray20;
 }, function (props) {
   if (props.icon && !props.action) {
     if (props.iconPosition === 'right') {
@@ -5403,21 +5403,25 @@ var LabelError$1 = styled__default["default"].span(_templateObject7$1 || (_templ
   return colors.danger20;
 });
 
-var _excluded$5 = ["containerStyle", "label", "labelStyle", "errorMessage", "width", "textColor", "inputRef", "name", "icon", "iconPosition", "iconColor", "action"];
+var _excluded$5 = ["containerClassName", "containerStyle", "width", "textColor", "inputRef", "icon", "iconClassName", "iconPosition", "iconColor", "action", "label", "labelClassName", "labelStyle", "errorMessage", "errorClassName", "errorStyle"];
 
-var InputLine = function InputLine(_ref) {
-  var containerStyle = _ref.containerStyle,
-      label = _ref.label,
-      labelStyle = _ref.labelStyle,
-      errorMessage = _ref.errorMessage,
+function Input(_ref) {
+  var containerClassName = _ref.containerClassName,
+      containerStyle = _ref.containerStyle,
       width = _ref.width,
       textColor = _ref.textColor,
       inputRef = _ref.inputRef,
-      name = _ref.name,
       icon = _ref.icon,
+      iconClassName = _ref.iconClassName,
       iconPosition = _ref.iconPosition,
       iconColor = _ref.iconColor,
       action = _ref.action,
+      label = _ref.label,
+      labelClassName = _ref.labelClassName,
+      labelStyle = _ref.labelStyle,
+      errorMessage = _ref.errorMessage,
+      errorClassName = _ref.errorClassName,
+      errorStyle = _ref.errorStyle,
       rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$5);
 
   var _useState = React$2.useState(false),
@@ -5426,20 +5430,22 @@ var InputLine = function InputLine(_ref) {
 
   React$2.useEffect(function () {
     if (rest.value) {
-      if (!isFieldActive) {
-        setIsFieldActive(true);
-      }
+      setIsFieldActive(true);
     }
   }, [rest.value]);
 
-  var handleFocus = function handleFocus() {
-    if (!isFieldActive) {
+  var handleFocus = function handleFocus(event) {
+    if (!isFieldActive || !!event.currentTarget.value) {
       setIsFieldActive(true);
+    }
+
+    if (rest.onFocus) {
+      setImmediate(rest.onFocus);
     }
   };
 
-  var handleBlur = function handleBlur() {
-    if (isFieldActive && !rest.value) {
+  var handleBlur = function handleBlur(event) {
+    if (isFieldActive && !rest.value && !event.currentTarget.value) {
       setIsFieldActive(false);
     }
 
@@ -5448,35 +5454,32 @@ var InputLine = function InputLine(_ref) {
     }
   };
 
-  return jsxRuntime.jsxs("div", Object.assign({
-    style: {
-      paddingBottom: errorMessage ? 0 : 20
-    }
-  }, {
+  return jsxRuntime.jsxs("div", {
     children: [jsxRuntime.jsxs(Container$4, Object.assign({
       isFieldActive: isFieldActive,
-      errorMessage: errorMessage,
-      // labelStyle={labelStyle}
-      containerStyle: containerStyle,
+      className: containerClassName,
+      style: containerStyle,
       width: width,
       disabled: rest.disabled ? rest.disabled : undefined,
-      style: containerStyle,
       textColor: textColor,
       icon: !!icon,
       iconPosition: iconPosition,
       action: action,
       actionPosition: action == null ? void 0 : action.position,
-      date: rest.type === 'date'
+      date: rest.type === 'date',
+      errorMessage: errorMessage,
+      role: "group"
     }, {
       children: [icon && jsxRuntime.jsx("div", Object.assign({
         className: "icon"
       }, {
         children: jsxRuntime.jsx(FontAwesomeIcon, {
+          className: iconClassName,
           icon: icon,
           color: iconColor || colors.brand10
         }, void 0)
-      }), void 0), action && jsxRuntime.jsx("div", Object.assign({
-        className: "icon-action",
+      }), void 0), action && jsxRuntime.jsx("button", Object.assign({
+        className: "icon-action " + (action.className || ''),
         onClick: action.onClick
       }, {
         children: jsxRuntime.jsx(FontAwesomeIcon, {
@@ -5486,25 +5489,31 @@ var InputLine = function InputLine(_ref) {
       }), void 0), jsxRuntime.jsx("input", Object.assign({}, rest, {
         onFocus: handleFocus,
         onBlur: handleBlur,
-        name: name,
         placeholder: isFieldActive ? rest.placeholder : '',
         ref: inputRef
-      }), void 0), jsxRuntime.jsx("label", {
-        children: jsxRuntime.jsx("span", Object.assign({
+      }), void 0), jsxRuntime.jsx("div", Object.assign({
+        className: "label-container"
+      }, {
+        children: jsxRuntime.jsx("label", Object.assign({
+          htmlFor: rest.name,
+          className: labelClassName,
           style: labelStyle
         }, {
           children: label
         }), void 0)
-      }, void 0)]
-    }), void 0), errorMessage ? jsxRuntime.jsx(LabelError$1, {
+      }), void 0)]
+    }), void 0), !!errorMessage && jsxRuntime.jsx(LabelError$1, Object.assign({
+      className: errorClassName,
+      style: errorStyle
+    }, {
       children: errorMessage
-    }, void 0) : null]
-  }), void 0);
-};
+    }), void 0)]
+  }, void 0);
+}
 
 var _excluded$4 = ["register", "errors", "validate", "name", "required", "values", "limit", "minimum", "msgErrorValidate"];
 
-var InputLineForm = function InputLineForm(_ref) {
+function InputForm(_ref) {
   var _rest$action;
 
   var register = _ref.register,
@@ -5590,7 +5599,6 @@ var InputLineForm = function InputLineForm(_ref) {
       requiredText: !!(errors && errors.type === 'required'),
       errorMessage: errors,
       // action={rest.action?.icon ? true : false}
-      containerStyle: rest.containerStyle,
       width: rest.width,
       disabled: rest.disabled,
       style: rest.containerStyle,
@@ -5608,7 +5616,7 @@ var InputLineForm = function InputLineForm(_ref) {
           icon: rest.icon,
           color: rest.iconColor || colors.brand10
         }, void 0)
-      }), void 0), rest.action && jsxRuntime.jsx("div", Object.assign({
+      }), void 0), rest.action && jsxRuntime.jsx("button", Object.assign({
         className: "icon-action",
         onClick: rest.action.onClick
       }, {
@@ -5636,7 +5644,7 @@ var InputLineForm = function InputLineForm(_ref) {
       children: errors.type === 'required' ? 'Obrigatório' : "" + message
     }, void 0) : null]
   }), void 0);
-};
+}
 
 var _templateObject$6, _templateObject2$4, _templateObject3$4, _templateObject4$2, _templateObject5$1, _templateObject6$1;
 
@@ -7132,8 +7140,10 @@ exports.Checkbox = Checkbox;
 exports.Dialog = DialogComponent;
 exports.Dropdown = Dropdown;
 exports.DropdownForm = DropdownForm;
-exports.InputLine = InputLine;
-exports.InputLineForm = InputLineForm;
+exports.Input = Input;
+exports.InputForm = InputForm;
+exports.InputLine = Input;
+exports.InputLineForm = InputForm;
 exports.Loader = Loader;
 exports.Modal = ModalComponent;
 exports.MoreLess = MoreLess;

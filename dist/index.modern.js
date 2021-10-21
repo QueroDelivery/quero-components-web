@@ -3140,13 +3140,13 @@ const widthLoader = size => {
       return '1em';
 
     case 'sm':
-      return '2em';
+      return '1.75em';
 
     case 'md':
       return '2.5em';
 
     case 'lg':
-      return '3em';
+      return '3.25em';
 
     case 'xl':
       return '4em';
@@ -3266,7 +3266,7 @@ const ButtonMain = _ref => {
   function renderButtonNotification() {
     return jsx(Notification, Object.assign({}, rest, {
       children: loading ? jsx(Loader, {
-        size: "tiny"
+        size: "sm"
       }, void 0) : jsxs("div", Object.assign({
         style: {
           display: 'flex',
@@ -3366,7 +3366,7 @@ const ButtonMain = _ref => {
         "data-testid": "button-loading"
       }, {
         children: jsx(Loader, {
-          size: "tiny"
+          size: "sm"
         }, void 0)
       }), void 0)]
     }), void 0);
@@ -8076,7 +8076,7 @@ const Container$4 = styled.div(_t$7 || (_t$7 = _$7`
     background-color: transparent;
   }
 
-  label {
+  .label-container {
     font-family: MontSerrat !important;
     position: absolute;
     bottom: 0px;
@@ -8092,11 +8092,13 @@ const Container$4 = styled.div(_t$7 || (_t$7 = _$7`
     ${0}
   }
 
-  span {
+  span,
+  label {
     font-family: MontSerrat !important;
     position: absolute;
     bottom: 5px;
     left: ${0};
+
     transition: all 0.3s ease;
 
     ${0}
@@ -8114,7 +8116,6 @@ const Container$4 = styled.div(_t$7 || (_t$7 = _$7`
     bottom: 0;
     padding: 5px 10px;
     ${0}
-    cursor: pointer;
   }
 `), props => props.disabled ? '50%' : '100%', props => {
   if (props.width) {
@@ -8126,7 +8127,7 @@ const Container$4 = styled.div(_t$7 || (_t$7 = _$7`
   }
 
   return '100%';
-}, props => props.textColor ? props.textColor : colors.gray20, props => {
+}, props => props.textColor || colors.gray20, props => {
   if (props.icon && !props.action) {
     if (props.iconPosition === 'right') {
       return '15px';
@@ -8262,42 +8263,48 @@ const LabelError$1 = styled.span(_t7$1 || (_t7$1 = _$7`
   return colors.danger20;
 });
 
-const _excluded$5 = ["containerStyle", "label", "labelStyle", "errorMessage", "width", "textColor", "inputRef", "name", "icon", "iconPosition", "iconColor", "action"];
+const _excluded$5 = ["containerClassName", "containerStyle", "width", "textColor", "inputRef", "icon", "iconClassName", "iconPosition", "iconColor", "action", "label", "labelClassName", "labelStyle", "errorMessage", "errorClassName", "errorStyle"];
 
-const InputLine = _ref => {
+function Input(_ref) {
   let {
+    containerClassName,
     containerStyle,
-    label,
-    labelStyle,
-    errorMessage,
     width,
     textColor,
     inputRef,
-    name,
     icon,
+    iconClassName,
     iconPosition,
     iconColor,
-    action
+    action,
+    label,
+    labelClassName,
+    labelStyle,
+    errorMessage,
+    errorClassName,
+    errorStyle
   } = _ref,
       rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$5);
 
   const [isFieldActive, setIsFieldActive] = useState(false);
   useEffect(() => {
     if (rest.value) {
-      if (!isFieldActive) {
-        setIsFieldActive(true);
-      }
+      setIsFieldActive(true);
     }
   }, [rest.value]);
 
-  const handleFocus = () => {
-    if (!isFieldActive) {
+  const handleFocus = event => {
+    if (!isFieldActive || !!event.currentTarget.value) {
       setIsFieldActive(true);
+    }
+
+    if (rest.onFocus) {
+      setImmediate(rest.onFocus);
     }
   };
 
-  const handleBlur = () => {
-    if (isFieldActive && !rest.value) {
+  const handleBlur = event => {
+    if (isFieldActive && !rest.value && !event.currentTarget.value) {
       setIsFieldActive(false);
     }
 
@@ -8306,35 +8313,32 @@ const InputLine = _ref => {
     }
   };
 
-  return jsxs("div", Object.assign({
-    style: {
-      paddingBottom: errorMessage ? 0 : 20
-    }
-  }, {
+  return jsxs("div", {
     children: [jsxs(Container$4, Object.assign({
       isFieldActive: isFieldActive,
-      errorMessage: errorMessage,
-      // labelStyle={labelStyle}
-      containerStyle: containerStyle,
+      className: containerClassName,
+      style: containerStyle,
       width: width,
       disabled: rest.disabled ? rest.disabled : undefined,
-      style: containerStyle,
       textColor: textColor,
       icon: !!icon,
       iconPosition: iconPosition,
       action: action,
       actionPosition: action == null ? void 0 : action.position,
-      date: rest.type === 'date'
+      date: rest.type === 'date',
+      errorMessage: errorMessage,
+      role: "group"
     }, {
       children: [icon && jsx("div", Object.assign({
         className: "icon"
       }, {
         children: jsx(FontAwesomeIcon, {
+          className: iconClassName,
           icon: icon,
           color: iconColor || colors.brand10
         }, void 0)
-      }), void 0), action && jsx("div", Object.assign({
-        className: "icon-action",
+      }), void 0), action && jsx("button", Object.assign({
+        className: `icon-action ${action.className || ''}`,
         onClick: action.onClick
       }, {
         children: jsx(FontAwesomeIcon, {
@@ -8344,25 +8348,31 @@ const InputLine = _ref => {
       }), void 0), jsx("input", Object.assign({}, rest, {
         onFocus: handleFocus,
         onBlur: handleBlur,
-        name: name,
         placeholder: isFieldActive ? rest.placeholder : '',
         ref: inputRef
-      }), void 0), jsx("label", {
-        children: jsx("span", Object.assign({
+      }), void 0), jsx("div", Object.assign({
+        className: "label-container"
+      }, {
+        children: jsx("label", Object.assign({
+          htmlFor: rest.name,
+          className: labelClassName,
           style: labelStyle
         }, {
           children: label
         }), void 0)
-      }, void 0)]
-    }), void 0), errorMessage ? jsx(LabelError$1, {
+      }), void 0)]
+    }), void 0), !!errorMessage && jsx(LabelError$1, Object.assign({
+      className: errorClassName,
+      style: errorStyle
+    }, {
       children: errorMessage
-    }, void 0) : null]
-  }), void 0);
-};
+    }), void 0)]
+  }, void 0);
+}
 
 const _excluded$4 = ["register", "errors", "validate", "name", "required", "values", "limit", "minimum", "msgErrorValidate"];
 
-const InputLineForm = _ref => {
+function InputForm(_ref) {
   var _rest$action;
 
   let {
@@ -8444,7 +8454,6 @@ const InputLineForm = _ref => {
       requiredText: !!(errors && errors.type === 'required'),
       errorMessage: errors,
       // action={rest.action?.icon ? true : false}
-      containerStyle: rest.containerStyle,
       width: rest.width,
       disabled: rest.disabled,
       style: rest.containerStyle,
@@ -8462,7 +8471,7 @@ const InputLineForm = _ref => {
           icon: rest.icon,
           color: rest.iconColor || colors.brand10
         }, void 0)
-      }), void 0), rest.action && jsx("div", Object.assign({
+      }), void 0), rest.action && jsx("button", Object.assign({
         className: "icon-action",
         onClick: rest.action.onClick
       }, {
@@ -8490,7 +8499,7 @@ const InputLineForm = _ref => {
       children: errors.type === 'required' ? 'Obrigatório' : `${message}`
     }, void 0) : null]
   }), void 0);
-};
+}
 
 let _$6 = t => t,
     _t$6,
@@ -11486,5 +11495,5 @@ function TextAreaForm(_ref) {
   })), void 0);
 }
 
-export { Accordion, ButtonMain, Calendar, Card, Checkbox, DialogComponent as Dialog, Dropdown, DropdownForm, InputLine, InputLineForm, Loader, ModalComponent as Modal, MoreLess, Pagination, Radio, Selection, Table, TextArea, TextAreaForm };
+export { Accordion, ButtonMain, Calendar, Card, Checkbox, DialogComponent as Dialog, Dropdown, DropdownForm, Input, InputForm, Input as InputLine, InputForm as InputLineForm, Loader, ModalComponent as Modal, MoreLess, Pagination, Radio, Selection, Table, TextArea, TextAreaForm };
 //# sourceMappingURL=index.modern.js.map

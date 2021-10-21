@@ -1,14 +1,14 @@
+import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 import { action } from '@storybook/addon-actions';
-import { InputLine } from '@quero-delivery/quero-components-web';
-import { InputProps } from './Interface';
-import '@quero-delivery/quero-components-web/dist/index.css';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import { Input, InputProps } from '@quero-delivery/quero-components-web';
+import '@quero-delivery/quero-components-web/dist/index.css';
 
 export default {
-  title: 'Components/InputLine',
-  component: InputLine,
+  title: 'Components/Input',
+  component: Input,
   parameters: {
     docs: {
       description: {
@@ -20,8 +20,8 @@ export default {
   argTypes: {
     label: {
       control: 'text',
-      description: 'Título do InputLine',
-      defaultValue: 'Título do InputLine',
+      description: 'Título do Input',
+      defaultValue: 'Título do Input',
       table: {
         type: {
           summary: 'string',
@@ -39,7 +39,7 @@ export default {
     },
     width: {
       control: 'text',
-      description: 'Largura do InputLine',
+      description: 'Largura do Input',
       defaultValue: '100%',
       table: {
         defaultValue: {
@@ -53,7 +53,7 @@ export default {
     },
     inputRef: {
       control: 'string',
-      description: 'Referencia do InputLine',
+      description: 'Referencia do Input',
       table: {
         type: {
           summary: 'RefObject',
@@ -62,7 +62,7 @@ export default {
     },
     action: {
       control: 'object',
-      description: 'Ação do InputLine',
+      description: 'Ação do Input',
       table: {
         defaultValue: {
           summary: 'Ação',
@@ -76,7 +76,7 @@ export default {
     },
     onChange: {
       action: 'changed',
-      description: 'Função para manipular o InputLine',
+      description: 'Função para manipular o Input',
       table: {
         type: {
           summary: 'function',
@@ -85,7 +85,7 @@ export default {
     },
     icon: {
       control: 'object',
-      description: 'Icone do InputLine',
+      description: 'Icone do Input',
       table: {
         type: {
           summary: 'IconDefinition',
@@ -97,7 +97,7 @@ export default {
         type: 'inline-radio',
         options: ['left', 'right'],
       },
-      description: 'Posição do icone no InputLine',
+      description: 'Posição do icone no Input',
       table: {
         type: {
           summary: 'left | right',
@@ -106,7 +106,7 @@ export default {
     },
     textColor: {
       control: 'color',
-      description: 'Cor do InputLine',
+      description: 'Cor do Input',
       table: {
         type: {
           summary: 'string',
@@ -115,7 +115,7 @@ export default {
     },
     iconColor: {
       control: 'color',
-      description: 'Cor do icone do InputLine',
+      description: 'Cor do icone do Input',
       table: {
         type: {
           summary: 'string',
@@ -124,7 +124,7 @@ export default {
     },
     containerStyle: {
       control: 'object',
-      description: 'Estilização do container do InputLine',
+      description: 'Estilização do container do Input',
       table: {
         type: {
           summary: 'React.CSSProperties',
@@ -143,19 +143,25 @@ export default {
   },
 } as Meta;
 
-const Template: Story<InputProps> = args => <InputLine {...args} />;
+const Template: Story<InputProps> = args => {
+  return (
+    <>
+      <Input {...args} />
+    </>
+  );
+};
 
 export const Default = Template.bind({});
 Default.args = {
-  label: 'Título do InputLine',
+  label: 'Título do Input',
   onChange: action('mudar valor'),
 };
 
 Default.parameters = {
   docs: {
     source: {
-      code: `<InputLine
-      label="Título do InputLine"
+      code: `<Input
+      label="Título do Input"
       onChange={() => {}}
     />`,
     },
@@ -164,7 +170,7 @@ Default.parameters = {
 
 export const ErrorMessage = Template.bind({});
 ErrorMessage.args = {
-  label: 'Título do InputLine',
+  label: 'Título do Input',
   placeholder: 'escreva',
   errorMessage: 'errado',
   onChange: action('mudar valor'),
@@ -174,8 +180,8 @@ ErrorMessage.args = {
 ErrorMessage.parameters = {
   docs: {
     source: {
-      code: `<InputLine
-      label="Título do InputLine"
+      code: `<Input
+      label="Título do Input"
       placeholder="escreva"
       errorMessage="errado"
       onChange={() => {}}
@@ -186,7 +192,7 @@ ErrorMessage.parameters = {
 
 export const Width = Template.bind({});
 Width.args = {
-  label: 'Título do InputLine',
+  label: 'Título do Input',
   placeholder: 'escreva',
   width: '50%',
   onChange: action('mudar valor'),
@@ -196,8 +202,8 @@ Width.args = {
 Width.parameters = {
   docs: {
     source: {
-      code: `<InputLine
-      label="Título do InputLine"
+      code: `<Input
+      label="Título do Input"
       placeholder="escreva"
       width="50%"
       onChange={() => {}}
@@ -208,7 +214,7 @@ Width.parameters = {
 
 export const Action = Template.bind({});
 Action.args = {
-  label: 'Título do InputLine',
+  label: 'Título do Input',
   placeholder: 'escreva',
   action: {
     icon: faTimes,
@@ -221,8 +227,8 @@ Action.args = {
 Action.parameters = {
   docs: {
     source: {
-      code: `<InputLine
-      label="Título do InputLine"
+      code: `<Input
+      label="Título do Input"
       placeholder="escreva"
       action={
         icon={faTimes}
@@ -237,7 +243,7 @@ Action.parameters = {
 
 export const Icon = Template.bind({});
 Icon.args = {
-  label: 'Título do InputLine',
+  label: 'Título do Input',
   placeholder: 'escreva',
   icon: faUser,
   onChange: action('mudar valor'),
@@ -247,8 +253,8 @@ Icon.args = {
 Icon.parameters = {
   docs: {
     source: {
-      code: `<InputLine
-      label="Título do InputLine"
+      code: `<Input
+      label="Título do Input"
       placeholder="escreva"
       icone={faUser}
       onChange={() => {}}
@@ -259,7 +265,7 @@ Icon.parameters = {
 
 export const IconPosition = Template.bind({});
 IconPosition.args = {
-  label: 'Título do InputLine',
+  label: 'Título do Input',
   placeholder: 'escreva',
   icon: faUser,
   iconPosition: 'left',
@@ -270,8 +276,8 @@ IconPosition.args = {
 IconPosition.parameters = {
   docs: {
     source: {
-      code: `<InputLine
-      label="Título do InputLine"
+      code: `<Input
+      label="Título do Input"
       placeholder="escreva"
       icon={faUser}
       iconPosition="left"
@@ -283,7 +289,7 @@ IconPosition.parameters = {
 
 export const Colors = Template.bind({});
 Colors.args = {
-  label: 'Título do InputLine',
+  label: 'Título do Input',
   placeholder: 'escreva',
   textColor: 'blue',
   iconColor: 'green',
@@ -295,8 +301,8 @@ Colors.args = {
 Colors.parameters = {
   docs: {
     source: {
-      code: `<InputLine
-      label="Título do InputLine"
+      code: `<Input
+      label="Título do Input"
       placeholder="escreva"
       textColor="blue"
       iconColor="green"

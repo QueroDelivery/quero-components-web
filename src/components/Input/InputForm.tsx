@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable react/prop-types */
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { InputProps } from './InputLine';
+import { InputProps } from './Input';
 
 import { Container, LabelError } from './styles';
 import { colors } from '../../styles/colors';
@@ -19,7 +19,7 @@ export interface InputFormProps extends InputProps {
   msgErrorValidate?: string;
 }
 
-const InputLineForm: React.FC<InputFormProps> = ({
+function InputForm({
   register,
   errors,
   validate,
@@ -30,7 +30,7 @@ const InputLineForm: React.FC<InputFormProps> = ({
   minimum,
   msgErrorValidate,
   ...rest
-}) => {
+}: InputFormProps) {
   const [isFieldActive, setIsFieldActive] = useState(false);
 
   const [message, setMessage] = useState('');
@@ -104,7 +104,6 @@ const InputLineForm: React.FC<InputFormProps> = ({
         requiredText={!!(errors && errors.type === 'required')}
         errorMessage={errors}
         // action={rest.action?.icon ? true : false}
-        containerStyle={rest.containerStyle}
         width={rest.width}
         disabled={rest.disabled}
         style={rest.containerStyle}
@@ -125,12 +124,12 @@ const InputLineForm: React.FC<InputFormProps> = ({
         )}
 
         {rest.action && (
-          <div className="icon-action" onClick={rest.action.onClick}>
+          <button className="icon-action" onClick={rest.action.onClick}>
             <FontAwesomeIcon
               icon={rest.action.icon}
               color={rest.action.iconColor || colors.brand10}
             />
-          </div>
+          </button>
         )}
 
         <input
@@ -159,6 +158,6 @@ const InputLineForm: React.FC<InputFormProps> = ({
       ) : null}
     </div>
   );
-};
+}
 
-export default InputLineForm;
+export default InputForm;

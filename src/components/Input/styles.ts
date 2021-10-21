@@ -9,7 +9,6 @@ interface InputProps {
   errorMessage?: any;
   errorColor?: string;
   labelStyle?: React.CSSProperties;
-  containerStyle?: React.CSSProperties;
   disabled?: boolean;
   width?: string | number;
   textColor?: string;
@@ -24,7 +23,7 @@ interface LabelErrorProps {
   errorColor?: string;
 }
 
-export const Container = styled.div<InputProps>`
+export const InputContainer = styled.div<InputProps>`
   font-family: MontSerrat !important;
   position: relative;
   opacity: ${props => (props.disabled ? '50%' : '100%')};
@@ -40,7 +39,7 @@ export const Container = styled.div<InputProps>`
 
   input {
     font-family: MontSerrat !important;
-    color: ${props => (props.textColor ? props.textColor : colors.gray20)};
+    color: ${props => props.textColor || colors.gray20};
     width: 100%;
     height: 100%;
     padding-top: 20px;
@@ -120,7 +119,7 @@ export const Container = styled.div<InputProps>`
     background-color: transparent;
   }
 
-  label {
+  .label-container {
     font-family: MontSerrat !important;
     position: absolute;
     bottom: 0px;
@@ -153,7 +152,8 @@ export const Container = styled.div<InputProps>`
           `}
   }
 
-  span {
+  span,
+  label {
     font-family: MontSerrat !important;
     position: absolute;
     bottom: 5px;
@@ -178,6 +178,7 @@ export const Container = styled.div<InputProps>`
 
       return '15px';
     }};
+
     transition: all 0.3s ease;
 
     ${props =>
@@ -234,7 +235,6 @@ export const Container = styled.div<InputProps>`
       props.actionPosition && props.actionPosition === 'left'
         ? 'left: 0;'
         : 'right: 0;'}
-    cursor: pointer;
   }
 `;
 

@@ -16,7 +16,7 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
         iconColor?: string;
         onClick: () => void;
         position?: 'left' | 'right';
-    } | null;
+    };
 }
 declare const InputLine: React.FC<InputProps>;
 export default InputLine;

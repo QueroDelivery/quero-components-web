@@ -1,12 +1,15 @@
+import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import { InputLineForm } from '@quero-delivery/quero-components-web';
-import { InputFormProps } from './Interface';
+import {
+  InputForm,
+  InputFormProps,
+} from '@quero-delivery/quero-components-web';
 
 import '@quero-delivery/quero-components-web/dist/index.css';
 
 export default {
-  title: 'Components/InputLineForm',
-  component: InputLineForm,
+  title: 'Components/InputForm',
+  component: InputForm,
   parameters: {
     docs: {
       description: {
@@ -17,7 +20,7 @@ export default {
   argTypes: {
     label: {
       control: 'text',
-      description: 'Título do InputLineForm',
+      description: 'Título do InputForm',
       defaultValue: 'Título',
       table: {
         type: {
@@ -27,7 +30,7 @@ export default {
     },
     name: {
       control: 'string',
-      description: 'Descrição do InputLineForm',
+      description: 'Descrição do InputForm',
       table: {
         defaultValue: {
           summary: 'Fica registrado no HTML',
@@ -39,7 +42,7 @@ export default {
     },
     required: {
       control: 'boolean',
-      description: 'O InputLineForm é obrigatório?',
+      description: 'O InputForm é obrigatório?',
       table: {
         type: {
           summary: 'boolean',
@@ -48,7 +51,7 @@ export default {
     },
     validate: {
       control: 'string',
-      description: 'Função que valida o InputLineForm',
+      description: 'Função que valida o InputForm',
       table: {
         type: {
           summary: 'function',
@@ -66,7 +69,7 @@ export default {
     },
     register: {
       control: 'string',
-      description: 'Faz o registro do InputLineForm',
+      description: 'Faz o registro do InputForm',
       table: {
         type: {
           summary: 'required | function',
@@ -104,13 +107,13 @@ export default {
 } as Meta;
 
 const Template: Story<InputFormProps> = args => {
-  return <InputLineForm {...args} />;
+  return <InputForm {...args} />;
 };
 
 export const Default = Template.bind({});
 Default.args = {
-  label: 'Título do InputLineForm',
-  name: 'Descrição do InputLineForm',
+  label: 'Título do InputForm',
+  name: 'Descrição do InputForm',
   errors: '',
   register: null,
   validate: () => {},
@@ -123,8 +126,8 @@ Default.args = {
 Default.parameters = {
   docs: {
     source: {
-      code: `<InputLineForm
-      label="Título do InputLineForm"
+      code: `<InputForm
+      label="Título do InputForm"
       name="example"
       errors={errors.example}
       register={register}

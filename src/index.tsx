@@ -9,8 +9,8 @@ import Checkbox from './components/Checkbox/Checkbox';
 import Dialog from './components/Dialog/Dialog';
 import Dropdown from './components/Dropdown/Dropdown';
 import DropdownForm from './components/Dropdown/DropdownForm';
-import InputLine from './components/InputLine/InputLine';
-import InputLineForm from './components/InputLine/InputLineForm';
+import Input, { InputProps } from './components/Input/Input';
+import InputForm, { InputFormProps } from './components/Input/InputForm';
 import Loader, { LoaderProps } from './components/Loader/Loader';
 import Modal, { ModalProps } from './components/Modal/Modal';
 import MoreLess, { MoreLessProps } from './components/MoreLess/MoreLess';
@@ -34,8 +34,10 @@ export {
   Dialog,
   Dropdown,
   DropdownForm,
-  InputLine,
-  InputLineForm,
+  Input,
+  Input as InputLine,
+  InputForm,
+  InputForm as InputLineForm,
   Loader,
   Modal,
   MoreLess,
@@ -51,6 +53,8 @@ export type {
   AccordionProps,
   ButtonProps,
   CalendarProps,
+  InputProps,
+  InputFormProps,
   LoaderProps,
   ModalProps,
   MoreLessProps,

@@ -1,9 +1,8 @@
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
-// import userEvent from '@testing-library/user-event';
+import { colors } from '../../styles/colors';
 
 import Loader from './Loader';
-import { colors } from '../../styles/colors';
 
 describe('Loader Component', () => {
   it('Componente deve renderizar', () => {
