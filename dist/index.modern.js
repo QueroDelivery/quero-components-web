@@ -2717,9 +2717,9 @@ let _$f = t => t,
     _t3$9,
     _t4$6,
     _t5$5,
-    _t6$5,
-    _t7$4;
-const Container$9 = styled.div(_t$f || (_t$f = _$f`
+    _t6$4,
+    _t7$3;
+const Container$8 = styled.div(_t$f || (_t$f = _$f`
   font-family: MontSerrat !important;
   display: flex;
   width: ${0};
@@ -2775,11 +2775,11 @@ const Subtitle = styled.span(_t5$5 || (_t5$5 = _$f`
   color: ${0};
   font-size: 0.75rem;
 `), colors.gray10);
-const Value = styled.span(_t6$5 || (_t6$5 = _$f`
+const Value = styled.span(_t6$4 || (_t6$4 = _$f`
   margin-right: 1.25rem;
   color: ${0};
 `), colors.gray20);
-const Body$1 = styled.div(_t7$4 || (_t7$4 = _$f`
+const Body$1 = styled.div(_t7$3 || (_t7$3 = _$f`
   font-family: MontSerrat !important;
   width: ${0};
   padding: 1.25rem;
@@ -2822,7 +2822,7 @@ const Accordion = ({
   bodyStyle
 }) => {
   return jsxs(Fragment$1, {
-    children: [jsxs(Container$9, Object.assign({
+    children: [jsxs(Container$8, Object.assign({
       role: "button",
       className: className,
       style: style,
@@ -2952,8 +2952,8 @@ let _$e = t => t,
     _t3$8,
     _t4$5,
     _t5$4,
-    _t6$4,
-    _t7$3;
+    _t6$3,
+    _t7$2;
 const Button$2 = styled.button(_t$e || (_t$e = _$e`
   font-family: MontSerrat !important;
   font-size: ${0};
@@ -3102,7 +3102,7 @@ const Icon$1 = styled.div(_t5$4 || (_t5$4 = _$e`
   margin-right: ${0};
   margin-left: ${0};
 `), props => props.iconPosition === 'left' && props.hasText ? '10px' : '', props => props.iconPosition === 'right' && props.hasText ? '10px' : '');
-const Amount = styled.div(_t6$4 || (_t6$4 = _$e`
+const Amount = styled.div(_t6$3 || (_t6$3 = _$e`
   font-family: MontSerrat !important;
   background-color: ${0};
   width: 20px;
@@ -3114,7 +3114,7 @@ const Amount = styled.div(_t6$4 || (_t6$4 = _$e`
   color: ${0};
   font-size: 0.625rem;
 `), colors.brand30, colors.brand10);
-const LoadingContainer = styled.div(_t7$3 || (_t7$3 = _$e`
+const LoadingContainer = styled.div(_t7$2 || (_t7$2 = _$e`
   position: absolute;
   top: 0;
   left: 0;
@@ -3178,7 +3178,7 @@ const widthBorder = size => {
   }
 };
 
-const Container$8 = styled.div(_t$d || (_t$d = _$d`
+const Container$7 = styled.div(_t$d || (_t$d = _$d`
   width: 100%;
   display: flex;
   justify-content: ${0};
@@ -3213,7 +3213,7 @@ function Loader({
   position = 'center',
   outsideColor
 }) {
-  return jsx(Container$8, Object.assign({
+  return jsx(Container$7, Object.assign({
     position: position
   }, {
     children: jsx(Load, {
@@ -4623,7 +4623,7 @@ if (process.env.NODE_ENV === 'production') {
 
 let _$c = t => t,
     _t$c;
-const Container$7 = styled.div(_t$c || (_t$c = _$c`
+const Container$6 = styled.div(_t$c || (_t$c = _$c`
   font-family: MontSerrat !important;
   display: flex;
   flex-direction: column;
@@ -5651,7 +5651,7 @@ const Calendar = _ref => {
     onChange: props.onChange,
     placeholder: rest.placeholderText
   }, void 0));
-  return jsxs(Container$7, Object.assign({
+  return jsxs(Container$6, Object.assign({
     brand: brand,
     size: size
   }, {
@@ -6050,7 +6050,7 @@ const marginRight = size => {
   }
 };
 
-const Container$6 = styled.div(_t$a || (_t$a = _$a`
+const Container$5 = styled.div(_t$a || (_t$a = _$a`
   font-family: MontSerrat !important;
   display: flex;
   align-items: center;
@@ -6175,7 +6175,7 @@ const Checkbox = _ref => {
   } = _ref,
       rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$8);
 
-  return jsxs(Container$6, Object.assign({
+  return jsxs(Container$5, Object.assign({
     onClick: () => !rest.disabled ? rest.onChange ? rest.onChange() : null : null,
     disabled: rest.disabled,
     sizeBox: sizeBox,
@@ -6203,8 +6203,8 @@ let _$9 = t => t,
     _t3$6,
     _t4$4,
     _t5$3,
-    _t6$3,
-    _t7$2,
+    _t6$2,
+    _t7$1,
     _t8;
 const Background$1 = styled.div(_t$9 || (_t$9 = _$9`
   ${0}
@@ -6297,11 +6297,11 @@ const Dialog = styled.div(_t4$4 || (_t4$4 = _$9`
   }
 
   return '100%';
-}, props.loading ? 'hidden' : 'auto', props.title ? `calc(100% - ${props.sizeHeader}px)` : '100%') : css$1(_t6$3 || (_t6$3 = _$9`
+}, props.loading ? 'hidden' : 'auto', props.title ? `calc(100% - ${props.sizeHeader}px)` : '100%') : css$1(_t6$2 || (_t6$2 = _$9`
           transition: bottom 0.25s ease;
           bottom: -100%;
         `)));
-const Header$2 = styled.div(_t7$2 || (_t7$2 = _$9`
+const Header$2 = styled.div(_t7$1 || (_t7$1 = _$9`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -6404,7 +6404,7 @@ const DialogComponent = ({
 
 let _$8 = t => t,
     _t$8;
-const Container$5 = styled.div(_t$8 || (_t$8 = _$8`
+const Container$4 = styled.div(_t$8 || (_t$8 = _$8`
   font-family: MontSerrat !important;
   width: 100% !important;
   display: flex !important;
@@ -7958,7 +7958,7 @@ const Dropdown = _ref => {
   } = _ref,
       rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$7);
 
-  return jsxs(Container$5, Object.assign({
+  return jsxs(Container$4, Object.assign({
     brand: brand,
     textAlign: textAlign,
     error: errorMessage,
@@ -8043,10 +8043,8 @@ let _$7 = t => t,
     _t2$5,
     _t3$5,
     _t4$3,
-    _t5$2,
-    _t6$2,
-    _t7$1;
-const Container$4 = styled.div(_t$7 || (_t$7 = _$7`
+    _t5$2;
+const InputContainer = styled.div(_t$7 || (_t$7 = _$7`
   font-family: MontSerrat !important;
   position: relative;
   opacity: ${0};
@@ -8089,7 +8087,7 @@ const Container$4 = styled.div(_t$7 || (_t$7 = _$7`
     border-bottom-style: solid;
     border-bottom-color: ${0};
 
-    ${0}
+    color: ${0};
   }
 
   span,
@@ -8117,17 +8115,7 @@ const Container$4 = styled.div(_t$7 || (_t$7 = _$7`
     padding: 5px 10px;
     ${0}
   }
-`), props => props.disabled ? '50%' : '100%', props => {
-  if (props.width) {
-    if (typeof props.width === 'string') {
-      return props.width;
-    }
-
-    return `${props.width}px`;
-  }
-
-  return '100%';
-}, props => props.textColor || colors.gray20, props => {
+`), props => props.disabled ? '0.5' : '1', props => getMeasurement(props.width, '100%'), props => props.textColor || colors.gray20, props => {
   if (props.icon && !props.action) {
     if (props.iconPosition === 'right') {
       return '15px';
@@ -8196,11 +8184,7 @@ const Container$4 = styled.div(_t$7 || (_t$7 = _$7`
   }
 
   return colors.gray10;
-}, props => props.isFieldActive ? css$1(_t3$5 || (_t3$5 = _$7`
-            color: ${0};
-          `), colors.brand10) : css$1(_t4$3 || (_t4$3 = _$7`
-            color: ${0};
-          `), colors.gray20), props => {
+}, props => props.isFieldActive ? colors.brand10 : colors.gray20, props => {
   if (props.icon && !props.action) {
     if (props.iconPosition === 'right') {
       return '15px';
@@ -8222,11 +8206,11 @@ const Container$4 = styled.div(_t$7 || (_t$7 = _$7`
   }
 
   return '15px';
-}, props => props.isFieldActive ? css$1(_t5$2 || (_t5$2 = _$7`
+}, props => props.isFieldActive ? css$1(_t3$5 || (_t3$5 = _$7`
             transform: translateY(-100%);
             font-size: 14px;
             color: ${0};
-          `), props => {
+          `), () => {
   if ((props.requiredText || props.errorMessage) && props.errorColor) {
     return props.errorColor;
   }
@@ -8236,10 +8220,10 @@ const Container$4 = styled.div(_t$7 || (_t$7 = _$7`
   }
 
   return colors.brand10;
-}) : css$1(_t6$2 || (_t6$2 = _$7`
+}) : css$1(_t4$3 || (_t4$3 = _$7`
             font-size: 16px;
             color: ${0};
-          `), props => {
+          `), () => {
   if ((props.requiredText || props.errorMessage) && props.errorColor) {
     return props.errorColor;
   }
@@ -8250,7 +8234,7 @@ const Container$4 = styled.div(_t$7 || (_t$7 = _$7`
 
   return colors.gray20;
 }), props => props.iconPosition === 'right' && 'right: 0;', props => props.actionPosition && props.actionPosition === 'left' ? 'left: 0;' : 'right: 0;');
-const LabelError$1 = styled.span(_t7$1 || (_t7$1 = _$7`
+const LabelError$1 = styled.span(_t5$2 || (_t5$2 = _$7`
   font-family: MontSerrat !important;
   font-size: 10px;
   margin-left: 0;
@@ -8263,7 +8247,7 @@ const LabelError$1 = styled.span(_t7$1 || (_t7$1 = _$7`
   return colors.danger20;
 });
 
-const _excluded$5 = ["containerClassName", "containerStyle", "width", "textColor", "inputRef", "icon", "iconClassName", "iconPosition", "iconColor", "action", "label", "labelClassName", "labelStyle", "errorMessage", "errorClassName", "errorStyle"];
+const _excluded$5 = ["containerClassName", "containerStyle", "width", "textColor", "inputRef", "icon", "iconClassName", "iconPosition", "iconColor", "action", "label", "labelClassName", "labelStyle", "errorColor", "errorMessage", "errorClassName", "errorStyle"];
 
 function Input(_ref) {
   let {
@@ -8280,46 +8264,39 @@ function Input(_ref) {
     label,
     labelClassName,
     labelStyle,
+    errorColor,
     errorMessage,
     errorClassName,
     errorStyle
   } = _ref,
       rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$5);
 
-  const [isFieldActive, setIsFieldActive] = useState(false);
+  const [isFieldActive, setIsFieldActive] = useState(() => {
+    return false;
+  });
   useEffect(() => {
-    if (rest.value) {
-      setIsFieldActive(true);
-    }
+    if (rest.value) setIsFieldActive(true);
   }, [rest.value]);
 
   const handleFocus = event => {
-    if (!isFieldActive || !!event.currentTarget.value) {
-      setIsFieldActive(true);
-    }
-
-    if (rest.onFocus) {
-      setImmediate(rest.onFocus);
-    }
+    if (!isFieldActive || !!event.currentTarget.value) setIsFieldActive(true);
+    if (rest.onFocus) rest.onFocus(event);
   };
 
   const handleBlur = event => {
-    if (isFieldActive && !rest.value && !event.currentTarget.value) {
-      setIsFieldActive(false);
-    }
-
-    if (rest.onBlur) {
-      setImmediate(rest.onBlur);
-    }
+    if (isFieldActive && !rest.value && !event.currentTarget.value) setIsFieldActive(false);
+    if (rest.onBlur) rest.onBlur(event);
   };
 
-  return jsxs("div", {
-    children: [jsxs(Container$4, Object.assign({
+  return jsxs("div", Object.assign({
+    role: "group"
+  }, {
+    children: [jsxs(InputContainer, Object.assign({
       isFieldActive: isFieldActive,
       className: containerClassName,
       style: containerStyle,
       width: width,
-      disabled: rest.disabled ? rest.disabled : undefined,
+      disabled: rest.disabled,
       textColor: textColor,
       icon: !!icon,
       iconPosition: iconPosition,
@@ -8327,31 +8304,37 @@ function Input(_ref) {
       actionPosition: action == null ? void 0 : action.position,
       date: rest.type === 'date',
       errorMessage: errorMessage,
-      role: "group"
+      "data-testid": "input-container",
+      errorColor: errorColor
     }, {
       children: [icon && jsx("div", Object.assign({
-        className: "icon"
+        className: "icon",
+        "data-testid": "icon-container"
       }, {
         children: jsx(FontAwesomeIcon, {
+          "aria-label": "icon",
           className: iconClassName,
           icon: icon,
           color: iconColor || colors.brand10
         }, void 0)
       }), void 0), action && jsx("button", Object.assign({
         className: `icon-action ${action.className || ''}`,
-        onClick: action.onClick
+        onClick: action.onClick,
+        "data-testid": "action-container"
       }, {
         children: jsx(FontAwesomeIcon, {
+          "aria-label": "action-icon",
           icon: action.icon,
           color: action.iconColor || colors.brand10
         }, void 0)
       }), void 0), jsx("input", Object.assign({}, rest, {
         onFocus: handleFocus,
         onBlur: handleBlur,
-        placeholder: isFieldActive ? rest.placeholder : '',
+        placeholder: isFieldActive ? rest.placeholder : undefined,
         ref: inputRef
       }), void 0), jsx("div", Object.assign({
-        className: "label-container"
+        className: "label-container",
+        "data-testid": "label-container"
       }, {
         children: jsx("label", Object.assign({
           htmlFor: rest.name,
@@ -8362,12 +8345,13 @@ function Input(_ref) {
         }), void 0)
       }), void 0)]
     }), void 0), !!errorMessage && jsx(LabelError$1, Object.assign({
+      errorColor: errorColor,
       className: errorClassName,
       style: errorStyle
     }, {
       children: errorMessage
     }), void 0)]
-  }, void 0);
+  }), void 0);
 }
 
 const _excluded$4 = ["register", "errors", "validate", "name", "required", "values", "limit", "minimum", "msgErrorValidate"];
@@ -8449,7 +8433,7 @@ function InputForm(_ref) {
       paddingBottom: message || errors ? 0 : 20
     }
   }, {
-    children: [jsxs(Container$4, Object.assign({
+    children: [jsxs(InputContainer, Object.assign({
       isFieldActive: isFieldActive,
       requiredText: !!(errors && errors.type === 'required'),
       errorMessage: errors,

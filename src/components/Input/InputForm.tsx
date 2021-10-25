@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { InputProps } from './Input';
 
-import { Container, LabelError } from './styles';
+import { InputContainer, LabelError } from './styles';
 import { colors } from '../../styles/colors';
 
 export interface InputFormProps extends InputProps {
@@ -99,7 +99,7 @@ function InputForm({
         paddingBottom: message || errors ? 0 : 20,
       }}
     >
-      <Container
+      <InputContainer
         isFieldActive={isFieldActive}
         requiredText={!!(errors && errors.type === 'required')}
         errorMessage={errors}
@@ -150,7 +150,7 @@ function InputForm({
         <label>
           <span style={rest.labelStyle}>{rest.label}</span>
         </label>
-      </Container>
+      </InputContainer>
       {errors ? (
         <LabelError>
           {errors.type === 'required' ? 'Obrigatório' : `${message}`}

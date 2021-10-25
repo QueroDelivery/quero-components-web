@@ -36,6 +36,7 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     className?: string;
   };
 
+  errorColor?: string;
   errorMessage?: string;
   errorClassName?: string;
   errorStyle?: React.CSSProperties;
@@ -57,37 +58,32 @@ function Input({
   label,
   labelClassName,
   labelStyle,
+
+  errorColor,
   errorMessage,
   errorClassName,
   errorStyle,
   ...rest
 }: InputProps) {
-  const [isFieldActive, setIsFieldActive] = useState(false);
+  const [isFieldActive, setIsFieldActive] = useState(() => {
+    return false;
+  });
 
   useEffect(() => {
-    if (rest.value) {
-      setIsFieldActive(true);
-    }
+    if (rest.value) setIsFieldActive(true);
   }, [rest.value]);
 
   const handleFocus = (event: React.FocusEvent<HTMLInputElement>) => {
-    if (!isFieldActive || !!event.currentTarget.value) {
-      setIsFieldActive(true);
-    }
+    if (!isFieldActive || !!event.currentTarget.value) setIsFieldActive(true);
 
-    if (rest.onFocus) {
-      setImmediate(rest.onFocus);
-    }
+    if (rest.onFocus) rest.onFocus(event);
   };
 
   const handleBlur = (event: React.FocusEvent<HTMLInputElement>) => {
-    if (isFieldActive && !rest.value && !event.currentTarget.value) {
+    if (isFieldActive && !rest.value && !event.currentTarget.value)
       setIsFieldActive(false);
-    }
 
-    if (rest.onBlur) {
-      setImmediate(rest.onBlur);
-    }
+    if (rest.onBlur) rest.onBlur(event);
   };
 
   return (
@@ -97,7 +93,7 @@ function Input({
         className={containerClassName}
         style={containerStyle}
         width={width}
-        disabled={rest.disabled ? rest.disabled : undefined}
+        disabled={rest.disabled}
         textColor={textColor}
         icon={!!icon}
         iconPosition={iconPosition}
@@ -105,10 +101,13 @@ function Input({
         actionPosition={action?.position}
         date={rest.type === 'date'}
         errorMessage={errorMessage}
+        data-testid="input-container"
+        errorColor={errorColor}
       >
         {icon && (
-          <div className="icon">
+          <div className="icon" data-testid="icon-container">
             <FontAwesomeIcon
+              aria-label="icon"
               className={iconClassName}
               icon={icon}
               color={iconColor || colors.brand10}
@@ -120,8 +119,10 @@ function Input({
           <button
             className={`icon-action ${action.className || ''}`}
             onClick={action.onClick}
+            data-testid="action-container"
           >
             <FontAwesomeIcon
+              aria-label="action-icon"
               icon={action.icon}
               color={action.iconColor || colors.brand10}
             />
@@ -131,10 +132,10 @@ function Input({
           {...rest}
           onFocus={handleFocus}
           onBlur={handleBlur}
-          placeholder={isFieldActive ? rest.placeholder : ''}
+          placeholder={isFieldActive ? rest.placeholder : undefined}
           ref={inputRef}
         />
-        <div className="label-container">
+        <div className="label-container" data-testid="label-container">
           <label
             htmlFor={rest.name}
             className={labelClassName}
@@ -145,7 +146,11 @@ function Input({
         </div>
       </InputContainer>
       {!!errorMessage && (
-        <LabelError className={errorClassName} style={errorStyle}>
+        <LabelError
+          errorColor={errorColor}
+          className={errorClassName}
+          style={errorStyle}
+        >
           {errorMessage}
         </LabelError>
       )}

@@ -20,9 +20,10 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
         position?: 'left' | 'right';
         className?: string;
     };
+    errorColor?: string;
     errorMessage?: string;
     errorClassName?: string;
     errorStyle?: React.CSSProperties;
 }
-declare function Input({ containerClassName, containerStyle, width, textColor, inputRef, icon, iconClassName, iconPosition, iconColor, action, label, labelClassName, labelStyle, errorMessage, errorClassName, errorStyle, ...rest }: InputProps): JSX.Element;
+declare function Input({ containerClassName, containerStyle, width, textColor, inputRef, icon, iconClassName, iconPosition, iconColor, action, label, labelClassName, labelStyle, errorColor, errorMessage, errorClassName, errorStyle, ...rest }: InputProps): JSX.Element;
 export default Input;

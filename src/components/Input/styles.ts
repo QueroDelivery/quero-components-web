@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react';
 import styled, { css } from 'styled-components';
+import { getMeasurement } from '../../helpers/FnUtil';
 import { colors } from '../../styles/colors';
 
 interface InputProps {
@@ -26,16 +27,8 @@ interface LabelErrorProps {
 export const InputContainer = styled.div<InputProps>`
   font-family: MontSerrat !important;
   position: relative;
-  opacity: ${props => (props.disabled ? '50%' : '100%')};
-  width: ${props => {
-    if (props.width) {
-      if (typeof props.width === 'string') {
-        return props.width;
-      }
-      return `${props.width}px`;
-    }
-    return '100%';
-  }};
+  opacity: ${props => (props.disabled ? '0.5' : '1')};
+  width: ${props => getMeasurement(props.width, '100%')};
 
   input {
     font-family: MontSerrat !important;
@@ -142,14 +135,7 @@ export const InputContainer = styled.div<InputProps>`
       return colors.gray10;
     }};
 
-    ${props =>
-      props.isFieldActive
-        ? css`
-            color: ${colors.brand10};
-          `
-        : css`
-            color: ${colors.gray20};
-          `}
+    color: ${props => (props.isFieldActive ? colors.brand10 : colors.gray20)};
   }
 
   span,
@@ -186,7 +172,7 @@ export const InputContainer = styled.div<InputProps>`
         ? css`
             transform: translateY(-100%);
             font-size: 14px;
-            color: ${(props: InputProps) => {
+            color: ${() => {
               if (
                 (props.requiredText || props.errorMessage) &&
                 props.errorColor
@@ -203,7 +189,7 @@ export const InputContainer = styled.div<InputProps>`
           `
         : css`
             font-size: 16px;
-            color: ${(props: InputProps) => {
+            color: ${() => {
               if (
                 (props.requiredText || props.errorMessage) &&
                 props.errorColor
