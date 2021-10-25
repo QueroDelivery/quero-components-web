@@ -1,6 +1,6 @@
 import 'semantic-ui-css/semantic.min.css';
 import { jsxs, Fragment as Fragment$1, jsx } from 'react/jsx-runtime';
-import React$2, { useState, useEffect, useMemo } from 'react';
+import React$2, { useRef, useMemo, useState, useEffect } from 'react';
 import styled, { css as css$1 } from 'styled-components';
 import DatePicker, { registerLocale } from 'react-datepicker';
 import reactDom from 'react-dom';
@@ -3098,7 +3098,7 @@ const Notification = styled.button(_t4$5 || (_t4$5 = _$e`
     font-weight: bold;
   }
 `), colors.brand10, colors.brand30, colors.brandTransparent2, colors.brand30);
-const Icon$1 = styled.div(_t5$4 || (_t5$4 = _$e`
+const Icon = styled.div(_t5$4 || (_t5$4 = _$e`
   margin-right: ${0};
   margin-left: ${0};
 `), props => props.iconPosition === 'left' && props.hasText ? '10px' : '', props => props.iconPosition === 'right' && props.hasText ? '10px' : '');
@@ -3282,7 +3282,7 @@ const ButtonMain = _ref => {
             alignItems: 'center'
           }
         }, {
-          children: [jsx(Icon$1 // loading={loading}
+          children: [jsx(Icon // loading={loading}
           , Object.assign({
             // loading={loading}
             iconPosition: iconPosition,
@@ -3304,7 +3304,7 @@ const ButtonMain = _ref => {
   }
 
   function renderIcon() {
-    if (customIcon) return jsx(Icon$1, Object.assign({
+    if (customIcon) return jsx(Icon, Object.assign({
       className: containerIconClassName,
       style: containerIconStyle,
       iconPosition: iconPosition,
@@ -3312,7 +3312,7 @@ const ButtonMain = _ref => {
     }, {
       children: customIcon
     }), void 0);
-    return jsx(Icon$1, Object.assign({
+    return jsx(Icon, Object.assign({
       className: containerIconClassName,
       style: containerIconStyle,
       iconPosition: iconPosition,
@@ -6197,6 +6197,9 @@ const Checkbox = _ref => {
   }), void 0);
 };
 
+const Z_INDEX_MODAL = 999;
+const Z_INDEX_DIALOG = 998;
+
 let _$9 = t => t,
     _t$9,
     _t2$6,
@@ -6204,8 +6207,7 @@ let _$9 = t => t,
     _t4$4,
     _t5$3,
     _t6$2,
-    _t7$1,
-    _t8;
+    _t7$1;
 const Background$1 = styled.div(_t$9 || (_t$9 = _$9`
   ${0}
 `), props => props.open ? css$1(_t2$6 || (_t2$6 = _$9`
@@ -6220,10 +6222,11 @@ const Background$1 = styled.div(_t$9 || (_t$9 = _$9`
           transition: opacity 0.25s ease;
           overflow: auto;
           display: flex;
-          z-index: 999;
-        `)) : css$1(_t3$6 || (_t3$6 = _$9`
-          opacity: 1;
+          z-index: ${0};
+        `), Z_INDEX_DIALOG) : css$1(_t3$6 || (_t3$6 = _$9`
+          opacity: 0;
           visibility: hidden;
+          display: none;
         `)));
 const Dialog = styled.div(_t4$4 || (_t4$4 = _$9`
   font-family: MontSerrat !important;
@@ -6270,7 +6273,7 @@ const Dialog = styled.div(_t4$4 || (_t4$4 = _$9`
             position: absolute;
           }
         `), colors.white, () => {
-  if (props.maxHeight || props.loading) {
+  if (props.maxHeight || props.isLoading) {
     return 'none';
   }
 
@@ -6287,17 +6290,7 @@ const Dialog = styled.div(_t4$4 || (_t4$4 = _$9`
   }
 
   return 'auto';
-}, () => {
-  if (props.maxHeight) {
-    if (typeof props.maxHeight === 'string') {
-      return props.maxHeight;
-    }
-
-    return `${props.maxHeight}px`;
-  }
-
-  return '100%';
-}, props.loading ? 'hidden' : 'auto', props.title ? `calc(100% - ${props.sizeHeader}px)` : '100%') : css$1(_t6$2 || (_t6$2 = _$9`
+}, () => getMeasurement(props.maxHeight, '100%'), props.isLoading ? 'hidden' : 'auto', props.title ? `calc(100% - ${props.sizeHeader}px)` : '100%') : css$1(_t6$2 || (_t6$2 = _$9`
           transition: bottom 0.25s ease;
           bottom: -100%;
         `)));
@@ -6308,77 +6301,77 @@ const Header$2 = styled.div(_t7$1 || (_t7$1 = _$9`
   border-bottom: ${0};
   font-size: 1.25rem;
 
-  .name-icon-modal {
-    display: flex;
-    align-items: center;
-  }
-
-  & strong {
+  div {
+    flex: 1;
+    text-align: left;
     padding: ${0};
     color: ${0};
   }
-`), props => props.noBorder ? 'none' : `1px solid ${colors.default20}`, props => props.iconBack ? '1.25rem 0' : '1.25rem 1.875rem', colors.brand10);
-const Icon = styled.div(_t8 || (_t8 = _$9`
-  padding: 1.25rem 1.875rem;
-  cursor: pointer;
-`));
 
-const DialogComponent = ({
+  button {
+    padding: 1.25rem 1.875rem;
+  }
+`), props => props.noBorder ? 'none' : `1px solid ${colors.default20}`, props => props.returnIcon ? '1.25rem 0' : '1.25rem 1.875rem', colors.brand10);
+
+function DialogComponent({
   open,
   children,
   onClose,
-  loading,
+  loading = false,
   maxHeight,
   title,
-  onBack,
   noBorder,
-  closeIcon: _closeIcon = false
-}) => {
-  const [sizeHeader, setSizeHeader] = useState(62);
-  useEffect(() => {
-    if (document.getElementById('headerDialog')) {
-      setSizeHeader(document.getElementById('headerDialog').clientHeight);
-    }
-  }, [document.getElementById('headerDialog')]);
+  closeOnDimerClick = true,
+  closeIcon = false,
+  onReturn
+}) {
+  const headerDialog = useRef(null);
+  const sizeHeader = useMemo(() => {
+    if (headerDialog.current) return headerDialog.current.clientHeight;
+    return 62;
+  }, [headerDialog.current]);
   return jsx(Background$1, Object.assign({
     open: open,
     onClick: event => {
       event.stopPropagation();
-      onClose();
-    }
+      if (closeOnDimerClick) onClose();
+    },
+    "data-testid": "background"
   }, {
     children: jsxs(Dialog, Object.assign({
       open: open,
       onClick: event => event.stopPropagation(),
       maxHeight: maxHeight,
       sizeHeader: sizeHeader,
-      loading: loading,
-      title: title
+      isLoading: loading,
+      title: title,
+      role: "dialog"
     }, {
-      children: [title ? jsxs(Header$2, Object.assign({
-        iconBack: !!onBack,
+      children: [!!title || !!onReturn || closeIcon ? jsxs(Header$2, Object.assign({
+        role: "heading",
+        returnIcon: !!onReturn,
         noBorder: noBorder,
-        id: "headerDialog"
+        ref: headerDialog
       }, {
-        children: [jsxs("div", Object.assign({
-          className: "name-icon-modal"
+        children: [!!onReturn && jsx("button", Object.assign({
+          onClick: onReturn,
+          "aria-label": "return"
         }, {
-          children: [onBack ? jsx(Icon, Object.assign({
-            onClick: () => onBack()
-          }, {
-            children: jsx(FontAwesomeIcon, {
-              icon: faAngleLeft,
-              size: "lg",
-              color: colors.brand10
-            }, void 0)
-          }), void 0) : null, jsx("strong", {
+          children: jsx(FontAwesomeIcon, {
+            icon: faAngleLeft,
+            size: "lg",
+            color: colors.brand10
+          }, void 0)
+        }), void 0), jsx("div", {
+          children: jsx("strong", {
             children: title
-          }, void 0)]
-        }), void 0), _closeIcon && jsx(Icon, Object.assign({
+          }, void 0)
+        }, void 0), closeIcon && jsx("button", Object.assign({
           onClick: event => {
             event.stopPropagation();
             onClose();
-          }
+          },
+          "aria-label": "close"
         }, {
           children: jsx(FontAwesomeIcon, {
             icon: faTimes,
@@ -6400,7 +6393,7 @@ const DialogComponent = ({
       }), void 0)]
     }), void 0)
   }), void 0);
-};
+}
 
 let _$8 = t => t,
     _t$8;
@@ -8532,7 +8525,6 @@ const sizeWidth = size => {
   }
 };
 
-const Z_INDEX_MODAL = 999;
 const Background = styled.div(_t$6 || (_t$6 = _$6`
   opacity: 0;
   visibility: hidden;
