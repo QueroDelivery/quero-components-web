@@ -1,9 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
-import Dropdown, { Props } from './Dropdown';
+import Dropdown, { DropdownProps } from './Dropdown';
 
-interface DropdownFormProps extends Omit<Props, 'onChange' | 'value'> {
+export interface DropdownFormProps
+  extends Omit<DropdownProps, 'onChange' | 'value'> {
   required?: boolean;
   name: string;
   errors: any;
@@ -14,7 +15,7 @@ interface DropdownFormProps extends Omit<Props, 'onChange' | 'value'> {
   value?: any;
 }
 
-const DropdownForm: React.FC<DropdownFormProps> = ({
+function DropdownForm({
   value,
   clearError,
   errors,
@@ -24,7 +25,7 @@ const DropdownForm: React.FC<DropdownFormProps> = ({
   setValue,
   validate,
   ...rest
-}) => {
+}: DropdownFormProps) {
   const [valueDefault, setValueDefault] = useState<any>();
   const [message, setMessage] = useState('');
 
@@ -83,6 +84,6 @@ const DropdownForm: React.FC<DropdownFormProps> = ({
       }
     />
   );
-};
+}
 
 export default DropdownForm;

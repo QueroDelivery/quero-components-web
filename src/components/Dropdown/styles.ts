@@ -19,14 +19,12 @@ export const Container = styled.div<DropdownProps>`
   label {
     font-size: 14px;
     margin-left: 15px;
-    color: ${props =>
-      props.error
-        ? colors.brand20
-        : props.colorLabel
-        ? props.colorLabel
-        : colors.brand10};
-  }
+    color: ${props => {
+      if (props.error) return colors.brand20;
 
+      return colors.brand10;
+    }};
+  }
   /*!
  * # Semantic UI 2.4.0 - Dropdown
  * http://github.com/semantic-org/semantic-ui/

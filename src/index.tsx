@@ -7,8 +7,10 @@ import Calendar, { CalendarProps } from './components/Calendar/Calendar';
 import Card from './components/Card/Card';
 import Checkbox from './components/Checkbox/Checkbox';
 import Dialog from './components/Dialog/Dialog';
-import Dropdown from './components/Dropdown/Dropdown';
-import DropdownForm from './components/Dropdown/DropdownForm';
+import Dropdown, { DropdownProps } from './components/Dropdown/Dropdown';
+import DropdownForm, {
+  DropdownFormProps,
+} from './components/Dropdown/DropdownForm';
 import Input, { InputProps } from './components/Input/Input';
 import InputForm, { InputFormProps } from './components/Input/InputForm';
 import Loader, { LoaderProps } from './components/Loader/Loader';
@@ -53,6 +55,8 @@ export type {
   AccordionProps,
   ButtonProps,
   CalendarProps,
+  DropdownProps,
+  DropdownFormProps,
   InputProps,
   InputFormProps,
   LoaderProps,

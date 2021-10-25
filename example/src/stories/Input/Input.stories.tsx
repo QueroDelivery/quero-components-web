@@ -146,7 +146,7 @@ export default {
 const Template: Story<InputProps> = args => {
   return (
     <>
-      <Input {...args} type="date" />
+      <Input {...args} />
     </>
   );
 };
