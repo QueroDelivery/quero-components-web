@@ -6,7 +6,7 @@ import ButtonMain, { ButtonProps } from './components/ButtonMain/ButtonMain';
 import Calendar, { CalendarProps } from './components/Calendar/Calendar';
 import Card from './components/Card/Card';
 import Checkbox from './components/Checkbox/Checkbox';
-import Dialog from './components/Dialog/Dialog';
+import Dialog, { DialogProps } from './components/Dialog/Dialog';
 import Dropdown, { DropdownProps } from './components/Dropdown/Dropdown';
 import DropdownForm, {
   DropdownFormProps,
@@ -55,6 +55,7 @@ export type {
   AccordionProps,
   ButtonProps,
   CalendarProps,
+  DialogProps,
   DropdownProps,
   DropdownFormProps,
   InputProps,

@@ -1,10 +1,13 @@
 import { useState } from 'react';
-// also exported from '@storybook/react' if you can deal with breaking changes in 6.1
 import { Story, Meta } from '@storybook/react/types-6-0';
-import { ButtonMain, Dialog } from '@quero-delivery/quero-components-web';
-import { DialogProps } from './Interface';
+import {
+  ButtonMain,
+  Dialog,
+  DialogProps,
+} from '@quero-delivery/quero-components-web';
 import '@quero-delivery/quero-components-web/dist/index.css';
 import { action } from '@storybook/addon-actions';
+import React from 'react';
 
 export default {
   title: 'Components/Dialog',
@@ -51,6 +54,65 @@ export default {
         },
       },
     },
+    title: {
+      control: 'text',
+      description: 'Titulo do Dialog',
+      defaultValue: 'This is a title',
+      table: {
+        type: {
+          summary: 'string',
+        },
+      },
+    },
+    noBorder: {
+      control: 'boolean',
+      description: 'Controla a borda que separa header do conteudo do Dialog',
+      defaultValue: false,
+      table: {
+        defaultValue: {
+          summary: 'false',
+        },
+        type: {
+          summary: 'boolean',
+        },
+      },
+    },
+    closeIcon: {
+      control: 'boolean',
+      description: 'Mostra um icone(close) para fechar o Dialog',
+      defaultValue: false,
+
+      table: {
+        defaultValue: {
+          summary: 'false',
+        },
+        type: {
+          summary: 'number | string',
+        },
+      },
+    },
+    onReturn: {
+      control: 'function',
+      description: 'Função chamada ao clicar no botão de return',
+      defaultValue: () => {},
+      table: {
+        type: {
+          summary: 'function',
+        },
+      },
+    },
+    closeOnDimerClick: {
+      control: 'boolean',
+      description: 'Deseja fechar o Modal quando clicar fora da sua area?',
+      table: {
+        defaultValue: {
+          summary: 'true',
+        },
+        type: {
+          summary: 'boolean',
+        },
+      },
+    },
   },
 } as Meta;
 
@@ -64,7 +126,49 @@ const Template: Story<DialogProps> = args => {
           Lorem Ipsum "Neque porro quisquam est qui dolorem ipsum quia dolor sit
           amet, consectetur, adipisci velit..." "There is no one who loves pain
           itself, who seeks after it and wants to have it, simply because it is
-          pain..."
+          pain... Lorem Ipsum "Neque porro quisquam est qui dolorem ipsum quia
+          dolor sit amet, consectetur, adipisci velit..." "There is no one who
+          loves pain itself, who seeks after it and wants to have it, simply
+          because it is pain... Lorem Ipsum "Neque porro quisquam est qui
+          dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
+          "There is no one who loves pain itself, who seeks after it and wants
+          to have it, simply because it is pain... Lorem Ipsum "Neque porro
+          quisquam est qui dolorem ipsum quia dolor sit amet, consectetur,
+          adipisci velit..." "There is no one who loves pain itself, who seeks
+          after it and wants to have it, simply because it is pain... Lorem
+          Ipsum "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet,
+          consectetur, adipisci velit..." "There is no one who loves pain
+          itself, who seeks after it and wants to have it, simply because it is
+          pain... Lorem Ipsum "Neque porro quisquam est qui dolorem ipsum quia
+          dolor sit amet, consectetur, adipisci velit..." "There is no one who
+          loves pain itself, who seeks after it and wants to have it, simply
+          because it is pain... Lorem Ipsum "Neque porro quisquam est qui
+          dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
+          "There is no one who loves pain itself, who seeks after it and wants
+          to have it, simply because it is pain... Lorem Ipsum "Neque porro
+          quisquam est qui dolorem ipsum quia dolor sit amet, consectetur,
+          adipisci velit..." "There is no one who loves pain itself, who seeks
+          after it and wants to have it, simply because it is pain... Lorem
+          Ipsum "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet,
+          consectetur, adipisci velit..." "There is no one who loves pain
+          itself, who seeks after it and wants to have it, simply because it is
+          pain... Lorem Ipsum "Neque porro quisquam est qui dolorem ipsum quia
+          dolor sit amet, consectetur, adipisci velit..." "There is no one who
+          loves pain itself, who seeks after it and wants to have it, simply
+          because it is pain... Lorem Ipsum "Neque porro quisquam est qui
+          dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
+          "There is no one who loves pain itself, who seeks after it and wants
+          to have it, simply because it is pain... Lorem Ipsum "Neque porro
+          quisquam est qui dolorem ipsum quia dolor sit amet, consectetur,
+          adipisci velit..." "There is no one who loves pain itself, who seeks
+          after it and wants to have it, simply because it is pain... Lorem
+          Ipsum "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet,
+          consectetur, adipisci velit..." "There is no one who loves pain
+          itself, who seeks after it and wants to have it, simply because it is
+          pain... Lorem Ipsum "Neque porro quisquam est qui dolorem ipsum quia
+          dolor sit amet, consectetur, adipisci velit..." "There is no one who
+          loves pain itself, who seeks after it and wants to have it, simply
+          because it is pain...
         </Dialog>
       )}
     </>

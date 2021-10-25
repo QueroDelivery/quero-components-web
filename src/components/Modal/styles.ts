@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Z_INDEX_MODAL } from '../../helpers/constants';
 import { getMeasurement, sizesTypes } from '../../helpers/FnUtil';
 import { colors } from '../../styles/colors';
 
@@ -28,8 +29,6 @@ const sizeWidth = (size: sizesTypes) => {
       return '55%';
   }
 };
-
-const Z_INDEX_MODAL = 999;
 
 export const Background = styled.div`
   opacity: 0;
