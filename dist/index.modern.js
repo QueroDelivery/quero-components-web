@@ -6416,7 +6416,6 @@ const Container$4 = styled.div(_t$8 || (_t$8 = _$8`
     margin-left: 15px;
     color: ${0};
   }
-
   /*!
  * # Semantic UI 2.4.0 - Dropdown
  * http://github.com/semantic-org/semantic-ui/
@@ -7942,11 +7941,14 @@ const Container$4 = styled.div(_t$8 || (_t$8 = _$8`
     font-size: 10px;
     color: ${0};
   }
-`), props => props.error ? '' : '20px', props => props.error ? colors.brand20 : props.colorLabel ? props.colorLabel : colors.brand10, props => props.textAlign && props.textAlign === 'center' ? 'center' : 'left', colors.gray20, props => props.line ? '0' : '0.28571429rem', props => props.line ? 'none' : '', props => props.line ? 'none' : '', props => props.line ? 'none' : '', props => props.brand ? colors.brand10 : colors.gray20, props => props.brand ? colors.brandLight : colors.white, props => props.brand ? colors.brand10 : colors.gray20, props => props.brand ? colors.brandLight : props.line ? colors.gray10 : 'rgba(34, 36, 38, 0.15)', props => props.line ? 0 : '0.28571429rem', props => props.line ? 'none' : '20px', props => props.line ? 'none' : '', props => props.line ? 'none' : '', props => props.line ? 'none' : '', props => props.brand ? colors.brandLight : colors.gray10, props => props.brand ? colors.brandTransparent : colors.gray10, props => props.error ? colors.brand20 : props.brand ? colors.brandLight : colors.gray10, props => props.error ? colors.brand20 : props.brand ? colors.brandLight : colors.gray10, props => props.error ? colors.brand20 : props.brand ? colors.brandLight : colors.gray10, props => props.brand ? colors.brandDark : colors.black, props => props.error ? colors.brand20 : props.brand ? colors.brandLight : colors.gray10, props => props.error ? colors.brand20 : props.brand ? colors.brandLight : colors.gray10, props => props.brand ? colors.brand10 : colors.gray20, props => props.textAlign && props.textAlign === 'center' ? 'center' : 'left', props => props.brand ? colors.brandDark : colors.black, props => props.brand ? colors.brandTransparent : colors.gray10, props => props.brand ? colors.brandLight : colors.gray20, props => props.brand ? colors.brand10 : colors.card, props => props.brand ? colors.brandDark : colors.black, props => props.brand ? colors.brandDark : colors.black, colors.brand10, props => props.brand ? colors.brand10 : colors.default20, props => props.brand ? colors.brand10 : colors.default20, props => props.brand ? colors.brandDark : colors.black, props => props.line ? colors.white : colors.error, colors.brand20, colors.brand20, colors.brand20, colors.brand20, colors.brand20, colors.error, colors.error, colors.brand10, colors.brandTransparent2, colors.brand20);
+`), props => props.error ? '' : '20px', props => {
+  if (props.error) return colors.brand20;
+  return colors.brand10;
+}, props => props.textAlign && props.textAlign === 'center' ? 'center' : 'left', colors.gray20, props => props.line ? '0' : '0.28571429rem', props => props.line ? 'none' : '', props => props.line ? 'none' : '', props => props.line ? 'none' : '', props => props.brand ? colors.brand10 : colors.gray20, props => props.brand ? colors.brandLight : colors.white, props => props.brand ? colors.brand10 : colors.gray20, props => props.brand ? colors.brandLight : props.line ? colors.gray10 : 'rgba(34, 36, 38, 0.15)', props => props.line ? 0 : '0.28571429rem', props => props.line ? 'none' : '20px', props => props.line ? 'none' : '', props => props.line ? 'none' : '', props => props.line ? 'none' : '', props => props.brand ? colors.brandLight : colors.gray10, props => props.brand ? colors.brandTransparent : colors.gray10, props => props.error ? colors.brand20 : props.brand ? colors.brandLight : colors.gray10, props => props.error ? colors.brand20 : props.brand ? colors.brandLight : colors.gray10, props => props.error ? colors.brand20 : props.brand ? colors.brandLight : colors.gray10, props => props.brand ? colors.brandDark : colors.black, props => props.error ? colors.brand20 : props.brand ? colors.brandLight : colors.gray10, props => props.error ? colors.brand20 : props.brand ? colors.brandLight : colors.gray10, props => props.brand ? colors.brand10 : colors.gray20, props => props.textAlign && props.textAlign === 'center' ? 'center' : 'left', props => props.brand ? colors.brandDark : colors.black, props => props.brand ? colors.brandTransparent : colors.gray10, props => props.brand ? colors.brandLight : colors.gray20, props => props.brand ? colors.brand10 : colors.card, props => props.brand ? colors.brandDark : colors.black, props => props.brand ? colors.brandDark : colors.black, colors.brand10, props => props.brand ? colors.brand10 : colors.default20, props => props.brand ? colors.brand10 : colors.default20, props => props.brand ? colors.brandDark : colors.black, props => props.line ? colors.white : colors.error, colors.brand20, colors.brand20, colors.brand20, colors.brand20, colors.brand20, colors.error, colors.error, colors.brand10, colors.brandTransparent2, colors.brand20);
 
-const _excluded$7 = ["options", "brand", "textAlign", "errorMessage", "label", "colorLabel", "line"];
+const _excluded$7 = ["options", "brand", "textAlign", "errorMessage", "label", "colorLabel", "line", "containerClassName", "containerStyle", "errorClassName", "errorStyle", "labelClassName", "labelStyle"];
 
-const Dropdown = _ref => {
+function Dropdown(_ref) {
   let {
     options,
     brand,
@@ -7954,7 +7956,13 @@ const Dropdown = _ref => {
     errorMessage,
     label,
     colorLabel,
-    line
+    line,
+    containerClassName,
+    containerStyle,
+    errorClassName,
+    errorStyle,
+    labelClassName,
+    labelStyle
   } = _ref,
       rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$7);
 
@@ -7963,24 +7971,33 @@ const Dropdown = _ref => {
     textAlign: textAlign,
     error: errorMessage,
     colorLabel: colorLabel,
-    line: line
+    line: line,
+    className: containerClassName,
+    style: containerStyle,
+    role: "group"
   }, {
-    children: [label && jsx("label", {
+    children: [label && jsx("label", Object.assign({
+      className: labelClassName,
+      style: labelStyle
+    }, {
       children: label
-    }, void 0), jsx(Dropdown$1, Object.assign({}, rest, {
+    }), void 0), jsx(Dropdown$1, Object.assign({}, rest, {
       selection: true,
       noResultsMessage: "Nenhum resultado encontrado",
-      error: !!errorMessage,
+      error: !!errorMessage || rest.error,
       options: options
-    }), void 0), errorMessage && jsx("small", {
+    }), void 0), errorMessage && jsx("small", Object.assign({
+      className: errorClassName,
+      style: errorStyle
+    }, {
       children: errorMessage
-    }, void 0)]
+    }), void 0)]
   }), void 0);
-};
+}
 
 const _excluded$6 = ["value", "clearError", "errors", "name", "register", "required", "setValue", "validate"];
 
-const DropdownForm = _ref => {
+function DropdownForm(_ref) {
   let {
     value,
     clearError,
@@ -8036,7 +8053,7 @@ const DropdownForm = _ref => {
     line: rest.line,
     errorMessage: errors ? errors.type === 'required' ? 'Obrigatório' : `${message}` : ''
   }), void 0);
-};
+}
 
 let _$7 = t => t,
     _t$7,

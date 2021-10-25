@@ -1,11 +1,11 @@
-import React from 'react';
-import { DropdownProps } from 'semantic-ui-react';
-interface OptionsProps {
+import { CSSProperties } from 'react';
+import { DropdownProps as SemanticDropdownProps } from 'semantic-ui-react';
+export interface OptionsProps {
     key: string | number;
     text: string;
     value: any;
 }
-export interface Props extends DropdownProps {
+export interface DropdownProps extends SemanticDropdownProps {
     options?: OptionsProps[];
     brand?: boolean;
     textAlign?: 'center';
@@ -13,6 +13,12 @@ export interface Props extends DropdownProps {
     label?: string;
     colorLabel?: string;
     line?: boolean;
+    containerClassName?: string;
+    containerStyle?: CSSProperties;
+    errorClassName?: string;
+    errorStyle?: CSSProperties;
+    labelClassName?: string;
+    labelStyle?: CSSProperties;
 }
-declare const Dropdown: React.FC<Props>;
+declare function Dropdown({ options, brand, textAlign, errorMessage, label, colorLabel, line, containerClassName, containerStyle, errorClassName, errorStyle, labelClassName, labelStyle, ...rest }: DropdownProps): JSX.Element;
 export default Dropdown;
