@@ -5,7 +5,7 @@ import Accordion, { AccordionProps } from './components/Accordion/Accordion';
 import ButtonMain, { ButtonProps } from './components/ButtonMain/ButtonMain';
 import Calendar, { CalendarProps } from './components/Calendar/Calendar';
 import Card from './components/Card/Card';
-import Checkbox from './components/Checkbox/Checkbox';
+import Checkbox, { CheckboxProps } from './components/Checkbox/Checkbox';
 import Dialog, { DialogProps } from './components/Dialog/Dialog';
 import Dropdown, { DropdownProps } from './components/Dropdown/Dropdown';
 import DropdownForm, {
@@ -30,8 +30,8 @@ import TextAreaForm, {
 export {
   Accordion,
   ButtonMain,
-  Card,
   Calendar,
+  Card,
   Checkbox,
   Dialog,
   Dropdown,
@@ -55,6 +55,7 @@ export type {
   AccordionProps,
   ButtonProps,
   CalendarProps,
+  CheckboxProps,
   DialogProps,
   DropdownProps,
   DropdownFormProps,

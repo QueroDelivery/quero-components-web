@@ -1,49 +1,51 @@
-import React, { InputHTMLAttributes } from 'react';
+import { CSSProperties, InputHTMLAttributes } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import { Container } from './styles';
+import { sizesTypes } from '../../helpers/FnUtil';
 
-export interface InputProps
+export interface CheckboxProps
   extends Omit<InputHTMLAttributes<HTMLInputElement>, 'type'> {
   label?: string;
-  labelStyle?: React.CSSProperties;
-  sizeBox?:
-    | 'mini'
-    | 'tiny'
-    | 'small'
-    | 'medium'
-    | 'large'
-    | 'big'
-    | 'huge'
-    | 'massive';
+  labelClassName?: string;
+  labelStyle?: CSSProperties;
+  sizeBox?: sizesTypes;
   onChange?: () => void;
+  containerClassName?: string;
+  containerStyle?: CSSProperties;
 }
 
-const Checkbox: React.FC<InputProps> = ({
+function Checkbox({
   label,
+  labelClassName,
   labelStyle,
   sizeBox,
+  containerClassName,
+  containerStyle,
   ...rest
-}) => {
+}: CheckboxProps) {
   return (
     <Container
-      onClick={() =>
-        !rest.disabled ? (rest.onChange ? rest.onChange() : null) : null
-      }
+      onClick={!rest.disabled ? rest.onChange : undefined}
       disabled={rest.disabled}
       sizeBox={sizeBox}
       checked={rest.checked}
+      className={containerClassName}
+      style={containerStyle}
+      role="group"
     >
-      <input type="checkbox" {...rest} />
+      <input type="checkbox" {...rest} data-testid="checkbox" />
       <div>
-        <span>
+        <span aria-label="check">
           <FontAwesomeIcon icon={faCheck} />
         </span>
-        <label style={labelStyle}>{label}</label>
+        <label className={labelClassName} style={labelStyle}>
+          {label}
+        </label>
       </div>
     </Container>
   );
-};
+}
 
 export default Checkbox;
