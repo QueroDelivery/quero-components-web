@@ -2871,7 +2871,7 @@ var Accordion = function Accordion(_ref) {
   }, void 0);
 };
 
-var Sizes$3 = {
+var Sizes$2 = {
   xs: 'xs',
   sm: 'sm',
   md: 'md',
@@ -2891,19 +2891,19 @@ var getMeasurement = function getMeasurement(size, defaultValue) {
 };
 var getFontSize = function getFontSize(defaultSize, sizeBase) {
   switch (defaultSize) {
-    case Sizes$3.xs:
+    case Sizes$2.xs:
       return "calc(" + getMeasurement(sizeBase) + " - 0.25rem)";
 
-    case Sizes$3.sm:
+    case Sizes$2.sm:
       return "calc(" + getMeasurement(sizeBase) + " - 0.125rem)";
 
-    case Sizes$3.md:
+    case Sizes$2.md:
       return getMeasurement(sizeBase);
 
-    case Sizes$3.lg:
+    case Sizes$2.lg:
       return "calc(" + getMeasurement(sizeBase) + " + 0.125rem)";
 
-    case Sizes$3.xl:
+    case Sizes$2.xl:
       return "calc(" + getMeasurement(sizeBase) + " + 0.25rem)";
 
     default:
@@ -4715,263 +4715,213 @@ var Card = function Card(_ref) {
 };
 
 var _templateObject$a;
-var Sizes$2 = {
-  mini: 'mini',
-  tiny: 'tiny',
-  small: 'small',
-  medium: 'medium',
-  large: 'large',
-  big: 'big',
-  huge: 'huge',
-  massive: 'massive'
-};
 
 var size$1 = function size(_size) {
   switch (_size) {
-    case Sizes$2.mini:
-      return '10px';
+    case Sizes$2.xs:
+      return '0.625rem';
 
-    case Sizes$2.tiny:
-      return '12px';
+    case Sizes$2.sm:
+      return '0.875rem';
 
-    case Sizes$2.small:
-      return '14px';
+    case Sizes$2.md:
+      return '1.0625rem';
 
-    case Sizes$2.medium:
-      return '17px';
+    case Sizes$2.lg:
+      return '1.4375rem';
 
-    case Sizes$2.large:
-      return '20px';
-
-    case Sizes$2.big:
-      return '23px';
-
-    case Sizes$2.huge:
-      return '26px';
-
-    case Sizes$2.massive:
-      return '30px';
+    case Sizes$2.xl:
+      return '1.875rem';
 
     default:
-      return _size;
+      return '1.0625rem';
   }
 };
 
 var sizeChecked$1 = function sizeChecked(size) {
   switch (size) {
-    case Sizes$2.mini:
-      return '8px';
+    case Sizes$2.xs:
+      return '0.5rem';
 
-    case Sizes$2.tiny:
-      return '10px';
+    case Sizes$2.sm:
+      return '0.6875rem';
 
-    case Sizes$2.small:
-      return '11px';
+    case Sizes$2.md:
+      return '0.8125rem';
 
-    case Sizes$2.medium:
-      return '13px';
+    case Sizes$2.lg:
+      return '1.1875rem';
 
-    case Sizes$2.large:
-      return '16px';
-
-    case Sizes$2.big:
-      return '19px';
-
-    case Sizes$2.huge:
-      return '21px';
-
-    case Sizes$2.massive:
-      return '23px';
+    case Sizes$2.xl:
+      return '1.4375rem';
 
     default:
-      return size;
+      return '0.8125rem';
   }
 };
 
 var marginLeft = function marginLeft(size) {
   switch (size) {
-    case Sizes$2.mini:
-      return '1px';
+    case Sizes$2.xs:
+      return '0.0625rem';
 
-    case Sizes$2.tiny:
-      return '1.2px';
+    case Sizes$2.sm:
+      return '0.0875rem';
 
-    case Sizes$2.small:
-      return '1.4px';
+    case Sizes$2.md:
+      return '0.125rem';
 
-    case Sizes$2.medium:
-      return '2px';
+    case Sizes$2.lg:
+      return '0.1875rem';
 
-    case Sizes$2.large:
-      return '2px';
-
-    case Sizes$2.big:
-      return '2px';
-
-    case Sizes$2.huge:
-      return '3px';
-
-    case Sizes$2.massive:
-      return '4px';
+    case Sizes$2.xl:
+      return '0.25rem';
 
     default:
-      return size;
+      return '0.125rem';
   }
 };
 
 var labelSize$1 = function labelSize(size) {
   switch (size) {
-    case Sizes$2.mini:
+    case Sizes$2.xs:
       return '10px';
 
-    case Sizes$2.tiny:
+    case Sizes$2.sm:
       return '13px';
 
-    case Sizes$2.small:
-      return '14px';
-
-    case Sizes$2.medium:
+    case Sizes$2.md:
       return '16px';
 
-    case Sizes$2.large:
-      return '18px';
-
-    case Sizes$2.big:
+    case Sizes$2.lg:
       return '20px';
 
-    case Sizes$2.huge:
-      return '22px';
-
-    case Sizes$2.massive:
+    case Sizes$2.xl:
       return '24px';
 
     default:
-      return size;
+      return '16px';
   }
 };
 
 var marginRight = function marginRight(size) {
   switch (size) {
-    case Sizes$2.mini:
-      return '5px';
+    case Sizes$2.xs:
+      return '0.3125rem';
 
-    case Sizes$2.tiny:
-      return '6px';
+    case Sizes$2.sm:
+      return '0.4375rem';
 
-    case Sizes$2.small:
-      return '7px';
+    case Sizes$2.md:
+      return '0.5rem';
 
-    case Sizes$2.medium:
-      return '8px';
+    case Sizes$2.lg:
+      return '0.625rem';
 
-    case Sizes$2.large:
-      return '9px';
-
-    case Sizes$2.big:
-      return '10px';
-
-    case Sizes$2.huge:
-      return '11px';
-
-    case Sizes$2.massive:
-      return '12px';
+    case Sizes$2.xl:
+      return '0.75rem';
 
     default:
-      return size;
+      return '0.5rem';
   }
 };
 
-var Container$5 = styled__default["default"].div(_templateObject$a || (_templateObject$a = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  display: flex;\n  align-items: center;\n\n  > input {\n    display: none;\n  }\n\n  label {\n    font-size: ", ";\n    color: ", ";\n    cursor: ", ";\n    opacity: ", ";\n  }\n\n  > input + div {\n    position: relative;\n    cursor: ", ";\n    opacity: ", ";\n    display: flex;\n    align-items: center;\n\n    &:before {\n      content: '';\n      position: absolute;\n      width: ", ";\n      height: ", ";\n      border: 1px solid ", ";\n      background: ", ";\n      border-radius: 5px;\n    }\n    &:after {\n      content: ' ';\n      position: absolute;\n      width: ", ";\n      height: ", ";\n      border: 1px solid ", ";\n      background: ", ";\n      border-radius: 5px;\n      color: ", ";\n      text-align: center;\n      font-size: 12px;\n    }\n  }\n  > input:not(:checked) + div {\n    &:after {\n      opacity: 0;\n      transform: scale(0);\n    }\n  }\n  > input:checked + div {\n    &:after {\n      opacity: 1;\n      transform: scale(1);\n    }\n  }\n\n  span {\n    margin-left: ", ";\n    margin-right: ", ";\n    font-size: ", ";\n    color: ", ";\n    z-index: 1;\n  }\n"])), function (props) {
+var Container$5 = styled__default["default"].div(_templateObject$a || (_templateObject$a = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  display: flex;\n  align-items: center;\n\n  > input {\n    display: none;\n  }\n\n  label,\n  input + div {\n    cursor: ", ";\n    opacity: ", ";\n  }\n\n  label {\n    font-size: ", ";\n    color: ", ";\n  }\n\n  > input + div {\n    position: relative;\n\n    display: flex;\n    align-items: center;\n\n    &:before {\n      content: '';\n      position: absolute;\n      width: ", ";\n      height: ", ";\n      border: 1px solid ", ";\n      background: ", ";\n      border-radius: 5px;\n    }\n    &:after {\n      content: ' ';\n      position: absolute;\n      width: ", ";\n      height: ", ";\n      border: 1px solid ", ";\n      background: ", ";\n      border-radius: 5px;\n      color: ", ";\n      text-align: center;\n      font-size: 12px;\n    }\n  }\n  > input:not(:checked) + div {\n    &:after {\n      opacity: 0;\n      transform: scale(0);\n    }\n  }\n  > input:checked + div {\n    &:after {\n      opacity: 1;\n      transform: scale(1);\n    }\n  }\n\n  span {\n    margin-left: ", ";\n    margin-right: ", ";\n    font-size: ", ";\n    color: ", ";\n    z-index: 1;\n  }\n"])), function (props) {
+  return props.disabled ? 'default' : 'pointer';
+}, function (props) {
+  return props.disabled ? 0.5 : 1;
+}, function (props) {
   if (props.sizeBox) {
     return labelSize$1(props.sizeBox);
   }
 
-  return '17px';
+  return '1.0625rem';
 }, colors.gray20, function (props) {
-  return props.disabled ? 'default' : 'pointer';
-}, function (props) {
-  return props.disabled ? 0.5 : 1;
-}, function (props) {
-  return props.disabled ? 'default' : 'pointer';
-}, function (props) {
-  return props.disabled ? 0.5 : 1;
+  if (props.sizeBox) {
+    return size$1(props.sizeBox);
+  }
+
+  return '1.0625rem';
 }, function (props) {
   if (props.sizeBox) {
     return size$1(props.sizeBox);
   }
 
-  return '17px';
-}, function (props) {
-  if (props.sizeBox) {
-    return size$1(props.sizeBox);
-  }
-
-  return '17px';
+  return '1.0625rem';
 }, colors.default20, colors.default20, function (props) {
   if (props.sizeBox) {
     return size$1(props.sizeBox);
   }
 
-  return '17px';
+  return '1.0625rem';
 }, function (props) {
   if (props.sizeBox) {
     return size$1(props.sizeBox);
   }
 
-  return '17px';
+  return '1.0625rem';
 }, colors.brandDark, colors.brandDark, colors.white, function (props) {
   if (props.sizeBox) {
     return marginLeft(props.sizeBox);
   }
 
-  return '2.5px';
+  return '0.1563rem';
 }, function (props) {
   if (props.sizeBox) {
     return marginRight(props.sizeBox);
   }
 
-  return '8px';
+  return '0.5rem';
 }, function (props) {
   if (props.sizeBox) {
     return sizeChecked$1(props.sizeBox);
   }
 
-  return '13px';
+  return '0.8125rem';
 }, function (props) {
   return props.checked ? colors.white : colors.default20;
 });
 
-var _excluded$8 = ["label", "labelStyle", "sizeBox"];
+var _excluded$8 = ["label", "labelClassName", "labelStyle", "sizeBox", "containerClassName", "containerStyle"];
 
-var Checkbox = function Checkbox(_ref) {
+function Checkbox(_ref) {
   var label = _ref.label,
+      labelClassName = _ref.labelClassName,
       labelStyle = _ref.labelStyle,
       sizeBox = _ref.sizeBox,
+      containerClassName = _ref.containerClassName,
+      containerStyle = _ref.containerStyle,
       rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$8);
 
   return jsxRuntime.jsxs(Container$5, Object.assign({
-    onClick: function onClick() {
-      return !rest.disabled ? rest.onChange ? rest.onChange() : null : null;
-    },
+    onClick: !rest.disabled ? rest.onChange : undefined,
     disabled: rest.disabled,
     sizeBox: sizeBox,
-    checked: rest.checked
+    checked: rest.checked,
+    className: containerClassName,
+    style: containerStyle,
+    role: "group"
   }, {
     children: [jsxRuntime.jsx("input", Object.assign({
       type: "checkbox"
-    }, rest), void 0), jsxRuntime.jsxs("div", {
-      children: [jsxRuntime.jsx("span", {
+    }, rest, {
+      "data-testid": "checkbox"
+    }), void 0), jsxRuntime.jsxs("div", {
+      children: [jsxRuntime.jsx("span", Object.assign({
+        "aria-label": "check"
+      }, {
         children: jsxRuntime.jsx(FontAwesomeIcon, {
           icon: faCheck
         }, void 0)
-      }, void 0), jsxRuntime.jsx("label", Object.assign({
+      }), void 0), jsxRuntime.jsx("label", Object.assign({
+        className: labelClassName,
         style: labelStyle
       }, {
         children: label
       }), void 0)]
     }, void 0)]
   }), void 0);
-};
+}
 
 var Z_INDEX_MODAL = 999;
 var Z_INDEX_DIALOG = 998;

@@ -4,7 +4,7 @@ import Accordion, { AccordionProps } from './components/Accordion/Accordion';
 import ButtonMain, { ButtonProps } from './components/ButtonMain/ButtonMain';
 import Calendar, { CalendarProps } from './components/Calendar/Calendar';
 import Card from './components/Card/Card';
-import Checkbox from './components/Checkbox/Checkbox';
+import Checkbox, { CheckboxProps } from './components/Checkbox/Checkbox';
 import Dialog, { DialogProps } from './components/Dialog/Dialog';
 import Dropdown, { DropdownProps } from './components/Dropdown/Dropdown';
 import DropdownForm, { DropdownFormProps } from './components/Dropdown/DropdownForm';
@@ -19,5 +19,5 @@ import Pagination, { PaginationProps } from './components/Pagination/Pagination'
 import Table, { TableComponentProps } from './components/Table/Table';
 import TextArea, { TextAreaProps } from './components/TextArea/TextArea';
 import TextAreaForm, { TextAreaFormProps } from './components/TextArea/TextAreaForm';
-export { Accordion, ButtonMain, Card, Calendar, Checkbox, Dialog, Dropdown, DropdownForm, Input, Input as InputLine, InputForm, InputForm as InputLineForm, Loader, Modal, MoreLess, Radio, Selection, Pagination, Table, TextArea, TextAreaForm, };
-export type { AccordionProps, ButtonProps, CalendarProps, DialogProps, DropdownProps, DropdownFormProps, InputProps, InputFormProps, LoaderProps, ModalProps, MoreLessProps, PaginationProps, RadioProps, SelectionProps, TableComponentProps, TextAreaProps, TextAreaFormProps, };
+export { Accordion, ButtonMain, Calendar, Card, Checkbox, Dialog, Dropdown, DropdownForm, Input, Input as InputLine, InputForm, InputForm as InputLineForm, Loader, Modal, MoreLess, Radio, Selection, Pagination, Table, TextArea, TextAreaForm, };
+export type { AccordionProps, ButtonProps, CalendarProps, CheckboxProps, DialogProps, DropdownProps, DropdownFormProps, InputProps, InputFormProps, LoaderProps, ModalProps, MoreLessProps, PaginationProps, RadioProps, SelectionProps, TableComponentProps, TextAreaProps, TextAreaFormProps, };

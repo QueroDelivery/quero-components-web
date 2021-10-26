@@ -2906,7 +2906,7 @@ function _objectWithoutPropertiesLoose$2(source, excluded) {
   return target;
 }
 
-const Sizes$3 = {
+const Sizes$2 = {
   xs: 'xs',
   sm: 'sm',
   md: 'md',
@@ -2926,19 +2926,19 @@ const getMeasurement = (size, defaultValue) => {
 };
 const getFontSize = (defaultSize, sizeBase) => {
   switch (defaultSize) {
-    case Sizes$3.xs:
+    case Sizes$2.xs:
       return `calc(${getMeasurement(sizeBase)} - 0.25rem)`;
 
-    case Sizes$3.sm:
+    case Sizes$2.sm:
       return `calc(${getMeasurement(sizeBase)} - 0.125rem)`;
 
-    case Sizes$3.md:
+    case Sizes$2.md:
       return getMeasurement(sizeBase);
 
-    case Sizes$3.lg:
+    case Sizes$2.lg:
       return `calc(${getMeasurement(sizeBase)} + 0.125rem)`;
 
-    case Sizes$3.xl:
+    case Sizes$2.xl:
       return `calc(${getMeasurement(sizeBase)} + 0.25rem)`;
 
     default:
@@ -5884,169 +5884,114 @@ const Card = _ref => {
 
 let _$a = t => t,
     _t$a;
-const Sizes$2 = {
-  mini: 'mini',
-  tiny: 'tiny',
-  small: 'small',
-  medium: 'medium',
-  large: 'large',
-  big: 'big',
-  huge: 'huge',
-  massive: 'massive'
-};
 
 const size$1 = size => {
   switch (size) {
-    case Sizes$2.mini:
-      return '10px';
+    case Sizes$2.xs:
+      return '0.625rem';
 
-    case Sizes$2.tiny:
-      return '12px';
+    case Sizes$2.sm:
+      return '0.875rem';
 
-    case Sizes$2.small:
-      return '14px';
+    case Sizes$2.md:
+      return '1.0625rem';
 
-    case Sizes$2.medium:
-      return '17px';
+    case Sizes$2.lg:
+      return '1.4375rem';
 
-    case Sizes$2.large:
-      return '20px';
-
-    case Sizes$2.big:
-      return '23px';
-
-    case Sizes$2.huge:
-      return '26px';
-
-    case Sizes$2.massive:
-      return '30px';
+    case Sizes$2.xl:
+      return '1.875rem';
 
     default:
-      return size;
+      return '1.0625rem';
   }
 };
 
 const sizeChecked$1 = size => {
   switch (size) {
-    case Sizes$2.mini:
-      return '8px';
+    case Sizes$2.xs:
+      return '0.5rem';
 
-    case Sizes$2.tiny:
-      return '10px';
+    case Sizes$2.sm:
+      return '0.6875rem';
 
-    case Sizes$2.small:
-      return '11px';
+    case Sizes$2.md:
+      return '0.8125rem';
 
-    case Sizes$2.medium:
-      return '13px';
+    case Sizes$2.lg:
+      return '1.1875rem';
 
-    case Sizes$2.large:
-      return '16px';
-
-    case Sizes$2.big:
-      return '19px';
-
-    case Sizes$2.huge:
-      return '21px';
-
-    case Sizes$2.massive:
-      return '23px';
+    case Sizes$2.xl:
+      return '1.4375rem';
 
     default:
-      return size;
+      return '0.8125rem';
   }
 };
 
 const marginLeft = size => {
   switch (size) {
-    case Sizes$2.mini:
-      return '1px';
+    case Sizes$2.xs:
+      return '0.0625rem';
 
-    case Sizes$2.tiny:
-      return '1.2px';
+    case Sizes$2.sm:
+      return '0.0875rem';
 
-    case Sizes$2.small:
-      return '1.4px';
+    case Sizes$2.md:
+      return '0.125rem';
 
-    case Sizes$2.medium:
-      return '2px';
+    case Sizes$2.lg:
+      return '0.1875rem';
 
-    case Sizes$2.large:
-      return '2px';
-
-    case Sizes$2.big:
-      return '2px';
-
-    case Sizes$2.huge:
-      return '3px';
-
-    case Sizes$2.massive:
-      return '4px';
+    case Sizes$2.xl:
+      return '0.25rem';
 
     default:
-      return size;
+      return '0.125rem';
   }
 };
 
 const labelSize$1 = size => {
   switch (size) {
-    case Sizes$2.mini:
+    case Sizes$2.xs:
       return '10px';
 
-    case Sizes$2.tiny:
+    case Sizes$2.sm:
       return '13px';
 
-    case Sizes$2.small:
-      return '14px';
-
-    case Sizes$2.medium:
+    case Sizes$2.md:
       return '16px';
 
-    case Sizes$2.large:
-      return '18px';
-
-    case Sizes$2.big:
+    case Sizes$2.lg:
       return '20px';
 
-    case Sizes$2.huge:
-      return '22px';
-
-    case Sizes$2.massive:
+    case Sizes$2.xl:
       return '24px';
 
     default:
-      return size;
+      return '16px';
   }
 };
 
 const marginRight = size => {
   switch (size) {
-    case Sizes$2.mini:
-      return '5px';
+    case Sizes$2.xs:
+      return '0.3125rem';
 
-    case Sizes$2.tiny:
-      return '6px';
+    case Sizes$2.sm:
+      return '0.4375rem';
 
-    case Sizes$2.small:
-      return '7px';
+    case Sizes$2.md:
+      return '0.5rem';
 
-    case Sizes$2.medium:
-      return '8px';
+    case Sizes$2.lg:
+      return '0.625rem';
 
-    case Sizes$2.large:
-      return '9px';
-
-    case Sizes$2.big:
-      return '10px';
-
-    case Sizes$2.huge:
-      return '11px';
-
-    case Sizes$2.massive:
-      return '12px';
+    case Sizes$2.xl:
+      return '0.75rem';
 
     default:
-      return size;
+      return '0.5rem';
   }
 };
 
@@ -6059,17 +6004,20 @@ const Container$5 = styled.div(_t$a || (_t$a = _$a`
     display: none;
   }
 
-  label {
-    font-size: ${0};
-    color: ${0};
+  label,
+  input + div {
     cursor: ${0};
     opacity: ${0};
   }
 
+  label {
+    font-size: ${0};
+    color: ${0};
+  }
+
   > input + div {
     position: relative;
-    cursor: ${0};
-    opacity: ${0};
+
     display: flex;
     align-items: center;
 
@@ -6115,87 +6063,98 @@ const Container$5 = styled.div(_t$a || (_t$a = _$a`
     color: ${0};
     z-index: 1;
   }
-`), props => {
+`), props => props.disabled ? 'default' : 'pointer', props => props.disabled ? 0.5 : 1, props => {
   if (props.sizeBox) {
     return labelSize$1(props.sizeBox);
   }
 
-  return '17px';
-}, colors.gray20, props => props.disabled ? 'default' : 'pointer', props => props.disabled ? 0.5 : 1, props => props.disabled ? 'default' : 'pointer', props => props.disabled ? 0.5 : 1, props => {
+  return '1.0625rem';
+}, colors.gray20, props => {
   if (props.sizeBox) {
     return size$1(props.sizeBox);
   }
 
-  return '17px';
+  return '1.0625rem';
 }, props => {
   if (props.sizeBox) {
     return size$1(props.sizeBox);
   }
 
-  return '17px';
+  return '1.0625rem';
 }, colors.default20, colors.default20, props => {
   if (props.sizeBox) {
     return size$1(props.sizeBox);
   }
 
-  return '17px';
+  return '1.0625rem';
 }, props => {
   if (props.sizeBox) {
     return size$1(props.sizeBox);
   }
 
-  return '17px';
+  return '1.0625rem';
 }, colors.brandDark, colors.brandDark, colors.white, props => {
   if (props.sizeBox) {
     return marginLeft(props.sizeBox);
   }
 
-  return '2.5px';
+  return '0.1563rem';
 }, props => {
   if (props.sizeBox) {
     return marginRight(props.sizeBox);
   }
 
-  return '8px';
+  return '0.5rem';
 }, props => {
   if (props.sizeBox) {
     return sizeChecked$1(props.sizeBox);
   }
 
-  return '13px';
+  return '0.8125rem';
 }, props => props.checked ? colors.white : colors.default20);
 
-const _excluded$8 = ["label", "labelStyle", "sizeBox"];
+const _excluded$8 = ["label", "labelClassName", "labelStyle", "sizeBox", "containerClassName", "containerStyle"];
 
-const Checkbox = _ref => {
+function Checkbox(_ref) {
   let {
     label,
+    labelClassName,
     labelStyle,
-    sizeBox
+    sizeBox,
+    containerClassName,
+    containerStyle
   } = _ref,
       rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$8);
 
   return jsxs(Container$5, Object.assign({
-    onClick: () => !rest.disabled ? rest.onChange ? rest.onChange() : null : null,
+    onClick: !rest.disabled ? rest.onChange : undefined,
     disabled: rest.disabled,
     sizeBox: sizeBox,
-    checked: rest.checked
+    checked: rest.checked,
+    className: containerClassName,
+    style: containerStyle,
+    role: "group"
   }, {
     children: [jsx("input", Object.assign({
       type: "checkbox"
-    }, rest), void 0), jsxs("div", {
-      children: [jsx("span", {
+    }, rest, {
+      "data-testid": "checkbox"
+    }), void 0), jsxs("div", {
+      children: [jsx("span", Object.assign({
+        "aria-label": "check"
+      }, {
         children: jsx(FontAwesomeIcon, {
           icon: faCheck
         }, void 0)
-      }, void 0), jsx("label", Object.assign({
+      }), void 0), jsx("label", Object.assign({
+        className: labelClassName,
         style: labelStyle
       }, {
         children: label
       }), void 0)]
     }, void 0)]
   }), void 0);
-};
+}
 
 const Z_INDEX_MODAL = 999;
 const Z_INDEX_DIALOG = 998;
