@@ -1,7 +1,7 @@
+import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 import { action } from '@storybook/addon-actions';
-import { Card } from '@quero-delivery/quero-components-web';
-import { CardProps } from './Interface';
+import { Card, CardProps } from '@quero-delivery/quero-components-web';
 import '@quero-delivery/quero-components-web/dist/index.css';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
 
@@ -16,6 +16,9 @@ export default {
       },
       description: 'Tipos do Card',
       table: {
+        defaultValue: {
+          summary: 'shadow',
+        },
         type: {
           summary: 'shadow | button | min-shadow | border | none',
         },
@@ -275,7 +278,9 @@ export const CardWithComplement = Template.bind({});
 CardWithComplement.args = {
   type: 'border',
   text: 'Escreve Aqui',
-  complement: <p style={{ cursor: 'pointer' }}> Complement </p>,
+  complement: (
+    <p style={{ cursor: 'pointer', padding: '20px 0' }}> Complement </p>
+  ),
 };
 
 CardWithComplement.parameters = {
@@ -284,7 +289,7 @@ CardWithComplement.parameters = {
       code: `<Card
       type="shadow"
       text="Escreve Aqui"
-      component={<p style={{ cursor: "pointer" }}> Complement </p>}
+      component={<p style={{ cursor: 'pointer';, padding: '20px 0' }}> Complement </p>}
     />`,
     },
   },

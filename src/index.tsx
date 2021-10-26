@@ -4,7 +4,7 @@ import './default.scss';
 import Accordion, { AccordionProps } from './components/Accordion/Accordion';
 import ButtonMain, { ButtonProps } from './components/ButtonMain/ButtonMain';
 import Calendar, { CalendarProps } from './components/Calendar/Calendar';
-import Card from './components/Card/Card';
+import Card, { CardProps } from './components/Card/Card';
 import Checkbox, { CheckboxProps } from './components/Checkbox/Checkbox';
 import Dialog, { DialogProps } from './components/Dialog/Dialog';
 import Dropdown, { DropdownProps } from './components/Dropdown/Dropdown';
@@ -55,6 +55,7 @@ export type {
   AccordionProps,
   ButtonProps,
   CalendarProps,
+  CardProps,
   CheckboxProps,
   DialogProps,
   DropdownProps,

@@ -1,4 +1,4 @@
-import React, { LinkHTMLAttributes, ReactNode } from 'react';
+import { CSSProperties, LinkHTMLAttributes, ReactNode } from 'react';
 import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -7,10 +7,11 @@ import { colors } from '../../styles/colors';
 import { Shadow, Button, Complement } from './styles';
 
 export type TTypes = 'shadow' | 'button' | 'min-shadow' | 'border' | 'none';
-interface CardProps extends Pick<LinkHTMLAttributes<HTMLLinkElement>, 'href'> {
+export interface CardProps
+  extends Pick<LinkHTMLAttributes<HTMLLinkElement>, 'href'> {
   type?: TTypes;
   width?: number | string;
-  style?: React.CSSProperties;
+  style?: CSSProperties;
   icon?: IconDefinition;
   sizeIcon?:
     | '1x'
@@ -34,11 +35,12 @@ interface CardProps extends Pick<LinkHTMLAttributes<HTMLLinkElement>, 'href'> {
   className?: string;
   id?: string;
   complement?: ReactNode;
-  complementStyle?: React.CSSProperties;
+  complementStyle?: CSSProperties;
   complementClassName?: string;
+  children?: ReactNode;
 }
 
-const Card: React.FC<CardProps> = ({
+function Card({
   children,
   width,
   type = 'shadow',
@@ -56,69 +58,59 @@ const Card: React.FC<CardProps> = ({
   complementStyle,
   complementClassName,
   ...rest
-}) => {
+}: CardProps) {
   function renderShadow() {
-    if (complement) {
-      return (
-        <div>
-          <Shadow
-            className={className}
-            width={width}
-            style={style}
-            type={type}
-            id={id}
+    return (
+      <>
+        <Shadow
+          className={className}
+          width={width}
+          style={style}
+          type={type}
+          id={id}
+          data-testid="card"
+        >
+          {loading && (
+            <div className="loading-card">
+              <Loader />
+            </div>
+          )}
+          {children}
+        </Shadow>
+        {!!complement && (
+          <Complement
+            data-testid="complement"
+            className={complementClassName}
+            style={complementStyle}
           >
-            {loading && (
-              <div className="loading-card">
-                <Loader />
-              </div>
-            )}
-            {children}
-          </Shadow>
-          <Complement className={complementClassName} style={complementStyle}>
             {complement}
           </Complement>
-        </div>
-      );
-    }
-
-    return (
-      <Shadow
-        className={className}
-        width={width}
-        style={style}
-        type={type}
-        id={id}
-      >
-        {loading && (
-          <div className="loading-card">
-            <Loader />
-          </div>
         )}
-        {children}
-      </Shadow>
+      </>
     );
   }
 
   function renderButton() {
     return (
       <Button
+        className={className}
         style={style}
         colorText={colorText}
         onClick={onClick}
         href={rest.href}
         width={width}
-        className={className}
         id={id}
+        data-testid="card"
       >
         {icon && (
-          <React.Fragment>
+          <>
             <FontAwesomeIcon
+              aria-label="icon"
               icon={icon}
               color={colorIcon || colors.brandDark}
               size={sizeIcon || 'lg'}
             />
-          </React.Fragment>
+          </>
         )}
 
         <span>{text}</span>
@@ -127,13 +119,17 @@ const Card: React.FC<CardProps> = ({
   }
 
   switch (type) {
-    case 'shadow' || 'min-shadow' || 'border':
+    case 'shadow':
+      return renderShadow();
+    case 'min-shadow':
+      return renderShadow();
+    case 'border':
       return renderShadow();
     case 'button':
       return renderButton();
     default:
       return renderShadow();
   }
-};
+}
 
 export default Card;

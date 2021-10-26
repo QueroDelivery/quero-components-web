@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { getMeasurement } from '../../helpers/FnUtil';
 import { colors } from '../../styles/colors';
 import { TTypes } from './Card';
 
@@ -11,15 +12,14 @@ interface CardProps {
 export const Shadow = styled.div<CardProps>`
   font-family: MontSerrat !important;
   box-shadow: ${props => {
-    if (props.type == 'none') {
+    if (props.type == 'none' || props.type == 'border') {
       return 'none';
     }
-    if (props.type == 'border') {
-      return 'none';
-    }
+
     if (props.type == 'min-shadow') {
       return '0px 0.125rem 0.25rem #00000029';
     }
+
     return '0 1.25rem 3.125rem 0 rgba(0, 0, 0, 0.16)';
   }};
 
@@ -32,16 +32,7 @@ export const Shadow = styled.div<CardProps>`
   border-radius: 1.875rem;
   position: relative;
 
-  width: ${props => {
-    if (props.width) {
-      if (typeof props.width === 'string') {
-        return props.width;
-      }
-      return `${props.width}px`;
-    }
-
-    return '100%';
-  }};
+  width: ${props => getMeasurement(props.width, '100%')};
 
   .loading-card {
     display: flex;
@@ -66,16 +57,7 @@ export const Button = styled.a<CardProps>`
   padding: 0.75rem 1.5625rem;
   border-radius: 1.875rem;
   border: 1px solid ${colors.default30};
-  width: ${props => {
-    if (props.width) {
-      if (typeof props.width === 'string') {
-        return props.width;
-      }
-      return `${props.width}px`;
-    }
-
-    return '100%';
-  }};
+  width: ${props => getMeasurement(props.width, '100%')};
   cursor: pointer;
   display: flex;
   align-items: center;
