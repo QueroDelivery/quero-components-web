@@ -1,6 +1,6 @@
 require('semantic-ui-css/semantic.min.css');
 var jsxRuntime = require('react/jsx-runtime');
-var React$2 = require('react');
+var require$$0 = require('react');
 var styled = require('styled-components');
 var DatePicker = require('react-datepicker');
 var reactDom = require('react-dom');
@@ -9,7 +9,7 @@ var semanticUiReact = require('semantic-ui-react');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
-var React__default = /*#__PURE__*/_interopDefaultLegacy(React$2);
+var require$$0__default = /*#__PURE__*/_interopDefaultLegacy(require$$0);
 var styled__default = /*#__PURE__*/_interopDefaultLegacy(styled);
 var DatePicker__default = /*#__PURE__*/_interopDefaultLegacy(DatePicker);
 var reactDom__default = /*#__PURE__*/_interopDefaultLegacy(reactDom);
@@ -2618,7 +2618,7 @@ FontAwesomeIcon.defaultProps = {
   transform: null,
   swapOpacity: false
 };
-var convertCurry = convert.bind(null, React__default["default"].createElement);
+var convertCurry = convert.bind(null, require$$0__default["default"].createElement);
 
 /*!
  * Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com
@@ -3259,7 +3259,7 @@ var ButtonMain = function ButtonMain(_ref) {
   return renderButton();
 };
 
-function _interopDefault$2(e){return e&&"object"==typeof e&&"default"in e?e["default"]:e}var React$1=_interopDefault$2(React__default["default"]);function _defaults2$1(e,t){for(var n=Object.getOwnPropertyNames(t),a=0;a<n.length;a++){var i=n[a],r=Object.getOwnPropertyDescriptor(t,i);r&&r.configurable&&e[i]===undefined&&Object.defineProperty(e,i,r);}return e}function _extends$1(){return (_extends$1=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var a in n)Object.prototype.hasOwnProperty.call(n,a)&&(e[a]=n[a]);}return e}).apply(this,arguments)}function _inheritsLoose$1(e,t){e.prototype=Object.create(t.prototype),_defaults2$1(e.prototype.constructor=e,t);}function _objectWithoutPropertiesLoose$1(e,t){if(null==e)return {};var n,a,i={},r=Object.keys(e);for(a=0;a<r.length;a++)n=r[a],0<=t.indexOf(n)||(i[n]=e[n]);return i}function _assertThisInitialized$1(e){if(void 0===e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return e}var invariant$2=function(e,t,n,a,i,r,o,s){if(!e){var l;if(t===undefined)l=new Error("Minified exception occurred; use the non-minified dev environment for the full error message and additional helpful warnings.");else {var u=[n,a,i,r,o,s],c=0;(l=new Error(t.replace(/%s/g,function(){return u[c++]}))).name="Invariant Violation";}throw l.framesToPop=1,l}},invariant_1=invariant$2;function setInputSelection$1(e,t,n){if("selectionStart"in e&&"selectionEnd"in e)e.selectionStart=t,e.selectionEnd=n;else {var a=e.createTextRange();a.collapse(!0),a.moveStart("character",t),a.moveEnd("character",n-t),a.select();}}function getInputSelection$1(e){var t=0,n=0;if("selectionStart"in e&&"selectionEnd"in e)t=e.selectionStart,n=e.selectionEnd;else {var a=document.selection.createRange();a.parentElement()===e&&(t=-a.moveStart("character",-e.value.length),n=-a.moveEnd("character",-e.value.length));}return {start:t,end:n,length:n-t}}var defaultFormatChars$1={9:"[0-9]",a:"[A-Za-z]","*":"[A-Za-z0-9]"},defaultMaskChar$1="_";function parseMask$1(e,t,n){var a="",i="",r=null,o=[];if(t===undefined&&(t=defaultMaskChar$1),null==n&&(n=defaultFormatChars$1),!e||"string"!=typeof e)return {maskChar:t,formatChars:n,mask:null,prefix:null,lastEditablePosition:null,permanents:[]};var s=!1;return e.split("").forEach(function(e){s=!s&&"\\"===e||(s||!n[e]?(o.push(a.length),a.length===o.length-1&&(i+=e)):r=a.length+1,a+=e,!1);}),{maskChar:t,formatChars:n,prefix:i,mask:a,lastEditablePosition:r,permanents:o}}function isPermanentCharacter$1(e,t){return -1!==e.permanents.indexOf(t)}function isAllowedCharacter$1(e,t,n){var a=e.mask,i=e.formatChars;if(!n)return !1;if(isPermanentCharacter$1(e,t))return a[t]===n;var r=i[a[t]];return new RegExp(r).test(n)}function isEmpty$1(n,e){return e.split("").every(function(e,t){return isPermanentCharacter$1(n,t)||!isAllowedCharacter$1(n,t,e)})}function getFilledLength$1(e,t){var n=e.maskChar,a=e.prefix;if(!n){for(;t.length>a.length&&isPermanentCharacter$1(e,t.length-1);)t=t.slice(0,t.length-1);return t.length}for(var i=a.length,r=t.length;r>=a.length;r--){var o=t[r];if(!isPermanentCharacter$1(e,r)&&isAllowedCharacter$1(e,r,o)){i=r+1;break}}return i}function isFilled$1(e,t){return getFilledLength$1(e,t)===e.mask.length}function formatValue$1(e,t){var n=e.maskChar,a=e.mask,i=e.prefix;if(!n){for((t=insertString$1(e,"",t,0)).length<i.length&&(t=i);t.length<a.length&&isPermanentCharacter$1(e,t.length);)t+=a[t.length];return t}if(t)return insertString$1(e,formatValue$1(e,""),t,0);for(var r=0;r<a.length;r++)isPermanentCharacter$1(e,r)?t+=a[r]:t+=n;return t}function clearRange$1(n,e,a,t){var i=a+t,r=n.maskChar,o=n.mask,s=n.prefix,l=e.split("");if(r)return l.map(function(e,t){return t<a||i<=t?e:isPermanentCharacter$1(n,t)?o[t]:r}).join("");for(var u=i;u<l.length;u++)isPermanentCharacter$1(n,u)&&(l[u]="");return a=Math.max(s.length,a),l.splice(a,i-a),e=l.join(""),formatValue$1(n,e)}function insertString$1(r,o,e,s){var l=r.mask,u=r.maskChar,c=r.prefix,t=e.split(""),h=isFilled$1(r,o);return !u&&s>o.length&&(o+=l.slice(o.length,s)),t.every(function(e){for(;i=e,isPermanentCharacter$1(r,a=s)&&i!==l[a];){if(s>=o.length&&(o+=l[s]),t=e,n=s,u&&isPermanentCharacter$1(r,n)&&t===u)return !0;if(++s>=l.length)return !1}var t,n,a,i;return !isAllowedCharacter$1(r,s,e)&&e!==u||(s<o.length?o=u||h||s<c.length?o.slice(0,s)+e+o.slice(s+1):(o=o.slice(0,s)+e+o.slice(s),formatValue$1(r,o)):u||(o+=e),++s<l.length)}),o}function getInsertStringLength$1(a,e,t,i){var r=a.mask,o=a.maskChar,n=t.split(""),s=i;return n.every(function(e){for(;n=e,isPermanentCharacter$1(a,t=i)&&n!==r[t];)if(++i>=r.length)return !1;var t,n;return (isAllowedCharacter$1(a,i,e)||e===o)&&i++,i<r.length}),i-s}function getLeftEditablePosition$1(e,t){for(var n=t;0<=n;--n)if(!isPermanentCharacter$1(e,n))return n;return null}function getRightEditablePosition$1(e,t){for(var n=e.mask,a=t;a<n.length;++a)if(!isPermanentCharacter$1(e,a))return a;return null}function getStringValue$1(e){return e||0===e?e+"":""}function processChange$1(e,t,n,a,i){var r=e.mask,o=e.prefix,s=e.lastEditablePosition,l=t,u="",c=0,h=0,f=Math.min(i.start,n.start);if(n.end>i.start?h=(c=getInsertStringLength$1(e,a,u=l.slice(i.start,n.end),f))?i.length:0:l.length<a.length&&(h=a.length-l.length),l=a,h){if(1===h&&!i.length)f=i.start===n.start?getRightEditablePosition$1(e,n.start):getLeftEditablePosition$1(e,n.start);l=clearRange$1(e,l,f,h);}return l=insertString$1(e,l,u,f),(f+=c)>=r.length?f=r.length:f<o.length&&!c?f=o.length:f>=o.length&&f<s&&c&&(f=getRightEditablePosition$1(e,f)),u||(u=null),{value:l=formatValue$1(e,l),enteredString:u,selection:{start:f,end:f}}}function isWindowsPhoneBrowser$1(){var e=new RegExp("windows","i"),t=new RegExp("phone","i"),n=navigator.userAgent;return e.test(n)&&t.test(n)}function isFunction$1(e){return "function"==typeof e}function getRequestAnimationFrame$1(){return window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame}function getCancelAnimationFrame$1(){return window.cancelAnimationFrame||window.webkitCancelRequestAnimationFrame||window.webkitCancelAnimationFrame||window.mozCancelAnimationFrame}function defer$1(e){return (!!getCancelAnimationFrame$1()?getRequestAnimationFrame$1():function(){return setTimeout(e,1e3/60)})(e)}function cancelDefer$1(e){(getCancelAnimationFrame$1()||clearTimeout)(e);}var InputElement$1=function(c){function e(e){var f=c.call(this,e)||this;f.focused=!1,f.mounted=!1,f.previousSelection=null,f.selectionDeferId=null,f.saveSelectionLoopDeferId=null,f.saveSelectionLoop=function(){f.previousSelection=f.getSelection(),f.saveSelectionLoopDeferId=defer$1(f.saveSelectionLoop);},f.runSaveSelectionLoop=function(){null===f.saveSelectionLoopDeferId&&f.saveSelectionLoop();},f.stopSaveSelectionLoop=function(){null!==f.saveSelectionLoopDeferId&&(cancelDefer$1(f.saveSelectionLoopDeferId),f.saveSelectionLoopDeferId=null,f.previousSelection=null);},f.getInputDOMNode=function(){if(!f.mounted)return null;var e=reactDom__default["default"].findDOMNode(_assertThisInitialized$1(_assertThisInitialized$1(f))),t="undefined"!=typeof window&&e instanceof window.Element;if(e&&!t)return null;if("INPUT"!==e.nodeName&&(e=e.querySelector("input")),!e)throw new Error("react-input-mask: inputComponent doesn't contain input node");return e},f.getInputValue=function(){var e=f.getInputDOMNode();return e?e.value:null},f.setInputValue=function(e){var t=f.getInputDOMNode();t&&(f.value=e,t.value=e);},f.setCursorToEnd=function(){var e=getFilledLength$1(f.maskOptions,f.value),t=getRightEditablePosition$1(f.maskOptions,e);null!==t&&f.setCursorPosition(t);},f.setSelection=function(e,t,n){void 0===n&&(n={});var a=f.getInputDOMNode(),i=f.isFocused();a&&i&&(n.deferred||setInputSelection$1(a,e,t),null!==f.selectionDeferId&&cancelDefer$1(f.selectionDeferId),f.selectionDeferId=defer$1(function(){f.selectionDeferId=null,setInputSelection$1(a,e,t);}),f.previousSelection={start:e,end:t,length:Math.abs(t-e)});},f.getSelection=function(){return getInputSelection$1(f.getInputDOMNode())},f.getCursorPosition=function(){return f.getSelection().start},f.setCursorPosition=function(e){f.setSelection(e,e);},f.isFocused=function(){return f.focused},f.getBeforeMaskedValueChangeConfig=function(){var e=f.maskOptions,t=e.mask,n=e.maskChar,a=e.permanents,i=e.formatChars;return {mask:t,maskChar:n,permanents:a,alwaysShowMask:!!f.props.alwaysShowMask,formatChars:i}},f.isInputAutofilled=function(e,t,n,a){var i=f.getInputDOMNode();try{if(i.matches(":-webkit-autofill"))return !0}catch(r){}return !f.focused||a.end<n.length&&t.end===e.length},f.onChange=function(e){var t=_assertThisInitialized$1(_assertThisInitialized$1(f)).beforePasteState,n=_assertThisInitialized$1(_assertThisInitialized$1(f)).previousSelection,a=f.props.beforeMaskedValueChange,i=f.getInputValue(),r=f.value,o=f.getSelection();f.isInputAutofilled(i,o,r,n)&&(r=formatValue$1(f.maskOptions,""),n={start:0,end:0,length:0}),t&&(n=t.selection,r=t.value,o={start:n.start+i.length,end:n.start+i.length,length:0},i=r.slice(0,n.start)+i+r.slice(n.end),f.beforePasteState=null);var s=processChange$1(f.maskOptions,i,o,r,n),l=s.enteredString,u=s.selection,c=s.value;if(isFunction$1(a)){var h=a({value:c,selection:u},{value:r,selection:n},l,f.getBeforeMaskedValueChangeConfig());c=h.value,u=h.selection;}f.setInputValue(c),isFunction$1(f.props.onChange)&&f.props.onChange(e),f.isWindowsPhoneBrowser?f.setSelection(u.start,u.end,{deferred:!0}):f.setSelection(u.start,u.end);},f.onFocus=function(e){var t=f.props.beforeMaskedValueChange,n=f.maskOptions,a=n.mask,i=n.prefix;if(f.focused=!0,f.mounted=!0,a){if(f.value)getFilledLength$1(f.maskOptions,f.value)<f.maskOptions.mask.length&&f.setCursorToEnd();else {var r=formatValue$1(f.maskOptions,i),o=formatValue$1(f.maskOptions,r),s=getFilledLength$1(f.maskOptions,o),l=getRightEditablePosition$1(f.maskOptions,s),u={start:l,end:l};if(isFunction$1(t)){var c=t({value:o,selection:u},{value:f.value,selection:null},null,f.getBeforeMaskedValueChangeConfig());o=c.value,u=c.selection;}var h=o!==f.getInputValue();h&&f.setInputValue(o),h&&isFunction$1(f.props.onChange)&&f.props.onChange(e),f.setSelection(u.start,u.end);}f.runSaveSelectionLoop();}isFunction$1(f.props.onFocus)&&f.props.onFocus(e);},f.onBlur=function(e){var t=f.props.beforeMaskedValueChange,n=f.maskOptions.mask;if(f.stopSaveSelectionLoop(),f.focused=!1,n&&!f.props.alwaysShowMask&&isEmpty$1(f.maskOptions,f.value)){var a="";if(isFunction$1(t))a=t({value:a,selection:null},{value:f.value,selection:f.previousSelection},null,f.getBeforeMaskedValueChangeConfig()).value;var i=a!==f.getInputValue();i&&f.setInputValue(a),i&&isFunction$1(f.props.onChange)&&f.props.onChange(e);}isFunction$1(f.props.onBlur)&&f.props.onBlur(e);},f.onMouseDown=function(e){if(!f.focused&&document.addEventListener){f.mouseDownX=e.clientX,f.mouseDownY=e.clientY,f.mouseDownTime=(new Date).getTime();var r=function r(e){if(document.removeEventListener("mouseup",r),f.focused){var t=Math.abs(e.clientX-f.mouseDownX),n=Math.abs(e.clientY-f.mouseDownY),a=Math.max(t,n),i=(new Date).getTime()-f.mouseDownTime;(a<=10&&i<=200||a<=5&&i<=300)&&f.setCursorToEnd();}};document.addEventListener("mouseup",r);}isFunction$1(f.props.onMouseDown)&&f.props.onMouseDown(e);},f.onPaste=function(e){isFunction$1(f.props.onPaste)&&f.props.onPaste(e),e.defaultPrevented||(f.beforePasteState={value:f.getInputValue(),selection:f.getSelection()},f.setInputValue(""));},f.handleRef=function(e){null==f.props.children&&isFunction$1(f.props.inputRef)&&f.props.inputRef(e);};var t=e.mask,n=e.maskChar,a=e.formatChars,i=e.alwaysShowMask,r=e.beforeMaskedValueChange,o=e.defaultValue,s=e.value;f.maskOptions=parseMask$1(t,n,a),null==o&&(o=""),null==s&&(s=o);var l=getStringValue$1(s);if(f.maskOptions.mask&&(i||l)&&(l=formatValue$1(f.maskOptions,l),isFunction$1(r))){var u=e.value;null==e.value&&(u=o),l=r({value:l,selection:null},{value:u=getStringValue$1(u),selection:null},null,f.getBeforeMaskedValueChangeConfig()).value;}return f.value=l,f}_inheritsLoose$1(e,c);var t=e.prototype;return t.componentDidMount=function(){this.mounted=!0,this.getInputDOMNode()&&(this.isWindowsPhoneBrowser=isWindowsPhoneBrowser$1(),this.maskOptions.mask&&this.getInputValue()!==this.value&&this.setInputValue(this.value));},t.componentDidUpdate=function(){var e=this.previousSelection,t=this.props,n=t.beforeMaskedValueChange,a=t.alwaysShowMask,i=t.mask,r=t.maskChar,o=t.formatChars,s=this.maskOptions,l=a||this.isFocused(),u=null!=this.props.value,c=u?getStringValue$1(this.props.value):this.value,h=e?e.start:null;if(this.maskOptions=parseMask$1(i,r,o),this.maskOptions.mask){!s.mask&&this.isFocused()&&this.runSaveSelectionLoop();var f=this.maskOptions.mask&&this.maskOptions.mask!==s.mask;if(s.mask||u||(c=this.getInputValue()),(f||this.maskOptions.mask&&(c||l))&&(c=formatValue$1(this.maskOptions,c)),f){var p=getFilledLength$1(this.maskOptions,c);(null===h||p<h)&&(h=isFilled$1(this.maskOptions,c)?p:getRightEditablePosition$1(this.maskOptions,p));}!this.maskOptions.mask||!isEmpty$1(this.maskOptions,c)||l||u&&this.props.value||(c="");var d={start:h,end:h};if(isFunction$1(n)){var m=n({value:c,selection:d},{value:this.value,selection:this.previousSelection},null,this.getBeforeMaskedValueChangeConfig());c=m.value,d=m.selection;}this.value=c;var g=this.getInputValue()!==this.value;g?(this.setInputValue(this.value),this.forceUpdate()):f&&this.forceUpdate();var v=!1;null!=d.start&&null!=d.end&&(v=!e||e.start!==d.start||e.end!==d.end),(v||g)&&this.setSelection(d.start,d.end);}else s.mask&&(this.stopSaveSelectionLoop(),this.forceUpdate());},t.componentWillUnmount=function(){this.mounted=!1,null!==this.selectionDeferId&&cancelDefer$1(this.selectionDeferId),this.stopSaveSelectionLoop();},t.render=function(){var t,e=this.props,n=(e.children),a=_objectWithoutPropertiesLoose$1(e,["mask","alwaysShowMask","maskChar","formatChars","inputRef","beforeMaskedValueChange","children"]);if(n){isFunction$1(n)||invariant_1(!1);var i=["onChange","onPaste","onMouseDown","onFocus","onBlur","value","disabled","readOnly"],r=_extends$1({},a);i.forEach(function(e){return delete r[e]}),t=n(r),i.filter(function(e){return null!=t.props[e]&&t.props[e]!==a[e]}).length&&invariant_1(!1);}else t=React$1.createElement("input",_extends$1({ref:this.handleRef},a));var o={onFocus:this.onFocus,onBlur:this.onBlur};return this.maskOptions.mask&&(a.disabled||a.readOnly||(o.onChange=this.onChange,o.onPaste=this.onPaste,o.onMouseDown=this.onMouseDown),null!=a.value&&(o.value=this.value)),t=React$1.cloneElement(t,o)},e}(React$1.Component);var reactInputMask_production_min=InputElement$1;
+function _interopDefault$2(e){return e&&"object"==typeof e&&"default"in e?e["default"]:e}var React$1=_interopDefault$2(require$$0__default["default"]);function _defaults2$1(e,t){for(var n=Object.getOwnPropertyNames(t),a=0;a<n.length;a++){var i=n[a],r=Object.getOwnPropertyDescriptor(t,i);r&&r.configurable&&e[i]===undefined&&Object.defineProperty(e,i,r);}return e}function _extends$1(){return (_extends$1=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var a in n)Object.prototype.hasOwnProperty.call(n,a)&&(e[a]=n[a]);}return e}).apply(this,arguments)}function _inheritsLoose$1(e,t){e.prototype=Object.create(t.prototype),_defaults2$1(e.prototype.constructor=e,t);}function _objectWithoutPropertiesLoose$1(e,t){if(null==e)return {};var n,a,i={},r=Object.keys(e);for(a=0;a<r.length;a++)n=r[a],0<=t.indexOf(n)||(i[n]=e[n]);return i}function _assertThisInitialized$1(e){if(void 0===e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return e}var invariant$2=function(e,t,n,a,i,r,o,s){if(!e){var l;if(t===undefined)l=new Error("Minified exception occurred; use the non-minified dev environment for the full error message and additional helpful warnings.");else {var u=[n,a,i,r,o,s],c=0;(l=new Error(t.replace(/%s/g,function(){return u[c++]}))).name="Invariant Violation";}throw l.framesToPop=1,l}},invariant_1=invariant$2;function setInputSelection$1(e,t,n){if("selectionStart"in e&&"selectionEnd"in e)e.selectionStart=t,e.selectionEnd=n;else {var a=e.createTextRange();a.collapse(!0),a.moveStart("character",t),a.moveEnd("character",n-t),a.select();}}function getInputSelection$1(e){var t=0,n=0;if("selectionStart"in e&&"selectionEnd"in e)t=e.selectionStart,n=e.selectionEnd;else {var a=document.selection.createRange();a.parentElement()===e&&(t=-a.moveStart("character",-e.value.length),n=-a.moveEnd("character",-e.value.length));}return {start:t,end:n,length:n-t}}var defaultFormatChars$1={9:"[0-9]",a:"[A-Za-z]","*":"[A-Za-z0-9]"},defaultMaskChar$1="_";function parseMask$1(e,t,n){var a="",i="",r=null,o=[];if(t===undefined&&(t=defaultMaskChar$1),null==n&&(n=defaultFormatChars$1),!e||"string"!=typeof e)return {maskChar:t,formatChars:n,mask:null,prefix:null,lastEditablePosition:null,permanents:[]};var s=!1;return e.split("").forEach(function(e){s=!s&&"\\"===e||(s||!n[e]?(o.push(a.length),a.length===o.length-1&&(i+=e)):r=a.length+1,a+=e,!1);}),{maskChar:t,formatChars:n,prefix:i,mask:a,lastEditablePosition:r,permanents:o}}function isPermanentCharacter$1(e,t){return -1!==e.permanents.indexOf(t)}function isAllowedCharacter$1(e,t,n){var a=e.mask,i=e.formatChars;if(!n)return !1;if(isPermanentCharacter$1(e,t))return a[t]===n;var r=i[a[t]];return new RegExp(r).test(n)}function isEmpty$1(n,e){return e.split("").every(function(e,t){return isPermanentCharacter$1(n,t)||!isAllowedCharacter$1(n,t,e)})}function getFilledLength$1(e,t){var n=e.maskChar,a=e.prefix;if(!n){for(;t.length>a.length&&isPermanentCharacter$1(e,t.length-1);)t=t.slice(0,t.length-1);return t.length}for(var i=a.length,r=t.length;r>=a.length;r--){var o=t[r];if(!isPermanentCharacter$1(e,r)&&isAllowedCharacter$1(e,r,o)){i=r+1;break}}return i}function isFilled$1(e,t){return getFilledLength$1(e,t)===e.mask.length}function formatValue$1(e,t){var n=e.maskChar,a=e.mask,i=e.prefix;if(!n){for((t=insertString$1(e,"",t,0)).length<i.length&&(t=i);t.length<a.length&&isPermanentCharacter$1(e,t.length);)t+=a[t.length];return t}if(t)return insertString$1(e,formatValue$1(e,""),t,0);for(var r=0;r<a.length;r++)isPermanentCharacter$1(e,r)?t+=a[r]:t+=n;return t}function clearRange$1(n,e,a,t){var i=a+t,r=n.maskChar,o=n.mask,s=n.prefix,l=e.split("");if(r)return l.map(function(e,t){return t<a||i<=t?e:isPermanentCharacter$1(n,t)?o[t]:r}).join("");for(var u=i;u<l.length;u++)isPermanentCharacter$1(n,u)&&(l[u]="");return a=Math.max(s.length,a),l.splice(a,i-a),e=l.join(""),formatValue$1(n,e)}function insertString$1(r,o,e,s){var l=r.mask,u=r.maskChar,c=r.prefix,t=e.split(""),h=isFilled$1(r,o);return !u&&s>o.length&&(o+=l.slice(o.length,s)),t.every(function(e){for(;i=e,isPermanentCharacter$1(r,a=s)&&i!==l[a];){if(s>=o.length&&(o+=l[s]),t=e,n=s,u&&isPermanentCharacter$1(r,n)&&t===u)return !0;if(++s>=l.length)return !1}var t,n,a,i;return !isAllowedCharacter$1(r,s,e)&&e!==u||(s<o.length?o=u||h||s<c.length?o.slice(0,s)+e+o.slice(s+1):(o=o.slice(0,s)+e+o.slice(s),formatValue$1(r,o)):u||(o+=e),++s<l.length)}),o}function getInsertStringLength$1(a,e,t,i){var r=a.mask,o=a.maskChar,n=t.split(""),s=i;return n.every(function(e){for(;n=e,isPermanentCharacter$1(a,t=i)&&n!==r[t];)if(++i>=r.length)return !1;var t,n;return (isAllowedCharacter$1(a,i,e)||e===o)&&i++,i<r.length}),i-s}function getLeftEditablePosition$1(e,t){for(var n=t;0<=n;--n)if(!isPermanentCharacter$1(e,n))return n;return null}function getRightEditablePosition$1(e,t){for(var n=e.mask,a=t;a<n.length;++a)if(!isPermanentCharacter$1(e,a))return a;return null}function getStringValue$1(e){return e||0===e?e+"":""}function processChange$1(e,t,n,a,i){var r=e.mask,o=e.prefix,s=e.lastEditablePosition,l=t,u="",c=0,h=0,f=Math.min(i.start,n.start);if(n.end>i.start?h=(c=getInsertStringLength$1(e,a,u=l.slice(i.start,n.end),f))?i.length:0:l.length<a.length&&(h=a.length-l.length),l=a,h){if(1===h&&!i.length)f=i.start===n.start?getRightEditablePosition$1(e,n.start):getLeftEditablePosition$1(e,n.start);l=clearRange$1(e,l,f,h);}return l=insertString$1(e,l,u,f),(f+=c)>=r.length?f=r.length:f<o.length&&!c?f=o.length:f>=o.length&&f<s&&c&&(f=getRightEditablePosition$1(e,f)),u||(u=null),{value:l=formatValue$1(e,l),enteredString:u,selection:{start:f,end:f}}}function isWindowsPhoneBrowser$1(){var e=new RegExp("windows","i"),t=new RegExp("phone","i"),n=navigator.userAgent;return e.test(n)&&t.test(n)}function isFunction$1(e){return "function"==typeof e}function getRequestAnimationFrame$1(){return window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame}function getCancelAnimationFrame$1(){return window.cancelAnimationFrame||window.webkitCancelRequestAnimationFrame||window.webkitCancelAnimationFrame||window.mozCancelAnimationFrame}function defer$1(e){return (!!getCancelAnimationFrame$1()?getRequestAnimationFrame$1():function(){return setTimeout(e,1e3/60)})(e)}function cancelDefer$1(e){(getCancelAnimationFrame$1()||clearTimeout)(e);}var InputElement$1=function(c){function e(e){var f=c.call(this,e)||this;f.focused=!1,f.mounted=!1,f.previousSelection=null,f.selectionDeferId=null,f.saveSelectionLoopDeferId=null,f.saveSelectionLoop=function(){f.previousSelection=f.getSelection(),f.saveSelectionLoopDeferId=defer$1(f.saveSelectionLoop);},f.runSaveSelectionLoop=function(){null===f.saveSelectionLoopDeferId&&f.saveSelectionLoop();},f.stopSaveSelectionLoop=function(){null!==f.saveSelectionLoopDeferId&&(cancelDefer$1(f.saveSelectionLoopDeferId),f.saveSelectionLoopDeferId=null,f.previousSelection=null);},f.getInputDOMNode=function(){if(!f.mounted)return null;var e=reactDom__default["default"].findDOMNode(_assertThisInitialized$1(_assertThisInitialized$1(f))),t="undefined"!=typeof window&&e instanceof window.Element;if(e&&!t)return null;if("INPUT"!==e.nodeName&&(e=e.querySelector("input")),!e)throw new Error("react-input-mask: inputComponent doesn't contain input node");return e},f.getInputValue=function(){var e=f.getInputDOMNode();return e?e.value:null},f.setInputValue=function(e){var t=f.getInputDOMNode();t&&(f.value=e,t.value=e);},f.setCursorToEnd=function(){var e=getFilledLength$1(f.maskOptions,f.value),t=getRightEditablePosition$1(f.maskOptions,e);null!==t&&f.setCursorPosition(t);},f.setSelection=function(e,t,n){void 0===n&&(n={});var a=f.getInputDOMNode(),i=f.isFocused();a&&i&&(n.deferred||setInputSelection$1(a,e,t),null!==f.selectionDeferId&&cancelDefer$1(f.selectionDeferId),f.selectionDeferId=defer$1(function(){f.selectionDeferId=null,setInputSelection$1(a,e,t);}),f.previousSelection={start:e,end:t,length:Math.abs(t-e)});},f.getSelection=function(){return getInputSelection$1(f.getInputDOMNode())},f.getCursorPosition=function(){return f.getSelection().start},f.setCursorPosition=function(e){f.setSelection(e,e);},f.isFocused=function(){return f.focused},f.getBeforeMaskedValueChangeConfig=function(){var e=f.maskOptions,t=e.mask,n=e.maskChar,a=e.permanents,i=e.formatChars;return {mask:t,maskChar:n,permanents:a,alwaysShowMask:!!f.props.alwaysShowMask,formatChars:i}},f.isInputAutofilled=function(e,t,n,a){var i=f.getInputDOMNode();try{if(i.matches(":-webkit-autofill"))return !0}catch(r){}return !f.focused||a.end<n.length&&t.end===e.length},f.onChange=function(e){var t=_assertThisInitialized$1(_assertThisInitialized$1(f)).beforePasteState,n=_assertThisInitialized$1(_assertThisInitialized$1(f)).previousSelection,a=f.props.beforeMaskedValueChange,i=f.getInputValue(),r=f.value,o=f.getSelection();f.isInputAutofilled(i,o,r,n)&&(r=formatValue$1(f.maskOptions,""),n={start:0,end:0,length:0}),t&&(n=t.selection,r=t.value,o={start:n.start+i.length,end:n.start+i.length,length:0},i=r.slice(0,n.start)+i+r.slice(n.end),f.beforePasteState=null);var s=processChange$1(f.maskOptions,i,o,r,n),l=s.enteredString,u=s.selection,c=s.value;if(isFunction$1(a)){var h=a({value:c,selection:u},{value:r,selection:n},l,f.getBeforeMaskedValueChangeConfig());c=h.value,u=h.selection;}f.setInputValue(c),isFunction$1(f.props.onChange)&&f.props.onChange(e),f.isWindowsPhoneBrowser?f.setSelection(u.start,u.end,{deferred:!0}):f.setSelection(u.start,u.end);},f.onFocus=function(e){var t=f.props.beforeMaskedValueChange,n=f.maskOptions,a=n.mask,i=n.prefix;if(f.focused=!0,f.mounted=!0,a){if(f.value)getFilledLength$1(f.maskOptions,f.value)<f.maskOptions.mask.length&&f.setCursorToEnd();else {var r=formatValue$1(f.maskOptions,i),o=formatValue$1(f.maskOptions,r),s=getFilledLength$1(f.maskOptions,o),l=getRightEditablePosition$1(f.maskOptions,s),u={start:l,end:l};if(isFunction$1(t)){var c=t({value:o,selection:u},{value:f.value,selection:null},null,f.getBeforeMaskedValueChangeConfig());o=c.value,u=c.selection;}var h=o!==f.getInputValue();h&&f.setInputValue(o),h&&isFunction$1(f.props.onChange)&&f.props.onChange(e),f.setSelection(u.start,u.end);}f.runSaveSelectionLoop();}isFunction$1(f.props.onFocus)&&f.props.onFocus(e);},f.onBlur=function(e){var t=f.props.beforeMaskedValueChange,n=f.maskOptions.mask;if(f.stopSaveSelectionLoop(),f.focused=!1,n&&!f.props.alwaysShowMask&&isEmpty$1(f.maskOptions,f.value)){var a="";if(isFunction$1(t))a=t({value:a,selection:null},{value:f.value,selection:f.previousSelection},null,f.getBeforeMaskedValueChangeConfig()).value;var i=a!==f.getInputValue();i&&f.setInputValue(a),i&&isFunction$1(f.props.onChange)&&f.props.onChange(e);}isFunction$1(f.props.onBlur)&&f.props.onBlur(e);},f.onMouseDown=function(e){if(!f.focused&&document.addEventListener){f.mouseDownX=e.clientX,f.mouseDownY=e.clientY,f.mouseDownTime=(new Date).getTime();var r=function r(e){if(document.removeEventListener("mouseup",r),f.focused){var t=Math.abs(e.clientX-f.mouseDownX),n=Math.abs(e.clientY-f.mouseDownY),a=Math.max(t,n),i=(new Date).getTime()-f.mouseDownTime;(a<=10&&i<=200||a<=5&&i<=300)&&f.setCursorToEnd();}};document.addEventListener("mouseup",r);}isFunction$1(f.props.onMouseDown)&&f.props.onMouseDown(e);},f.onPaste=function(e){isFunction$1(f.props.onPaste)&&f.props.onPaste(e),e.defaultPrevented||(f.beforePasteState={value:f.getInputValue(),selection:f.getSelection()},f.setInputValue(""));},f.handleRef=function(e){null==f.props.children&&isFunction$1(f.props.inputRef)&&f.props.inputRef(e);};var t=e.mask,n=e.maskChar,a=e.formatChars,i=e.alwaysShowMask,r=e.beforeMaskedValueChange,o=e.defaultValue,s=e.value;f.maskOptions=parseMask$1(t,n,a),null==o&&(o=""),null==s&&(s=o);var l=getStringValue$1(s);if(f.maskOptions.mask&&(i||l)&&(l=formatValue$1(f.maskOptions,l),isFunction$1(r))){var u=e.value;null==e.value&&(u=o),l=r({value:l,selection:null},{value:u=getStringValue$1(u),selection:null},null,f.getBeforeMaskedValueChangeConfig()).value;}return f.value=l,f}_inheritsLoose$1(e,c);var t=e.prototype;return t.componentDidMount=function(){this.mounted=!0,this.getInputDOMNode()&&(this.isWindowsPhoneBrowser=isWindowsPhoneBrowser$1(),this.maskOptions.mask&&this.getInputValue()!==this.value&&this.setInputValue(this.value));},t.componentDidUpdate=function(){var e=this.previousSelection,t=this.props,n=t.beforeMaskedValueChange,a=t.alwaysShowMask,i=t.mask,r=t.maskChar,o=t.formatChars,s=this.maskOptions,l=a||this.isFocused(),u=null!=this.props.value,c=u?getStringValue$1(this.props.value):this.value,h=e?e.start:null;if(this.maskOptions=parseMask$1(i,r,o),this.maskOptions.mask){!s.mask&&this.isFocused()&&this.runSaveSelectionLoop();var f=this.maskOptions.mask&&this.maskOptions.mask!==s.mask;if(s.mask||u||(c=this.getInputValue()),(f||this.maskOptions.mask&&(c||l))&&(c=formatValue$1(this.maskOptions,c)),f){var p=getFilledLength$1(this.maskOptions,c);(null===h||p<h)&&(h=isFilled$1(this.maskOptions,c)?p:getRightEditablePosition$1(this.maskOptions,p));}!this.maskOptions.mask||!isEmpty$1(this.maskOptions,c)||l||u&&this.props.value||(c="");var d={start:h,end:h};if(isFunction$1(n)){var m=n({value:c,selection:d},{value:this.value,selection:this.previousSelection},null,this.getBeforeMaskedValueChangeConfig());c=m.value,d=m.selection;}this.value=c;var g=this.getInputValue()!==this.value;g?(this.setInputValue(this.value),this.forceUpdate()):f&&this.forceUpdate();var v=!1;null!=d.start&&null!=d.end&&(v=!e||e.start!==d.start||e.end!==d.end),(v||g)&&this.setSelection(d.start,d.end);}else s.mask&&(this.stopSaveSelectionLoop(),this.forceUpdate());},t.componentWillUnmount=function(){this.mounted=!1,null!==this.selectionDeferId&&cancelDefer$1(this.selectionDeferId),this.stopSaveSelectionLoop();},t.render=function(){var t,e=this.props,n=(e.children),a=_objectWithoutPropertiesLoose$1(e,["mask","alwaysShowMask","maskChar","formatChars","inputRef","beforeMaskedValueChange","children"]);if(n){isFunction$1(n)||invariant_1(!1);var i=["onChange","onPaste","onMouseDown","onFocus","onBlur","value","disabled","readOnly"],r=_extends$1({},a);i.forEach(function(e){return delete r[e]}),t=n(r),i.filter(function(e){return null!=t.props[e]&&t.props[e]!==a[e]}).length&&invariant_1(!1);}else t=React$1.createElement("input",_extends$1({ref:this.handleRef},a));var o={onFocus:this.onFocus,onBlur:this.onBlur};return this.maskOptions.mask&&(a.disabled||a.readOnly||(o.onChange=this.onChange,o.onPaste=this.onPaste,o.onMouseDown=this.onMouseDown),null!=a.value&&(o.value=this.value)),t=React$1.cloneElement(t,o)},e}(React$1.Component);var reactInputMask_production_min=InputElement$1;
 
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -3372,7 +3372,7 @@ var warning_1 = warning$1;
 
 function _interopDefault$1 (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
-var React = _interopDefault$1(React__default["default"]);
+var React = _interopDefault$1(require$$0__default["default"]);
 
 var invariant = _interopDefault$1(browser);
 var warning = _interopDefault$1(warning_1);
@@ -4533,7 +4533,7 @@ var Calendar = function Calendar(_ref) {
       rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$a);
 
   // eslint-disable-next-line react/display-name
-  var CustomInput = React__default["default"].forwardRef(function (props, ref) {
+  var CustomInput = require$$0__default["default"].forwardRef(function (props, ref) {
     return jsxRuntime.jsx(reactInputMask, {
       ref: ref,
       mask: "99/99/9999",
@@ -4576,11 +4576,7 @@ var Calendar = function Calendar(_ref) {
 
 var _templateObject$b, _templateObject2$7, _templateObject3$7;
 var Shadow = styled__default["default"].div(_templateObject$b || (_templateObject$b = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  box-shadow: ", ";\n\n  border: ", ";\n  padding: 1.25rem;\n  background-color: ", ";\n  border-radius: 1.875rem;\n  position: relative;\n\n  width: ", ";\n\n  .loading-card {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    background-color: rgba(255, 255, 255, 0.8);\n    width: 100%;\n    height: 100%;\n    top: 0;\n    left: 0;\n    right: 0;\n    bottom: 0;\n    border-radius: 30px;\n    z-index: 2;\n    position: absolute;\n  }\n"])), function (props) {
-  if (props.type == 'none') {
-    return 'none';
-  }
-
-  if (props.type == 'border') {
+  if (props.type == 'none' || props.type == 'border') {
     return 'none';
   }
 
@@ -4594,26 +4590,10 @@ var Shadow = styled__default["default"].div(_templateObject$b || (_templateObjec
 
   return props.type == 'border' || (_props$style = props.style) != null && _props$style.borderRadius ? "1px solid  " + colors.default20 : '';
 }, colors.white, function (props) {
-  if (props.width) {
-    if (typeof props.width === 'string') {
-      return props.width;
-    }
-
-    return props.width + "px";
-  }
-
-  return '100%';
+  return getMeasurement(props.width, '100%');
 });
 var Button$1 = styled__default["default"].a(_templateObject2$7 || (_templateObject2$7 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  background-color: ", ";\n  padding: 0.75rem 1.5625rem;\n  border-radius: 1.875rem;\n  border: 1px solid ", ";\n  width: ", ";\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n\n  :hover {\n    background-color: ", ";\n  }\n\n  span {\n    margin-left: 0.9375rem;\n    font-size: 0.9375rem;\n    color: ", ";\n  }\n"])), colors.card, colors.default30, function (props) {
-  if (props.width) {
-    if (typeof props.width === 'string') {
-      return props.width;
-    }
-
-    return props.width + "px";
-  }
-
-  return '100%';
+  return getMeasurement(props.width, '100%');
 }, colors.default10, function (props) {
   return props.colorText ? props.colorText : colors.brandDark;
 });
@@ -4621,7 +4601,7 @@ var Complement = styled__default["default"].div(_templateObject3$7 || (_template
 
 var _excluded$9 = ["children", "width", "type", "style", "icon", "sizeIcon", "colorIcon", "text", "colorText", "onClick", "loading", "className", "id", "complement", "complementStyle", "complementClassName"];
 
-var Card = function Card(_ref) {
+function Card(_ref) {
   var children = _ref.children,
       width = _ref.width,
       _ref$type = _ref.type,
@@ -4642,56 +4622,44 @@ var Card = function Card(_ref) {
       rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$9);
 
   function renderShadow() {
-    if (complement) {
-      return jsxRuntime.jsxs("div", {
-        children: [jsxRuntime.jsxs(Shadow, Object.assign({
-          className: className,
-          width: width,
-          style: style,
-          type: type,
-          id: id
-        }, {
-          children: [loading && jsxRuntime.jsx("div", Object.assign({
-            className: "loading-card"
-          }, {
-            children: jsxRuntime.jsx(Loader, {}, void 0)
-          }), void 0), children]
-        }), void 0), jsxRuntime.jsx(Complement, Object.assign({
-          className: complementClassName,
-          style: complementStyle
-        }, {
-          children: complement
-        }), void 0)]
-      }, void 0);
-    }
-
-    return jsxRuntime.jsxs(Shadow, Object.assign({
-      className: className,
-      width: width,
-      style: style,
-      type: type,
-      id: id
-    }, {
-      children: [loading && jsxRuntime.jsx("div", Object.assign({
-        className: "loading-card"
+    return jsxRuntime.jsxs(jsxRuntime.Fragment, {
+      children: [jsxRuntime.jsxs(Shadow, Object.assign({
+        className: className,
+        width: width,
+        style: style,
+        type: type,
+        id: id,
+        "data-testid": "card"
       }, {
-        children: jsxRuntime.jsx(Loader, {}, void 0)
-      }), void 0), children]
-    }), void 0);
+        children: [loading && jsxRuntime.jsx("div", Object.assign({
+          className: "loading-card"
+        }, {
+          children: jsxRuntime.jsx(Loader, {}, void 0)
+        }), void 0), children]
+      }), void 0), !!complement && jsxRuntime.jsx(Complement, Object.assign({
+        "data-testid": "complement",
+        className: complementClassName,
+        style: complementStyle
+      }, {
+        children: complement
+      }), void 0)]
+    }, void 0);
   }
 
   function renderButton() {
     return jsxRuntime.jsxs(Button$1, Object.assign({
+      className: className,
       style: style,
       colorText: colorText,
       onClick: onClick,
       href: rest.href,
       width: width,
-      className: className,
-      id: id
+      id: id,
+      "data-testid": "card"
     }, {
-      children: [icon && jsxRuntime.jsx(React__default["default"].Fragment, {
+      children: [icon && jsxRuntime.jsx(jsxRuntime.Fragment, {
         children: jsxRuntime.jsx(FontAwesomeIcon, {
+          "aria-label": "icon",
           icon: icon,
           color: colorIcon || colors.brandDark,
           size: sizeIcon || 'lg'
@@ -4703,7 +4671,13 @@ var Card = function Card(_ref) {
   }
 
   switch (type) {
-    case 'shadow'  :
+    case 'shadow':
+      return renderShadow();
+
+    case 'min-shadow':
+      return renderShadow();
+
+    case 'border':
       return renderShadow();
 
     case 'button':
@@ -4712,7 +4686,7 @@ var Card = function Card(_ref) {
     default:
       return renderShadow();
   }
-};
+}
 
 var _templateObject$a;
 
@@ -4973,8 +4947,8 @@ function DialogComponent(_ref) {
       _ref$closeIcon = _ref.closeIcon,
       closeIcon = _ref$closeIcon === void 0 ? false : _ref$closeIcon,
       onReturn = _ref.onReturn;
-  var headerDialog = React$2.useRef(null);
-  var sizeHeader = React$2.useMemo(function () {
+  var headerDialog = require$$0.useRef(null);
+  var sizeHeader = require$$0.useMemo(function () {
     if (headerDialog.current) return headerDialog.current.clientHeight;
     return 62;
   }, [headerDialog.current]);
@@ -5181,25 +5155,25 @@ function DropdownForm(_ref) {
       validate = _ref.validate,
       rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$6);
 
-  var _useState = React$2.useState(),
+  var _useState = require$$0.useState(),
       valueDefault = _useState[0],
       setValueDefault = _useState[1];
 
-  var _useState2 = React$2.useState(''),
+  var _useState2 = require$$0.useState(''),
       message = _useState2[0],
       setMessage = _useState2[1];
 
-  React$2.useEffect(function () {
+  require$$0.useEffect(function () {
     if (!valueDefault) {
       setValue(name, value);
     } else {
       setValue(name, valueDefault);
     }
   }, [valueDefault]);
-  React$2.useEffect(function () {
+  require$$0.useEffect(function () {
     setValueDefault(value);
   }, [value]);
-  React$2.useEffect(function () {
+  require$$0.useEffect(function () {
     if (register) {
       register({
         name: name
@@ -5376,13 +5350,13 @@ function Input(_ref) {
       errorStyle = _ref.errorStyle,
       rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$5);
 
-  var _useState = React$2.useState(function () {
+  var _useState = require$$0.useState(function () {
     return false;
   }),
       isFieldActive = _useState[0],
       setIsFieldActive = _useState[1];
 
-  React$2.useEffect(function () {
+  require$$0.useEffect(function () {
     if (rest.value) setIsFieldActive(true);
   }, [rest.value]);
 
@@ -5478,16 +5452,16 @@ function InputForm(_ref) {
       msgErrorValidate = _ref.msgErrorValidate,
       rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$4);
 
-  var _useState = React$2.useState(false),
+  var _useState = require$$0.useState(false),
       isFieldActive = _useState[0],
       setIsFieldActive = _useState[1];
 
-  var _useState2 = React$2.useState(''),
+  var _useState2 = require$$0.useState(''),
       message = _useState2[0],
       setMessage = _useState2[1];
 
   var value = values ? values(name) || rest.defaultValue : rest.value;
-  React$2.useEffect(function () {
+  require$$0.useEffect(function () {
     if (value) {
       if (!isFieldActive) {
         setIsFieldActive(true);
@@ -5659,7 +5633,7 @@ function ModalComponent(_ref) {
       headerStyle = _ref.headerStyle,
       bodyClassName = _ref.bodyClassName,
       bodyStyle = _ref.bodyStyle;
-  React$2.useEffect(function () {
+  require$$0.useEffect(function () {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     var keydownListener = function keydownListener(event) {
       escModal(event);
@@ -5956,14 +5930,14 @@ function MoreLess(_ref) {
       onChange = _ref.onChange,
       _ref$quantityToChange = _ref.quantityToChange,
       quantityToChange = _ref$quantityToChange === void 0 ? 1 : _ref$quantityToChange;
-  var noLess = React$2.useMemo(function () {
+  var noLess = require$$0.useMemo(function () {
     if (value <= minimum) {
       return true;
     }
 
     return false;
   }, [minimum, value]);
-  var noMore = React$2.useMemo(function () {
+  var noMore = require$$0.useMemo(function () {
     if (typeof maximum == 'number' && value >= maximum) {
       return true;
     }
@@ -7045,7 +7019,7 @@ function TextAreaForm(_ref) {
       minimum = _ref.minimum,
       rest = _objectWithoutPropertiesLoose$2(_ref, _excluded);
 
-  var _useState = React$2.useState(''),
+  var _useState = require$$0.useState(''),
       message = _useState[0],
       setMessage = _useState[1];
 
