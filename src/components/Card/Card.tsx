@@ -1,59 +1,47 @@
 import { CSSProperties, LinkHTMLAttributes, ReactNode } from 'react';
 import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { SizeProp } from '@fortawesome/fontawesome-svg-core';
 
 import Loader from '../Loader/Loader';
+import { Shadow, Button, Complement, LoadingCard } from './styles';
 import { colors } from '../../styles/colors';
-import { Shadow, Button, Complement } from './styles';
 
 export type TTypes = 'shadow' | 'button' | 'min-shadow' | 'border' | 'none';
 export interface CardProps
   extends Pick<LinkHTMLAttributes<HTMLLinkElement>, 'href'> {
   type?: TTypes;
   width?: number | string;
+  className?: string;
   style?: CSSProperties;
   icon?: IconDefinition;
-  sizeIcon?:
-    | '1x'
-    | '2x'
-    | '3x'
-    | '4x'
-    | '5x'
-    | '6x'
-    | '7x'
-    | '8x'
-    | '9x'
-    | '10x'
-    | 'lg'
-    | 'sm'
-    | 'xs';
-  colorIcon?: string;
-  text?: string;
-  colorText?: string;
+  iconClassName?: string;
+  iconStyle?: CSSProperties;
+  iconSize?: SizeProp;
   onClick?(): void;
   loading?: boolean;
-  className?: string;
-  id?: string;
   complement?: ReactNode;
   complementStyle?: CSSProperties;
   complementClassName?: string;
   children?: ReactNode;
+  childrenStyle?: CSSProperties;
+  childrenClassName?: string;
 }
 
 function Card({
   children,
+  childrenStyle,
+  childrenClassName,
   width,
   type = 'shadow',
   style,
   icon,
-  sizeIcon,
-  colorIcon,
-  text,
-  colorText,
+  iconClassName,
+  iconStyle,
+  iconSize,
   onClick,
   loading,
   className,
-  id,
   complement,
   complementStyle,
   complementClassName,
@@ -67,13 +55,12 @@ function Card({
           width={width}
           style={style}
           type={type}
-          id={id}
           data-testid="card"
         >
           {loading && (
-            <div className="loading-card">
+            <LoadingCard>
               <Loader />
-            </div>
+            </LoadingCard>
           )}
           {children}
         </Shadow>
@@ -95,25 +82,33 @@ function Card({
       <Button
         className={className}
         style={style}
-        colorText={colorText}
         onClick={onClick}
         href={rest.href}
         width={width}
-        id={id}
         data-testid="card"
       >
+        {loading && (
+          <LoadingCard>
+            <Loader size="sm" />
+          </LoadingCard>
+        )}
+
         {icon && (
           <>
             <FontAwesomeIcon
               aria-label="icon"
+              color={colors.brandDark}
               icon={icon}
-              color={colorIcon || colors.brandDark}
-              size={sizeIcon || 'lg'}
+              className={iconClassName}
+              style={iconStyle}
+              size={iconSize || 'lg'}
             />
           </>
         )}
 
-        <span>{text}</span>
+        <span style={childrenStyle} className={childrenClassName}>
+          {children}
+        </span>
       </Button>
     );
   }

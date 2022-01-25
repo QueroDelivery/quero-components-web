@@ -57,13 +57,4 @@ describe('Card Component', () => {
 
     expect(screen.queryByLabelText('icon')).toBeInTheDocument();
   });
-
-  it('Deve renderizar a cor passada para o texto do button', () => {
-    const text = 'this is a text';
-    const color = '#912837';
-
-    render(<Card type="button" text={text} colorText={color} />);
-
-    expect(screen.getByText(text)).toHaveStyle(`color: ${color}`);
-  });
 });

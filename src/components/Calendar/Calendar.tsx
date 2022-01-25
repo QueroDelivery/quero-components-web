@@ -67,7 +67,9 @@ const Calendar: React.FC<CalendarProps> = ({
           readOnly={false}
           onChangeRaw={event => (rest.readOnly ? event.preventDefault() : null)}
         />
-        <FontAwesomeIcon icon={faAngleDown} className="calendar-icon" />
+        {!rest.isClearable && (
+          <FontAwesomeIcon icon={faAngleDown} className="calendar-icon" />
+        )}
       </div>
     </Container>
   );

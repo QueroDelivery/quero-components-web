@@ -126,11 +126,12 @@ Default.args = {
 Default.parameters = {
   docs: {
     source: {
-      code: `<Accordion
-      title="Título"
-      open={false}
-      onClick={() => {}}
-    />`,
+      code: `
+<Accordion
+  title="Título"
+  open={false}
+  onClick={() => {}}
+/>`,
     },
   },
 };
@@ -147,12 +148,13 @@ Subtitle.args = {
 Subtitle.parameters = {
   docs: {
     source: {
-      code: `<Accordion
-      title="Título"
-      subtitle="Subtítulo"
-      open={false}
-      onClick={() => {}}
-    />`,
+      code: `
+<Accordion
+  title="Título"
+  subtitle="Subtítulo"
+  open={false}
+  onClick={() => {}}
+/>`,
     },
   },
 };
@@ -169,12 +171,13 @@ Width.args = {
 Width.parameters = {
   docs: {
     source: {
-      code: `<Accordion
-      title="Título"
-      open={false}
-      width="50%"
-      onClick={() => {}}
-    />`,
+      code: `
+<Accordion
+  title="Título"
+  open={false}
+  width="50%"
+  onClick={() => {}}
+/>`,
     },
   },
 };
@@ -191,12 +194,13 @@ Icon.args = {
 Icon.parameters = {
   docs: {
     source: {
-      code: `<Accordion
-      title="Titulo"
-      open={false}
-      icon={faPhone}
-      onClick={() => {}}
-    />`,
+      code: `
+<Accordion
+  title="Titulo"
+  open={false}
+  icon={faPhone}
+  onClick={() => {}}
+/>`,
     },
   },
 };
@@ -213,12 +217,13 @@ Value.args = {
 Value.parameters = {
   docs: {
     source: {
-      code: `<Accordion
-      title="Título"
-      value="R$10,00"
-      open={false}
-      onClick={() => {}}
-    />`,
+      code: `
+<Accordion
+  title="Título"
+  value="R$10,00"
+  open={false}
+  onClick={() => {}}
+/>`,
     },
   },
 };
@@ -234,12 +239,13 @@ Secondary.args = {
 Secondary.parameters = {
   docs: {
     source: {
-      code: `<Accordion
-      title="Título"
-      open={false}
-      secondary
-      onClick={() => {}}
-    />`,
+      code: `
+<Accordion
+  title="Título"
+  open={false}
+  secondary
+  onClick={() => {}}
+/>`,
     },
   },
 };
@@ -256,12 +262,13 @@ CustomIcon.args = {
 CustomIcon.parameters = {
   docs: {
     source: {
-      code: `<Accordion
-      title="Título"
-      open={false}
-      customIcon={<FontAwesomeIcon icon={faPhone}/>}
-      onClick={() => {}}
-    />`,
+      code: `
+<Accordion
+  title="Título"
+  open={false}
+  customIcon={<FontAwesomeIcon icon={faPhone}/>}
+  onClick={() => {}}
+/>`,
     },
   },
 };

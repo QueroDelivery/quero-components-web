@@ -933,6 +933,7 @@ export const Container = styled.div<CalendarProps>`
     text-align: center !important;
     display: table-cell !important;
     vertical-align: middle !important;
+    content: '×';
   }
 
   .react-datepicker__today-button {

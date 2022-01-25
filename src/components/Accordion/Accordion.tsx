@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faAngleUp,
@@ -32,9 +32,10 @@ export interface AccordionProps {
   customIcon?: React.ReactNode;
   bodyClassName?: string;
   bodyStyle?: React.CSSProperties;
+  children?: ReactNode;
 }
 
-const Accordion: React.FC<AccordionProps> = ({
+function Accordion({
   className,
   style,
   title,
@@ -57,7 +58,7 @@ const Accordion: React.FC<AccordionProps> = ({
   customIcon,
   bodyClassName,
   bodyStyle,
-}) => {
+}: AccordionProps) {
   return (
     <>
       <Container
@@ -131,6 +132,6 @@ const Accordion: React.FC<AccordionProps> = ({
       </Body>
     </>
   );
-};
+}
 
 export default Accordion;

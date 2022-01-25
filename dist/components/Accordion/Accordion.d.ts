@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
 export interface AccordionProps {
     className?: string;
@@ -22,6 +22,7 @@ export interface AccordionProps {
     customIcon?: React.ReactNode;
     bodyClassName?: string;
     bodyStyle?: React.CSSProperties;
+    children?: ReactNode;
 }
-declare const Accordion: React.FC<AccordionProps>;
+declare function Accordion({ className, style, title, titleClassName, titleStyle, subtitle, subtitleClassName, subtitleStyle, value, valueClassName, valueStyle, children, secondary, open, onClick, width, icon, iconClassName, iconStyle, customIcon, bodyClassName, bodyStyle, }: AccordionProps): JSX.Element;
 export default Accordion;

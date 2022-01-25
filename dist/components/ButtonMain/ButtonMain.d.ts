@@ -30,5 +30,5 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     size?: sizesTypes;
     rectangular?: boolean;
 }
-declare const ButtonMain: React.FC<ButtonProps>;
+declare function ButtonMain({ textFirst, textFirstClassName, textFirstStyle, textEnd, textEndClassName, textEndStyle, firstStrong, notStrong, strong, loading, secondary, backPurple, children, notification, amount, width, icon, iconClassName, iconStyle, containerIconClassName, containerIconStyle, customIcon, iconPosition, noBorder, tertiary, size, rectangular, ...rest }: ButtonProps): JSX.Element;
 export default ButtonMain;

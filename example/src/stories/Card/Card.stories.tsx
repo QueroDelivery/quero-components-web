@@ -24,30 +24,16 @@ export default {
         },
       },
     },
-    text: {
-      control: 'text',
-      description: 'Texto do Card',
-      table: {
-        defaultValue: {
-          summary: 'Observação',
-          detail: 'Só fica disponível quando o tipo for Button',
-        },
-        type: {
-          summary: 'string',
-        },
-      },
-    },
     icon: {
       control: 'object',
       description: 'Icone do Card',
-      defaultValue: faPhone,
       table: {
         type: {
           summary: 'IconDefinition',
         },
       },
     },
-    sizeIcon: {
+    iconSize: {
       control: {
         type: 'inline-radio',
         options: [
@@ -110,33 +96,6 @@ export default {
         },
       },
     },
-    colorText: {
-      control: 'color',
-      description: 'Cor do texto do Card',
-      table: {
-        type: {
-          summary: 'string',
-        },
-      },
-    },
-    colorIcon: {
-      control: 'color',
-      description: 'Cor do icone do Card',
-      table: {
-        type: {
-          summary: 'string',
-        },
-      },
-    },
-    style: {
-      control: 'object',
-      description: 'Estilização do Card',
-      table: {
-        type: {
-          summary: 'React.CSSProperties',
-        },
-      },
-    },
   },
 } as Meta;
 
@@ -150,9 +109,12 @@ Shadow.args = {
 Shadow.parameters = {
   docs: {
     source: {
-      code: `<Card
-      type="shadow"
-    />`,
+      code: `
+<Card
+  type="shadow"
+>
+  Olá
+</Card>`,
     },
   },
 };
@@ -160,18 +122,20 @@ Shadow.parameters = {
 export const Button = Template.bind({});
 Button.args = {
   type: 'button',
-  text: 'Olá',
+  children: 'Escreve aqui',
   onClick: () => action('click'),
 };
 
 Button.parameters = {
   docs: {
     source: {
-      code: `<Card
-      type="button"
-      text="Olá"
-      onClick={() => {}}
-    />`,
+      code: `
+<Card
+  type="button"
+  onClick={() => {}}
+>
+  Escreve aqui
+</Card>`,
     },
   },
 };
@@ -184,9 +148,13 @@ MinShadow.args = {
 MinShadow.parameters = {
   docs: {
     source: {
-      code: `<Card
-      type="min-shadow"
-    />`,
+      code: `
+<Card
+  type="min-shadow"
+>
+  Escreve aqui
+</Card>
+`,
     },
   },
 };
@@ -194,7 +162,6 @@ MinShadow.parameters = {
 export const Icon = Template.bind({});
 Icon.args = {
   type: 'button',
-  text: 'Olá',
   icon: faPhone,
   onClick: () => action('click'),
 };
@@ -202,35 +169,38 @@ Icon.args = {
 Icon.parameters = {
   docs: {
     source: {
-      code: `<Card
-      type="button"
-      text="Olá"
-      icon={faPhone}
-      onClick={() => {}}
-    />`,
+      code: `
+<Card
+  type="button"
+  icon={faPhone}
+  onClick={() => {}}
+>
+  Escreve aqui
+</Card>`,
     },
   },
 };
 
-export const SizeIcon = Template.bind({});
-SizeIcon.args = {
+export const IconSize = Template.bind({});
+IconSize.args = {
   type: 'button',
-  text: 'Olá',
   icon: faPhone,
-  sizeIcon: 'lg',
+  iconSize: '2x',
   onClick: () => action('click'),
 };
 
-SizeIcon.parameters = {
+IconSize.parameters = {
   docs: {
     source: {
-      code: `<Card
-      type="button"
-      text="Olá"
-      icon={faPhone}
-      sizeIcon="lg"
-      onClick={() => {}}
-    />`,
+      code: `
+<Card
+  type="button"
+  icon={faPhone}
+  sizeIcon="2x"
+  onClick={() => {}}
+>
+  Escreve aqui
+</Card>`,
     },
   },
 };
@@ -238,19 +208,20 @@ SizeIcon.parameters = {
 export const Width = Template.bind({});
 Width.args = {
   type: 'shadow',
-  text: 'Olá',
-  width: '50',
+  width: '50%',
 };
 
 Width.parameters = {
   docs: {
     source: {
-      code: `<Card
-      type="shadow"
-      text="Olá"
-      width="50"
-      onClick={() => {}}
-    />`,
+      code: `
+<Card
+  type="shadow"
+  width="50"
+  onClick={() => {}}
+>
+  Escreve aqui
+</Card>`,
     },
   },
 };
@@ -258,18 +229,19 @@ Width.parameters = {
 export const Loading = Template.bind({});
 Loading.args = {
   type: 'shadow',
-  text: 'Olá',
   loading: true,
 };
 
 Loading.parameters = {
   docs: {
     source: {
-      code: `<Card
-      type="shadow"
-      text="Olá"
-      loading={true}
-    />`,
+      code: `
+<Card
+  type="shadow"
+  loading
+>
+  Escreve aqui
+</Card>`,
     },
   },
 };
@@ -277,7 +249,6 @@ Loading.parameters = {
 export const CardWithComplement = Template.bind({});
 CardWithComplement.args = {
   type: 'border',
-  text: 'Escreve Aqui',
   complement: (
     <p style={{ cursor: 'pointer', padding: '20px 0' }}> Complement </p>
   ),
@@ -286,11 +257,13 @@ CardWithComplement.args = {
 CardWithComplement.parameters = {
   docs: {
     source: {
-      code: `<Card
-      type="shadow"
-      text="Escreve Aqui"
-      component={<p style={{ cursor: 'pointer';, padding: '20px 0' }}> Complement </p>}
-    />`,
+      code: `
+<Card
+  type="shadow"
+  component={<p style={{ cursor: 'pointer';, padding: '20px 0' }}> Complement </p>}
+>
+  Escreve aqui
+</Card>`,
     },
   },
 };
@@ -298,24 +271,25 @@ CardWithComplement.parameters = {
 export const Colors = Template.bind({});
 Colors.args = {
   type: 'button',
-  text: 'Olá',
   icon: faPhone,
-  colorIcon: 'blue',
-  colorText: 'green',
+  iconStyle: { color: 'blue' },
+  childrenStyle: { color: 'green' },
   onClick: () => action('click'),
 };
 
 Colors.parameters = {
   docs: {
     source: {
-      code: `<Card
-      type="button"
-      text="Olá"
-      icon={faPhone}
-      colorIcon="blue"
-      colorText="green"
-      onClick={() => {}}
-    />`,
+      code: `
+<Card
+  type="button"
+  icon={faPhone}
+  iconStyle={{color: 'blue'}}
+  childrenStyle={{color: 'green'}}
+  onClick={() => {}}
+>
+  Olá
+</Card>`,
     },
   },
 };

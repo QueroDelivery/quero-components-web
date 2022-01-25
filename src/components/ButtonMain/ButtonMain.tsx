@@ -45,7 +45,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   rectangular?: boolean;
 }
 
-const ButtonMain: React.FC<ButtonProps> = ({
+function ButtonMain({
   textFirst,
   textFirstClassName,
   textFirstStyle,
@@ -74,7 +74,7 @@ const ButtonMain: React.FC<ButtonProps> = ({
   size,
   rectangular,
   ...rest
-}) => {
+}: ButtonProps) {
   function renderButtonNotification() {
     return (
       <Notification {...rest}>
@@ -200,6 +200,6 @@ const ButtonMain: React.FC<ButtonProps> = ({
     return renderButtonNotification();
   }
   return renderButton();
-};
+}
 
 export default ButtonMain;

@@ -204,7 +204,7 @@ export default {
 } as Meta;
 
 const Template: Story<ButtonProps> = args => (
-  <ButtonMain {...args}>testeee</ButtonMain>
+  <ButtonMain {...args}></ButtonMain>
 );
 
 export const Default = Template.bind({});
@@ -217,11 +217,12 @@ Default.args = {
 Default.parameters = {
   docs: {
     source: {
-      code: `<ButtonMain
-      textFirst="Clique"
-      textEnd="aqui"
-      onClick={() => {}}
-    >`,
+      code: `
+<ButtonMain
+  textFirst="Clique"
+  textEnd="aqui"
+  onClick={() => {}}
+/>`,
     },
   },
 };
@@ -237,12 +238,13 @@ FirstStrong.args = {
 FirstStrong.parameters = {
   docs: {
     source: {
-      code: `<ButtonMain
-      textFirst="Clique"
-      textEnd="aqui"
-      onClick={() => {}}
-      firstStrong
-    />`,
+      code: `
+<ButtonMain
+  textFirst="Clique"
+  textEnd="aqui"
+  onClick={() => {}}
+  firstStrong
+/>`,
     },
   },
 };
@@ -258,12 +260,13 @@ NotStrong.args = {
 NotStrong.parameters = {
   docs: {
     source: {
-      code: `<ButtonMain
-      textFirst="Clique"
-      textEnd="aqui"
-      onClick={() => {}}
-      notStrong
-    />`,
+      code: `
+<ButtonMain
+  textFirst="Clique"
+  textEnd="aqui"
+  onClick={() => {}}
+  notStrong
+/>`,
     },
   },
 };
@@ -279,12 +282,13 @@ Strong.args = {
 Strong.parameters = {
   docs: {
     source: {
-      code: `<ButtonMain
-      textFirst="Clique"
-      textEnd="aqui"
-      onClick={() => {}}
-      strong
-    />`,
+      code: `
+<ButtonMain
+  textFirst="Clique"
+  textEnd="aqui"
+  onClick={() => {}}
+  strong
+/>`,
     },
   },
 };
@@ -300,12 +304,13 @@ Secondary.args = {
 Secondary.parameters = {
   docs: {
     source: {
-      code: `<ButtonMain
-      textFirst="Clique"
-      textEnd="aqui"
-      onClick={() => {}}
-      secondary
-    />`,
+      code: `
+<ButtonMain
+  textFirst="Clique"
+  textEnd="aqui"
+  onClick={() => {}}
+  secondary
+/>`,
     },
   },
 };
@@ -321,12 +326,13 @@ Tertiary.args = {
 Tertiary.parameters = {
   docs: {
     source: {
-      code: `<ButtonMain
-      textFirst="Clique"
-      textEnd="aqui"
-      onClick={() => {}}
-      tertiary
-    />`,
+      code: `
+<ButtonMain
+  textFirst="Clique"
+  textEnd="aqui"
+  onClick={() => {}}
+  tertiary
+/>`,
     },
   },
 };
@@ -342,12 +348,13 @@ Rectangular.args = {
 Rectangular.parameters = {
   docs: {
     source: {
-      code: `<ButtonMain
-      textFirst="Clique"
-      textEnd="aqui"
-      secondary
-      rectangular
-    />`,
+      code: `
+<ButtonMain
+  textFirst="Clique"
+  textEnd="aqui"
+  secondary
+  rectangular
+/>`,
     },
   },
 };
@@ -362,11 +369,12 @@ NoBorder.args = {
 NoBorder.parameters = {
   docs: {
     source: {
-      code: `<ButtonMain
-      textFirst="Clique"
-      textEnd="aqui"
-      noBorder
-    />`,
+      code: `
+<ButtonMain
+  textFirst="Clique"
+  textEnd="aqui"
+  noBorder
+/>`,
     },
   },
 };
@@ -381,11 +389,12 @@ BackPurple.args = {
 BackPurple.parameters = {
   docs: {
     source: {
-      code: `<ButtonMain
-      textFirst="Clique"
-      textEnd="aqui"
-      backPurple
-    />`,
+      code: `
+<ButtonMain
+  textFirst="Clique"
+  textEnd="aqui"
+  backPurple
+/>`,
     },
   },
 };
@@ -400,11 +409,12 @@ Size.args = {
 Size.parameters = {
   docs: {
     source: {
-      code: `<ButtonMain
-      textFirst="Clique"
-      textEnd="aqui"
-      size="mini"
-    />`,
+      code: `
+<ButtonMain
+  textFirst="Clique"
+  textEnd="aqui"
+  size="mini"
+/>`,
     },
   },
 };
@@ -419,11 +429,12 @@ Width.args = {
 Width.parameters = {
   docs: {
     source: {
-      code: `<ButtonMain
-      textFirst="Clique"
-      textEnd="aqui"
-      width="100%"
-    />`,
+      code: `
+<ButtonMain
+  textFirst="Clique"
+  textEnd="aqui"
+  width="100%"
+/>`,
     },
   },
 };
@@ -508,11 +519,12 @@ Loading.args = {
 Loading.parameters = {
   docs: {
     source: {
-      code: `<ButtonMain
-      textFirst="Clique"
-      textEnd="aqui"
-      loading
-    />`,
+      code: `
+<ButtonMain
+  textFirst="Clique"
+  textEnd="aqui"
+  loading
+/>`,
     },
   },
 };
@@ -528,12 +540,13 @@ Notification.args = {
 Notification.parameters = {
   docs: {
     source: {
-      code: `<ButtonMain
-      textFirst="Clique"
-      textEnd="aqui"
-      notification
-      amount={2}
-    />`,
+      code: `
+<ButtonMain
+  textFirst="Clique"
+  textEnd="aqui"
+  notification
+  amount={2}
+/>`,
     },
   },
 };
