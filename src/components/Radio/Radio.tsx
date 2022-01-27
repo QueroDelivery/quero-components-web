@@ -1,4 +1,5 @@
 import React, { InputHTMLAttributes } from 'react';
+import { sizesTypes } from '../../helpers/FnUtil';
 
 import { Container } from './styles';
 
@@ -7,26 +8,14 @@ export interface RadioProps
   label?: string;
   labelStyle?: React.CSSProperties;
   labelClassName?: string;
-  containerStyle?: React.CSSProperties;
-  containerClassName?: string;
   onChange: () => void;
-  sizeBox?:
-    | 'mini'
-    | 'tiny'
-    | 'small'
-    | 'medium'
-    | 'large'
-    | 'big'
-    | 'huge'
-    | 'massive';
+  sizeBox?: sizesTypes;
 }
 
 function Radio({
   label,
   labelStyle,
   sizeBox,
-  containerClassName,
-  containerStyle,
   labelClassName,
   ...rest
 }: RadioProps) {
@@ -35,8 +24,8 @@ function Radio({
       onClick={!rest.disabled && rest.onChange ? rest.onChange : undefined}
       disabled={rest.disabled}
       sizeBox={sizeBox}
-      className={containerClassName}
-      style={containerStyle}
+      className={rest.className}
+      style={rest.style}
       role="radio"
     >
       <input data-testid="input-radio" type="radio" {...rest} />

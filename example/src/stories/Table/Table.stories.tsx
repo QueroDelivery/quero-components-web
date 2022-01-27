@@ -118,38 +118,39 @@ export const Primary: Story<TableComponentProps> = args => {
 Primary.parameters = {
   docs: {
     source: {
-      code: `<Card type="shadow">
-      <Table
-      hasMore={hasMore}
-      pagination={
-        <Pagination
-          page={page}
-          totalCount={5}
-          limit={1}
-          onPageChange={() => {}}
-        />
-      }
-      >
+      code: `
+<Card type="shadow">
+  <Table
+    hasMore={hasMore}
+    pagination={
+      <Pagination
+        page={page}
+        totalCount={5}
+        limit={1}
+        onPageChange={() => {}}
+      />
+    }
+  >
 
-      <Table.Header>
-        <Table.Row>
-          <Table.HeaderCell>Arguments</Table.HeaderCell>
-          <Table.HeaderCell>Description</Table.HeaderCell>
-        </Table.Row>
-      </Table.Header>
+    <Table.Header>
+      <Table.Row>
+        <Table.HeaderCell>Arguments</Table.HeaderCell>
+        <Table.HeaderCell>Description</Table.HeaderCell>
+      </Table.Row>
+    </Table.Header>
 
-      <Table.Body>
-        <Table.Row>
-          <Table.Cell>set rating</Table.Cell>
-          <Table.Cell>rating (integer)</Table.Cell>
-        </Table.Row>
-        <Table.Row>
-          <Table.Cell>set rating</Table.Cell>
-          <Table.Cell>rating (integer)</Table.Cell>
-        </Table.Row>
-      </Table.Body>
-    />
-    </Card>`,
+    <Table.Body>
+      <Table.Row>
+        <Table.Cell>set rating</Table.Cell>
+        <Table.Cell>rating (integer)</Table.Cell>
+      </Table.Row>
+      <Table.Row>
+        <Table.Cell>set rating</Table.Cell>
+        <Table.Cell>rating (integer)</Table.Cell>
+      </Table.Row>
+    </Table.Body>
+  </Table>
+</Card>`,
     },
   },
 };

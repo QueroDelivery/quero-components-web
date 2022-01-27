@@ -1,6 +1,6 @@
-import { TSizes } from './Selection';
+import { sizesTypes } from '../../helpers/FnUtil';
 interface SelectionProps {
-    size?: TSizes;
+    size?: sizesTypes;
     disabled?: boolean;
     checked?: boolean;
 }

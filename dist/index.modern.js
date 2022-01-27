@@ -2906,7 +2906,7 @@ function _objectWithoutPropertiesLoose$2(source, excluded) {
   return target;
 }
 
-const Sizes$2 = {
+const Sizes = {
   xs: 'xs',
   sm: 'sm',
   md: 'md',
@@ -2926,19 +2926,19 @@ const getMeasurement = (size, defaultValue) => {
 };
 const getFontSize = (defaultSize, sizeBase) => {
   switch (defaultSize) {
-    case Sizes$2.xs:
+    case Sizes.xs:
       return `calc(${getMeasurement(sizeBase)} - 0.25rem)`;
 
-    case Sizes$2.sm:
+    case Sizes.sm:
       return `calc(${getMeasurement(sizeBase)} - 0.125rem)`;
 
-    case Sizes$2.md:
+    case Sizes.md:
       return getMeasurement(sizeBase);
 
-    case Sizes$2.lg:
+    case Sizes.lg:
       return `calc(${getMeasurement(sizeBase)} + 0.125rem)`;
 
-    case Sizes$2.xl:
+    case Sizes.xl:
       return `calc(${getMeasurement(sizeBase)} + 0.25rem)`;
 
     default:
@@ -3229,7 +3229,7 @@ function Loader({
   }), void 0);
 }
 
-const _excluded$9 = ["textFirst", "textFirstClassName", "textFirstStyle", "textEnd", "textEndClassName", "textEndStyle", "firstStrong", "notStrong", "strong", "loading", "secondary", "backPurple", "children", "notification", "amount", "width", "icon", "iconClassName", "iconStyle", "containerIconClassName", "containerIconStyle", "customIcon", "iconPosition", "noBorder", "tertiary", "size", "rectangular"];
+const _excluded$8 = ["textFirst", "textFirstClassName", "textFirstStyle", "textEnd", "textEndClassName", "textEndStyle", "firstStrong", "notStrong", "strong", "loading", "secondary", "backPurple", "children", "notification", "amount", "width", "icon", "iconClassName", "iconStyle", "containerIconClassName", "containerIconStyle", "customIcon", "iconPosition", "noBorder", "tertiary", "size", "rectangular"];
 
 function Button$2(_ref) {
   let {
@@ -3261,7 +3261,7 @@ function Button$2(_ref) {
     size,
     rectangular
   } = _ref,
-      rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$9);
+      rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$8);
 
   function renderButtonNotification() {
     return jsx(Notification, Object.assign({}, rest, {
@@ -5628,7 +5628,7 @@ const Container$6 = styled.div(_t$c || (_t$c = _$c`
   }
 `), props => props.brand ? colors.brandLight : colors.gray10, props => props.brand ? colors.brand10 : colors.gray20, props => props.brand ? colors.brandLight : colors.white, props => props.size ? getFontSize(props.size, '1rem') : '1rem', props => props.brand ? colors.brandTransparent : colors.default10, props => props.size ? getFontSize(props.size, '1rem') : '1rem', colors.brand10, props => props.size ? getFontSize(props.size, '1rem') : '1rem', props => props.brand ? colors.brand10 : colors.gray20);
 
-const _excluded$8 = ["label", "labelClassName", "labelStyle", "brand", "otherFormatDate", "size"];
+const _excluded$7 = ["label", "labelClassName", "labelStyle", "brand", "otherFormatDate", "size"];
 registerLocale('pt-BR', br);
 
 const Calendar = _ref => {
@@ -5640,7 +5640,7 @@ const Calendar = _ref => {
     otherFormatDate,
     size
   } = _ref,
-      rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$8);
+      rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$7);
 
   // eslint-disable-next-line react/display-name
   const CustomInput = require$$0.forwardRef((props, ref) => jsx(reactInputMask, {
@@ -5764,7 +5764,7 @@ const LoadingCard = styled.div(_t4$5 || (_t4$5 = _$b`
   position: absolute;
 `));
 
-const _excluded$7 = ["children", "childrenStyle", "childrenClassName", "width", "type", "style", "icon", "iconClassName", "iconStyle", "iconSize", "onClick", "loading", "className", "complement", "complementStyle", "complementClassName"];
+const _excluded$6 = ["children", "childrenStyle", "childrenClassName", "width", "type", "style", "icon", "iconClassName", "iconStyle", "iconSize", "onClick", "loading", "className", "complement", "complementStyle", "complementClassName"];
 
 function Card(_ref) {
   let {
@@ -5785,7 +5785,7 @@ function Card(_ref) {
     complementStyle,
     complementClassName
   } = _ref,
-      rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$7);
+      rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$6);
 
   function renderShadow() {
     return jsxs(Fragment$1, {
@@ -5863,19 +5863,19 @@ let _$a = t => t,
 
 const size$1 = size => {
   switch (size) {
-    case Sizes$2.xs:
+    case Sizes.xs:
       return '0.625rem';
 
-    case Sizes$2.sm:
+    case Sizes.sm:
       return '0.875rem';
 
-    case Sizes$2.md:
+    case Sizes.md:
       return '1.0625rem';
 
-    case Sizes$2.lg:
+    case Sizes.lg:
       return '1.4375rem';
 
-    case Sizes$2.xl:
+    case Sizes.xl:
       return '1.875rem';
 
     default:
@@ -5885,19 +5885,19 @@ const size$1 = size => {
 
 const sizeChecked$1 = size => {
   switch (size) {
-    case Sizes$2.xs:
+    case Sizes.xs:
       return '0.5rem';
 
-    case Sizes$2.sm:
+    case Sizes.sm:
       return '0.6875rem';
 
-    case Sizes$2.md:
+    case Sizes.md:
       return '0.8125rem';
 
-    case Sizes$2.lg:
+    case Sizes.lg:
       return '1.1875rem';
 
-    case Sizes$2.xl:
+    case Sizes.xl:
       return '1.4375rem';
 
     default:
@@ -5907,19 +5907,19 @@ const sizeChecked$1 = size => {
 
 const marginLeft = size => {
   switch (size) {
-    case Sizes$2.xs:
+    case Sizes.xs:
       return '0.0625rem';
 
-    case Sizes$2.sm:
+    case Sizes.sm:
       return '0.0875rem';
 
-    case Sizes$2.md:
+    case Sizes.md:
       return '0.125rem';
 
-    case Sizes$2.lg:
+    case Sizes.lg:
       return '0.1875rem';
 
-    case Sizes$2.xl:
+    case Sizes.xl:
       return '0.25rem';
 
     default:
@@ -5929,19 +5929,19 @@ const marginLeft = size => {
 
 const labelSize$1 = size => {
   switch (size) {
-    case Sizes$2.xs:
+    case Sizes.xs:
       return '10px';
 
-    case Sizes$2.sm:
+    case Sizes.sm:
       return '13px';
 
-    case Sizes$2.md:
+    case Sizes.md:
       return '16px';
 
-    case Sizes$2.lg:
+    case Sizes.lg:
       return '20px';
 
-    case Sizes$2.xl:
+    case Sizes.xl:
       return '24px';
 
     default:
@@ -5951,19 +5951,19 @@ const labelSize$1 = size => {
 
 const marginRight = size => {
   switch (size) {
-    case Sizes$2.xs:
+    case Sizes.xs:
       return '0.3125rem';
 
-    case Sizes$2.sm:
+    case Sizes.sm:
       return '0.4375rem';
 
-    case Sizes$2.md:
+    case Sizes.md:
       return '0.5rem';
 
-    case Sizes$2.lg:
+    case Sizes.lg:
       return '0.625rem';
 
-    case Sizes$2.xl:
+    case Sizes.xl:
       return '0.75rem';
 
     default:
@@ -6089,7 +6089,7 @@ const Container$5 = styled.div(_t$a || (_t$a = _$a`
   return '0.8125rem';
 }, props => props.checked ? colors.white : colors.default20);
 
-const _excluded$6 = ["label", "labelClassName", "labelStyle", "sizeBox", "containerClassName", "containerStyle"];
+const _excluded$5 = ["label", "labelClassName", "labelStyle", "sizeBox", "containerClassName", "containerStyle"];
 
 function Checkbox(_ref) {
   let {
@@ -6100,7 +6100,7 @@ function Checkbox(_ref) {
     containerClassName,
     containerStyle
   } = _ref,
-      rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$6);
+      rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$5);
 
   return jsxs(Container$5, Object.assign({
     onClick: !rest.disabled ? rest.onChange : undefined,
@@ -7874,7 +7874,7 @@ const Container$4 = styled.div(_t$8 || (_t$8 = _$8`
   return colors.brand10;
 }, props => props.textAlign && props.textAlign === 'center' ? 'center' : 'left', colors.gray20, props => props.line ? '0' : '0.28571429rem', props => props.line ? 'none' : '', props => props.line ? 'none' : '', props => props.line ? 'none' : '', props => props.brand ? colors.brand10 : colors.gray20, props => props.brand ? colors.brandLight : colors.white, props => props.brand ? colors.brand10 : colors.gray20, props => props.brand ? colors.brandLight : props.line ? colors.gray10 : 'rgba(34, 36, 38, 0.15)', props => props.line ? 0 : '0.28571429rem', props => props.line ? 'none' : '20px', props => props.line ? 'none' : '', props => props.line ? 'none' : '', props => props.line ? 'none' : '', props => props.brand ? colors.brandLight : colors.gray10, props => props.brand ? colors.brandTransparent : colors.gray10, props => props.error ? colors.brand20 : props.brand ? colors.brandLight : colors.gray10, props => props.error ? colors.brand20 : props.brand ? colors.brandLight : colors.gray10, props => props.error ? colors.brand20 : props.brand ? colors.brandLight : colors.gray10, props => props.brand ? colors.brandDark : colors.black, props => props.error ? colors.brand20 : props.brand ? colors.brandLight : colors.gray10, props => props.error ? colors.brand20 : props.brand ? colors.brandLight : colors.gray10, props => props.brand ? colors.brand10 : colors.gray20, props => props.textAlign && props.textAlign === 'center' ? 'center' : 'left', props => props.brand ? colors.brandDark : colors.black, props => props.brand ? colors.brandTransparent : colors.gray10, props => props.brand ? colors.brandLight : colors.gray20, props => props.brand ? colors.brand10 : colors.card, props => props.brand ? colors.brandDark : colors.black, props => props.brand ? colors.brandDark : colors.black, colors.brand10, props => props.brand ? colors.brand10 : colors.default20, props => props.brand ? colors.brand10 : colors.default20, props => props.brand ? colors.brandDark : colors.black, props => props.line ? colors.white : colors.error, colors.brand20, colors.brand20, colors.brand20, colors.brand20, colors.brand20, colors.error, colors.error, colors.brand10, colors.brandTransparent2, colors.brand20);
 
-const _excluded$5 = ["options", "brand", "textAlign", "errorMessage", "label", "line", "containerClassName", "containerStyle", "errorClassName", "errorStyle", "labelClassName", "labelStyle"];
+const _excluded$4 = ["options", "brand", "textAlign", "errorMessage", "label", "line", "containerClassName", "containerStyle", "errorClassName", "errorStyle", "labelClassName", "labelStyle"];
 
 function Dropdown(_ref) {
   let {
@@ -7891,7 +7891,7 @@ function Dropdown(_ref) {
     labelClassName,
     labelStyle
   } = _ref,
-      rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$5);
+      rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$4);
 
   return jsxs(Container$4, Object.assign({
     brand: brand,
@@ -8130,7 +8130,7 @@ const LabelError$1 = styled.span(_t5$2 || (_t5$2 = _$7`
   return colors.danger20;
 });
 
-const _excluded$4 = ["width", "textColor", "inputRef", "icon", "iconClassName", "iconStyle", "iconPosition", "action", "label", "labelClassName", "labelStyle", "errorColor", "errorMessage", "errorClassName", "errorStyle"];
+const _excluded$3 = ["width", "textColor", "inputRef", "icon", "iconClassName", "iconStyle", "iconPosition", "action", "label", "labelClassName", "labelStyle", "errorColor", "errorMessage", "errorClassName", "errorStyle"];
 
 function Input(_ref) {
   let {
@@ -8150,7 +8150,7 @@ function Input(_ref) {
     errorClassName,
     errorStyle
   } = _ref,
-      rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$4);
+      rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$3);
 
   const [isFieldActive, setIsFieldActive] = useState(() => {
     return false;
@@ -8777,41 +8777,22 @@ function MoreLess({
 
 let _$4 = t => t,
     _t$4;
-const Sizes$1 = {
-  mini: 'mini',
-  tiny: 'tiny',
-  small: 'small',
-  medium: 'medium',
-  large: 'large',
-  big: 'big',
-  huge: 'huge',
-  massive: 'massive'
-};
 
 const size = size => {
   switch (size) {
-    case Sizes$1.mini:
+    case Sizes.xs:
       return '0.625rem';
 
-    case Sizes$1.tiny:
-      return '0.75rem';
-
-    case Sizes$1.small:
+    case Sizes.sm:
       return '0.875rem';
 
-    case Sizes$1.medium:
+    case Sizes.md:
       return '1.0625rem';
 
-    case Sizes$1.large:
-      return '1.25rem';
-
-    case Sizes$1.big:
+    case Sizes.lg:
       return '1.4375rem';
 
-    case Sizes$1.huge:
-      return '1.625rem';
-
-    case Sizes$1.massive:
+    case Sizes.xl:
       return '1.875rem';
 
     default:
@@ -8821,28 +8802,19 @@ const size = size => {
 
 const sizeChecked = size => {
   switch (size) {
-    case Sizes$1.mini:
+    case Sizes.xs:
       return '0.125rem';
 
-    case Sizes$1.tiny:
-      return '0.25rem';
-
-    case Sizes$1.small:
+    case Sizes.sm:
       return '0.375rem';
 
-    case Sizes$1.medium:
+    case Sizes.md:
       return '0.5625rem';
 
-    case Sizes$1.large:
-      return '0.75rem';
-
-    case Sizes$1.big:
+    case Sizes.lg:
       return '0.9375rem';
 
-    case Sizes$1.huge:
-      return '1.125rem';
-
-    case Sizes$1.massive:
+    case Sizes.xl:
       return '1.375rem';
 
     default:
@@ -8852,28 +8824,19 @@ const sizeChecked = size => {
 
 const labelSize = size => {
   switch (size) {
-    case Sizes$1.mini:
+    case Sizes.xs:
       return '0.625rem';
 
-    case Sizes$1.tiny:
-      return '0.8125rem';
-
-    case Sizes$1.small:
+    case Sizes.sm:
       return '0.875rem';
 
-    case Sizes$1.medium:
+    case Sizes.md:
       return '1rem';
 
-    case Sizes$1.large:
-      return '1.125rem';
-
-    case Sizes$1.big:
+    case Sizes.lg:
       return '1.25rem';
 
-    case Sizes$1.huge:
-      return '1.375rem';
-
-    case Sizes$1.massive:
+    case Sizes.xl:
       return '1.5rem';
 
     default:
@@ -8883,28 +8846,19 @@ const labelSize = size => {
 
 const paddingLeft = size => {
   switch (size) {
-    case Sizes$1.mini:
+    case Sizes.xs:
       return '0.9375rem';
 
-    case Sizes$1.tiny:
-      return '1.125rem';
-
-    case Sizes$1.small:
+    case Sizes.sm:
       return '1.25rem';
 
-    case Sizes$1.medium:
+    case Sizes.md:
       return '1.5625rem';
 
-    case Sizes$1.large:
-      return '1.75rem';
-
-    case Sizes$1.big:
+    case Sizes.lg:
       return '2rem';
 
-    case Sizes$1.huge:
-      return '2.1875rem';
-
-    case Sizes$1.massive:
+    case Sizes.xl:
       return '2.5rem';
 
     default:
@@ -8914,29 +8868,20 @@ const paddingLeft = size => {
 
 const paddingTop = size => {
   switch (size) {
-    case Sizes$1.mini:
-      return '0rem';
-
-    case Sizes$1.tiny:
-      return '0rem';
-
-    case Sizes$1.small:
-      return '0rem';
-
-    case Sizes$1.medium:
-      return '0rem';
-
-    case Sizes$1.large:
-      return '0.125rem';
-
-    case Sizes$1.big:
-      return '0.125rem';
-
-    case Sizes$1.huge:
-      return '0.1875rem';
-
-    case Sizes$1.massive:
+    case Sizes.xs:
       return '0.25rem';
+
+    case Sizes.sm:
+      return '0.0625rem';
+
+    case Sizes.md:
+      return '0rem';
+
+    case Sizes.lg:
+      return '0rem';
+
+    case Sizes.xl:
+      return '0.125rem';
 
     default:
       return size;
@@ -8945,28 +8890,19 @@ const paddingTop = size => {
 
 const topBoxBefore = size => {
   switch (size) {
-    case Sizes$1.mini:
+    case Sizes.xs:
       return '0.3125rem';
 
-    case Sizes$1.tiny:
-      return '0.25rem';
-
-    case Sizes$1.small:
+    case Sizes.sm:
       return '0.1875rem';
 
-    case Sizes$1.medium:
+    case Sizes.md:
       return '0.0625rem';
 
-    case Sizes$1.large:
+    case Sizes.lg:
       return '0rem';
 
-    case Sizes$1.big:
-      return '0rem';
-
-    case Sizes$1.huge:
-      return '0rem';
-
-    case Sizes$1.massive:
+    case Sizes.xl:
       return '0rem';
 
     default:
@@ -8976,28 +8912,19 @@ const topBoxBefore = size => {
 
 const topBoxAfter = size => {
   switch (size) {
-    case Sizes$1.mini:
+    case Sizes.xs:
       return '0.5625rem';
 
-    case Sizes$1.tiny:
-      return '0.5rem';
-
-    case Sizes$1.small:
+    case Sizes.sm:
       return '0.4375rem';
 
-    case Sizes$1.medium:
+    case Sizes.md:
       return '0.3125rem';
 
-    case Sizes$1.large:
+    case Sizes.lg:
       return '0.25rem';
 
-    case Sizes$1.big:
-      return '0.25rem';
-
-    case Sizes$1.huge:
-      return '0.25rem';
-
-    case Sizes$1.massive:
+    case Sizes.xl:
       return '0.25rem';
 
     default:
@@ -9126,25 +9053,23 @@ const Container$2 = styled.div(_t$4 || (_t$4 = _$4`
   return '9px';
 }, colors.gray20, colors.gray20, colors.white);
 
-const _excluded$3 = ["label", "labelStyle", "sizeBox", "containerClassName", "containerStyle", "labelClassName"];
+const _excluded$2 = ["label", "labelStyle", "sizeBox", "labelClassName"];
 
 function Radio(_ref) {
   let {
     label,
     labelStyle,
     sizeBox,
-    containerClassName,
-    containerStyle,
     labelClassName
   } = _ref,
-      rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$3);
+      rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$2);
 
   return jsxs(Container$2, Object.assign({
     onClick: !rest.disabled && rest.onChange ? rest.onChange : undefined,
     disabled: rest.disabled,
     sizeBox: sizeBox,
-    className: containerClassName,
-    style: containerStyle,
+    className: rest.className,
+    style: rest.style,
     role: "radio"
   }, {
     children: [jsx("input", Object.assign({
@@ -9170,41 +9095,22 @@ const toggleHeight = 30;
 const toggleGutter = 5;
 const toggleRadius = toggleHeight / 2;
 const toggleControlSsize = toggleHeight - toggleGutter * 2;
-const Sizes = {
-  mini: 'mini',
-  tiny: 'tiny',
-  small: 'small',
-  medium: 'medium',
-  large: 'large',
-  big: 'big',
-  huge: 'huge',
-  massive: 'massive'
-};
 
 const widthSwitch = size => {
   switch (size) {
-    case Sizes.mini:
+    case Sizes.xs:
       return 30;
 
-    case Sizes.tiny:
-      return 35;
-
-    case Sizes.small:
+    case Sizes.sm:
       return 40;
 
-    case Sizes.medium:
+    case Sizes.md:
       return 50;
 
-    case Sizes.large:
-      return 60;
-
-    case Sizes.big:
+    case Sizes.lg:
       return 70;
 
-    case Sizes.huge:
-      return 80;
-
-    case Sizes.massive:
+    case Sizes.xl:
       return 90;
 
     default:
@@ -9214,28 +9120,19 @@ const widthSwitch = size => {
 
 const heightSwitch = size => {
   switch (size) {
-    case Sizes.mini:
+    case Sizes.xs:
       return 20;
 
-    case Sizes.tiny:
-      return 22.5;
-
-    case Sizes.small:
+    case Sizes.sm:
       return 25;
 
-    case Sizes.medium:
+    case Sizes.md:
       return 30;
 
-    case Sizes.large:
-      return 35;
-
-    case Sizes.big:
+    case Sizes.lg:
       return 40;
 
-    case Sizes.huge:
-      return 45;
-
-    case Sizes.massive:
+    case Sizes.xl:
       return 50;
 
     default:
@@ -9245,28 +9142,19 @@ const heightSwitch = size => {
 
 const sizeGutter = size => {
   switch (size) {
-    case Sizes.mini:
+    case Sizes.xs:
       return 5;
 
-    case Sizes.tiny:
+    case Sizes.sm:
       return 5;
 
-    case Sizes.small:
+    case Sizes.md:
       return 5;
 
-    case Sizes.medium:
+    case Sizes.lg:
       return 5;
 
-    case Sizes.large:
-      return 5;
-
-    case Sizes.big:
-      return 5;
-
-    case Sizes.huge:
-      return 5;
-
-    case Sizes.massive:
+    case Sizes.xl:
       return 5;
 
     default:
@@ -9276,28 +9164,19 @@ const sizeGutter = size => {
 
 const widthToggle = size => {
   switch (size) {
-    case Sizes.mini:
+    case Sizes.xs:
       return '40px !important';
 
-    case Sizes.tiny:
-      return '3.125rem !important';
-
-    case Sizes.small:
+    case Sizes.sm:
       return '3.75rem !important';
 
-    case Sizes.medium:
+    case Sizes.md:
       return '4.0625rem !important';
 
-    case Sizes.large:
-      return '4.375rem !important';
-
-    case Sizes.big:
+    case Sizes.lg:
       return '5rem !important';
 
-    case Sizes.huge:
-      return '5.625rem !important';
-
-    case Sizes.massive:
+    case Sizes.xl:
       return '6.25rem !important';
 
     default:
@@ -9307,28 +9186,19 @@ const widthToggle = size => {
 
 const fontToggle = size => {
   switch (size) {
-    case Sizes.mini:
+    case Sizes.xs:
       return '0.5rem !important';
 
-    case Sizes.tiny:
-      return '0.5625rem !important';
-
-    case Sizes.small:
+    case Sizes.sm:
       return '0.625rem !important';
 
-    case Sizes.medium:
+    case Sizes.md:
       return '0.6875rem !important';
 
-    case Sizes.large:
-      return '0.75rem !important';
-
-    case Sizes.big:
+    case Sizes.lg:
       return '0.8125rem !important';
 
-    case Sizes.huge:
-      return '0.875rem !important';
-
-    case Sizes.massive:
+    case Sizes.xl:
       return '0.9375rem !important';
 
     default:
@@ -9338,28 +9208,19 @@ const fontToggle = size => {
 
 const fontActiveInactive = size => {
   switch (size) {
-    case Sizes.mini:
+    case Sizes.xs:
       return '0.4375rem !important';
 
-    case Sizes.tiny:
-      return '0.5rem !important';
-
-    case Sizes.small:
+    case Sizes.sm:
       return '0.5625rem !important';
 
-    case Sizes.medium:
+    case Sizes.md:
       return '0.625rem !important';
 
-    case Sizes.large:
-      return '0.6875rem !important';
-
-    case Sizes.big:
+    case Sizes.lg:
       return '0.75rem !important';
 
-    case Sizes.huge:
-      return '0.8125rem !important';
-
-    case Sizes.massive:
+    case Sizes.xl:
       return '0.875rem !important';
 
     default:
@@ -10930,7 +10791,7 @@ const Container$1 = styled.div(_t4$1 || (_t4$1 = _$1`
   *******************************/
 `), props => props.hasMore || props.hasPagination ? '20px' : '0', colors.brand10);
 
-const _excluded$2 = ["children", "title", "titleStyle", "titleClassName", "message", "messageStyle", "messageClassName", "hasMore", "hasMoreText", "pagination"];
+const _excluded$1 = ["children", "title", "titleStyle", "titleClassName", "message", "messageStyle", "messageClassName", "hasMore", "hasMoreText", "pagination"];
 
 function TableComponent(_ref) {
   let {
@@ -10945,7 +10806,7 @@ function TableComponent(_ref) {
     hasMoreText,
     pagination
   } = _ref,
-      rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$2);
+      rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$1);
 
   return jsxs("div", {
     children: [title || message ? jsxs(Header, {
@@ -11123,7 +10984,7 @@ const LabelLengthInfo = styled.span(_t7 || (_t7 = _`
   color: ${0};
 `), colors.gray10);
 
-const _excluded$1 = ["label", "labelClassName", "labelStyle", "labelColor", "errorClassName", "errorStyle", "errorMessage", "errorColor", "containerStyle", "textColor", "width", "height", "lengthInfo", "lengthInfoClassName", "lengthInfoStyle"];
+const _excluded = ["label", "labelClassName", "labelStyle", "labelColor", "errorClassName", "errorStyle", "errorMessage", "errorColor", "containerStyle", "containerClassName", "textColor", "width", "height", "lengthInfo", "lengthInfoClassName", "lengthInfoStyle"];
 
 function TextArea(_ref) {
   let {
@@ -11136,6 +10997,7 @@ function TextArea(_ref) {
     errorMessage,
     errorColor,
     containerStyle,
+    containerClassName,
     textColor,
     width,
     height,
@@ -11143,7 +11005,7 @@ function TextArea(_ref) {
     lengthInfoClassName,
     lengthInfoStyle
   } = _ref,
-      rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$1);
+      rest = _objectWithoutPropertiesLoose$2(_ref, _excluded);
 
   return jsxs("div", {
     children: [label && jsx(Label, Object.assign({
@@ -11157,8 +11019,8 @@ function TextArea(_ref) {
     }), void 0), jsx(Container, Object.assign({
       errorMessage: errorMessage,
       errorColor: errorColor,
-      containerStyle: containerStyle,
       style: containerStyle,
+      className: containerClassName,
       disabled: rest.disabled,
       textColor: textColor,
       width: width,
@@ -11182,53 +11044,5 @@ function TextArea(_ref) {
   }, void 0);
 }
 
-const _excluded = ["register", "errors", "validate", "name", "required", "limit", "minimum"];
-
-function TextAreaForm(_ref) {
-  let {
-    register,
-    errors,
-    validate,
-    name,
-    required,
-    limit,
-    minimum
-  } = _ref,
-      rest = _objectWithoutPropertiesLoose$2(_ref, _excluded);
-
-  const [message, setMessage] = useState('');
-  return jsx(TextArea, Object.assign({}, rest, {
-    name: name,
-    errorMessage: errors ? errors.type === 'required' ? 'Obrigatório' : `${message}` : ''
-  }, register({
-    required,
-    validate: validate && required ? value => {
-      if (validate(value)) {
-        setMessage(validate(value));
-        return false;
-      }
-
-      setMessage('');
-      return true;
-    } : limit && required ? value => {
-      if (value.length > limit) {
-        setMessage(`${limit} caracteres permitidos.`);
-        return false;
-      }
-
-      setMessage('');
-      return true;
-    } : minimum && required ? value => {
-      if (value.length < minimum) {
-        setMessage(`${name} deve ter ${minimum} ou mais caracteres.`);
-        return false;
-      }
-
-      setMessage('');
-      return true;
-    } : null
-  })), void 0);
-}
-
-export { Accordion, Button$2 as Button, Button$2 as ButtonMain, Calendar, Card, Checkbox, DialogComponent as Dialog, Dropdown, Input, Input as InputLine, Loader, ModalComponent as Modal, MoreLess, Pagination, Radio, Selection, Table, TextArea, TextAreaForm };
+export { Accordion, Button$2 as Button, Button$2 as ButtonMain, Calendar, Card, Checkbox, DialogComponent as Dialog, Dropdown, Input, Input as InputLine, Loader, ModalComponent as Modal, MoreLess, Pagination, Radio, Selection, Table, TextArea };
 //# sourceMappingURL=index.modern.js.map

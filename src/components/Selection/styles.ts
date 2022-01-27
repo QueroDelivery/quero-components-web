@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 import { colors } from '../../styles/colors';
-import { TSizes } from './Selection';
+import { Sizes, sizesTypes } from '../../helpers/FnUtil';
 
 interface SelectionProps {
-  size?: TSizes;
+  size?: sizesTypes;
   disabled?: boolean;
   checked?: boolean;
 }
@@ -15,34 +15,17 @@ const toggleGutter = 5;
 const toggleRadius = toggleHeight / 2;
 const toggleControlSsize = toggleHeight - toggleGutter * 2;
 
-const Sizes: Record<TSizes, TSizes> = {
-  mini: 'mini',
-  tiny: 'tiny',
-  small: 'small',
-  medium: 'medium',
-  large: 'large',
-  big: 'big',
-  huge: 'huge',
-  massive: 'massive',
-};
-
 const widthSwitch = (size: string) => {
   switch (size) {
-    case Sizes.mini:
+    case Sizes.xs:
       return 30;
-    case Sizes.tiny:
-      return 35;
-    case Sizes.small:
+    case Sizes.sm:
       return 40;
-    case Sizes.medium:
+    case Sizes.md:
       return 50;
-    case Sizes.large:
-      return 60;
-    case Sizes.big:
+    case Sizes.lg:
       return 70;
-    case Sizes.huge:
-      return 80;
-    case Sizes.massive:
+    case Sizes.xl:
       return 90;
     default:
       return 50;
@@ -51,21 +34,15 @@ const widthSwitch = (size: string) => {
 
 const heightSwitch = (size: string) => {
   switch (size) {
-    case Sizes.mini:
+    case Sizes.xs:
       return 20;
-    case Sizes.tiny:
-      return 22.5;
-    case Sizes.small:
+    case Sizes.sm:
       return 25;
-    case Sizes.medium:
+    case Sizes.md:
       return 30;
-    case Sizes.large:
-      return 35;
-    case Sizes.big:
+    case Sizes.lg:
       return 40;
-    case Sizes.huge:
-      return 45;
-    case Sizes.massive:
+    case Sizes.xl:
       return 50;
     default:
       return 30;
@@ -74,90 +51,66 @@ const heightSwitch = (size: string) => {
 
 const sizeGutter = (size: string) => {
   switch (size) {
-    case Sizes.mini:
+    case Sizes.xs:
       return 5;
-    case Sizes.tiny:
+    case Sizes.sm:
       return 5;
-    case Sizes.small:
+    case Sizes.md:
       return 5;
-    case Sizes.medium:
+    case Sizes.lg:
       return 5;
-    case Sizes.large:
-      return 5;
-    case Sizes.big:
-      return 5;
-    case Sizes.huge:
-      return 5;
-    case Sizes.massive:
+    case Sizes.xl:
       return 5;
     default:
       return 5;
   }
 };
 
-const widthToggle = (size: TSizes) => {
+const widthToggle = (size: sizesTypes) => {
   switch (size) {
-    case Sizes.mini:
+    case Sizes.xs:
       return '40px !important';
-    case Sizes.tiny:
-      return '3.125rem !important';
-    case Sizes.small:
+    case Sizes.sm:
       return '3.75rem !important';
-    case Sizes.medium:
+    case Sizes.md:
       return '4.0625rem !important';
-    case Sizes.large:
-      return '4.375rem !important';
-    case Sizes.big:
+    case Sizes.lg:
       return '5rem !important';
-    case Sizes.huge:
-      return '5.625rem !important';
-    case Sizes.massive:
+    case Sizes.xl:
       return '6.25rem !important';
     default:
       return '4.0625rem !important';
   }
 };
 
-const fontToggle = (size: TSizes) => {
+const fontToggle = (size: sizesTypes) => {
   switch (size) {
-    case Sizes.mini:
+    case Sizes.xs:
       return '0.5rem !important';
-    case Sizes.tiny:
-      return '0.5625rem !important';
-    case Sizes.small:
+    case Sizes.sm:
       return '0.625rem !important';
-    case Sizes.medium:
+    case Sizes.md:
       return '0.6875rem !important';
-    case Sizes.large:
-      return '0.75rem !important';
-    case Sizes.big:
+    case Sizes.lg:
       return '0.8125rem !important';
-    case Sizes.huge:
-      return '0.875rem !important';
-    case Sizes.massive:
+    case Sizes.xl:
       return '0.9375rem !important';
     default:
       return '0.6875rem !important';
   }
 };
 
-const fontActiveInactive = (size: TSizes) => {
+const fontActiveInactive = (size: sizesTypes) => {
   switch (size) {
-    case Sizes.mini:
+    case Sizes.xs:
       return '0.4375rem !important';
-    case Sizes.tiny:
-      return '0.5rem !important';
-    case Sizes.small:
+    case Sizes.sm:
       return '0.5625rem !important';
-    case Sizes.medium:
+    case Sizes.md:
       return '0.625rem !important';
-    case Sizes.large:
-      return '0.6875rem !important';
-    case Sizes.big:
+    case Sizes.lg:
       return '0.75rem !important';
-    case Sizes.huge:
-      return '0.8125rem !important';
-    case Sizes.massive:
+    case Sizes.xl:
       return '0.875rem !important';
     default:
       return '0.625rem !important';

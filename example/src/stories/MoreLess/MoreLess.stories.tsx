@@ -105,10 +105,11 @@ Default.args = {
 Default.parameters = {
   docs: {
     source: {
-      code: `<MoreLess
-      value={0}
-      onChange={() => {}}
-    />`,
+      code: `
+<MoreLess
+  value={0}
+  onChange={() => {}}
+/>`,
     },
   },
 };
@@ -123,11 +124,12 @@ Size.args = {
 Size.parameters = {
   docs: {
     source: {
-      code: `<MoreLess
-      value={2}
-      onChange={() => {}}
-      size="md"
-    />`,
+      code: `
+<MoreLess
+  value={2}
+  onChange={() => {}}
+  size="md"
+/>`,
     },
   },
 };
@@ -142,11 +144,12 @@ Disabled.args = {
 Disabled.parameters = {
   docs: {
     source: {
-      code: `<MoreLess
-      value={2}
-      onChange={() => {}}
-      disabled={true}
-    />`,
+      code: `
+<MoreLess
+  value={2}
+  onChange={() => {}}
+  disabled={true}
+/>`,
     },
   },
 };
@@ -161,11 +164,12 @@ Minimum.args = {
 Minimum.parameters = {
   docs: {
     source: {
-      code: `<MoreLess
-      value={2}
-      onChange={() => {}}
-      minimum={2}
-    />`,
+      code: `
+<MoreLess
+  value={2}
+  onChange={() => {}}
+  minimum={2}
+/>`,
     },
   },
 };
@@ -180,11 +184,12 @@ Maximum.args = {
 Maximum.parameters = {
   docs: {
     source: {
-      code: `<MoreLess
-      value={10}
-      onChange={() => {}}
-      limit={10}
-    />`,
+      code: `
+<MoreLess
+  value={10}
+  onChange={() => {}}
+  limit={10}
+/>`,
     },
   },
 };
@@ -198,10 +203,11 @@ OnChange.args = {
 OnChange.parameters = {
   docs: {
     source: {
-      code: `<MoreLess
-      value={4}
-      onChange={() => {}}
-    />`,
+      code: `
+<MoreLess
+  value={4}
+  onChange={() => {}}
+/>`,
     },
   },
 };

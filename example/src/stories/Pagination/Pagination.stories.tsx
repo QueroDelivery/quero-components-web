@@ -104,14 +104,14 @@ Default.parameters = {
   docs: {
     source: {
       code: `
-      <Pagination
-        limitPerPage={30}
-        currentPage={1}
-        totalCount={180}
-        doubleJumpArrow={true}
-        onPageChange={() => {}}
-        disabled={true}
-      />`,
+<Pagination
+  limitPerPage={30}
+  currentPage={1}
+  totalCount={180}
+  doubleJumpArrow
+  onPageChange={() => {}}
+  disabled={false}
+/>`,
     },
   },
 };

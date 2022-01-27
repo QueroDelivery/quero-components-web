@@ -1,4 +1,3 @@
-import React from 'react';
 import styled, { css } from 'styled-components';
 import { getMeasurement } from '../../helpers/FnUtil';
 import { colors } from '../../styles/colors';
@@ -7,7 +6,6 @@ interface ContainerProps {
   isFieldActive?: boolean;
   errorMessage?: string;
   errorColor?: string;
-  containerStyle?: React.CSSProperties;
   disabled?: boolean;
   width?: number | string;
   height?: number | string;

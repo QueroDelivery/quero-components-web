@@ -146,9 +146,10 @@ Default.args = {
 Default.parameters = {
   docs: {
     source: {
-      code: `<TextArea
-      onChange={() => {}}
-    />`,
+      code: `
+<TextArea
+  onChange={() => {}}
+/>`,
     },
   },
 };
@@ -162,10 +163,11 @@ Label.args = {
 Label.parameters = {
   docs: {
     source: {
-      code: `<TextArea
-      label="Título do TextArea"
-      onChange={() => {}}
-    />`,
+      code: `
+<TextArea
+  label="Título do TextArea"
+  onChange={() => {}}
+/>`,
     },
   },
 };
@@ -181,11 +183,12 @@ LengthInfo.args = {
 LengthInfo.parameters = {
   docs: {
     source: {
-      code: `<TextArea
-      maxLength={400}
-      lengthInfo={true}
-      value="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-    />`,
+      code: `
+<TextArea
+  maxLength={400}
+  lengthInfo
+  value="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+/>`,
     },
   },
 };
@@ -199,10 +202,11 @@ ErrorMessage.args = {
 ErrorMessage.parameters = {
   docs: {
     source: {
-      code: `<TextArea
-      errorMessage="Erro"
-      onChange={() => {}}
-    />`,
+      code: `
+<TextArea
+  errorMessage="Erro"
+  onChange={() => {}}
+/>`,
     },
   },
 };
@@ -218,11 +222,12 @@ Width.args = {
 Width.parameters = {
   docs: {
     source: {
-      code: `<TextArea
-      width="50%"
-      onChange={() => {}}
-      value="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-    />`,
+      code: `
+<TextArea
+  width="50%"
+  onChange={() => {}}
+  value="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+/>`,
     },
   },
 };
@@ -238,11 +243,12 @@ Height.args = {
 Height.parameters = {
   docs: {
     source: {
-      code: `<TextArea
-      width={200}
-      onChange={() => {}}
-      value="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of de Finibus Bonorum et Malorum (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance."
-    />`,
+      code: `
+<TextArea
+  width={200}
+  onChange={() => {}}
+  value="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of de Finibus Bonorum et Malorum (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance."
+/>`,
     },
   },
 };
@@ -260,13 +266,14 @@ Colors.args = {
 Colors.parameters = {
   docs: {
     source: {
-      code: `<TextArea
-      label="Título do TextArea"
-      labelColor="blue"
-      textColor="green"
-      onChange={() => {}}
-      value="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-    />`,
+      code: `
+<TextArea
+  label="Título do TextArea"
+  labelColor="blue"
+  textColor="green"
+  onChange={() => {}}
+  value="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+/>`,
     },
   },
 };

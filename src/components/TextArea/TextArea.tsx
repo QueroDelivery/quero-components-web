@@ -23,6 +23,7 @@ export interface TextAreaProps
 
   textColor?: string;
   containerStyle?: React.CSSProperties;
+  containerClassName?: string;
 
   lengthInfo?: boolean | number;
   lengthInfoClassName?: string;
@@ -44,6 +45,7 @@ function TextArea({
   errorColor,
 
   containerStyle,
+  containerClassName,
   textColor,
   width,
   height,
@@ -69,8 +71,8 @@ function TextArea({
       <Container
         errorMessage={errorMessage}
         errorColor={errorColor}
-        containerStyle={containerStyle}
         style={containerStyle}
+        className={containerClassName}
         disabled={rest.disabled}
         textColor={textColor}
         width={width}

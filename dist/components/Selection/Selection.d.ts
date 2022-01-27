@@ -1,12 +1,12 @@
 import React from 'react';
+import { sizesTypes } from '../../helpers/FnUtil';
 declare type TSelectors = 'switch' | 'toggle' | 'activeInactive';
-export declare type TSizes = 'mini' | 'tiny' | 'small' | 'medium' | 'large' | 'big' | 'huge' | 'massive';
 export interface SelectionProps {
     type: TSelectors;
     checked?: boolean;
     onClick?: React.MouseEventHandler<HTMLElement>;
     onChange?: React.MouseEventHandler<HTMLElement>;
-    size?: TSizes;
+    size?: sizesTypes;
     disabled?: boolean;
     className?: string;
     style?: React.CSSProperties;

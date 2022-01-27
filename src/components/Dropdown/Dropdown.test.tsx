@@ -1,6 +1,5 @@
 import '@testing-library/jest-dom';
 import { screen, render } from '@testing-library/react';
-import { colors } from '../../styles/colors';
 
 import Dropdown, { OptionsProps } from './Dropdown';
 
@@ -63,15 +62,5 @@ describe('Dropdown Component', () => {
 
     expect(screen.queryByText(error)).toBeInTheDocument();
     expect(screen.getByText(error)).toHaveStyle(`padding-bottom: '20px'`);
-  });
-
-  it('Prop colorLabel funcionando', () => {
-    // given
-    const colorLabel = colors.brand30;
-    // when
-
-    render(<Dropdown options={defaultOptions} colorLabel={colorLabel} />);
-
-    // then
   });
 });

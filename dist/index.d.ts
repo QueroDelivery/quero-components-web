@@ -16,6 +16,5 @@ import Selection, { SelectionProps } from './components/Selection/Selection';
 import Pagination, { PaginationProps } from './components/Pagination/Pagination';
 import Table, { TableComponentProps } from './components/Table/Table';
 import TextArea, { TextAreaProps } from './components/TextArea/TextArea';
-import TextAreaForm, { TextAreaFormProps } from './components/TextArea/TextAreaForm';
-export { Accordion, Button, Button as ButtonMain, Calendar, Card, Checkbox, Dialog, Dropdown, Input, Input as InputLine, Loader, Modal, MoreLess, Radio, Selection, Pagination, Table, TextArea, TextAreaForm, };
-export type { AccordionProps, ButtonProps, CalendarProps, CardProps, CheckboxProps, DialogProps, DropdownProps, InputProps, LoaderProps, ModalProps, MoreLessProps, PaginationProps, RadioProps, SelectionProps, TableComponentProps, TextAreaProps, TextAreaFormProps, };
+export { Accordion, Button, Button as ButtonMain, Calendar, Card, Checkbox, Dialog, Dropdown, Input, Input as InputLine, Loader, Modal, MoreLess, Radio, Selection, Pagination, Table, TextArea, };
+export type { AccordionProps, ButtonProps, CalendarProps, CardProps, CheckboxProps, DialogProps, DropdownProps, InputProps, LoaderProps, ModalProps, MoreLessProps, PaginationProps, RadioProps, SelectionProps, TableComponentProps, TextAreaProps, };

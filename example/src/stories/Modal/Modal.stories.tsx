@@ -185,11 +185,12 @@ Default.args = {
 Default.parameters = {
   docs: {
     source: {
-      code: `<Modal
-      title="Título do Modal"
-      closeOnDimerClick={false}
-      onClose={() => {}}
-    />`,
+      code: `
+<Modal
+  title="Título do Modal"
+  closeOnDimerClick={false}
+  onClose={() => {}}
+/>`,
     },
   },
 };
@@ -209,12 +210,13 @@ Actions.args = {
 Actions.parameters = {
   docs: {
     source: {
-      code: `<Modal
-      open={true}
-      title="Título do Modal"
-      actions={ <ButtonMain textFirst="click aqui"/> }
-      onClose={() => {}}
-    />`,
+      code: `
+<Modal
+  open
+  title="Título do Modal"
+  actions={ <ButtonMain textFirst="click aqui"/> }
+  onClose={() => {}}
+/>`,
     },
   },
 };
@@ -230,12 +232,13 @@ Loading.args = {
 Loading.parameters = {
   docs: {
     source: {
-      code: `<Modal
-      open={true}
-      loading={true}
-      title="Título do Modal"
-      onClose={() => {}}
-    />`,
+      code: `
+<Modal
+  open
+  loading
+  title="Título do Modal"
+  onClose={() => {}}
+/>`,
     },
   },
 };
@@ -251,12 +254,13 @@ CloseIcon.args = {
 CloseIcon.parameters = {
   docs: {
     source: {
-      code: `<Modal
-      open={true}
-      title="Título do Modal"
-      onClose={() => {}}
-      closeIcon={false}
-    />`,
+      code: `
+<Modal
+  open
+  title="Título do Modal"
+  onClose={() => {}}
+  closeIcon={false}
+/>`,
     },
   },
 };
@@ -272,12 +276,13 @@ onReturnClick.args = {
 onReturnClick.parameters = {
   docs: {
     source: {
-      code: `<Modal
-      open={true}
-      title="Título do Modal"
-      onReturnClick={() => {}}
-      onClose={() => {}}
-    />`,
+      code: `
+<Modal
+  open
+  title="Título do Modal"
+  onReturnClick={() => {}}
+  onClose={() => {}}
+/>`,
     },
   },
 };
@@ -293,12 +298,13 @@ Size.args = {
 Size.parameters = {
   docs: {
     source: {
-      code: `<Modal
-      open={true}
-      size="sm"
-      title="Título do Modal"
-      onClose={() => {}}
-    />`,
+      code: `
+<Modal
+  open={true}
+  size="sm"
+  title="Título do Modal"
+  onClose={() => {}}
+/>`,
     },
   },
 };
@@ -306,7 +312,7 @@ Size.parameters = {
 export const Width = Template.bind({});
 Width.args = {
   open: true,
-  width: '50',
+  width: '50%',
   title: 'Título do Modal',
   onClose: action('fechar'),
 };
@@ -314,12 +320,13 @@ Width.args = {
 Width.parameters = {
   docs: {
     source: {
-      code: `<Modal
-      open={true}
-      width="50"
-      title="Título do Modal"
-      onClose={() => {}}
-    />`,
+      code: `
+<Modal
+  open
+  width="50%"
+  title="Título do Modal"
+  onClose={() => {}}
+/>`,
     },
   },
 };

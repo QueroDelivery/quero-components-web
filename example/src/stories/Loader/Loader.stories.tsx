@@ -1,3 +1,4 @@
+import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 import { Loader, LoaderProps } from '@quero-delivery/quero-components-web';
 import '@quero-delivery/quero-components-web/dist/index.css';
@@ -76,8 +77,8 @@ Default.args = {};
 Default.parameters = {
   docs: {
     source: {
-      code: `<Loader
-    />`,
+      code: `
+<Loader />`,
     },
   },
 };
@@ -90,24 +91,26 @@ Position.args = {
 Position.parameters = {
   docs: {
     source: {
-      code: `<Loader
-      position="left"
-    />`,
+      code: `
+<Loader
+  position="left"
+/>`,
     },
   },
 };
 
 export const Size = Template.bind({});
 Size.args = {
-  size: 'small',
+  size: 'sm',
 };
 
 Size.parameters = {
   docs: {
     source: {
-      code: `<Loader
-      size="small"
-    />`,
+      code: `
+<Loader
+  size="sm"
+/>`,
     },
   },
 };
@@ -120,9 +123,10 @@ Color.args = {
 Color.parameters = {
   docs: {
     source: {
-      code: `<Loader
-      color="blue"
-    />`,
+      code: `
+<Loader
+  color="blue"
+/>`,
     },
   },
 };

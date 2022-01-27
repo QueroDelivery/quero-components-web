@@ -1,26 +1,17 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react';
+import { sizesTypes } from '../../helpers/FnUtil';
 
 import { Switch, Toggle, ActiveInactive } from './styles';
 
 type TSelectors = 'switch' | 'toggle' | 'activeInactive';
-
-export type TSizes =
-  | 'mini'
-  | 'tiny'
-  | 'small'
-  | 'medium'
-  | 'large'
-  | 'big'
-  | 'huge'
-  | 'massive';
 
 export interface SelectionProps {
   type: TSelectors;
   checked?: boolean;
   onClick?: React.MouseEventHandler<HTMLElement>;
   onChange?: React.MouseEventHandler<HTMLElement>;
-  size?: TSizes;
+  size?: sizesTypes;
   disabled?: boolean;
   className?: string;
   style?: React.CSSProperties;

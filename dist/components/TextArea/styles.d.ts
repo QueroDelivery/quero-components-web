@@ -1,9 +1,7 @@
-import React from 'react';
 interface ContainerProps {
     isFieldActive?: boolean;
     errorMessage?: string;
     errorColor?: string;
-    containerStyle?: React.CSSProperties;
     disabled?: boolean;
     width?: number | string;
     height?: number | string;

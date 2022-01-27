@@ -19,9 +19,6 @@ import Pagination, {
 } from './components/Pagination/Pagination';
 import Table, { TableComponentProps } from './components/Table/Table';
 import TextArea, { TextAreaProps } from './components/TextArea/TextArea';
-import TextAreaForm, {
-  TextAreaFormProps,
-} from './components/TextArea/TextAreaForm';
 
 export {
   Accordion,
@@ -42,7 +39,6 @@ export {
   Pagination,
   Table,
   TextArea,
-  TextAreaForm,
 };
 
 export type {
@@ -62,5 +58,4 @@ export type {
   SelectionProps,
   TableComponentProps,
   TextAreaProps,
-  TextAreaFormProps,
 };

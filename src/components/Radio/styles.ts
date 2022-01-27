@@ -1,47 +1,23 @@
 import styled from 'styled-components';
+import { Sizes, sizesTypes } from '../../helpers/FnUtil';
 import { colors } from '../../styles/colors';
 
 interface CheckboxProps {
   disabled?: boolean;
-  sizeBox?:
-    | 'mini'
-    | 'tiny'
-    | 'small'
-    | 'medium'
-    | 'large'
-    | 'big'
-    | 'huge'
-    | 'massive';
+  sizeBox?: sizesTypes;
 }
-
-const Sizes = {
-  mini: 'mini',
-  tiny: 'tiny',
-  small: 'small',
-  medium: 'medium',
-  large: 'large',
-  big: 'big',
-  huge: 'huge',
-  massive: 'massive',
-};
 
 const size = (size: string | number) => {
   switch (size) {
-    case Sizes.mini:
+    case Sizes.xs:
       return '0.625rem';
-    case Sizes.tiny:
-      return '0.75rem';
-    case Sizes.small:
+    case Sizes.sm:
       return '0.875rem';
-    case Sizes.medium:
+    case Sizes.md:
       return '1.0625rem';
-    case Sizes.large:
-      return '1.25rem';
-    case Sizes.big:
+    case Sizes.lg:
       return '1.4375rem';
-    case Sizes.huge:
-      return '1.625rem';
-    case Sizes.massive:
+    case Sizes.xl:
       return '1.875rem';
     default:
       return size;
@@ -50,21 +26,15 @@ const size = (size: string | number) => {
 
 const sizeChecked = (size: string | number) => {
   switch (size) {
-    case Sizes.mini:
+    case Sizes.xs:
       return '0.125rem';
-    case Sizes.tiny:
-      return '0.25rem';
-    case Sizes.small:
+    case Sizes.sm:
       return '0.375rem';
-    case Sizes.medium:
+    case Sizes.md:
       return '0.5625rem';
-    case Sizes.large:
-      return '0.75rem';
-    case Sizes.big:
+    case Sizes.lg:
       return '0.9375rem';
-    case Sizes.huge:
-      return '1.125rem';
-    case Sizes.massive:
+    case Sizes.xl:
       return '1.375rem';
     default:
       return size;
@@ -73,21 +43,15 @@ const sizeChecked = (size: string | number) => {
 
 const labelSize = (size: string | number) => {
   switch (size) {
-    case Sizes.mini:
+    case Sizes.xs:
       return '0.625rem';
-    case Sizes.tiny:
-      return '0.8125rem';
-    case Sizes.small:
+    case Sizes.sm:
       return '0.875rem';
-    case Sizes.medium:
+    case Sizes.md:
       return '1rem';
-    case Sizes.large:
-      return '1.125rem';
-    case Sizes.big:
+    case Sizes.lg:
       return '1.25rem';
-    case Sizes.huge:
-      return '1.375rem';
-    case Sizes.massive:
+    case Sizes.xl:
       return '1.5rem';
     default:
       return size;
@@ -96,21 +60,15 @@ const labelSize = (size: string | number) => {
 
 const paddingLeft = (size: string | number) => {
   switch (size) {
-    case Sizes.mini:
+    case Sizes.xs:
       return '0.9375rem';
-    case Sizes.tiny:
-      return '1.125rem';
-    case Sizes.small:
+    case Sizes.sm:
       return '1.25rem';
-    case Sizes.medium:
+    case Sizes.md:
       return '1.5625rem';
-    case Sizes.large:
-      return '1.75rem';
-    case Sizes.big:
+    case Sizes.lg:
       return '2rem';
-    case Sizes.huge:
-      return '2.1875rem';
-    case Sizes.massive:
+    case Sizes.xl:
       return '2.5rem';
     default:
       return size;
@@ -119,22 +77,16 @@ const paddingLeft = (size: string | number) => {
 
 const paddingTop = (size: string | number) => {
   switch (size) {
-    case Sizes.mini:
-      return '0rem';
-    case Sizes.tiny:
-      return '0rem';
-    case Sizes.small:
-      return '0rem';
-    case Sizes.medium:
-      return '0rem';
-    case Sizes.large:
-      return '0.125rem';
-    case Sizes.big:
-      return '0.125rem';
-    case Sizes.huge:
-      return '0.1875rem';
-    case Sizes.massive:
+    case Sizes.xs:
       return '0.25rem';
+    case Sizes.sm:
+      return '0.0625rem';
+    case Sizes.md:
+      return '0rem';
+    case Sizes.lg:
+      return '0rem';
+    case Sizes.xl:
+      return '0.125rem';
     default:
       return size;
   }
@@ -142,21 +94,15 @@ const paddingTop = (size: string | number) => {
 
 const topBoxBefore = (size: string | number) => {
   switch (size) {
-    case Sizes.mini:
+    case Sizes.xs:
       return '0.3125rem';
-    case Sizes.tiny:
-      return '0.25rem';
-    case Sizes.small:
+    case Sizes.sm:
       return '0.1875rem';
-    case Sizes.medium:
+    case Sizes.md:
       return '0.0625rem';
-    case Sizes.large:
+    case Sizes.lg:
       return '0rem';
-    case Sizes.big:
-      return '0rem';
-    case Sizes.huge:
-      return '0rem';
-    case Sizes.massive:
+    case Sizes.xl:
       return '0rem';
     default:
       return size;
@@ -165,21 +111,15 @@ const topBoxBefore = (size: string | number) => {
 
 const topBoxAfter = (size: string | number) => {
   switch (size) {
-    case Sizes.mini:
+    case Sizes.xs:
       return '0.5625rem';
-    case Sizes.tiny:
-      return '0.5rem';
-    case Sizes.small:
+    case Sizes.sm:
       return '0.4375rem';
-    case Sizes.medium:
+    case Sizes.md:
       return '0.3125rem';
-    case Sizes.large:
+    case Sizes.lg:
       return '0.25rem';
-    case Sizes.big:
-      return '0.25rem';
-    case Sizes.huge:
-      return '0.25rem';
-    case Sizes.massive:
+    case Sizes.xl:
       return '0.25rem';
     default:
       return size;

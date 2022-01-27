@@ -2871,7 +2871,7 @@ function Accordion(_ref) {
   }, void 0);
 }
 
-var Sizes$2 = {
+var Sizes = {
   xs: 'xs',
   sm: 'sm',
   md: 'md',
@@ -2891,19 +2891,19 @@ var getMeasurement = function getMeasurement(size, defaultValue) {
 };
 var getFontSize = function getFontSize(defaultSize, sizeBase) {
   switch (defaultSize) {
-    case Sizes$2.xs:
+    case Sizes.xs:
       return "calc(" + getMeasurement(sizeBase) + " - 0.25rem)";
 
-    case Sizes$2.sm:
+    case Sizes.sm:
       return "calc(" + getMeasurement(sizeBase) + " - 0.125rem)";
 
-    case Sizes$2.md:
+    case Sizes.md:
       return getMeasurement(sizeBase);
 
-    case Sizes$2.lg:
+    case Sizes.lg:
       return "calc(" + getMeasurement(sizeBase) + " + 0.125rem)";
 
-    case Sizes$2.xl:
+    case Sizes.xl:
       return "calc(" + getMeasurement(sizeBase) + " + 0.25rem)";
 
     default:
@@ -3110,7 +3110,7 @@ function Loader(_ref) {
   }), void 0);
 }
 
-var _excluded$9 = ["textFirst", "textFirstClassName", "textFirstStyle", "textEnd", "textEndClassName", "textEndStyle", "firstStrong", "notStrong", "strong", "loading", "secondary", "backPurple", "children", "notification", "amount", "width", "icon", "iconClassName", "iconStyle", "containerIconClassName", "containerIconStyle", "customIcon", "iconPosition", "noBorder", "tertiary", "size", "rectangular"];
+var _excluded$8 = ["textFirst", "textFirstClassName", "textFirstStyle", "textEnd", "textEndClassName", "textEndStyle", "firstStrong", "notStrong", "strong", "loading", "secondary", "backPurple", "children", "notification", "amount", "width", "icon", "iconClassName", "iconStyle", "containerIconClassName", "containerIconStyle", "customIcon", "iconPosition", "noBorder", "tertiary", "size", "rectangular"];
 
 function Button$2(_ref) {
   var textFirst = _ref.textFirst,
@@ -3141,7 +3141,7 @@ function Button$2(_ref) {
       tertiary = _ref.tertiary,
       size = _ref.size,
       rectangular = _ref.rectangular,
-      rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$9);
+      rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$8);
 
   function renderButtonNotification() {
     return jsxRuntime.jsx(Notification, Object.assign({}, rest, {
@@ -4520,7 +4520,7 @@ var Container$6 = styled__default["default"].div(_templateObject$c || (_template
   return props.brand ? colors.brand10 : colors.gray20;
 });
 
-var _excluded$8 = ["label", "labelClassName", "labelStyle", "brand", "otherFormatDate", "size"];
+var _excluded$7 = ["label", "labelClassName", "labelStyle", "brand", "otherFormatDate", "size"];
 DatePicker.registerLocale('pt-BR', br__default["default"]);
 
 var Calendar = function Calendar(_ref) {
@@ -4530,7 +4530,7 @@ var Calendar = function Calendar(_ref) {
       brand = _ref.brand,
       otherFormatDate = _ref.otherFormatDate,
       size = _ref.size,
-      rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$8);
+      rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$7);
 
   // eslint-disable-next-line react/display-name
   var CustomInput = require$$0__default["default"].forwardRef(function (props, ref) {
@@ -4598,7 +4598,7 @@ var Button$1 = styled__default["default"].a(_templateObject2$7 || (_templateObje
 var Complement = styled__default["default"].div(_templateObject3$7 || (_templateObject3$7 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n\n  color: ", ";\n  background-color: ", ";\n\n  border: 1px solid ", ";\n  text-align: center;\n  margin-top: -1.5625rem;\n  padding-top: 1.5625rem;\n  width: 100%;\n\n  border-bottom-left-radius: 1.875rem;\n  border-bottom-right-radius: 1.875rem;\n"])), colors.gray20, colors.default10, colors.default20);
 var LoadingCard = styled__default["default"].div(_templateObject4$5 || (_templateObject4$5 = _taggedTemplateLiteralLoose(["\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  background-color: rgba(255, 255, 255, 0.8);\n  width: 100%;\n  height: 100%;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  border-radius: 30px;\n  z-index: 2;\n  position: absolute;\n"])));
 
-var _excluded$7 = ["children", "childrenStyle", "childrenClassName", "width", "type", "style", "icon", "iconClassName", "iconStyle", "iconSize", "onClick", "loading", "className", "complement", "complementStyle", "complementClassName"];
+var _excluded$6 = ["children", "childrenStyle", "childrenClassName", "width", "type", "style", "icon", "iconClassName", "iconStyle", "iconSize", "onClick", "loading", "className", "complement", "complementStyle", "complementClassName"];
 
 function Card(_ref) {
   var children = _ref.children,
@@ -4618,7 +4618,7 @@ function Card(_ref) {
       complement = _ref.complement,
       complementStyle = _ref.complementStyle,
       complementClassName = _ref.complementClassName,
-      rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$7);
+      rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$6);
 
   function renderShadow() {
     return jsxRuntime.jsxs(jsxRuntime.Fragment, {
@@ -4695,19 +4695,19 @@ var _templateObject$a;
 
 var size$1 = function size(_size) {
   switch (_size) {
-    case Sizes$2.xs:
+    case Sizes.xs:
       return '0.625rem';
 
-    case Sizes$2.sm:
+    case Sizes.sm:
       return '0.875rem';
 
-    case Sizes$2.md:
+    case Sizes.md:
       return '1.0625rem';
 
-    case Sizes$2.lg:
+    case Sizes.lg:
       return '1.4375rem';
 
-    case Sizes$2.xl:
+    case Sizes.xl:
       return '1.875rem';
 
     default:
@@ -4717,19 +4717,19 @@ var size$1 = function size(_size) {
 
 var sizeChecked$1 = function sizeChecked(size) {
   switch (size) {
-    case Sizes$2.xs:
+    case Sizes.xs:
       return '0.5rem';
 
-    case Sizes$2.sm:
+    case Sizes.sm:
       return '0.6875rem';
 
-    case Sizes$2.md:
+    case Sizes.md:
       return '0.8125rem';
 
-    case Sizes$2.lg:
+    case Sizes.lg:
       return '1.1875rem';
 
-    case Sizes$2.xl:
+    case Sizes.xl:
       return '1.4375rem';
 
     default:
@@ -4739,19 +4739,19 @@ var sizeChecked$1 = function sizeChecked(size) {
 
 var marginLeft = function marginLeft(size) {
   switch (size) {
-    case Sizes$2.xs:
+    case Sizes.xs:
       return '0.0625rem';
 
-    case Sizes$2.sm:
+    case Sizes.sm:
       return '0.0875rem';
 
-    case Sizes$2.md:
+    case Sizes.md:
       return '0.125rem';
 
-    case Sizes$2.lg:
+    case Sizes.lg:
       return '0.1875rem';
 
-    case Sizes$2.xl:
+    case Sizes.xl:
       return '0.25rem';
 
     default:
@@ -4761,19 +4761,19 @@ var marginLeft = function marginLeft(size) {
 
 var labelSize$1 = function labelSize(size) {
   switch (size) {
-    case Sizes$2.xs:
+    case Sizes.xs:
       return '10px';
 
-    case Sizes$2.sm:
+    case Sizes.sm:
       return '13px';
 
-    case Sizes$2.md:
+    case Sizes.md:
       return '16px';
 
-    case Sizes$2.lg:
+    case Sizes.lg:
       return '20px';
 
-    case Sizes$2.xl:
+    case Sizes.xl:
       return '24px';
 
     default:
@@ -4783,19 +4783,19 @@ var labelSize$1 = function labelSize(size) {
 
 var marginRight = function marginRight(size) {
   switch (size) {
-    case Sizes$2.xs:
+    case Sizes.xs:
       return '0.3125rem';
 
-    case Sizes$2.sm:
+    case Sizes.sm:
       return '0.4375rem';
 
-    case Sizes$2.md:
+    case Sizes.md:
       return '0.5rem';
 
-    case Sizes$2.lg:
+    case Sizes.lg:
       return '0.625rem';
 
-    case Sizes$2.xl:
+    case Sizes.xl:
       return '0.75rem';
 
     default:
@@ -4859,7 +4859,7 @@ var Container$5 = styled__default["default"].div(_templateObject$a || (_template
   return props.checked ? colors.white : colors.default20;
 });
 
-var _excluded$6 = ["label", "labelClassName", "labelStyle", "sizeBox", "containerClassName", "containerStyle"];
+var _excluded$5 = ["label", "labelClassName", "labelStyle", "sizeBox", "containerClassName", "containerStyle"];
 
 function Checkbox(_ref) {
   var label = _ref.label,
@@ -4868,7 +4868,7 @@ function Checkbox(_ref) {
       sizeBox = _ref.sizeBox,
       containerClassName = _ref.containerClassName,
       containerStyle = _ref.containerStyle,
-      rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$6);
+      rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$5);
 
   return jsxRuntime.jsxs(Container$5, Object.assign({
     onClick: !rest.disabled ? rest.onChange : undefined,
@@ -5098,7 +5098,7 @@ var Container$4 = styled__default["default"].div(_templateObject$8 || (_template
   return props.line ? colors.white : colors.error;
 }, colors.brand20, colors.brand20, colors.brand20, colors.brand20, colors.brand20, colors.error, colors.error, colors.brand10, colors.brandTransparent2, colors.brand20);
 
-var _excluded$5 = ["options", "brand", "textAlign", "errorMessage", "label", "line", "containerClassName", "containerStyle", "errorClassName", "errorStyle", "labelClassName", "labelStyle"];
+var _excluded$4 = ["options", "brand", "textAlign", "errorMessage", "label", "line", "containerClassName", "containerStyle", "errorClassName", "errorStyle", "labelClassName", "labelStyle"];
 
 function Dropdown(_ref) {
   var options = _ref.options,
@@ -5113,7 +5113,7 @@ function Dropdown(_ref) {
       errorStyle = _ref.errorStyle,
       labelClassName = _ref.labelClassName,
       labelStyle = _ref.labelStyle,
-      rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$5);
+      rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$4);
 
   return jsxRuntime.jsxs(Container$4, Object.assign({
     brand: brand,
@@ -5265,7 +5265,7 @@ var LabelError$1 = styled__default["default"].span(_templateObject5$2 || (_templ
   return colors.danger20;
 });
 
-var _excluded$4 = ["width", "textColor", "inputRef", "icon", "iconClassName", "iconStyle", "iconPosition", "action", "label", "labelClassName", "labelStyle", "errorColor", "errorMessage", "errorClassName", "errorStyle"];
+var _excluded$3 = ["width", "textColor", "inputRef", "icon", "iconClassName", "iconStyle", "iconPosition", "action", "label", "labelClassName", "labelStyle", "errorColor", "errorMessage", "errorClassName", "errorStyle"];
 
 function Input(_ref) {
   var width = _ref.width,
@@ -5283,7 +5283,7 @@ function Input(_ref) {
       errorMessage = _ref.errorMessage,
       errorClassName = _ref.errorClassName,
       errorStyle = _ref.errorStyle,
-      rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$4);
+      rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$3);
 
   var _useState = require$$0.useState(function () {
     return false;
@@ -5799,41 +5799,22 @@ function MoreLess(_ref) {
 }
 
 var _templateObject$4;
-var Sizes$1 = {
-  mini: 'mini',
-  tiny: 'tiny',
-  small: 'small',
-  medium: 'medium',
-  large: 'large',
-  big: 'big',
-  huge: 'huge',
-  massive: 'massive'
-};
 
 var size = function size(_size) {
   switch (_size) {
-    case Sizes$1.mini:
+    case Sizes.xs:
       return '0.625rem';
 
-    case Sizes$1.tiny:
-      return '0.75rem';
-
-    case Sizes$1.small:
+    case Sizes.sm:
       return '0.875rem';
 
-    case Sizes$1.medium:
+    case Sizes.md:
       return '1.0625rem';
 
-    case Sizes$1.large:
-      return '1.25rem';
-
-    case Sizes$1.big:
+    case Sizes.lg:
       return '1.4375rem';
 
-    case Sizes$1.huge:
-      return '1.625rem';
-
-    case Sizes$1.massive:
+    case Sizes.xl:
       return '1.875rem';
 
     default:
@@ -5843,28 +5824,19 @@ var size = function size(_size) {
 
 var sizeChecked = function sizeChecked(size) {
   switch (size) {
-    case Sizes$1.mini:
+    case Sizes.xs:
       return '0.125rem';
 
-    case Sizes$1.tiny:
-      return '0.25rem';
-
-    case Sizes$1.small:
+    case Sizes.sm:
       return '0.375rem';
 
-    case Sizes$1.medium:
+    case Sizes.md:
       return '0.5625rem';
 
-    case Sizes$1.large:
-      return '0.75rem';
-
-    case Sizes$1.big:
+    case Sizes.lg:
       return '0.9375rem';
 
-    case Sizes$1.huge:
-      return '1.125rem';
-
-    case Sizes$1.massive:
+    case Sizes.xl:
       return '1.375rem';
 
     default:
@@ -5874,28 +5846,19 @@ var sizeChecked = function sizeChecked(size) {
 
 var labelSize = function labelSize(size) {
   switch (size) {
-    case Sizes$1.mini:
+    case Sizes.xs:
       return '0.625rem';
 
-    case Sizes$1.tiny:
-      return '0.8125rem';
-
-    case Sizes$1.small:
+    case Sizes.sm:
       return '0.875rem';
 
-    case Sizes$1.medium:
+    case Sizes.md:
       return '1rem';
 
-    case Sizes$1.large:
-      return '1.125rem';
-
-    case Sizes$1.big:
+    case Sizes.lg:
       return '1.25rem';
 
-    case Sizes$1.huge:
-      return '1.375rem';
-
-    case Sizes$1.massive:
+    case Sizes.xl:
       return '1.5rem';
 
     default:
@@ -5905,28 +5868,19 @@ var labelSize = function labelSize(size) {
 
 var paddingLeft = function paddingLeft(size) {
   switch (size) {
-    case Sizes$1.mini:
+    case Sizes.xs:
       return '0.9375rem';
 
-    case Sizes$1.tiny:
-      return '1.125rem';
-
-    case Sizes$1.small:
+    case Sizes.sm:
       return '1.25rem';
 
-    case Sizes$1.medium:
+    case Sizes.md:
       return '1.5625rem';
 
-    case Sizes$1.large:
-      return '1.75rem';
-
-    case Sizes$1.big:
+    case Sizes.lg:
       return '2rem';
 
-    case Sizes$1.huge:
-      return '2.1875rem';
-
-    case Sizes$1.massive:
+    case Sizes.xl:
       return '2.5rem';
 
     default:
@@ -5936,29 +5890,20 @@ var paddingLeft = function paddingLeft(size) {
 
 var paddingTop = function paddingTop(size) {
   switch (size) {
-    case Sizes$1.mini:
-      return '0rem';
-
-    case Sizes$1.tiny:
-      return '0rem';
-
-    case Sizes$1.small:
-      return '0rem';
-
-    case Sizes$1.medium:
-      return '0rem';
-
-    case Sizes$1.large:
-      return '0.125rem';
-
-    case Sizes$1.big:
-      return '0.125rem';
-
-    case Sizes$1.huge:
-      return '0.1875rem';
-
-    case Sizes$1.massive:
+    case Sizes.xs:
       return '0.25rem';
+
+    case Sizes.sm:
+      return '0.0625rem';
+
+    case Sizes.md:
+      return '0rem';
+
+    case Sizes.lg:
+      return '0rem';
+
+    case Sizes.xl:
+      return '0.125rem';
 
     default:
       return size;
@@ -5967,28 +5912,19 @@ var paddingTop = function paddingTop(size) {
 
 var topBoxBefore = function topBoxBefore(size) {
   switch (size) {
-    case Sizes$1.mini:
+    case Sizes.xs:
       return '0.3125rem';
 
-    case Sizes$1.tiny:
-      return '0.25rem';
-
-    case Sizes$1.small:
+    case Sizes.sm:
       return '0.1875rem';
 
-    case Sizes$1.medium:
+    case Sizes.md:
       return '0.0625rem';
 
-    case Sizes$1.large:
+    case Sizes.lg:
       return '0rem';
 
-    case Sizes$1.big:
-      return '0rem';
-
-    case Sizes$1.huge:
-      return '0rem';
-
-    case Sizes$1.massive:
+    case Sizes.xl:
       return '0rem';
 
     default:
@@ -5998,28 +5934,19 @@ var topBoxBefore = function topBoxBefore(size) {
 
 var topBoxAfter = function topBoxAfter(size) {
   switch (size) {
-    case Sizes$1.mini:
+    case Sizes.xs:
       return '0.5625rem';
 
-    case Sizes$1.tiny:
-      return '0.5rem';
-
-    case Sizes$1.small:
+    case Sizes.sm:
       return '0.4375rem';
 
-    case Sizes$1.medium:
+    case Sizes.md:
       return '0.3125rem';
 
-    case Sizes$1.large:
+    case Sizes.lg:
       return '0.25rem';
 
-    case Sizes$1.big:
-      return '0.25rem';
-
-    case Sizes$1.huge:
-      return '0.25rem';
-
-    case Sizes$1.massive:
+    case Sizes.xl:
       return '0.25rem';
 
     default:
@@ -6089,23 +6016,21 @@ var Container$2 = styled__default["default"].div(_templateObject$4 || (_template
   return '9px';
 }, colors.gray20, colors.gray20, colors.white);
 
-var _excluded$3 = ["label", "labelStyle", "sizeBox", "containerClassName", "containerStyle", "labelClassName"];
+var _excluded$2 = ["label", "labelStyle", "sizeBox", "labelClassName"];
 
 function Radio(_ref) {
   var label = _ref.label,
       labelStyle = _ref.labelStyle,
       sizeBox = _ref.sizeBox,
-      containerClassName = _ref.containerClassName,
-      containerStyle = _ref.containerStyle,
       labelClassName = _ref.labelClassName,
-      rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$3);
+      rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$2);
 
   return jsxRuntime.jsxs(Container$2, Object.assign({
     onClick: !rest.disabled && rest.onChange ? rest.onChange : undefined,
     disabled: rest.disabled,
     sizeBox: sizeBox,
-    className: containerClassName,
-    style: containerStyle,
+    className: rest.className,
+    style: rest.style,
     role: "radio"
   }, {
     children: [jsxRuntime.jsx("input", Object.assign({
@@ -6128,41 +6053,22 @@ var toggleHeight = 30;
 var toggleGutter = 5;
 var toggleRadius = toggleHeight / 2;
 var toggleControlSsize = toggleHeight - toggleGutter * 2;
-var Sizes = {
-  mini: 'mini',
-  tiny: 'tiny',
-  small: 'small',
-  medium: 'medium',
-  large: 'large',
-  big: 'big',
-  huge: 'huge',
-  massive: 'massive'
-};
 
 var widthSwitch = function widthSwitch(size) {
   switch (size) {
-    case Sizes.mini:
+    case Sizes.xs:
       return 30;
 
-    case Sizes.tiny:
-      return 35;
-
-    case Sizes.small:
+    case Sizes.sm:
       return 40;
 
-    case Sizes.medium:
+    case Sizes.md:
       return 50;
 
-    case Sizes.large:
-      return 60;
-
-    case Sizes.big:
+    case Sizes.lg:
       return 70;
 
-    case Sizes.huge:
-      return 80;
-
-    case Sizes.massive:
+    case Sizes.xl:
       return 90;
 
     default:
@@ -6172,28 +6078,19 @@ var widthSwitch = function widthSwitch(size) {
 
 var heightSwitch = function heightSwitch(size) {
   switch (size) {
-    case Sizes.mini:
+    case Sizes.xs:
       return 20;
 
-    case Sizes.tiny:
-      return 22.5;
-
-    case Sizes.small:
+    case Sizes.sm:
       return 25;
 
-    case Sizes.medium:
+    case Sizes.md:
       return 30;
 
-    case Sizes.large:
-      return 35;
-
-    case Sizes.big:
+    case Sizes.lg:
       return 40;
 
-    case Sizes.huge:
-      return 45;
-
-    case Sizes.massive:
+    case Sizes.xl:
       return 50;
 
     default:
@@ -6203,28 +6100,19 @@ var heightSwitch = function heightSwitch(size) {
 
 var sizeGutter = function sizeGutter(size) {
   switch (size) {
-    case Sizes.mini:
+    case Sizes.xs:
       return 5;
 
-    case Sizes.tiny:
+    case Sizes.sm:
       return 5;
 
-    case Sizes.small:
+    case Sizes.md:
       return 5;
 
-    case Sizes.medium:
+    case Sizes.lg:
       return 5;
 
-    case Sizes.large:
-      return 5;
-
-    case Sizes.big:
-      return 5;
-
-    case Sizes.huge:
-      return 5;
-
-    case Sizes.massive:
+    case Sizes.xl:
       return 5;
 
     default:
@@ -6234,28 +6122,19 @@ var sizeGutter = function sizeGutter(size) {
 
 var widthToggle = function widthToggle(size) {
   switch (size) {
-    case Sizes.mini:
+    case Sizes.xs:
       return '40px !important';
 
-    case Sizes.tiny:
-      return '3.125rem !important';
-
-    case Sizes.small:
+    case Sizes.sm:
       return '3.75rem !important';
 
-    case Sizes.medium:
+    case Sizes.md:
       return '4.0625rem !important';
 
-    case Sizes.large:
-      return '4.375rem !important';
-
-    case Sizes.big:
+    case Sizes.lg:
       return '5rem !important';
 
-    case Sizes.huge:
-      return '5.625rem !important';
-
-    case Sizes.massive:
+    case Sizes.xl:
       return '6.25rem !important';
 
     default:
@@ -6265,28 +6144,19 @@ var widthToggle = function widthToggle(size) {
 
 var fontToggle = function fontToggle(size) {
   switch (size) {
-    case Sizes.mini:
+    case Sizes.xs:
       return '0.5rem !important';
 
-    case Sizes.tiny:
-      return '0.5625rem !important';
-
-    case Sizes.small:
+    case Sizes.sm:
       return '0.625rem !important';
 
-    case Sizes.medium:
+    case Sizes.md:
       return '0.6875rem !important';
 
-    case Sizes.large:
-      return '0.75rem !important';
-
-    case Sizes.big:
+    case Sizes.lg:
       return '0.8125rem !important';
 
-    case Sizes.huge:
-      return '0.875rem !important';
-
-    case Sizes.massive:
+    case Sizes.xl:
       return '0.9375rem !important';
 
     default:
@@ -6296,28 +6166,19 @@ var fontToggle = function fontToggle(size) {
 
 var fontActiveInactive = function fontActiveInactive(size) {
   switch (size) {
-    case Sizes.mini:
+    case Sizes.xs:
       return '0.4375rem !important';
 
-    case Sizes.tiny:
-      return '0.5rem !important';
-
-    case Sizes.small:
+    case Sizes.sm:
       return '0.5625rem !important';
 
-    case Sizes.medium:
+    case Sizes.md:
       return '0.625rem !important';
 
-    case Sizes.large:
-      return '0.6875rem !important';
-
-    case Sizes.big:
+    case Sizes.lg:
       return '0.75rem !important';
 
-    case Sizes.huge:
-      return '0.8125rem !important';
-
-    case Sizes.massive:
+    case Sizes.xl:
       return '0.875rem !important';
 
     default:
@@ -6637,7 +6498,7 @@ var Container$1 = styled__default["default"].div(_templateObject4$1 || (_templat
   return props.hasMore || props.hasPagination ? '20px' : '0';
 }, colors.brand10);
 
-var _excluded$2 = ["children", "title", "titleStyle", "titleClassName", "message", "messageStyle", "messageClassName", "hasMore", "hasMoreText", "pagination"];
+var _excluded$1 = ["children", "title", "titleStyle", "titleClassName", "message", "messageStyle", "messageClassName", "hasMore", "hasMoreText", "pagination"];
 
 function TableComponent(_ref) {
   var children = _ref.children,
@@ -6650,7 +6511,7 @@ function TableComponent(_ref) {
       hasMore = _ref.hasMore,
       hasMoreText = _ref.hasMoreText,
       pagination = _ref.pagination,
-      rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$2);
+      rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$1);
 
   return jsxRuntime.jsxs("div", {
     children: [title || message ? jsxRuntime.jsxs(Header, {
@@ -6752,7 +6613,7 @@ var LabelError = styled__default["default"].span(_templateObject5 || (_templateO
 var Footer = styled__default["default"].div(_templateObject6 || (_templateObject6 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: space-between;\n  font-size: 10px;\n"])));
 var LabelLengthInfo = styled__default["default"].span(_templateObject7 || (_templateObject7 = _taggedTemplateLiteralLoose(["\n  font-size: 10px;\n  color: ", ";\n"])), colors.gray10);
 
-var _excluded$1 = ["label", "labelClassName", "labelStyle", "labelColor", "errorClassName", "errorStyle", "errorMessage", "errorColor", "containerStyle", "textColor", "width", "height", "lengthInfo", "lengthInfoClassName", "lengthInfoStyle"];
+var _excluded = ["label", "labelClassName", "labelStyle", "labelColor", "errorClassName", "errorStyle", "errorMessage", "errorColor", "containerStyle", "containerClassName", "textColor", "width", "height", "lengthInfo", "lengthInfoClassName", "lengthInfoStyle"];
 
 function TextArea(_ref) {
   var label = _ref.label,
@@ -6764,13 +6625,14 @@ function TextArea(_ref) {
       errorMessage = _ref.errorMessage,
       errorColor = _ref.errorColor,
       containerStyle = _ref.containerStyle,
+      containerClassName = _ref.containerClassName,
       textColor = _ref.textColor,
       width = _ref.width,
       height = _ref.height,
       lengthInfo = _ref.lengthInfo,
       lengthInfoClassName = _ref.lengthInfoClassName,
       lengthInfoStyle = _ref.lengthInfoStyle,
-      rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$1);
+      rest = _objectWithoutPropertiesLoose$2(_ref, _excluded);
 
   return jsxRuntime.jsxs("div", {
     children: [label && jsxRuntime.jsx(Label, Object.assign({
@@ -6784,8 +6646,8 @@ function TextArea(_ref) {
     }), void 0), jsxRuntime.jsx(Container, Object.assign({
       errorMessage: errorMessage,
       errorColor: errorColor,
-      containerStyle: containerStyle,
       style: containerStyle,
+      className: containerClassName,
       disabled: rest.disabled,
       textColor: textColor,
       width: width,
@@ -6809,55 +6671,6 @@ function TextArea(_ref) {
   }, void 0);
 }
 
-var _excluded = ["register", "errors", "validate", "name", "required", "limit", "minimum"];
-
-function TextAreaForm(_ref) {
-  var register = _ref.register,
-      errors = _ref.errors,
-      validate = _ref.validate,
-      name = _ref.name,
-      required = _ref.required,
-      limit = _ref.limit,
-      minimum = _ref.minimum,
-      rest = _objectWithoutPropertiesLoose$2(_ref, _excluded);
-
-  var _useState = require$$0.useState(''),
-      message = _useState[0],
-      setMessage = _useState[1];
-
-  return jsxRuntime.jsx(TextArea, Object.assign({}, rest, {
-    name: name,
-    errorMessage: errors ? errors.type === 'required' ? 'Obrigatório' : "" + message : ''
-  }, register({
-    required: required,
-    validate: validate && required ? function (value) {
-      if (validate(value)) {
-        setMessage(validate(value));
-        return false;
-      }
-
-      setMessage('');
-      return true;
-    } : limit && required ? function (value) {
-      if (value.length > limit) {
-        setMessage(limit + " caracteres permitidos.");
-        return false;
-      }
-
-      setMessage('');
-      return true;
-    } : minimum && required ? function (value) {
-      if (value.length < minimum) {
-        setMessage(name + " deve ter " + minimum + " ou mais caracteres.");
-        return false;
-      }
-
-      setMessage('');
-      return true;
-    } : null
-  })), void 0);
-}
-
 exports.Accordion = Accordion;
 exports.Button = Button$2;
 exports.ButtonMain = Button$2;
@@ -6876,5 +6689,4 @@ exports.Radio = Radio;
 exports.Selection = Selection;
 exports.Table = Table;
 exports.TextArea = TextArea;
-exports.TextAreaForm = TextAreaForm;
 //# sourceMappingURL=index.js.map
