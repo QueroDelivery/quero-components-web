@@ -8122,7 +8122,13 @@ const LabelError$1 = styled.span(_t5$2 || (_t5$2 = _$7`
   font-size: 10px;
   margin-left: 0;
   color: ${0};
-`), colors.danger20);
+`), props => {
+  if (props.errorColor) {
+    return props.errorColor;
+  }
+
+  return colors.danger20;
+});
 
 const _excluded$4 = ["width", "textColor", "inputRef", "icon", "iconClassName", "iconStyle", "iconPosition", "action", "label", "labelClassName", "labelStyle", "errorColor", "errorMessage", "errorClassName", "errorStyle"];
 

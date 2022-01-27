@@ -5257,7 +5257,13 @@ var InputContainer = styled__default["default"].div(_templateObject$7 || (_templ
 }, function (props) {
   return props.actionPosition && props.actionPosition === 'left' ? 'left: 0;' : 'right: 0;';
 });
-var LabelError$1 = styled__default["default"].span(_templateObject5$2 || (_templateObject5$2 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  font-size: 10px;\n  margin-left: 0;\n  color: ", ";\n"])), colors.danger20);
+var LabelError$1 = styled__default["default"].span(_templateObject5$2 || (_templateObject5$2 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  font-size: 10px;\n  margin-left: 0;\n  color: ", ";\n"])), function (props) {
+  if (props.errorColor) {
+    return props.errorColor;
+  }
+
+  return colors.danger20;
+});
 
 var _excluded$4 = ["width", "textColor", "inputRef", "icon", "iconClassName", "iconStyle", "iconPosition", "action", "label", "labelClassName", "labelStyle", "errorColor", "errorMessage", "errorClassName", "errorStyle"];
 

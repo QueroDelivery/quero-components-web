@@ -4,7 +4,7 @@ import { mocked } from 'ts-jest/utils';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
 import userEvent from '@testing-library/user-event';
 import { colors } from '../../styles/colors';
-import ButtonMain from './ButtonMain';
+import Button from './Button';
 
 jest.mock('@fortawesome/free-solid-svg-icons');
 
@@ -19,7 +19,7 @@ describe('Button Main Component', () => {
     // Given
 
     // When
-    render(<ButtonMain>{text}</ButtonMain>);
+    render(<Button>{text}</Button>);
 
     // Then
     expect(screen.getByText(text)).toBeInTheDocument();
@@ -29,7 +29,7 @@ describe('Button Main Component', () => {
     // Given
 
     // When
-    render(<ButtonMain secondary>{text}</ButtonMain>);
+    render(<Button secondary>{text}</Button>);
 
     // Then
     const button = screen.getByRole('button');
@@ -42,7 +42,7 @@ describe('Button Main Component', () => {
     // Given
 
     // When
-    render(<ButtonMain tertiary>{text}</ButtonMain>);
+    render(<Button tertiary>{text}</Button>);
 
     // Then
     const button = screen.getByRole('button');
@@ -55,7 +55,7 @@ describe('Button Main Component', () => {
     // Given
 
     // When
-    render(<ButtonMain noBorder>{text}</ButtonMain>);
+    render(<Button noBorder>{text}</Button>);
 
     // Then
     const button = screen.getByRole('button');
@@ -67,7 +67,7 @@ describe('Button Main Component', () => {
     // Given
 
     // When
-    render(<ButtonMain rectangular>{text}</ButtonMain>);
+    render(<Button rectangular>{text}</Button>);
 
     // Then
     const button = screen.getByRole('button');
@@ -78,7 +78,7 @@ describe('Button Main Component', () => {
     // Given
 
     // When
-    render(<ButtonMain loading>{text}</ButtonMain>);
+    render(<Button loading>{text}</Button>);
 
     // Then
     const button = screen.getByRole('button');
@@ -92,7 +92,7 @@ describe('Button Main Component', () => {
     const icon = mocked(faPhone);
 
     // When
-    render(<ButtonMain icon={icon}>{text}</ButtonMain>);
+    render(<Button icon={icon}>{text}</Button>);
 
     // Then
     expect(await screen.getByTestId('button-icon')).toBeInTheDocument();
@@ -103,7 +103,7 @@ describe('Button Main Component', () => {
     const icon = <div>Icon</div>;
 
     // When
-    render(<ButtonMain customIcon={icon}>{text}</ButtonMain>);
+    render(<Button customIcon={icon}>{text}</Button>);
 
     // Then
     expect(screen.getByText('Icon')).toBeInTheDocument();
@@ -114,7 +114,7 @@ describe('Button Main Component', () => {
     const icon = mocked(faPhone);
 
     // When
-    const { rerender } = render(<ButtonMain icon={icon}>{text}</ButtonMain>);
+    const { rerender } = render(<Button icon={icon}>{text}</Button>);
 
     // console.log(screen.getByRole('button').firstChild);
 
@@ -124,9 +124,9 @@ describe('Button Main Component', () => {
     expect(button.firstChild).toHaveTextContent(text);
 
     rerender(
-      <ButtonMain iconPosition="left" icon={icon}>
+      <Button iconPosition="left" icon={icon}>
         {text}
-      </ButtonMain>,
+      </Button>,
     );
 
     const iconButton = screen.getByTestId('button-icon');
@@ -137,7 +137,7 @@ describe('Button Main Component', () => {
     // Given
     const textFirst = 'Clique';
     // When
-    render(<ButtonMain textFirst={textFirst} />);
+    render(<Button textFirst={textFirst} />);
 
     // Then
     const button = screen.getByText(textFirst);
@@ -148,7 +148,7 @@ describe('Button Main Component', () => {
     // Given
     const textEnd = 'Aqui';
     // When
-    render(<ButtonMain textEnd={textEnd} />);
+    render(<Button textEnd={textEnd} />);
 
     // Then
     const button = screen.getByText(textEnd);
@@ -161,7 +161,7 @@ describe('Button Main Component', () => {
     const textEnd = 'Aqui';
 
     // When
-    render(<ButtonMain textFirst={textFirst} textEnd={textEnd} firstStrong />);
+    render(<Button textFirst={textFirst} textEnd={textEnd} firstStrong />);
 
     // Then
     const button = screen.getByRole('button');
@@ -175,7 +175,7 @@ describe('Button Main Component', () => {
     const textEnd = 'Aqui';
 
     // When
-    render(<ButtonMain textFirst={textFirst} textEnd={textEnd} strong />);
+    render(<Button textFirst={textFirst} textEnd={textEnd} strong />);
 
     // Then
     const button = screen.getByRole('button');
@@ -189,7 +189,7 @@ describe('Button Main Component', () => {
     const textEnd = 'Aqui';
 
     // When
-    render(<ButtonMain textFirst={textFirst} textEnd={textEnd} notStrong />);
+    render(<Button textFirst={textFirst} textEnd={textEnd} notStrong />);
 
     // Then
     const button = screen.getByRole('button');
@@ -199,7 +199,7 @@ describe('Button Main Component', () => {
 
   it('Estilo de notificação está funcionando', () => {
     // When
-    render(<ButtonMain notification amount={2} />);
+    render(<Button notification amount={2} />);
 
     // Then
     expect(screen.getByText('notificações')).toBeInTheDocument();
@@ -209,7 +209,7 @@ describe('Button Main Component', () => {
     // Given
 
     // When
-    render(<ButtonMain backPurple>{text}</ButtonMain>);
+    render(<Button backPurple>{text}</Button>);
 
     // Then
     const button = screen.getByRole('button');
