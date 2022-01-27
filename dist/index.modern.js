@@ -5644,6 +5644,7 @@ const Calendar = _ref => {
 
   // eslint-disable-next-line react/display-name
   const CustomInput = require$$0.forwardRef((props, ref) => jsx(reactInputMask, {
+    role: "textbox",
     ref: ref,
     mask: "99/99/9999",
     onClick: props.onClick,

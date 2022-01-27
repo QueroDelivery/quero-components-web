@@ -4535,6 +4535,7 @@ var Calendar = function Calendar(_ref) {
   // eslint-disable-next-line react/display-name
   var CustomInput = require$$0__default["default"].forwardRef(function (props, ref) {
     return jsxRuntime.jsx(reactInputMask, {
+      role: "textbox",
       ref: ref,
       mask: "99/99/9999",
       onClick: props.onClick,

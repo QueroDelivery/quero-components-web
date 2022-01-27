@@ -8,7 +8,7 @@ import Button from './Button';
 
 jest.mock('@fortawesome/free-solid-svg-icons');
 
-describe('Button Main Component', () => {
+describe('Button Component', () => {
   let text: string;
 
   beforeAll(() => {

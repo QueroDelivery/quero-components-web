@@ -33,6 +33,7 @@ const Calendar: React.FC<CalendarProps> = ({
   // eslint-disable-next-line react/display-name
   const CustomInput = React.forwardRef((props: any, ref: any) => (
     <MaskedInput
+      role="textbox"
       ref={ref}
       mask="99/99/9999"
       onClick={props.onClick}
