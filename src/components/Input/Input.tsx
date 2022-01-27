@@ -4,6 +4,7 @@ import React, {
   InputHTMLAttributes,
   useEffect,
   RefObject,
+  CSSProperties,
 } from 'react';
 import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -16,17 +17,14 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   labelClassName?: string;
   labelStyle?: React.CSSProperties;
 
-  containerClassName?: string;
-  containerStyle?: React.CSSProperties;
-
   width?: string | number;
   textColor?: string;
   inputRef?: RefObject<HTMLInputElement>;
 
   icon?: IconDefinition;
   iconClassName?: string;
+  iconStyle?: CSSProperties;
   iconPosition?: 'left' | 'right';
-  iconColor?: string;
 
   action?: {
     icon: IconDefinition;
@@ -34,6 +32,7 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     onClick: React.MouseEventHandler<HTMLButtonElement>;
     position?: 'left' | 'right';
     className?: string;
+    style?: CSSProperties;
   };
 
   errorColor?: string;
@@ -43,16 +42,14 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 }
 
 function Input({
-  containerClassName,
-  containerStyle,
   width,
   textColor,
   inputRef,
 
   icon,
   iconClassName,
+  iconStyle,
   iconPosition,
-  iconColor,
   action,
 
   label,
@@ -90,8 +87,8 @@ function Input({
     <div role="group">
       <InputContainer
         isFieldActive={isFieldActive}
-        className={containerClassName}
-        style={containerStyle}
+        className={rest.className}
+        style={rest.style}
         width={width}
         disabled={rest.disabled}
         textColor={textColor}
@@ -109,8 +106,9 @@ function Input({
             <FontAwesomeIcon
               aria-label="icon"
               className={iconClassName}
+              style={iconStyle}
               icon={icon}
-              color={iconColor || colors.brand10}
+              color={colors.brand10}
             />
           </div>
         )}
@@ -118,6 +116,7 @@ function Input({
         {action && (
           <button
             className={`icon-action ${action.className || ''}`}
+            style={action.style}
             onClick={action.onClick}
             data-testid="action-container"
           >

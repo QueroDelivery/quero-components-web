@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBell, IconDefinition } from '@fortawesome/free-solid-svg-icons';
 
 import {
-  Button,
+  Container,
   TextFirst,
   TextEnd,
   Icon,
@@ -45,7 +45,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   rectangular?: boolean;
 }
 
-function ButtonMain({
+function Button({
   textFirst,
   textFirstClassName,
   textFirstStyle,
@@ -143,7 +143,7 @@ function ButtonMain({
 
   function renderButton() {
     return (
-      <Button
+      <Container
         {...rest}
         secondary={secondary}
         backPurple={backPurple}
@@ -192,7 +192,7 @@ function ButtonMain({
             <Loader size="sm" />
           </LoadingContainer>
         )}
-      </Button>
+      </Container>
     );
   }
 
@@ -202,4 +202,4 @@ function ButtonMain({
   return renderButton();
 }
 
-export default ButtonMain;
+export default Button;

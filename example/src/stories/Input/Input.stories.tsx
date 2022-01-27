@@ -113,24 +113,6 @@ export default {
         },
       },
     },
-    iconColor: {
-      control: 'color',
-      description: 'Cor do icone do Input',
-      table: {
-        type: {
-          summary: 'string',
-        },
-      },
-    },
-    containerStyle: {
-      control: 'object',
-      description: 'Estilização do container do Input',
-      table: {
-        type: {
-          summary: 'React.CSSProperties',
-        },
-      },
-    },
     labelStyle: {
       control: 'object',
       description: 'Estilização do label',
@@ -160,10 +142,11 @@ Default.args = {
 Default.parameters = {
   docs: {
     source: {
-      code: `<Input
-      label="Título do Input"
-      onChange={() => {}}
-    />`,
+      code: `
+<Input
+  label="Título do Input"
+  onChange={() => {}}
+/>`,
     },
   },
 };
@@ -180,12 +163,13 @@ ErrorMessage.args = {
 ErrorMessage.parameters = {
   docs: {
     source: {
-      code: `<Input
-      label="Título do Input"
-      placeholder="escreva"
-      errorMessage="errado"
-      onChange={() => {}}
-    />`,
+      code: `
+<Input
+  label="Título do Input"
+  placeholder="escreva"
+  errorMessage="errado"
+  onChange={() => {}}
+/>`,
     },
   },
 };
@@ -202,12 +186,13 @@ Width.args = {
 Width.parameters = {
   docs: {
     source: {
-      code: `<Input
-      label="Título do Input"
-      placeholder="escreva"
-      width="50%"
-      onChange={() => {}}
-    />`,
+      code: `
+<Input
+  label="Título do Input"
+  placeholder="escreva"
+  width="50%"
+  onChange={() => {}}
+/>`,
     },
   },
 };
@@ -227,16 +212,17 @@ Action.args = {
 Action.parameters = {
   docs: {
     source: {
-      code: `<Input
-      label="Título do Input"
-      placeholder="escreva"
-      action={
-        icon={faTimes}
-        onClick={() => {}}
-        position="right"
-      }
-      onChange={() => {}}
-    />`,
+      code: `
+<Input
+  label="Título do Input"
+  placeholder="escreva"
+  action={
+    icon={faTimes}
+    onClick={() => {}}
+    position="right"
+  }
+  onChange={() => {}}
+/>`,
     },
   },
 };
@@ -253,12 +239,13 @@ Icon.args = {
 Icon.parameters = {
   docs: {
     source: {
-      code: `<Input
-      label="Título do Input"
-      placeholder="escreva"
-      icone={faUser}
-      onChange={() => {}}
-    />`,
+      code: `
+<Input
+  label="Título do Input"
+  placeholder="escreva"
+  icone={faUser}
+  onChange={() => {}}
+/>`,
     },
   },
 };
@@ -276,24 +263,26 @@ IconPosition.args = {
 IconPosition.parameters = {
   docs: {
     source: {
-      code: `<Input
-      label="Título do Input"
-      placeholder="escreva"
-      icon={faUser}
-      iconPosition="left"
-      onChange={() => {}}
-    />`,
+      code: `
+<Input
+  label="Título do Input"
+  placeholder="escreva"
+  icon={faUser}
+  iconPosition="left"
+  onChange={() => {}}
+/>`,
     },
   },
 };
 
 export const Colors = Template.bind({});
 Colors.args = {
+  style: { color: 'green' },
   label: 'Título do Input',
+  labelStyle: { color: 'red' },
   placeholder: 'escreva',
-  textColor: 'blue',
-  iconColor: 'green',
   icon: faUser,
+  iconStyle: { color: 'blue' },
   onChange: action('mudar valor'),
   action: undefined,
 };
@@ -301,14 +290,17 @@ Colors.args = {
 Colors.parameters = {
   docs: {
     source: {
-      code: `<Input
-      label="Título do Input"
-      placeholder="escreva"
-      textColor="blue"
-      iconColor="green"
-      icon={faUser}
-      onChange={() => {}}
-    />`,
+      code: `
+<Input
+  style={{ color: 'green' }}
+  label="Título do Input"
+  labelStyle={{ color: 'red' }}
+  placeholder="escreva"
+  textColor="blue"
+  icon={faUser}
+  iconStyle={{ color: 'blue' }}
+  onChange={() => {}}
+/>`,
     },
   },
 };

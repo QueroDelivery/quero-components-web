@@ -184,10 +184,11 @@ Default.args = {
 Default.parameters = {
   docs: {
     source: {
-      code: `<Dialog
-      open={false}
-      onClose={() => {}}
-    />`,
+      code: `
+<Dialog
+  open={false}
+  onClose={() => {}}
+/>`,
     },
   },
 };
@@ -202,11 +203,12 @@ Loading.args = {
 Loading.parameters = {
   docs: {
     source: {
-      code: `<Dialog
-      open={false}
-      loading={true}
-      onClose={() => {}}
-    />`,
+      code: `
+<Dialog
+  open={false}
+  loading={true}
+  onClose={() => {}}
+/>`,
     },
   },
 };
@@ -221,11 +223,12 @@ MaxHeight.args = {
 MaxHeight.parameters = {
   docs: {
     source: {
-      code: `<Dialog
-      open={false}
-      maxHeight='80%
-      onClose={() => {}}
-    />`,
+      code: `
+<Dialog
+  open={false}
+  maxHeight='80%'
+  onClose={() => {}}
+/>`,
     },
   },
 };
@@ -240,11 +243,12 @@ Title.args = {
 Title.parameters = {
   docs: {
     source: {
-      code: `<Dialog
-      open={false}
-      title='Olá'
-      onClose={() => {}}
-    />`,
+      code: `
+<Dialog
+  open={false}
+  title='Olá'
+  onClose={() => {}}
+/>`,
     },
   },
 };

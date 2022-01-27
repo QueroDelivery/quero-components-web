@@ -44,7 +44,7 @@ export default {
       description: 'O Checkbox esta selecionado?',
       table: {
         type: {
-          summary: 'bollean',
+          summary: 'boolean',
         },
       },
     },
@@ -71,10 +71,11 @@ Default.args = {
 Default.parameters = {
   docs: {
     source: {
-      code: `<Checkbox
-      checked={false}
-      onChange={() => {}}
-    />`,
+      code: `
+<Checkbox
+  checked={false}
+  onChange={() => {}}
+/>`,
     },
   },
 };
@@ -90,12 +91,13 @@ Label.args = {
 Label.parameters = {
   docs: {
     source: {
-      code: `<Checkbox
-      checked={false}
-      label="Título do Checkbox"
-      labelStyle={{ marginRight: 20 }}
-      onChange={() => {}}
-    />`,
+      code: `
+<Checkbox
+  checked={false}
+  label="Título do Checkbox"
+  labelStyle={{ marginRight: 20 }}
+  onChange={() => {}}
+/>`,
     },
   },
 };
@@ -111,12 +113,13 @@ SizeBox.args = {
 SizeBox.parameters = {
   docs: {
     source: {
-      code: `<Checkbox
-      checked={false}
-      label="Título do Checkbox"
-      sizeBox="lg"
-      onChange={() => {}}
-    />`,
+      code: `
+<Checkbox
+  checked={false}
+  label="Título do Checkbox"
+  sizeBox="lg"
+  onChange={() => {}}
+/>`,
     },
   },
 };

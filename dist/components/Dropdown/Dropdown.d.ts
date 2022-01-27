@@ -11,7 +11,6 @@ export interface DropdownProps extends SemanticDropdownProps {
     textAlign?: 'center';
     errorMessage?: string;
     label?: string;
-    colorLabel?: string;
     line?: boolean;
     containerClassName?: string;
     containerStyle?: CSSProperties;
@@ -20,5 +19,5 @@ export interface DropdownProps extends SemanticDropdownProps {
     labelClassName?: string;
     labelStyle?: CSSProperties;
 }
-declare function Dropdown({ options, brand, textAlign, errorMessage, label, colorLabel, line, containerClassName, containerStyle, errorClassName, errorStyle, labelClassName, labelStyle, ...rest }: DropdownProps): JSX.Element;
+declare function Dropdown({ options, brand, textAlign, errorMessage, label, line, containerClassName, containerStyle, errorClassName, errorStyle, labelClassName, labelStyle, ...rest }: DropdownProps): JSX.Element;
 export default Dropdown;

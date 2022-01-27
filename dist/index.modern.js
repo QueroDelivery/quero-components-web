@@ -2719,7 +2719,7 @@ let _$f = t => t,
     _t5$5,
     _t6$4,
     _t7$3;
-const Container$8 = styled.div(_t$f || (_t$f = _$f`
+const Container$9 = styled.div(_t$f || (_t$f = _$f`
   font-family: MontSerrat !important;
   display: flex;
   width: ${0};
@@ -2822,7 +2822,7 @@ function Accordion({
   bodyStyle
 }) {
   return jsxs(Fragment$1, {
-    children: [jsxs(Container$8, Object.assign({
+    children: [jsxs(Container$9, Object.assign({
       role: "button",
       className: className,
       style: style,
@@ -2954,7 +2954,7 @@ let _$e = t => t,
     _t5$4,
     _t6$3,
     _t7$2;
-const Button$2 = styled.button(_t$e || (_t$e = _$e`
+const Container$8 = styled.button(_t$e || (_t$e = _$e`
   font-family: MontSerrat !important;
   font-size: ${0};
   position: ${0};
@@ -3229,9 +3229,9 @@ function Loader({
   }), void 0);
 }
 
-const _excluded$b = ["textFirst", "textFirstClassName", "textFirstStyle", "textEnd", "textEndClassName", "textEndStyle", "firstStrong", "notStrong", "strong", "loading", "secondary", "backPurple", "children", "notification", "amount", "width", "icon", "iconClassName", "iconStyle", "containerIconClassName", "containerIconStyle", "customIcon", "iconPosition", "noBorder", "tertiary", "size", "rectangular"];
+const _excluded$9 = ["textFirst", "textFirstClassName", "textFirstStyle", "textEnd", "textEndClassName", "textEndStyle", "firstStrong", "notStrong", "strong", "loading", "secondary", "backPurple", "children", "notification", "amount", "width", "icon", "iconClassName", "iconStyle", "containerIconClassName", "containerIconStyle", "customIcon", "iconPosition", "noBorder", "tertiary", "size", "rectangular"];
 
-function ButtonMain(_ref) {
+function Button$2(_ref) {
   let {
     textFirst,
     textFirstClassName,
@@ -3261,7 +3261,7 @@ function ButtonMain(_ref) {
     size,
     rectangular
   } = _ref,
-      rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$b);
+      rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$9);
 
   function renderButtonNotification() {
     return jsx(Notification, Object.assign({}, rest, {
@@ -3328,7 +3328,7 @@ function ButtonMain(_ref) {
   }
 
   function renderButton() {
-    return jsxs(Button$2, Object.assign({}, rest, {
+    return jsxs(Container$8, Object.assign({}, rest, {
       secondary: secondary,
       backPurple: backPurple,
       width: width,
@@ -5628,7 +5628,7 @@ const Container$6 = styled.div(_t$c || (_t$c = _$c`
   }
 `), props => props.brand ? colors.brandLight : colors.gray10, props => props.brand ? colors.brand10 : colors.gray20, props => props.brand ? colors.brandLight : colors.white, props => props.size ? getFontSize(props.size, '1rem') : '1rem', props => props.brand ? colors.brandTransparent : colors.default10, props => props.size ? getFontSize(props.size, '1rem') : '1rem', colors.brand10, props => props.size ? getFontSize(props.size, '1rem') : '1rem', props => props.brand ? colors.brand10 : colors.gray20);
 
-const _excluded$a = ["label", "labelClassName", "labelStyle", "brand", "otherFormatDate", "size"];
+const _excluded$8 = ["label", "labelClassName", "labelStyle", "brand", "otherFormatDate", "size"];
 registerLocale('pt-BR', br);
 
 const Calendar = _ref => {
@@ -5640,7 +5640,7 @@ const Calendar = _ref => {
     otherFormatDate,
     size
   } = _ref,
-      rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$a);
+      rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$8);
 
   // eslint-disable-next-line react/display-name
   const CustomInput = require$$0.forwardRef((props, ref) => jsx(reactInputMask, {
@@ -5764,7 +5764,7 @@ const LoadingCard = styled.div(_t4$5 || (_t4$5 = _$b`
   position: absolute;
 `));
 
-const _excluded$9 = ["children", "childrenStyle", "childrenClassName", "width", "type", "style", "icon", "iconClassName", "iconStyle", "iconSize", "onClick", "loading", "className", "complement", "complementStyle", "complementClassName"];
+const _excluded$7 = ["children", "childrenStyle", "childrenClassName", "width", "type", "style", "icon", "iconClassName", "iconStyle", "iconSize", "onClick", "loading", "className", "complement", "complementStyle", "complementClassName"];
 
 function Card(_ref) {
   let {
@@ -5785,7 +5785,7 @@ function Card(_ref) {
     complementStyle,
     complementClassName
   } = _ref,
-      rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$9);
+      rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$7);
 
   function renderShadow() {
     return jsxs(Fragment$1, {
@@ -6089,7 +6089,7 @@ const Container$5 = styled.div(_t$a || (_t$a = _$a`
   return '0.8125rem';
 }, props => props.checked ? colors.white : colors.default20);
 
-const _excluded$8 = ["label", "labelClassName", "labelStyle", "sizeBox", "containerClassName", "containerStyle"];
+const _excluded$6 = ["label", "labelClassName", "labelStyle", "sizeBox", "containerClassName", "containerStyle"];
 
 function Checkbox(_ref) {
   let {
@@ -6100,7 +6100,7 @@ function Checkbox(_ref) {
     containerClassName,
     containerStyle
   } = _ref,
-      rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$8);
+      rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$6);
 
   return jsxs(Container$5, Object.assign({
     onClick: !rest.disabled ? rest.onChange : undefined,
@@ -7874,7 +7874,7 @@ const Container$4 = styled.div(_t$8 || (_t$8 = _$8`
   return colors.brand10;
 }, props => props.textAlign && props.textAlign === 'center' ? 'center' : 'left', colors.gray20, props => props.line ? '0' : '0.28571429rem', props => props.line ? 'none' : '', props => props.line ? 'none' : '', props => props.line ? 'none' : '', props => props.brand ? colors.brand10 : colors.gray20, props => props.brand ? colors.brandLight : colors.white, props => props.brand ? colors.brand10 : colors.gray20, props => props.brand ? colors.brandLight : props.line ? colors.gray10 : 'rgba(34, 36, 38, 0.15)', props => props.line ? 0 : '0.28571429rem', props => props.line ? 'none' : '20px', props => props.line ? 'none' : '', props => props.line ? 'none' : '', props => props.line ? 'none' : '', props => props.brand ? colors.brandLight : colors.gray10, props => props.brand ? colors.brandTransparent : colors.gray10, props => props.error ? colors.brand20 : props.brand ? colors.brandLight : colors.gray10, props => props.error ? colors.brand20 : props.brand ? colors.brandLight : colors.gray10, props => props.error ? colors.brand20 : props.brand ? colors.brandLight : colors.gray10, props => props.brand ? colors.brandDark : colors.black, props => props.error ? colors.brand20 : props.brand ? colors.brandLight : colors.gray10, props => props.error ? colors.brand20 : props.brand ? colors.brandLight : colors.gray10, props => props.brand ? colors.brand10 : colors.gray20, props => props.textAlign && props.textAlign === 'center' ? 'center' : 'left', props => props.brand ? colors.brandDark : colors.black, props => props.brand ? colors.brandTransparent : colors.gray10, props => props.brand ? colors.brandLight : colors.gray20, props => props.brand ? colors.brand10 : colors.card, props => props.brand ? colors.brandDark : colors.black, props => props.brand ? colors.brandDark : colors.black, colors.brand10, props => props.brand ? colors.brand10 : colors.default20, props => props.brand ? colors.brand10 : colors.default20, props => props.brand ? colors.brandDark : colors.black, props => props.line ? colors.white : colors.error, colors.brand20, colors.brand20, colors.brand20, colors.brand20, colors.brand20, colors.error, colors.error, colors.brand10, colors.brandTransparent2, colors.brand20);
 
-const _excluded$7 = ["options", "brand", "textAlign", "errorMessage", "label", "colorLabel", "line", "containerClassName", "containerStyle", "errorClassName", "errorStyle", "labelClassName", "labelStyle"];
+const _excluded$5 = ["options", "brand", "textAlign", "errorMessage", "label", "line", "containerClassName", "containerStyle", "errorClassName", "errorStyle", "labelClassName", "labelStyle"];
 
 function Dropdown(_ref) {
   let {
@@ -7883,7 +7883,6 @@ function Dropdown(_ref) {
     textAlign,
     errorMessage,
     label,
-    colorLabel,
     line,
     containerClassName,
     containerStyle,
@@ -7892,13 +7891,12 @@ function Dropdown(_ref) {
     labelClassName,
     labelStyle
   } = _ref,
-      rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$7);
+      rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$5);
 
   return jsxs(Container$4, Object.assign({
     brand: brand,
     textAlign: textAlign,
     error: errorMessage,
-    colorLabel: colorLabel,
     line: line,
     className: containerClassName,
     style: containerStyle,
@@ -7920,66 +7918,6 @@ function Dropdown(_ref) {
     }, {
       children: errorMessage
     }), void 0)]
-  }), void 0);
-}
-
-const _excluded$6 = ["value", "clearError", "errors", "name", "register", "required", "setValue", "validate"];
-
-function DropdownForm(_ref) {
-  let {
-    value,
-    clearError,
-    errors,
-    name,
-    register,
-    required,
-    setValue,
-    validate
-  } = _ref,
-      rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$6);
-
-  const [valueDefault, setValueDefault] = useState();
-  const [message, setMessage] = useState('');
-  useEffect(() => {
-    if (!valueDefault) {
-      setValue(name, value);
-    } else {
-      setValue(name, valueDefault);
-    }
-  }, [valueDefault]);
-  useEffect(() => {
-    setValueDefault(value);
-  }, [value]);
-  useEffect(() => {
-    if (register) {
-      register({
-        name
-      }, {
-        required,
-        validate: validate && required ? value => {
-          if (validate(value)) {
-            setMessage(validate(value));
-            return false;
-          }
-
-          setMessage('');
-          return true;
-        } : null
-      });
-    }
-  }, [register]);
-  return jsx(Dropdown, Object.assign({}, rest, {
-    value: valueDefault,
-    onChange: (_ev, data) => {
-      setValueDefault(data.value);
-      setValue(name, value);
-
-      if (errors && clearError) {
-        clearError(name);
-      }
-    },
-    line: rest.line,
-    errorMessage: errors ? errors.type === 'required' ? 'Obrigatório' : `${message}` : ''
   }), void 0);
 }
 
@@ -8184,27 +8122,19 @@ const LabelError$1 = styled.span(_t5$2 || (_t5$2 = _$7`
   font-size: 10px;
   margin-left: 0;
   color: ${0};
-`), props => {
-  if (props.errorColor) {
-    return props.errorColor;
-  }
+`), colors.danger20);
 
-  return colors.danger20;
-});
-
-const _excluded$5 = ["containerClassName", "containerStyle", "width", "textColor", "inputRef", "icon", "iconClassName", "iconPosition", "iconColor", "action", "label", "labelClassName", "labelStyle", "errorColor", "errorMessage", "errorClassName", "errorStyle"];
+const _excluded$4 = ["width", "textColor", "inputRef", "icon", "iconClassName", "iconStyle", "iconPosition", "action", "label", "labelClassName", "labelStyle", "errorColor", "errorMessage", "errorClassName", "errorStyle"];
 
 function Input(_ref) {
   let {
-    containerClassName,
-    containerStyle,
     width,
     textColor,
     inputRef,
     icon,
     iconClassName,
+    iconStyle,
     iconPosition,
-    iconColor,
     action,
     label,
     labelClassName,
@@ -8214,7 +8144,7 @@ function Input(_ref) {
     errorClassName,
     errorStyle
   } = _ref,
-      rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$5);
+      rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$4);
 
   const [isFieldActive, setIsFieldActive] = useState(() => {
     return false;
@@ -8238,8 +8168,8 @@ function Input(_ref) {
   }, {
     children: [jsxs(InputContainer, Object.assign({
       isFieldActive: isFieldActive,
-      className: containerClassName,
-      style: containerStyle,
+      className: rest.className,
+      style: rest.style,
       width: width,
       disabled: rest.disabled,
       textColor: textColor,
@@ -8259,11 +8189,13 @@ function Input(_ref) {
         children: jsx(FontAwesomeIcon, {
           "aria-label": "icon",
           className: iconClassName,
+          style: iconStyle,
           icon: icon,
-          color: iconColor || colors.brand10
+          color: colors.brand10
         }, void 0)
       }), void 0), action && jsx("button", Object.assign({
         className: `icon-action ${action.className || ''}`,
+        style: action.style,
         onClick: action.onClick,
         "data-testid": "action-container"
       }, {
@@ -8296,137 +8228,6 @@ function Input(_ref) {
     }, {
       children: errorMessage
     }), void 0)]
-  }), void 0);
-}
-
-const _excluded$4 = ["register", "errors", "validate", "name", "required", "values", "limit", "minimum", "msgErrorValidate"];
-
-function InputForm(_ref) {
-  var _rest$action;
-
-  let {
-    register,
-    errors,
-    validate,
-    name,
-    required,
-    values,
-    limit,
-    minimum,
-    msgErrorValidate
-  } = _ref,
-      rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$4);
-
-  const [isFieldActive, setIsFieldActive] = useState(false);
-  const [message, setMessage] = useState('');
-  const value = values ? values(name) || rest.defaultValue : rest.value;
-  useEffect(() => {
-    if (value) {
-      if (!isFieldActive) {
-        setIsFieldActive(true);
-      }
-    }
-  }, [value]);
-
-  const handleFocus = () => {
-    if (!isFieldActive) {
-      setIsFieldActive(true);
-    }
-  };
-
-  const handleBlur = () => {
-    if (isFieldActive && !value) {
-      setIsFieldActive(false);
-    }
-
-    if (rest.onBlur) {
-      setImmediate(rest.onBlur);
-    }
-  };
-
-  const validadeRegister = valueRegister => {
-    let result = true;
-    let mensagem = '';
-
-    if (validate) {
-      if (validate(valueRegister)) {
-        mensagem = validate(valueRegister);
-        result = false;
-      }
-    }
-
-    if (limit) {
-      if (valueRegister.length > limit) {
-        mensagem = msgErrorValidate ? `${msgErrorValidate}` : `${limit} caracteres permitidos.`;
-        result = false;
-      }
-    }
-
-    if (minimum) {
-      if (valueRegister.length < minimum) {
-        mensagem = msgErrorValidate ? `${msgErrorValidate}` : `${rest.label || name} deve ter ${minimum} ou mais caracteres.`;
-        result = false;
-      }
-    }
-
-    setMessage(mensagem);
-    return result;
-  };
-
-  return jsxs("div", Object.assign({
-    style: {
-      paddingBottom: message || errors ? 0 : 20
-    }
-  }, {
-    children: [jsxs(InputContainer, Object.assign({
-      isFieldActive: isFieldActive,
-      requiredText: !!(errors && errors.type === 'required'),
-      errorMessage: errors,
-      // action={rest.action?.icon ? true : false}
-      width: rest.width,
-      disabled: rest.disabled,
-      style: rest.containerStyle,
-      textColor: rest.textColor,
-      icon: !!rest.icon,
-      iconPosition: rest.iconPosition,
-      action: rest.action,
-      actionPosition: (_rest$action = rest.action) == null ? void 0 : _rest$action.position,
-      date: rest.type === 'date'
-    }, {
-      children: [rest.icon && jsx("div", Object.assign({
-        className: "icon"
-      }, {
-        children: jsx(FontAwesomeIcon, {
-          icon: rest.icon,
-          color: rest.iconColor || colors.brand10
-        }, void 0)
-      }), void 0), rest.action && jsx("button", Object.assign({
-        className: "icon-action",
-        onClick: rest.action.onClick
-      }, {
-        children: jsx(FontAwesomeIcon, {
-          icon: rest.action.icon,
-          color: rest.action.iconColor || colors.brand10
-        }, void 0)
-      }), void 0), jsx("input", Object.assign({}, rest, {
-        onFocus: handleFocus,
-        onBlur: handleBlur,
-        name: name,
-        placeholder: isFieldActive ? rest.placeholder : '',
-        ref: register ? register({
-          required,
-          validate: validadeRegister
-        }) : null
-      }), void 0), jsx("label", {
-        children: jsx("span", Object.assign({
-          style: rest.labelStyle
-        }, {
-          children: rest.label
-        }), void 0)
-      }, void 0)]
-    }), void 0), errors ? jsx(LabelError$1, {
-      children: errors.type === 'required' ? 'Obrigatório' : `${message}`
-    }, void 0) : null]
   }), void 0);
 }
 
@@ -11160,7 +10961,7 @@ function TableComponent(_ref) {
       children: jsx(Table$1, Object.assign({}, rest, {
         children: children
       }), void 0)
-    }), void 0), hasMore ? jsx(ButtonMain, {
+    }), void 0), hasMore ? jsx(Button$2, {
       "data-testid": "hasmore-button",
       secondary: true,
       textFirst: hasMoreText || 'ver a',
@@ -11423,5 +11224,5 @@ function TextAreaForm(_ref) {
   })), void 0);
 }
 
-export { Accordion, ButtonMain, Calendar, Card, Checkbox, DialogComponent as Dialog, Dropdown, DropdownForm, Input, InputForm, Input as InputLine, InputForm as InputLineForm, Loader, ModalComponent as Modal, MoreLess, Pagination, Radio, Selection, Table, TextArea, TextAreaForm };
+export { Accordion, Button$2 as Button, Button$2 as ButtonMain, Calendar, Card, Checkbox, DialogComponent as Dialog, Dropdown, Input, Input as InputLine, Loader, ModalComponent as Modal, MoreLess, Pagination, Radio, Selection, Table, TextArea, TextAreaForm };
 //# sourceMappingURL=index.modern.js.map

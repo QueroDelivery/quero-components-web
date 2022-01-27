@@ -18,7 +18,6 @@ export interface DropdownProps extends SemanticDropdownProps {
   textAlign?: 'center';
   errorMessage?: string;
   label?: string;
-  colorLabel?: string;
   line?: boolean;
 
   containerClassName?: string;
@@ -35,7 +34,6 @@ function Dropdown({
   textAlign,
   errorMessage,
   label,
-  colorLabel,
   line,
   containerClassName,
   containerStyle,
@@ -50,7 +48,6 @@ function Dropdown({
       brand={brand}
       textAlign={textAlign}
       error={errorMessage}
-      colorLabel={colorLabel}
       line={line}
       className={containerClassName}
       style={containerStyle}

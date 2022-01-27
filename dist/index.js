@@ -2744,7 +2744,7 @@ var colors = {
 };
 
 var _templateObject$f, _templateObject2$a, _templateObject3$9, _templateObject4$7, _templateObject5$5, _templateObject6$4, _templateObject7$3;
-var Container$8 = styled__default["default"].div(_templateObject$f || (_templateObject$f = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  display: flex;\n  width: ", ";\n  justify-content: space-between;\n  background-color: ", ";\n  border: 1px solid ", ";\n  padding: 0.9375rem 1.25rem;\n  align-items: center;\n  cursor: pointer;\n  box-shadow: 0px 3px 2px 0px rgba(0, 0, 0, 0.16);\n\n  .icon-title {\n    display: flex;\n    align-items: center;\n  }\n\n  .title-subtitle {\n    display: flex;\n    flex-direction: column;\n    flex: 1;\n    margin-left: ", ";\n  }\n\n  .value-icon {\n    display: flex;\n    align-items: center;\n    flex: 1;\n    justify-content: flex-end;\n  }\n\n  ", "\n"])), function (props) {
+var Container$9 = styled__default["default"].div(_templateObject$f || (_templateObject$f = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  display: flex;\n  width: ", ";\n  justify-content: space-between;\n  background-color: ", ";\n  border: 1px solid ", ";\n  padding: 0.9375rem 1.25rem;\n  align-items: center;\n  cursor: pointer;\n  box-shadow: 0px 3px 2px 0px rgba(0, 0, 0, 0.16);\n\n  .icon-title {\n    display: flex;\n    align-items: center;\n  }\n\n  .title-subtitle {\n    display: flex;\n    flex-direction: column;\n    flex: 1;\n    margin-left: ", ";\n  }\n\n  .value-icon {\n    display: flex;\n    align-items: center;\n    flex: 1;\n    justify-content: flex-end;\n  }\n\n  ", "\n"])), function (props) {
   if (props.width) {
     if (typeof props.width === 'string') {
       return props.width;
@@ -2800,7 +2800,7 @@ function Accordion(_ref) {
       bodyClassName = _ref.bodyClassName,
       bodyStyle = _ref.bodyStyle;
   return jsxRuntime.jsxs(jsxRuntime.Fragment, {
-    children: [jsxRuntime.jsxs(Container$8, Object.assign({
+    children: [jsxRuntime.jsxs(Container$9, Object.assign({
       role: "button",
       className: className,
       style: style,
@@ -2912,7 +2912,7 @@ var getFontSize = function getFontSize(defaultSize, sizeBase) {
 };
 
 var _templateObject$e, _templateObject2$9, _templateObject3$8, _templateObject4$6, _templateObject5$4, _templateObject6$3, _templateObject7$2;
-var Button$2 = styled__default["default"].button(_templateObject$e || (_templateObject$e = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  font-size: ", ";\n  position: ", ";\n  line-height: 0;\n  background-color: ", ";\n  color: ", ";\n  padding: 0.65em 1.25em;\n  width: ", ";\n  border-radius: ", ";\n  cursor: pointer;\n  border: ", ";\n  outline: none;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n\n  &:disabled {\n    opacity: 0.5;\n    cursor: not-allowed;\n    pointer-events: none;\n  }\n\n  &:hover {\n    background-color: ", ";\n    color: ", ";\n  }\n"])), function (props) {
+var Container$8 = styled__default["default"].button(_templateObject$e || (_templateObject$e = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  font-size: ", ";\n  position: ", ";\n  line-height: 0;\n  background-color: ", ";\n  color: ", ";\n  padding: 0.65em 1.25em;\n  width: ", ";\n  border-radius: ", ";\n  cursor: pointer;\n  border: ", ";\n  outline: none;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n\n  &:disabled {\n    opacity: 0.5;\n    cursor: not-allowed;\n    pointer-events: none;\n  }\n\n  &:hover {\n    background-color: ", ";\n    color: ", ";\n  }\n"])), function (props) {
   return props.size ? getFontSize(props.size, '1rem') : '1rem';
 }, function (props) {
   return props.isLoading ? 'relative' : 'initial';
@@ -3110,9 +3110,9 @@ function Loader(_ref) {
   }), void 0);
 }
 
-var _excluded$b = ["textFirst", "textFirstClassName", "textFirstStyle", "textEnd", "textEndClassName", "textEndStyle", "firstStrong", "notStrong", "strong", "loading", "secondary", "backPurple", "children", "notification", "amount", "width", "icon", "iconClassName", "iconStyle", "containerIconClassName", "containerIconStyle", "customIcon", "iconPosition", "noBorder", "tertiary", "size", "rectangular"];
+var _excluded$9 = ["textFirst", "textFirstClassName", "textFirstStyle", "textEnd", "textEndClassName", "textEndStyle", "firstStrong", "notStrong", "strong", "loading", "secondary", "backPurple", "children", "notification", "amount", "width", "icon", "iconClassName", "iconStyle", "containerIconClassName", "containerIconStyle", "customIcon", "iconPosition", "noBorder", "tertiary", "size", "rectangular"];
 
-function ButtonMain(_ref) {
+function Button$2(_ref) {
   var textFirst = _ref.textFirst,
       textFirstClassName = _ref.textFirstClassName,
       textFirstStyle = _ref.textFirstStyle,
@@ -3141,7 +3141,7 @@ function ButtonMain(_ref) {
       tertiary = _ref.tertiary,
       size = _ref.size,
       rectangular = _ref.rectangular,
-      rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$b);
+      rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$9);
 
   function renderButtonNotification() {
     return jsxRuntime.jsx(Notification, Object.assign({}, rest, {
@@ -3208,7 +3208,7 @@ function ButtonMain(_ref) {
   }
 
   function renderButton() {
-    return jsxRuntime.jsxs(Button$2, Object.assign({}, rest, {
+    return jsxRuntime.jsxs(Container$8, Object.assign({}, rest, {
       secondary: secondary,
       backPurple: backPurple,
       width: width,
@@ -4520,7 +4520,7 @@ var Container$6 = styled__default["default"].div(_templateObject$c || (_template
   return props.brand ? colors.brand10 : colors.gray20;
 });
 
-var _excluded$a = ["label", "labelClassName", "labelStyle", "brand", "otherFormatDate", "size"];
+var _excluded$8 = ["label", "labelClassName", "labelStyle", "brand", "otherFormatDate", "size"];
 DatePicker.registerLocale('pt-BR', br__default["default"]);
 
 var Calendar = function Calendar(_ref) {
@@ -4530,7 +4530,7 @@ var Calendar = function Calendar(_ref) {
       brand = _ref.brand,
       otherFormatDate = _ref.otherFormatDate,
       size = _ref.size,
-      rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$a);
+      rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$8);
 
   // eslint-disable-next-line react/display-name
   var CustomInput = require$$0__default["default"].forwardRef(function (props, ref) {
@@ -4598,7 +4598,7 @@ var Button$1 = styled__default["default"].a(_templateObject2$7 || (_templateObje
 var Complement = styled__default["default"].div(_templateObject3$7 || (_templateObject3$7 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n\n  color: ", ";\n  background-color: ", ";\n\n  border: 1px solid ", ";\n  text-align: center;\n  margin-top: -1.5625rem;\n  padding-top: 1.5625rem;\n  width: 100%;\n\n  border-bottom-left-radius: 1.875rem;\n  border-bottom-right-radius: 1.875rem;\n"])), colors.gray20, colors.default10, colors.default20);
 var LoadingCard = styled__default["default"].div(_templateObject4$5 || (_templateObject4$5 = _taggedTemplateLiteralLoose(["\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  background-color: rgba(255, 255, 255, 0.8);\n  width: 100%;\n  height: 100%;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  border-radius: 30px;\n  z-index: 2;\n  position: absolute;\n"])));
 
-var _excluded$9 = ["children", "childrenStyle", "childrenClassName", "width", "type", "style", "icon", "iconClassName", "iconStyle", "iconSize", "onClick", "loading", "className", "complement", "complementStyle", "complementClassName"];
+var _excluded$7 = ["children", "childrenStyle", "childrenClassName", "width", "type", "style", "icon", "iconClassName", "iconStyle", "iconSize", "onClick", "loading", "className", "complement", "complementStyle", "complementClassName"];
 
 function Card(_ref) {
   var children = _ref.children,
@@ -4618,7 +4618,7 @@ function Card(_ref) {
       complement = _ref.complement,
       complementStyle = _ref.complementStyle,
       complementClassName = _ref.complementClassName,
-      rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$9);
+      rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$7);
 
   function renderShadow() {
     return jsxRuntime.jsxs(jsxRuntime.Fragment, {
@@ -4859,7 +4859,7 @@ var Container$5 = styled__default["default"].div(_templateObject$a || (_template
   return props.checked ? colors.white : colors.default20;
 });
 
-var _excluded$8 = ["label", "labelClassName", "labelStyle", "sizeBox", "containerClassName", "containerStyle"];
+var _excluded$6 = ["label", "labelClassName", "labelStyle", "sizeBox", "containerClassName", "containerStyle"];
 
 function Checkbox(_ref) {
   var label = _ref.label,
@@ -4868,7 +4868,7 @@ function Checkbox(_ref) {
       sizeBox = _ref.sizeBox,
       containerClassName = _ref.containerClassName,
       containerStyle = _ref.containerStyle,
-      rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$8);
+      rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$6);
 
   return jsxRuntime.jsxs(Container$5, Object.assign({
     onClick: !rest.disabled ? rest.onChange : undefined,
@@ -5098,7 +5098,7 @@ var Container$4 = styled__default["default"].div(_templateObject$8 || (_template
   return props.line ? colors.white : colors.error;
 }, colors.brand20, colors.brand20, colors.brand20, colors.brand20, colors.brand20, colors.error, colors.error, colors.brand10, colors.brandTransparent2, colors.brand20);
 
-var _excluded$7 = ["options", "brand", "textAlign", "errorMessage", "label", "colorLabel", "line", "containerClassName", "containerStyle", "errorClassName", "errorStyle", "labelClassName", "labelStyle"];
+var _excluded$5 = ["options", "brand", "textAlign", "errorMessage", "label", "line", "containerClassName", "containerStyle", "errorClassName", "errorStyle", "labelClassName", "labelStyle"];
 
 function Dropdown(_ref) {
   var options = _ref.options,
@@ -5106,7 +5106,6 @@ function Dropdown(_ref) {
       textAlign = _ref.textAlign,
       errorMessage = _ref.errorMessage,
       label = _ref.label,
-      colorLabel = _ref.colorLabel,
       line = _ref.line,
       containerClassName = _ref.containerClassName,
       containerStyle = _ref.containerStyle,
@@ -5114,13 +5113,12 @@ function Dropdown(_ref) {
       errorStyle = _ref.errorStyle,
       labelClassName = _ref.labelClassName,
       labelStyle = _ref.labelStyle,
-      rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$7);
+      rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$5);
 
   return jsxRuntime.jsxs(Container$4, Object.assign({
     brand: brand,
     textAlign: textAlign,
     error: errorMessage,
-    colorLabel: colorLabel,
     line: line,
     className: containerClassName,
     style: containerStyle,
@@ -5142,70 +5140,6 @@ function Dropdown(_ref) {
     }, {
       children: errorMessage
     }), void 0)]
-  }), void 0);
-}
-
-var _excluded$6 = ["value", "clearError", "errors", "name", "register", "required", "setValue", "validate"];
-
-function DropdownForm(_ref) {
-  var value = _ref.value,
-      clearError = _ref.clearError,
-      errors = _ref.errors,
-      name = _ref.name,
-      register = _ref.register,
-      required = _ref.required,
-      setValue = _ref.setValue,
-      validate = _ref.validate,
-      rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$6);
-
-  var _useState = require$$0.useState(),
-      valueDefault = _useState[0],
-      setValueDefault = _useState[1];
-
-  var _useState2 = require$$0.useState(''),
-      message = _useState2[0],
-      setMessage = _useState2[1];
-
-  require$$0.useEffect(function () {
-    if (!valueDefault) {
-      setValue(name, value);
-    } else {
-      setValue(name, valueDefault);
-    }
-  }, [valueDefault]);
-  require$$0.useEffect(function () {
-    setValueDefault(value);
-  }, [value]);
-  require$$0.useEffect(function () {
-    if (register) {
-      register({
-        name: name
-      }, {
-        required: required,
-        validate: validate && required ? function (value) {
-          if (validate(value)) {
-            setMessage(validate(value));
-            return false;
-          }
-
-          setMessage('');
-          return true;
-        } : null
-      });
-    }
-  }, [register]);
-  return jsxRuntime.jsx(Dropdown, Object.assign({}, rest, {
-    value: valueDefault,
-    onChange: function onChange(_ev, data) {
-      setValueDefault(data.value);
-      setValue(name, value);
-
-      if (errors && clearError) {
-        clearError(name);
-      }
-    },
-    line: rest.line,
-    errorMessage: errors ? errors.type === 'required' ? 'Obrigatório' : "" + message : ''
   }), void 0);
 }
 
@@ -5323,26 +5257,18 @@ var InputContainer = styled__default["default"].div(_templateObject$7 || (_templ
 }, function (props) {
   return props.actionPosition && props.actionPosition === 'left' ? 'left: 0;' : 'right: 0;';
 });
-var LabelError$1 = styled__default["default"].span(_templateObject5$2 || (_templateObject5$2 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  font-size: 10px;\n  margin-left: 0;\n  color: ", ";\n"])), function (props) {
-  if (props.errorColor) {
-    return props.errorColor;
-  }
+var LabelError$1 = styled__default["default"].span(_templateObject5$2 || (_templateObject5$2 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  font-size: 10px;\n  margin-left: 0;\n  color: ", ";\n"])), colors.danger20);
 
-  return colors.danger20;
-});
-
-var _excluded$5 = ["containerClassName", "containerStyle", "width", "textColor", "inputRef", "icon", "iconClassName", "iconPosition", "iconColor", "action", "label", "labelClassName", "labelStyle", "errorColor", "errorMessage", "errorClassName", "errorStyle"];
+var _excluded$4 = ["width", "textColor", "inputRef", "icon", "iconClassName", "iconStyle", "iconPosition", "action", "label", "labelClassName", "labelStyle", "errorColor", "errorMessage", "errorClassName", "errorStyle"];
 
 function Input(_ref) {
-  var containerClassName = _ref.containerClassName,
-      containerStyle = _ref.containerStyle,
-      width = _ref.width,
+  var width = _ref.width,
       textColor = _ref.textColor,
       inputRef = _ref.inputRef,
       icon = _ref.icon,
       iconClassName = _ref.iconClassName,
+      iconStyle = _ref.iconStyle,
       iconPosition = _ref.iconPosition,
-      iconColor = _ref.iconColor,
       action = _ref.action,
       label = _ref.label,
       labelClassName = _ref.labelClassName,
@@ -5351,7 +5277,7 @@ function Input(_ref) {
       errorMessage = _ref.errorMessage,
       errorClassName = _ref.errorClassName,
       errorStyle = _ref.errorStyle,
-      rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$5);
+      rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$4);
 
   var _useState = require$$0.useState(function () {
     return false;
@@ -5378,8 +5304,8 @@ function Input(_ref) {
   }, {
     children: [jsxRuntime.jsxs(InputContainer, Object.assign({
       isFieldActive: isFieldActive,
-      className: containerClassName,
-      style: containerStyle,
+      className: rest.className,
+      style: rest.style,
       width: width,
       disabled: rest.disabled,
       textColor: textColor,
@@ -5399,11 +5325,13 @@ function Input(_ref) {
         children: jsxRuntime.jsx(FontAwesomeIcon, {
           "aria-label": "icon",
           className: iconClassName,
+          style: iconStyle,
           icon: icon,
-          color: iconColor || colors.brand10
+          color: colors.brand10
         }, void 0)
       }), void 0), action && jsxRuntime.jsx("button", Object.assign({
         className: "icon-action " + (action.className || ''),
+        style: action.style,
         onClick: action.onClick,
         "data-testid": "action-container"
       }, {
@@ -5436,141 +5364,6 @@ function Input(_ref) {
     }, {
       children: errorMessage
     }), void 0)]
-  }), void 0);
-}
-
-var _excluded$4 = ["register", "errors", "validate", "name", "required", "values", "limit", "minimum", "msgErrorValidate"];
-
-function InputForm(_ref) {
-  var _rest$action;
-
-  var register = _ref.register,
-      errors = _ref.errors,
-      validate = _ref.validate,
-      name = _ref.name,
-      required = _ref.required,
-      values = _ref.values,
-      limit = _ref.limit,
-      minimum = _ref.minimum,
-      msgErrorValidate = _ref.msgErrorValidate,
-      rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$4);
-
-  var _useState = require$$0.useState(false),
-      isFieldActive = _useState[0],
-      setIsFieldActive = _useState[1];
-
-  var _useState2 = require$$0.useState(''),
-      message = _useState2[0],
-      setMessage = _useState2[1];
-
-  var value = values ? values(name) || rest.defaultValue : rest.value;
-  require$$0.useEffect(function () {
-    if (value) {
-      if (!isFieldActive) {
-        setIsFieldActive(true);
-      }
-    }
-  }, [value]);
-
-  var handleFocus = function handleFocus() {
-    if (!isFieldActive) {
-      setIsFieldActive(true);
-    }
-  };
-
-  var handleBlur = function handleBlur() {
-    if (isFieldActive && !value) {
-      setIsFieldActive(false);
-    }
-
-    if (rest.onBlur) {
-      setImmediate(rest.onBlur);
-    }
-  };
-
-  var validadeRegister = function validadeRegister(valueRegister) {
-    var result = true;
-    var mensagem = '';
-
-    if (validate) {
-      if (validate(valueRegister)) {
-        mensagem = validate(valueRegister);
-        result = false;
-      }
-    }
-
-    if (limit) {
-      if (valueRegister.length > limit) {
-        mensagem = msgErrorValidate ? "" + msgErrorValidate : limit + " caracteres permitidos.";
-        result = false;
-      }
-    }
-
-    if (minimum) {
-      if (valueRegister.length < minimum) {
-        mensagem = msgErrorValidate ? "" + msgErrorValidate : (rest.label || name) + " deve ter " + minimum + " ou mais caracteres.";
-        result = false;
-      }
-    }
-
-    setMessage(mensagem);
-    return result;
-  };
-
-  return jsxRuntime.jsxs("div", Object.assign({
-    style: {
-      paddingBottom: message || errors ? 0 : 20
-    }
-  }, {
-    children: [jsxRuntime.jsxs(InputContainer, Object.assign({
-      isFieldActive: isFieldActive,
-      requiredText: !!(errors && errors.type === 'required'),
-      errorMessage: errors,
-      // action={rest.action?.icon ? true : false}
-      width: rest.width,
-      disabled: rest.disabled,
-      style: rest.containerStyle,
-      textColor: rest.textColor,
-      icon: !!rest.icon,
-      iconPosition: rest.iconPosition,
-      action: rest.action,
-      actionPosition: (_rest$action = rest.action) == null ? void 0 : _rest$action.position,
-      date: rest.type === 'date'
-    }, {
-      children: [rest.icon && jsxRuntime.jsx("div", Object.assign({
-        className: "icon"
-      }, {
-        children: jsxRuntime.jsx(FontAwesomeIcon, {
-          icon: rest.icon,
-          color: rest.iconColor || colors.brand10
-        }, void 0)
-      }), void 0), rest.action && jsxRuntime.jsx("button", Object.assign({
-        className: "icon-action",
-        onClick: rest.action.onClick
-      }, {
-        children: jsxRuntime.jsx(FontAwesomeIcon, {
-          icon: rest.action.icon,
-          color: rest.action.iconColor || colors.brand10
-        }, void 0)
-      }), void 0), jsxRuntime.jsx("input", Object.assign({}, rest, {
-        onFocus: handleFocus,
-        onBlur: handleBlur,
-        name: name,
-        placeholder: isFieldActive ? rest.placeholder : '',
-        ref: register ? register({
-          required: required,
-          validate: validadeRegister
-        }) : null
-      }), void 0), jsxRuntime.jsx("label", {
-        children: jsxRuntime.jsx("span", Object.assign({
-          style: rest.labelStyle
-        }, {
-          children: rest.label
-        }), void 0)
-      }, void 0)]
-    }), void 0), errors ? jsxRuntime.jsx(LabelError$1, {
-      children: errors.type === 'required' ? 'Obrigatório' : "" + message
-    }, void 0) : null]
   }), void 0);
 }
 
@@ -6873,7 +6666,7 @@ function TableComponent(_ref) {
       children: jsxRuntime.jsx(semanticUiReact.Table, Object.assign({}, rest, {
         children: children
       }), void 0)
-    }), void 0), hasMore ? jsxRuntime.jsx(ButtonMain, {
+    }), void 0), hasMore ? jsxRuntime.jsx(Button$2, {
       "data-testid": "hasmore-button",
       secondary: true,
       textFirst: hasMoreText || 'ver a',
@@ -7060,17 +6853,15 @@ function TextAreaForm(_ref) {
 }
 
 exports.Accordion = Accordion;
-exports.ButtonMain = ButtonMain;
+exports.Button = Button$2;
+exports.ButtonMain = Button$2;
 exports.Calendar = Calendar;
 exports.Card = Card;
 exports.Checkbox = Checkbox;
 exports.Dialog = DialogComponent;
 exports.Dropdown = Dropdown;
-exports.DropdownForm = DropdownForm;
 exports.Input = Input;
-exports.InputForm = InputForm;
 exports.InputLine = Input;
-exports.InputLineForm = InputForm;
 exports.Loader = Loader;
 exports.Modal = ModalComponent;
 exports.MoreLess = MoreLess;

@@ -1,14 +1,14 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 import { action } from '@storybook/addon-actions';
-import { ButtonMain, ButtonProps } from '@quero-delivery/quero-components-web';
+import { Button, ButtonProps } from '@quero-delivery/quero-components-web';
 import '@quero-delivery/quero-components-web/dist/index.css';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default {
-  title: 'Components/ButtonMain',
-  component: ButtonMain,
+  title: 'Components/Button',
+  component: Button,
   parameters: {
     docs: {
       description: {
@@ -204,7 +204,7 @@ export default {
 } as Meta;
 
 const Template: Story<ButtonProps> = args => (
-  <ButtonMain {...args}></ButtonMain>
+  <Button {...args}></Button>
 );
 
 export const Default = Template.bind({});
@@ -218,7 +218,7 @@ Default.parameters = {
   docs: {
     source: {
       code: `
-<ButtonMain
+<Button
   textFirst="Clique"
   textEnd="aqui"
   onClick={() => {}}
@@ -239,7 +239,7 @@ FirstStrong.parameters = {
   docs: {
     source: {
       code: `
-<ButtonMain
+<Button
   textFirst="Clique"
   textEnd="aqui"
   onClick={() => {}}
@@ -261,7 +261,7 @@ NotStrong.parameters = {
   docs: {
     source: {
       code: `
-<ButtonMain
+<Button
   textFirst="Clique"
   textEnd="aqui"
   onClick={() => {}}
@@ -283,7 +283,7 @@ Strong.parameters = {
   docs: {
     source: {
       code: `
-<ButtonMain
+<Button
   textFirst="Clique"
   textEnd="aqui"
   onClick={() => {}}
@@ -305,7 +305,7 @@ Secondary.parameters = {
   docs: {
     source: {
       code: `
-<ButtonMain
+<Button
   textFirst="Clique"
   textEnd="aqui"
   onClick={() => {}}
@@ -327,7 +327,7 @@ Tertiary.parameters = {
   docs: {
     source: {
       code: `
-<ButtonMain
+<Button
   textFirst="Clique"
   textEnd="aqui"
   onClick={() => {}}
@@ -349,7 +349,7 @@ Rectangular.parameters = {
   docs: {
     source: {
       code: `
-<ButtonMain
+<Button
   textFirst="Clique"
   textEnd="aqui"
   secondary
@@ -370,7 +370,7 @@ NoBorder.parameters = {
   docs: {
     source: {
       code: `
-<ButtonMain
+<Button
   textFirst="Clique"
   textEnd="aqui"
   noBorder
@@ -390,7 +390,7 @@ BackPurple.parameters = {
   docs: {
     source: {
       code: `
-<ButtonMain
+<Button
   textFirst="Clique"
   textEnd="aqui"
   backPurple
@@ -410,7 +410,7 @@ Size.parameters = {
   docs: {
     source: {
       code: `
-<ButtonMain
+<Button
   textFirst="Clique"
   textEnd="aqui"
   size="mini"
@@ -430,7 +430,7 @@ Width.parameters = {
   docs: {
     source: {
       code: `
-<ButtonMain
+<Button
   textFirst="Clique"
   textEnd="aqui"
   width="100%"
@@ -452,7 +452,7 @@ Icon.parameters = {
       code: `
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
 
-<ButtonMain
+<Button
   textFirst="Clique"
   textEnd="aqui"
   icon={faPhone}
@@ -475,7 +475,7 @@ CustomIcon.parameters = {
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-<ButtonMain
+<Button
   textFirst="Clique"
   textEnd="aqui"
   customIcon={<FontAwesomeIcon icon={faPhone}/>}
@@ -498,7 +498,7 @@ IconPosition.parameters = {
       code: `
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
 
-<ButtonMain
+<Button
   textFirst="Clique"
   textEnd="aqui"
   icon={faPhone}
@@ -520,7 +520,7 @@ Loading.parameters = {
   docs: {
     source: {
       code: `
-<ButtonMain
+<Button
   textFirst="Clique"
   textEnd="aqui"
   loading
@@ -541,7 +541,7 @@ Notification.parameters = {
   docs: {
     source: {
       code: `
-<ButtonMain
+<Button
   textFirst="Clique"
   textEnd="aqui"
   notification

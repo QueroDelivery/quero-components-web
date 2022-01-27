@@ -41,7 +41,7 @@ interface IconProps {
   iconPosition?: 'left' | 'right';
 }
 
-export const Button = styled.button<ButtonProps>`
+export const Container = styled.button<ButtonProps>`
   font-family: MontSerrat !important;
   font-size: ${props =>
     props.size ? getFontSize(props.size, '1rem') : '1rem'};
