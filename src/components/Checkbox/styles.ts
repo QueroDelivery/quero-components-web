@@ -1,143 +1,95 @@
 import styled from 'styled-components';
+import { Sizes, sizesTypes } from '../../helpers/FnUtil';
 import { colors } from '../../styles/colors';
 
 interface CheckboxProps {
   disabled?: boolean;
-  sizeBox?:
-    | 'mini'
-    | 'tiny'
-    | 'small'
-    | 'medium'
-    | 'large'
-    | 'big'
-    | 'huge'
-    | 'massive';
+  sizeBox?: sizesTypes;
   checked?: boolean;
 }
 
-const Sizes = {
-  mini: 'mini',
-  tiny: 'tiny',
-  small: 'small',
-  medium: 'medium',
-  large: 'large',
-  big: 'big',
-  huge: 'huge',
-  massive: 'massive',
-};
-
 const size = (size: string | number) => {
   switch (size) {
-    case Sizes.mini:
-      return '10px';
-    case Sizes.tiny:
-      return '12px';
-    case Sizes.small:
-      return '14px';
-    case Sizes.medium:
-      return '17px';
-    case Sizes.large:
-      return '20px';
-    case Sizes.big:
-      return '23px';
-    case Sizes.huge:
-      return '26px';
-    case Sizes.massive:
-      return '30px';
+    case Sizes.xs:
+      return '0.625rem';
+    case Sizes.sm:
+      return '0.875rem';
+    case Sizes.md:
+      return '1.0625rem';
+    case Sizes.lg:
+      return '1.4375rem';
+    case Sizes.xl:
+      return '1.875rem';
     default:
-      return size;
+      return '1.0625rem';
   }
 };
 
 const sizeChecked = (size: string | number) => {
   switch (size) {
-    case Sizes.mini:
-      return '8px';
-    case Sizes.tiny:
-      return '10px';
-    case Sizes.small:
-      return '11px';
-    case Sizes.medium:
-      return '13px';
-    case Sizes.large:
-      return '16px';
-    case Sizes.big:
-      return '19px';
-    case Sizes.huge:
-      return '21px';
-    case Sizes.massive:
-      return '23px';
+    case Sizes.xs:
+      return '0.5rem';
+    case Sizes.sm:
+      return '0.6875rem';
+    case Sizes.md:
+      return '0.8125rem';
+    case Sizes.lg:
+      return '1.1875rem';
+    case Sizes.xl:
+      return '1.4375rem';
     default:
-      return size;
+      return '0.8125rem';
   }
 };
 
 const marginLeft = (size: string | number) => {
   switch (size) {
-    case Sizes.mini:
-      return '1px';
-    case Sizes.tiny:
-      return '1.2px';
-    case Sizes.small:
-      return '1.4px';
-    case Sizes.medium:
-      return '2px';
-    case Sizes.large:
-      return '2px';
-    case Sizes.big:
-      return '2px';
-    case Sizes.huge:
-      return '3px';
-    case Sizes.massive:
-      return '4px';
+    case Sizes.xs:
+      return '0.0625rem';
+    case Sizes.sm:
+      return '0.0875rem';
+    case Sizes.md:
+      return '0.125rem';
+    case Sizes.lg:
+      return '0.1875rem';
+    case Sizes.xl:
+      return '0.25rem';
     default:
-      return size;
+      return '0.125rem';
   }
 };
 
 const labelSize = (size: string | number) => {
   switch (size) {
-    case Sizes.mini:
+    case Sizes.xs:
       return '10px';
-    case Sizes.tiny:
+    case Sizes.sm:
       return '13px';
-    case Sizes.small:
-      return '14px';
-    case Sizes.medium:
+    case Sizes.md:
       return '16px';
-    case Sizes.large:
-      return '18px';
-    case Sizes.big:
+    case Sizes.lg:
       return '20px';
-    case Sizes.huge:
-      return '22px';
-    case Sizes.massive:
+    case Sizes.xl:
       return '24px';
     default:
-      return size;
+      return '16px';
   }
 };
 
 const marginRight = (size: string | number) => {
   switch (size) {
-    case Sizes.mini:
-      return '5px';
-    case Sizes.tiny:
-      return '6px';
-    case Sizes.small:
-      return '7px';
-    case Sizes.medium:
-      return '8px';
-    case Sizes.large:
-      return '9px';
-    case Sizes.big:
-      return '10px';
-    case Sizes.huge:
-      return '11px';
-    case Sizes.massive:
-      return '12px';
+    case Sizes.xs:
+      return '0.3125rem';
+    case Sizes.sm:
+      return '0.4375rem';
+    case Sizes.md:
+      return '0.5rem';
+    case Sizes.lg:
+      return '0.625rem';
+    case Sizes.xl:
+      return '0.75rem';
     default:
-      return size;
+      return '0.5rem';
   }
 };
 
@@ -150,23 +102,26 @@ export const Container = styled.div<CheckboxProps>`
     display: none;
   }
 
+  label,
+  input + div {
+    cursor: ${props => (props.disabled ? 'default' : 'pointer')};
+    opacity: ${props => (props.disabled ? 0.5 : 1)};
+  }
+
   label {
     font-size: ${props => {
       if (props.sizeBox) {
         return labelSize(props.sizeBox);
       }
 
-      return '17px';
+      return '1.0625rem';
     }};
     color: ${colors.gray20};
-    cursor: ${props => (props.disabled ? 'default' : 'pointer')};
-    opacity: ${props => (props.disabled ? 0.5 : 1)};
   }
 
   > input + div {
     position: relative;
-    cursor: ${props => (props.disabled ? 'default' : 'pointer')};
-    opacity: ${props => (props.disabled ? 0.5 : 1)};
+
     display: flex;
     align-items: center;
 
@@ -178,14 +133,14 @@ export const Container = styled.div<CheckboxProps>`
           return size(props.sizeBox);
         }
 
-        return '17px';
+        return '1.0625rem';
       }};
       height: ${props => {
         if (props.sizeBox) {
           return size(props.sizeBox);
         }
 
-        return '17px';
+        return '1.0625rem';
       }};
       border: 1px solid ${colors.default20};
       background: ${colors.default20};
@@ -199,14 +154,14 @@ export const Container = styled.div<CheckboxProps>`
           return size(props.sizeBox);
         }
 
-        return '17px';
+        return '1.0625rem';
       }};
       height: ${props => {
         if (props.sizeBox) {
           return size(props.sizeBox);
         }
 
-        return '17px';
+        return '1.0625rem';
       }};
       border: 1px solid ${colors.brandDark};
       background: ${colors.brandDark};
@@ -235,21 +190,21 @@ export const Container = styled.div<CheckboxProps>`
         return marginLeft(props.sizeBox);
       }
 
-      return '2.5px';
+      return '0.1563rem';
     }};
     margin-right: ${props => {
       if (props.sizeBox) {
         return marginRight(props.sizeBox);
       }
 
-      return '8px';
+      return '0.5rem';
     }};
     font-size: ${props => {
       if (props.sizeBox) {
         return sizeChecked(props.sizeBox);
       }
 
-      return '13px';
+      return '0.8125rem';
     }};
     color: ${props => (props.checked ? colors.white : colors.default20)};
     z-index: 1;

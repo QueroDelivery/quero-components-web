@@ -1,8 +1,9 @@
+import React from 'react';
 import { useState } from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 import { action } from '@storybook/addon-actions';
-import { Checkbox } from '@quero-delivery/quero-components-web';
-import { InputProps } from './Interface';
+import { Checkbox, CheckboxProps } from '@quero-delivery/quero-components-web';
+
 import '@quero-delivery/quero-components-web/dist/index.css';
 
 export default {
@@ -22,20 +23,11 @@ export default {
     sizeBox: {
       control: {
         type: 'inline-radio',
-        options: [
-          'mini',
-          'tiny',
-          'small',
-          'medium',
-          'large',
-          'big',
-          'huge',
-          'massive',
-        ],
+        options: ['xs', 'sm', 'md', 'lg', 'xl'],
       },
       description: 'Tamanho do CheckBox',
       type: {
-        summary: 'mini | tiny | small | medium | large | big | huge | massive',
+        summary: 'xs| sm | md | lg | xl',
       },
     },
     onChange: {
@@ -52,23 +44,14 @@ export default {
       description: 'O Checkbox esta selecionado?',
       table: {
         type: {
-          summary: 'bollean',
-        },
-      },
-    },
-    labelStyle: {
-      control: 'object',
-      description: 'Estilização do Checkbox',
-      table: {
-        type: {
-          summary: 'React.CSSProperties',
+          summary: 'boolean',
         },
       },
     },
   },
 } as Meta;
 
-const Template: Story<InputProps> = args => {
+const Template: Story<CheckboxProps> = args => {
   const [checked, setChecked] = useState(false);
   return (
     <Checkbox
@@ -88,10 +71,11 @@ Default.args = {
 Default.parameters = {
   docs: {
     source: {
-      code: `<Checkbox
-      checked={false}
-      onChange={() => {}}
-    />`,
+      code: `
+<Checkbox
+  checked={false}
+  onChange={() => {}}
+/>`,
     },
   },
 };
@@ -107,12 +91,13 @@ Label.args = {
 Label.parameters = {
   docs: {
     source: {
-      code: `<Checkbox
-      checked={false}
-      label="Título do Checkbox"
-      labelStyle={{ marginRight: 20 }}
-      onChange={() => {}}
-    />`,
+      code: `
+<Checkbox
+  checked={false}
+  label="Título do Checkbox"
+  labelStyle={{ marginRight: 20 }}
+  onChange={() => {}}
+/>`,
     },
   },
 };
@@ -121,19 +106,20 @@ export const SizeBox = Template.bind({});
 SizeBox.args = {
   checked: true,
   label: 'Título do Checkbox',
-  sizeBox: 'big',
+  sizeBox: 'lg',
   onChange: action('checked/notChecked'),
 };
 
 SizeBox.parameters = {
   docs: {
     source: {
-      code: `<Checkbox
-      checked={false}
-      label="Título do Checkbox"
-      sizeBox="big"
-      onChange={() => {}}
-    />`,
+      code: `
+<Checkbox
+  checked={false}
+  label="Título do Checkbox"
+  sizeBox="lg"
+  onChange={() => {}}
+/>`,
     },
   },
 };

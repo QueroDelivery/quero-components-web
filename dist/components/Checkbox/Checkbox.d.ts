@@ -1,9 +1,13 @@
-import React, { InputHTMLAttributes } from 'react';
-export interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'type'> {
+import { CSSProperties, InputHTMLAttributes } from 'react';
+import { sizesTypes } from '../../helpers/FnUtil';
+export interface CheckboxProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'type'> {
     label?: string;
-    labelStyle?: React.CSSProperties;
-    sizeBox?: 'mini' | 'tiny' | 'small' | 'medium' | 'large' | 'big' | 'huge' | 'massive';
+    labelClassName?: string;
+    labelStyle?: CSSProperties;
+    sizeBox?: sizesTypes;
     onChange?: () => void;
+    containerClassName?: string;
+    containerStyle?: CSSProperties;
 }
-declare const Checkbox: React.FC<InputProps>;
+declare function Checkbox({ label, labelClassName, labelStyle, sizeBox, containerClassName, containerStyle, ...rest }: CheckboxProps): JSX.Element;
 export default Checkbox;

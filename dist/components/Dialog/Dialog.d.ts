@@ -1,4 +1,4 @@
-import React from 'react';
+import { ReactNode } from 'react';
 export interface DialogProps {
     open: boolean;
     onClose: Function;
@@ -8,6 +8,9 @@ export interface DialogProps {
     onBack?: Function;
     noBorder?: boolean;
     closeIcon?: boolean;
+    children?: ReactNode;
+    closeOnDimerClick?: boolean;
+    onReturn?(): void;
 }
-declare const DialogComponent: React.FC<DialogProps>;
+declare function DialogComponent({ open, children, onClose, loading, maxHeight, title, noBorder, closeOnDimerClick, closeIcon, onReturn, }: DialogProps): JSX.Element;
 export default DialogComponent;

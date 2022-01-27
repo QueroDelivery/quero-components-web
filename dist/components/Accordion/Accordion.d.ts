@@ -1,20 +1,28 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
-interface AccordionProps {
+export interface AccordionProps {
+    className?: string;
+    style?: React.CSSProperties;
     title: string;
-    colorTitle?: string;
+    titleClassName?: string;
+    titleStyle?: React.CSSProperties;
     subtitle?: string;
-    colorSubtitle?: string;
+    subtitleClassName?: string;
+    subtitleStyle?: React.CSSProperties;
     value?: string;
-    colorValue?: string;
+    valueClassName?: string;
+    valueStyle?: React.CSSProperties;
     open: boolean;
-    onChange: () => void;
+    onClick: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
     secondary?: boolean;
     width?: number | string;
     icon?: IconDefinition;
+    iconClassName?: string;
+    iconStyle?: React.CSSProperties;
     customIcon?: React.ReactNode;
-    colorIcon?: string;
-    fontSizeTitle?: number | string;
+    bodyClassName?: string;
+    bodyStyle?: React.CSSProperties;
+    children?: ReactNode;
 }
-declare const Accordion: React.FC<AccordionProps>;
+declare function Accordion({ className, style, title, titleClassName, titleStyle, subtitle, subtitleClassName, subtitleStyle, value, valueClassName, valueStyle, children, secondary, open, onClick, width, icon, iconClassName, iconStyle, customIcon, bodyClassName, bodyStyle, }: AccordionProps): JSX.Element;
 export default Accordion;

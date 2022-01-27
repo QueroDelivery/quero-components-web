@@ -3,7 +3,8 @@
     "browser": true,
     "commonjs": true,
     "es6": true,
-    "node": true
+    "node": true,
+    "jest": true
   },
   "extends": [
     "airbnb",
@@ -33,7 +34,7 @@
     "no-this-before-super": 2,
     "no-undef": 2,
     "no-unreachable": 2,
-    "no-unused-vars": "warn",
+    "no-unused-vars": "off",
     "import/no-unresolved": "off",
     "no-use-before-define": "off",
     "@typescript-eslint/no-use-before-define": "off",

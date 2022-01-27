@@ -13,68 +13,97 @@ export interface TextAreaProps
   extends TextareaHTMLAttributes<HTMLTextAreaElement> {
   label?: string;
   labelColor?: string;
-  textColor?: string;
+  labelStyle?: React.CSSProperties;
+  labelClassName?: string;
+
+  errorClassName?: string;
+  errorStyle?: React.CSSProperties;
   errorMessage?: string;
   errorColor?: string;
+
+  textColor?: string;
   containerStyle?: React.CSSProperties;
-  labelStyle?: React.CSSProperties;
+  containerClassName?: string;
+
+  lengthInfo?: boolean | number;
+  lengthInfoClassName?: string;
+  lengthInfoStyle?: React.CSSProperties;
+
   width?: number | string;
   height?: number | string;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  textAreaRef?: any;
-  lengthInfo?: boolean | number;
 }
 
-const TextArea: React.FC<TextAreaProps> = ({
-  containerStyle,
+function TextArea({
   label,
-  labelColor,
+  labelClassName,
   labelStyle,
+  labelColor,
+
+  errorClassName,
+  errorStyle,
   errorMessage,
   errorColor,
+
+  containerStyle,
+  containerClassName,
+  textColor,
   width,
   height,
-  textColor,
-  textAreaRef,
+
   lengthInfo,
+  lengthInfoClassName,
+  lengthInfoStyle,
   ...rest
-}) => {
+}: TextAreaProps) {
   return (
-    <div style={{ paddingBottom: errorMessage ? 0 : 20 }}>
+    <div>
       {label && (
-        <Label errorMessage={errorMessage} labelColor={labelColor}>
+        <Label
+          style={labelStyle}
+          errorMessage={errorMessage}
+          labelColor={labelColor}
+          className={labelClassName}
+          errorColor={errorColor}
+        >
           {label}
         </Label>
       )}
       <Container
         errorMessage={errorMessage}
         errorColor={errorColor}
-        labelStyle={labelStyle}
-        containerStyle={containerStyle}
-        width={width}
         style={containerStyle}
+        className={containerClassName}
         disabled={rest.disabled}
         textColor={textColor}
+        width={width}
         height={height}
       >
-        <textarea {...rest} placeholder={rest.placeholder} ref={textAreaRef} />
+        <textarea {...rest} />
       </Container>
       <Footer>
-        <LabelError errorColor={errorColor}>{errorMessage}</LabelError>
+        <LabelError
+          className={errorClassName}
+          style={errorStyle}
+          errorColor={errorColor}
+        >
+          {errorMessage}
+        </LabelError>
+
         {(lengthInfo || typeof lengthInfo == 'number') && rest.maxLength ? (
-          <LabelLengthInfo>{`${
+          <LabelLengthInfo
+            className={lengthInfoClassName}
+            style={lengthInfoStyle}
+          >{`${
             typeof lengthInfo == 'number'
               ? lengthInfo
               : typeof rest.value == 'string'
               ? rest.value.length
               : 0
           }/${rest.maxLength} caracteres`}</LabelLengthInfo>
-        ) : (
-          ''
-        )}
+        ) : null}
       </Footer>
     </div>
   );
-};
+}
 
 export default TextArea;

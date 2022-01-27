@@ -1,95 +1,89 @@
-import React, { useState, useEffect } from 'react';
+import { useMemo } from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { Container } from './styles';
+import { sizesTypes } from '../../helpers/FnUtil';
 
-interface MoreLessProps {
-  size?: 'small' | 'medium' | 'big';
+export interface MoreLessProps {
+  size?: sizesTypes;
   disabled?: boolean;
   value: number;
-  limit?: number;
+  maximum?: number;
   minimum?: number;
-  more: () => void;
-  less: () => void;
-  // eslint-disable-next-line no-unused-vars
-  onChange?: (value: number) => void;
+  quantityToChange?: number;
+  onChange: (newValue: number) => void;
 }
 
-const MoreLess: React.FC<MoreLessProps> = ({
-  size,
+function MoreLess({
+  size = 'md',
   disabled,
   value,
-  limit,
-  minimum,
-  more,
-  less,
+  maximum,
+  minimum = 0,
   onChange,
-}) => {
-  const [noLess, setNoLess] = useState(false);
-  const [noMore, setNoMore] = useState(false);
-  const [sizeState, setSizeState] = useState<'small' | 'medium' | 'big'>(
-    'medium',
-  );
-
-  useEffect(() => {
-    if (size) {
-      setSizeState(size);
+  quantityToChange = 1,
+}: MoreLessProps) {
+  const noLess = useMemo(() => {
+    if (value <= minimum) {
+      return true;
     }
-  }, [size]);
 
-  useEffect(() => {
-    if ((minimum && value <= minimum) || value <= 0) {
-      setNoLess(true);
-    } else {
-      setNoLess(false);
-    }
+    return false;
   }, [minimum, value]);
 
-  useEffect(() => {
-    if (limit && value >= limit) {
-      setNoMore(true);
-    } else {
-      setNoMore(false);
+  const noMore = useMemo(() => {
+    if (typeof maximum == 'number' && value >= maximum) {
+      return true;
     }
-  }, [limit, value]);
+
+    return false;
+  }, [maximum, value]);
+
+  function handleChangeValue(newValue: number) {
+    if (typeof maximum == 'number' && newValue > maximum) {
+      return onChange(maximum);
+    }
+
+    if (newValue < minimum) return onChange(minimum);
+
+    onChange(newValue);
+  }
 
   return (
     <Container
-      limit={limit}
+      maximum={maximum}
       minimum={minimum}
       value={value}
-      size={sizeState}
+      size={size}
       disabled={disabled}
-      noLess={noLess}
-      noMore={noMore}
+      role="group"
     >
-      <div
-        className="btn left"
-        onClick={() =>
-          !disabled ? (less ? (noLess ? null : less()) : null) : null
-        }
+      <button
+        aria-label="minus"
+        disabled={disabled || noLess}
+        onClick={() => handleChangeValue(value - quantityToChange)}
       >
         <FontAwesomeIcon icon={faMinus} />
-      </div>
+      </button>
       <input
-        value={value || value === 0 ? value.toString() : ''}
+        value={value}
         type="number"
-        onChange={event =>
-          onChange ? onChange(Number(event.target.value)) : null
-        }
-        disabled={disabled || !onChange}
+        onChange={event => handleChangeValue(Number(event.target.value))}
+        disabled={disabled}
+        max={maximum}
+        min={minimum}
+        readOnly={disabled}
       />
-      <div
-        className="btn right"
-        onClick={() =>
-          !disabled ? (noMore ? null : more ? more() : null) : null
-        }
+      <button
+        aria-label="plus"
+        disabled={disabled || noMore}
+        onClick={() => handleChangeValue(value + quantityToChange)}
       >
         <FontAwesomeIcon icon={faPlus} />
-      </div>
+      </button>
     </Container>
   );
-};
+}
 
 export default MoreLess;

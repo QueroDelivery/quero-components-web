@@ -1,44 +1,59 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import { getFontSize, sizesTypes } from '../../helpers/FnUtil';
+import { colors } from '../../styles/colors';
 
-export const Container = styled.div`
-  font-family: MontSerrat !important;
+interface IButtonProps {
+  active?: boolean;
+}
 
-  /*--------------
-   Pagination
----------------*/
+interface IContainerProps {
+  disabledAll?: boolean;
+  size: sizesTypes;
+}
 
-  .ui.pagination.menu {
-    margin: 0em;
-    display: -webkit-inline-box;
-    display: -ms-inline-flexbox;
-    display: inline-flex;
-    vertical-align: middle;
-  }
-  .ui.pagination.menu .item:last-child {
-    border-radius: 0em 0.28571429rem 0.28571429rem 0em;
-  }
-  .ui.compact.menu .item:last-child {
-    border-radius: 0em 0.28571429rem 0.28571429rem 0em;
-  }
-  .ui.pagination.menu .item:last-child:before {
-    display: none;
-  }
-  .ui.pagination.menu .item {
-    font-family: MontSerrat !important;
-    min-width: 3em;
-    text-align: center;
-  }
-  .ui.pagination.menu .icon.item i.icon {
-    vertical-align: top;
+export const ContainerPagination = styled.div<IContainerProps>`
+  display: flex;
+  font-size: ${props => getFontSize(props.size, '1rem')};
+
+  justify-content: center;
+  align-items: center;
+
+  button + button {
+    margin-left: 0.5em;
   }
 
-  /* Active */
-  .ui.pagination.menu .active.item {
-    border-top: none;
-    padding-top: 0.92857143em;
-    background-color: rgba(0, 0, 0, 0.05);
-    color: rgba(0, 0, 0, 0.95);
-    -webkit-box-shadow: none;
-    box-shadow: none;
+  button {
+    ${props =>
+      !props.disabledAll
+        ? css`
+            opacity: 1 !important;
+          `
+        : ''}
+  }
+`;
+
+export const Button = styled.button<IButtonProps>`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: ${props => (props.active ? colors.white : colors.brand10)};
+  background-color: ${props => (props.active ? colors.brand10 : colors.white)};
+  border: 1px solid ${colors.hover};
+  font-size: 1.125em;
+  font-weight: 500;
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 0.625em;
+  transition: all 0.4s ease;
+
+  &:not(:disabled):hover {
+    background-color: ${colors.hover};
+  }
+
+  &:disabled {
+    border: none;
+    cursor: default;
+    opacity: 0.75;
   }
 `;

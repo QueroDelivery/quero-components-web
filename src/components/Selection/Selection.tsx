@@ -1,111 +1,101 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react';
+import { sizesTypes } from '../../helpers/FnUtil';
 
 import { Switch, Toggle, ActiveInactive } from './styles';
 
-interface SelectionProps {
-  type: 'switch' | 'toggle' | 'activeInactive';
+type TSelectors = 'switch' | 'toggle' | 'activeInactive';
+
+export interface SelectionProps {
+  type: TSelectors;
   checked?: boolean;
-  onChange?: () => void;
-  size?:
-    | 'mini'
-    | 'tiny'
-    | 'small'
-    | 'medium'
-    | 'large'
-    | 'big'
-    | 'huge'
-    | 'massive';
+  onClick?: React.MouseEventHandler<HTMLElement>;
+  onChange?: React.MouseEventHandler<HTMLElement>;
+  size?: sizesTypes;
   disabled?: boolean;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  selectionRef?: any;
+  className?: string;
+  style?: React.CSSProperties;
+  ref?: React.RefObject<any>;
 }
 
-const TYPES = {
+const TYPES: Record<TSelectors, TSelectors> = {
   switch: 'switch',
   toggle: 'toggle',
   activeInactive: 'activeInactive',
 };
 
-const Selection: React.FC<SelectionProps> = ({
+function Selection({
   type,
-  checked,
+  checked = false,
+  onClick,
   onChange,
   size,
   disabled,
-  selectionRef,
-}) => {
+  ref,
+  className,
+  style,
+}: SelectionProps) {
+  const eventFunction = onClick || onChange;
+
   function renderSwitch() {
     return (
-      <Switch size={size} ref={selectionRef} disabled={disabled}>
-        <input type="checkbox" checked={checked} />
-        <span
-          className="control"
-          onClick={() => (!disabled ? (onChange ? onChange() : null) : null)}
-        />
+      <Switch
+        className={className}
+        style={style}
+        size={size}
+        ref={ref}
+        disabled={disabled}
+        role="switch"
+        onClick={eventFunction}
+        // onKeyPress={event =>
+        //   (event.key == ' ' && !disabled && eventFunction) ??
+        //   eventFunction(event)
+        // }
+      >
+        <div className={`${checked ? 'checked' : ''}`} />
+        <span data-testid="control" className="control" />
       </Switch>
     );
   }
+
   function renderToggle() {
     return (
       <Toggle
+        className={className}
+        style={style}
         checked={checked}
-        ref={selectionRef}
+        ref={ref}
         size={size}
         disabled={disabled}
+        role="switch"
+        onClick={eventFunction}
       >
-        <div
-          className="btn left"
-          onClick={() =>
-            !disabled ? (checked ? (onChange ? onChange() : null) : null) : null
-          }
-        >
+        <div data-testid="btn-left" className="btn left">
           <span>não</span>
         </div>
-        <div
-          className="btn right"
-          onClick={() =>
-            !disabled
-              ? !checked
-                ? onChange
-                  ? onChange()
-                  : null
-                : null
-              : null
-          }
-        >
+        <div data-testid="btn-right" className="btn right">
           <span>sim</span>
         </div>
       </Toggle>
     );
   }
+
   function renderActiveInactive() {
     return (
       <ActiveInactive
+        className={className}
+        style={style}
         checked={checked}
-        ref={selectionRef}
+        ref={ref}
         size={size}
         disabled={disabled}
+        role="switch"
+        onClick={eventFunction}
       >
-        <div
-          className="btn left"
-          onClick={() =>
-            !disabled ? (checked ? (onChange ? onChange() : null) : null) : null
-          }
-        >
+        <div className="btn left">
           <span>{checked ? 'desativar' : 'inativo'}</span>
         </div>
-        <div
-          className="btn right"
-          onClick={() =>
-            !disabled
-              ? !checked
-                ? onChange
-                  ? onChange()
-                  : null
-                : null
-              : null
-          }
-        >
+        <div className="btn right">
           <span>{checked ? 'ativo' : 'ativar'}</span>
         </div>
       </ActiveInactive>
@@ -120,8 +110,8 @@ const Selection: React.FC<SelectionProps> = ({
     case TYPES.activeInactive:
       return renderActiveInactive();
     default:
-      return <div />;
+      return null;
   }
-};
+}
 
 export default Selection;

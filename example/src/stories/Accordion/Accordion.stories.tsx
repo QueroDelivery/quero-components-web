@@ -1,8 +1,11 @@
+import React from 'react';
 import { useState } from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 import { action } from '@storybook/addon-actions';
-import { Accordion } from '@quero-delivery/quero-components-web';
-import { AccordionProps } from './Interface';
+import {
+  Accordion,
+  AccordionProps,
+} from '@quero-delivery/quero-components-web';
 import '@quero-delivery/quero-components-web/dist/index.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
@@ -71,48 +74,12 @@ export default {
         },
       },
     },
-    onChange: {
+    onClick: {
       action: 'clicked',
       description: 'Função para abrir ou fechar Accordion',
       table: {
         type: {
           summary: 'required | function',
-        },
-      },
-    },
-    colorTitle: {
-      control: 'color',
-      description: 'Cor do título',
-      table: {
-        type: {
-          summary: 'string',
-        },
-      },
-    },
-    colorSubtitle: {
-      control: 'color',
-      description: 'Cor do subtítulo',
-      table: {
-        type: {
-          summary: 'string',
-        },
-      },
-    },
-    colorIcon: {
-      control: 'color',
-      description: 'Cor do ícone',
-      table: {
-        type: {
-          summary: 'string',
-        },
-      },
-    },
-    colorValue: {
-      control: 'color',
-      description: 'Cor do valor',
-      table: {
-        type: {
-          summary: 'string',
         },
       },
     },
@@ -137,26 +104,13 @@ export default {
         },
       },
     },
-    fontSizeTitle: {
-      control: 'number',
-      description: 'Tamanho do título',
-      table: {
-        defaultValue: {
-          summary: 'Opções',
-          detail: 'String | Number (definido como px)',
-        },
-        type: {
-          summary: 'number | string',
-        },
-      },
-    },
   },
 } as Meta;
 
 const Template: Story<AccordionProps> = args => {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <Accordion {...args} onChange={() => setIsOpen(!isOpen)} open={isOpen}>
+    <Accordion {...args} onClick={() => setIsOpen(!isOpen)} open={isOpen}>
       Escreve aqui
     </Accordion>
   );
@@ -166,17 +120,18 @@ export const Default = Template.bind({});
 Default.args = {
   title: 'Título',
   open: false,
-  onChange: action('abrir/fechar'),
+  onClick: action('abrir/fechar'),
 };
 
 Default.parameters = {
   docs: {
     source: {
-      code: `<Accordion
-      title="Título"
-      open={false}
-      onChange={() => {}}
-    />`,
+      code: `
+<Accordion
+  title="Título"
+  open={false}
+  onClick={() => {}}
+/>`,
     },
   },
 };
@@ -187,18 +142,19 @@ Subtitle.args = {
   subtitle: 'Subtítulo',
   open: false,
   secondary: false,
-  onChange: action('abrir/fechar'),
+  onClick: action('abrir/fechar'),
 };
 
 Subtitle.parameters = {
   docs: {
     source: {
-      code: `<Accordion
-      title="Título"
-      subtitle="Subtítulo"
-      open={false}
-      onChange={() => {}}
-    />`,
+      code: `
+<Accordion
+  title="Título"
+  subtitle="Subtítulo"
+  open={false}
+  onClick={() => {}}
+/>`,
     },
   },
 };
@@ -209,18 +165,19 @@ Width.args = {
   open: false,
   secondary: false,
   width: '50%',
-  onChange: action('abrir/fechar'),
+  onClick: action('abrir/fechar'),
 };
 
 Width.parameters = {
   docs: {
     source: {
-      code: `<Accordion
-      title="Título"
-      open={false}
-      width="50%"
-      onChange={() => {}}
-    />`,
+      code: `
+<Accordion
+  title="Título"
+  open={false}
+  width="50%"
+  onClick={() => {}}
+/>`,
     },
   },
 };
@@ -231,18 +188,19 @@ Icon.args = {
   open: false,
   secondary: false,
   icon: faPhone,
-  onChange: action('abrir/fechar'),
+  onClick: action('abrir/fechar'),
 };
 
 Icon.parameters = {
   docs: {
     source: {
-      code: `<Accordion
-      title="Titulo"
-      open={false}
-      icon={faPhone}
-      onChange={() => {}}
-    />`,
+      code: `
+<Accordion
+  title="Titulo"
+  open={false}
+  icon={faPhone}
+  onClick={() => {}}
+/>`,
     },
   },
 };
@@ -253,52 +211,19 @@ Value.args = {
   value: 'R$10,00',
   open: false,
   secondary: false,
-  onChange: action('abrir/fechar'),
+  onClick: action('abrir/fechar'),
 };
 
 Value.parameters = {
   docs: {
     source: {
-      code: `<Accordion
-      title="Título"
-      value="R$10,00"
-      open={false}
-      onChange={() => {}}
-    />`,
-    },
-  },
-};
-
-export const Colors = Template.bind({});
-Colors.args = {
-  title: 'Título',
-  subtitle: 'Subtítulo',
-  value: 'R$10,00',
-  open: false,
-  secondary: false,
-  icon: faPhone,
-  colorIcon: 'blue',
-  colorSubtitle: 'green',
-  colorTitle: 'red',
-  colorValue: 'orange',
-  onChange: action('abrir/fechar'),
-};
-
-Colors.parameters = {
-  docs: {
-    source: {
-      code: `<Accordion
-      title="Título"
-      subtitle="Subtítulo"
-      value="R$10,00"
-      open={false}
-      icon={faPhone}
-      colorIcon="blue"
-      colorSubtitle="green"
-      colorTitle="red"
-      colorValue="orange"
-      onChange={() => {}}
-    />`,
+      code: `
+<Accordion
+  title="Título"
+  value="R$10,00"
+  open={false}
+  onClick={() => {}}
+/>`,
     },
   },
 };
@@ -308,18 +233,19 @@ Secondary.args = {
   title: 'Título',
   open: false,
   secondary: true,
-  onChange: action('abrir/fechar'),
+  onClick: action('abrir/fechar'),
 };
 
 Secondary.parameters = {
   docs: {
     source: {
-      code: `<Accordion
-      title="Título"
-      open={false}
-      secondary
-      onChange={() => {}}
-    />`,
+      code: `
+<Accordion
+  title="Título"
+  open={false}
+  secondary
+  onClick={() => {}}
+/>`,
     },
   },
 };
@@ -330,40 +256,19 @@ CustomIcon.args = {
   open: false,
   secondary: false,
   customIcon: <FontAwesomeIcon icon={faPhone} />,
-  onChange: action('abrir/fechar'),
+  onClick: action('abrir/fechar'),
 };
 
 CustomIcon.parameters = {
   docs: {
     source: {
-      code: `<Accordion
-      title="Título"
-      open={false}
-      customIcon={<FontAwesomeIcon icon={faPhone}/>}
-      onChange={() => {}}
-    />`,
-    },
-  },
-};
-
-export const fontSizeTitle = Template.bind({});
-fontSizeTitle.args = {
-  title: 'Título',
-  open: false,
-  secondary: false,
-  fontSizeTitle: 10,
-  onChange: action('abrir/fechar'),
-};
-
-fontSizeTitle.parameters = {
-  docs: {
-    source: {
-      code: `<Accordion
-      title="Título"
-      open={false}
-      fontSizeTitle={10}
-      onChange={() => {}}
-    />`,
+      code: `
+<Accordion
+  title="Título"
+  open={false}
+  customIcon={<FontAwesomeIcon icon={faPhone}/>}
+  onClick={() => {}}
+/>`,
     },
   },
 };

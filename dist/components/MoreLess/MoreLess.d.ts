@@ -1,13 +1,13 @@
-import React from 'react';
-interface MoreLessProps {
-    size?: 'small' | 'medium' | 'big';
+/// <reference types="react" />
+import { sizesTypes } from '../../helpers/FnUtil';
+export interface MoreLessProps {
+    size?: sizesTypes;
     disabled?: boolean;
     value: number;
-    limit?: number;
+    maximum?: number;
     minimum?: number;
-    more: () => void;
-    less: () => void;
-    onChange?: (value: number) => void;
+    quantityToChange?: number;
+    onChange: (newValue: number) => void;
 }
-declare const MoreLess: React.FC<MoreLessProps>;
+declare function MoreLess({ size, disabled, value, maximum, minimum, onChange, quantityToChange, }: MoreLessProps): JSX.Element;
 export default MoreLess;

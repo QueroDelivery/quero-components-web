@@ -1,5 +1,5 @@
 import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
-import { ButtonSizes } from './ButtonMain';
+import { sizesTypes } from '../../helpers/FnUtil';
 interface ButtonProps {
     secondary?: boolean;
     backPurple?: boolean;
@@ -7,35 +7,31 @@ interface ButtonProps {
     width?: number | string;
     icon?: IconDefinition;
     noBorder?: boolean;
-    colorText?: string;
     colorBackground?: string;
     hoverBackgroundColor?: string;
     hoverTextColor?: string;
     tertiary?: boolean;
-    size?: ButtonSizes;
+    size?: sizesTypes;
     rectangular?: boolean;
-    loading?: boolean;
+    isLoading?: boolean;
 }
 interface TextFirstProps {
     firstStrong?: boolean;
     notStrong?: boolean;
     strong?: boolean;
-    colorText?: string;
     tertiary?: boolean;
-    size?: ButtonSizes;
-    loading?: boolean;
+    size?: sizesTypes;
+    hasTextEnd?: boolean;
 }
 interface TextEndProps {
     firstStrong?: boolean;
     notStrong?: boolean;
     strong?: boolean;
-    colorText?: string;
     tertiary?: boolean;
-    size?: ButtonSizes;
-    loading?: boolean;
+    size?: sizesTypes;
 }
 interface IconProps {
-    loading?: boolean;
+    hasText: boolean;
     iconPosition?: 'left' | 'right';
 }
 export declare const Button: import("styled-components").StyledComponent<"button", any, ButtonProps, never>;

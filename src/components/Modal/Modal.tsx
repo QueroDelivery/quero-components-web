@@ -1,11 +1,13 @@
 /* eslint-disable react/prop-types */
-import React, { useEffect } from 'react';
+import React, { KeyboardEvent, ReactNode, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
 import { faTimes, faAngleLeft } from '@fortawesome/free-solid-svg-icons';
-import Loader from '../Loader/Loader';
-import { Background, Modal, Header, Body, Actions, Icon } from './styles';
+
+import { Background, Modal, Header, Body, Actions } from './styles';
 import { colors } from '../../styles/colors';
+import { sizesTypes } from '../../helpers/FnUtil';
+
+import Loader from '../Loader/Loader';
 
 export interface ModalProps {
   open: boolean;
@@ -15,13 +17,20 @@ export interface ModalProps {
   onClose: Function;
   closeOnDimerClick?: boolean;
   loading?: boolean;
-  onBack?: Function;
-  size?: 'mini' | 'tiny' | 'small' | 'large' | 'fullscreen';
+  onReturnClick?(): void;
+  size?: sizesTypes;
   noBorder?: boolean;
   closeIcon?: boolean;
+  children?: ReactNode;
+  className?: string;
+  style?: React.CSSProperties;
+  headerClassName?: string;
+  headerStyle?: React.CSSProperties;
+  bodyClassName?: string;
+  bodyStyle?: React.CSSProperties;
 }
 
-const ModalComponent: React.FC<ModalProps> = ({
+function ModalComponent({
   open,
   title,
   children,
@@ -30,19 +39,29 @@ const ModalComponent: React.FC<ModalProps> = ({
   onClose,
   closeOnDimerClick,
   loading,
-  onBack,
-  size,
+  onReturnClick,
+  size = 'md',
   noBorder,
   closeIcon = true,
-}) => {
+  className,
+  style,
+  headerClassName,
+  headerStyle,
+  bodyClassName,
+  bodyStyle,
+}: ModalProps) {
   useEffect(() => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const keydownListener: any = (event: KeyboardEvent<Element>) => {
+      escModal(event);
+    };
     if (open) {
-      window.addEventListener('keydown', event => escModal(event));
-    } else {
-      window.removeEventListener('keydown', event => escModal(event));
+      window.addEventListener('keydown', keydownListener);
     }
 
-    return window.removeEventListener('keydown', event => escModal(event));
+    return () => {
+      window.removeEventListener('keydown', keydownListener);
+    };
   }, [open]);
 
   function escModal(event: KeyboardEvent) {
@@ -54,48 +73,65 @@ const ModalComponent: React.FC<ModalProps> = ({
 
   return (
     <Background
-      open={open}
       onClick={event => {
         if (closeOnDimerClick) {
           event.stopPropagation();
           onClose();
         }
       }}
+      className={`${open ? 'open' : ''}`}
+      data-testid="modal-background"
     >
       <Modal
+        className={className}
+        style={style}
         size={size}
         width={width}
         onClick={event => event.stopPropagation()}
+        role="dialog"
       >
-        <Header iconBack={!!onBack} noBorder={noBorder}>
+        <Header
+          className={headerClassName}
+          style={headerStyle}
+          iconBack={!!onReturnClick}
+          noBorder={noBorder}
+          role="heading"
+        >
           <div className="name-icon-modal">
-            {onBack ? (
-              <Icon onClick={() => onBack()}>
+            {!!onReturnClick && (
+              <button
+                onClick={event => {
+                  event.stopPropagation();
+                  onReturnClick();
+                }}
+                aria-label="return"
+              >
                 <FontAwesomeIcon
                   icon={faAngleLeft}
                   size="lg"
                   color={colors.brand10}
                 />
-              </Icon>
-            ) : null}
+              </button>
+            )}
             <strong>{title}</strong>
           </div>
           {closeIcon && (
-            <Icon
+            <button
               onClick={event => {
                 event.stopPropagation();
                 onClose();
               }}
+              aria-label="close"
             >
               <FontAwesomeIcon
                 icon={faTimes}
                 style={{ fontSize: 20 }}
                 color={colors.brand10}
               />
-            </Icon>
+            </button>
           )}
         </Header>
-        <Body>
+        <Body className={bodyClassName} style={bodyStyle}>
           {loading && (
             <div className="loading-modal">
               <Loader />
@@ -103,10 +139,10 @@ const ModalComponent: React.FC<ModalProps> = ({
           )}
           {children}
         </Body>
-        {actions && <Actions>{actions}</Actions>}
+        {!!actions && <Actions>{actions}</Actions>}
       </Modal>
     </Background>
   );
-};
+}
 
 export default ModalComponent;

@@ -1,7 +1,10 @@
+import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 import { action } from '@storybook/addon-actions';
-import { Selection } from '@quero-delivery/quero-components-web';
-import { SelectionProps } from './Interface';
+import {
+  Selection,
+  SelectionProps,
+} from '@quero-delivery/quero-components-web';
 import '@quero-delivery/quero-components-web/dist/index.css';
 
 export default {
@@ -25,22 +28,19 @@ export default {
       control: {
         type: 'inline-radio',
         options: [
-          'mini',
-          'tiny',
-          'small',
-          'medium',
-          'large',
-          'big',
-          'huge',
-          'massive',
+          'xs',
+          'sm',
+          'md',
+          'lg',
+          'xl',
         ],
       },
       description: 'Tamanho do Select',
       defaultValue: {
-        summary: 'O tamanho padrão é o medium',
+        summary: 'O tamanho padrão é o md',
       },
       type: {
-        summary: 'mini | tiny | small | medium | large | big | huge | massive',
+        summary: 'xs | sm | md | lg | xl',
       },
     },
     checked: {
@@ -101,11 +101,12 @@ Switch.args = {
 Switch.parameters = {
   docs: {
     source: {
-      code: `<Selection
-      checked={true}
-      type="switch"
-      onChange={() => {}}
-    />`,
+      code: `
+<Selection
+  checked={true}
+  type="switch"
+  onChange={() => {}}
+/>`,
     },
   },
 };
@@ -120,11 +121,12 @@ Toggle.args = {
 Toggle.parameters = {
   docs: {
     source: {
-      code: `<Selection
-      checked={false}
-      type="toggle"
-      onChange={() => {}}
-    />`,
+      code: `
+<Selection
+  checked={false}
+  type="toggle"
+  onChange={() => {}}
+/>`,
     },
   },
 };
@@ -139,11 +141,12 @@ ActiveInactive.args = {
 ActiveInactive.parameters = {
   docs: {
     source: {
-      code: `<Selection
-      checked={false}
-      type="activeInactive"
-      onChange={() => {}}
-    />`,
+      code: `
+<Selection
+  checked={false}
+  type="activeInactive"
+  onChange={() => {}}
+/>`,
     },
   },
 };
@@ -152,19 +155,20 @@ export const Size = Template.bind({});
 Size.args = {
   checked: false,
   type: 'switch',
-  size: 'big',
+  size: 'lg',
   onChange: action('checked/notChecked'),
 };
 
 Size.parameters = {
   docs: {
     source: {
-      code: `<Selection
-      checked={false}
-      type="switch"
-      size="big"
-      onChange={() => {}}
-    />`,
+      code: `
+<Selection
+  checked={false}
+  type="switch"
+  size="lg"
+  onChange={() => {}}
+/>`,
     },
   },
 };
@@ -180,12 +184,13 @@ Disabled.args = {
 Disabled.parameters = {
   docs: {
     source: {
-      code: `<Selection
-      checked={false}
-      type="activeInactive"
-      disabled={true}
-      onChange={() => {}}
-    />`,
+      code: `
+<Selection
+  checked={false}
+  type="activeInactive"
+  disabled
+  onChange={() => {}}
+/>`,
     },
   },
 };

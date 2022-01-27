@@ -1,48 +1,24 @@
 import styled from 'styled-components';
+import { Sizes, sizesTypes } from '../../helpers/FnUtil';
 import { colors } from '../../styles/colors';
 
 interface CheckboxProps {
   disabled?: boolean;
-  sizeBox?:
-    | 'mini'
-    | 'tiny'
-    | 'small'
-    | 'medium'
-    | 'large'
-    | 'big'
-    | 'huge'
-    | 'massive';
+  sizeBox?: sizesTypes;
 }
-
-const Sizes = {
-  mini: 'mini',
-  tiny: 'tiny',
-  small: 'small',
-  medium: 'medium',
-  large: 'large',
-  big: 'big',
-  huge: 'huge',
-  massive: 'massive',
-};
 
 const size = (size: string | number) => {
   switch (size) {
-    case Sizes.mini:
-      return '10px';
-    case Sizes.tiny:
-      return '12px';
-    case Sizes.small:
-      return '14px';
-    case Sizes.medium:
-      return '17px';
-    case Sizes.large:
-      return '20px';
-    case Sizes.big:
-      return '23px';
-    case Sizes.huge:
-      return '26px';
-    case Sizes.massive:
-      return '30px';
+    case Sizes.xs:
+      return '0.625rem';
+    case Sizes.sm:
+      return '0.875rem';
+    case Sizes.md:
+      return '1.0625rem';
+    case Sizes.lg:
+      return '1.4375rem';
+    case Sizes.xl:
+      return '1.875rem';
     default:
       return size;
   }
@@ -50,22 +26,16 @@ const size = (size: string | number) => {
 
 const sizeChecked = (size: string | number) => {
   switch (size) {
-    case Sizes.mini:
-      return '2px';
-    case Sizes.tiny:
-      return '4px';
-    case Sizes.small:
-      return '6px';
-    case Sizes.medium:
-      return '9px';
-    case Sizes.large:
-      return '12px';
-    case Sizes.big:
-      return '15px';
-    case Sizes.huge:
-      return '18px';
-    case Sizes.massive:
-      return '22px';
+    case Sizes.xs:
+      return '0.125rem';
+    case Sizes.sm:
+      return '0.375rem';
+    case Sizes.md:
+      return '0.5625rem';
+    case Sizes.lg:
+      return '0.9375rem';
+    case Sizes.xl:
+      return '1.375rem';
     default:
       return size;
   }
@@ -73,22 +43,16 @@ const sizeChecked = (size: string | number) => {
 
 const labelSize = (size: string | number) => {
   switch (size) {
-    case Sizes.mini:
-      return '10px';
-    case Sizes.tiny:
-      return '13px';
-    case Sizes.small:
-      return '14px';
-    case Sizes.medium:
-      return '16px';
-    case Sizes.large:
-      return '18px';
-    case Sizes.big:
-      return '20px';
-    case Sizes.huge:
-      return '22px';
-    case Sizes.massive:
-      return '24px';
+    case Sizes.xs:
+      return '0.625rem';
+    case Sizes.sm:
+      return '0.875rem';
+    case Sizes.md:
+      return '1rem';
+    case Sizes.lg:
+      return '1.25rem';
+    case Sizes.xl:
+      return '1.5rem';
     default:
       return size;
   }
@@ -96,22 +60,16 @@ const labelSize = (size: string | number) => {
 
 const paddingLeft = (size: string | number) => {
   switch (size) {
-    case Sizes.mini:
-      return '15px';
-    case Sizes.tiny:
-      return '18px';
-    case Sizes.small:
-      return '20px';
-    case Sizes.medium:
-      return '25px';
-    case Sizes.large:
-      return '28px';
-    case Sizes.big:
-      return '32px';
-    case Sizes.huge:
-      return '35px';
-    case Sizes.massive:
-      return '40px';
+    case Sizes.xs:
+      return '0.9375rem';
+    case Sizes.sm:
+      return '1.25rem';
+    case Sizes.md:
+      return '1.5625rem';
+    case Sizes.lg:
+      return '2rem';
+    case Sizes.xl:
+      return '2.5rem';
     default:
       return size;
   }
@@ -119,22 +77,16 @@ const paddingLeft = (size: string | number) => {
 
 const paddingTop = (size: string | number) => {
   switch (size) {
-    case Sizes.mini:
-      return '0px';
-    case Sizes.tiny:
-      return '0px';
-    case Sizes.small:
-      return '0px';
-    case Sizes.medium:
-      return '0px';
-    case Sizes.large:
-      return '2px';
-    case Sizes.big:
-      return '2px';
-    case Sizes.huge:
-      return '3px';
-    case Sizes.massive:
-      return '4px';
+    case Sizes.xs:
+      return '0.25rem';
+    case Sizes.sm:
+      return '0.0625rem';
+    case Sizes.md:
+      return '0rem';
+    case Sizes.lg:
+      return '0rem';
+    case Sizes.xl:
+      return '0.125rem';
     default:
       return size;
   }
@@ -142,22 +94,16 @@ const paddingTop = (size: string | number) => {
 
 const topBoxBefore = (size: string | number) => {
   switch (size) {
-    case Sizes.mini:
-      return '5px';
-    case Sizes.tiny:
-      return '4px';
-    case Sizes.small:
-      return '3px';
-    case Sizes.medium:
-      return '1px';
-    case Sizes.large:
-      return '0px';
-    case Sizes.big:
-      return '0px';
-    case Sizes.huge:
-      return '0px';
-    case Sizes.massive:
-      return '0px';
+    case Sizes.xs:
+      return '0.3125rem';
+    case Sizes.sm:
+      return '0.1875rem';
+    case Sizes.md:
+      return '0.0625rem';
+    case Sizes.lg:
+      return '0rem';
+    case Sizes.xl:
+      return '0rem';
     default:
       return size;
   }
@@ -165,22 +111,16 @@ const topBoxBefore = (size: string | number) => {
 
 const topBoxAfter = (size: string | number) => {
   switch (size) {
-    case Sizes.mini:
-      return '9px';
-    case Sizes.tiny:
-      return '8px';
-    case Sizes.small:
-      return '7px';
-    case Sizes.medium:
-      return '5px';
-    case Sizes.large:
-      return '4px';
-    case Sizes.big:
-      return '4px';
-    case Sizes.huge:
-      return '4px';
-    case Sizes.massive:
-      return '4px';
+    case Sizes.xs:
+      return '0.5625rem';
+    case Sizes.sm:
+      return '0.4375rem';
+    case Sizes.md:
+      return '0.3125rem';
+    case Sizes.lg:
+      return '0.25rem';
+    case Sizes.xl:
+      return '0.25rem';
     default:
       return size;
   }
@@ -188,6 +128,12 @@ const topBoxAfter = (size: string | number) => {
 
 export const Container = styled.div<CheckboxProps>`
   font-family: MontSerrat !important;
+
+  &,
+  label,
+  input {
+    cursor: ${props => (props.disabled ? 'default' : 'pointer')};
+  }
 
   > input {
     display: none;
@@ -199,17 +145,16 @@ export const Container = styled.div<CheckboxProps>`
         return labelSize(props.sizeBox);
       }
 
-      return '17px';
+      return '1.0625rem';
     }};
-    color: ${colors.gray20};
-    cursor: ${props => (props.disabled ? 'default' : 'pointer')};
     opacity: ${props => (props.disabled ? 0.5 : 1)};
+    color: ${colors.gray20};
     padding-top: ${props => {
       if (props.sizeBox) {
         return paddingTop(props.sizeBox);
       }
 
-      return '0px';
+      return '0rem';
     }};
   }
 
@@ -220,9 +165,8 @@ export const Container = styled.div<CheckboxProps>`
         return paddingLeft(props.sizeBox);
       }
 
-      return '25px';
+      return '1.5625rem';
     }};
-    cursor: ${props => (props.disabled ? 'default' : 'pointer')};
     opacity: ${props => (props.disabled ? 0.5 : 1)};
     display: flex;
     align-items: center;

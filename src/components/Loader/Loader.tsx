@@ -1,36 +1,40 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
+import { sizesTypes } from '../../helpers/FnUtil';
 
 import { Container, Load } from './styles';
 
 export interface LoaderProps {
   color?: string;
-  size?:
-    | 'mini'
-    | 'tiny'
-    | 'small'
-    | 'medium'
-    | 'large'
-    | 'big'
-    | 'huge'
-    | 'massive';
+  outsideColor?: string;
+  size?: sizesTypes;
   className?: string;
   style?: React.CSSProperties;
   position?: 'left' | 'center' | 'right';
 }
 
-const Loader: React.FC<LoaderProps> = ({
+function Loader({
   color,
-  size,
+  size = 'md',
   className,
   style,
-  position,
-}) => {
+  position = 'center',
+  outsideColor,
+}: LoaderProps) {
   return (
     <Container position={position}>
-      <Load color={color} size={size} style={style} className={className} />
+      <Load
+        role="progressbar"
+        aria-busy="true"
+        aria-live="polite"
+        color={color}
+        size={size}
+        style={style}
+        className={className}
+        outsideColor={outsideColor}
+      />
     </Container>
   );
-};
+}
 
 export default Loader;

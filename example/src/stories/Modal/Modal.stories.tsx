@@ -1,9 +1,13 @@
-import { Story, Meta } from '@storybook/react/types-6-0';
-import { ButtonMain, Modal } from '@quero-delivery/quero-components-web';
-import { ModalProps } from './Interface';
-import '@quero-delivery/quero-components-web/dist/index.css';
-import { action } from '@storybook/addon-actions';
+import React from 'react';
 import { useState } from '@storybook/client-api';
+import { Story, Meta } from '@storybook/react/types-6-0';
+import {
+  ButtonMain,
+  Modal,
+  ModalProps,
+} from '@quero-delivery/quero-components-web';
+import { action } from '@storybook/addon-actions';
+import '@quero-delivery/quero-components-web/dist/index.css';
 
 export default {
   title: 'Components/Modal',
@@ -72,7 +76,7 @@ export default {
         },
       },
     },
-    onBack: {
+    onReturnClick: {
       control: 'string',
       description: 'Função de voltar a pagina anterior',
       table: {
@@ -114,61 +118,58 @@ const Template: Story<ModalProps> = args => {
   return (
     <>
       <ButtonMain textFirst="Abrir" onClick={() => setIsOpen(!isOpen)} />
-      {isOpen && (
-        <Modal
-          {...args}
-          open={isOpen}
-          onClose={() => setIsOpen(!isOpen)}
-          closeOnDimerClick
-        >
-          Lorem Ipsum "Neque porro quisquam est qui dolorem ipsum quia dolor sit
-          amet, consectetur, adipisci velit..." "There is no one who loves pain
-          itself, who seeks after it and wants to have it, simply because it is
-          pain..." Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-          ac tincidunt libero. Nullam nec egestas neque. Sed vehicula dolor sed
-          consectetur tempus. Morbi imperdiet enim id hendrerit ullamcorper.
-          Proin porta urna a lobortis imperdiet. Nullam dolor nisl, suscipit id
-          pharetra non, sagittis ut lacus. Quisque et metus ultrices,
-          pellentesque tellus eget, interdum tellus. In dictum, nunc at
-          hendrerit cursus, nulla sapien efficitur velit, sed aliquam nulla urna
-          in turpis. Nulla id elit vitae orci bibendum ultricies a sed augue.
-          Aliquam erat volutpat. Vestibulum sapien metus, cursus elementum
-          mauris vitae, tempus aliquam massa. Quisque eu cursus tortor. Sed sed
-          scelerisque purus. Ut mauris nulla, sodales non hendrerit eu,
-          scelerisque ut augue. Aenean rhoncus nisi at suscipit consequat.
-          Quisque eleifend sit amet nunc sed consequat. Nunc iaculis nunc ut
-          felis iaculis, ac malesuada nisi congue. Maecenas dapibus laoreet
-          tempus. Ut et nibh ut nulla vehicula cursus. Ut euismod tincidunt odio
-          ut accumsan. Ut placerat ultricies arcu, vitae finibus lorem congue
-          sit amet. Phasellus bibendum sem ex, vel aliquet libero cursus et.
-          Nunc tristique metus vel massa sagittis, nec imperdiet tellus luctus.
-          Maecenas ultrices eget ipsum eget lobortis. Fusce ante risus,
-          dignissim vitae ullamcorper eget, blandit ac ipsum. Nullam eu
-          fermentum risus, vel pellentesque nisi. Vestibulum porttitor sed risus
-          eu imperdiet. Vivamus molestie ipsum ipsum, at faucibus quam ornare
-          sit amet. Nulla facilisi. Nulla tempor sem erat, at molestie enim
-          facilisis sed. In lobortis massa sit amet varius volutpat. Praesent
-          tincidunt, ex ut consectetur accumsan, ipsum nibh euismod turpis, eget
-          tincidunt urna libero sit amet diam. Proin lectus eros, congue ut
-          consequat eu, iaculis a ex. Proin ut eros nibh. Quisque eu iaculis
-          ligula. Nunc non imperdiet orci. Pellentesque pellentesque, enim eu
-          vestibulum porttitor, justo nibh facilisis tortor, ac blandit purus
-          purus id nibh. Vestibulum venenatis ante massa, nec placerat nisi
-          euismod a. Nulla rhoncus ligula id risus venenatis auctor. Vestibulum
-          eu suscipit purus. Mauris imperdiet risus nibh, sed sodales dui
-          aliquam in. Aenean tincidunt sem sit amet enim convallis aliquet.
-          Suspendisse vel justo suscipit, accumsan ex a, feugiat velit.
-          Phasellus lobortis metus at lorem mattis placerat. Maecenas convallis
-          et elit vel convallis. Phasellus vel sapien imperdiet, posuere elit
-          sed, ullamcorper nunc. Curabitur nec dolor ac felis viverra dapibus
-          nec a velit. Suspendisse efficitur in lorem a sollicitudin. Sed
-          malesuada velit ut condimentum sagittis. Nullam laoreet porttitor
-          elit. In hac habitasse platea dictumst. Quisque dictum mattis magna a
-          semper. Phasellus orci lectus, interdum sit amet lacinia sit amet,
-          placerat quis nisi. Generated 5 paragraphs, 408 words, 2753 bytes of
-          Lorem Ipsum
-        </Modal>
-      )}
+
+      <Modal
+        {...args}
+        open={isOpen}
+        onClose={() => setIsOpen(!isOpen)}
+        closeOnDimerClick
+      >
+        Lorem Ipsum "Neque porro quisquam est qui dolorem ipsum quia dolor sit
+        amet, consectetur, adipisci velit..." "There is no one who loves pain
+        itself, who seeks after it and wants to have it, simply because it is
+        pain..." Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac
+        tincidunt libero. Nullam nec egestas neque. Sed vehicula dolor sed
+        consectetur tempus. Morbi imperdiet enim id hendrerit ullamcorper. Proin
+        porta urna a lobortis imperdiet. Nullam dolor nisl, suscipit id pharetra
+        non, sagittis ut lacus. Quisque et metus ultrices, pellentesque tellus
+        eget, interdum tellus. In dictum, nunc at hendrerit cursus, nulla sapien
+        efficitur velit, sed aliquam nulla urna in turpis. Nulla id elit vitae
+        orci bibendum ultricies a sed augue. Aliquam erat volutpat. Vestibulum
+        sapien metus, cursus elementum mauris vitae, tempus aliquam massa.
+        Quisque eu cursus tortor. Sed sed scelerisque purus. Ut mauris nulla,
+        sodales non hendrerit eu, scelerisque ut augue. Aenean rhoncus nisi at
+        suscipit consequat. Quisque eleifend sit amet nunc sed consequat. Nunc
+        iaculis nunc ut felis iaculis, ac malesuada nisi congue. Maecenas
+        dapibus laoreet tempus. Ut et nibh ut nulla vehicula cursus. Ut euismod
+        tincidunt odio ut accumsan. Ut placerat ultricies arcu, vitae finibus
+        lorem congue sit amet. Phasellus bibendum sem ex, vel aliquet libero
+        cursus et. Nunc tristique metus vel massa sagittis, nec imperdiet tellus
+        luctus. Maecenas ultrices eget ipsum eget lobortis. Fusce ante risus,
+        dignissim vitae ullamcorper eget, blandit ac ipsum. Nullam eu fermentum
+        risus, vel pellentesque nisi. Vestibulum porttitor sed risus eu
+        imperdiet. Vivamus molestie ipsum ipsum, at faucibus quam ornare sit
+        amet. Nulla facilisi. Nulla tempor sem erat, at molestie enim facilisis
+        sed. In lobortis massa sit amet varius volutpat. Praesent tincidunt, ex
+        ut consectetur accumsan, ipsum nibh euismod turpis, eget tincidunt urna
+        libero sit amet diam. Proin lectus eros, congue ut consequat eu, iaculis
+        a ex. Proin ut eros nibh. Quisque eu iaculis ligula. Nunc non imperdiet
+        orci. Pellentesque pellentesque, enim eu vestibulum porttitor, justo
+        nibh facilisis tortor, ac blandit purus purus id nibh. Vestibulum
+        venenatis ante massa, nec placerat nisi euismod a. Nulla rhoncus ligula
+        id risus venenatis auctor. Vestibulum eu suscipit purus. Mauris
+        imperdiet risus nibh, sed sodales dui aliquam in. Aenean tincidunt sem
+        sit amet enim convallis aliquet. Suspendisse vel justo suscipit,
+        accumsan ex a, feugiat velit. Phasellus lobortis metus at lorem mattis
+        placerat. Maecenas convallis et elit vel convallis. Phasellus vel sapien
+        imperdiet, posuere elit sed, ullamcorper nunc. Curabitur nec dolor ac
+        felis viverra dapibus nec a velit. Suspendisse efficitur in lorem a
+        sollicitudin. Sed malesuada velit ut condimentum sagittis. Nullam
+        laoreet porttitor elit. In hac habitasse platea dictumst. Quisque dictum
+        mattis magna a semper. Phasellus orci lectus, interdum sit amet lacinia
+        sit amet, placerat quis nisi. Generated 5 paragraphs, 408 words, 2753
+        bytes of Lorem Ipsum
+      </Modal>
     </>
   );
 };
@@ -184,11 +185,12 @@ Default.args = {
 Default.parameters = {
   docs: {
     source: {
-      code: `<Modal
-      title="Título do Modal"
-      closeOnDimerClick={false}
-      onClose={() => {}}
-    />`,
+      code: `
+<Modal
+  title="Título do Modal"
+  closeOnDimerClick={false}
+  onClose={() => {}}
+/>`,
     },
   },
 };
@@ -208,12 +210,13 @@ Actions.args = {
 Actions.parameters = {
   docs: {
     source: {
-      code: `<Modal
-      open={true}
-      title="Título do Modal"
-      actions={ <ButtonMain textFirst="click aqui"/> }
-      onClose={() => {}}
-    />`,
+      code: `
+<Modal
+  open
+  title="Título do Modal"
+  actions={ <ButtonMain textFirst="click aqui"/> }
+  onClose={() => {}}
+/>`,
     },
   },
 };
@@ -229,12 +232,13 @@ Loading.args = {
 Loading.parameters = {
   docs: {
     source: {
-      code: `<Modal
-      open={true}
-      loading={true}
-      title="Título do Modal"
-      onClose={() => {}}
-    />`,
+      code: `
+<Modal
+  open
+  loading
+  title="Título do Modal"
+  onClose={() => {}}
+/>`,
     },
   },
 };
@@ -250,33 +254,35 @@ CloseIcon.args = {
 CloseIcon.parameters = {
   docs: {
     source: {
-      code: `<Modal
-      open={true}
-      title="Título do Modal"
-      onClose={() => {}}
-      closeIcon={false}
-    />`,
+      code: `
+<Modal
+  open
+  title="Título do Modal"
+  onClose={() => {}}
+  closeIcon={false}
+/>`,
     },
   },
 };
 
-export const OnBack = Template.bind({});
-OnBack.args = {
+export const onReturnClick = Template.bind({});
+onReturnClick.args = {
   open: true,
   title: 'Título do Modal',
-  onBack: action('voltar'),
+  onReturnClick: action('voltar'),
   onClose: action('fechar'),
 };
 
-OnBack.parameters = {
+onReturnClick.parameters = {
   docs: {
     source: {
-      code: `<Modal
-      open={true}
-      title="Título do Modal"
-      onBack={() => {}}
-      onClose={() => {}}
-    />`,
+      code: `
+<Modal
+  open
+  title="Título do Modal"
+  onReturnClick={() => {}}
+  onClose={() => {}}
+/>`,
     },
   },
 };
@@ -284,7 +290,7 @@ OnBack.parameters = {
 export const Size = Template.bind({});
 Size.args = {
   open: true,
-  size: 'small',
+  size: 'sm',
   title: 'Título do Modal',
   onClose: action('fechar'),
 };
@@ -292,12 +298,13 @@ Size.args = {
 Size.parameters = {
   docs: {
     source: {
-      code: `<Modal
-      open={true}
-      size="small"
-      title="Título do Modal"
-      onClose={() => {}}
-    />`,
+      code: `
+<Modal
+  open={true}
+  size="sm"
+  title="Título do Modal"
+  onClose={() => {}}
+/>`,
     },
   },
 };
@@ -305,7 +312,7 @@ Size.parameters = {
 export const Width = Template.bind({});
 Width.args = {
   open: true,
-  width: '50',
+  width: '50%',
   title: 'Título do Modal',
   onClose: action('fechar'),
 };
@@ -313,12 +320,13 @@ Width.args = {
 Width.parameters = {
   docs: {
     source: {
-      code: `<Modal
-      open={true}
-      width="50"
-      title="Título do Modal"
-      onClose={() => {}}
-    />`,
+      code: `
+<Modal
+  open
+  width="50%"
+  title="Título do Modal"
+  onClose={() => {}}
+/>`,
     },
   },
 };

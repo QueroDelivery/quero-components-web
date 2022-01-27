@@ -2,15 +2,20 @@ import React, { TextareaHTMLAttributes } from 'react';
 export interface TextAreaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
     label?: string;
     labelColor?: string;
-    textColor?: string;
+    labelStyle?: React.CSSProperties;
+    labelClassName?: string;
+    errorClassName?: string;
+    errorStyle?: React.CSSProperties;
     errorMessage?: string;
     errorColor?: string;
+    textColor?: string;
     containerStyle?: React.CSSProperties;
-    labelStyle?: React.CSSProperties;
+    containerClassName?: string;
+    lengthInfo?: boolean | number;
+    lengthInfoClassName?: string;
+    lengthInfoStyle?: React.CSSProperties;
     width?: number | string;
     height?: number | string;
-    textAreaRef?: any;
-    lengthInfo?: boolean | number;
 }
-declare const TextArea: React.FC<TextAreaProps>;
+declare function TextArea({ label, labelClassName, labelStyle, labelColor, errorClassName, errorStyle, errorMessage, errorColor, containerStyle, containerClassName, textColor, width, height, lengthInfo, lengthInfoClassName, lengthInfoStyle, ...rest }: TextAreaProps): JSX.Element;
 export default TextArea;

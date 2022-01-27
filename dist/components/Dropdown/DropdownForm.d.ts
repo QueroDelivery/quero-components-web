@@ -1,6 +1,6 @@
-import React from 'react';
-import { Props } from './Dropdown';
-interface DropdownFormProps extends Omit<Props, 'onChange' | 'value'> {
+/// <reference types="react" />
+import { DropdownProps } from './Dropdown';
+export interface DropdownFormProps extends Omit<DropdownProps, 'onChange' | 'value'> {
     required?: boolean;
     name: string;
     errors: any;
@@ -10,5 +10,5 @@ interface DropdownFormProps extends Omit<Props, 'onChange' | 'value'> {
     clearError: any;
     value?: any;
 }
-declare const DropdownForm: React.FC<DropdownFormProps>;
+declare function DropdownForm({ value, clearError, errors, name, register, required, setValue, validate, ...rest }: DropdownFormProps): JSX.Element;
 export default DropdownForm;

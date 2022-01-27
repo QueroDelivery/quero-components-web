@@ -1,83 +1,43 @@
-export const removerAcentos = (inStr: string): string => {
-  // accentFold
-  return inStr.replace(
-    /([àáâãäå])|([ç])|([èéêë])|([ìíîï])|([ñ])|([òóôõöø])|([ß])|([ùúûü])|([ÿ])|([æ])|(['"])/gi,
-    (
-      a: string,
-      c: string,
-      e: string,
-      i: string,
-      n: string,
-      o: string,
-      s: string,
-      u: string,
-      y: string,
-      ae: string,
-      apost: string,
-    ): string => {
-      if (a) return 'a';
-      if (c) return 'c';
-      if (e) return 'e';
-      if (i) return 'i';
-      if (n) return 'n';
-      if (o) return 'o';
-      if (s) return 's';
-      if (u) return 'u';
-      if (y) return 'y';
-      if (ae) return 'ae';
-      if (apost) return '';
-      return '';
-    },
-  );
+export type sizesTypes = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+
+export const Sizes: Record<sizesTypes, sizesTypes> = {
+  xs: 'xs',
+  sm: 'sm',
+  md: 'md',
+  lg: 'lg',
+  xl: 'xl',
 };
 
-export const removerAcentosComApostofro = (inStr: string): string => {
-  // accentFold
-  return inStr.replace(
-    /([àáâãäå])|([ç])|([èéêë])|([ìíîï])|([ñ])|([òóôõöø])|([ß])|([ùúûü])|([ÿ])|([æ])|(['"])/gi,
-    (
-      a: string,
-      c: string,
-      e: string,
-      i: string,
-      n: string,
-      o: string,
-      s: string,
-      u: string,
-      y: string,
-      ae: string,
-      apost: string,
-    ): string => {
-      if (a) return 'a';
-      if (c) return 'c';
-      if (e) return 'e';
-      if (i) return 'i';
-      if (n) return 'n';
-      if (o) return 'o';
-      if (s) return 's';
-      if (u) return 'u';
-      if (y) return 'y';
-      if (ae) return 'ae';
-      if (apost) return '';
-      return '';
-    },
-  );
-};
-
-export const removerAcentosESpecialChars = (str: string): string => {
-  try {
-    return removerAcentos(str)
-      .replace(/[^a-z0-9 ]/gi, '')
-      .trim();
-  } catch (ex) {
-    return '';
+export const getMeasurement = (
+  size?: string | number,
+  defaultValue?: string,
+) => {
+  if (size) {
+    if (typeof size === 'string') {
+      return size;
+    }
+    return `${size}px`;
   }
+
+  return defaultValue || '100%';
 };
 
-export const replaceSpecialChars = (str: string): string => {
-  str = removerAcentos(str);
-
-  // o resto
-
-  return str.replace(/[^a-z0-9]/gi, '');
+export const getFontSize = (
+  defaultSize: sizesTypes,
+  sizeBase: string | number,
+) => {
+  switch (defaultSize) {
+    case Sizes.xs:
+      return `calc(${getMeasurement(sizeBase)} - 0.25rem)`;
+    case Sizes.sm:
+      return `calc(${getMeasurement(sizeBase)} - 0.125rem)`;
+    case Sizes.md:
+      return getMeasurement(sizeBase);
+    case Sizes.lg:
+      return `calc(${getMeasurement(sizeBase)} + 0.125rem)`;
+    case Sizes.xl:
+      return `calc(${getMeasurement(sizeBase)} + 0.25rem)`;
+    default:
+      return getMeasurement(sizeBase);
+  }
 };

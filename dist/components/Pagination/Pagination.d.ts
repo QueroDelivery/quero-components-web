@@ -1,10 +1,15 @@
 import React from 'react';
-interface PaginacaoProps {
-    page: number;
+import { sizesTypes } from '../../helpers/FnUtil';
+export interface PaginationProps {
     totalCount: number;
-    limit: number;
-    onPageChange: (data: any) => void;
-    mini?: string;
+    currentPage?: number;
+    limitPerPage?: number;
+    onPageChange?: (page: number) => void;
+    doubleJumpArrow?: boolean;
+    disabled?: boolean;
+    size?: sizesTypes;
+    className?: string;
+    style?: React.CSSProperties;
 }
-declare const PaginationComponent: React.FC<PaginacaoProps>;
-export default PaginationComponent;
+declare function Pagination({ totalCount, currentPage, limitPerPage, onPageChange, doubleJumpArrow, disabled, size, className, style, }: PaginationProps): JSX.Element | null;
+export default Pagination;

@@ -1,10 +1,12 @@
 import React from 'react';
+import { sizesTypes } from '../../helpers/FnUtil';
 export interface LoaderProps {
     color?: string;
-    size?: 'mini' | 'tiny' | 'small' | 'medium' | 'large' | 'big' | 'huge' | 'massive';
+    outsideColor?: string;
+    size?: sizesTypes;
     className?: string;
     style?: React.CSSProperties;
     position?: 'left' | 'center' | 'right';
 }
-declare const Loader: React.FC<LoaderProps>;
+declare function Loader({ color, size, className, style, position, outsideColor, }: LoaderProps): JSX.Element;
 export default Loader;

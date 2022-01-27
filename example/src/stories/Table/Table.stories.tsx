@@ -1,8 +1,8 @@
+import React from 'react';
 import { useState } from 'react';
 import { Meta, Story } from '@storybook/react/types-6-0';
-import { Table, Pagination, Card } from '@quero-delivery/quero-components-web';
+import { Table, Pagination, Card, TableComponentProps } from '@quero-delivery/quero-components-web';
 import '@quero-delivery/quero-components-web/dist/index.css';
-import { ITableComponent } from './Interface';
 
 export default {
   title: 'Components/Table',
@@ -74,9 +74,8 @@ export default {
   },
 } as Meta;
 
-export const Primary: Story<ITableComponent> = args => {
-  console.log(args);
-  const hasMore = args.hasMore ? () => {} : undefined;
+export const Primary: Story<TableComponentProps> = args => {
+  const hasMore = args.defaultProps?.hasMore ? () => {} : undefined;
   const [page, setPage] = useState(1);
   return (
     <Card type="shadow">
@@ -85,9 +84,9 @@ export const Primary: Story<ITableComponent> = args => {
         hasMore={hasMore}
         pagination={
           <Pagination
-            page={page}
+            currentPage={page}
             totalCount={5}
-            limit={1}
+            limitPerPage={1}
             onPageChange={activePage => {
               setPage(activePage);
             }}
@@ -119,38 +118,39 @@ export const Primary: Story<ITableComponent> = args => {
 Primary.parameters = {
   docs: {
     source: {
-      code: `<Card type="shadow">
-      <Table
-      hasMore={hasMore}
-      pagination={
-        <Pagination
-          page={page}
-          totalCount={5}
-          limit={1}
-          onPageChange={() => {}}
-        />
-      }
-      >
+      code: `
+<Card type="shadow">
+  <Table
+    hasMore={hasMore}
+    pagination={
+      <Pagination
+        page={page}
+        totalCount={5}
+        limit={1}
+        onPageChange={() => {}}
+      />
+    }
+  >
 
-      <Table.Header>
-        <Table.Row>
-          <Table.HeaderCell>Arguments</Table.HeaderCell>
-          <Table.HeaderCell>Description</Table.HeaderCell>
-        </Table.Row>
-      </Table.Header>
+    <Table.Header>
+      <Table.Row>
+        <Table.HeaderCell>Arguments</Table.HeaderCell>
+        <Table.HeaderCell>Description</Table.HeaderCell>
+      </Table.Row>
+    </Table.Header>
 
-      <Table.Body>
-        <Table.Row>
-          <Table.Cell>set rating</Table.Cell>
-          <Table.Cell>rating (integer)</Table.Cell>
-        </Table.Row>
-        <Table.Row>
-          <Table.Cell>set rating</Table.Cell>
-          <Table.Cell>rating (integer)</Table.Cell>
-        </Table.Row>
-      </Table.Body>
-    />
-    </Card>`,
+    <Table.Body>
+      <Table.Row>
+        <Table.Cell>set rating</Table.Cell>
+        <Table.Cell>rating (integer)</Table.Cell>
+      </Table.Row>
+      <Table.Row>
+        <Table.Cell>set rating</Table.Cell>
+        <Table.Cell>rating (integer)</Table.Cell>
+      </Table.Row>
+    </Table.Body>
+  </Table>
+</Card>`,
     },
   },
 };

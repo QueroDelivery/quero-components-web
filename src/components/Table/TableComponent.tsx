@@ -2,34 +2,48 @@ import React from 'react';
 import { Table, TableProps } from 'semantic-ui-react';
 
 import { Container, Header, Title, Message } from './styles';
-import ButtonMain from '../ButtonMain/ButtonMain';
+import ButtonMain from '../Button/Button';
 
 export interface ITableComponent extends TableProps {
   title?: string | React.ReactNode;
   titleStyle?: React.CSSProperties;
+  titleClassName?: string;
+
   message?: string;
   messageStyle?: React.CSSProperties;
+  messageClassName?: string;
+
   hasMore?: () => void;
+  hasMoreText?: string;
   pagination?: React.ReactElement;
   loading?: boolean;
 }
 
-const TableComponent: React.FC<ITableComponent> = ({
+function TableComponent({
   children,
   title,
   titleStyle,
+  titleClassName,
+
   message,
   messageStyle,
+  messageClassName,
+
   hasMore,
+  hasMoreText,
   pagination,
   ...rest
-}) => {
+}: ITableComponent) {
   return (
     <div>
       {title || message ? (
         <Header>
-          <Title style={titleStyle}>{title}</Title>
-          <Message style={messageStyle}>{message}</Message>
+          <Title style={titleStyle} className={titleClassName}>
+            {title}
+          </Title>
+          <Message style={messageStyle} className={messageClassName}>
+            {message}
+          </Message>
         </Header>
       ) : null}
 
@@ -39,10 +53,12 @@ const TableComponent: React.FC<ITableComponent> = ({
 
       {hasMore ? (
         <ButtonMain
+          data-testid="hasmore-button"
           secondary
-          textFirst="ver a"
-          textEnd="lista completa"
-          onClick={() => hasMore()}
+          textFirst={hasMoreText || 'ver a'}
+          textEnd={!hasMoreText ? '' : 'lista completa'}
+          notStrong={!!hasMoreText}
+          onClick={hasMore}
         />
       ) : null}
 
@@ -54,6 +70,6 @@ const TableComponent: React.FC<ITableComponent> = ({
       ) : null}
     </div>
   );
-};
+}
 
 export default TableComponent;

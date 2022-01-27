@@ -6,26 +6,34 @@ import DatePicker, {
 } from 'react-datepicker';
 import MaskedInput from 'react-input-mask';
 import br from 'date-fns/locale/pt-BR';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 import { Container } from './styles';
+import { sizesTypes } from '../../helpers/FnUtil';
 
 registerLocale('pt-BR', br);
-interface CalendarProps extends ReactDatePickerProps {
+export interface CalendarProps extends ReactDatePickerProps {
   label?: string;
-  labelColor?: string;
+  labelClassName?: string;
+  labelStyle?: React.CSSProperties;
   brand?: boolean;
   otherFormatDate?: string;
+  size?: sizesTypes;
 }
 
 const Calendar: React.FC<CalendarProps> = ({
-  labelColor,
   label,
+  labelClassName,
+  labelStyle,
   brand,
   otherFormatDate,
+  size,
   ...rest
 }) => {
   // eslint-disable-next-line react/display-name
   const CustomInput = React.forwardRef((props: any, ref: any) => (
     <MaskedInput
+      role="textbox"
       ref={ref}
       mask="99/99/9999"
       onClick={props.onClick}
@@ -37,8 +45,12 @@ const Calendar: React.FC<CalendarProps> = ({
   ));
 
   return (
-    <Container brand={brand} labelColor={labelColor}>
-      {label && <span>{label}</span>}
+    <Container brand={brand} size={size}>
+      {label && (
+        <span className={labelClassName} style={labelStyle}>
+          {label}
+        </span>
+      )}
       <div>
         <DatePicker
           {...rest}
@@ -56,6 +68,9 @@ const Calendar: React.FC<CalendarProps> = ({
           readOnly={false}
           onChangeRaw={event => (rest.readOnly ? event.preventDefault() : null)}
         />
+        {!rest.isClearable && (
+          <FontAwesomeIcon icon={faAngleDown} className="calendar-icon" />
+        )}
       </div>
     </Container>
   );

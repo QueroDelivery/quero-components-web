@@ -1,13 +1,11 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
+import { Z_INDEX_MODAL } from '../../helpers/constants';
+import { getMeasurement, sizesTypes } from '../../helpers/FnUtil';
 import { colors } from '../../styles/colors';
-
-interface BackgroundProps {
-  open?: boolean;
-}
 
 interface ModalProps {
   width?: number | string;
-  size?: 'mini' | 'tiny' | 'small' | 'large' | 'fullscreen';
+  size: sizesTypes;
 }
 
 interface HeaderProps {
@@ -15,53 +13,43 @@ interface HeaderProps {
   noBorder?: boolean;
 }
 
-const Sizes = {
-  mini: 'mini',
-  tiny: 'tiny',
-  small: 'small',
-  large: 'large',
-  fullscreen: 'fullscreen',
-};
-
-const sizeWidth = (size: string) => {
+const sizeWidth = (size: sizesTypes) => {
   switch (size) {
-    case Sizes.mini:
+    case 'xs':
       return '35%';
-    case Sizes.tiny:
+    case 'sm':
       return '45%';
-    case Sizes.small:
+    case 'md':
       return '55%';
-    case Sizes.large:
+    case 'lg':
       return '65%';
-    case Sizes.fullscreen:
+    case 'xl':
       return '95%';
     default:
-      return size;
+      return '55%';
   }
 };
 
-export const Background = styled.div<BackgroundProps>`
-  ${props =>
-    props.open
-      ? css`
-          opacity: 1;
-          visibility: visible;
-          position: fixed;
-          top: 0;
-          right: 0;
-          bottom: 0;
-          left: 0;
-          background: rgba(0, 0, 0, 0.5);
-          transition: opacity 0.25s ease;
-          overflow: auto;
-          padding: 40px 0;
-          display: flex;
-          z-index: 999;
-        `
-      : css`
-          opacity: 1;
-          visibility: hidden;
-        `}
+export const Background = styled.div`
+  opacity: 0;
+  visibility: hidden;
+  display: none;
+  transition: opacity 0.25s ease-in-out;
+
+  &.open {
+    opacity: 1;
+    visibility: visible;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    overflow: auto;
+    padding: 2.5rem 0;
+    display: flex;
+    z-index: ${Z_INDEX_MODAL};
+  }
 `;
 
 export const Modal = styled.div<ModalProps>`
@@ -73,29 +61,22 @@ export const Modal = styled.div<ModalProps>`
   left: 0;
   width: ${props => {
     if (props.width) {
-      if (typeof props.width === 'string') {
-        return props.width;
-      }
-      return `${props.width}px`;
+      return getMeasurement(props.width, '80%');
     }
 
-    if (props.size) {
-      return sizeWidth(props.size);
-    }
-
-    return '80%';
+    return sizeWidth(props.size);
   }};
   margin: auto;
   background: ${colors.white};
-  border-radius: 30px;
+  border-radius: 1.875rem;
 `;
 
 export const Dialog = styled.div`
   transition: bottom 1s ease;
   width: 90%;
   background: ${colors.white};
-  border-top-left-radius: 30px;
-  border-top-right-radius: 30px;
+  border-top-left-radius: 1.875rem;
+  border-top-right-radius: 1.875rem;
 `;
 
 export const Header = styled.div<HeaderProps>`
@@ -104,7 +85,7 @@ export const Header = styled.div<HeaderProps>`
   justify-content: space-between;
   border-bottom: ${props =>
     props.noBorder ? 'none' : `1px solid ${colors.default20}`};
-  font-size: 20px;
+  font-size: 1.25rem;
 
   .name-icon-modal {
     display: flex;
@@ -115,15 +96,14 @@ export const Header = styled.div<HeaderProps>`
     padding: ${props => (props.iconBack ? '20px 0' : '20px 30px')};
     color: ${colors.brand10};
   }
-`;
 
-export const Icon = styled.div`
-  padding: 20px 30px;
-  cursor: pointer;
+  button {
+    padding: 1.25rem 1.875rem;
+  }
 `;
 
 export const Body = styled.div<HeaderProps>`
-  padding: 20px 30px;
+  padding: 1.25rem 1.875rem;
   height: 100%;
   position: relative;
 
@@ -138,7 +118,7 @@ export const Body = styled.div<HeaderProps>`
     left: 0;
     right: 0;
     bottom: 0;
-    border-radius: 30px;
+    border-radius: 1.875rem;
     z-index: 2;
     position: absolute;
   }
@@ -146,8 +126,8 @@ export const Body = styled.div<HeaderProps>`
 
 export const Actions = styled.div`
   border-top: 1px solid ${colors.default20};
-  margin: 0 30px;
-  padding: 20px 0;
+  margin: 0 1.875rem;
+  padding: 1.25rem 0;
   display: flex;
   flex-direction: row-reverse;
 `;

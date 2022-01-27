@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap');
 
 button,
 input,
@@ -6,6 +6,10 @@ optgroup,
 select,
 textarea {
   font-family: sans-serif;
+}
+
+* {
+  line-height: normal !important;
 }
 
 html {
@@ -16,4 +20,18 @@ body {
   font-size: 16px;
   font-family: sans-serif;
   font-smoothing: antialiased;
+}
+
+button,
+a {
+  cursor: pointer;
+}
+
+button,
+input {
+  font-family: MontSerrat, sans-serif;
+  color: inherit;
+  border: none;
+  background-color: inherit;
+  padding: 0;
 }

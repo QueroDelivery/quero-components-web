@@ -1,4 +1,4 @@
-import React from 'react';
+/// <reference types="react" />
 import { TextAreaProps } from './TextArea';
 export interface TextAreaFormProps extends TextAreaProps {
     required?: boolean;
@@ -9,5 +9,5 @@ export interface TextAreaFormProps extends TextAreaProps {
     limit?: number;
     minimum?: number;
 }
-declare const TextAreaForm: React.FC<TextAreaFormProps>;
+declare function TextAreaForm({ register, errors, validate, name, required, limit, minimum, ...rest }: TextAreaFormProps): JSX.Element;
 export default TextAreaForm;

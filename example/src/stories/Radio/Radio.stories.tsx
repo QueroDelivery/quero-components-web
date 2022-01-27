@@ -1,8 +1,8 @@
+import React from 'react';
 import { useState } from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 import { action } from '@storybook/addon-actions';
-import { Radio } from '@quero-delivery/quero-components-web';
-import { InputProps } from './Interface';
+import { Radio, RadioProps } from '@quero-delivery/quero-components-web';
 import '@quero-delivery/quero-components-web/dist/index.css';
 
 export default {
@@ -22,20 +22,11 @@ export default {
     sizeBox: {
       control: {
         type: 'inline-radio',
-        options: [
-          'mini',
-          'tiny',
-          'small',
-          'medium',
-          'large',
-          'big',
-          'huge',
-          'massive',
-        ],
+        options: ['xs', 'sm', 'md', 'lg', 'xl'],
       },
       description: 'Tamanho do Radio',
       type: {
-        summary: 'mini | tiny | small | medium | large | big | huge | massive',
+        summary: 'xs | sm | md | lg | xl ',
       },
     },
     onChange: {
@@ -68,7 +59,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<InputProps> = args => {
+const Template: Story<RadioProps> = args => {
   const [checked, setChecked] = useState(false);
   return (
     <Radio {...args} onChange={() => setChecked(!checked)} checked={checked} />
@@ -84,10 +75,11 @@ Default.args = {
 Default.parameters = {
   docs: {
     source: {
-      code: `<Radio
-      checked={false}
-      onChange={() => {}}
-    />`,
+      code: `
+<Radio
+  checked={false}
+  onChange={() => {}}
+/>`,
     },
   },
 };
@@ -103,12 +95,13 @@ Label.args = {
 Label.parameters = {
   docs: {
     source: {
-      code: `<Radio
-      checked={false}
-      label="Título do Radio"
-      labelStyle={{ marginRight: 20 }}
-      onChange={() => {}}
-    />`,
+      code: `
+<Radio
+  checked={false}
+  label="Título do Radio"
+  labelStyle={{ marginRight: 20 }}
+  onChange={() => {}}
+/>`,
     },
   },
 };
@@ -117,19 +110,20 @@ export const SizeBox = Template.bind({});
 SizeBox.args = {
   checked: true,
   label: 'Título do Radio',
-  sizeBox: 'big',
+  sizeBox: 'lg',
   onChange: action('checked/notChecked'),
 };
 
 SizeBox.parameters = {
   docs: {
     source: {
-      code: `<Radio
-      checked={true}
-      label="Título do Radio"
-      sizeBox="big"
-      onChange={() => {}}
-    />`,
+      code: `
+<Radio
+  checked={true}
+  label="Título do Radio"
+  sizeBox="big"
+  onChange={() => {}}
+/>`,
     },
   },
 };

@@ -1,11 +1,14 @@
 import React, { ButtonHTMLAttributes } from 'react';
 import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
-declare type ButtonTypes = 'icon';
+import { sizesTypes } from '../../helpers/FnUtil';
 declare type IconPositions = 'left' | 'right';
-export declare type ButtonSizes = 'mini' | 'tiny' | 'small' | 'medium' | 'large' | 'big' | 'huge' | 'massive';
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     textFirst?: string;
+    textFirstClassName?: string;
+    textFirstStyle?: React.CSSProperties;
     textEnd?: string;
+    textEndClassName?: string;
+    textEndStyle?: React.CSSProperties;
     firstStrong?: boolean;
     notStrong?: boolean;
     strong?: boolean;
@@ -16,19 +19,16 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     backPurple?: boolean;
     width?: number | string;
     icon?: IconDefinition;
+    iconClassName?: string;
+    iconStyle?: React.CSSProperties;
+    containerIconClassName?: string;
+    containerIconStyle?: React.CSSProperties;
     customIcon?: React.ReactNode;
-    colorIcon?: string;
     iconPosition?: IconPositions;
     noBorder?: boolean;
-    colorText?: string;
-    colorBackground?: string;
     tertiary?: boolean;
-    size?: ButtonSizes;
+    size?: sizesTypes;
     rectangular?: boolean;
-    typeContent?: ButtonTypes;
-    hoverBackgroundColor?: string;
-    hoverTextColor?: string;
-    iconStyle?: React.CSSProperties;
 }
-declare const ButtonMain: React.FC<ButtonProps>;
+declare function ButtonMain({ textFirst, textFirstClassName, textFirstStyle, textEnd, textEndClassName, textEndStyle, firstStrong, notStrong, strong, loading, secondary, backPurple, children, notification, amount, width, icon, iconClassName, iconStyle, containerIconClassName, containerIconStyle, customIcon, iconPosition, noBorder, tertiary, size, rectangular, ...rest }: ButtonProps): JSX.Element;
 export default ButtonMain;

@@ -1,9 +1,11 @@
 import React, { InputHTMLAttributes } from 'react';
-export interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'type'> {
+import { sizesTypes } from '../../helpers/FnUtil';
+export interface RadioProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'type'> {
     label?: string;
     labelStyle?: React.CSSProperties;
+    labelClassName?: string;
     onChange: () => void;
-    sizeBox?: 'mini' | 'tiny' | 'small' | 'medium' | 'large' | 'big' | 'huge' | 'massive';
+    sizeBox?: sizesTypes;
 }
-declare const Radio: React.FC<InputProps>;
+declare function Radio({ label, labelStyle, sizeBox, labelClassName, ...rest }: RadioProps): JSX.Element;
 export default Radio;

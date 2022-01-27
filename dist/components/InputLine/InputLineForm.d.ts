@@ -11,5 +11,5 @@ export interface InputFormProps extends InputProps {
     minimum?: number;
     msgErrorValidate?: string;
 }
-declare const InputLineForm: React.FC<InputFormProps>;
-export default InputLineForm;
+declare const InputForm: React.FC<InputFormProps>;
+export default InputForm;

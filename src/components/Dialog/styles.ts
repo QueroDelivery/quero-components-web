@@ -1,21 +1,23 @@
 import styled, { css } from 'styled-components';
+import { Z_INDEX_DIALOG } from '../../helpers/constants';
+import { getMeasurement } from '../../helpers/FnUtil';
 import { colors } from '../../styles/colors';
 
 interface BackgroundProps {
-  open?: boolean;
+  open: boolean;
 }
 
 interface DialogProps {
-  open?: boolean;
+  open: boolean;
   maxHeight?: number | string;
   sizeHeader: number;
   sizeBody?: number;
-  loading?: boolean;
+  isLoading: boolean;
   title?: string;
 }
 
 interface HeaderProps {
-  iconBack?: boolean;
+  returnIcon?: boolean;
   noBorder?: boolean;
 }
 
@@ -34,11 +36,12 @@ export const Background = styled.div<BackgroundProps>`
           transition: opacity 0.25s ease;
           overflow: auto;
           display: flex;
-          z-index: 999;
+          z-index: ${Z_INDEX_DIALOG};
         `
       : css`
-          opacity: 1;
+          opacity: 0;
           visibility: hidden;
+          display: none;
         `}
 `;
 
@@ -59,7 +62,7 @@ export const Dialog = styled.div<DialogProps>`
           /* overflow: auto; */
 
           overflow: ${() => {
-            if (props.maxHeight || props.loading) {
+            if (props.maxHeight || props.isLoading) {
               return 'none';
             }
             return 'auto';
@@ -76,21 +79,12 @@ export const Dialog = styled.div<DialogProps>`
             }
             return 'auto';
           }};
-          max-height: ${() => {
-            if (props.maxHeight) {
-              if (typeof props.maxHeight === 'string') {
-                return props.maxHeight;
-              }
-              return `${props.maxHeight}px`;
-            }
-
-            return '100%';
-          }};
+          max-height: ${() => getMeasurement(props.maxHeight, '100%')};
 
           .box-dialog {
             position: relative;
             padding: 20px 20px 0;
-            overflow: ${props.loading ? 'hidden' : 'auto'};
+            overflow: ${props.isLoading ? 'hidden' : 'auto'};
 
             height: ${props.title
               ? `calc(100% - ${props.sizeHeader}px)`
@@ -128,18 +122,14 @@ export const Header = styled.div<HeaderProps>`
     props.noBorder ? 'none' : `1px solid ${colors.default20}`};
   font-size: 1.25rem;
 
-  .name-icon-modal {
-    display: flex;
-    align-items: center;
-  }
-
-  & strong {
-    padding: ${props => (props.iconBack ? '1.25rem 0' : '1.25rem 1.875rem')};
+  div {
+    flex: 1;
+    text-align: left;
+    padding: ${props => (props.returnIcon ? '1.25rem 0' : '1.25rem 1.875rem')};
     color: ${colors.brand10};
   }
-`;
 
-export const Icon = styled.div`
-  padding: 1.25rem 1.875rem;
-  cursor: pointer;
+  button {
+    padding: 1.25rem 1.875rem;
+  }
 `;

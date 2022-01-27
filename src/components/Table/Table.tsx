@@ -9,7 +9,8 @@ import {
 } from 'semantic-ui-react';
 import TableComponent, { ITableComponent } from './TableComponent';
 
-interface TableComponentProps extends React.FunctionComponent<ITableComponent> {
+export interface TableComponentProps
+  extends React.FunctionComponent<ITableComponent> {
   Body: typeof TableBody;
   Cell: typeof TableCell;
   Footer: typeof TableFooter;

@@ -1,43 +1,42 @@
 import React, { InputHTMLAttributes } from 'react';
+import { sizesTypes } from '../../helpers/FnUtil';
 
 import { Container } from './styles';
 
-export interface InputProps
+export interface RadioProps
   extends Omit<InputHTMLAttributes<HTMLInputElement>, 'type'> {
   label?: string;
   labelStyle?: React.CSSProperties;
+  labelClassName?: string;
   onChange: () => void;
-  sizeBox?:
-    | 'mini'
-    | 'tiny'
-    | 'small'
-    | 'medium'
-    | 'large'
-    | 'big'
-    | 'huge'
-    | 'massive';
+  sizeBox?: sizesTypes;
 }
 
-const Radio: React.FC<InputProps> = ({
+function Radio({
   label,
   labelStyle,
   sizeBox,
+  labelClassName,
   ...rest
-}) => {
+}: RadioProps) {
   return (
     <Container
-      onClick={() =>
-        !rest.disabled ? (rest.onChange ? rest.onChange() : null) : null
-      }
+      onClick={!rest.disabled && rest.onChange ? rest.onChange : undefined}
       disabled={rest.disabled}
       sizeBox={sizeBox}
+      className={rest.className}
+      style={rest.style}
+      role="radio"
     >
-      <input type="radio" {...rest} />
+      <input data-testid="input-radio" type="radio" {...rest} />
+
       <div>
-        <label style={labelStyle}>{label}</label>
+        <label className={labelClassName} style={labelStyle}>
+          {label}
+        </label>
       </div>
     </Container>
   );
-};
+}
 
 export default Radio;

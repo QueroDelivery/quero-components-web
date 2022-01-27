@@ -1,52 +1,76 @@
-import React from 'react';
-import { Dropdown as Select, DropdownProps } from 'semantic-ui-react';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { CSSProperties } from 'react';
+import {
+  Dropdown as Select,
+  DropdownProps as SemanticDropdownProps,
+} from 'semantic-ui-react';
 
 import { Container } from './styles';
 
-interface OptionsProps {
+export interface OptionsProps {
   key: string | number;
   text: string;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   value: any;
 }
-export interface Props extends DropdownProps {
+export interface DropdownProps extends SemanticDropdownProps {
   options?: OptionsProps[];
   brand?: boolean;
   textAlign?: 'center';
   errorMessage?: string;
   label?: string;
-  colorLabel?: string;
   line?: boolean;
+
+  containerClassName?: string;
+  containerStyle?: CSSProperties;
+  errorClassName?: string;
+  errorStyle?: CSSProperties;
+  labelClassName?: string;
+  labelStyle?: CSSProperties;
 }
 
-const Dropdown: React.FC<Props> = ({
+function Dropdown({
   options,
   brand,
   textAlign,
   errorMessage,
   label,
-  colorLabel,
   line,
+  containerClassName,
+  containerStyle,
+  errorClassName,
+  errorStyle,
+  labelClassName,
+  labelStyle,
   ...rest
-}) => {
+}: DropdownProps) {
   return (
     <Container
       brand={brand}
       textAlign={textAlign}
       error={errorMessage}
-      colorLabel={colorLabel}
       line={line}
+      className={containerClassName}
+      style={containerStyle}
+      role="group"
     >
-      {label && <label>{label}</label>}
+      {label && (
+        <label className={labelClassName} style={labelStyle}>
+          {label}
+        </label>
+      )}
       <Select
         {...rest}
         selection
         noResultsMessage="Nenhum resultado encontrado"
-        error={!!errorMessage}
+        error={!!errorMessage || rest.error}
         options={options}
       />
-      {errorMessage && <small>{errorMessage}</small>}
+      {errorMessage && (
+        <small className={errorClassName} style={errorStyle}>
+          {errorMessage}
+        </small>
+      )}
     </Container>
   );
-};
+}
 export default Dropdown;

@@ -3,14 +3,14 @@ import { colors } from '../../styles/colors';
 
 interface AccordionProps {
   subtitle?: string;
-  colorTitle?: string;
-  colorSubtitle?: string;
-  colorValue?: string;
   open: boolean;
   secondary?: boolean;
   width?: number | string;
   icon?: boolean;
-  fontSizeTitle?: number | string;
+}
+
+interface TitleProps {
+  subtitle?: string;
 }
 
 interface BodyProps {
@@ -33,7 +33,7 @@ export const Container = styled.div<AccordionProps>`
   justify-content: space-between;
   background-color: ${props => (props.secondary ? colors.card : colors.white)};
   border: 1px solid ${colors.card};
-  padding: 15px 20px;
+  padding: 0.9375rem 1.25rem;
   align-items: center;
   cursor: pointer;
   box-shadow: 0px 3px 2px 0px rgba(0, 0, 0, 0.16);
@@ -48,27 +48,6 @@ export const Container = styled.div<AccordionProps>`
     flex-direction: column;
     flex: 1;
     margin-left: ${props => (props.icon ? '15px' : '0')};
-
-    .title {
-      font-size: ${props => {
-        if (props.fontSizeTitle) {
-          if (typeof props.fontSizeTitle === 'string') {
-            return props.fontSizeTitle;
-          }
-          return `${props.fontSizeTitle}px`;
-        }
-        return props.subtitle ? '14px' : '16px';
-      }};
-
-      color: ${props =>
-        props.colorTitle ? props.colorTitle : `${colors.gray20}`};
-    }
-
-    .subtitle {
-      color: ${props =>
-        props.colorSubtitle ? props.colorSubtitle : `${colors.gray10}`};
-      font-size: 12px;
-    }
   }
 
   .value-icon {
@@ -76,12 +55,6 @@ export const Container = styled.div<AccordionProps>`
     align-items: center;
     flex: 1;
     justify-content: flex-end;
-
-    .value {
-      margin-right: 20px;
-      color: ${props =>
-        props.colorValue ? props.colorValue : `${colors.gray20}`};
-    }
   }
 
   ${props =>
@@ -91,13 +64,34 @@ export const Container = styled.div<AccordionProps>`
           border-top-right-radius: 20px;
         `
       : css`
-          border-radius: 30px;
+          border-radius: 20px;
         `}
 `;
+
+export const Title = styled.span<TitleProps>`
+  font-size: ${props => (props.subtitle ? '0.875rem' : '1rem')};
+  color: ${colors.gray20};
+`;
+
+export const Subtitle = styled.span`
+  color: ${colors.gray10};
+  font-size: 0.75rem;
+`;
+
+export const Value = styled.span<TitleProps>`
+  margin-right: 1.25rem;
+  color: ${colors.gray20};
+`;
+
 export const Body = styled.div<BodyProps>`
   font-family: MontSerrat !important;
-  width: ${props => (props.width ? `${props.width}%` : '100%')};
-  padding: 20px;
+  width: ${props => {
+    if (typeof props.width === 'string') {
+      return props.width;
+    }
+    return `${props.width}px`;
+  }};
+  padding: 1.25rem;
   border: 1px solid ${colors.card};
   border-top: 0;
   border-bottom-left-radius: 20px;

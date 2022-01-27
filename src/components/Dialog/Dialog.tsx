@@ -1,10 +1,8 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable react/prop-types */
-import React, { useEffect, useState } from 'react';
+import { ReactNode, useMemo, useRef } from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes, faAngleLeft } from '@fortawesome/free-solid-svg-icons';
-import { Background, Dialog, Header, Icon } from './styles';
+import { Background, Dialog, Header } from './styles';
 import Loader from '../Loader/Loader';
 import { colors } from '../../styles/colors';
 
@@ -17,70 +15,84 @@ export interface DialogProps {
   onBack?: Function;
   noBorder?: boolean;
   closeIcon?: boolean;
+  children?: ReactNode;
+  closeOnDimerClick?: boolean;
+  onReturn?(): void;
 }
 
-const DialogComponent: React.FC<DialogProps> = ({
+function DialogComponent({
   open,
   children,
   onClose,
-  loading,
+  loading = false,
   maxHeight,
   title,
-  onBack,
   noBorder,
+  closeOnDimerClick = true,
   closeIcon = false,
-}) => {
-  const [sizeHeader, setSizeHeader] = useState(62);
+  onReturn,
+}: DialogProps) {
+  const headerDialog = useRef<HTMLDivElement | null>(null);
 
-  useEffect(() => {
-    if (document.getElementById('headerDialog')) {
-      setSizeHeader(document.getElementById('headerDialog')!.clientHeight);
-    }
-  }, [document.getElementById('headerDialog')]);
+  const sizeHeader = useMemo(() => {
+    if (headerDialog.current) return headerDialog.current.clientHeight;
+
+    return 62;
+  }, [headerDialog.current]);
 
   return (
     <Background
       open={open}
       onClick={event => {
         event.stopPropagation();
-        onClose();
+        if (closeOnDimerClick) onClose();
       }}
+      data-testid="background"
     >
       <Dialog
         open={open}
         onClick={event => event.stopPropagation()}
         maxHeight={maxHeight}
         sizeHeader={sizeHeader}
-        loading={loading}
+        isLoading={loading}
         title={title}
+        role="dialog"
       >
-        {title ? (
-          <Header iconBack={!!onBack} noBorder={noBorder} id="headerDialog">
-            <div className="name-icon-modal">
-              {onBack ? (
-                <Icon onClick={() => onBack()}>
-                  <FontAwesomeIcon
-                    icon={faAngleLeft}
-                    size="lg"
-                    color={colors.brand10}
-                  />
-                </Icon>
-              ) : null}
+        {!!title || !!onReturn || closeIcon ? (
+          <Header
+            role="heading"
+            returnIcon={!!onReturn}
+            noBorder={noBorder}
+            ref={headerDialog}
+          >
+            {!!onReturn && (
+              <button onClick={onReturn} aria-label="return">
+                <FontAwesomeIcon
+                  icon={faAngleLeft}
+                  size="lg"
+                  color={colors.brand10}
+                />
+              </button>
+            )}
+
+            <div>
               <strong>{title}</strong>
             </div>
+
             {closeIcon && (
-              <Icon
+              <button
                 onClick={event => {
                   event.stopPropagation();
                   onClose();
                 }}
+                aria-label="close"
               >
                 <FontAwesomeIcon
                   icon={faTimes}
                   style={{ fontSize: '1.25rem' }}
                   color={colors.brand10}
                 />
-              </Icon>
+              </button>
             )}
           </Header>
         ) : null}
@@ -96,6 +108,6 @@ const DialogComponent: React.FC<DialogProps> = ({
       </Dialog>
     </Background>
   );
-};
+}
 
 export default DialogComponent;

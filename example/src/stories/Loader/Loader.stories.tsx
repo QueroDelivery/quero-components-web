@@ -1,6 +1,6 @@
+import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import { Loader } from '@quero-delivery/quero-components-web';
-import { LoaderProps } from './Interface';
+import { Loader, LoaderProps } from '@quero-delivery/quero-components-web';
 import '@quero-delivery/quero-components-web/dist/index.css';
 
 export default {
@@ -19,22 +19,16 @@ export default {
     size: {
       control: {
         type: 'inline-radio',
-        options: [
-          'mini',
-          'tiny',
-          'small',
-          'medium',
-          'large',
-          'big',
-          'huge',
-          'massive',
-        ],
+        options: ['xs', 'sm', 'md', 'lg', 'xl'],
       },
       description: 'Tamanhos do Loader',
+      defaultValue: 'md',
       table: {
+        defaultValue: {
+          summary: 'md',
+        },
         type: {
-          summary:
-            'mini | tiny | small | medium | large | big | huge | massive',
+          summary: 'xs | sm | md | lg | xl',
         },
       },
     },
@@ -44,7 +38,11 @@ export default {
         options: ['left', 'center', 'right'],
       },
       description: 'Posições do Loader',
+      defaultValue: 'center',
       table: {
+        defaultValue: {
+          summary: 'center',
+        },
         type: {
           summary: 'left | center | right',
         },
@@ -79,8 +77,8 @@ Default.args = {};
 Default.parameters = {
   docs: {
     source: {
-      code: `<Loader
-    />`,
+      code: `
+<Loader />`,
     },
   },
 };
@@ -93,24 +91,26 @@ Position.args = {
 Position.parameters = {
   docs: {
     source: {
-      code: `<Loader
-      position="left"
-    />`,
+      code: `
+<Loader
+  position="left"
+/>`,
     },
   },
 };
 
 export const Size = Template.bind({});
 Size.args = {
-  size: 'small',
+  size: 'sm',
 };
 
 Size.parameters = {
   docs: {
     source: {
-      code: `<Loader
-      size="small"
-    />`,
+      code: `
+<Loader
+  size="sm"
+/>`,
     },
   },
 };
@@ -123,9 +123,10 @@ Color.args = {
 Color.parameters = {
   docs: {
     source: {
-      code: `<Loader
-      color="blue"
-    />`,
+      code: `
+<Loader
+  color="blue"
+/>`,
     },
   },
 };
