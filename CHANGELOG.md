@@ -1,3 +1,15 @@
+# [2.0.0](https://github.com/QueroDelivery/quero-components-web/compare/v1.0.17...v2.0.0) (2022-01-28)
+
+
+### Features
+
+* :sparkles: ajust in docs and finish refactor ([c301172](https://github.com/QueroDelivery/quero-components-web/commit/c30117275e610f61de1fa9ce93378edb9b42c1ed))
+
+
+### BREAKING CHANGES
+
+* general refactoring in lib components
+
 ## [1.0.17](https://github.com/QueroDelivery/quero-components-web/compare/v1.0.16...v1.0.17) (2021-09-30)
 
 
