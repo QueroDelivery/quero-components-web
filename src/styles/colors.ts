@@ -46,6 +46,7 @@ export const colors = {
   info30: '#0D47A1',
 
   brandTransparent: 'rgba(155, 77, 238, 0.2)',
+
   brandTransparent2: 'rgba(155, 77, 238, 0.9)',
 
   error: '#e0457b25',
