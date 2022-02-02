@@ -56,7 +56,7 @@ export default {
       description: 'Referencia do Input',
       table: {
         type: {
-          summary: 'RefObject',
+          summary: 'Ref',
         },
       },
     },

@@ -1,4 +1,4 @@
-import { CSSProperties, InputHTMLAttributes } from 'react';
+import { CSSProperties, forwardRef, InputHTMLAttributes, Ref } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
@@ -16,15 +16,18 @@ export interface CheckboxProps
   containerStyle?: CSSProperties;
 }
 
-function Checkbox({
-  label,
-  labelClassName,
-  labelStyle,
-  sizeBox,
-  containerClassName,
-  containerStyle,
-  ...rest
-}: CheckboxProps) {
+function Checkbox(
+  {
+    label,
+    labelClassName,
+    labelStyle,
+    sizeBox,
+    containerClassName,
+    containerStyle,
+    ...rest
+  }: CheckboxProps,
+  ref: Ref<HTMLInputElement>,
+) {
   return (
     <Container
       onClick={!rest.disabled ? rest.onChange : undefined}
@@ -35,7 +38,7 @@ function Checkbox({
       style={containerStyle}
       role="group"
     >
-      <input type="checkbox" {...rest} data-testid="checkbox" />
+      <input type="checkbox" {...rest} data-testid="checkbox" ref={ref} />
       <div>
         <span aria-label="check">
           <FontAwesomeIcon icon={faCheck} />
@@ -48,4 +51,4 @@ function Checkbox({
   );
 }
 
-export default Checkbox;
+export default forwardRef(Checkbox);

@@ -1,8 +1,8 @@
 import React from 'react';
 import { Table, TableProps } from 'semantic-ui-react';
+import Button from '../Button/Button';
 
 import { Container, Header, Title, Message } from './styles';
-import ButtonMain from '../Button/Button';
 
 export interface ITableComponent extends TableProps {
   title?: string | React.ReactNode;
@@ -52,14 +52,16 @@ function TableComponent({
       </Container>
 
       {hasMore ? (
-        <ButtonMain
+        <Button
           data-testid="hasmore-button"
           secondary
-          textFirst={hasMoreText || 'ver a'}
-          textEnd={!hasMoreText ? '' : 'lista completa'}
           notStrong={!!hasMoreText}
           onClick={hasMore}
-        />
+        >
+          <span>
+            ver a <b>lista completa</b>
+          </span>
+        </Button>
       ) : null}
 
       {pagination ? (

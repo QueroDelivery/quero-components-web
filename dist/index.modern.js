@@ -1,6 +1,6 @@
 import 'semantic-ui-css/semantic.min.css';
 import { jsxs, Fragment as Fragment$1, jsx } from 'react/jsx-runtime';
-import require$$0, { useRef, useMemo, useState, useEffect } from 'react';
+import require$$0, { forwardRef, useRef, useMemo, useState, useEffect } from 'react';
 import styled, { css as css$1 } from 'styled-components';
 import DatePicker, { registerLocale } from 'react-datepicker';
 import reactDom from 'react-dom';
@@ -2819,7 +2819,8 @@ function Accordion({
   iconStyle,
   customIcon,
   bodyClassName,
-  bodyStyle
+  bodyStyle,
+  ref
 }) {
   return jsxs(Fragment$1, {
     children: [jsxs(Container$9, Object.assign({
@@ -2831,7 +2832,8 @@ function Accordion({
       open: open,
       onClick: event => onClick(event),
       width: width,
-      icon: !!(icon || customIcon)
+      icon: !!(icon || customIcon),
+      ref: ref
     }, {
       children: [jsxs("div", Object.assign({
         className: "icon-title"
@@ -6092,7 +6094,7 @@ const Container$5 = styled.div(_t$a || (_t$a = _$a`
 
 const _excluded$5 = ["label", "labelClassName", "labelStyle", "sizeBox", "containerClassName", "containerStyle"];
 
-function Checkbox(_ref) {
+function Checkbox(_ref, ref) {
   let {
     label,
     labelClassName,
@@ -6115,7 +6117,8 @@ function Checkbox(_ref) {
     children: [jsx("input", Object.assign({
       type: "checkbox"
     }, rest, {
-      "data-testid": "checkbox"
+      "data-testid": "checkbox",
+      ref: ref
     }), void 0), jsxs("div", {
       children: [jsx("span", Object.assign({
         "aria-label": "check"
@@ -6132,6 +6135,8 @@ function Checkbox(_ref) {
     }, void 0)]
   }), void 0);
 }
+
+var Checkbox$1 = forwardRef(Checkbox);
 
 const Z_INDEX_MODAL = 999;
 const Z_INDEX_DIALOG = 998;
@@ -8131,13 +8136,12 @@ const LabelError$1 = styled.span(_t5$2 || (_t5$2 = _$7`
   return colors.danger20;
 });
 
-const _excluded$3 = ["width", "textColor", "inputRef", "icon", "iconClassName", "iconStyle", "iconPosition", "action", "label", "labelClassName", "labelStyle", "errorColor", "errorMessage", "errorClassName", "errorStyle"];
+const _excluded$3 = ["width", "textColor", "icon", "iconClassName", "iconStyle", "iconPosition", "action", "label", "labelClassName", "labelStyle", "errorColor", "errorMessage", "errorClassName", "errorStyle"];
 
-function Input(_ref) {
+function Input(_ref, ref) {
   let {
     width,
     textColor,
-    inputRef,
     icon,
     iconClassName,
     iconStyle,
@@ -8215,7 +8219,7 @@ function Input(_ref) {
         onFocus: handleFocus,
         onBlur: handleBlur,
         placeholder: isFieldActive ? rest.placeholder : undefined,
-        ref: inputRef
+        ref: ref
       }), void 0), jsx("div", Object.assign({
         className: "label-container",
         "data-testid": "label-container"
@@ -8237,6 +8241,8 @@ function Input(_ref) {
     }), void 0)]
   }), void 0);
 }
+
+var Input$1 = forwardRef(Input);
 
 let _$6 = t => t,
     _t$6,
@@ -9056,7 +9062,7 @@ const Container$2 = styled.div(_t$4 || (_t$4 = _$4`
 
 const _excluded$2 = ["label", "labelStyle", "sizeBox", "labelClassName"];
 
-function Radio(_ref) {
+function Radio(_ref, ref) {
   let {
     label,
     labelStyle,
@@ -9076,7 +9082,9 @@ function Radio(_ref) {
     children: [jsx("input", Object.assign({
       "data-testid": "input-radio",
       type: "radio"
-    }, rest), void 0), jsx("div", {
+    }, rest, {
+      ref: ref
+    }), void 0), jsx("div", {
       children: jsx("label", Object.assign({
         className: labelClassName,
         style: labelStyle
@@ -9086,6 +9094,8 @@ function Radio(_ref) {
     }, void 0)]
   }), void 0);
 }
+
+var Radio$1 = forwardRef(Radio);
 
 let _$3 = t => t,
     _t$3,
@@ -10829,14 +10839,18 @@ function TableComponent(_ref) {
       children: jsx(Table$1, Object.assign({}, rest, {
         children: children
       }), void 0)
-    }), void 0), hasMore ? jsx(Button$2, {
+    }), void 0), hasMore ? jsx(Button$2, Object.assign({
       "data-testid": "hasmore-button",
       secondary: true,
-      textFirst: hasMoreText || 'ver a',
-      textEnd: !hasMoreText ? '' : 'lista completa',
       notStrong: !!hasMoreText,
       onClick: hasMore
-    }, void 0) : null, pagination ? jsxs("div", {
+    }, {
+      children: jsxs("span", {
+        children: ["ver a ", jsx("b", {
+          children: "lista completa"
+        }, void 0)]
+      }, void 0)
+    }), void 0) : null, pagination ? jsxs("div", {
       children: [jsx("br", {}, void 0), pagination]
     }, void 0) : null]
   }, void 0);
@@ -10987,7 +11001,7 @@ const LabelLengthInfo = styled.span(_t7 || (_t7 = _`
 
 const _excluded = ["label", "labelClassName", "labelStyle", "labelColor", "errorClassName", "errorStyle", "errorMessage", "errorColor", "containerStyle", "containerClassName", "textColor", "width", "height", "lengthInfo", "lengthInfoClassName", "lengthInfoStyle"];
 
-function TextArea(_ref) {
+function TextArea(_ref, ref) {
   let {
     label,
     labelClassName,
@@ -11027,7 +11041,9 @@ function TextArea(_ref) {
       width: width,
       height: height
     }, {
-      children: jsx("textarea", Object.assign({}, rest), void 0)
+      children: jsx("textarea", Object.assign({}, rest, {
+        ref: ref
+      }), void 0)
     }), void 0), jsxs(Footer, {
       children: [jsx(LabelError, Object.assign({
         className: errorClassName,
@@ -11045,5 +11061,7 @@ function TextArea(_ref) {
   }, void 0);
 }
 
-export { Accordion, Button$2 as Button, Button$2 as ButtonMain, Calendar, Card, Checkbox, DialogComponent as Dialog, Dropdown, Input, Input as InputLine, Loader, ModalComponent as Modal, MoreLess, Pagination, Radio, Selection, Table, TextArea };
+var TextArea$1 = forwardRef(TextArea);
+
+export { Accordion, Button$2 as Button, Button$2 as ButtonMain, Calendar, Card, Checkbox$1 as Checkbox, DialogComponent as Dialog, Dropdown, Input$1 as Input, Input$1 as InputLine, Loader, ModalComponent as Modal, MoreLess, Pagination, Radio$1 as Radio, Selection, Table, TextArea$1 as TextArea };
 //# sourceMappingURL=index.modern.js.map

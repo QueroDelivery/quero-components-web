@@ -75,7 +75,7 @@ export default {
       description: 'Controle de entrada de texto',
       table: {
         type: {
-          summary: 'RefObject',
+          summary: 'Ref',
         },
       },
     },

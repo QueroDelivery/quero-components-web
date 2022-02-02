@@ -1,10 +1,12 @@
-/* eslint-disable react/prop-types */
-import React, {
+import {
   useState,
   InputHTMLAttributes,
   useEffect,
-  RefObject,
   CSSProperties,
+  Ref,
+  MouseEventHandler,
+  FocusEvent,
+  forwardRef,
 } from 'react';
 import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -15,11 +17,10 @@ import { colors } from '../../styles/colors';
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   label?: string;
   labelClassName?: string;
-  labelStyle?: React.CSSProperties;
+  labelStyle?: CSSProperties;
 
   width?: string | number;
   textColor?: string;
-  inputRef?: RefObject<HTMLInputElement>;
 
   icon?: IconDefinition;
   iconClassName?: string;
@@ -29,7 +30,7 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   action?: {
     icon: IconDefinition;
     iconColor?: string;
-    onClick: React.MouseEventHandler<HTMLButtonElement>;
+    onClick: MouseEventHandler<HTMLButtonElement>;
     position?: 'left' | 'right';
     className?: string;
     style?: CSSProperties;
@@ -38,30 +39,32 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   errorColor?: string;
   errorMessage?: string;
   errorClassName?: string;
-  errorStyle?: React.CSSProperties;
+  errorStyle?: CSSProperties;
 }
 
-function Input({
-  width,
-  textColor,
-  inputRef,
+function Input(
+  {
+    width,
+    textColor,
 
-  icon,
-  iconClassName,
-  iconStyle,
-  iconPosition,
-  action,
+    icon,
+    iconClassName,
+    iconStyle,
+    iconPosition,
+    action,
 
-  label,
-  labelClassName,
-  labelStyle,
+    label,
+    labelClassName,
+    labelStyle,
 
-  errorColor,
-  errorMessage,
-  errorClassName,
-  errorStyle,
-  ...rest
-}: InputProps) {
+    errorColor,
+    errorMessage,
+    errorClassName,
+    errorStyle,
+    ...rest
+  }: InputProps,
+  ref: Ref<HTMLInputElement>,
+) {
   const [isFieldActive, setIsFieldActive] = useState(() => {
     return false;
   });
@@ -70,13 +73,13 @@ function Input({
     if (rest.value) setIsFieldActive(true);
   }, [rest.value]);
 
-  const handleFocus = (event: React.FocusEvent<HTMLInputElement>) => {
+  const handleFocus = (event: FocusEvent<HTMLInputElement>) => {
     if (!isFieldActive || !!event.currentTarget.value) setIsFieldActive(true);
 
     if (rest.onFocus) rest.onFocus(event);
   };
 
-  const handleBlur = (event: React.FocusEvent<HTMLInputElement>) => {
+  const handleBlur = (event: FocusEvent<HTMLInputElement>) => {
     if (isFieldActive && !rest.value && !event.currentTarget.value)
       setIsFieldActive(false);
 
@@ -132,7 +135,7 @@ function Input({
           onFocus={handleFocus}
           onBlur={handleBlur}
           placeholder={isFieldActive ? rest.placeholder : undefined}
-          ref={inputRef}
+          ref={ref}
         />
         <div className="label-container" data-testid="label-container">
           <label
@@ -157,4 +160,4 @@ function Input({
   );
 }
 
-export default Input;
+export default forwardRef(Input);

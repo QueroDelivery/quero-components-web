@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import React, { TextareaHTMLAttributes } from 'react';
+import React, { forwardRef, Ref, TextareaHTMLAttributes } from 'react';
 
 import {
   Container,
@@ -33,28 +33,31 @@ export interface TextAreaProps
   height?: number | string;
 }
 
-function TextArea({
-  label,
-  labelClassName,
-  labelStyle,
-  labelColor,
+function TextArea(
+  {
+    label,
+    labelClassName,
+    labelStyle,
+    labelColor,
 
-  errorClassName,
-  errorStyle,
-  errorMessage,
-  errorColor,
+    errorClassName,
+    errorStyle,
+    errorMessage,
+    errorColor,
 
-  containerStyle,
-  containerClassName,
-  textColor,
-  width,
-  height,
+    containerStyle,
+    containerClassName,
+    textColor,
+    width,
+    height,
 
-  lengthInfo,
-  lengthInfoClassName,
-  lengthInfoStyle,
-  ...rest
-}: TextAreaProps) {
+    lengthInfo,
+    lengthInfoClassName,
+    lengthInfoStyle,
+    ...rest
+  }: TextAreaProps,
+  ref: Ref<HTMLTextAreaElement>,
+) {
   return (
     <div>
       {label && (
@@ -78,7 +81,7 @@ function TextArea({
         width={width}
         height={height}
       >
-        <textarea {...rest} />
+        <textarea {...rest} ref={ref} />
       </Container>
       <Footer>
         <LabelError
@@ -106,4 +109,4 @@ function TextArea({
   );
 }
 
-export default TextArea;
+export default forwardRef(TextArea);

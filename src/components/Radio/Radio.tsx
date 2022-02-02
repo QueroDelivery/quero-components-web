@@ -1,4 +1,4 @@
-import React, { InputHTMLAttributes } from 'react';
+import React, { forwardRef, InputHTMLAttributes, Ref } from 'react';
 import { sizesTypes } from '../../helpers/FnUtil';
 
 import { Container } from './styles';
@@ -12,13 +12,10 @@ export interface RadioProps
   sizeBox?: sizesTypes;
 }
 
-function Radio({
-  label,
-  labelStyle,
-  sizeBox,
-  labelClassName,
-  ...rest
-}: RadioProps) {
+function Radio(
+  { label, labelStyle, sizeBox, labelClassName, ...rest }: RadioProps,
+  ref: Ref<HTMLInputElement>,
+) {
   return (
     <Container
       onClick={!rest.disabled && rest.onChange ? rest.onChange : undefined}
@@ -28,7 +25,7 @@ function Radio({
       style={rest.style}
       role="radio"
     >
-      <input data-testid="input-radio" type="radio" {...rest} />
+      <input data-testid="input-radio" type="radio" {...rest} ref={ref} />
 
       <div>
         <label className={labelClassName} style={labelStyle}>
@@ -39,4 +36,4 @@ function Radio({
   );
 }
 
-export default Radio;
+export default forwardRef(Radio);

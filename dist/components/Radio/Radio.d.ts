@@ -7,5 +7,5 @@ export interface RadioProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 
     onChange: () => void;
     sizeBox?: sizesTypes;
 }
-declare function Radio({ label, labelStyle, sizeBox, labelClassName, ...rest }: RadioProps): JSX.Element;
-export default Radio;
+declare const _default: React.ForwardRefExoticComponent<RadioProps & React.RefAttributes<HTMLInputElement>>;
+export default _default;

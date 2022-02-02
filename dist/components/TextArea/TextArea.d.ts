@@ -17,5 +17,5 @@ export interface TextAreaProps extends TextareaHTMLAttributes<HTMLTextAreaElemen
     width?: number | string;
     height?: number | string;
 }
-declare function TextArea({ label, labelClassName, labelStyle, labelColor, errorClassName, errorStyle, errorMessage, errorColor, containerStyle, containerClassName, textColor, width, height, lengthInfo, lengthInfoClassName, lengthInfoStyle, ...rest }: TextAreaProps): JSX.Element;
-export default TextArea;
+declare const _default: React.ForwardRefExoticComponent<TextAreaProps & React.RefAttributes<HTMLTextAreaElement>>;
+export default _default;

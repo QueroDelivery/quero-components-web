@@ -9,5 +9,5 @@ export interface CheckboxProps extends Omit<InputHTMLAttributes<HTMLInputElement
     containerClassName?: string;
     containerStyle?: CSSProperties;
 }
-declare function Checkbox({ label, labelClassName, labelStyle, sizeBox, containerClassName, containerStyle, ...rest }: CheckboxProps): JSX.Element;
-export default Checkbox;
+declare const _default: import("react").ForwardRefExoticComponent<CheckboxProps & import("react").RefAttributes<HTMLInputElement>>;
+export default _default;
