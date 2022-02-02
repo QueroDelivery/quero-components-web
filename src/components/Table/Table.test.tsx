@@ -99,7 +99,7 @@ describe('Table component tests', () => {
   it('Função hasMore é chamada corretamente', () => {
     // given
     const hasMoreMock = jest.fn();
-    const hasMoreText = 'ver mais itens';
+    const hasMoreText = 'ver a lista completa';
     // when
 
     const wrapper = render(
