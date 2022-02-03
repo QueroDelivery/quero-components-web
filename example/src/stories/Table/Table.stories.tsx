@@ -1,7 +1,12 @@
 import React from 'react';
 import { useState } from 'react';
 import { Meta, Story } from '@storybook/react/types-6-0';
-import { Table, Pagination, Card, TableComponentProps } from '@quero-delivery/quero-components-web';
+import {
+  Table,
+  Pagination,
+  Card,
+  TableComponentProps,
+} from '@quero-delivery/quero-components-web';
 import '@quero-delivery/quero-components-web/dist/index.css';
 
 export default {

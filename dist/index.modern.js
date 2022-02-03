@@ -3341,7 +3341,9 @@ function Button$2(_ref) {
       rectangular: rectangular,
       isLoading: !!loading
     }, {
-      children: [(icon || customIcon) && iconPosition === 'left' && renderIcon(), children || jsxs(Fragment$1, {
+      children: [(icon || customIcon) && iconPosition === 'left' && renderIcon(), jsx("div", {
+        children: children
+      }, void 0) || jsxs(Fragment$1, {
         children: [jsx(TextFirst, Object.assign({
           className: textFirstClassName,
           style: textFirstStyle,
@@ -10842,12 +10844,11 @@ function TableComponent(_ref) {
     }), void 0), hasMore ? jsx(Button$2, Object.assign({
       "data-testid": "hasmore-button",
       secondary: true,
-      notStrong: !!hasMoreText,
       onClick: hasMore
     }, {
-      children: jsxs("span", {
-        children: ["ver a ", jsx("b", {
-          children: "lista completa"
+      children: hasMoreText || jsxs(Fragment$1, {
+        children: ["ver lista ", jsx("b", {
+          children: "completa"
         }, void 0)]
       }, void 0)
     }), void 0) : null, pagination ? jsxs("div", {
