@@ -157,7 +157,9 @@ function Button({
       >
         {(icon || customIcon) && iconPosition === 'left' && renderIcon()}
 
-        {<div>{children}</div> || (
+        {children ? (
+          <div>{children}</div>
+        ) : (
           <>
             <TextFirst
               className={textFirstClassName}
