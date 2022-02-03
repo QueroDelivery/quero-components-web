@@ -2798,7 +2798,8 @@ function Accordion(_ref) {
       iconStyle = _ref.iconStyle,
       customIcon = _ref.customIcon,
       bodyClassName = _ref.bodyClassName,
-      bodyStyle = _ref.bodyStyle;
+      bodyStyle = _ref.bodyStyle,
+      ref = _ref.ref;
   return jsxRuntime.jsxs(jsxRuntime.Fragment, {
     children: [jsxRuntime.jsxs(Container$9, Object.assign({
       role: "button",
@@ -2811,7 +2812,8 @@ function Accordion(_ref) {
         return _onClick(event);
       },
       width: width,
-      icon: !!(icon || customIcon)
+      icon: !!(icon || customIcon),
+      ref: ref
     }, {
       children: [jsxRuntime.jsxs("div", Object.assign({
         className: "icon-title"
@@ -3219,7 +3221,9 @@ function Button$2(_ref) {
       rectangular: rectangular,
       isLoading: !!loading
     }, {
-      children: [(icon || customIcon) && iconPosition === 'left' && renderIcon(), children || jsxRuntime.jsxs(jsxRuntime.Fragment, {
+      children: [(icon || customIcon) && iconPosition === 'left' && renderIcon(), jsxRuntime.jsx("div", {
+        children: children
+      }, void 0) || jsxRuntime.jsxs(jsxRuntime.Fragment, {
         children: [jsxRuntime.jsx(TextFirst, Object.assign({
           className: textFirstClassName,
           style: textFirstStyle,
@@ -4862,7 +4866,7 @@ var Container$5 = styled__default["default"].div(_templateObject$a || (_template
 
 var _excluded$5 = ["label", "labelClassName", "labelStyle", "sizeBox", "containerClassName", "containerStyle"];
 
-function Checkbox(_ref) {
+function Checkbox(_ref, ref) {
   var label = _ref.label,
       labelClassName = _ref.labelClassName,
       labelStyle = _ref.labelStyle,
@@ -4883,7 +4887,8 @@ function Checkbox(_ref) {
     children: [jsxRuntime.jsx("input", Object.assign({
       type: "checkbox"
     }, rest, {
-      "data-testid": "checkbox"
+      "data-testid": "checkbox",
+      ref: ref
     }), void 0), jsxRuntime.jsxs("div", {
       children: [jsxRuntime.jsx("span", Object.assign({
         "aria-label": "check"
@@ -4900,6 +4905,8 @@ function Checkbox(_ref) {
     }, void 0)]
   }), void 0);
 }
+
+var Checkbox$1 = require$$0.forwardRef(Checkbox);
 
 var Z_INDEX_MODAL = 999;
 var Z_INDEX_DIALOG = 998;
@@ -5266,12 +5273,11 @@ var LabelError$1 = styled__default["default"].span(_templateObject5$2 || (_templ
   return colors.danger20;
 });
 
-var _excluded$3 = ["width", "textColor", "inputRef", "icon", "iconClassName", "iconStyle", "iconPosition", "action", "label", "labelClassName", "labelStyle", "errorColor", "errorMessage", "errorClassName", "errorStyle"];
+var _excluded$3 = ["width", "textColor", "icon", "iconClassName", "iconStyle", "iconPosition", "action", "label", "labelClassName", "labelStyle", "errorColor", "errorMessage", "errorClassName", "errorStyle"];
 
-function Input(_ref) {
+function Input(_ref, ref) {
   var width = _ref.width,
       textColor = _ref.textColor,
-      inputRef = _ref.inputRef,
       icon = _ref.icon,
       iconClassName = _ref.iconClassName,
       iconStyle = _ref.iconStyle,
@@ -5351,7 +5357,7 @@ function Input(_ref) {
         onFocus: handleFocus,
         onBlur: handleBlur,
         placeholder: isFieldActive ? rest.placeholder : undefined,
-        ref: inputRef
+        ref: ref
       }), void 0), jsxRuntime.jsx("div", Object.assign({
         className: "label-container",
         "data-testid": "label-container"
@@ -5373,6 +5379,8 @@ function Input(_ref) {
     }), void 0)]
   }), void 0);
 }
+
+var Input$1 = require$$0.forwardRef(Input);
 
 var _templateObject$6, _templateObject2$4, _templateObject3$4, _templateObject4$2, _templateObject5$1, _templateObject6$1;
 
@@ -6019,7 +6027,7 @@ var Container$2 = styled__default["default"].div(_templateObject$4 || (_template
 
 var _excluded$2 = ["label", "labelStyle", "sizeBox", "labelClassName"];
 
-function Radio(_ref) {
+function Radio(_ref, ref) {
   var label = _ref.label,
       labelStyle = _ref.labelStyle,
       sizeBox = _ref.sizeBox,
@@ -6037,7 +6045,9 @@ function Radio(_ref) {
     children: [jsxRuntime.jsx("input", Object.assign({
       "data-testid": "input-radio",
       type: "radio"
-    }, rest), void 0), jsxRuntime.jsx("div", {
+    }, rest, {
+      ref: ref
+    }), void 0), jsxRuntime.jsx("div", {
       children: jsxRuntime.jsx("label", Object.assign({
         className: labelClassName,
         style: labelStyle
@@ -6047,6 +6057,8 @@ function Radio(_ref) {
     }, void 0)]
   }), void 0);
 }
+
+var Radio$1 = require$$0.forwardRef(Radio);
 
 var _templateObject$3, _templateObject2$3, _templateObject3$3;
 var toggleWidth = 50;
@@ -6534,14 +6546,17 @@ function TableComponent(_ref) {
       children: jsxRuntime.jsx(semanticUiReact.Table, Object.assign({}, rest, {
         children: children
       }), void 0)
-    }), void 0), hasMore ? jsxRuntime.jsx(Button$2, {
+    }), void 0), hasMore ? jsxRuntime.jsx(Button$2, Object.assign({
       "data-testid": "hasmore-button",
       secondary: true,
-      textFirst: hasMoreText || 'ver a',
-      textEnd: !hasMoreText ? '' : 'lista completa',
-      notStrong: !!hasMoreText,
       onClick: hasMore
-    }, void 0) : null, pagination ? jsxRuntime.jsxs("div", {
+    }, {
+      children: hasMoreText || jsxRuntime.jsxs(jsxRuntime.Fragment, {
+        children: ["ver lista ", jsxRuntime.jsx("b", {
+          children: "completa"
+        }, void 0)]
+      }, void 0)
+    }), void 0) : null, pagination ? jsxRuntime.jsxs("div", {
       children: [jsxRuntime.jsx("br", {}, void 0), pagination]
     }, void 0) : null]
   }, void 0);
@@ -6616,7 +6631,7 @@ var LabelLengthInfo = styled__default["default"].span(_templateObject7 || (_temp
 
 var _excluded = ["label", "labelClassName", "labelStyle", "labelColor", "errorClassName", "errorStyle", "errorMessage", "errorColor", "containerStyle", "containerClassName", "textColor", "width", "height", "lengthInfo", "lengthInfoClassName", "lengthInfoStyle"];
 
-function TextArea(_ref) {
+function TextArea(_ref, ref) {
   var label = _ref.label,
       labelClassName = _ref.labelClassName,
       labelStyle = _ref.labelStyle,
@@ -6654,7 +6669,9 @@ function TextArea(_ref) {
       width: width,
       height: height
     }, {
-      children: jsxRuntime.jsx("textarea", Object.assign({}, rest), void 0)
+      children: jsxRuntime.jsx("textarea", Object.assign({}, rest, {
+        ref: ref
+      }), void 0)
     }), void 0), jsxRuntime.jsxs(Footer, {
       children: [jsxRuntime.jsx(LabelError, Object.assign({
         className: errorClassName,
@@ -6672,22 +6689,24 @@ function TextArea(_ref) {
   }, void 0);
 }
 
+var TextArea$1 = require$$0.forwardRef(TextArea);
+
 exports.Accordion = Accordion;
 exports.Button = Button$2;
 exports.ButtonMain = Button$2;
 exports.Calendar = Calendar;
 exports.Card = Card;
-exports.Checkbox = Checkbox;
+exports.Checkbox = Checkbox$1;
 exports.Dialog = DialogComponent;
 exports.Dropdown = Dropdown;
-exports.Input = Input;
-exports.InputLine = Input;
+exports.Input = Input$1;
+exports.InputLine = Input$1;
 exports.Loader = Loader;
 exports.Modal = ModalComponent;
 exports.MoreLess = MoreLess;
 exports.Pagination = Pagination;
-exports.Radio = Radio;
+exports.Radio = Radio$1;
 exports.Selection = Selection;
 exports.Table = Table;
-exports.TextArea = TextArea;
+exports.TextArea = TextArea$1;
 //# sourceMappingURL=index.js.map

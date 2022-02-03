@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { Table, TableProps } from 'semantic-ui-react';
+import Button from '../Button/Button';
 
 import { Container, Header, Title, Message } from './styles';
-import ButtonMain from '../Button/Button';
 
 export interface ITableComponent extends TableProps {
   title?: string | React.ReactNode;
@@ -14,7 +14,7 @@ export interface ITableComponent extends TableProps {
   messageClassName?: string;
 
   hasMore?: () => void;
-  hasMoreText?: string;
+  hasMoreText?: string | ReactNode;
   pagination?: React.ReactElement;
   loading?: boolean;
 }
@@ -52,14 +52,13 @@ function TableComponent({
       </Container>
 
       {hasMore ? (
-        <ButtonMain
-          data-testid="hasmore-button"
-          secondary
-          textFirst={hasMoreText || 'ver a'}
-          textEnd={!hasMoreText ? '' : 'lista completa'}
-          notStrong={!!hasMoreText}
-          onClick={hasMore}
-        />
+        <Button data-testid="hasmore-button" secondary onClick={hasMore}>
+          {hasMoreText || (
+            <>
+              ver lista <b>completa</b>
+            </>
+          )}
+        </Button>
       ) : null}
 
       {pagination ? (

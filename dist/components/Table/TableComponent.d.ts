@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { TableProps } from 'semantic-ui-react';
 export interface ITableComponent extends TableProps {
     title?: string | React.ReactNode;
@@ -8,7 +8,7 @@ export interface ITableComponent extends TableProps {
     messageStyle?: React.CSSProperties;
     messageClassName?: string;
     hasMore?: () => void;
-    hasMoreText?: string;
+    hasMoreText?: string | ReactNode;
     pagination?: React.ReactElement;
     loading?: boolean;
 }

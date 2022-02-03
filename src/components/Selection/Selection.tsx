@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React from 'react';
+import { Ref, MouseEventHandler, CSSProperties } from 'react';
 import { sizesTypes } from '../../helpers/FnUtil';
 
 import { Switch, Toggle, ActiveInactive } from './styles';
@@ -9,13 +9,13 @@ type TSelectors = 'switch' | 'toggle' | 'activeInactive';
 export interface SelectionProps {
   type: TSelectors;
   checked?: boolean;
-  onClick?: React.MouseEventHandler<HTMLElement>;
-  onChange?: React.MouseEventHandler<HTMLElement>;
+  onClick?: MouseEventHandler<HTMLElement>;
+  onChange?: MouseEventHandler<HTMLElement>;
   size?: sizesTypes;
   disabled?: boolean;
   className?: string;
-  style?: React.CSSProperties;
-  ref?: React.RefObject<any>;
+  style?: CSSProperties;
+  ref?: Ref<HTMLButtonElement>;
 }
 
 const TYPES: Record<TSelectors, TSelectors> = {
