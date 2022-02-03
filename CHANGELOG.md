@@ -1,3 +1,11 @@
+## [2.0.1](https://github.com/QueroDelivery/quero-components-web/compare/v2.0.0...v2.0.1) (2022-02-03)
+
+
+### Bug Fixes
+
+* :bug: ajuste nas refs dos componentes de formulario ([309f7a0](https://github.com/QueroDelivery/quero-components-web/commit/309f7a04154f33c40b051cd0df53c03e30d449a8))
+* :bug: children button and button table ([3808b08](https://github.com/QueroDelivery/quero-components-web/commit/3808b08fa7da0660a38ce57191e12f0fbaa36383))
+
 # [2.0.0](https://github.com/QueroDelivery/quero-components-web/compare/v1.0.17...v2.0.0) (2022-01-28)
 
 
