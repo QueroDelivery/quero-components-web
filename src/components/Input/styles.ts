@@ -171,7 +171,7 @@ export const InputContainer = styled.div<InputProps>`
       props.isFieldActive
         ? css`
             transform: translateY(-100%);
-            font-size: 14px;
+            font-size: 0.875rem;
             color: ${() => {
               if (
                 (props.requiredText || props.errorMessage) &&
@@ -188,7 +188,7 @@ export const InputContainer = styled.div<InputProps>`
             }};
           `
         : css`
-            font-size: 16px;
+            font-size: 1rem;
             color: ${() => {
               if (
                 (props.requiredText || props.errorMessage) &&
