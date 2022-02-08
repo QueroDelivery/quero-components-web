@@ -7,11 +7,14 @@ import {
   MouseEventHandler,
   FocusEvent,
   forwardRef,
+  useRef,
+  KeyboardEvent,
+  AnimationEvent,
 } from 'react';
 import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { InputContainer, LabelError } from './styles';
+import { Container, InputContainer, LabelError } from './styles';
 import { colors } from '../../styles/colors';
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
@@ -69,9 +72,22 @@ function Input(
     return false;
   });
 
+  const inputRef = useRef<HTMLInputElement>(null);
+
   useEffect(() => {
-    if (rest.value) setIsFieldActive(true);
+    if (rest.value) {
+      setIsFieldActive(true);
+    }
   }, [rest.value]);
+
+  useEffect(() => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const validRef = (ref as any) || inputRef;
+
+    if (validRef.current && validRef.current.value) {
+      setIsFieldActive(true);
+    }
+  }, []);
 
   const handleFocus = (event: FocusEvent<HTMLInputElement>) => {
     if (!isFieldActive || !!event.currentTarget.value) setIsFieldActive(true);
@@ -86,8 +102,28 @@ function Input(
     if (rest.onBlur) rest.onBlur(event);
   };
 
+  const handleKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
+    if (event.currentTarget.value) {
+      setIsFieldActive(true);
+    }
+
+    if (rest.onKeyDown) {
+      rest.onKeyDown(event);
+    }
+  };
+
+  const handleAnimationStart = (event: AnimationEvent<HTMLInputElement>) => {
+    if (event.animationName === 'onAutoFillStart') {
+      setIsFieldActive(true);
+    }
+
+    if (rest.onAnimationStart) {
+      rest.onAnimationStart(event);
+    }
+  };
+
   return (
-    <div role="group">
+    <Container role="group" hasError={!!errorMessage}>
       <InputContainer
         isFieldActive={isFieldActive}
         className={rest.className}
@@ -135,7 +171,9 @@ function Input(
           onFocus={handleFocus}
           onBlur={handleBlur}
           placeholder={isFieldActive ? rest.placeholder : undefined}
-          ref={ref}
+          ref={ref || inputRef}
+          onAnimationStart={handleAnimationStart}
+          onKeyDown={handleKeyDown}
         />
         <div className="label-container" data-testid="label-container">
           <label
@@ -156,7 +194,7 @@ function Input(
           {errorMessage}
         </LabelError>
       )}
-    </div>
+    </Container>
   );
 }
 
