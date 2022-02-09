@@ -1,3 +1,10 @@
+## [2.0.2](https://github.com/QueroDelivery/quero-components-web/compare/v2.0.1...v2.0.2) (2022-02-09)
+
+
+### Bug Fixes
+
+* :bug: autocomplete do navegador coberto e padding bottom no container ([45c9c5c](https://github.com/QueroDelivery/quero-components-web/commit/45c9c5ce77cfe965c5bb9104bc30494da04b0e02))
+
 ## [2.0.1](https://github.com/QueroDelivery/quero-components-web/compare/v2.0.0...v2.0.1) (2022-02-03)
 
 
