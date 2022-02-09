@@ -2717,9 +2717,9 @@ let _$f = t => t,
     _t3$9,
     _t4$7,
     _t5$5,
-    _t6$4,
+    _t6$5,
     _t7$3;
-const Container$9 = styled.div(_t$f || (_t$f = _$f`
+const Container$a = styled.div(_t$f || (_t$f = _$f`
   font-family: MontSerrat !important;
   display: flex;
   width: ${0};
@@ -2775,7 +2775,7 @@ const Subtitle = styled.span(_t5$5 || (_t5$5 = _$f`
   color: ${0};
   font-size: 0.75rem;
 `), colors.gray10);
-const Value = styled.span(_t6$4 || (_t6$4 = _$f`
+const Value = styled.span(_t6$5 || (_t6$5 = _$f`
   margin-right: 1.25rem;
   color: ${0};
 `), colors.gray20);
@@ -2823,7 +2823,7 @@ function Accordion({
   ref
 }) {
   return jsxs(Fragment$1, {
-    children: [jsxs(Container$9, Object.assign({
+    children: [jsxs(Container$a, Object.assign({
       role: "button",
       className: className,
       style: style,
@@ -2954,9 +2954,9 @@ let _$e = t => t,
     _t3$8,
     _t4$6,
     _t5$4,
-    _t6$3,
+    _t6$4,
     _t7$2;
-const Container$8 = styled.button(_t$e || (_t$e = _$e`
+const Container$9 = styled.button(_t$e || (_t$e = _$e`
   font-family: MontSerrat !important;
   font-size: ${0};
   position: ${0};
@@ -3104,7 +3104,7 @@ const Icon = styled.div(_t5$4 || (_t5$4 = _$e`
   margin-right: ${0};
   margin-left: ${0};
 `), props => props.iconPosition === 'left' && props.hasText ? '10px' : '', props => props.iconPosition === 'right' && props.hasText ? '10px' : '');
-const Amount = styled.div(_t6$3 || (_t6$3 = _$e`
+const Amount = styled.div(_t6$4 || (_t6$4 = _$e`
   font-family: MontSerrat !important;
   background-color: ${0};
   width: 20px;
@@ -3180,7 +3180,7 @@ const widthBorder = size => {
   }
 };
 
-const Container$7 = styled.div(_t$d || (_t$d = _$d`
+const Container$8 = styled.div(_t$d || (_t$d = _$d`
   width: 100%;
   display: flex;
   justify-content: ${0};
@@ -3215,7 +3215,7 @@ function Loader({
   position = 'center',
   outsideColor
 }) {
-  return jsx(Container$7, Object.assign({
+  return jsx(Container$8, Object.assign({
     position: position
   }, {
     children: jsx(Load, {
@@ -3330,7 +3330,7 @@ function Button$2(_ref) {
   }
 
   function renderButton() {
-    return jsxs(Container$8, Object.assign({}, rest, {
+    return jsxs(Container$9, Object.assign({}, rest, {
       secondary: secondary,
       backPurple: backPurple,
       width: width,
@@ -3341,9 +3341,9 @@ function Button$2(_ref) {
       rectangular: rectangular,
       isLoading: !!loading
     }, {
-      children: [(icon || customIcon) && iconPosition === 'left' && renderIcon(), jsx("div", {
+      children: [(icon || customIcon) && iconPosition === 'left' && renderIcon(), children ? jsx("div", {
         children: children
-      }, void 0) || jsxs(Fragment$1, {
+      }, void 0) : jsxs(Fragment$1, {
         children: [jsx(TextFirst, Object.assign({
           className: textFirstClassName,
           style: textFirstStyle,
@@ -4627,7 +4627,7 @@ if (process.env.NODE_ENV === 'production') {
 
 let _$c = t => t,
     _t$c;
-const Container$6 = styled.div(_t$c || (_t$c = _$c`
+const Container$7 = styled.div(_t$c || (_t$c = _$c`
   font-family: MontSerrat !important;
   display: flex;
   flex-direction: column;
@@ -5657,7 +5657,7 @@ const Calendar = _ref => {
     onChange: props.onChange,
     placeholder: rest.placeholderText
   }, void 0));
-  return jsxs(Container$6, Object.assign({
+  return jsxs(Container$7, Object.assign({
     brand: brand,
     size: size
   }, {
@@ -5976,7 +5976,7 @@ const marginRight = size => {
   }
 };
 
-const Container$5 = styled.div(_t$a || (_t$a = _$a`
+const Container$6 = styled.div(_t$a || (_t$a = _$a`
   font-family: MontSerrat !important;
   display: flex;
   align-items: center;
@@ -6107,7 +6107,7 @@ function Checkbox(_ref, ref) {
   } = _ref,
       rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$5);
 
-  return jsxs(Container$5, Object.assign({
+  return jsxs(Container$6, Object.assign({
     onClick: !rest.disabled ? rest.onChange : undefined,
     disabled: rest.disabled,
     sizeBox: sizeBox,
@@ -6149,7 +6149,7 @@ let _$9 = t => t,
     _t3$6,
     _t4$4,
     _t5$3,
-    _t6$2,
+    _t6$3,
     _t7$1;
 const Background$1 = styled.div(_t$9 || (_t$9 = _$9`
   ${0}
@@ -6233,7 +6233,7 @@ const Dialog = styled.div(_t4$4 || (_t4$4 = _$9`
   }
 
   return 'auto';
-}, () => getMeasurement(props.maxHeight, '100%'), props.isLoading ? 'hidden' : 'auto', props.title ? `calc(100% - ${props.sizeHeader}px)` : '100%') : css$1(_t6$2 || (_t6$2 = _$9`
+}, () => getMeasurement(props.maxHeight, '100%'), props.isLoading ? 'hidden' : 'auto', props.title ? `calc(100% - ${props.sizeHeader}px)` : '100%') : css$1(_t6$3 || (_t6$3 = _$9`
           transition: bottom 0.25s ease;
           bottom: -100%;
         `)));
@@ -6340,7 +6340,7 @@ function DialogComponent({
 
 let _$8 = t => t,
     _t$8;
-const Container$4 = styled.div(_t$8 || (_t$8 = _$8`
+const Container$5 = styled.div(_t$8 || (_t$8 = _$8`
   font-family: MontSerrat !important;
   width: 100% !important;
   display: flex !important;
@@ -7901,7 +7901,7 @@ function Dropdown(_ref) {
   } = _ref,
       rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$4);
 
-  return jsxs(Container$4, Object.assign({
+  return jsxs(Container$5, Object.assign({
     brand: brand,
     textAlign: textAlign,
     error: errorMessage,
@@ -7934,7 +7934,8 @@ let _$7 = t => t,
     _t2$5,
     _t3$5,
     _t4$3,
-    _t5$2;
+    _t5$2,
+    _t6$2;
 const InputContainer = styled.div(_t$7 || (_t$7 = _$7`
   font-family: MontSerrat !important;
   position: relative;
@@ -8006,6 +8007,20 @@ const InputContainer = styled.div(_t$7 || (_t$7 = _$7`
     padding: 5px 10px;
     ${0}
   }
+
+  @keyframes onAutoFillStart {
+  }
+
+  input:-webkit-autofill {
+    animation: onAutoFillStart;
+  }
+
+  /* @keyframes onAutoFillCancel {
+  }
+
+  input:not(:-webkit-autofill) {
+    animation-name: onAutoFillCancel;
+  } */
 `), props => props.disabled ? '0.5' : '1', props => getMeasurement(props.width, '100%'), props => props.textColor || colors.gray20, props => {
   if (props.icon && !props.action) {
     if (props.iconPosition === 'right') {
@@ -8137,6 +8152,9 @@ const LabelError$1 = styled.span(_t5$2 || (_t5$2 = _$7`
 
   return colors.danger20;
 });
+const Container$4 = styled.div(_t6$2 || (_t6$2 = _$7`
+  padding-bottom: ${0};
+`), props => props.hasError ? '0' : '1.25rem');
 
 const _excluded$3 = ["width", "textColor", "icon", "iconClassName", "iconStyle", "iconPosition", "action", "label", "labelClassName", "labelStyle", "errorColor", "errorMessage", "errorClassName", "errorStyle"];
 
@@ -8162,9 +8180,20 @@ function Input(_ref, ref) {
   const [isFieldActive, setIsFieldActive] = useState(() => {
     return false;
   });
+  const inputRef = useRef(null);
   useEffect(() => {
-    if (rest.value) setIsFieldActive(true);
+    if (rest.value) {
+      setIsFieldActive(true);
+    }
   }, [rest.value]);
+  useEffect(() => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const validRef = ref || inputRef;
+
+    if (validRef.current && validRef.current.value) {
+      setIsFieldActive(true);
+    }
+  }, []);
 
   const handleFocus = event => {
     if (!isFieldActive || !!event.currentTarget.value) setIsFieldActive(true);
@@ -8176,8 +8205,31 @@ function Input(_ref, ref) {
     if (rest.onBlur) rest.onBlur(event);
   };
 
-  return jsxs("div", Object.assign({
-    role: "group"
+  const handleKeyDown = event => {
+    if (event.currentTarget.value) {
+      setIsFieldActive(true);
+    }
+
+    if (rest.onKeyDown) {
+      rest.onKeyDown(event);
+    }
+  };
+
+  const handleAnimationStart = event => {
+    console.log(event.animationName);
+
+    if (event.animationName === 'onAutoFillStart') {
+      setIsFieldActive(true);
+    }
+
+    if (rest.onAnimationStart) {
+      rest.onAnimationStart(event);
+    }
+  };
+
+  return jsxs(Container$4, Object.assign({
+    role: "group",
+    hasError: !!errorMessage
   }, {
     children: [jsxs(InputContainer, Object.assign({
       isFieldActive: isFieldActive,
@@ -8221,7 +8273,9 @@ function Input(_ref, ref) {
         onFocus: handleFocus,
         onBlur: handleBlur,
         placeholder: isFieldActive ? rest.placeholder : undefined,
-        ref: ref
+        ref: ref || inputRef,
+        onAnimationStart: handleAnimationStart,
+        onKeyDown: handleKeyDown
       }), void 0), jsx("div", Object.assign({
         className: "label-container",
         "data-testid": "label-container"

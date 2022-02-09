@@ -171,7 +171,7 @@ export const InputContainer = styled.div<InputProps>`
       props.isFieldActive
         ? css`
             transform: translateY(-100%);
-            font-size: 14px;
+            font-size: 0.875rem;
             color: ${() => {
               if (
                 (props.requiredText || props.errorMessage) &&
@@ -188,7 +188,7 @@ export const InputContainer = styled.div<InputProps>`
             }};
           `
         : css`
-            font-size: 16px;
+            font-size: 1rem;
             color: ${() => {
               if (
                 (props.requiredText || props.errorMessage) &&
@@ -222,6 +222,20 @@ export const InputContainer = styled.div<InputProps>`
         ? 'left: 0;'
         : 'right: 0;'}
   }
+
+  @keyframes onAutoFillStart {
+  }
+
+  input:-webkit-autofill {
+    animation: onAutoFillStart;
+  }
+
+  /* @keyframes onAutoFillCancel {
+  }
+
+  input:not(:-webkit-autofill) {
+    animation-name: onAutoFillCancel;
+  } */
 `;
 
 export const LabelError = styled.span<LabelErrorProps>`
@@ -235,4 +249,8 @@ export const LabelError = styled.span<LabelErrorProps>`
 
     return colors.danger20;
   }};
+`;
+
+export const Container = styled.div<{ hasError?: boolean }>`
+  padding-bottom: ${props => (props.hasError ? '0' : '1.25rem')};
 `;

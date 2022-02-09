@@ -135,6 +135,27 @@ describe('Input Component', () => {
     expect(onBlurMock).toBeCalled();
   });
 
+  it('Função de onKeyDown é chamada com sucesso', () => {
+    // given
+
+    const onKeyDownMock = jest.fn();
+    const onChangeMock = jest.fn();
+
+    // when
+
+    render(
+      <Input onKeyDown={onKeyDownMock} onChange={onChangeMock} value="value" />,
+    );
+
+    // then
+
+    const input = screen.getByRole('textbox');
+
+    userEvent.type(input, '{arrowdown}');
+
+    expect(onKeyDownMock).toBeCalled();
+  });
+
   it('IconPosition funcionando', () => {
     // given
 
@@ -321,5 +342,18 @@ describe('Input Component', () => {
     rerender(<Input errorMessage={errorMessage} label={labelText} value="" />);
 
     expect(label).toHaveStyle(`color: ${colors.danger20}`);
+  });
+
+  it('Deve renderizar o input do tipo date', () => {
+    // given
+
+    // when
+
+    render(<Input aria-label="input-date" type="date" />);
+
+    // then
+    const input = screen.getByLabelText('input-date');
+
+    expect(input).toBeInTheDocument();
   });
 });

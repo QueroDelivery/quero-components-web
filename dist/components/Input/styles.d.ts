@@ -19,4 +19,7 @@ interface LabelErrorProps {
 }
 export declare const InputContainer: import("styled-components").StyledComponent<"div", any, InputProps, never>;
 export declare const LabelError: import("styled-components").StyledComponent<"span", any, LabelErrorProps, never>;
+export declare const Container: import("styled-components").StyledComponent<"div", any, {
+    hasError?: boolean | undefined;
+}, never>;
 export {};
