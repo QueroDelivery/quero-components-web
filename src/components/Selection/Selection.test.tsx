@@ -52,9 +52,7 @@ describe('Selection Component', () => {
 
       rerender(<Selection type="switch" checked disabled />);
 
-      expect(control).toHaveStyle(
-        `background-color: ${colors.brandTransparent}`,
-      );
+      expect(selection).toHaveStyle({ opacity: 0.5 });
     });
   });
 

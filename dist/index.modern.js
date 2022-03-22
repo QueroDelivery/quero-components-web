@@ -8114,7 +8114,7 @@ const InputContainer = styled.div(_t$7 || (_t$7 = _$7`
   return '15px';
 }, props => props.isFieldActive ? css$1(_t3$5 || (_t3$5 = _$7`
             transform: translateY(-100%);
-            font-size: 14px;
+            font-size: 0.875rem;
             color: ${0};
           `), () => {
   if ((props.requiredText || props.errorMessage) && props.errorColor) {
@@ -8127,7 +8127,7 @@ const InputContainer = styled.div(_t$7 || (_t$7 = _$7`
 
   return colors.brand10;
 }) : css$1(_t4$3 || (_t4$3 = _$7`
-            font-size: 16px;
+            font-size: 1rem;
             color: ${0};
           `), () => {
   if ((props.requiredText || props.errorMessage) && props.errorColor) {
@@ -8216,8 +8216,6 @@ function Input(_ref, ref) {
   };
 
   const handleAnimationStart = event => {
-    console.log(event.animationName);
-
     if (event.animationName === 'onAutoFillStart') {
       setIsFieldActive(true);
     }
@@ -9306,6 +9304,8 @@ const Switch = styled.button(_t$3 || (_t$3 = _$3`
   font-size: 1.375rem !important;
   user-select: none !important;
 
+  opacity: ${0};
+
   div {
     position: absolute !important;
     opacity: 0 !important;
@@ -9318,7 +9318,7 @@ const Switch = styled.button(_t$3 || (_t$3 = _$3`
     height: ${0};
     width: ${0};
     border-radius: ${0};
-    background-color: ${0} !important;
+    background-color: ${0};
     transition: background-color 0.15s ease-in !important;
 
     &:after {
@@ -9342,7 +9342,9 @@ const Switch = styled.button(_t$3 || (_t$3 = _$3`
       left: ${0};
     }
   }
-`), props => props.size ? `${widthSwitch(props.size)}px` : `${toggleWidth}px`, props => props.disabled ? 'not-allowed !important' : 'pointer !important', props => props.size ? `${heightSwitch(props.size)}px !important` : `${toggleHeight}px !important`, props => props.size ? `${widthSwitch(props.size)}px !important` : `${toggleWidth}px !important`, props => props.size ? `${heightSwitch(props.size) / 2}px !important` : `${toggleRadius}px !important`, colors.card, props => props.size ? `${heightSwitch(props.size) - sizeGutter(props.size) * 2}px !important` : `${toggleControlSsize}px !important`, props => props.size ? `${heightSwitch(props.size) - sizeGutter(props.size) * 2}px !important` : `${toggleControlSsize}px !important`, colors.default10, props => props.disabled ? `${colors.brandTransparent} !important` : `${colors.brandDark} !important`, props => props.size ? `${widthSwitch(props.size) - (heightSwitch(props.size) - sizeGutter(props.size) * 2) - sizeGutter(props.size)}px !important` : `${toggleWidth - toggleControlSsize - toggleGutter}px !important`);
+`), props => props.size ? `${widthSwitch(props.size)}px` : `${toggleWidth}px`, props => props.disabled ? 'not-allowed ' : 'pointer', ({
+  disabled
+}) => disabled ? 0.5 : 1, props => props.size ? `${heightSwitch(props.size)}px !important` : `${toggleHeight}px !important`, props => props.size ? `${widthSwitch(props.size)}px !important` : `${toggleWidth}px !important`, props => props.size ? `${heightSwitch(props.size) / 2}px !important` : `${toggleRadius}px !important`, colors.card, props => props.size ? `${heightSwitch(props.size) - sizeGutter(props.size) * 2}px !important` : `${toggleControlSsize}px !important`, props => props.size ? `${heightSwitch(props.size) - sizeGutter(props.size) * 2}px !important` : `${toggleControlSsize}px !important`, colors.default10, colors.brandDark, props => props.size ? `${widthSwitch(props.size) - (heightSwitch(props.size) - sizeGutter(props.size) * 2) - sizeGutter(props.size)}px !important` : `${toggleWidth - toggleControlSsize - toggleGutter}px !important`);
 const Toggle = styled.button(_t2$3 || (_t2$3 = _$3`
   font-family: MontSerrat !important;
   display: flex !important;
