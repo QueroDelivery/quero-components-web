@@ -1,3 +1,10 @@
+## [2.0.3](https://github.com/QueroDelivery/quero-components-web/compare/v2.0.2...v2.0.3) (2022-03-22)
+
+
+### Bug Fixes
+
+* :lipstick: improvement in selection styles ([72d9754](https://github.com/QueroDelivery/quero-components-web/commit/72d9754e330111f75c95ba4f14cb22a439c29e17))
+
 ## [2.0.2](https://github.com/QueroDelivery/quero-components-web/compare/v2.0.1...v2.0.2) (2022-02-09)
 
 
