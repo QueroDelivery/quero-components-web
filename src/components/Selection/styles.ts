@@ -125,10 +125,11 @@ export const Switch = styled.button<SelectionProps>`
   /* padding-left: ${props =>
     props.size ? `${widthSwitch(props.size)}px` : `${toggleWidth}px`}; */
   /* margin-bottom: 12px; */
-  cursor: ${props =>
-    props.disabled ? 'not-allowed !important' : 'pointer !important'};
+  cursor: ${props => (props.disabled ? 'not-allowed ' : 'pointer')};
   font-size: 1.375rem !important;
   user-select: none !important;
+
+  opacity: ${({ disabled }) => (disabled ? 0.5 : 1)};
 
   div {
     position: absolute !important;
@@ -151,7 +152,7 @@ export const Switch = styled.button<SelectionProps>`
       props.size
         ? `${heightSwitch(props.size) / 2}px !important`
         : `${toggleRadius}px !important`};
-    background-color: ${colors.card} !important;
+    background-color: ${colors.card};
     transition: background-color 0.15s ease-in !important;
 
     &:after {
@@ -179,10 +180,7 @@ export const Switch = styled.button<SelectionProps>`
   }
 
   div.checked ~ .control {
-    background-color: ${props =>
-      props.disabled
-        ? `${colors.brandTransparent} !important`
-        : `${colors.brandDark} !important`};
+    background-color: ${colors.brandDark};
 
     &:after {
       left: ${props =>

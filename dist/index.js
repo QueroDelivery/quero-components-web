@@ -5239,7 +5239,7 @@ var InputContainer = styled__default["default"].div(_templateObject$7 || (_templ
 
   return '15px';
 }, function (props) {
-  return props.isFieldActive ? styled.css(_templateObject3$5 || (_templateObject3$5 = _taggedTemplateLiteralLoose(["\n            transform: translateY(-100%);\n            font-size: 14px;\n            color: ", ";\n          "])), function () {
+  return props.isFieldActive ? styled.css(_templateObject3$5 || (_templateObject3$5 = _taggedTemplateLiteralLoose(["\n            transform: translateY(-100%);\n            font-size: 0.875rem;\n            color: ", ";\n          "])), function () {
     if ((props.requiredText || props.errorMessage) && props.errorColor) {
       return props.errorColor;
     }
@@ -5249,7 +5249,7 @@ var InputContainer = styled__default["default"].div(_templateObject$7 || (_templ
     }
 
     return colors.brand10;
-  }) : styled.css(_templateObject4$3 || (_templateObject4$3 = _taggedTemplateLiteralLoose(["\n            font-size: 16px;\n            color: ", ";\n          "])), function () {
+  }) : styled.css(_templateObject4$3 || (_templateObject4$3 = _taggedTemplateLiteralLoose(["\n            font-size: 1rem;\n            color: ", ";\n          "])), function () {
     if ((props.requiredText || props.errorMessage) && props.errorColor) {
       return props.errorColor;
     }
@@ -6236,10 +6236,13 @@ var fontActiveInactive = function fontActiveInactive(size) {
   }
 };
 
-var Switch = styled__default["default"].button(_templateObject$3 || (_templateObject$3 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  display: flex !important;\n  flex-direction: row !important;\n  position: relative !important;\n  /* padding-left: ", "; */\n  /* margin-bottom: 12px; */\n  cursor: ", ";\n  font-size: 1.375rem !important;\n  user-select: none !important;\n\n  div {\n    position: absolute !important;\n    opacity: 0 !important;\n    height: 0 !important;\n    width: 0 !important;\n    display: none !important;\n  }\n\n  .control {\n    height: ", ";\n    width: ", ";\n    border-radius: ", ";\n    background-color: ", " !important;\n    transition: background-color 0.15s ease-in !important;\n\n    &:after {\n      content: '' !important;\n      position: absolute !important;\n      left: 5px !important;\n      top: 5px !important;\n      height: ", ";\n      width: ", ";\n      border-radius: 50px !important;\n      background-color: white !important;\n      transition: left 0.15s ease-in !important;\n      border: 1px solid ", " !important;\n    }\n  }\n\n  div.checked ~ .control {\n    background-color: ", ";\n\n    &:after {\n      left: ", ";\n    }\n  }\n"])), function (props) {
+var Switch = styled__default["default"].button(_templateObject$3 || (_templateObject$3 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  display: flex !important;\n  flex-direction: row !important;\n  position: relative !important;\n  /* padding-left: ", "; */\n  /* margin-bottom: 12px; */\n  cursor: ", ";\n  font-size: 1.375rem !important;\n  user-select: none !important;\n\n  opacity: ", ";\n\n  div {\n    position: absolute !important;\n    opacity: 0 !important;\n    height: 0 !important;\n    width: 0 !important;\n    display: none !important;\n  }\n\n  .control {\n    height: ", ";\n    width: ", ";\n    border-radius: ", ";\n    background-color: ", ";\n    transition: background-color 0.15s ease-in !important;\n\n    &:after {\n      content: '' !important;\n      position: absolute !important;\n      left: 5px !important;\n      top: 5px !important;\n      height: ", ";\n      width: ", ";\n      border-radius: 50px !important;\n      background-color: white !important;\n      transition: left 0.15s ease-in !important;\n      border: 1px solid ", " !important;\n    }\n  }\n\n  div.checked ~ .control {\n    background-color: ", ";\n\n    &:after {\n      left: ", ";\n    }\n  }\n"])), function (props) {
   return props.size ? widthSwitch(props.size) + "px" : toggleWidth + "px";
 }, function (props) {
-  return props.disabled ? 'not-allowed !important' : 'pointer !important';
+  return props.disabled ? 'not-allowed ' : 'pointer';
+}, function (_ref) {
+  var disabled = _ref.disabled;
+  return disabled ? 0.5 : 1;
 }, function (props) {
   return props.size ? heightSwitch(props.size) + "px !important" : toggleHeight + "px !important";
 }, function (props) {
@@ -6250,9 +6253,7 @@ var Switch = styled__default["default"].button(_templateObject$3 || (_templateOb
   return props.size ? heightSwitch(props.size) - sizeGutter(props.size) * 2 + "px !important" : toggleControlSsize + "px !important";
 }, function (props) {
   return props.size ? heightSwitch(props.size) - sizeGutter(props.size) * 2 + "px !important" : toggleControlSsize + "px !important";
-}, colors.default10, function (props) {
-  return props.disabled ? colors.brandTransparent + " !important" : colors.brandDark + " !important";
-}, function (props) {
+}, colors.default10, colors.brandDark, function (props) {
   return props.size ? widthSwitch(props.size) - (heightSwitch(props.size) - sizeGutter(props.size) * 2) - sizeGutter(props.size) + "px !important" : toggleWidth - toggleControlSsize - toggleGutter + "px !important";
 });
 var Toggle = styled__default["default"].button(_templateObject2$3 || (_templateObject2$3 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  display: flex !important;\n  flex-direction: row !important;\n  opacity: ", ";\n\n  cursor: ", ";\n\n  .btn {\n    display: flex !important;\n    align-items: center !important;\n    justify-content: center !important;\n    width: ", ";\n    border: 1px solid ", " !important;\n    padding: 0.5rem 0 !important;\n\n    span {\n      font-size: ", ";\n    }\n  }\n\n  .left {\n    background-color: ", ";\n    border-top-left-radius: 20px !important;\n    border-bottom-left-radius: 20px !important;\n    border-right: 0 !important;\n    transition: 400ms !important;\n\n    color: ", ";\n  }\n\n  .right {\n    background-color: ", ";\n    border-top-right-radius: 20px !important;\n    border-bottom-right-radius: 20px !important;\n    border-left: 0 !important;\n    transition: 400ms !important;\n\n    color: ", ";\n  }\n"])), function (props) {
