@@ -7882,7 +7882,7 @@ const Container$5 = styled.div(_t$8 || (_t$8 = _$8`
   return colors.brand10;
 }, props => props.textAlign && props.textAlign === 'center' ? 'center' : 'left', colors.gray20, props => props.line ? '0' : '0.28571429rem', props => props.line ? 'none' : '', props => props.line ? 'none' : '', props => props.line ? 'none' : '', props => props.brand ? colors.brand10 : colors.gray20, props => props.brand ? colors.brandLight : colors.white, props => props.brand ? colors.brand10 : colors.gray20, props => props.brand ? colors.brandLight : props.line ? colors.gray10 : 'rgba(34, 36, 38, 0.15)', props => props.line ? 0 : '0.28571429rem', props => props.line ? 'none' : '20px', props => props.line ? 'none' : '', props => props.line ? 'none' : '', props => props.line ? 'none' : '', props => props.brand ? colors.brandLight : colors.gray10, props => props.brand ? colors.brandTransparent : colors.gray10, props => props.error ? colors.brand20 : props.brand ? colors.brandLight : colors.gray10, props => props.error ? colors.brand20 : props.brand ? colors.brandLight : colors.gray10, props => props.error ? colors.brand20 : props.brand ? colors.brandLight : colors.gray10, props => props.brand ? colors.brandDark : colors.black, props => props.error ? colors.brand20 : props.brand ? colors.brandLight : colors.gray10, props => props.error ? colors.brand20 : props.brand ? colors.brandLight : colors.gray10, props => props.brand ? colors.brand10 : colors.gray20, props => props.textAlign && props.textAlign === 'center' ? 'center' : 'left', props => props.brand ? colors.brandDark : colors.black, props => props.brand ? colors.brandTransparent : colors.gray10, props => props.brand ? colors.brandLight : colors.gray20, props => props.brand ? colors.brand10 : colors.card, props => props.brand ? colors.brandDark : colors.black, props => props.brand ? colors.brandDark : colors.black, colors.brand10, props => props.brand ? colors.brand10 : colors.default20, props => props.brand ? colors.brand10 : colors.default20, props => props.brand ? colors.brandDark : colors.black, props => props.line ? colors.white : colors.error, colors.brand20, colors.brand20, colors.brand20, colors.brand20, colors.brand20, colors.error, colors.error, colors.brand10, colors.brandTransparent2, colors.brand20);
 
-const _excluded$4 = ["options", "brand", "textAlign", "errorMessage", "label", "line", "containerClassName", "containerStyle", "errorClassName", "errorStyle", "labelClassName", "labelStyle"];
+const _excluded$4 = ["options", "brand", "textAlign", "errorMessage", "label", "line", "containerClassName", "containerStyle", "errorClassName", "errorStyle", "labelClassName", "labelStyle", "noResultsMessage"];
 
 function Dropdown(_ref) {
   let {
@@ -7897,7 +7897,8 @@ function Dropdown(_ref) {
     errorClassName,
     errorStyle,
     labelClassName,
-    labelStyle
+    labelStyle,
+    noResultsMessage = 'Nenhum resultado encontrado'
   } = _ref,
       rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$4);
 
@@ -7917,7 +7918,7 @@ function Dropdown(_ref) {
       children: label
     }), void 0), jsx(Dropdown$1, Object.assign({}, rest, {
       selection: true,
-      noResultsMessage: "Nenhum resultado encontrado",
+      noResultsMessage: noResultsMessage,
       error: !!errorMessage || rest.error,
       options: options
     }), void 0), errorMessage && jsx("small", Object.assign({
@@ -9293,7 +9294,7 @@ const fontActiveInactive = size => {
   }
 };
 
-const Switch = styled.button(_t$3 || (_t$3 = _$3`
+const Switch = styled.div(_t$3 || (_t$3 = _$3`
   font-family: MontSerrat !important;
   display: flex !important;
   flex-direction: row !important;
@@ -9306,7 +9307,7 @@ const Switch = styled.button(_t$3 || (_t$3 = _$3`
 
   opacity: ${0};
 
-  div {
+  button {
     position: absolute !important;
     opacity: 0 !important;
     height: 0 !important;
@@ -9345,7 +9346,7 @@ const Switch = styled.button(_t$3 || (_t$3 = _$3`
 `), props => props.size ? `${widthSwitch(props.size)}px` : `${toggleWidth}px`, props => props.disabled ? 'not-allowed ' : 'pointer', ({
   disabled
 }) => disabled ? 0.5 : 1, props => props.size ? `${heightSwitch(props.size)}px !important` : `${toggleHeight}px !important`, props => props.size ? `${widthSwitch(props.size)}px !important` : `${toggleWidth}px !important`, props => props.size ? `${heightSwitch(props.size) / 2}px !important` : `${toggleRadius}px !important`, colors.card, props => props.size ? `${heightSwitch(props.size) - sizeGutter(props.size) * 2}px !important` : `${toggleControlSsize}px !important`, props => props.size ? `${heightSwitch(props.size) - sizeGutter(props.size) * 2}px !important` : `${toggleControlSsize}px !important`, colors.default10, colors.brandDark, props => props.size ? `${widthSwitch(props.size) - (heightSwitch(props.size) - sizeGutter(props.size) * 2) - sizeGutter(props.size)}px !important` : `${toggleWidth - toggleControlSsize - toggleGutter}px !important`);
-const Toggle = styled.button(_t2$3 || (_t2$3 = _$3`
+const Toggle = styled.div(_t2$3 || (_t2$3 = _$3`
   font-family: MontSerrat !important;
   display: flex !important;
   flex-direction: row !important;
@@ -9386,7 +9387,7 @@ const Toggle = styled.button(_t2$3 || (_t2$3 = _$3`
     color: ${0};
   }
 `), props => props.disabled ? '0.5 !important' : '1 !important', props => props.disabled ? 'not-allowed !important' : 'pointer !important', props => props.size ? widthToggle(props.size) : '4rem !important', colors.card, props => props.size ? fontToggle(props.size) : '0.6875rem !important', props => !props.checked ? `${colors.brand10} !important` : `${colors.white} !important`, props => !props.checked ? `${colors.white} !important` : `${colors.gray20} !important`, props => props.checked ? `${colors.brand10} !important` : `${colors.white} !important`, props => props.checked ? `${colors.white} !important` : `${colors.gray20} !important`);
-const ActiveInactive = styled.button(_t3$3 || (_t3$3 = _$3`
+const ActiveInactive = styled.div(_t3$3 || (_t3$3 = _$3`
   font-family: MontSerrat !important;
   display: flex !important;
   flex-direction: row !important;
@@ -9437,19 +9438,17 @@ const TYPES = {
   toggle: 'toggle',
   activeInactive: 'activeInactive'
 };
-
-function Selection({
+const Selection = forwardRef(({
   type,
-  checked = false,
+  checked: _checked = false,
   onClick,
   onChange,
   size,
   disabled,
-  ref,
   className,
   style
-}) {
-  const eventFunction = onClick || onChange;
+}, ref) => {
+  const eventFunction = disabled ? undefined : onClick || onChange;
 
   function renderSwitch() {
     return jsxs(Switch, Object.assign({
@@ -9462,7 +9461,7 @@ function Selection({
       onClick: eventFunction
     }, {
       children: [jsx("div", {
-        className: `${checked ? 'checked' : ''}`
+        className: `${_checked ? 'checked' : ''}`
       }, void 0), jsx("span", {
         "data-testid": "control",
         className: "control"
@@ -9474,21 +9473,23 @@ function Selection({
     return jsxs(Toggle, Object.assign({
       className: className,
       style: style,
-      checked: checked,
+      checked: _checked,
       ref: ref,
       size: size,
       disabled: disabled,
       role: "switch",
       onClick: eventFunction
     }, {
-      children: [jsx("div", Object.assign({
+      children: [jsx("button", Object.assign({
+        type: "button",
         "data-testid": "btn-left",
         className: "btn left"
       }, {
         children: jsx("span", {
           children: "n\u00E3o"
         }, void 0)
-      }), void 0), jsx("div", Object.assign({
+      }), void 0), jsx("button", Object.assign({
+        type: "button",
         "data-testid": "btn-right",
         className: "btn right"
       }, {
@@ -9503,24 +9504,26 @@ function Selection({
     return jsxs(ActiveInactive, Object.assign({
       className: className,
       style: style,
-      checked: checked,
+      checked: _checked,
       ref: ref,
       size: size,
       disabled: disabled,
       role: "switch",
       onClick: eventFunction
     }, {
-      children: [jsx("div", Object.assign({
+      children: [jsx("button", Object.assign({
+        type: "button",
         className: "btn left"
       }, {
         children: jsx("span", {
-          children: checked ? 'desativar' : 'inativo'
+          children: _checked ? 'desativar' : 'inativo'
         }, void 0)
-      }), void 0), jsx("div", Object.assign({
+      }), void 0), jsx("button", Object.assign({
+        type: "button",
         className: "btn right"
       }, {
         children: jsx("span", {
-          children: checked ? 'ativo' : 'ativar'
+          children: _checked ? 'ativo' : 'ativar'
         }, void 0)
       }), void 0)]
     }), void 0);
@@ -9539,7 +9542,8 @@ function Selection({
     default:
       return null;
   }
-}
+});
+Selection.displayName = 'Selection';
 
 let _$2 = t => t,
     _t$2,
