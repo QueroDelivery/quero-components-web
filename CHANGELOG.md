@@ -1,3 +1,10 @@
+## [2.0.4](https://github.com/QueroDelivery/quero-components-web/compare/v2.0.3...v2.0.4) (2023-02-07)
+
+
+### Bug Fixes
+
+* :bug: selection and dropdown components ([1f34e9e](https://github.com/QueroDelivery/quero-components-web/commit/1f34e9eaf22e62e2f0318e3f57d8be2aa486ebdc))
+
 ## [2.0.3](https://github.com/QueroDelivery/quero-components-web/compare/v2.0.2...v2.0.3) (2022-03-22)
 
 
