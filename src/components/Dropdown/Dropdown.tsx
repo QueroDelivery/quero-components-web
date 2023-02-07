@@ -41,6 +41,7 @@ function Dropdown({
   errorStyle,
   labelClassName,
   labelStyle,
+  noResultsMessage = 'Nenhum resultado encontrado',
   ...rest
 }: DropdownProps) {
   return (
@@ -61,7 +62,7 @@ function Dropdown({
       <Select
         {...rest}
         selection
-        noResultsMessage="Nenhum resultado encontrado"
+        noResultsMessage={noResultsMessage}
         error={!!errorMessage || rest.error}
         options={options}
       />

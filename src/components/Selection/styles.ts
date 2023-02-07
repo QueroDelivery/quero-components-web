@@ -117,7 +117,7 @@ const fontActiveInactive = (size: sizesTypes) => {
   }
 };
 
-export const Switch = styled.button<SelectionProps>`
+export const Switch = styled.div<SelectionProps>`
   font-family: MontSerrat !important;
   display: flex !important;
   flex-direction: row !important;
@@ -131,7 +131,7 @@ export const Switch = styled.button<SelectionProps>`
 
   opacity: ${({ disabled }) => (disabled ? 0.5 : 1)};
 
-  div {
+  button {
     position: absolute !important;
     opacity: 0 !important;
     height: 0 !important;
@@ -195,7 +195,7 @@ export const Switch = styled.button<SelectionProps>`
   }
 `;
 
-export const Toggle = styled.button<SelectionProps>`
+export const Toggle = styled.div<SelectionProps>`
   font-family: MontSerrat !important;
   display: flex !important;
   flex-direction: row !important;
@@ -252,7 +252,7 @@ export const Toggle = styled.button<SelectionProps>`
   }
 `;
 
-export const ActiveInactive = styled.button<SelectionProps>`
+export const ActiveInactive = styled.div<SelectionProps>`
   font-family: MontSerrat !important;
   display: flex !important;
   flex-direction: row !important;

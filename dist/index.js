@@ -5106,7 +5106,7 @@ var Container$5 = styled__default["default"].div(_templateObject$8 || (_template
   return props.line ? colors.white : colors.error;
 }, colors.brand20, colors.brand20, colors.brand20, colors.brand20, colors.brand20, colors.error, colors.error, colors.brand10, colors.brandTransparent2, colors.brand20);
 
-var _excluded$4 = ["options", "brand", "textAlign", "errorMessage", "label", "line", "containerClassName", "containerStyle", "errorClassName", "errorStyle", "labelClassName", "labelStyle"];
+var _excluded$4 = ["options", "brand", "textAlign", "errorMessage", "label", "line", "containerClassName", "containerStyle", "errorClassName", "errorStyle", "labelClassName", "labelStyle", "noResultsMessage"];
 
 function Dropdown(_ref) {
   var options = _ref.options,
@@ -5121,6 +5121,8 @@ function Dropdown(_ref) {
       errorStyle = _ref.errorStyle,
       labelClassName = _ref.labelClassName,
       labelStyle = _ref.labelStyle,
+      _ref$noResultsMessage = _ref.noResultsMessage,
+      noResultsMessage = _ref$noResultsMessage === void 0 ? 'Nenhum resultado encontrado' : _ref$noResultsMessage,
       rest = _objectWithoutPropertiesLoose$2(_ref, _excluded$4);
 
   return jsxRuntime.jsxs(Container$5, Object.assign({
@@ -5139,7 +5141,7 @@ function Dropdown(_ref) {
       children: label
     }), void 0), jsxRuntime.jsx(semanticUiReact.Dropdown, Object.assign({}, rest, {
       selection: true,
-      noResultsMessage: "Nenhum resultado encontrado",
+      noResultsMessage: noResultsMessage,
       error: !!errorMessage || rest.error,
       options: options
     }), void 0), errorMessage && jsxRuntime.jsx("small", Object.assign({
@@ -6236,7 +6238,7 @@ var fontActiveInactive = function fontActiveInactive(size) {
   }
 };
 
-var Switch = styled__default["default"].button(_templateObject$3 || (_templateObject$3 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  display: flex !important;\n  flex-direction: row !important;\n  position: relative !important;\n  /* padding-left: ", "; */\n  /* margin-bottom: 12px; */\n  cursor: ", ";\n  font-size: 1.375rem !important;\n  user-select: none !important;\n\n  opacity: ", ";\n\n  div {\n    position: absolute !important;\n    opacity: 0 !important;\n    height: 0 !important;\n    width: 0 !important;\n    display: none !important;\n  }\n\n  .control {\n    height: ", ";\n    width: ", ";\n    border-radius: ", ";\n    background-color: ", ";\n    transition: background-color 0.15s ease-in !important;\n\n    &:after {\n      content: '' !important;\n      position: absolute !important;\n      left: 5px !important;\n      top: 5px !important;\n      height: ", ";\n      width: ", ";\n      border-radius: 50px !important;\n      background-color: white !important;\n      transition: left 0.15s ease-in !important;\n      border: 1px solid ", " !important;\n    }\n  }\n\n  div.checked ~ .control {\n    background-color: ", ";\n\n    &:after {\n      left: ", ";\n    }\n  }\n"])), function (props) {
+var Switch = styled__default["default"].div(_templateObject$3 || (_templateObject$3 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  display: flex !important;\n  flex-direction: row !important;\n  position: relative !important;\n  /* padding-left: ", "; */\n  /* margin-bottom: 12px; */\n  cursor: ", ";\n  font-size: 1.375rem !important;\n  user-select: none !important;\n\n  opacity: ", ";\n\n  button {\n    position: absolute !important;\n    opacity: 0 !important;\n    height: 0 !important;\n    width: 0 !important;\n    display: none !important;\n  }\n\n  .control {\n    height: ", ";\n    width: ", ";\n    border-radius: ", ";\n    background-color: ", ";\n    transition: background-color 0.15s ease-in !important;\n\n    &:after {\n      content: '' !important;\n      position: absolute !important;\n      left: 5px !important;\n      top: 5px !important;\n      height: ", ";\n      width: ", ";\n      border-radius: 50px !important;\n      background-color: white !important;\n      transition: left 0.15s ease-in !important;\n      border: 1px solid ", " !important;\n    }\n  }\n\n  div.checked ~ .control {\n    background-color: ", ";\n\n    &:after {\n      left: ", ";\n    }\n  }\n"])), function (props) {
   return props.size ? widthSwitch(props.size) + "px" : toggleWidth + "px";
 }, function (props) {
   return props.disabled ? 'not-allowed ' : 'pointer';
@@ -6256,7 +6258,7 @@ var Switch = styled__default["default"].button(_templateObject$3 || (_templateOb
 }, colors.default10, colors.brandDark, function (props) {
   return props.size ? widthSwitch(props.size) - (heightSwitch(props.size) - sizeGutter(props.size) * 2) - sizeGutter(props.size) + "px !important" : toggleWidth - toggleControlSsize - toggleGutter + "px !important";
 });
-var Toggle = styled__default["default"].button(_templateObject2$3 || (_templateObject2$3 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  display: flex !important;\n  flex-direction: row !important;\n  opacity: ", ";\n\n  cursor: ", ";\n\n  .btn {\n    display: flex !important;\n    align-items: center !important;\n    justify-content: center !important;\n    width: ", ";\n    border: 1px solid ", " !important;\n    padding: 0.5rem 0 !important;\n\n    span {\n      font-size: ", ";\n    }\n  }\n\n  .left {\n    background-color: ", ";\n    border-top-left-radius: 20px !important;\n    border-bottom-left-radius: 20px !important;\n    border-right: 0 !important;\n    transition: 400ms !important;\n\n    color: ", ";\n  }\n\n  .right {\n    background-color: ", ";\n    border-top-right-radius: 20px !important;\n    border-bottom-right-radius: 20px !important;\n    border-left: 0 !important;\n    transition: 400ms !important;\n\n    color: ", ";\n  }\n"])), function (props) {
+var Toggle = styled__default["default"].div(_templateObject2$3 || (_templateObject2$3 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  display: flex !important;\n  flex-direction: row !important;\n  opacity: ", ";\n\n  cursor: ", ";\n\n  .btn {\n    display: flex !important;\n    align-items: center !important;\n    justify-content: center !important;\n    width: ", ";\n    border: 1px solid ", " !important;\n    padding: 0.5rem 0 !important;\n\n    span {\n      font-size: ", ";\n    }\n  }\n\n  .left {\n    background-color: ", ";\n    border-top-left-radius: 20px !important;\n    border-bottom-left-radius: 20px !important;\n    border-right: 0 !important;\n    transition: 400ms !important;\n\n    color: ", ";\n  }\n\n  .right {\n    background-color: ", ";\n    border-top-right-radius: 20px !important;\n    border-bottom-right-radius: 20px !important;\n    border-left: 0 !important;\n    transition: 400ms !important;\n\n    color: ", ";\n  }\n"])), function (props) {
   return props.disabled ? '0.5 !important' : '1 !important';
 }, function (props) {
   return props.disabled ? 'not-allowed !important' : 'pointer !important';
@@ -6273,7 +6275,7 @@ var Toggle = styled__default["default"].button(_templateObject2$3 || (_templateO
 }, function (props) {
   return props.checked ? colors.white + " !important" : colors.gray20 + " !important";
 });
-var ActiveInactive = styled__default["default"].button(_templateObject3$3 || (_templateObject3$3 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  display: flex !important;\n  flex-direction: row !important;\n  opacity: ", ";\n\n  cursor: ", ";\n\n  .btn {\n    display: flex !important;\n    align-items: center !important;\n    justify-content: center !important;\n    width: ", ";\n    border: 1px solid ", " !important;\n    padding: 0.5rem 0 !important;\n\n    span {\n      font-size: ", ";\n    }\n  }\n\n  .left {\n    background-color: ", ";\n    border-top-left-radius: 20px !important;\n    border-bottom-left-radius: 20px !important;\n    border-right: 0 !important;\n    transition: 400ms !important;\n\n    span {\n      color: ", ";\n    }\n  }\n\n  .right {\n    background-color: ", ";\n    border-top-right-radius: 20px !important;\n    border-bottom-right-radius: 20px !important;\n    border-left: 0 !important;\n    transition: 400ms !important;\n\n    span {\n      color: ", ";\n    }\n  }\n"])), function (props) {
+var ActiveInactive = styled__default["default"].div(_templateObject3$3 || (_templateObject3$3 = _taggedTemplateLiteralLoose(["\n  font-family: MontSerrat !important;\n  display: flex !important;\n  flex-direction: row !important;\n  opacity: ", ";\n\n  cursor: ", ";\n\n  .btn {\n    display: flex !important;\n    align-items: center !important;\n    justify-content: center !important;\n    width: ", ";\n    border: 1px solid ", " !important;\n    padding: 0.5rem 0 !important;\n\n    span {\n      font-size: ", ";\n    }\n  }\n\n  .left {\n    background-color: ", ";\n    border-top-left-radius: 20px !important;\n    border-bottom-left-radius: 20px !important;\n    border-right: 0 !important;\n    transition: 400ms !important;\n\n    span {\n      color: ", ";\n    }\n  }\n\n  .right {\n    background-color: ", ";\n    border-top-right-radius: 20px !important;\n    border-bottom-right-radius: 20px !important;\n    border-left: 0 !important;\n    transition: 400ms !important;\n\n    span {\n      color: ", ";\n    }\n  }\n"])), function (props) {
   return props.disabled ? '0.5 !important' : '1 !important';
 }, function (props) {
   return props.disabled ? 'not-allowed !important' : 'pointer !important';
@@ -6296,8 +6298,7 @@ var TYPES = {
   toggle: 'toggle',
   activeInactive: 'activeInactive'
 };
-
-function Selection(_ref) {
+var Selection = require$$0.forwardRef(function (_ref, ref) {
   var type = _ref.type,
       _ref$checked = _ref.checked,
       checked = _ref$checked === void 0 ? false : _ref$checked,
@@ -6305,10 +6306,9 @@ function Selection(_ref) {
       onChange = _ref.onChange,
       size = _ref.size,
       disabled = _ref.disabled,
-      ref = _ref.ref,
       className = _ref.className,
       style = _ref.style;
-  var eventFunction = onClick || onChange;
+  var eventFunction = disabled ? undefined : onClick || onChange;
 
   function renderSwitch() {
     return jsxRuntime.jsxs(Switch, Object.assign({
@@ -6340,14 +6340,16 @@ function Selection(_ref) {
       role: "switch",
       onClick: eventFunction
     }, {
-      children: [jsxRuntime.jsx("div", Object.assign({
+      children: [jsxRuntime.jsx("button", Object.assign({
+        type: "button",
         "data-testid": "btn-left",
         className: "btn left"
       }, {
         children: jsxRuntime.jsx("span", {
           children: "n\xE3o"
         }, void 0)
-      }), void 0), jsxRuntime.jsx("div", Object.assign({
+      }), void 0), jsxRuntime.jsx("button", Object.assign({
+        type: "button",
         "data-testid": "btn-right",
         className: "btn right"
       }, {
@@ -6369,13 +6371,15 @@ function Selection(_ref) {
       role: "switch",
       onClick: eventFunction
     }, {
-      children: [jsxRuntime.jsx("div", Object.assign({
+      children: [jsxRuntime.jsx("button", Object.assign({
+        type: "button",
         className: "btn left"
       }, {
         children: jsxRuntime.jsx("span", {
           children: checked ? 'desativar' : 'inativo'
         }, void 0)
-      }), void 0), jsxRuntime.jsx("div", Object.assign({
+      }), void 0), jsxRuntime.jsx("button", Object.assign({
+        type: "button",
         className: "btn right"
       }, {
         children: jsxRuntime.jsx("span", {
@@ -6398,7 +6402,8 @@ function Selection(_ref) {
     default:
       return null;
   }
-}
+});
+Selection.displayName = 'Selection';
 
 var _templateObject$2, _templateObject2$2, _templateObject3$2;
 var ContainerPagination = styled__default["default"].div(_templateObject$2 || (_templateObject$2 = _taggedTemplateLiteralLoose(["\n  display: flex;\n  font-size: ", ";\n\n  justify-content: center;\n  align-items: center;\n\n  button + button {\n    margin-left: 0.5em;\n  }\n\n  button {\n    ", "\n  }\n"])), function (props) {
