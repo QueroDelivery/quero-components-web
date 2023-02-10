@@ -5,9 +5,9 @@ import {
   Selection,
   SelectionProps,
 } from '@quero-delivery/quero-components-web';
-import '@quero-delivery/quero-components-web/dist/index.css';
+import '@quero-delivery/quero-components-web/dist/esm/index.css';
 
-export default {
+const selectionMeta: Meta = {
   title: 'Components/Selection',
   component: Selection,
   argTypes: {
@@ -20,27 +20,25 @@ export default {
       defaultValue: {
         summary: 'O tipo padrão é o switch',
       },
-      type: {
-        summary: 'required | switch | toggle | activeInactive',
+      table: {
+        type: {
+          summary: 'required | switch | toggle | activeInactive',
+        },
       },
     },
     size: {
       control: {
         type: 'inline-radio',
-        options: [
-          'xs',
-          'sm',
-          'md',
-          'lg',
-          'xl',
-        ],
+        options: ['xs', 'sm', 'md', 'lg', 'xl'],
       },
       description: 'Tamanho do Select',
       defaultValue: {
         summary: 'O tamanho padrão é o md',
       },
-      type: {
-        summary: 'xs | sm | md | lg | xl',
+      table: {
+        type: {
+          summary: 'xs | sm | md | lg | xl',
+        },
       },
     },
     checked: {
@@ -87,7 +85,7 @@ export default {
       },
     },
   },
-} as Meta;
+};
 
 const Template: Story<SelectionProps> = args => <Selection {...args} />;
 
@@ -194,3 +192,5 @@ Disabled.parameters = {
     },
   },
 };
+
+export default selectionMeta;

@@ -5,7 +5,7 @@ import {
   Dialog,
   DialogProps,
 } from '@quero-delivery/quero-components-web';
-import '@quero-delivery/quero-components-web/dist/index.css';
+import '@quero-delivery/quero-components-web/dist/esm/index.css';
 import { action } from '@storybook/addon-actions';
 import React from 'react';
 

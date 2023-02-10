@@ -2,8 +2,12 @@ import React from 'react';
 import { useState } from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 import { Calendar, CalendarProps } from '@quero-delivery/quero-components-web';
-import { addDays } from 'date-fns';
-import '@quero-delivery/quero-components-web/dist/index.css';
+import '@quero-delivery/quero-components-web/dist/esm/index.css';
+
+function addDays(date: Date, value: number) {
+  const newDate = new Date(date);
+  return new Date(newDate.setDate(newDate.getDate() + value));
+}
 
 export default {
   title: 'Components/Calendar',

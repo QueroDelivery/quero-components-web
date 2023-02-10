@@ -6,18 +6,38 @@ module.exports = {
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',
-    '@storybook/preset-create-react-app',
   ],
-  managerWebpack:
-    process.env.NODE_ENV === 'production'
-      ? async config => {
-          config.plugins.push(
-            new HtmlWebpackPlugin({
-              filename: 'index.html',
-              template: path.resolve(__dirname, '../', 'src', 'template.html'),
-            }),
-          );
-          return config;
-        }
-      : null,
+  framework: '@storybook/react',
+  core: {
+    builder: '@storybook/builder-webpack5',
+  },
+  managerWebpack: async config => {
+    config.plugins.push(
+      new HtmlWebpackPlugin({
+        filename: 'index.html',
+        template: path.resolve(__dirname, '../', 'src', 'template.html'),
+      }),
+    );
+
+    config.module.rules.push({
+      test: /\.(sass|scss)$/,
+      use: ['resolve-url-loader'],
+      include: path.resolve(__dirname, '../'),
+    });
+
+    // fonts
+    config.module.rules.push({
+      test: /\.(png|woff|woff2|eot|ttf|svg)$/,
+      use: [
+        {
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]',
+          },
+        },
+      ],
+      include: path.resolve(__dirname, '../'),
+    });
+    return config;
+  },
 };

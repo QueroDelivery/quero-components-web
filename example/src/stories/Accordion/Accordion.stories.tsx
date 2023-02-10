@@ -6,7 +6,7 @@ import {
   Accordion,
   AccordionProps,
 } from '@quero-delivery/quero-components-web';
-import '@quero-delivery/quero-components-web/dist/index.css';
+import '@quero-delivery/quero-components-web/dist/esm/index.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
 

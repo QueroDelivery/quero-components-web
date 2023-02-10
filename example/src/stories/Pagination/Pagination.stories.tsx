@@ -5,7 +5,7 @@ import {
   Pagination,
   PaginationProps,
 } from '@quero-delivery/quero-components-web';
-import '@quero-delivery/quero-components-web/dist/index.css';
+import '@quero-delivery/quero-components-web/dist/esm/index.css';
 
 export default {
   title: 'Components/Pagination',
