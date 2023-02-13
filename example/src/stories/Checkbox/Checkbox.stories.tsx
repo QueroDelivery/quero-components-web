@@ -6,7 +6,7 @@ import { Checkbox, CheckboxProps } from '@quero-delivery/quero-components-web';
 
 import '@quero-delivery/quero-components-web/dist/index.css';
 
-export default {
+const checkboxMeta: Meta =  {
   title: 'Components/Checkbox',
   component: Checkbox,
   argTypes: {
@@ -26,9 +26,7 @@ export default {
         options: ['xs', 'sm', 'md', 'lg', 'xl'],
       },
       description: 'Tamanho do CheckBox',
-      type: {
-        summary: 'xs| sm | md | lg | xl',
-      },
+      type: 'string'
     },
     onChange: {
       action: 'clicked',
@@ -49,7 +47,7 @@ export default {
       },
     },
   },
-} as Meta;
+};
 
 const Template: Story<CheckboxProps> = args => {
   const [checked, setChecked] = useState(false);
@@ -123,3 +121,5 @@ SizeBox.parameters = {
     },
   },
 };
+
+export default checkboxMeta;

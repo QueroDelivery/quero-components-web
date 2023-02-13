@@ -5,7 +5,7 @@ import { MoreLess, MoreLessProps } from '@quero-delivery/quero-components-web';
 import '@quero-delivery/quero-components-web/dist/index.css';
 import { action } from '@storybook/addon-actions';
 
-export default {
+const moreLessMeta: Meta = {
   title: 'Components/MoreLess',
   component: MoreLess,
   argTypes: {
@@ -16,8 +16,10 @@ export default {
       },
       description: 'Tamanho do MoreLess',
       defaultValue: 'md',
-      type: {
-        summary: 'xs | sm | md | lg | xl',
+      table: {
+        type: {
+          summary: 'xs | sm | md | lg | xl',
+        },
       },
     },
     disabled: {
@@ -211,3 +213,5 @@ OnChange.parameters = {
     },
   },
 };
+
+export default moreLessMeta;

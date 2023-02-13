@@ -5,7 +5,7 @@ import { Card, CardProps } from '@quero-delivery/quero-components-web';
 import '@quero-delivery/quero-components-web/dist/index.css';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
 
-export default {
+const meta: Meta =  {
   title: 'Components/Card',
   component: Card,
   argTypes: {
@@ -53,9 +53,7 @@ export default {
         ],
       },
       description: 'Tamanho do icone no Card',
-      type: {
-        summary: 'string',
-      },
+      type: 'string',
     },
     complement: {
       control: 'text',
@@ -97,7 +95,7 @@ export default {
       },
     },
   },
-} as Meta;
+};
 
 const Template: Story<CardProps> = args => <Card {...args}>Escreve aqui</Card>;
 
@@ -293,3 +291,5 @@ Colors.parameters = {
     },
   },
 };
+
+export default meta;

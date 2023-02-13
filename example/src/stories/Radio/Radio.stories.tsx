@@ -5,7 +5,7 @@ import { action } from '@storybook/addon-actions';
 import { Radio, RadioProps } from '@quero-delivery/quero-components-web';
 import '@quero-delivery/quero-components-web/dist/index.css';
 
-export default {
+const radioMeta: Meta = {
   title: 'Components/Radio',
   component: Radio,
   argTypes: {
@@ -25,8 +25,10 @@ export default {
         options: ['xs', 'sm', 'md', 'lg', 'xl'],
       },
       description: 'Tamanho do Radio',
-      type: {
-        summary: 'xs | sm | md | lg | xl ',
+      table: {
+        type: {
+          summary: 'xs | sm | md | lg | xl ',
+        },
       },
     },
     onChange: {
@@ -127,3 +129,5 @@ SizeBox.parameters = {
     },
   },
 };
+
+export default radioMeta;
