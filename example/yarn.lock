@@ -1796,8 +1796,13 @@
   integrity sha512-50/17A98tWUfQ176raKiOGXuYpLyyVMkxxG6oylzL3BPOlA6ADGdK7EYunSa4I064xerltq9TGXs8HmOk5E+vw==
 
 "@quero-delivery/quero-components-web@link:..":
-  version "0.0.0"
-  uid ""
+  version "2.0.3"
+  dependencies:
+    date-fns "^2.20.0"
+    react-datepicker "^3.3.0"
+    semantic-ui-css "^2.4.1"
+    semantic-ui-react "^2.0.3"
+    styled-components "^5.3.0"
 
 "@rollup/plugin-babel@^5.2.0":
   version "5.3.1"
