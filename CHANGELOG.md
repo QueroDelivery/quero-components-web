@@ -1,3 +1,10 @@
+# [2.1.0](https://github.com/QueroDelivery/quero-components-web/compare/v2.0.4...v2.1.0) (2023-02-13)
+
+
+### Features
+
+* :sparkles: new bundler and webpack 5 to storybook ([5c45800](https://github.com/QueroDelivery/quero-components-web/commit/5c45800fe0c37c03647d522a914cda86d6474bea))
+
 ## [2.0.4](https://github.com/QueroDelivery/quero-components-web/compare/v2.0.3...v2.0.4) (2023-02-07)
 
 
