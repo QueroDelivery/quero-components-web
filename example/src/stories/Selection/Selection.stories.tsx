@@ -5,7 +5,7 @@ import {
   Selection,
   SelectionProps,
 } from '@quero-delivery/quero-components-web';
-import '@quero-delivery/quero-components-web/dist/esm/index.css';
+import '@quero-delivery/quero-components-web/dist/index.css';
 
 const selectionMeta: Meta = {
   title: 'Components/Selection',

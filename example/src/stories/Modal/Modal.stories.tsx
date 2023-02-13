@@ -7,7 +7,7 @@ import {
   ModalProps,
 } from '@quero-delivery/quero-components-web';
 import { action } from '@storybook/addon-actions';
-import '@quero-delivery/quero-components-web/dist/esm/index.css';
+import '@quero-delivery/quero-components-web/dist/index.css';
 
 export default {
   title: 'Components/Modal',

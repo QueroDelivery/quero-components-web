@@ -4,7 +4,7 @@ import { Story, Meta } from '@storybook/react/types-6-0';
 import { action } from '@storybook/addon-actions';
 import { Checkbox, CheckboxProps } from '@quero-delivery/quero-components-web';
 
-import '@quero-delivery/quero-components-web/dist/esm/index.css';
+import '@quero-delivery/quero-components-web/dist/index.css';
 
 const checkboxMeta: Meta =  {
   title: 'Components/Checkbox',

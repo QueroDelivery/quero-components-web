@@ -49,4 +49,9 @@ export default [
     plugins: [dts.default()],
     external: [/\.css$/, /\.scss$/],
   },
+  {
+    input: 'dist/esm/index.css',
+    output: [{ file: 'dist/index.css' }],
+    plugins: [postcss({ extract: true })]
+  },
 ];

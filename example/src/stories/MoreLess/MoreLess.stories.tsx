@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 import { MoreLess, MoreLessProps } from '@quero-delivery/quero-components-web';
-import '@quero-delivery/quero-components-web/dist/esm/index.css';
+import '@quero-delivery/quero-components-web/dist/index.css';
 import { action } from '@storybook/addon-actions';
 
 const moreLessMeta: Meta = {
