@@ -70,10 +70,15 @@ export const Container = styled.div<ContainerProps>`
   *******************************/
 
   /* Table Content */
+  th td tr {
+    border: none !important;
+    padding-left: 0 !important;
+  }
   .ui.table th,
-  .ui.table td {
+  .ui.table td th {
     -webkit-transition: background 0.1s ease, color 0.1s ease;
     transition: background 0.1s ease, color 0.1s ease;
+    border: none !important;
   }
 
   /* Headers */
@@ -85,13 +90,12 @@ export const Container = styled.div<ContainerProps>`
     cursor: auto;
     background: none !important;
     text-align: inherit;
-    color: #9b4dee !important;
+    color: #707070 !important;
     padding: 0.92857143em 0.78571429em;
     vertical-align: inherit;
     font-style: none;
     font-weight: bold;
     text-transform: none;
-    border-bottom: 1px solid rgba(34, 36, 38, 0.1);
     border-left: none;
   }
   .ui.table thead tr > th:first-child {
@@ -115,7 +119,6 @@ export const Container = styled.div<ContainerProps>`
   }
   .ui.table tfoot th {
     cursor: auto;
-    border-top: 1px solid rgba(34, 36, 38, 0.15);
     background: #f9fafb;
     text-align: inherit;
     color: rgba(0, 0, 0, 0.87);
@@ -140,15 +143,7 @@ export const Container = styled.div<ContainerProps>`
 
   /* Table Row */
   .ui.table tr td {
-    border-top: 1px solid rgba(34, 36, 38, 0.1);
-  }
-  .ui.table tr:first-child td {
-    border-top: none;
-  }
-
-  /* Repeated tbody */
-  .ui.table tbody + tbody tr:first-child td {
-    border-top: 1px solid rgba(34, 36, 38, 0.1);
+    border: none !important;
   }
 
   /* Table Cells */
@@ -1082,10 +1077,6 @@ export const Container = styled.div<ContainerProps>`
        Celled
   ---------------*/
 
-  .ui.celled.table tr th,
-  .ui.celled.table tr td {
-    border-left: 1px solid rgba(34, 36, 38, 0.1);
-  }
   .ui.celled.table tr th:first-child,
   .ui.celled.table tr td:first-child {
     border-left: none;

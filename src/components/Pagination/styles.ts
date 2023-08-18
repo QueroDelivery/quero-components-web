@@ -37,8 +37,8 @@ export const Button = styled.button<IButtonProps>`
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: ${props => (props.active ? colors.white : colors.brand10)};
-  background-color: ${props => (props.active ? colors.brand10 : colors.white)};
+  color: ${props => (props.active ? colors.white : colors.gray20)};
+  background-color: ${props => (props.active ? colors.gray20 : colors.white)};
   border: 1px solid ${colors.hover};
   font-size: 1.125em;
   font-weight: 500;
