@@ -1,3 +1,10 @@
+## [2.1.1](https://github.com/QueroDelivery/quero-components-web/compare/v2.1.0...v2.1.1) (2023-08-21)
+
+
+### Bug Fixes
+
+* styles table and pagination ([4aee36b](https://github.com/QueroDelivery/quero-components-web/commit/4aee36b9c20be662384306536b2f90b4974788fe))
+
 # [2.1.0](https://github.com/QueroDelivery/quero-components-web/compare/v2.0.4...v2.1.0) (2023-02-13)
 
 
