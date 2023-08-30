@@ -12327,14 +12327,14 @@ selfsigned@^2.1.1:
   dependencies:
     node-forge "^1"
 
-semantic-ui-css@^2.4.1:
+semantic-ui-css@^2.5.0:
   version "2.5.0"
   resolved "https://registry.yarnpkg.com/semantic-ui-css/-/semantic-ui-css-2.5.0.tgz#b3b7b58b5ffbe6d6fb6549beded16e79a9aa64eb"
   integrity sha512-jIWn3WXXE2uSaWCcB+gVJVRG3masIKtTMNEP2X8Aw909H2rHpXGneYOxzO3hT8TpyvB5/dEEo9mBFCitGwoj1A==
   dependencies:
     jquery x.*
 
-semantic-ui-react@^2.0.3:
+semantic-ui-react@^2.1.4:
   version "2.1.4"
   resolved "https://registry.yarnpkg.com/semantic-ui-react/-/semantic-ui-react-2.1.4.tgz#8a877b169125bb7dd9321c53c425d6d46ac53862"
   integrity sha512-7CxjBoFUfH7fUvtn+SPkkIocthUD9kV3niF1mUMa9TbeyPAf2brtRCZBlT2OpHaXmkscFzGjEfhbJo9gKfotzQ==

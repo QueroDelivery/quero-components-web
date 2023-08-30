@@ -1,21 +1,22 @@
 /* eslint-disable react/display-name */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { MouseEventHandler, CSSProperties, forwardRef } from 'react';
+import { MouseEventHandler, forwardRef, HTMLAttributes } from 'react';
 import { sizesTypes } from '../../helpers/FnUtil';
 
 import { Switch, Toggle, ActiveInactive } from './styles';
 
 type TSelectors = 'switch' | 'toggle' | 'activeInactive';
 
-export interface SelectionProps {
+type HtmlDivAttributes = HTMLAttributes<HTMLDivElement>;
+
+export interface SelectionProps
+  extends Omit<HtmlDivAttributes, 'onClick' | 'onChange'> {
   type: TSelectors;
   checked?: boolean;
   onClick?: MouseEventHandler<HTMLElement>;
   onChange?: MouseEventHandler<HTMLElement>;
   size?: sizesTypes;
   disabled?: boolean;
-  className?: string;
-  style?: CSSProperties;
 }
 
 const TYPES: Record<TSelectors, TSelectors> = {
@@ -33,18 +34,16 @@ const Selection = forwardRef<HTMLDivElement, SelectionProps>(
       onChange,
       size,
       disabled,
-      className,
-      style,
+      ...props
     }: SelectionProps,
     ref,
   ) => {
-    const eventFunction = disabled ? undefined : onClick || onChange;
+    const eventFunction = !disabled ? onClick || onChange : undefined;
 
     function renderSwitch() {
       return (
         <Switch
-          className={className}
-          style={style}
+          {...props}
           size={size}
           ref={ref}
           disabled={disabled}
@@ -64,8 +63,7 @@ const Selection = forwardRef<HTMLDivElement, SelectionProps>(
     function renderToggle() {
       return (
         <Toggle
-          className={className}
-          style={style}
+          {...props}
           checked={checked}
           ref={ref}
           size={size}
@@ -86,9 +84,10 @@ const Selection = forwardRef<HTMLDivElement, SelectionProps>(
     function renderActiveInactive() {
       return (
         <ActiveInactive
-          className={className}
-          style={style}
+          {...props}
           checked={checked}
+          data-checked={checked}
+          aria-checked={checked}
           ref={ref}
           size={size}
           disabled={disabled}
