@@ -49,10 +49,9 @@ const Selection = forwardRef<HTMLDivElement, SelectionProps>(
           disabled={disabled}
           role="switch"
           onClick={eventFunction}
-          // onKeyPress={event =>
-          //   (event.key == ' ' && !disabled && eventFunction) ??
-          //   eventFunction(event)
-          // }
+          data-disabled={disabled}
+          data-state={checked ? 'checked' : 'unchecked'}
+          aria-checked={checked}
         >
           <div className={`${checked ? 'checked' : ''}`} />
           <span data-testid="control" className="control" />
@@ -68,8 +67,11 @@ const Selection = forwardRef<HTMLDivElement, SelectionProps>(
           ref={ref}
           size={size}
           disabled={disabled}
+          aria-checked={checked}
+          data-state={checked ? 'checked' : 'unchecked'}
           role="switch"
           onClick={eventFunction}
+          data-disabled={disabled}
         >
           <button type="button" data-testid="btn-left" className="btn left">
             <span>não</span>
@@ -86,13 +88,14 @@ const Selection = forwardRef<HTMLDivElement, SelectionProps>(
         <ActiveInactive
           {...props}
           checked={checked}
-          data-checked={checked}
           aria-checked={checked}
           ref={ref}
           size={size}
           disabled={disabled}
           role="switch"
           onClick={eventFunction}
+          data-disabled={disabled}
+          data-state={checked ? 'checked' : 'unchecked'}
         >
           <button type="button" className="btn left">
             <span>{checked ? 'desativar' : 'inativo'}</span>
