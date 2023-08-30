@@ -1,3 +1,11 @@
+## [2.1.2](https://github.com/QueroDelivery/quero-components-web/compare/v2.1.1...v2.1.2) (2023-08-30)
+
+
+### Bug Fixes
+
+* :bug: add data-state prop ([7be6ec6](https://github.com/QueroDelivery/quero-components-web/commit/7be6ec663aef959cb6cd153699bd63b2407e9f67))
+* add new props to Selection ([afd7386](https://github.com/QueroDelivery/quero-components-web/commit/afd73863b03628665c2cff032c210c82918a2e05))
+
 ## [2.1.1](https://github.com/QueroDelivery/quero-components-web/compare/v2.1.0...v2.1.1) (2023-08-21)
 
 
