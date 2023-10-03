@@ -16,6 +16,7 @@ export interface CalendarProps extends ReactDatePickerProps {
   label?: string;
   labelClassName?: string;
   labelStyle?: React.CSSProperties;
+  calendarClassName?: string;
   brand?: boolean;
   otherFormatDate?: string;
   size?: sizesTypes;
@@ -27,6 +28,7 @@ const Calendar: React.FC<CalendarProps> = ({
   labelStyle,
   brand,
   otherFormatDate,
+  calendarClassName,
   size,
   ...rest
 }) => {
@@ -55,6 +57,7 @@ const Calendar: React.FC<CalendarProps> = ({
         <DatePicker
           {...rest}
           locale="pt-BR"
+          calendarClassName={`spanCalendarClassName ${calendarClassName || ''}`}
           customInput={
             otherFormatDate ? undefined : (
               <CustomInput
