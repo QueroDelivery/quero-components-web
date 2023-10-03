@@ -1,3 +1,10 @@
+## [2.1.3](https://github.com/QueroDelivery/quero-components-web/compare/v2.1.2...v2.1.3) (2023-10-03)
+
+
+### Bug Fixes
+
+* update lib calendar ([31d726e](https://github.com/QueroDelivery/quero-components-web/commit/31d726e0da59779a8adb8b384a398ec5f25ea9d1))
+
 ## [2.1.2](https://github.com/QueroDelivery/quero-components-web/compare/v2.1.1...v2.1.2) (2023-08-30)
 
 
