@@ -48,6 +48,12 @@ export const Container = styled.div<CalendarProps>`
     color: ${props => (props.brand ? colors.brand10 : colors.gray20)};
   }
 
+  .spanCalendarClassName {
+    span[role='alert'] {
+      display: none !important;
+    }
+  }
+
   .react-datepicker-popper[data-placement^='bottom']
     .react-datepicker__triangle,
   .react-datepicker-popper[data-placement^='top'] .react-datepicker__triangle,

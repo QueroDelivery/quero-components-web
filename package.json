@@ -28,7 +28,7 @@
   },
   "dependencies": {
     "date-fns": "^2.29.3",
-    "react-datepicker": "^4.10.0",
+    "react-datepicker": "^4.18.0",
     "react-input-mask": "^2.0.4",
     "react-is": "^17.0.2",
     "react-number-format": "^4.5.5",
