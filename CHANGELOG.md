@@ -1,3 +1,10 @@
+# [2.2.0](https://github.com/QueroDelivery/quero-components-web/compare/v2.1.3...v2.2.0) (2023-10-19)
+
+
+### Features
+
+* :construction_worker: improving build pipeline ([48c6075](https://github.com/QueroDelivery/quero-components-web/commit/48c607555471f98090a07bb802604e4a9e787105))
+
 ## [2.1.3](https://github.com/QueroDelivery/quero-components-web/compare/v2.1.2...v2.1.3) (2023-10-03)
 
 
