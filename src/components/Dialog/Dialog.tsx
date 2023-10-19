@@ -12,7 +12,6 @@ export interface DialogProps {
   loading?: boolean;
   maxHeight?: number | string;
   title?: string;
-  onBack?: Function;
   noBorder?: boolean;
   closeIcon?: boolean;
   children?: ReactNode;

@@ -1,6 +1,5 @@
 import '@testing-library/jest-dom/extend-expect';
 import { render, screen } from '@testing-library/react';
-import { mocked } from 'ts-jest/utils';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
 import userEvent from '@testing-library/user-event';
 import Accordion from './Accordion';
@@ -106,7 +105,7 @@ describe('Accordion Component', () => {
 
   it('Verificar se está mostrando o ícone', async () => {
     // Given
-    const icon = mocked(faPhone);
+    const icon = jest.mocked(faPhone);
 
     // When
     render(

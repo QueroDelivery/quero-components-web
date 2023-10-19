@@ -22,7 +22,7 @@ export interface CalendarProps extends ReactDatePickerProps {
   size?: sizesTypes;
 }
 
-const Calendar: React.FC<CalendarProps> = ({
+function Calendar({
   label,
   labelClassName,
   labelStyle,
@@ -31,21 +31,7 @@ const Calendar: React.FC<CalendarProps> = ({
   calendarClassName,
   size,
   ...rest
-}) => {
-  // eslint-disable-next-line react/display-name
-  const CustomInput = React.forwardRef((props: any, ref: any) => (
-    <MaskedInput
-      role="textbox"
-      ref={ref}
-      mask="99/99/9999"
-      onClick={props.onClick}
-      value={props.value}
-      readOnly={rest.readOnly}
-      onChange={props.onChange}
-      placeholder={rest.placeholderText}
-    />
-  ));
-
+}: CalendarProps) {
   return (
     <Container brand={brand} size={size}>
       {label && (
@@ -60,10 +46,14 @@ const Calendar: React.FC<CalendarProps> = ({
           calendarClassName={`spanCalendarClassName ${calendarClassName || ''}`}
           customInput={
             otherFormatDate ? undefined : (
-              <CustomInput
+              <MaskedInput
+                role="textbox"
+                mask="99/99/9999"
                 onClick={rest.onCalendarOpen}
                 value={rest.value}
-                onChange={rest.onChange}
+                onChange={rest.onChange as any}
+                readOnly={rest.readOnly}
+                placeholder={rest.placeholderText}
               />
             )
           }
@@ -77,6 +67,6 @@ const Calendar: React.FC<CalendarProps> = ({
       </div>
     </Container>
   );
-};
+}
 
 export default Calendar;

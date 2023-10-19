@@ -309,7 +309,9 @@ export const Container = styled.div<CalendarProps>`
     border-left-color: #9b4dee !important;
   }
 
-  .react-datepicker__navigation--next--with-time:not(.react-datepicker__navigation--next--with-today-button) {
+  .react-datepicker__navigation--next--with-time:not(
+      .react-datepicker__navigation--next--with-today-button
+    ) {
     right: 95px !important;
   }
 

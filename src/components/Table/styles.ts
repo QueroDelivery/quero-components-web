@@ -76,8 +76,12 @@ export const Container = styled.div<ContainerProps>`
   }
   .ui.table th,
   .ui.table td th {
-    -webkit-transition: background 0.1s ease, color 0.1s ease;
-    transition: background 0.1s ease, color 0.1s ease;
+    -webkit-transition:
+      background 0.1s ease,
+      color 0.1s ease;
+    transition:
+      background 0.1s ease,
+      color 0.1s ease;
     border: none !important;
   }
 
@@ -957,17 +961,33 @@ export const Container = styled.div<ContainerProps>`
 
   /* Inverted */
   .ui.inverted.sortable.table thead th.sorted {
-    background: rgba(255, 255, 255, 0.15) -webkit-gradient(linear, left top, left
-          bottom, from(transparent), to(rgba(0, 0, 0, 0.05)));
-    background: rgba(255, 255, 255, 0.15) -webkit-linear-gradient(transparent, rgba(0, 0, 0, 0.05));
+    background: rgba(255, 255, 255, 0.15) - webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        from(transparent),
+        to(rgba(0, 0, 0, 0.05))
+      );
+    background: rgba(255, 255, 255, 0.15) - webkit-linear-gradient(
+        transparent,
+        rgba(0, 0, 0, 0.05)
+      );
     background: rgba(255, 255, 255, 0.15)
       linear-gradient(transparent, rgba(0, 0, 0, 0.05));
     color: #ffffff;
   }
   .ui.inverted.sortable.table thead th:hover {
-    background: rgba(255, 255, 255, 0.08) -webkit-gradient(linear, left top, left
-          bottom, from(transparent), to(rgba(0, 0, 0, 0.05)));
-    background: rgba(255, 255, 255, 0.08) -webkit-linear-gradient(transparent, rgba(0, 0, 0, 0.05));
+    background: rgba(255, 255, 255, 0.08) - webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        from(transparent),
+        to(rgba(0, 0, 0, 0.05))
+      );
+    background: rgba(255, 255, 255, 0.08) - webkit-linear-gradient(
+        transparent,
+        rgba(0, 0, 0, 0.05)
+      );
     background: rgba(255, 255, 255, 0.08)
       linear-gradient(transparent, rgba(0, 0, 0, 0.05));
     color: #ffffff;

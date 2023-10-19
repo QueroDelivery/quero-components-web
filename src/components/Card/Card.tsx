@@ -94,16 +94,14 @@ function Card({
         )}
 
         {icon && (
-          <>
-            <FontAwesomeIcon
-              aria-label="icon"
-              color={colors.brandDark}
-              icon={icon}
-              className={iconClassName}
-              style={iconStyle}
-              size={iconSize || 'lg'}
-            />
-          </>
+          <FontAwesomeIcon
+            aria-label="icon"
+            color={colors.brandDark}
+            icon={icon}
+            className={iconClassName}
+            style={iconStyle}
+            size={iconSize || 'lg'}
+          />
         )}
 
         <span style={childrenStyle} className={childrenClassName}>
