@@ -6,8 +6,13 @@ import dts from 'rollup-plugin-dts';
 import postcss from 'rollup-plugin-postcss';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import babel from '@rollup/plugin-babel';
+import { visualizer } from 'rollup-plugin-visualizer';
 
-import packageJson from './package.json' assert { type: 'json' };
+import packageJson from './package.json';
+
+const babelRuntimeVersion = packageJson.devDependencies[
+  '@babel/runtime'
+].replace(/[^0-9]*/, '');
 
 export default [
   {
@@ -17,11 +22,13 @@ export default [
         file: packageJson.main,
         format: 'cjs',
         sourcemap: true,
+        exports: 'named',
       },
       {
         file: packageJson.module,
         format: 'esm',
         sourcemap: true,
+        exports: 'named',
       },
     ],
     plugins: [
@@ -30,16 +37,24 @@ export default [
       commonjs(),
       typescript({
         tsconfig: './tsconfig.json',
-        exclude: ['**.test.tsx', 'setupTests.ts'],
+        exclude: ['**.test.{tsx,ts}', 'setupTests.ts'],
       }),
       terser(),
       postcss({
         extract: true,
       }),
       babel({
-        babelHelpers: 'bundled',
-        exclude: 'node_modules/**',
-        plugins: ['babel-plugin-styled-components'],
+        babelHelpers: 'runtime',
+        exclude: /node_modules/,
+        plugins: [
+          'babel-plugin-styled-components',
+          ['@babel/plugin-transform-runtime', { version: babelRuntimeVersion }],
+        ],
+      }),
+      visualizer({
+        hideDeps: true,
+        limit: 0,
+        summaryOnly: true,
       }),
     ],
   },
@@ -48,10 +63,5 @@ export default [
     output: [{ file: 'dist/index.d.ts', format: 'esm' }],
     plugins: [dts.default()],
     external: [/\.css$/, /\.scss$/],
-  },
-  {
-    input: 'dist/esm/index.css',
-    output: [{ file: 'dist/index.css' }],
-    plugins: [postcss({ extract: true })]
   },
 ];
