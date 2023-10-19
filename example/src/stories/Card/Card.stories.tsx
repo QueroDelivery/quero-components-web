@@ -5,7 +5,7 @@ import { Card, CardProps } from '@quero-delivery/quero-components-web';
 import '@quero-delivery/quero-components-web/dist/index.css';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
 
-const meta: Meta =  {
+const meta: Meta = {
   title: 'Components/Card',
   component: Card,
   argTypes: {
