@@ -25,9 +25,12 @@ jobs:
       - name: install packages using yarn.lock
         run: |
           yarn --frozen-lockfile
-      - name: eslint
+      - name: Lint check
         run: |
           yarn lint
+      - name: Typescript check
+        run: |
+          yarn tsc
       - name: tests
         run: |
           yarn test:ci
