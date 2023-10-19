@@ -58,8 +58,8 @@ export default {
       control: 'boolean',
       table: {
         type: {
-          summary: 'boolean'
-        }
+          summary: 'boolean',
+        },
       },
       defaultValue: false,
       description: 'Desabilita todo o componente',
@@ -68,11 +68,12 @@ export default {
       control: 'boolean',
       table: {
         type: {
-          summary: 'boolean'
-        }
+          summary: 'boolean',
+        },
       },
       defaultValue: false,
-      description: 'Mostra botões nas extremidades, utilizados para ir ao início e fim da paginação.',
+      description:
+        'Mostra botões nas extremidades, utilizados para ir ao início e fim da paginação.',
     },
   },
 } as Meta;
