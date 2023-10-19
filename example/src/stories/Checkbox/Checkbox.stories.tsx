@@ -6,7 +6,7 @@ import { Checkbox, CheckboxProps } from '@quero-delivery/quero-components-web';
 
 import '@quero-delivery/quero-components-web/dist/index.css';
 
-const checkboxMeta: Meta =  {
+const checkboxMeta: Meta = {
   title: 'Components/Checkbox',
   component: Checkbox,
   argTypes: {
@@ -26,7 +26,7 @@ const checkboxMeta: Meta =  {
         options: ['xs', 'sm', 'md', 'lg', 'xl'],
       },
       description: 'Tamanho do CheckBox',
-      type: 'string'
+      type: 'string',
     },
     onChange: {
       action: 'clicked',
