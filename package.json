@@ -11,8 +11,7 @@
     "dist"
   ],
   "engines": {
-    "node": "16.x",
-    "yarn": "1.22.x"
+    "node": ">=16.x"
   },
   "types": "dist/index.d.ts",
   "exports": {
