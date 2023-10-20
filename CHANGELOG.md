@@ -1,3 +1,10 @@
+## [2.2.2](https://github.com/QueroDelivery/quero-components-web/compare/v2.2.1...v2.2.2) (2023-10-20)
+
+
+### Bug Fixes
+
+* :arrow_up: upgrade typescript version ([5672f3e](https://github.com/QueroDelivery/quero-components-web/commit/5672f3e2383309f701c4f03211f94a3237f01c63))
+
 ## [2.2.1](https://github.com/QueroDelivery/quero-components-web/compare/v2.2.0...v2.2.1) (2023-10-20)
 
 
