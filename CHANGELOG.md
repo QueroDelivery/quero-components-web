@@ -1,3 +1,10 @@
+## [2.2.3](https://github.com/QueroDelivery/quero-components-web/compare/v2.2.2...v2.2.3) (2023-10-20)
+
+
+### Bug Fixes
+
+* :construction_worker: adjust available library engines ([9081b3d](https://github.com/QueroDelivery/quero-components-web/commit/9081b3d26467b5b3a40eecd625d1f28d116994e9))
+
 ## [2.2.2](https://github.com/QueroDelivery/quero-components-web/compare/v2.2.1...v2.2.2) (2023-10-20)
 
 
