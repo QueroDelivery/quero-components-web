@@ -1,6 +1,5 @@
 import '@testing-library/jest-dom/extend-expect';
 import { render, waitFor, screen } from '@testing-library/react';
-import { mocked } from 'ts-jest/utils';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
 import userEvent from '@testing-library/user-event';
 import { colors } from '../../styles/colors';
@@ -89,7 +88,7 @@ describe('Button Component', () => {
 
   it('Ícone está sendo exibido', async () => {
     // Given
-    const icon = mocked(faPhone);
+    const icon = jest.mocked(faPhone);
 
     // When
     render(<Button icon={icon}>{text}</Button>);
@@ -111,7 +110,7 @@ describe('Button Component', () => {
 
   it('Posição do ícone está funcionando', () => {
     // Given
-    const icon = mocked(faPhone);
+    const icon = jest.mocked(faPhone);
 
     // When
     const { rerender } = render(<Button icon={icon}>{text}</Button>);

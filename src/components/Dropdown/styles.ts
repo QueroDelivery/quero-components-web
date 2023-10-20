@@ -47,10 +47,18 @@ export const Container = styled.div<DropdownProps>`
     text-align: ${props =>
       props.textAlign && props.textAlign === 'center' ? 'center' : 'left'};
     color: ${colors.gray20};
-    -webkit-transition: width 0.1s ease, -webkit-box-shadow 0.1s ease;
-    transition: width 0.1s ease, -webkit-box-shadow 0.1s ease;
-    transition: box-shadow 0.1s ease, width 0.1s ease;
-    transition: box-shadow 0.1s ease, width 0.1s ease,
+    -webkit-transition:
+      width 0.1s ease,
+      -webkit-box-shadow 0.1s ease;
+    transition:
+      width 0.1s ease,
+      -webkit-box-shadow 0.1s ease;
+    transition:
+      box-shadow 0.1s ease,
+      width 0.1s ease;
+    transition:
+      box-shadow 0.1s ease,
+      width 0.1s ease,
       -webkit-box-shadow 0.1s ease;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   }
@@ -391,10 +399,18 @@ export const Container = styled.div<DropdownProps>`
           ? colors.gray10
           : 'rgba(34, 36, 38, 0.15)'};
     border-radius: ${props => (props.line ? 0 : '0.28571429rem')};
-    -webkit-transition: width 0.1s ease, -webkit-box-shadow 0.1s ease;
-    transition: width 0.1s ease, -webkit-box-shadow 0.1s ease;
-    transition: box-shadow 0.1s ease, width 0.1s ease;
-    transition: box-shadow 0.1s ease, width 0.1s ease,
+    -webkit-transition:
+      width 0.1s ease,
+      -webkit-box-shadow 0.1s ease;
+    transition:
+      width 0.1s ease,
+      -webkit-box-shadow 0.1s ease;
+    transition:
+      box-shadow 0.1s ease,
+      width 0.1s ease;
+    transition:
+      box-shadow 0.1s ease,
+      width 0.1s ease,
       -webkit-box-shadow 0.1s ease;
     border-radius: ${props => (props.line ? 'none' : '20px')};
     border-top: ${props => (props.line ? 'none' : '')};
@@ -1297,9 +1313,11 @@ export const Container = styled.div<DropdownProps>`
   .ui.floating.dropdown .menu {
     left: 0;
     right: auto;
-    -webkit-box-shadow: 0px 2px 4px 0px rgba(34, 36, 38, 0.12),
+    -webkit-box-shadow:
+      0px 2px 4px 0px rgba(34, 36, 38, 0.12),
       0px 2px 10px 0px rgba(34, 36, 38, 0.15) !important;
-    box-shadow: 0px 2px 4px 0px rgba(34, 36, 38, 0.12),
+    box-shadow:
+      0px 2px 4px 0px rgba(34, 36, 38, 0.12),
       0px 2px 10px 0px rgba(34, 36, 38, 0.15) !important;
     border-radius: 0.28571429rem !important;
   }
