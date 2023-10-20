@@ -5,14 +5,12 @@ import terser from '@rollup/plugin-terser';
 import dts from 'rollup-plugin-dts';
 import postcss from 'rollup-plugin-postcss';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
-import babel from '@rollup/plugin-babel';
 import { visualizer } from 'rollup-plugin-visualizer';
+import createStyledComponentsTransformer from 'typescript-plugin-styled-components';
 
-import packageJson from './package.json';
+import packageJson from './package.json' assert { type: 'json' };
 
-const babelRuntimeVersion = packageJson.devDependencies[
-  '@babel/runtime'
-].replace(/[^0-9]*/, '');
+const styledComponentsTransformer = createStyledComponentsTransformer.default();
 
 export default [
   {
@@ -22,13 +20,11 @@ export default [
         file: packageJson.main,
         format: 'cjs',
         sourcemap: true,
-        exports: 'named',
       },
       {
         file: packageJson.module,
         format: 'esm',
         sourcemap: true,
-        exports: 'named',
       },
     ],
     plugins: [
@@ -38,30 +34,41 @@ export default [
       typescript({
         tsconfig: './tsconfig.json',
         exclude: ['**.test.{tsx,ts}', 'setupTests.ts'],
-      }),
-      terser(),
-      postcss({
-        extract: true,
-      }),
-      babel({
-        babelHelpers: 'runtime',
-        exclude: /node_modules/,
-        plugins: [
-          'babel-plugin-styled-components',
-          ['@babel/plugin-transform-runtime', { version: babelRuntimeVersion }],
+        transformers: [
+          () => ({
+            before: [styledComponentsTransformer],
+          }),
         ],
       }),
+      postcss({ extract: true }),
+      terser(),
       visualizer({
         hideDeps: true,
         limit: 0,
         summaryOnly: true,
       }),
     ],
+    external: [
+      '@fortawesome/fontawesome-svg-core',
+      '@fortawesome/free-solid-svg-icons',
+      '@fortawesome/react-fontawesome',
+      'date-fns',
+      'date-fns/locale/pt-BR',
+      'react-datepicker',
+      'react-input-mask',
+      'semantic-ui-css',
+      'semantic-ui-react',
+    ],
   },
   {
     input: 'dist/esm/index.d.ts',
     output: [{ file: 'dist/index.d.ts', format: 'esm' }],
-    plugins: [dts.default()],
+    plugins: [dts()],
     external: [/\.css$/, /\.scss$/],
+  },
+  {
+    input: 'dist/esm/index.css',
+    output: [{ file: 'dist/index.css' }],
+    plugins: [postcss({ extract: true })],
   },
 ];

@@ -2,7 +2,6 @@
   <img alt="querolabs" title="#querolabs" src="example/public/querolabs.png" height="150" />
 </h1>
 
-
 <p align="center">
    <h2 align="center">
     Quero Components Web
@@ -34,35 +33,31 @@
 </p>
 
 ## 💜 O que é?
- A Quero Components Web é uma biblioteca de componentes reutilizáveis, auxiliando o usuário na construção de interfaces de forma mais rápida e produtiva.
- <br> </br>
+
+A Quero Components Web é uma biblioteca de componentes reutilizáveis, auxiliando o usuário na construção de interfaces de forma mais rápida e produtiva.
+<br> </br>
 
 ## 👨‍💻 Como instalar?
 
 ```bash
 # Utilizando npm
-npm install @quero-delivery/quero-components-web
+npm install @quero-delivery/quero-components-web react react-dom styled-components
 
 # Utilizando yarn
-yarn add @quero-delivery/quero-components-web
+yarn add @quero-delivery/quero-components-web react react-dom styled-components
 ```
-
 
 ## 🏃 Como usar?
 
 ```tsx
-import { InputLine } from "@quero-delivery/quero-components-web";
-import "@quero-delivery/quero-components-web/dist/esm/index.css";
+import { InputLine } from '@quero-delivery/quero-components-web';
+import '@quero-delivery/quero-components-web/dist/esm/index.css';
 
 export function Example() {
-  return (
-    <InputLine
-      label="Quero delivery"
-      onChange={() => {}}
-    />
-  )
+  return <InputLine label="Quero delivery" onChange={() => {}} />;
 }
 ```
+
 <img alt="Exemplo de uso da biblioteca Quero delivery" src="example/public/exampleInput.png" height="80" />
 
 ## 📊 Como usar gráficos?
@@ -78,33 +73,39 @@ npm install victory
 # Utilizando yarn
 yarn add victory
 ```
+
 <b>Exemplo de uso
 
 ```tsx
 <VictoryChart>
   <VictoryLine
-    groupComponent={<VictoryClipContainer clipPadding={{ top: 5, right: 10 }}/>}
-    style={{ data: { stroke: "#9b4dee", strokeWidth: 15, strokeLinecap: "round" } }}
+    groupComponent={
+      <VictoryClipContainer clipPadding={{ top: 5, right: 10 }} />
+    }
+    style={{
+      data: { stroke: '#9b4dee', strokeWidth: 15, strokeLinecap: 'round' },
+    }}
     data={sampleData}
   />
 </VictoryChart>
 ```
-<img alt="Exemplo de uso da biblioteca Victory" src="example/public/grafic.png" height="250" />
 
+<img alt="Exemplo de uso da biblioteca Victory" src="example/public/grafic.png" height="250" />
 
 ## 🎨 Quais cores foram utilizadas no padrão da biblioteca?
 
 ```css
 brand: #9b4dee;
-brandPink: #e0457b;
-brandYellow: #f7ea48;
-brandDark: #6700a2;
-brandLight: #d8b8f9;
+brandpink: #e0457b;
+brandyellow: #f7ea48;
+branddark: #6700a2;
+brandlight: #d8b8f9;
 ```
 
 > Confira a documentação da biblioteca para mais detalhes de uso [Documentação victory](https://formidable.com/open-source/victory/docs).
 
 ## 📚 Quais bibliotecas são usadas?
+
 - [React Hook Form](https://reactdatepicker.com/)
 - [Semantic UI React](https://react.semantic-ui.com")
 - [React Datepicker](https://reactdatepicker.com/)
@@ -114,6 +115,7 @@ brandLight: #d8b8f9;
 Para verificar a documentação click [aqui](https://querodelivery.github.io/quero-components-web/)
 
 - Verificar em desenvolvimento
+
 ```bash
 npm run start ou yarn start
 ```
@@ -125,7 +127,7 @@ npm run storybook ou yarn storybook
 ## A documentação será aberta na porta:6006 - acesse http://localhost:6006
 ```
 
-## 🤝  Como contribuir para o projeto?
+## 🤝 Como contribuir para o projeto?
 
 - Entre em nosso repositorio no [GitHub](https://github.com/QueroDelivery/quero-components-web);
 - Faça um **fork** do projeto;
