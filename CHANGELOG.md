@@ -1,3 +1,10 @@
+# [2.3.0](https://github.com/QueroDelivery/quero-components-web/compare/v2.2.3...v2.3.0) (2023-10-20)
+
+
+### Features
+
+* :construction_worker: improve library structure ([d9a76b3](https://github.com/QueroDelivery/quero-components-web/commit/d9a76b3fe57adf34caa24123ffaecbf57b0924a1))
+
 ## [2.2.3](https://github.com/QueroDelivery/quero-components-web/compare/v2.2.2...v2.2.3) (2023-10-20)
 
 
