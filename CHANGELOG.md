@@ -1,3 +1,10 @@
+## [2.3.1](https://github.com/QueroDelivery/quero-components-web/compare/v2.3.0...v2.3.1) (2023-10-20)
+
+
+### Bug Fixes
+
+* :bug: add interop config to rollup output files ([01ca48e](https://github.com/QueroDelivery/quero-components-web/commit/01ca48eced7eb4b8928b81c78793ed1bb5014785))
+
 # [2.3.0](https://github.com/QueroDelivery/quero-components-web/compare/v2.2.3...v2.3.0) (2023-10-20)
 
 
