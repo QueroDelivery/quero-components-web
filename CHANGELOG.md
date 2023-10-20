@@ -1,3 +1,11 @@
+## [2.2.1](https://github.com/QueroDelivery/quero-components-web/compare/v2.2.0...v2.2.1) (2023-10-20)
+
+
+### Bug Fixes
+
+* :arrow_up: upgrade date-fns and @types/react-datepicker ([e8609ef](https://github.com/QueroDelivery/quero-components-web/commit/e8609ef8725f41af3362a52f576b0e75ad7a073f))
+* :arrow_up: upgrade styled components and react-datepicker ([626ad5d](https://github.com/QueroDelivery/quero-components-web/commit/626ad5dcdbc86dfd8b93051a14a63b70bc36e8b6))
+
 # [2.2.0](https://github.com/QueroDelivery/quero-components-web/compare/v2.1.3...v2.2.0) (2023-10-19)
 
 
