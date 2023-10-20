@@ -26,4 +26,5 @@ yarn-error.log*
 
 .tool-versions
 
-.stats.html
+stats.html
+/dist
