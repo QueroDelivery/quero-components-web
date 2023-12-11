@@ -150,7 +150,7 @@ export const Container = styled.div<ContainerProps>`
     border: none !important;
   }
 
-  .ui.table tbody tr  {
+  .ui.table tbody tr {
     &:hover {
       background-color: ${colors.hoverLight};
     }
