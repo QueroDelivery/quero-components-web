@@ -22,6 +22,7 @@ export const colors = {
 
   transparent: 'rgba(0, 0, 0, 0)',
   hover: 'rgba(211, 211, 211, 0.4)',
+  hoverLight: '#F2F2F2',
 
   highlight: '#FF0000',
 

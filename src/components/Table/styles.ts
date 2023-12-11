@@ -150,6 +150,12 @@ export const Container = styled.div<ContainerProps>`
     border: none !important;
   }
 
+  .ui.table tbody tr  {
+    &:hover {
+      background-color: ${colors.hoverLight};
+    }
+  }
+
   /* Table Cells */
   .ui.table td {
     padding: 0.78571429em 0.78571429em;
