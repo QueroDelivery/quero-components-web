@@ -1,3 +1,11 @@
+## [2.3.2](https://github.com/QueroDelivery/quero-components-web/compare/v2.3.1...v2.3.2) (2023-12-12)
+
+
+### Bug Fixes
+
+* add hover effect to table rows ([e360886](https://github.com/QueroDelivery/quero-components-web/commit/e360886b2094b3f7441bf2bbc298c4d86c65f567))
+* handler lint error ([83197ef](https://github.com/QueroDelivery/quero-components-web/commit/83197ef067b6f5a70b3a6ae4a4954093de2d7d3d))
+
 ## [2.3.1](https://github.com/QueroDelivery/quero-components-web/compare/v2.3.0...v2.3.1) (2023-10-20)
 
 
