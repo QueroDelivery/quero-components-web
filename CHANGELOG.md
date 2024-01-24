@@ -1,3 +1,10 @@
+## [2.3.3](https://github.com/QueroDelivery/quero-components-web/compare/v2.3.2...v2.3.3) (2024-01-24)
+
+
+### Bug Fixes
+
+* :alien: add new properties to dialog component ([6ce9a0e](https://github.com/QueroDelivery/quero-components-web/commit/6ce9a0eaaf16a969be9c1143fc1b7bb3edaff212))
+
 ## [2.3.2](https://github.com/QueroDelivery/quero-components-web/compare/v2.3.1...v2.3.2) (2023-12-12)
 
 
