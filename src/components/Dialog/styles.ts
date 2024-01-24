@@ -13,7 +13,7 @@ interface DialogProps {
   sizeHeader: number;
   sizeBody?: number;
   isLoading: boolean;
-  title?: string;
+  hasTitle?: boolean;
 }
 
 interface HeaderProps {
@@ -86,7 +86,7 @@ export const Dialog = styled.div<DialogProps>`
             padding: 20px 20px 0;
             overflow: ${props.isLoading ? 'hidden' : 'auto'};
 
-            height: ${props.title
+            height: ${props.hasTitle
               ? `calc(100% - ${props.sizeHeader}px)`
               : '100%'};
             /* max-height: 100%; */
