@@ -1,4 +1,4 @@
-import { ReactNode, useMemo, useRef } from 'react';
+import { ReactNode, useMemo, useRef, CSSProperties } from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes, faAngleLeft } from '@fortawesome/free-solid-svg-icons';
@@ -11,12 +11,19 @@ export interface DialogProps {
   onClose: Function;
   loading?: boolean;
   maxHeight?: number | string;
-  title?: string;
+  title?: string | ReactNode;
   noBorder?: boolean;
   closeIcon?: boolean;
   children?: ReactNode;
   closeOnDimerClick?: boolean;
   onReturn?(): void;
+
+  className?: string;
+  style?: CSSProperties;
+  headerClassName?: string;
+  headerStyle?: CSSProperties;
+  bodyClassName?: string;
+  bodyStyle?: CSSProperties;
 }
 
 function DialogComponent({
@@ -30,6 +37,12 @@ function DialogComponent({
   closeOnDimerClick = true,
   closeIcon = false,
   onReturn,
+  bodyClassName,
+  bodyStyle,
+  className,
+  style,
+  headerClassName,
+  headerStyle,
 }: DialogProps) {
   const headerDialog = useRef<HTMLDivElement | null>(null);
 
@@ -54,8 +67,10 @@ function DialogComponent({
         maxHeight={maxHeight}
         sizeHeader={sizeHeader}
         isLoading={loading}
-        title={title}
+        hasTitle={!!title}
         role="dialog"
+        className={className}
+        style={style}
       >
         {!!title || !!onReturn || closeIcon ? (
           <Header
@@ -63,6 +78,8 @@ function DialogComponent({
             returnIcon={!!onReturn}
             noBorder={noBorder}
             ref={headerDialog}
+            className={headerClassName}
+            style={headerStyle}
           >
             {!!onReturn && (
               <button onClick={onReturn} aria-label="return">
@@ -75,7 +92,7 @@ function DialogComponent({
             )}
 
             <div>
-              <strong>{title}</strong>
+              {typeof title === 'string' ? <strong>{title}</strong> : title}
             </div>
 
             {closeIcon && (
@@ -96,7 +113,11 @@ function DialogComponent({
           </Header>
         ) : null}
 
-        <div className="box-dialog" id="sizeBody">
+        <div
+          className={`box-dialog ${bodyClassName || ''}`}
+          id="sizeBody"
+          style={bodyStyle}
+        >
           {loading && (
             <div className="loading-dialog">
               <Loader />
