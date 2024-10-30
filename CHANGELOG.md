@@ -1,3 +1,10 @@
+## [2.3.4](https://github.com/QueroDelivery/quero-components-web/compare/v2.3.3...v2.3.4) (2024-10-30)
+
+
+### Bug Fixes
+
+* update input time element style ([97d0ad5](https://github.com/QueroDelivery/quero-components-web/commit/97d0ad50ace0fd5b742f30daf690bce341449466))
+
 ## [2.3.3](https://github.com/QueroDelivery/quero-components-web/compare/v2.3.2...v2.3.3) (2024-01-24)
 
 
