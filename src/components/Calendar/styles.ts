@@ -395,6 +395,7 @@ export const Container = styled.div<CalendarProps>`
   .react-datepicker__input-time-container .react-datepicker-time__caption {
     display: inline-block !important;
     color: #707070 !important;
+    font-size: medium;
   }
 
   .react-datepicker__input-time-container
@@ -413,13 +414,14 @@ export const Container = styled.div<CalendarProps>`
     .react-datepicker-time__input-container
     .react-datepicker-time__input
     input {
-    width: 85px !important;
+    width: 90% !important;
     border-radius: 20px !important;
     padding: 5px 10px !important;
     outline: none !important;
     border-style: solid !important;
     border-width: 1px !important;
     border-color: #707070 !important;
+    text-align: center;
   }
 
   .react-datepicker__input-time-container
