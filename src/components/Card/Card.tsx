@@ -99,7 +99,7 @@ function Card({
             color={colors.brandDark}
             icon={icon}
             className={iconClassName}
-            style={iconStyle}
+            style={iconStyle as any}
             size={iconSize || 'lg'}
           />
         )}

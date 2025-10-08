@@ -134,7 +134,7 @@ function Button({
         <FontAwesomeIcon
           icon={icon!}
           className={iconClassName}
-          style={iconStyle}
+          style={iconStyle as any}
           data-testid="button-icon"
         />
       </Icon>
