@@ -81,7 +81,7 @@ function Accordion({
               <FontAwesomeIcon
                 data-testid="accordion-icon"
                 className={iconClassName}
-                style={iconStyle}
+                style={iconStyle as any}
                 icon={icon}
                 size="lg"
                 color={colors.brand10}

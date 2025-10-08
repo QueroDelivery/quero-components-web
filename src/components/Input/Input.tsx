@@ -145,7 +145,7 @@ function Input(
             <FontAwesomeIcon
               aria-label="icon"
               className={iconClassName}
-              style={iconStyle}
+              style={iconStyle as any}
               icon={icon}
               color={colors.brand10}
             />
