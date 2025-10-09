@@ -1,3 +1,17 @@
+# [2.4.0](https://github.com/QueroDelivery/quero-components-web/compare/v2.3.4...v2.4.0) (2025-10-09)
+
+
+### Bug Fixes
+
+* and add resolutions for types react ([f7e6798](https://github.com/QueroDelivery/quero-components-web/commit/f7e6798af7329ab568f3383c5013600ae96f9c84))
+* update fontawesome to v7 ([fe3a4ca](https://github.com/QueroDelivery/quero-components-web/commit/fe3a4cac0c102970d8b847ac0b0ffef8199cb87f))
+* update Node.js version to 20.x in workflows ([9f16e29](https://github.com/QueroDelivery/quero-components-web/commit/9f16e298fb670d9a66491cf178c25b670e305605))
+
+
+### Features
+
+* update react and ts types to 18 ([24ccab6](https://github.com/QueroDelivery/quero-components-web/commit/24ccab66785007e347f6358d3180e4bff05a2db9))
+
 ## [2.3.4](https://github.com/QueroDelivery/quero-components-web/compare/v2.3.3...v2.3.4) (2024-10-30)
 
 
