@@ -6,7 +6,6 @@ import Calendar, { CalendarProps } from './components/Calendar/Calendar';
 import Card, { CardProps } from './components/Card/Card';
 import Checkbox, { CheckboxProps } from './components/Checkbox/Checkbox';
 import Dialog, { DialogProps } from './components/Dialog/Dialog';
-import Dropdown, { DropdownProps } from './components/Dropdown/Dropdown';
 import Input, { InputProps } from './components/Input/Input';
 import Loader, { LoaderProps } from './components/Loader/Loader';
 import Modal, { ModalProps } from './components/Modal/Modal';
@@ -16,7 +15,6 @@ import Selection, { SelectionProps } from './components/Selection/Selection';
 import Pagination, {
   PaginationProps,
 } from './components/Pagination/Pagination';
-import Table, { TableComponentProps } from './components/Table/Table';
 import TextArea, { TextAreaProps } from './components/TextArea/TextArea';
 
 export {
@@ -27,7 +25,6 @@ export {
   Card,
   Checkbox,
   Dialog,
-  Dropdown,
   Input,
   Input as InputLine,
   Loader,
@@ -36,7 +33,6 @@ export {
   Radio,
   Selection,
   Pagination,
-  Table,
   TextArea,
 };
 
@@ -47,7 +43,6 @@ export type {
   CardProps,
   CheckboxProps,
   DialogProps,
-  DropdownProps,
   InputProps,
   LoaderProps,
   ModalProps,
@@ -55,6 +50,5 @@ export type {
   PaginationProps,
   RadioProps,
   SelectionProps,
-  TableComponentProps,
   TextAreaProps,
 };
