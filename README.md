@@ -107,7 +107,6 @@ brandlight: #d8b8f9;
 ## 📚 Quais bibliotecas são usadas?
 
 - [React Hook Form](https://reactdatepicker.com/)
-- [Semantic UI React](https://react.semantic-ui.com")
 - [React Datepicker](https://reactdatepicker.com/)
 
 ## 📝 Documentação

@@ -59,8 +59,6 @@ export default [
       'date-fns/locale/pt-BR',
       'react-datepicker',
       'react-input-mask',
-      'semantic-ui-css',
-      'semantic-ui-react',
     ],
   },
   {
