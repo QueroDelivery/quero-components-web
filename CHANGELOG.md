@@ -1,3 +1,13 @@
+# [3.0.0](https://github.com/QueroDelivery/quero-components-web/compare/v2.4.0...v3.0.0) (2026-05-27)
+
+
+* feat!: remove Dropdown and Table components ([4c49d0c](https://github.com/QueroDelivery/quero-components-web/commit/4c49d0c9b7134857309bfaded9d9483bb4c09ce9))
+
+
+### BREAKING CHANGES
+
+* Dropdown and Table are no longer exported. semantic-ui dependency was removed.
+
 # [2.4.0](https://github.com/QueroDelivery/quero-components-web/compare/v2.3.4...v2.4.0) (2025-10-09)
 
 
