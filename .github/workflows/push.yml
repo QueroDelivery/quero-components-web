@@ -37,14 +37,17 @@ jobs:
         run: |
           yarn --frozen-lockfile --ignore-scripts
       - name: Release
+        id: release
         run: |
           yarn release
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_CI }}
       - name: Prepare publish
+        if: steps.release.outputs.released == 'true'
         run: |
           yarn prepare-publish
       - name: Publish
+        if: steps.release.outputs.released == 'true'
         run: |
           npm publish
       - name: Prepare publish docs
