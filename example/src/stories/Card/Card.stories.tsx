@@ -1,8 +1,8 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 import { action } from '@storybook/addon-actions';
-import { Card, CardProps } from '@quero-delivery/quero-components-web';
-import '@quero-delivery/quero-components-web/dist/index.css';
+import { Card, CardProps } from '@querodelivery/quero-components-web';
+import '@querodelivery/quero-components-web/dist/index.css';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
 
 const meta: Meta = {

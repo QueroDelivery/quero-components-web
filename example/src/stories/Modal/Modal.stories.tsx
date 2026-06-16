@@ -5,9 +5,9 @@ import {
   ButtonMain,
   Modal,
   ModalProps,
-} from '@quero-delivery/quero-components-web';
+} from '@querodelivery/quero-components-web';
 import { action } from '@storybook/addon-actions';
-import '@quero-delivery/quero-components-web/dist/index.css';
+import '@querodelivery/quero-components-web/dist/index.css';
 
 export default {
   title: 'Components/Modal',

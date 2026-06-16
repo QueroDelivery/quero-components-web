@@ -1,7 +1,7 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import { Loader, LoaderProps } from '@quero-delivery/quero-components-web';
-import '@quero-delivery/quero-components-web/dist/index.css';
+import { Loader, LoaderProps } from '@querodelivery/quero-components-web';
+import '@querodelivery/quero-components-web/dist/index.css';
 
 export default {
   title: 'Components/Loader',

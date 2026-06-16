@@ -2,9 +2,9 @@ import React from 'react';
 import { useState } from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 import { action } from '@storybook/addon-actions';
-import { Checkbox, CheckboxProps } from '@quero-delivery/quero-components-web';
+import { Checkbox, CheckboxProps } from '@querodelivery/quero-components-web';
 
-import '@quero-delivery/quero-components-web/dist/index.css';
+import '@querodelivery/quero-components-web/dist/index.css';
 
 const checkboxMeta: Meta = {
   title: 'Components/Checkbox',

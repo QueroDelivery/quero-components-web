@@ -41,17 +41,17 @@ A Quero Components Web é uma biblioteca de componentes reutilizáveis, auxilian
 
 ```bash
 # Utilizando npm
-npm install @quero-delivery/quero-components-web react react-dom styled-components
+npm install @querodelivery/quero-components-web react react-dom styled-components
 
 # Utilizando yarn
-yarn add @quero-delivery/quero-components-web react react-dom styled-components
+yarn add @querodelivery/quero-components-web react react-dom styled-components
 ```
 
 ## 🏃 Como usar?
 
 ```tsx
-import { InputLine } from '@quero-delivery/quero-components-web';
-import '@quero-delivery/quero-components-web/dist/esm/index.css';
+import { InputLine } from '@querodelivery/quero-components-web';
+import '@querodelivery/quero-components-web/dist/esm/index.css';
 
 export function Example() {
   return <InputLine label="Quero delivery" onChange={() => {}} />;

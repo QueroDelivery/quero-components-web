@@ -4,8 +4,8 @@ import {
   ButtonMain,
   Dialog,
   DialogProps,
-} from '@quero-delivery/quero-components-web';
-import '@quero-delivery/quero-components-web/dist/index.css';
+} from '@querodelivery/quero-components-web';
+import '@querodelivery/quero-components-web/dist/index.css';
 import { action } from '@storybook/addon-actions';
 import React from 'react';
 

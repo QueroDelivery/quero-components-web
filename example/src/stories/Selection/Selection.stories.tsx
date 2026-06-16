@@ -1,11 +1,8 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 import { action } from '@storybook/addon-actions';
-import {
-  Selection,
-  SelectionProps,
-} from '@quero-delivery/quero-components-web';
-import '@quero-delivery/quero-components-web/dist/index.css';
+import { Selection, SelectionProps } from '@querodelivery/quero-components-web';
+import '@querodelivery/quero-components-web/dist/index.css';
 
 const selectionMeta: Meta = {
   title: 'Components/Selection',

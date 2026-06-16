@@ -4,8 +4,8 @@ import { Story, Meta } from '@storybook/react/types-6-0';
 import {
   Pagination,
   PaginationProps,
-} from '@quero-delivery/quero-components-web';
-import '@quero-delivery/quero-components-web/dist/index.css';
+} from '@querodelivery/quero-components-web';
+import '@querodelivery/quero-components-web/dist/index.css';
 
 export default {
   title: 'Components/Pagination',

@@ -3,8 +3,8 @@ import { Story, Meta } from '@storybook/react/types-6-0';
 import { action } from '@storybook/addon-actions';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
-import { Input, InputProps } from '@quero-delivery/quero-components-web';
-import '@quero-delivery/quero-components-web/dist/index.css';
+import { Input, InputProps } from '@querodelivery/quero-components-web';
+import '@querodelivery/quero-components-web/dist/index.css';
 
 export default {
   title: 'Components/Input',

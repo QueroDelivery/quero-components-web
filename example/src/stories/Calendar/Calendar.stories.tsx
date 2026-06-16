@@ -1,8 +1,8 @@
 import React from 'react';
 import { useState } from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import { Calendar, CalendarProps } from '@quero-delivery/quero-components-web';
-import '@quero-delivery/quero-components-web/dist/index.css';
+import { Calendar, CalendarProps } from '@querodelivery/quero-components-web';
+import '@querodelivery/quero-components-web/dist/index.css';
 
 function addDays(date: Date, value: number) {
   const newDate = new Date(date);

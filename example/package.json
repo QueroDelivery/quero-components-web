@@ -1,5 +1,5 @@
 {
-  "name": "@quero-delivery/quero-components-web-example",
+  "name": "@querodelivery/quero-components-web-example",
   "homepage": ".",
   "version": "0.0.0",
   "private": true,
@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@emotion/is-prop-valid": "^1.2.1",
-    "@quero-delivery/quero-components-web": "link:..",
+    "@querodelivery/quero-components-web": "link:..",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-scripts": "^5.0.1",
