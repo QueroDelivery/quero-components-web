@@ -1,3 +1,18 @@
+# [3.1.0](https://github.com/QueroDelivery/quero-components-web/compare/v3.0.0...v3.1.0) (2026-06-16)
+
+
+### Bug Fixes
+
+* add GITHUB_TOKEN environment variable to Release step in workflow ([0df0256](https://github.com/QueroDelivery/quero-components-web/commit/0df0256bff33fad8a87cf73b732320fad45571c3))
+* format .releaserc for better readability ([ad7cb9a](https://github.com/QueroDelivery/quero-components-web/commit/ad7cb9a54cb2f054e37ecad54c61c748ea85afce))
+* update GitHub Actions workflow to use latest action versions and improve caching ([20ea23c](https://github.com/QueroDelivery/quero-components-web/commit/20ea23cc75e53ffc81e62912341c66b0f5ea93da))
+* update package name and registry configuration in package.json ([5dbf735](https://github.com/QueroDelivery/quero-components-web/commit/5dbf7358ea7d7fc656d75e121793e7e55e148904))
+
+
+### Features
+
+* add .npmrc for GitHub package registry configuration ([3d4bd39](https://github.com/QueroDelivery/quero-components-web/commit/3d4bd391d3ed9af56c0082a0bf9f1c814c52097c))
+
 # [3.0.0](https://github.com/QueroDelivery/quero-components-web/compare/v2.4.0...v3.0.0) (2026-05-27)
 
 
