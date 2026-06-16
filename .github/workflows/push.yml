@@ -42,10 +42,9 @@ jobs:
           yarn release
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_CI }}
-      - name: Prepare publish
-        if: steps.release.outputs.released == 'true'
+      - name: Build package
         run: |
-          yarn prepare-publish
+          yarn build
       - name: Publish
         if: steps.release.outputs.released == 'true'
         run: |
