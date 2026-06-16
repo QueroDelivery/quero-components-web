@@ -40,6 +40,8 @@ jobs:
       - name: Release
         run: |
           yarn release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_CI }}
       - name: Prepare publish
         run: |
           yarn prepare-publish
