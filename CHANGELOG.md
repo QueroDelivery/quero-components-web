@@ -1,3 +1,10 @@
+## [3.1.1](https://github.com/QueroDelivery/quero-components-web/compare/v3.1.0...v3.1.1) (2026-06-16)
+
+
+### Bug Fixes
+
+* update Node.js engine version to 20.x in package.json ([4dcd99e](https://github.com/QueroDelivery/quero-components-web/commit/4dcd99ee4bcd21460df597df20b380bb7afeef76))
+
 # [3.1.0](https://github.com/QueroDelivery/quero-components-web/compare/v3.0.0...v3.1.0) (2026-06-16)
 
 
